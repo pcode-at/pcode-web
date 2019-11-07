@@ -1,6 +1,12 @@
 # pcode-web
 
-## Start the website for development
+## Getting started
+1. Install dependencies:
+```
+yarn install
+```
+
+2. Start developing
 ```
 yarn dev
 ```
