@@ -6,6 +6,19 @@
 yarn install
 ```
 
+## Environment
+It is recommend to use [Visual Studio Code](https://code.visualstudio.com/).
+
+Using these extensions is recommended for great developer experience:
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [StyledJsx Plugin](https://marketplace.visualstudio.com/items?itemName=AndrewRazumovsky.vscode-styled-jsx-languageserver)
+- [Spellchecking](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - prevents typos
+- [TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)
+- For TODOs:
+  - [Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
+  - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+
+
 2. Start developing
 ```
 yarn dev
