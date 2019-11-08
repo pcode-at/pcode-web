@@ -1,6 +1,7 @@
 import React from "react";
 import Headroom from "react-headroom";
 import { borderRadius, marginRight } from "styled-system";
+import { CONSTANTS } from "../constants";
 
 type TSiteHeaderProps = {
   headline: string;
@@ -16,11 +17,12 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({ headline }) => {
           margin: 0,
           paddingLeft: "1em",
           paddingRight: "1em",
-          color: "black",
-          backgroundColor: "white"
+          height: "50px",
+          backgroundColor: CONSTANTS.colors.lightBlue,
+          color: "black"
         }}
       >
-        {headline}
+        <h1 style={{ marginTop: "0px", lineHeight: "50px" }}>{headline}</h1>
       </div>
     </Headroom>
   );
