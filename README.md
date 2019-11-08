@@ -47,3 +47,4 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
 };
 
 ```
+**Important**: Each component has to be created in the [components/](components/) folder.
