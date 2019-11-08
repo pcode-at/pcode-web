@@ -2,10 +2,12 @@ import * as React from "react";
 import { Flex, Button, Box } from "rebass";
 import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
-import { ProjectDetailTeaser } from "../components/ProjectDetailTeaser";
+import { SiteHeader } from "../components/SiteHeader";
 
 const WhatWeDoPage = () => (
   <div>
+    <SiteHeader headline="P-Code"></SiteHeader>
+
     <ThemeProvider theme={theme}>
       <Box p={5} fontSize={4} width={[1, 1, 1 / 2]} color="white" bg="blue">
         Box
@@ -27,19 +29,6 @@ const WhatWeDoPage = () => (
     </ThemeProvider>
 
     <div className="test">WORKING</div>
-
-    <ProjectDetailTeaser
-      headline="Head Tes2"
-      description="Desc TEst"
-      pcodeShapeBackground={true}
-      imageSrc="https://vignette.wikia.nocookie.net/ronaldmcdonald/images/0/0a/Original2.jpg/revision/latest?cb=20180909053442"
-    ></ProjectDetailTeaser>
-
-    <style jsx>{`
-      .test {
-        color: green;
-      }
-    `}</style>
   </div>
 );
 
