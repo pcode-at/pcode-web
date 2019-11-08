@@ -6,25 +6,27 @@ import { border, marginRight } from "styled-system";
 type TActionButtonProps = {
   thisColor: string;
   label: string;
+  clickFunction: () => void;
 };
 
 export const ActionButton: React.FC<TActionButtonProps> = ({
   thisColor,
-  label
+  label,
+  clickFunction
 }) => {
   var finalColor = "orange";
   var colorTest = thisColor.toLowerCase();
 
   if (colorTest == "red") {
-    var finalColor = CONSTANTS.colors.red;
+    finalColor = CONSTANTS.colors.red;
   }
 
   if (colorTest == "lightblue") {
-    var finalColor = CONSTANTS.colors.lightBlue;
+    finalColor = CONSTANTS.colors.lightBlue;
   }
 
   if (colorTest == "darkblue") {
-    var finalColor = CONSTANTS.colors.darkBlue;
+    finalColor = CONSTANTS.colors.darkBlue;
   }
 
   return (
@@ -32,6 +34,7 @@ export const ActionButton: React.FC<TActionButtonProps> = ({
       <Button
         className="buttonSetup"
         backgroundColor={finalColor}
+        onClick={clickFunction}
         style={{
           borderRadius: "15px",
           marginRight: "5px",

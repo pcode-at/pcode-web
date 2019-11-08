@@ -4,6 +4,14 @@ import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
 import { ActionButton } from "../components/ActionButton";
 
+const function01 = () => alert("hello 1");
+
+const function02 = () => alert("hello 2");
+
+const function03 = () => alert("hello 3");
+
+const function04 = () => alert("hello 4");
+
 const WhatWeDoPage = () => (
   <div>
     <ThemeProvider theme={theme}>
@@ -28,10 +36,26 @@ const WhatWeDoPage = () => (
 
     <hr></hr>
 
-    <ActionButton thisColor="darkBlue" label="Ex 01"></ActionButton>
-    <ActionButton thisColor="lightBlue" label="Ex 02"></ActionButton>
-    <ActionButton thisColor="red" label="Ex 03"></ActionButton>
-    <ActionButton thisColor="other" label="Ex 04"></ActionButton>
+    <ActionButton
+      thisColor="darkBlue"
+      label="Ex 01"
+      clickFunction={function01}
+    ></ActionButton>
+    <ActionButton
+      thisColor="lightBlue"
+      label="Ex 02"
+      clickFunction={function02}
+    ></ActionButton>
+    <ActionButton
+      thisColor="red"
+      label="Ex 03"
+      clickFunction={function03}
+    ></ActionButton>
+    <ActionButton
+      thisColor="other"
+      label="Ex 04"
+      clickFunction={function04}
+    ></ActionButton>
 
     <div className="test">WORKING</div>
 
