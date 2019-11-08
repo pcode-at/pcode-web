@@ -6,6 +6,11 @@
 yarn install
 ```
 
+2. Start developing
+```
+yarn dev
+```
+
 ## Environment
 It is recommend to use [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -19,10 +24,6 @@ Using these extensions is recommended for great developer experience:
   - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 
 
-2. Start developing
-```
-yarn dev
-```
 
 ## Create a component
 You can go to the [ProjectDetailTeaser](components/ProjectDetailTeaser.tsx) component to see how a component is built. Here is the code:
