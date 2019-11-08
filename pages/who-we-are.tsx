@@ -2,6 +2,7 @@ import * as React from "react";
 import { Flex, Button, Box } from "rebass";
 import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
+import { ProjectDetailTeaser } from "../components/ProjectDetailTeaser";
 
 const WhoWeArePage = () => (
   <div>
@@ -26,6 +27,13 @@ const WhoWeArePage = () => (
     </ThemeProvider>
 
     <div className="test">WORKING</div>
+
+    <ProjectDetailTeaser
+      description="Description"
+      headline="Headline"
+      imageSrc=""
+      pcodeShapeBackground={false}
+    />
 
     <style jsx>{`
       .test {
