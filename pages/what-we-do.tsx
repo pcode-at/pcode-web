@@ -2,6 +2,7 @@ import * as React from "react";
 import { Flex, Button, Box } from "rebass";
 import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
+import { ProjectDetailTeaser } from "../components/ProjectDetailTeaser";
 
 const WhatWeDoPage = () => (
   <div>
@@ -22,10 +23,17 @@ const WhatWeDoPage = () => (
         </Box>
       </Flex>
       <br />
-      <Button mr={2}>Primary</Button>
+      <Button mr={1}>Primary</Button>
     </ThemeProvider>
 
     <div className="test">WORKING</div>
+
+    <ProjectDetailTeaser
+      headline="Head Tes2"
+      description="Desc TEst"
+      pcodeShapeBackground={true}
+      imageSrc="https://vignette.wikia.nocookie.net/ronaldmcdonald/images/0/0a/Original2.jpg/revision/latest?cb=20180909053442"
+    ></ProjectDetailTeaser>
 
     <style jsx>{`
       .test {
