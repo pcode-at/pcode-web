@@ -8,8 +8,8 @@ type TPcodeShape = {
 };
 
 export const PcodeShape: React.FC<TPcodeShape> = ({
-  width = "200px",
-  color = "#111111"
+  width = "100%",
+  color = "#263958"
 }) => {
   return (
     <React.Fragment>
