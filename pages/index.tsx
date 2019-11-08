@@ -5,9 +5,14 @@ import { Flex, Button, Box } from "rebass";
 import { theme } from "../theme";
 import { ThemeProvider } from "emotion-theming";
 import { css } from "@styled-system/css";
+import { PcodeShape } from "../components/PcodeShape";
 
 const MainPage = () => (
   <div>
+    <PcodeShape width="20%" color="#F73859" />
+    <PcodeShape width="10%" color="#263958" />
+    <PcodeShape width="50%" color="#7AC7C4" />
+    <PcodeShape width="100%" color="#F73859" />
     <div className="hero">
       <h1 className="title">Welcome to Next.js!</h1>
       <p className="description">
