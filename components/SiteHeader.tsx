@@ -30,16 +30,24 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({ headline }) => {
             right: "1em"
           }}
         >
-          <div className="burger-bar"></div>
-          <div className="burger-bar"></div>
-          <div className="burger-bar"></div>
+          <div className="burger-bar-1"></div>
+          <div className="burger-bar-2"></div>
 
           <style jsx>{`
-            .burger-bar {
+            .burger-bar-1 {
               width: 2em;
-              height: 1px;
+              height: 0.1em;
+              background-color: black;
+              margin: 0.6em 0 0.23em 0;
+              border-radius: 0.05em;
+            }
+
+            .burger-bar-2 {
+              width: 2em;
+              height: 0.1em;
               background-color: black;
               margin: 0.23em 0;
+              border-radius: 0.05em;
             }
           `}</style>
         </div>
