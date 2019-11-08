@@ -2,6 +2,7 @@ import * as React from "react";
 import { Flex, Button, Box } from "rebass";
 import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
+import { ActionButton } from "../components/ActionButton";
 
 const WhatWeDoPage = () => (
   <div>
@@ -24,6 +25,13 @@ const WhatWeDoPage = () => (
       <br />
       <Button mr={2}>Primary</Button>
     </ThemeProvider>
+
+    <hr></hr>
+
+    <ActionButton thisColor="darkBlue" label="Ex 01"></ActionButton>
+    <ActionButton thisColor="lightBlue" label="Ex 02"></ActionButton>
+    <ActionButton thisColor="red" label="Ex 03"></ActionButton>
+    <ActionButton thisColor="other" label="Ex 04"></ActionButton>
 
     <div className="test">WORKING</div>
 
