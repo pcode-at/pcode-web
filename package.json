@@ -9,13 +9,15 @@
     "export": "yarn run build && next export"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.22",
     "@mdx-js/loader": "^1.5.1",
+    "@mdx-js/react": "^1.5.1",
     "@next/mdx": "^9.1.1",
-    "emotion-theming": "^10.0.19",
     "next": "9.1.1",
     "react": "16.11.0",
     "react-dom": "16.11.0",
-    "rebass": "^4.0.6"
+    "rebass": "^4.0.6",
+    "theme-ui": "^0.2.46"
   },
   "devDependencies": {
     "@types/node": "^12.11.6",
