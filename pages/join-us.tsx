@@ -2,9 +2,6 @@ import * as React from "react";
 import { Flex, Button, Box } from "rebass";
 import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
-import { CONSTANTS } from "../constants";
-
-const { colors } = CONSTANTS;
 
 const JoinUsPage = () => (
   <div>
@@ -33,7 +30,7 @@ const JoinUsPage = () => (
     <style jsx>{`
       .test {
         color: white;
-        background-color: ${colors.red};
+        background-color: ${theme.colors.primary};
       }
     `}</style>
   </div>
