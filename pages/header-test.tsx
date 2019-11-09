@@ -3,10 +3,11 @@ import { Flex, Button, Box } from "rebass";
 import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
 import { SiteHeader } from "../components/SiteHeader";
+import { Color } from "../Color.enum";
 
 const HeaderTestPage = () => (
   <div>
-    <SiteHeader headline="P-Code"></SiteHeader>
+    <SiteHeader headline="P-Code" thisColor={Color.Primary}></SiteHeader>
 
     <div
       className="test"

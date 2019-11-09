@@ -1,14 +1,17 @@
 import React from "react";
 import Headroom from "react-headroom";
-import { borderRadius, marginRight } from "styled-system";
-import { Color } from "../Color.enum";
 import { theme } from "../theme";
+import { Color } from "../Color.enum";
 
 type TSiteHeaderProps = {
   headline: string;
+  thisColor: Color;
 };
 
-export const SiteHeader: React.FC<TSiteHeaderProps> = ({ headline }) => {
+export const SiteHeader: React.FC<TSiteHeaderProps> = ({
+  headline,
+  thisColor
+}) => {
   // write some code
 
   return (
@@ -19,7 +22,7 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({ headline }) => {
           paddingLeft: "1em",
           paddingRight: "1em",
           height: "50px",
-          backgroundColor: theme.colors.primary,
+          backgroundColor: theme.colors[thisColor],
           color: "black"
         }}
       >
