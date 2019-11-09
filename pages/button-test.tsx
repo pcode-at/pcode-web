@@ -15,13 +15,18 @@ const ButtonTestPage = () => (
     <ActionButton
       thisColor={Color.Primary}
       label="Primary"
-      clickFunction={function01}
+      onClick={function01}
     ></ActionButton>
 
     <ActionButton
       thisColor={Color.Secondary}
       label="Secondary"
-      clickFunction={function02}
+      onClick={function02}
+    ></ActionButton>
+
+    <ActionButton
+      thisColor={Color.Secondary2}
+      label="Secondary 2"
     ></ActionButton>
 
     <style jsx>{`
