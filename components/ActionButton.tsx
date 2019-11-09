@@ -1,9 +1,11 @@
 import React from "react";
 import { Button } from "rebass";
+
 import { theme } from "../theme";
+import { Color } from "../Color.enum";
 
 type TActionButtonProps = {
-  thisColor: string;
+  thisColor: Color;
   label: string;
   clickFunction: () => void;
 };
@@ -13,21 +15,12 @@ export const ActionButton: React.FC<TActionButtonProps> = ({
   label,
   clickFunction
 }) => {
-  var finalColor = "orange";
-  var colorTest = thisColor.toLowerCase();
-
-  if (colorTest == "primary") {
-    finalColor = theme.colors.primary;
-  }
-
-  if (colorTest == "secondary") {
-    finalColor = theme.colors.secondary;
-  }
+  console.log(thisColor);
 
   return (
     <span>
       <Button
-        backgroundColor={finalColor}
+        backgroundColor={theme.colors[thisColor]}
         onClick={clickFunction}
         style={{
           borderRadius: "15px",

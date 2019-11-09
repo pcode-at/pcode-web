@@ -2,15 +2,8 @@ import * as React from "react";
 import { Flex, Button, Box } from "rebass";
 import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
-import { ActionButton } from "../components/ActionButton";
-
-const function01 = () => alert("hello 1");
 
 const function02 = () => alert("hello 2");
-
-const function03 = () => alert("hello 3");
-
-const function04 = () => alert("hello 4");
 
 const WhatWeDoPage = () => (
   <div>
@@ -33,19 +26,6 @@ const WhatWeDoPage = () => (
       <br />
       <Button mr={2}>Primary</Button>
     </ThemeProvider>
-
-    <hr></hr>
-
-    <ActionButton
-      thisColor="primary"
-      label="Primary"
-      clickFunction={function01}
-    ></ActionButton>
-    <ActionButton
-      thisColor="secondary"
-      label="Secondary"
-      clickFunction={function02}
-    ></ActionButton>
 
     <div className="test">WORKING</div>
 
