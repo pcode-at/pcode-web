@@ -24,6 +24,7 @@
     "@types/node": "^12.11.6",
     "@types/react": "^16.9.9",
     "@types/rebass": "^4.0.3",
+    "@types/theme-ui": "^0.2.4",
     "image-trace-loader": "^0.1.0",
     "imagemin-gifsicle": "^6.0.1",
     "imagemin-mozjpeg": "^8.0.0",
