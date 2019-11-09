@@ -1,53 +1,56 @@
 import React from "react";
 import Headroom from "react-headroom";
+import { Flex, Box } from "rebass";
 import NavbarSvg from "../assets/burger.svg?sprite";
+import LogoSvg from "../assets/logo_claim.svg?sprite";
 
 import { theme } from "../theme";
 import { Color } from "../Color.enum";
 
 type TSiteHeaderProps = {
-  headline: string;
   thisColor: Color;
 };
 
-export const SiteHeader: React.FC<TSiteHeaderProps> = ({
-  headline,
-  thisColor
-}) => {
-  // write some code
-
+export const SiteHeader: React.FC<TSiteHeaderProps> = ({ thisColor }) => {
   return (
     <Headroom>
-      <div
+      <Flex
         style={{
-          margin: 0,
-          paddingLeft: "1em",
-          paddingRight: "1em",
-          height: "50px",
-          backgroundColor: theme.colors[thisColor],
-          color: "black"
+          borderBottom: "1px solid gray",
+          justifyContent: "space-between"
         }}
       >
-        <div
-          style={{
-            right: "0px",
-            paddingRight: "1em",
-            position: "absolute",
-            paddingTop: "1em"
-          }}
-        >
+        <Box p={2} width={11 / 12} color="white" bg={theme.colors[thisColor]}>
           <React.Fragment>
-            <NavbarSvg
+            <LogoSvg
               style={{
-                color: theme.colors.secondary2,
-                width: "50px"
+                height: "40px"
               }}
-            ></NavbarSvg>
+            ></LogoSvg>
           </React.Fragment>
-        </div>
+        </Box>
 
-        <h1 style={{ marginTop: "0px", lineHeight: "50px" }}>{headline}</h1>
-      </div>
+        <Box p={2} width={1 / 12} color="white" bg={theme.colors[thisColor]}>
+          <Flex
+            height={44}
+            style={{
+              justifyContent: "flex-end",
+              alignItems: "flex-end"
+            }}
+          >
+            <Box bg={theme.colors[thisColor]}>
+              <React.Fragment>
+                <NavbarSvg
+                  style={{
+                    color: theme.colors.secondary2,
+                    width: "30px"
+                  }}
+                ></NavbarSvg>
+              </React.Fragment>
+            </Box>
+          </Flex>
+        </Box>
+      </Flex>
     </Headroom>
   );
 };
