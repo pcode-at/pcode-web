@@ -14,11 +14,13 @@
     "@mdx-js/react": "^1.5.1",
     "@next/mdx": "^9.1.1",
     "@theme-ui/typography": "^0.2.46",
+    "gray-percentage": "^2.0.0",
     "next": "9.1.1",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "rebass": "^4.0.6",
-    "theme-ui": "^0.2.46"
+    "theme-ui": "^0.2.46",
+    "typography-theme-us-web-design-standards": "^0.16.19"
   },
   "devDependencies": {
     "@types/node": "^12.11.6",
