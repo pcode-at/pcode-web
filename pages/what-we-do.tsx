@@ -37,24 +37,14 @@ const WhatWeDoPage = () => (
     <hr></hr>
 
     <ActionButton
-      thisColor="darkBlue"
-      label="Ex 01"
+      thisColor="primary"
+      label="Primary"
       clickFunction={function01}
     ></ActionButton>
     <ActionButton
-      thisColor="lightBlue"
-      label="Ex 02"
+      thisColor="secondary"
+      label="Secondary"
       clickFunction={function02}
-    ></ActionButton>
-    <ActionButton
-      thisColor="red"
-      label="Ex 03"
-      clickFunction={function03}
-    ></ActionButton>
-    <ActionButton
-      thisColor="other"
-      label="Ex 04"
-      clickFunction={function04}
     ></ActionButton>
 
     <div className="test">WORKING</div>

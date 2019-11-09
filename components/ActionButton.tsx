@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "rebass";
-import { CONSTANTS } from "../constants";
-import { border, marginRight } from "styled-system";
+import { theme } from "../theme";
 
 type TActionButtonProps = {
   thisColor: string;
@@ -17,22 +16,17 @@ export const ActionButton: React.FC<TActionButtonProps> = ({
   var finalColor = "orange";
   var colorTest = thisColor.toLowerCase();
 
-  if (colorTest == "red") {
-    finalColor = CONSTANTS.colors.red;
+  if (colorTest == "primary") {
+    finalColor = theme.colors.primary;
   }
 
-  if (colorTest == "lightblue") {
-    finalColor = CONSTANTS.colors.lightBlue;
-  }
-
-  if (colorTest == "darkblue") {
-    finalColor = CONSTANTS.colors.darkBlue;
+  if (colorTest == "secondary") {
+    finalColor = theme.colors.secondary;
   }
 
   return (
     <span>
       <Button
-        className="buttonSetup"
         backgroundColor={finalColor}
         onClick={clickFunction}
         style={{
@@ -43,12 +37,6 @@ export const ActionButton: React.FC<TActionButtonProps> = ({
       >
         {label}
       </Button>
-
-      <style jsx>{`
-        .buttonSetup {
-          border: 5px solid green;
-        }
-      `}</style>
     </span>
   );
 };
