@@ -30,26 +30,22 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({ thisColor }) => {
           </React.Fragment>
         </Box>
 
-        <Box p={2} width={1 / 12} color="white" bg={theme.colors[thisColor]}>
-          <Flex
-            height={44}
-            style={{
-              justifyContent: "flex-end",
-              alignItems: "flex-end"
-            }}
-          >
-            <Box bg={theme.colors[thisColor]}>
-              <React.Fragment>
-                <NavbarSvg
-                  style={{
-                    color: theme.colors.secondary2,
-                    width: "30px"
-                  }}
-                ></NavbarSvg>
-              </React.Fragment>
-            </Box>
-          </Flex>
-        </Box>
+        <Flex
+          p={2}
+          width={1 / 12}
+          color="white"
+          bg={theme.colors[thisColor]}
+          style={{ justifyContent: "flex-end", alignItems: "flex-end" }}
+        >
+          <React.Fragment>
+            <NavbarSvg
+              style={{
+                color: theme.colors.secondary2,
+                width: "30px"
+              }}
+            ></NavbarSvg>
+          </React.Fragment>
+        </Flex>
       </Flex>
     </Headroom>
   );
