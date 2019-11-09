@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Flex, Button, Box } from "rebass";
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "theme-ui";
 import { theme } from "../theme";
 
 const JoinUsPage = () => (

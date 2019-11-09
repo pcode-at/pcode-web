@@ -3,8 +3,9 @@ import Head from "next/head";
 import Nav from "../components/Nav";
 import { Flex, Button, Box } from "rebass";
 import { theme } from "../theme";
-import { ThemeProvider } from "emotion-theming";
+import { ThemeProvider } from "theme-ui";
 import { css } from "@styled-system/css";
+import { Color } from "../Color.enum";
 
 const MainPage = () => (
   <div>
@@ -47,7 +48,7 @@ const MainPage = () => (
         <Box p={3} width={1 / 3} color="white" bg="secondary">
           Box
         </Box>
-        <Box p={3} width={1 / 3} color="white" bg="green">
+        <Box p={3} width={1 / 3} color="white" bg={Color.Secondary2}>
           Box
         </Box>
       </Flex>
