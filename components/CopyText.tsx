@@ -14,6 +14,6 @@ export const CopyText:
     // write some code
 
     return (
-        <Text color={color}>{children}</Text>
+        <Text color={color} fontFamily={"raleway"} fontWeight={300}>{children}</Text>
     );
 };
