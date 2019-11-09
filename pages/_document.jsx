@@ -16,6 +16,10 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Raleway:300,500&display=swap"
+          />
+          <link
+            rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
           />
         </Head>
