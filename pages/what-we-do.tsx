@@ -33,7 +33,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
@@ -43,7 +43,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
@@ -53,7 +53,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
@@ -63,7 +63,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
@@ -73,7 +73,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
@@ -83,7 +83,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
@@ -93,7 +93,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
@@ -103,7 +103,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
@@ -113,7 +113,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
@@ -123,7 +123,7 @@ const WhatWeDoPage = () => (
       style={{
         border: "1px solid red",
         height: "100px",
-        marginBottom: "10px;"
+        marginBottom: "10px"
       }}
     >
       WORKING
