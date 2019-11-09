@@ -1,9 +1,11 @@
+import { Color } from "./Color.enum";
+
 export const theme = {
   colors: {
-    text: "#000",
-    background: "#fff",
-    primary: "#07c",
-    secondary: "red"
+    [Color.Primary]: "#F73859",
+    [Color.Secondary]: "#263958",
+    [Color.Secondary2]: "#7AC7C4",
+    [Color.White]: "#fff"
   },
   radii: {
     default: 4
