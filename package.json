@@ -13,6 +13,7 @@
     "@mdx-js/loader": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "@next/mdx": "^9.1.1",
+    "@theme-ui/typography": "^0.2.46",
     "next": "9.1.1",
     "react": "16.11.0",
     "react-dom": "16.11.0",
