@@ -3,21 +3,25 @@ import React from "react";
 import PcodeShapeSvg from "../assets/pcode_shape.svg?sprite";
 import { Color } from "../Color.enum";
 import { theme } from "../theme";
-import { Monster } from "./Monster";
 import { CopyText } from "./CopyText";
 import { PositionLevel } from "../shared/PositionLevel.enum";
 import { ActionButton } from "./ActionButton";
 import { SubHeadline } from "./SubHeadline";
+import { MonsterType } from "../shared/MonsterType.enum";
+import { CONSTANTS } from "../shared/constants";
 
 type TFreeChairProps = {
-  color?: Color;
   position: string;
   positionLevel: PositionLevel;
   positionDescription: string;
+  monsterType?: MonsterType;
+  colorMonster?: Color;
 };
 
+const { openPositionDestinationEmail } = CONSTANTS;
+
 export const FreeChair: React.FC<TFreeChairProps> = ({
-  color = Color.Primary,
+  colorMonster: color = Color.Primary,
   position,
   positionLevel,
   positionDescription
@@ -45,7 +49,11 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
           <CopyText color={Color.Secondary2}>{positionDescription}</CopyText>
         </div>
 
-        <ActionButton thisColor={Color.Secondary2} label="apply" />
+        <a
+          href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
+        >
+          <ActionButton thisColor={Color.Secondary2} label="apply" />
+        </a>
       </div>
 
       <style jsx>{`

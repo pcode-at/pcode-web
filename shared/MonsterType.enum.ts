@@ -1,4 +1,4 @@
-export enum MonsterSvgPath {
+export enum MonsterType {
   GameChanger = "game-changer",
   StrategicWizard = "strategic-wizard",
   SupportiveChallenger = "supportive-challenger",

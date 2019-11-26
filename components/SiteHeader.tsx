@@ -16,18 +16,14 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({ thisColor }) => {
     <Headroom>
       <Flex
         style={{
+          backgroundColor: "white",
           borderBottom: "1px solid rgba(0,0,0,0.1)",
           justifyContent: "space-between",
           alignItems: "flex-end",
           padding: "0.5em"
         }}
       >
-        <Box
-          sx={{ padding: "0.5em 0 0 1.3em" }}
-          width={11 / 12}
-          color="white"
-          bg={theme.colors[thisColor]}
-        >
+        <Box sx={{ padding: "0.5em 0 0 1.3em" }} width={11 / 12}>
           <LogoSvg
             style={{
               height: "40px"

@@ -1,6 +1,6 @@
 import React from "react";
 import { Color } from "../Color.enum";
-import { Text } from "rebass";
+import { Text, Heading } from "rebass";
 
 type TSectionHeadlineProps = {
   color: Color;
@@ -18,20 +18,28 @@ export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
   const defaultProps = {
     color,
     fontFamily: "raleway",
-    display: "inline",
-    fontSize: "1.4rem"
+    display: "inline"
+    // fontSize: "1.4rem"
   };
 
   return (
+    // TODO: heading with spans
     <React.Fragment>
-      <Text {...defaultProps} fontWeight={500}>
-        {headlinePartOne}
-      </Text>
-      &nbsp;
-      {separateWithBreak && <br />}
-      <Text {...defaultProps} fontWeight={300}>
-        {headlinePartTwo}
-      </Text>
+      <Heading fontFamily="raleway" color={Color.Secondary}>
+        <span className="headline-part-one">{headlinePartOne}</span>
+        &nbsp;
+        {separateWithBreak && <br />}
+        <span className="headline-part-two">{headlinePartTwo}</span>
+      </Heading>
+
+      <style jsx>{`
+        .headline-part-one {
+          font-weight: 500;
+        }
+        .headline-part-two {
+          font-weight: 300;
+        }
+      `}</style>
     </React.Fragment>
   );
 };

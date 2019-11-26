@@ -7,29 +7,29 @@ import EarBearSvg from "../assets/ear_bear.svg?sprite";
 import TentacleEyeSvg from "../assets/tentacle_eye.svg?sprite";
 
 import { Color } from "../Color.enum";
-import { MonsterSvgPath } from "../shared/MonsterType.enum";
+import { MonsterType } from "../shared/MonsterType.enum";
 
 type TMonsterProps = {
-  type: MonsterSvgPath;
+  type: MonsterType;
   color: Color;
   width: string;
 };
 
 export const Monster: React.FC<TMonsterProps> = ({ type, color, width }) => {
   switch (type) {
-    case MonsterSvgPath.GameChanger: {
+    case MonsterType.GameChanger: {
       return <GameChangerSvg />;
     }
-    case MonsterSvgPath.StrategicWizard: {
+    case MonsterType.StrategicWizard: {
       return <StrategicWizardSvg />;
     }
-    case MonsterSvgPath.SupportiveChallenger: {
+    case MonsterType.SupportiveChallenger: {
       return <SupportiveChallengerSvg />;
     }
-    case MonsterSvgPath.EarBear: {
+    case MonsterType.EarBear: {
       return <EarBearSvg />;
     }
-    case MonsterSvgPath.TentacleEye: {
+    case MonsterType.TentacleEye: {
       return <TentacleEyeSvg />;
     }
     default: {
