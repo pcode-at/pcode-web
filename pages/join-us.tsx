@@ -13,7 +13,7 @@ import { PcodeShape } from "../components/PcodeShape";
 import { ActionButton } from "../components/ActionButton";
 
 const freeChairWrapperProps = {
-  p: 3
+  p: 4
 };
 
 const JoinUsPage = () => (
@@ -23,9 +23,13 @@ const JoinUsPage = () => (
 
       <Flex
         sx={{
+          position: "relative",
           backgroundColor: Color.Secondary2,
-          padding: "2em 0 2em 2em",
-          justifyContent: "space-between"
+          padding: "3.5rem 2rem 3.5rem 2rem",
+          justifyContent: "space-between",
+          "@media screen and (min-width: 670px)": {
+            display: "block"
+          }
         }}
       >
         <Box>
@@ -43,12 +47,7 @@ const JoinUsPage = () => (
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
               erat, sed diam voluptua. At vero eos et accusam et justo duo
               dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
+              sanctus est Lorem ipsum dolor sit amet.
             </CopyText>
 
             <br />
@@ -61,8 +60,9 @@ const JoinUsPage = () => (
         </Box>
         <Box
           sx={{
-            marginRight: "-70px",
-            marginBottom: "-200px",
+            position: "absolute",
+            right: -80,
+            bottom: -80,
             display: "none",
             "@media screen and (min-width: 670px)": {
               display: "block"
@@ -73,7 +73,7 @@ const JoinUsPage = () => (
         </Box>
       </Flex>
 
-      <Box sx={{ textAlign: "center", margin: "3em 0 2em 0" }}>
+      <Box sx={{ textAlign: "center", margin: "5rem 0 2rem 0" }}>
         <SectionHeadline
           color={Color.Secondary2}
           headlinePartOne="our free"
@@ -81,7 +81,7 @@ const JoinUsPage = () => (
         />
       </Box>
 
-      <Flex justifyContent="center" marginBottom="2em">
+      <Flex justifyContent="center" marginBottom="2rem">
         <Flex
           flexWrap="wrap"
           sx={{
