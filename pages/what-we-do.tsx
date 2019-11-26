@@ -24,16 +24,8 @@ const WhatWeDoPage = () => (
         </Box>
       </Flex>
       <br />
-      <Button mr={2}>Primary</Button>
+      <Button mr={1}>Primary</Button>
     </ThemeProvider>
-
-    <div className="test">WORKING</div>
-
-    <style jsx>{`
-      .test {
-        color: green;
-      }
-    `}</style>
   </div>
 );
 
