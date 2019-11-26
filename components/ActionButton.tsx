@@ -8,21 +8,23 @@ import { CopyText } from "./CopyText";
 type TActionButtonProps = {
   thisColor: Color;
   label: string;
+  padding?: string;
   onClick?(): void;
 };
 
 export const ActionButton: React.FC<TActionButtonProps> = ({
   thisColor,
   label,
-  onClick
+  onClick,
+  padding = "0.2rem 2.8rem"
 }) => {
   return (
     <Button
       backgroundColor={theme.colors[thisColor]}
       onClick={onClick}
       style={{
+        padding,
         borderRadius: "15px",
-        padding: "0.2rem 2.8rem",
         cursor: "pointer"
       }}
     >
