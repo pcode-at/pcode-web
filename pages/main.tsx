@@ -1,115 +1,46 @@
 import * as React from "react";
-import Head from "next/head";
-import Nav from "../components/Nav";
-import { Flex, Button, Box } from "rebass";
+import { Flex, Box } from "rebass";
 import { theme } from "../theme";
 import { ThemeProvider } from "emotion-theming";
-import { css } from "@styled-system/css";
 import { PcodeShape } from "../components/PcodeShape";
+import { SiteHeader } from "../components/SiteHeader";
+import { Color } from "../Color.enum";
+import { Footer } from "../components/Footer";
+import { Swiper } from "../components/Swiper";
 
 const MainPage = () => (
-  <div>
-    <div className="hero">
-      <h1 className="title">Welcome to Next.js!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload
-      </p>
-
-      <div className="row">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
-      </div>
-    </div>
-
-    <div>works</div>
-
+  <React.Fragment>
     <ThemeProvider theme={theme}>
-      <Box p={5} fontSize={4} width={[1, 1, 1 / 2]} color="white" bg="blue">
-        Box
+      {/* TODO: test if this is working in safari */}
+      <Box overflowX="hidden">
+        <SiteHeader thisColor={Color.White} />
+        <Flex
+          justifyContent="space-between"
+          sx={{ padding: "1.5em 1em", alignItems: "center" }}
+        >
+          <Swiper
+            textPartOne="we transform complexity"
+            textPartTwo="to simplicity by delivering exceptional solutions."
+          />
+
+          <Box
+            sx={{
+              display: "none",
+              position: "relative",
+              "@media screen and (min-width: 615px)": {
+                display: "block"
+              }
+            }}
+          >
+            <Box sx={{ marginRight: "-150px", overflow: "hidden" }}>
+              <PcodeShape color={Color.Secondary} width="400px" />
+            </Box>
+          </Box>
+        </Flex>
+        <Footer />
       </Box>
-      <br />
-      <Flex>
-        <Box p={3} width={1 / 3} color="white" bg="primary">
-          Flex
-        </Box>
-        <Box p={3} width={1 / 3} color="white" bg="secondary">
-          Box
-        </Box>
-        <Box p={3} width={1 / 3} color="white" bg="green">
-          Box
-        </Box>
-      </Flex>
-      <br />
-      <Button mr={2}>Primary</Button>
-      {/* # Hello, *world*! Below is an example of JSX embedded in Markdown. <br />{" "}
-      **Try and change the background color!**
-      <div style={{ padding: "20px", backgroundColor: "tomato" }}>
-        <h3>This is JSX</h3>
-      </div> */}
     </ThemeProvider>
-
-    <div className="geht">SUPA GEHT</div>
-
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-  </div>
+  </React.Fragment>
 );
 
 export default MainPage;
