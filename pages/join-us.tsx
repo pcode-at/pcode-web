@@ -30,11 +30,7 @@ const JoinUsPage = () => (
         <Flex
           flexWrap="wrap"
           sx={{
-            justifyContent: "center",
-            "@media screen and (min-width: 697px)": {
-              justifyContent: "space-between",
-              maxWidth: "600px"
-            }
+            justifyContent: "center"
           }}
         >
           <Box {...freeChairWrapperProps}>
