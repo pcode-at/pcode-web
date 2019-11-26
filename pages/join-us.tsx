@@ -1,31 +1,17 @@
 import * as React from "react";
-import { Flex, Button, Box } from "rebass";
 import { ThemeProvider } from "emotion-theming";
 import { theme } from "../theme";
+import { SiteHeader } from "../components/SiteHeader";
+import { Color } from "../Color.enum";
+import { Footer } from "../components/Footer";
 
 const JoinUsPage = () => (
-  <div>
+  <React.Fragment>
     <ThemeProvider theme={theme}>
-      <Box p={5} fontSize={4} width={[1, 1, 1 / 2]} color="white" bg="blue">
-        Box
-      </Box>
-      <br />
-      <Flex>
-        <Box p={3} width={1 / 3} color="white" bg="primary">
-          Flex
-        </Box>
-        <Box p={3} width={1 / 3} color="white" bg="secondary">
-          Box
-        </Box>
-        <Box p={3} width={1 / 3} color="white" bg="green">
-          Box
-        </Box>
-      </Flex>
-      <br />
-      <Button mr={2}>Primary</Button>
-    </ThemeProvider>
+      <SiteHeader thisColor={Color.White} />
 
-    <div className="test">WORKING</div>
+      <Footer />
+    </ThemeProvider>
 
     <style jsx>{`
       .test {
@@ -33,7 +19,7 @@ const JoinUsPage = () => (
         background-color: ${theme.colors.primary};
       }
     `}</style>
-  </div>
+  </React.Fragment>
 );
 
 export default JoinUsPage;
