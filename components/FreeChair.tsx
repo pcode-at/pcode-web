@@ -8,16 +8,18 @@ import { CopyText } from "./CopyText";
 import { PositionLevel } from "../shared/PositionLevel.enum";
 import { ActionButton } from "./ActionButton";
 import { SubHeadline } from "./SubHeadline";
+import { MonsterType } from "../shared/MonsterType.enum";
 
 type TFreeChairProps = {
-  color?: Color;
   position: string;
   positionLevel: PositionLevel;
   positionDescription: string;
+  monsterType?: MonsterType;
+  colorMonster?: Color;
 };
 
 export const FreeChair: React.FC<TFreeChairProps> = ({
-  color = Color.Primary,
+  colorMonster: color = Color.Primary,
   position,
   positionLevel,
   positionDescription
