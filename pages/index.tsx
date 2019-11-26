@@ -9,6 +9,7 @@ import { CopyText } from "../components/CopyText";
 import { SectionHeadline } from "../components/SectionHeadline";
 import { FreeChair } from "../components/FreeChair";
 import { PositionLevel } from "../shared/PositionLevel.enum";
+import { Swiper } from "../components/Swiper";
 
 const MainPage = () => (
   <ThemeProvider theme={theme}>
@@ -40,6 +41,10 @@ const MainPage = () => (
       position="frontend developer"
       positionLevel={PositionLevel.Junior}
       positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
+    />
+    <Swiper
+      textPartOne="we transform complexity"
+      textPartTwo="to simplicity by delivering exceptional solutions."
     />
   </ThemeProvider>
 );
