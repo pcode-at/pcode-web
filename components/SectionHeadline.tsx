@@ -6,12 +6,14 @@ type TSectionHeadlineProps = {
   color: Color;
   headlinePartOne: string;
   headlinePartTwo: string;
+  separateWithBreak?: boolean;
 };
 
 export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
   headlinePartOne,
   headlinePartTwo,
-  color
+  color,
+  separateWithBreak = false
 }) => {
   const defaultProps = {
     color,
@@ -26,6 +28,7 @@ export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
         {headlinePartOne}
       </Text>
       &nbsp;
+      {separateWithBreak && <br />}
       <Text {...defaultProps} fontWeight={300}>
         {headlinePartTwo}
       </Text>
