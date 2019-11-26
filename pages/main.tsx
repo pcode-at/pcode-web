@@ -7,6 +7,7 @@ import { SiteHeader } from "../components/SiteHeader";
 import { Color } from "../Color.enum";
 import { Footer } from "../components/Footer";
 import { Swiper } from "../components/Swiper";
+import Router from "next/router";
 
 const MainPage = () => (
   <React.Fragment>
@@ -21,6 +22,7 @@ const MainPage = () => (
           <Swiper
             textPartOne="we transform complexity"
             textPartTwo="to simplicity by delivering exceptional solutions."
+            onClick={() => Router.push("/join-us")}
           />
 
           <Box

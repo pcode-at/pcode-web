@@ -8,12 +8,14 @@ type TSwiperProps = {
   color?: Color;
   textPartOne: string;
   textPartTwo: string;
+  onClick(): void;
 };
 
 export const Swiper: React.FC<TSwiperProps> = ({
   textPartOne,
   textPartTwo,
-  color = Color.Secondary
+  color = Color.Secondary,
+  onClick
 }) => {
   return (
     <React.Fragment>
@@ -30,6 +32,7 @@ export const Swiper: React.FC<TSwiperProps> = ({
           thisColor={Color.Secondary2}
           padding="0.2rem 1.7rem"
           label="learn more"
+          onClick={onClick}
         />
       </div>
 
