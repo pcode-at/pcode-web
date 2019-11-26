@@ -16,35 +16,38 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({ thisColor }) => {
     <Headroom>
       <Flex
         style={{
-          borderBottom: "1px solid gray",
-          justifyContent: "space-between"
+          borderBottom: "1px solid rgba(0,0,0,0.1)",
+          justifyContent: "space-between",
+          alignItems: "flex-end",
+          padding: "0.5em"
         }}
       >
-        <Box p={2} width={11 / 12} color="white" bg={theme.colors[thisColor]}>
-          <React.Fragment>
-            <LogoSvg
-              style={{
-                height: "40px"
-              }}
-            ></LogoSvg>
-          </React.Fragment>
+        <Box
+          sx={{ padding: "0.5em 0 0 1.3em" }}
+          width={11 / 12}
+          color="white"
+          bg={theme.colors[thisColor]}
+        >
+          <LogoSvg
+            style={{
+              height: "40px"
+            }}
+          ></LogoSvg>
         </Box>
 
         <Flex
-          p={2}
+          sx={{ marginRight: "1.5em", marginBottom: "0.7em" }}
           width={1 / 12}
           color="white"
           bg={theme.colors[thisColor]}
           style={{ justifyContent: "flex-end", alignItems: "flex-end" }}
         >
-          <React.Fragment>
-            <NavbarSvg
-              style={{
-                color: theme.colors.secondary2,
-                width: "30px"
-              }}
-            ></NavbarSvg>
-          </React.Fragment>
+          <NavbarSvg
+            style={{
+              color: theme.colors.secondary2,
+              width: "30px"
+            }}
+          ></NavbarSvg>
         </Flex>
       </Flex>
     </Headroom>
