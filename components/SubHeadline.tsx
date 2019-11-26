@@ -2,15 +2,18 @@ import React from "react";
 import { Color } from "../Color.enum";
 import { Text } from "rebass";
 
-type TCopyTextProps = {
+type TSubHeadlineProps = {
   color: Color;
 };
 
-export const CopyText: React.FC<TCopyTextProps> = ({ children, color }) => {
+export const SubHeadline: React.FC<TSubHeadlineProps> = ({
+  children,
+  color
+}) => {
   // write some code
 
   return (
-    <Text color={color} fontFamily="raleway" fontWeight={300}>
+    <Text color={color} fontFamily="raleway" fontWeight={500}>
       {children}
     </Text>
   );

@@ -7,6 +7,8 @@ import { PcodeShape } from "../components/PcodeShape";
 import { Color } from "../Color.enum";
 import { CopyText } from "../components/CopyText";
 import { SectionHeadline } from "../components/SectionHeadline";
+import { FreeChair } from "../components/FreeChair";
+import { PositionLevel } from "../shared/PositionLevel.enum";
 
 const MainPage = () => (
   <ThemeProvider theme={theme}>
@@ -33,6 +35,11 @@ const MainPage = () => (
       color={Color.Secondary2}
       headlinePartOne="our free"
       headlinePartTwo="chairs, waiting for you!"
+    />
+    <FreeChair
+      position="frontend developer"
+      positionLevel={PositionLevel.Junior}
+      positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
     />
   </ThemeProvider>
 );
