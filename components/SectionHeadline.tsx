@@ -29,11 +29,6 @@ export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
       <Text {...defaultProps} fontWeight={300}>
         {headlinePartTwo}
       </Text>
-      <style jsx>{`
-        .supa {
-          color: red;
-        }
-      `}</style>
     </React.Fragment>
   );
 };
