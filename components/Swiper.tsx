@@ -3,8 +3,6 @@ import React from "react";
 import { Color } from "../Color.enum";
 import { ActionButton } from "./ActionButton";
 import { SectionHeadline } from "./SectionHeadline";
-import { PcodeShape } from "./PcodeShape";
-import { Flex } from "rebass";
 
 type TSwiperProps = {
   color?: Color;
@@ -19,29 +17,26 @@ export const Swiper: React.FC<TSwiperProps> = ({
 }) => {
   return (
     <React.Fragment>
-      <Flex alignItems="center" justifyContent="space-between" padding="0 2rem">
-        <div className="text-button-wrapper">
-          <div className="text-wrapper">
-            <SectionHeadline
-              color={color}
-              headlinePartOne={textPartOne}
-              headlinePartTwo={textPartTwo}
-              separateWithBreak={true}
-            />
-          </div>
-          <ActionButton
-            thisColor={Color.Secondary2}
-            padding="0.2rem 1.7rem"
-            label="learn more"
+      <div className="text-button-wrapper">
+        <div className="text-wrapper">
+          <SectionHeadline
+            color={color}
+            headlinePartOne={textPartOne}
+            headlinePartTwo={textPartTwo}
+            separateWithBreak={true}
           />
         </div>
-
-        <PcodeShape width="150" />
-      </Flex>
+        <ActionButton
+          thisColor={Color.Secondary2}
+          padding="0.2rem 1.7rem"
+          label="learn more"
+        />
+      </div>
 
       <style jsx>{`
         .text-button-wrapper {
           width: 300px;
+          padding: 0 2rem;
         }
         .text-wrapper {
           margin-bottom: 0.7rem;
