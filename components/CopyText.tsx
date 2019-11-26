@@ -1,19 +1,17 @@
 import React from "react";
-import {Color} from "../Color.enum";
-import {Text} from "rebass";
+import { Color } from "../Color.enum";
+import { Text } from "rebass";
 
 type TCopyTextProps = {
-    color: Color;
+  color: Color;
 };
 
-export const CopyText:
-    React.FC<TCopyTextProps> = ({
-        children,
-        color
-    }) => {
-    // write some code
+export const CopyText: React.FC<TCopyTextProps> = ({ children, color }) => {
+  // write some code
 
-    return (
-        <Text color={color} fontFamily={"raleway"} fontWeight={300}>{children}</Text>
-    );
+  return (
+    <Text color={color} fontFamily="raleway" fontWeight={300}>
+      {children}
+    </Text>
+  );
 };
