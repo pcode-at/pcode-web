@@ -22,7 +22,7 @@ export const ActionButton: React.FC<TActionButtonProps> = ({
       onClick={onClick}
       style={{
         borderRadius: "15px",
-        padding: "0.2rem 2.5rem",
+        padding: "0.2rem 2.8rem",
         cursor: "pointer"
       }}
     >
