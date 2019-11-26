@@ -10,6 +10,7 @@ import { SectionHeadline } from "../components/SectionHeadline";
 import { FreeChair } from "../components/FreeChair";
 import { PositionLevel } from "../shared/PositionLevel.enum";
 import { Swiper } from "../components/Swiper";
+import { Footer } from "../components/Footer";
 
 const MainPage = () => (
   <ThemeProvider theme={theme}>
@@ -46,6 +47,8 @@ const MainPage = () => (
       textPartOne="we transform complexity"
       textPartTwo="to simplicity by delivering exceptional solutions."
     />
+
+    <Footer />
   </ThemeProvider>
 );
 
