@@ -5,12 +5,14 @@ import { SiteHeader } from "../components/SiteHeader";
 import { Color } from "../Color.enum";
 import { Footer } from "../components/Footer";
 import { SectionHeadline } from "../components/SectionHeadline";
-import { Box, Flex } from "rebass";
+import { Box, Flex, Image } from "rebass";
 import { FreeChair } from "../components/FreeChair";
 import { PositionLevel } from "../shared/PositionLevel.enum";
 import { CopyText } from "../components/CopyText";
 import { PcodeShape } from "../components/PcodeShape";
 import { ActionButton } from "../components/ActionButton";
+// @ts-ignore
+import ImagePcode from "../assets/tlp-pcode-27.jpg";
 
 const freeChairWrapperProps = {
   p: 4
@@ -119,6 +121,37 @@ const JoinUsPage = () => (
             </Box>
           </Flex>
         </Flex>
+
+        <Flex backgroundColor={Color.Secondary}>
+          <Box
+            sx={{
+              position: "relative",
+              paddingBottom: "6.5rem",
+              width: "100%"
+            }}
+          >
+            <Box sx={{ padding: "2rem", maxWidth: "344px" }}>
+              <SectionHeadline
+                headlinePartOne="working at pcode"
+                headlinePartTwo="means you get a bunch of cool stuff and a great team count on!"
+                separateWithBreak={true}
+                color={Color.Secondary2}
+              />
+            </Box>
+            <Box
+              sx={{
+                position: "absolute",
+                top: 175,
+                width: "100%",
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              <PcodeShape width="170px" color={Color.Secondary2} />
+            </Box>
+          </Box>
+        </Flex>
+        <Image src="./static/tlp-pcode-27.jpg" />
         <Footer />
       </Box>
     </ThemeProvider>
