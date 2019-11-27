@@ -37,6 +37,11 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({ thisColor }) => {
           color="white"
           bg={theme.colors[thisColor]}
           style={{ justifyContent: "flex-end", alignItems: "flex-end" }}
+          onClick={() =>
+            alert(
+              "Not implemented yet! You want to do this and you are interested in the JAM Stack? \n\nIf the answer is yes then write us an e-mail to hackathon@pcode.at or speak to us for registering for our Hackathon where we will build our website together. Pizza and nice mood will be sponsored by pcode! \nDate: 21.12.2019"
+            )
+          }
         >
           <NavbarSvg
             style={{
