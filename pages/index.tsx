@@ -46,6 +46,7 @@ const MainPage = () => (
     <Swiper
       textPartOne="we transform complexity"
       textPartTwo="to simplicity by delivering exceptional solutions."
+      onClick={() => {}}
     />
 
     <Footer />
