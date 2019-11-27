@@ -1,9 +1,10 @@
 import * as React from "react";
-import { Heading, Box, Image } from "rebass";
+import { Box, Image } from "rebass";
 import { Color } from "../../../Color.enum";
 import { theme } from "../../../theme";
 import { PcodeShape } from "../../../components/PcodeShape";
 import { ActionButton } from "../../../components/ActionButton";
+import Router from "next/router";
 
 export const CodeStandsForSection: React.FC = () => (
   <React.Fragment>
@@ -37,6 +38,7 @@ export const CodeStandsForSection: React.FC = () => (
           label="Join us"
           padding="0.2rem 2rem"
           noBackground={true}
+          onClick={() => Router.push("/join-us")}
         />
       </Box>
     </Box>
