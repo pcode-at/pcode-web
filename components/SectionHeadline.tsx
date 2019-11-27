@@ -25,7 +25,7 @@ export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
   return (
     // TODO: heading with spans
     <React.Fragment>
-      <Heading fontFamily="raleway" color={Color.Secondary}>
+      <Heading fontFamily="raleway" color={color}>
         <span className="headline-part-one">{headlinePartOne}</span>
         &nbsp;
         {separateWithBreak && <br />}
