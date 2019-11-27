@@ -1,16 +1,19 @@
 import * as React from "react";
 import { ThemeProvider } from "emotion-theming";
-import { theme } from "../theme";
-import { SiteHeader } from "../components/SiteHeader";
-import { Color } from "../Color.enum";
-import { Footer } from "../components/Footer";
-import { SectionHeadline } from "../components/SectionHeadline";
-import { Box, Flex } from "rebass";
-import { FreeChair } from "../components/FreeChair";
-import { PositionLevel } from "../shared/PositionLevel.enum";
-import { CopyText } from "../components/CopyText";
-import { PcodeShape } from "../components/PcodeShape";
-import { ActionButton } from "../components/ActionButton";
+import { theme } from "../../theme";
+import { SiteHeader } from "../../components/SiteHeader";
+import { Color } from "../../Color.enum";
+import { Footer } from "../../components/Footer";
+import { SectionHeadline } from "../../components/SectionHeadline";
+import { Box, Flex, Image } from "rebass";
+import { FreeChair } from "../../components/FreeChair";
+import { PositionLevel } from "../../shared/PositionLevel.enum";
+import { CopyText } from "../../components/CopyText";
+import { PcodeShape } from "../../components/PcodeShape";
+import { ActionButton } from "../../components/ActionButton";
+// @ts-ignore
+import ImagePcode from "../assets/tlp-pcode-27.jpg";
+import { WorkingAtPcodeSection } from "./sections/WorkingAtPcode.section";
 
 const freeChairWrapperProps = {
   p: 4
@@ -119,6 +122,8 @@ const JoinUsPage = () => (
             </Box>
           </Flex>
         </Flex>
+
+        <WorkingAtPcodeSection />
         <Footer />
       </Box>
     </ThemeProvider>
