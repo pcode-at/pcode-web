@@ -6,21 +6,23 @@ import { Color } from "../Color.enum";
 import { CopyText } from "./CopyText";
 
 type TActionButtonProps = {
-  thisColor: Color;
+  thisColor?: Color;
   label: string;
   padding?: string;
+  noBackground?: boolean;
   onClick?(): void;
 };
 
 export const ActionButton: React.FC<TActionButtonProps> = ({
-  thisColor,
+  thisColor = Color.Primary,
   label,
   onClick,
-  padding = "0.2rem 2.8rem"
+  padding = "0.2rem 2.8rem",
+  noBackground = false
 }) => {
   return (
     <Button
-      backgroundColor={theme.colors[thisColor]}
+      backgroundColor={noBackground ? "transparent" : theme.colors[thisColor]}
       onClick={onClick}
       style={{
         padding,
