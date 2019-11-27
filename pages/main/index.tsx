@@ -8,6 +8,7 @@ import { Color } from "../../Color.enum";
 import { Footer } from "../../components/Footer";
 import { Swiper } from "../../components/Swiper";
 import Router from "next/router";
+import { CodeStandsForSection } from "./sections/CodeStandsFor.section";
 
 const MainPage = () => (
   <React.Fragment>
@@ -39,6 +40,7 @@ const MainPage = () => (
             </Box>
           </Box>
         </Flex>
+        <CodeStandsForSection />
         <Footer />
       </Box>
     </ThemeProvider>
