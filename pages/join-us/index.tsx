@@ -1,18 +1,19 @@
 import * as React from "react";
 import { ThemeProvider } from "emotion-theming";
-import { theme } from "../theme";
-import { SiteHeader } from "../components/SiteHeader";
-import { Color } from "../Color.enum";
-import { Footer } from "../components/Footer";
-import { SectionHeadline } from "../components/SectionHeadline";
+import { theme } from "../../theme";
+import { SiteHeader } from "../../components/SiteHeader";
+import { Color } from "../../Color.enum";
+import { Footer } from "../../components/Footer";
+import { SectionHeadline } from "../../components/SectionHeadline";
 import { Box, Flex, Image } from "rebass";
-import { FreeChair } from "../components/FreeChair";
-import { PositionLevel } from "../shared/PositionLevel.enum";
-import { CopyText } from "../components/CopyText";
-import { PcodeShape } from "../components/PcodeShape";
-import { ActionButton } from "../components/ActionButton";
+import { FreeChair } from "../../components/FreeChair";
+import { PositionLevel } from "../../shared/PositionLevel.enum";
+import { CopyText } from "../../components/CopyText";
+import { PcodeShape } from "../../components/PcodeShape";
+import { ActionButton } from "../../components/ActionButton";
 // @ts-ignore
 import ImagePcode from "../assets/tlp-pcode-27.jpg";
+import { WorkingAtPcodeSection } from "./sections/WorkingAtPcode.section";
 
 const freeChairWrapperProps = {
   p: 4
@@ -122,47 +123,7 @@ const JoinUsPage = () => (
           </Flex>
         </Flex>
 
-        <Flex backgroundColor={Color.Secondary}>
-          <Box
-            sx={{
-              position: "relative",
-              paddingBottom: "6.5rem",
-              width: "100%"
-            }}
-          >
-            <Box
-              sx={{
-                padding: "2rem",
-                maxWidth: "344px",
-                "@media screen and (min-width: 600px)": {
-                  width: "270px"
-                }
-              }}
-            >
-              <SectionHeadline
-                headlinePartOne="working at pcode"
-                headlinePartTwo="means you get a bunch of cool stuff and a great team count on!"
-                separateWithBreak={true}
-                color={Color.Secondary2}
-              />
-            </Box>
-            <Box
-              sx={{
-                position: "absolute",
-                top: 175,
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-                "@media screen and (min-width: 600px)": {
-                  justifyContent: "flex-end"
-                }
-              }}
-            >
-              <PcodeShape width="170px" color={Color.Secondary2} />
-            </Box>
-          </Box>
-        </Flex>
-        <Image src="./static/tlp-pcode-27.jpg" />
+        <WorkingAtPcodeSection />
         <Footer />
       </Box>
     </ThemeProvider>
