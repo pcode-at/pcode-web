@@ -19,106 +19,108 @@ const freeChairWrapperProps = {
 const JoinUsPage = () => (
   <React.Fragment>
     <ThemeProvider theme={theme}>
-      <SiteHeader thisColor={Color.White} />
+      <Box overflowX="hidden">
+        <SiteHeader thisColor={Color.White} />
 
-      <Flex
-        sx={{
-          position: "relative",
-          backgroundColor: Color.Secondary2,
-          padding: "3.5rem 2rem 3.5rem 2rem",
-          justifyContent: "space-between",
-          "@media screen and (min-width: 670px)": {
-            display: "block"
-          }
-        }}
-      >
-        <Box>
-          <SectionHeadline
-            color={Color.Secondary}
-            headlinePartOne="we are adapting to new challenges"
-            headlinePartTwo="by developing and investing in our people"
-            separateWithBreak={true}
-          />
-          <br />
-          <br />
-          <Box sx={{ maxWidth: "400px" }}>
-            <CopyText color={Color.White}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet.
-            </CopyText>
-
-            <br />
-            <ActionButton
-              thisColor={Color.Primary}
-              label="learn more"
-              padding="0.2rem 2rem"
-            />
-          </Box>
-        </Box>
-        <Box
+        <Flex
           sx={{
-            position: "absolute",
-            right: -80,
-            bottom: -80,
-            display: "none",
+            position: "relative",
+            backgroundColor: Color.Secondary2,
+            padding: "3.5rem 2rem 3.5rem 2rem",
+            justifyContent: "space-between",
             "@media screen and (min-width: 670px)": {
               display: "block"
             }
           }}
         >
-          <PcodeShape color={Color.Secondary} />
-        </Box>
-      </Flex>
+          <Box>
+            <SectionHeadline
+              color={Color.Secondary}
+              headlinePartOne="we are adapting to new challenges"
+              headlinePartTwo="by developing and investing in our people"
+              separateWithBreak={true}
+            />
+            <br />
+            <br />
+            <Box sx={{ maxWidth: "400px" }}>
+              <CopyText color={Color.White}>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet.
+              </CopyText>
 
-      <Box sx={{ textAlign: "center", margin: "5rem 0 2rem 0" }}>
-        <SectionHeadline
-          color={Color.Secondary2}
-          headlinePartOne="our free"
-          headlinePartTwo="chairs, waiting for you!"
-        />
-      </Box>
-
-      <Flex justifyContent="center" marginBottom="2rem">
-        <Flex
-          flexWrap="wrap"
-          sx={{
-            justifyContent: "center"
-          }}
-        >
-          <Box {...freeChairWrapperProps}>
-            <FreeChair
-              position="Frontend developer"
-              positionLevel={PositionLevel.Junior}
-              positionDescription="Description, description"
-            />
+              <br />
+              <ActionButton
+                thisColor={Color.Primary}
+                label="learn more"
+                padding="0.2rem 2rem"
+              />
+            </Box>
           </Box>
-          <Box {...freeChairWrapperProps}>
-            <FreeChair
-              position="Frontend developer"
-              positionLevel={PositionLevel.Senior}
-              positionDescription="Description, description"
-            />
-          </Box>
-          <Box {...freeChairWrapperProps}>
-            <FreeChair
-              position="UX designer"
-              positionLevel={PositionLevel.Junior}
-              positionDescription="Description, description"
-            />
-          </Box>
-          <Box {...freeChairWrapperProps}>
-            <FreeChair
-              position="Backend developer"
-              positionLevel={PositionLevel.Senior}
-              positionDescription="Description, description"
-            />
+          <Box
+            sx={{
+              position: "absolute",
+              right: -80,
+              bottom: -80,
+              display: "none",
+              "@media screen and (min-width: 670px)": {
+                display: "block"
+              }
+            }}
+          >
+            <PcodeShape color={Color.Secondary} />
           </Box>
         </Flex>
-      </Flex>
-      <Footer />
+
+        <Box sx={{ textAlign: "center", margin: "5rem 0 2rem 0" }}>
+          <SectionHeadline
+            color={Color.Secondary2}
+            headlinePartOne="our free"
+            headlinePartTwo="chairs, waiting for you!"
+          />
+        </Box>
+
+        <Flex justifyContent="center" marginBottom="2rem">
+          <Flex
+            flexWrap="wrap"
+            sx={{
+              justifyContent: "center"
+            }}
+          >
+            <Box {...freeChairWrapperProps}>
+              <FreeChair
+                position="Frontend developer"
+                positionLevel={PositionLevel.Junior}
+                positionDescription="Description, description"
+              />
+            </Box>
+            <Box {...freeChairWrapperProps}>
+              <FreeChair
+                position="Frontend developer"
+                positionLevel={PositionLevel.Senior}
+                positionDescription="Description, description"
+              />
+            </Box>
+            <Box {...freeChairWrapperProps}>
+              <FreeChair
+                position="UX designer"
+                positionLevel={PositionLevel.Junior}
+                positionDescription="Description, description"
+              />
+            </Box>
+            <Box {...freeChairWrapperProps}>
+              <FreeChair
+                position="Backend developer"
+                positionLevel={PositionLevel.Senior}
+                positionDescription="Description, description"
+              />
+            </Box>
+          </Flex>
+        </Flex>
+        <Footer />
+      </Box>
     </ThemeProvider>
 
     <style jsx>{`
