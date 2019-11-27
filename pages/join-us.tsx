@@ -130,7 +130,15 @@ const JoinUsPage = () => (
               width: "100%"
             }}
           >
-            <Box sx={{ padding: "2rem", maxWidth: "344px" }}>
+            <Box
+              sx={{
+                padding: "2rem",
+                maxWidth: "344px",
+                "@media screen and (min-width: 600px)": {
+                  width: "270px"
+                }
+              }}
+            >
               <SectionHeadline
                 headlinePartOne="working at pcode"
                 headlinePartTwo="means you get a bunch of cool stuff and a great team count on!"
@@ -144,7 +152,10 @@ const JoinUsPage = () => (
                 top: 175,
                 width: "100%",
                 display: "flex",
-                justifyContent: "center"
+                justifyContent: "center",
+                "@media screen and (min-width: 600px)": {
+                  justifyContent: "flex-end"
+                }
               }}
             >
               <PcodeShape width="170px" color={Color.Secondary2} />
