@@ -12,16 +12,14 @@ type TContactFormProps = {
 export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
     // write some code
 
-    const [content, setContent] = React.useState('sadfasdf');
-    console.log('content', content);
-
+    const [content, setContent] = React.useState('default');
     const {light, normal} = theme.font;
-
     const {openPositionDestinationEmail} = CONSTANTS;
 
     return (
         <Box sx={{
             maxWidth: 700,
+            padding: 1,
             width: "100%",
             fontFamily: light.fontFamily,
             fontWeight: light.fontWeight
@@ -33,7 +31,6 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
                        borderColor: Color.Secondary2,
                        borderRadius: 13,
                        maxWidth: 300,
-                       width: "100%",
                        fontFamily: light.fontFamily,
                        fontWeight: light.fontWeight
                    }}
@@ -45,7 +42,6 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
                        borderRadius: 13,
                        marginTop: 25,
                        maxWidth: 300,
-                       width: "100%",
                        fontFamily: light.fontFamily,
                        fontWeight: light.fontWeight
                    }}
@@ -58,18 +54,17 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
                           borderRadius: 13,
                           marginTop: 25,
                           maxWidth: 700,
-                          width: "100%",
                           height: 100,
                           fontFamily: light.fontFamily,
-                          fontWeight: light.fontWeight
+                          fontWeight: light.fontWeight,
                       }}/>
 
             <a href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
-                        &body=${content}`}>
+                        &body=${content.replace('\n', '%0A')}`}>
                 <Button variant='primary'
                         sx={{
                             float: "right",
-                            marginTop: 15,
+                            marginTop: 1,
                             borderRadius: 20,
                             fontFamily: light.fontFamily,
                             fontWeight: light.fontWeight,
