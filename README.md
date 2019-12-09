@@ -62,3 +62,9 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
 
 ```
 **Important**: Each component has to be created in the [components/](components/) folder.
+
+## Prettier setup
+Prettier, as the name says, keeps your code pretty and well-formatted. 
+- Visual Studio Code: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+  Use it with `CMD/CTRL + Shift + P`
+- Webstorm: No Extension needed. Just use `Alt-Shift-Ctrl-P` on Windows and Linux, or `Alt-Shift-Cmd-P`on MAC OS
