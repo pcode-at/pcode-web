@@ -1,4 +1,5 @@
 import { Color } from "./Color.enum";
+import React from "react";
 
 export const theme = {
   colors: {
@@ -6,6 +7,16 @@ export const theme = {
     [Color.Secondary]: "#263958",
     [Color.Secondary2]: "#7AC7C4",
     [Color.White]: "#fff"
+  },
+  font: {
+    light: {
+      fontFamily:"raleway",
+      fontWeight: 300
+    },
+    normal: {
+      fontFamily:"raleway",
+      fontWeight: 400
+    }
   },
   radii: {
     default: 4
