@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "yarn run build && next export"
+    "export": "yarn run build && next export",
+    "prettier": "prettier --write */*.tsx && prettier --write */*.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.5.1",
