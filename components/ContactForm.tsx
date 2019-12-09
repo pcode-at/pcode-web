@@ -15,10 +15,6 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
     const {light, normal} = theme.font;
     const {openPositionDestinationEmail} = CONSTANTS;
 
-    function replaceNewLineCharacters(inputText: string) {
-        return inputText.replace('\n', '%0A');
-    }
-
     return (
         <Box sx={{
             maxWidth: 700,
@@ -50,7 +46,8 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
                    }}
             />
 
-            <Textarea placeholder='you are so cool people, let`s ……' onChange={(args) => setTextAreaContent(args.target.value)}
+            <Textarea placeholder='you are so cool people, let`s ……'
+                      onChange={(args) => setTextAreaContent(args.target.value)}
                       sx={{
                           borderWidth: '3px',
                           borderColor: Color.Secondary2,
@@ -79,4 +76,7 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
 
     );
 
+    function replaceNewLineCharacters(inputText: string) {
+        return inputText.replace('\n', '%0A');
+    }
 };
