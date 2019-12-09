@@ -1,20 +1,20 @@
-import React from "react";
-import { Color } from "../Color.enum";
-import { Text } from "rebass";
+import React from 'react';
+import { Color } from '../Color.enum';
+import { Text } from 'rebass';
 
 type TSubHeadlineProps = {
-  color: Color;
+    color: Color;
 };
 
 export const SubHeadline: React.FC<TSubHeadlineProps> = ({
-  children,
-  color
+    children,
+    color,
 }) => {
-  // write some code
+    // write some code
 
-  return (
-    <Text color={color} fontFamily="raleway" fontWeight={500}>
-      {children}
-    </Text>
-  );
+    return (
+        <Text color={color} fontFamily="raleway" fontWeight={500}>
+            {children}
+        </Text>
+    );
 };

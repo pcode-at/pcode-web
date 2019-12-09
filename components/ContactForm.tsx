@@ -1,79 +1,91 @@
 import React from 'react';
-import {Color} from '../Color.enum';
-import {Box, Text, Button} from 'rebass';
-import {Input, Textarea} from '@rebass/forms';
-import {theme} from '../theme';
-import {CONSTANTS} from '../shared/constants';
+import { Color } from '../Color.enum';
+import { Box, Text, Button } from 'rebass';
+import { Input, Textarea } from '@rebass/forms';
+import { theme } from '../theme';
+import { CONSTANTS } from '../shared/constants';
 
 type TContactFormProps = {
     color: Color;
 };
 
-export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
-
+export const ContactForm: React.FC<TContactFormProps> = ({
+    children,
+    color,
+}) => {
     const [textAreaContent, setTextAreaContent] = React.useState('');
-    const {light, normal} = theme.font;
-    const {openPositionDestinationEmail} = CONSTANTS;
+    const { light, normal } = theme.font;
+    const { openPositionDestinationEmail } = CONSTANTS;
 
     return (
-        <Box sx={{
-            maxWidth: 700,
-            padding: 1,
-            width: '100%',
-            fontFamily: light.fontFamily,
-            fontWeight: light.fontWeight
-        }}>
+        <Box
+            sx={{
+                maxWidth: 700,
+                padding: 1,
+                width: '100%',
+                fontFamily: light.fontFamily,
+                fontWeight: light.fontWeight,
+            }}
+        >
             <h2>let's work together!</h2>
-            <Input placeholder='name'
-                   sx={{
-                       borderWidth: '3px',
-                       borderColor: Color.Secondary2,
-                       borderRadius: 13,
-                       maxWidth: 300,
-                       fontFamily: light.fontFamily,
-                       fontWeight: light.fontWeight
-                   }}
+            <Input
+                placeholder="name"
+                sx={{
+                    borderWidth: '3px',
+                    borderColor: Color.Secondary2,
+                    borderRadius: 13,
+                    maxWidth: 300,
+                    fontFamily: light.fontFamily,
+                    fontWeight: light.fontWeight,
+                }}
             />
-            <Input placeholder='email'
-                   sx={{
-                       borderWidth: '3px',
-                       borderColor: Color.Secondary2,
-                       borderRadius: 13,
-                       marginTop: 25,
-                       maxWidth: 300,
-                       fontFamily: light.fontFamily,
-                       fontWeight: light.fontWeight
-                   }}
+            <Input
+                placeholder="email"
+                sx={{
+                    borderWidth: '3px',
+                    borderColor: Color.Secondary2,
+                    borderRadius: 13,
+                    marginTop: 25,
+                    maxWidth: 300,
+                    fontFamily: light.fontFamily,
+                    fontWeight: light.fontWeight,
+                }}
             />
 
-            <Textarea placeholder='you are so cool people, let`s ……'
-                      onChange={(args) => setTextAreaContent(args.target.value)}
-                      sx={{
-                          borderWidth: '3px',
-                          borderColor: Color.Secondary2,
-                          borderRadius: 13,
-                          marginTop: 25,
-                          maxWidth: 700,
-                          height: 100,
-                          fontFamily: light.fontFamily,
-                          fontWeight: light.fontWeight,
-                      }}/>
+            <Textarea
+                placeholder="you are so cool people, let`s ……"
+                onChange={args => setTextAreaContent(args.target.value)}
+                sx={{
+                    borderWidth: '3px',
+                    borderColor: Color.Secondary2,
+                    borderRadius: 13,
+                    marginTop: 25,
+                    maxWidth: 700,
+                    height: 100,
+                    fontFamily: light.fontFamily,
+                    fontWeight: light.fontWeight,
+                }}
+            />
 
-            <a href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
-                        &body=${(replaceNewLineCharacters(textAreaContent))}`}>
-                <Button variant='primary'
-                        sx={{
-                            float: 'right',
-                            marginTop: 1,
-                            borderRadius: 20,
-                            fontFamily: light.fontFamily,
-                            fontWeight: light.fontWeight,
-                            fontSize: 11
-                        }}>
-                    send message</Button>
+            <a
+                href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
+                        &body=${replaceNewLineCharacters(textAreaContent)}`}
+            >
+                <Button
+                    variant="primary"
+                    sx={{
+                        float: 'right',
+                        marginTop: 1,
+                        borderRadius: 20,
+                        fontFamily: light.fontFamily,
+                        fontWeight: light.fontWeight,
+                        fontSize: 11,
+                    }}
+                >
+                    send message
+                </Button>
             </a>
         </Box>
-
     );
 
     function replaceNewLineCharacters(inputText: string) {
