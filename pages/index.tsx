@@ -1,16 +1,17 @@
 import * as React from "react";
 
-import { Box, Heading } from "rebass";
-import { theme } from "../theme";
-import { ThemeProvider } from "emotion-theming";
-import { PcodeShape } from "../components/PcodeShape";
-import { Color } from "../Color.enum";
-import { CopyText } from "../components/CopyText";
-import { SectionHeadline } from "../components/SectionHeadline";
-import { FreeChair } from "../components/FreeChair";
-import { PositionLevel } from "../shared/PositionLevel.enum";
-import { Swiper } from "../components/Swiper";
-import { Footer } from "../components/Footer";
+import {Box, Heading} from "rebass";
+import {theme} from "../theme";
+import {ThemeProvider} from "emotion-theming";
+import {PcodeShape} from "../components/PcodeShape";
+import {Color} from "../Color.enum";
+import {CopyText} from "../components/CopyText";
+import {SectionHeadline} from "../components/SectionHeadline";
+import {FreeChair} from "../components/FreeChair";
+import {PositionLevel} from "../shared/PositionLevel.enum";
+import {Swiper} from "../components/Swiper";
+import {Footer} from "../components/Footer";
+import {ContactForm} from "../components/ContactForm";
 
 const MainPage = () => (
   <ThemeProvider theme={theme}>
@@ -33,6 +34,7 @@ const MainPage = () => (
         Höchste Eisenbahn
       </CopyText>
     </Box>
+    <ContactForm color={Color.Primary}>ContactForm Component</ContactForm>
     <SectionHeadline
       color={Color.Secondary2}
       headlinePartOne="our free"
