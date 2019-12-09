@@ -1,31 +1,34 @@
-import React from "react";
-import {Color} from "../Color.enum";
-import {Box, Text, Button} from "rebass";
+import React from 'react';
+import {Color} from '../Color.enum';
+import {Box, Text, Button} from 'rebass';
 import {Input, Textarea} from '@rebass/forms';
-import {theme} from "../theme";
-import {CONSTANTS} from "../shared/constants";
+import {theme} from '../theme';
+import {CONSTANTS} from '../shared/constants';
 
 type TContactFormProps = {
     color: Color;
 };
 
 export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
-    // write some code
 
-    const [content, setContent] = React.useState('default');
+    const [content, setContent] = React.useState('');
     const {light, normal} = theme.font;
     const {openPositionDestinationEmail} = CONSTANTS;
+
+    function replaceNewLineCharacters() {
+        return content.replace('\n', '%0A');
+    }
 
     return (
         <Box sx={{
             maxWidth: 700,
             padding: 1,
-            width: "100%",
+            width: '100%',
             fontFamily: light.fontFamily,
             fontWeight: light.fontWeight
         }}>
             <h2>let's work together!</h2>
-            <Input placeholder="name"
+            <Input placeholder='name'
                    sx={{
                        borderWidth: '3px',
                        borderColor: Color.Secondary2,
@@ -35,7 +38,7 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
                        fontWeight: light.fontWeight
                    }}
             />
-            <Input placeholder="email"
+            <Input placeholder='email'
                    sx={{
                        borderWidth: '3px',
                        borderColor: Color.Secondary2,
@@ -47,7 +50,7 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
                    }}
             />
 
-            <Textarea placeholder="you are so cool people, let's ……" onChange={(args) => setContent(args.target.value)}
+            <Textarea placeholder='you are so cool people, let`s ……' onChange={(args) => setContent(args.target.value)}
                       sx={{
                           borderWidth: '3px',
                           borderColor: Color.Secondary2,
@@ -60,10 +63,10 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
                       }}/>
 
             <a href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
-                        &body=${content.replace('\n', '%0A')}`}>
+                        &body=${(replaceNewLineCharacters())}`}>
                 <Button variant='primary'
                         sx={{
-                            float: "right",
+                            float: 'right',
                             marginTop: 1,
                             borderRadius: 20,
                             fontFamily: light.fontFamily,
