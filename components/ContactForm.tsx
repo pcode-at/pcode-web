@@ -11,12 +11,12 @@ type TContactFormProps = {
 
 export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
 
-    const [content, setContent] = React.useState('');
+    const [textAreaContent, setTextAreaContent] = React.useState('');
     const {light, normal} = theme.font;
     const {openPositionDestinationEmail} = CONSTANTS;
 
-    function replaceNewLineCharacters() {
-        return content.replace('\n', '%0A');
+    function replaceNewLineCharacters(inputText: string) {
+        return inputText.replace('\n', '%0A');
     }
 
     return (
@@ -50,7 +50,7 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
                    }}
             />
 
-            <Textarea placeholder='you are so cool people, let`s ……' onChange={(args) => setContent(args.target.value)}
+            <Textarea placeholder='you are so cool people, let`s ……' onChange={(args) => setTextAreaContent(args.target.value)}
                       sx={{
                           borderWidth: '3px',
                           borderColor: Color.Secondary2,
@@ -63,7 +63,7 @@ export const ContactForm: React.FC<TContactFormProps> = ({children, color}) => {
                       }}/>
 
             <a href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
-                        &body=${(replaceNewLineCharacters())}`}>
+                        &body=${(replaceNewLineCharacters(textAreaContent))}`}>
                 <Button variant='primary'
                         sx={{
                             float: 'right',
