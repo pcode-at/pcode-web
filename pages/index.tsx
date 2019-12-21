@@ -20,7 +20,6 @@ const MainPage = () => (
         <Heading>PcodeShape</Heading>
         <Box display="flex">
             <WordList words={[
-                'perfection',
                 'praise',
                 'passion',
                 'potential',
