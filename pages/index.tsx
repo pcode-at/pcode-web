@@ -12,6 +12,7 @@ import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
+import { Menu } from '../components/Menu';
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
@@ -51,6 +52,7 @@ const MainPage = () => (
             textPartTwo="to simplicity by delivering exceptional solutions."
             onClick={() => {}}
         />
+        <Menu/>
 
         <Footer />
     </ThemeProvider>
