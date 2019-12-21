@@ -12,6 +12,7 @@ import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
+import { CookieMonsterBanner } from '../components/CookieMonsterBanner';
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
@@ -35,6 +36,7 @@ const MainPage = () => (
                 Höchste Eisenbahn
             </CopyText>
         </Box>
+
         <ContactForm color={Color.Primary}>ContactForm Component</ContactForm>
         <SectionHeadline
             color={Color.Secondary2}
@@ -51,7 +53,7 @@ const MainPage = () => (
             textPartTwo="to simplicity by delivering exceptional solutions."
             onClick={() => {}}
         />
-
+        <CookieMonsterBanner></CookieMonsterBanner>
         <Footer />
     </ThemeProvider>
 );
