@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { Box } from 'rebass';
+import phoneSVG from '../assets/phone.svg?sprite';
+
  
 type ProjectSliderProps = {
     images: string[],
-    width?: number,
-    height?: number 
+    isPhone?: boolean,
+    ratio?: number
 };
 
 
 export const ProjectSlider: React.FC<ProjectSliderProps> = ({
     images,
-    width: w = 600,
-    height: h = 400,
+    isPhone: ip = true,
+    ratio: ratio = 1,
 }) => {
 
     const divs = []
@@ -28,12 +29,22 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
 
     //<p className="legend">Legend 2</p>
 
+    const h = 600;
+    const w = 300;
+
     return (
-        <div style={{height: h, width: w}}>
-            <Carousel
-            showThumbs={false}>
-                {divs}
-            </Carousel>
+
+        <div style={{width: w, position: "relative"}}>
+
+            <div style={{position: "absolute"}}>
+                <img src="../static/phone.svg" alt="" width={w}/>
+            </div>
+
+            <div  style={{paddingTop: '20%', paddingLeft: '3%', paddingRight: '3.5%'}}>
+                <Carousel showThumbs={false}>
+                        {divs}
+                </Carousel>
+            </div>
         </div>
     );
 };

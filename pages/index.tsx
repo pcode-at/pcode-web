@@ -43,7 +43,7 @@ const MainPage = () => (
             headlinePartTwo="chairs, waiting for you!"
         />
 
-        <ProjectSlider height={600} width={300} images={[
+        <ProjectSlider images={[
             "../static/sandburg.jpg",
             "../static/sandburg.jpg",
         ]} />
