@@ -19,12 +19,12 @@ export const WordList: React.FC<TWordList> = ({}) => {
 
     React.useEffect(() => {
         const interval = setInterval(() => {
-            let newSlide = [...itemsToSlide];
+            let shuffledWords = [...itemsToSlide];
 
-            let last = newSlide.pop();
-            newSlide.unshift(last);
+            let last = shuffledWords.pop();
+            shuffledWords.unshift(last);
 
-            setItemsToSlide(newSlide);
+            setItemsToSlide(shuffledWords);
         }, 3000);
 
         return () => clearInterval(interval);
@@ -32,19 +32,8 @@ export const WordList: React.FC<TWordList> = ({}) => {
 
     const items = itemsToSlide.map((word, index) => {
         let opacity = index === 2 ? '100%' : '10%';
-        let lastIndex = itemsToSlide.length - 1;
-        let className = '';
-
-        if (index === lastIndex) {
-            className = 'fade-out'
-        }
-
-        if (index === 0) {
-            className = 'fade-in'
-        }
 
         return <Text
-            className={className}
             color={Color.White}
             fontFamily="raleway"
             fontWeight={300}
@@ -54,11 +43,6 @@ export const WordList: React.FC<TWordList> = ({}) => {
             }}>
             {word}
         </Text>
-
-        // return <CopyText
-        //     color={Color.White}
-        //     opacity={index === 2 ? '100%': '10%'}>{word}
-        // </CopyText>;
     });
 
     return (
