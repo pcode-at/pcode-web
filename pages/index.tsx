@@ -12,6 +12,7 @@ import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
+import { Statement } from '../components/Statement';
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
@@ -35,6 +36,9 @@ const MainPage = () => (
                 Höchste Eisenbahn
             </CopyText>
         </Box>
+        <Statement color={Color.Secondary2} personName={'christopher pernsteiner'} personPosition={'CEO . founder'}>
+            ' this project was a great challenge, <br></br> we learned a lot and it was a journey with such an amazing customer! '
+        </Statement>
         <ContactForm color={Color.Primary}>ContactForm Component</ContactForm>
         <SectionHeadline
             color={Color.Secondary2}
