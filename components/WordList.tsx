@@ -9,7 +9,7 @@ type TWordList = {
 
 export const WordList: React.FC<TWordList> = ({words}) => {
     const [itemsToSlide, setItemsToSlide] = React.useState(() => words);
-    const midWordIndex = parseInt((itemsToSlide.length / 2).toFixed(0)) - 1;
+    const middleWordIndex = parseInt((itemsToSlide.length / 2).toFixed(0)) - 1;
 
     React.useEffect(() => {
         const interval = setInterval(() => {
@@ -25,15 +25,11 @@ export const WordList: React.FC<TWordList> = ({words}) => {
     }, [itemsToSlide]);
 
     const items = itemsToSlide.map((word, index) => {
-        let opacity = index === midWordIndex ? '100%' : '10%';
-        let animation = 'animated infinite slow ';
-
-        if (index === midWordIndex) {
-            animation+= 'fadeIn';
-        }
+        let opacity = index === middleWordIndex ? '100%' : '10%';
+        let animation = 'animated infinite slower ';
 
         return <Text
-            className={animation}
+            className={index === middleWordIndex ? animation + 'fadeIn': animation}
             color={Color.White}
             fontFamily="raleway"
             fontWeight={300}
@@ -46,28 +42,26 @@ export const WordList: React.FC<TWordList> = ({words}) => {
     });
 
     return (
-        <React.Fragment>
-            <Box sx={{ position:"relative", display: "flex", alignItems: "center", height: "300px", width: "100%" }}>
-                <Box sx={{position: "absolute", display: "flex", justifyContent: "center", flexDirection: "column", width: "100%"}}>
-                    <Box sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems:"center",
-                        fontSize: "2rem"
-                    }}>
-                        <div>{items}</div>
-                    </Box>
-                </Box>
+        <Box sx={{ position:"relative", display: "flex", alignItems: "center", height: "300px", width: "100%" }}>
+            <Box sx={{position: "absolute", display: "flex", justifyContent: "center", flexDirection: "column", width: "100%"}}>
                 <Box sx={{
-                    width: "100%",
                     display: "flex",
-                    justifyContent: "center",
-                    marginTop: "-6%",
-                    zIndex: "-1"
+                    flexDirection: "column",
+                    alignItems:"center",
+                    fontSize: "2rem"
                 }}>
-                    <PcodeShape width="300px"/>
+                    <div>{items}</div>
                 </Box>
             </Box>
-        </React.Fragment>
+            <Box sx={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "-6%",
+                zIndex: "-1"
+            }}>
+                <PcodeShape width="300px"/>
+            </Box>
+        </Box>
     );
 };
