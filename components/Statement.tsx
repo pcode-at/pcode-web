@@ -35,6 +35,10 @@ export const Statement: React.FC<TStatementProps> = ({
                         justifyContent: 'space-between',
                         flexDirection: 'row',
                     },
+                    '@media screen and (max-width: 615px)': {
+                        alignItems: 'center',
+                        flexDirection: 'column',
+                    },
                 }}
             >
                 <Box
@@ -46,6 +50,10 @@ export const Statement: React.FC<TStatementProps> = ({
                         fontWeight: normal.fontWeight,
                         color: Color.White,
                         fontSize: '250%',
+                        '@media screen and (max-width: 615px)': {
+                            width: '100%',
+                            fontSize: '150%',
+                        },
                     }}
                 >
                     <p>{children}</p>
@@ -56,11 +64,17 @@ export const Statement: React.FC<TStatementProps> = ({
                         maxWidth: 700,
                         padding: 1,
                         width: '300px',
-                        marginRight: '10%',
                         color: Color.White,
+                        '@media screen and (min-width: 615px)': {
+                            marginRight: '10%',
+                        },
                     }}
                 >
-                    <Flex alignItems="center" flexDirection="column">
+                    <Flex
+                        alignItems="center"
+                        flexDirection="column"
+                        justifyContent="center"
+                    >
                         <PcodeShapeSvg
                             style={{
                                 color: theme.colors[Color.Secondary],
