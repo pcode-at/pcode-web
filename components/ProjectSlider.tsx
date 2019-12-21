@@ -2,20 +2,19 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import phoneSVG from '../assets/phone.svg?sprite';
 
  
 type ProjectSliderProps = {
     images: string[],
     isPhone?: boolean,
-    ratio?: number
+    width?: number
 };
 
 
 export const ProjectSlider: React.FC<ProjectSliderProps> = ({
     images,
     isPhone: ip = true,
-    ratio: ratio = 1,
+    width: w = 500,
 }) => {
 
     const divs = []
@@ -28,9 +27,6 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
     }
 
     //<p className="legend">Legend 2</p>
-
-    const h = 600;
-    const w = 300;
 
     return (
 
