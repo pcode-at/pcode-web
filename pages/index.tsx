@@ -12,6 +12,8 @@ import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
+import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
+import Router from "next/router";
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
@@ -50,6 +52,23 @@ const MainPage = () => (
             textPartOne="we transform complexity"
             textPartTwo="to simplicity by delivering exceptional solutions."
             onClick={() => {}}
+        />
+
+        <ProjectDetailTeaser
+            headline="Test Headline"
+            description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
+            gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
+            Räuber. Die altbacken Freikörperkultur meucheln. Das Schelm
+            bauchpinseln das feist Groschengrab. Der gemach
+            Bürgermeisterstück verhaspeln. Das Franzosenkrankheit abkupfern
+            der hochgestochen Dachshund. Das pfundig Gamaschen frohlocken.
+            Der grobschlächtig Tausendsassa bauchpinseln. Die geflissentlich
+            Muckefuck erquicken. Der Tausendsassa anschwärzen der einfältig
+            Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
+            Höchste Eisenbahn"
+            imageSrc="../static/testImage.png"
+            headlineColor={Color.Primary}
+            onClick={() => Router.push('/main')}
         />
 
         <Footer />
