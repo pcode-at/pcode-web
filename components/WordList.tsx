@@ -3,19 +3,13 @@ import { Box, Text } from "rebass";
 import { PcodeShape } from "./PcodeShape";
 import { Color } from "../Color.enum";
 
-type TWordList = {};
+type TWordList = {
+    words: Array<string>
+};
 
-export const WordList: React.FC<TWordList> = ({}) => {
-    const words = [
-       'perfection',
-       'praise',
-       'passion',
-       'potential',
-       'people',
-       'power',
-    ];
-
+export const WordList: React.FC<TWordList> = ({words}) => {
     const [itemsToSlide, setItemsToSlide] = React.useState(() => words);
+    const midWordIndex = parseInt((itemsToSlide.length / 2).toFixed(0)) - 1;
 
     React.useEffect(() => {
         const interval = setInterval(() => {
@@ -25,21 +19,27 @@ export const WordList: React.FC<TWordList> = ({}) => {
             shuffledWords.unshift(last);
 
             setItemsToSlide(shuffledWords);
-        }, 3000);
+        }, 3100);
 
         return () => clearInterval(interval);
     }, [itemsToSlide]);
 
     const items = itemsToSlide.map((word, index) => {
-        let opacity = index === 2 ? '100%' : '10%';
+        let opacity = index === midWordIndex ? '100%' : '10%';
+        let animation = 'animated infinite slow ';
+
+        if (index === midWordIndex) {
+            animation+= 'fadeIn';
+        }
 
         return <Text
+            className={animation}
             color={Color.White}
             fontFamily="raleway"
             fontWeight={300}
             sx={{
                 opacity: opacity,
-                order: index
+                order: index,
             }}>
             {word}
         </Text>
@@ -55,9 +55,7 @@ export const WordList: React.FC<TWordList> = ({}) => {
                         alignItems:"center",
                         fontSize: "2rem"
                     }}>
-                        <div id="words-slider">
-                            {items}
-                        </div>
+                        <div>{items}</div>
                     </Box>
                 </Box>
                 <Box sx={{

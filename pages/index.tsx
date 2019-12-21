@@ -19,7 +19,14 @@ const MainPage = () => (
         <Heading mb="2rem">Components</Heading>
         <Heading>PcodeShape</Heading>
         <Box display="flex">
-            <WordList/>
+            <WordList words={[
+                'perfection',
+                'praise',
+                'passion',
+                'potential',
+                'people',
+                'power',
+            ]}/>
         </Box>
         <Box display="flex">
             <PcodeShape />
