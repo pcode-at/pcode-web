@@ -76,6 +76,7 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                 }
                 .cookiewrapper {
                     position: fixed;
+                    height: 10%;
                 }
                 .cookiemonster {
                     width: 10%;
@@ -102,7 +103,6 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                     width: 60%;
                     padding-left: 5%;
                     color: #fff;
-                    font-size: 1.2vw;
                 }
             `}</style>
         </React.Fragment>
