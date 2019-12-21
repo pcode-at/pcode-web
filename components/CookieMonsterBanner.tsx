@@ -5,13 +5,20 @@ import { Color } from '../Color.enum';
 import { ActionButton } from './ActionButton';
 import Logo from '../assets/pcode_shape.svg?sprite';
 
-type TCookieMonsterBannerProps = {};
+type TCookieMonsterBannerProps = {
+    onClickAgreed?(): void;
+    onClickDisagreed?(): void;
+};
 
-export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({}) => {
+export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
+    onClickAgreed,
+    onClickDisagreed,
+}) => {
     // write some code
 
     return (
         <React.Fragment>
+            <div className="opacity"></div>
             <div className="cookiewrapper">
                 <div className="cookiebanner">
                     <div className="cookiemonster">
@@ -32,6 +39,7 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({}) => 
                     </div>
                     <div className="buttons">
                         <Button
+                            onClick={onClickAgreed}
                             style={{
                                 background: '#2E3C58',
                                 borderRadius: '15px',
@@ -43,7 +51,7 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({}) => 
                             Yes, I Agree
                         </Button>
                         <Button
-                            label="Not sure!"
+                            onClick={onClickDisagreed}
                             style={{
                                 background: '#85C5C1',
                                 borderRadius: '15px',
@@ -58,6 +66,14 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({}) => 
                 </div>
             </div>
             <style jsx>{`
+                .opacity {
+                    position: fixed;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #fff;
+                    opacity: 0.7;
+                }
                 .cookiewrapper {
                     position: fixed;
                 }
@@ -92,5 +108,3 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({}) => 
         </React.Fragment>
     );
 };
-
-function agreed() {}
