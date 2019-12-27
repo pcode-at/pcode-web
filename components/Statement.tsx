@@ -44,6 +44,7 @@ const Shape: React.FC<Pick<
                         fontStyle: 'bold',
                         marginTop: '8%',
                         fontSize: '130%',
+                        textAlign: 'center'
                     }}
                 >
                     <CopyText color={pCodeShapeColor}>{personName}</CopyText>
@@ -52,6 +53,7 @@ const Shape: React.FC<Pick<
                 <Box
                     css={{
                         fontSize: '130%',
+                        textAlign: 'center'
                     }}
                 >
                     <CopyText
@@ -97,21 +99,21 @@ export const Statement: React.FC<TStatementProps> = ({
                     },
                 }}
             >
-                <Flex // Text on Left
+                <Flex
                     color={color}
                     sx={{
                         maxWidth: 700,
+                        width: '100%',
                         marginLeft: '10%',
-                        width: '130%',
                         fontFamily: light.fontFamily,
                         fontWeight: normal.fontWeight,
 
                         fontSize: '250%',
                         '@media screen and (max-width: 615px)': {
-                            width: '100%',
+                            width: '90%',
                             fontSize: '150%',
-                            alignItems: 'center',
-                            justifyContent: 'center',
+                            textAlign: 'center',
+                            marginRight: '10%'
                         },
                     }}
                 >
