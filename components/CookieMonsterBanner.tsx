@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box, Button } from 'rebass';
+import {Box, Button, Flex} from 'rebass';
 import { CopyText } from './CopyText';
 import { Color } from '../Color.enum';
-import { ActionButton } from './ActionButton';
 import Logo from '../assets/pcode_shape.svg?sprite';
 
 type TCookieMonsterBannerProps = {
@@ -14,17 +13,27 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
     onClickAgreed,
     onClickDisagreed,
 }) => {
-    // write some code
 
     return (
         <React.Fragment>
             <div className="opacity"></div>
-            <div className="cookiewrapper">
-                <div className="cookiebanner">
-                    <div className="cookiemonster">
-                        <Logo></Logo>
-                    </div>
-                    <div className="text">
+            <div className="cookiebanner">
+
+                <div className="cookiemonster">
+                    <Logo></Logo>
+                </div>
+
+                <Flex
+                    sx={{
+                        '@media screen and (max-width: 615px)': {
+                            flexDirection: 'column',
+                            alignItems: 'center'
+                        },
+                    }}
+                >
+                    <div style={{
+                        marginRight: '5%'
+                    }}>
                         <CopyText color={Color.White}>
                             We use cookies to personalise contents and ads, to
                             provide social media features and to analyse our
@@ -41,11 +50,11 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                         <Button
                             onClick={onClickAgreed}
                             style={{
+                                minWidth: '120px',
                                 background: '#2E3C58',
                                 borderRadius: '15px',
                                 cursor: 'pointer',
                                 fontFamily: 'raleway',
-                                marginLeft: '2vh',
                             }}
                         >
                             Yes, I Agree
@@ -53,6 +62,7 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                         <Button
                             onClick={onClickDisagreed}
                             style={{
+                                minWidth: '105px',
                                 background: '#85C5C1',
                                 borderRadius: '15px',
                                 cursor: 'pointer',
@@ -63,7 +73,7 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                             Not sure!
                         </Button>
                     </div>
-                </div>
+                </Flex>
             </div>
             <style jsx>{`
                 .opacity {
@@ -89,20 +99,13 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                     position: fixed;
                     bottom: 0;
                     background: #eb425f;
-                    padding-top: 6%;
-                    padding-bottom: 3%;
+                    padding: 6% 5% 3%;
                     display: flex;
                     justify-content: space-around;
-                    z-index: 10;
                 }
                 .buttons {
                     display: flex;
                     align-items: center;
-                }
-                .text {
-                    width: 60%;
-                    padding-left: 5%;
-                    color: #fff;
                 }
             `}</style>
         </React.Fragment>
