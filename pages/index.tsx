@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box, Heading } from 'rebass';
+import { Box, Flex, Heading } from 'rebass';
 import { theme } from '../theme';
 import { ThemeProvider } from 'emotion-theming';
 import { PcodeShape } from '../components/PcodeShape';
@@ -13,12 +13,34 @@ import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
-import Router from "next/router";
+import Router from 'next/router';
+import { TechnologyPlatform } from '../components/TechnologyPlatform';
+import { PlatformType } from '../shared/PlatformType.enum';
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
         <Heading mb="2rem">Components</Heading>
         <Heading>PcodeShape</Heading>
+        <Flex flexWrap="wrap" justifyContent="space-evenly">
+            <TechnologyPlatform
+                name={"Web"}
+                platformType={PlatformType.Web}
+                languages={["SASS", "HTML"]}
+                technologies={["React", "Vue"]}>
+            </TechnologyPlatform>
+            <TechnologyPlatform
+                name={"Web"}
+                platformType={PlatformType.Mobile}
+                languages={["SASS", "HTML"]}
+                technologies={["React", "Vue"]}>
+            </TechnologyPlatform>
+            <TechnologyPlatform
+                name={"Web"}
+                platformType={PlatformType.ArVr}
+                languages={["SASS", "HTML"]}
+                technologies={["React", "Vue"]}>
+            </TechnologyPlatform>
+        </Flex>
         <Box display="flex">
             <PcodeShape />
             <PcodeShape color={Color.Secondary2} />
