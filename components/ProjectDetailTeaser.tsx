@@ -39,14 +39,14 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
                     width={4/6}
                     sx={{position: 'relative', textAlign: "left"}}>
                     <Box marginBottom="1rem">
-                        <SectionHeadline color={headlineColor} headlinePartOne={headline} headlinePartTwo=""></SectionHeadline>
+                        <SectionHeadline color={headlineColor} headlinePartOne={headline} headlinePartTwo=""/>
                     </Box>
                     <Box marginBottom="1rem" width="50%">
                         <CopyText color={Color.Secondary}>
                             {description}>
                         </CopyText>
                     </Box>
-                    <ActionButton label="learn more" thisColor={Color.Secondary2} onClick={onClick}></ActionButton>
+                    <ActionButton label="learn more" thisColor={Color.Secondary2} onClick={onClick}/>
                 </Box>
             </Flex>
 
