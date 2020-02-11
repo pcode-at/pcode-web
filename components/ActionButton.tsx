@@ -6,33 +6,37 @@ import { Color } from '../Color.enum';
 import { CopyText } from './CopyText';
 
 type TActionButtonProps = {
-    thisColor?: Color;
+    color?: Color;
     label: string;
     padding?: string;
     noBackground?: boolean;
     onClick?(): void;
+    className?: string;
 };
 
 export const ActionButton: React.FC<TActionButtonProps> = ({
-    thisColor = Color.Primary,
+    color = Color.Primary,
     label,
     onClick,
     padding = '0.2rem 2.8rem',
     noBackground = false,
+    className
 }) => {
     return (
-        <Button
-            backgroundColor={
-                noBackground ? 'transparent' : theme.colors[thisColor]
-            }
-            onClick={onClick}
-            style={{
-                padding,
-                borderRadius: '15px',
-                cursor: 'pointer',
-            }}
-        >
-            <CopyText color={Color.White}>{label}</CopyText>
-        </Button>
+        <div className={className}>
+            <Button
+                backgroundColor={
+                    noBackground ? 'transparent' : theme.colors[color]
+                }
+                onClick={onClick}
+                style={{
+                    padding,
+                    borderRadius: '15px',
+                    cursor: 'pointer',
+                }}
+            >
+                <CopyText color={Color.White}>{label}</CopyText>
+            </Button>
+        </div>
     );
 };
