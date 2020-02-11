@@ -12,6 +12,7 @@ import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
+import { CookieMonsterBanner } from '../components/CookieMonsterBanner';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
@@ -93,8 +94,10 @@ const MainPage = () => (
             textPartTwo="to simplicity by delivering exceptional solutions."
             onClick={() => {}}
         />
-
-        <ProjectDetailTeaser
+        
+      <CookieMonsterBanner></CookieMonsterBanner>
+    
+      <ProjectDetailTeaser
             headline="Test Headline"
             description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
@@ -110,7 +113,6 @@ const MainPage = () => (
             headlineColor={Color.Primary}
             onClick={() => Router.push('/main')}
         />
-
         <Footer />
     </ThemeProvider>
 );
