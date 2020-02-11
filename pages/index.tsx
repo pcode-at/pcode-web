@@ -14,11 +14,24 @@ import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
+import Router from "next/router";
+import { WordList } from "../components/WordList";
+import { ProjectSlider } from '../components/ProjectSlider';
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
         <Heading mb="2rem">Components</Heading>
         <Heading>PcodeShape</Heading>
+        <Box display="flex">
+            <WordList words={[
+                'praise',
+                'passion',
+                'potential',
+                'people',
+                'power',
+            ]}/>
+        </Box>
         <Box display="flex">
             <PcodeShape />
             <PcodeShape color={Color.Secondary2} />
@@ -61,6 +74,15 @@ const MainPage = () => (
             headlinePartOne="our free"
             headlinePartTwo="chairs, waiting for you!"
         />
+
+        <ProjectSlider 
+         width={400}
+         images={[
+            "../static/sandburg.jpg",
+            "../static/sandburg.jpg",
+        ]} />
+
+
         <FreeChair
             position="frontend developer"
             positionLevel={PositionLevel.Junior}
@@ -70,6 +92,23 @@ const MainPage = () => (
             textPartOne="we transform complexity"
             textPartTwo="to simplicity by delivering exceptional solutions."
             onClick={() => {}}
+        />
+
+        <ProjectDetailTeaser
+            headline="Test Headline"
+            description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
+            gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
+            Räuber. Die altbacken Freikörperkultur meucheln. Das Schelm
+            bauchpinseln das feist Groschengrab. Der gemach
+            Bürgermeisterstück verhaspeln. Das Franzosenkrankheit abkupfern
+            der hochgestochen Dachshund. Das pfundig Gamaschen frohlocken.
+            Der grobschlächtig Tausendsassa bauchpinseln. Die geflissentlich
+            Muckefuck erquicken. Der Tausendsassa anschwärzen der einfältig
+            Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
+            Höchste Eisenbahn"
+            imageSrc="../static/testImage.png"
+            headlineColor={Color.Primary}
+            onClick={() => Router.push('/main')}
         />
 
         <Footer />
