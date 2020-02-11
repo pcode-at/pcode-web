@@ -12,8 +12,7 @@ import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
-
-
+import { Menu } from '../components/Menu';
 import { CookieMonsterBanner } from '../components/CookieMonsterBanner';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
@@ -24,6 +23,7 @@ import { ProjectSlider } from '../components/ProjectSlider';
 import styled from 'styled-components';
 
 const { light, normal } = theme.font;
+
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
@@ -97,9 +97,13 @@ const MainPage = () => (
 
         <StyledFooter/>
         
-      <CookieMonsterBanner></CookieMonsterBanner>
+        <Menu/>
+
+        <ProjectDetailTeaser      
+<CookieMonsterBanner></CookieMonsterBanner>
     
       <ProjectDetailTeaser
+
             headline="Test Headline"
             description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
