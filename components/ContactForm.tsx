@@ -4,29 +4,31 @@ import { Box, Text, Button } from 'rebass';
 import { Input, Textarea } from '@rebass/forms';
 import { theme } from '../theme';
 import { CONSTANTS } from '../shared/constants';
+import styled from 'styled-components';
 
 type TContactFormProps = {
     color: Color;
+    className?: string;
 };
 
 export const ContactForm: React.FC<TContactFormProps> = ({
     children,
     color,
+    className
 }) => {
     const [textAreaContent, setTextAreaContent] = React.useState('');
     const { light, normal } = theme.font;
     const { openPositionDestinationEmail } = CONSTANTS;
 
+    const Wrapper = styled.div`
+        max-width: 700px;
+        padding: 1em;
+        font-family: ${light.fontFamily};
+        font-weight: ${light.fontWeight};
+        `;
+
     return (
-        <Box
-            sx={{
-                maxWidth: 700,
-                padding: 1,
-                width: '100%',
-                fontFamily: light.fontFamily,
-                fontWeight: light.fontWeight,
-            }}
-        >
+        <div className={className}>
             <h2>let's work together!</h2>
             <Input
                 placeholder="name"
@@ -85,7 +87,7 @@ export const ContactForm: React.FC<TContactFormProps> = ({
                     send message
                 </Button>
             </a>
-        </Box>
+        </div>
     );
 
     function replaceNewLineCharacters(inputText: string) {
