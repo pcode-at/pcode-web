@@ -4,14 +4,20 @@ import { Text } from 'rebass';
 
 type TCopyTextProps = {
     color: Color;
+    className?: string;
 };
 
-export const CopyText: React.FC<TCopyTextProps> = ({ children, color }) => {
-    // write some code
+export const CopyText: React.FC<TCopyTextProps> = ({
+    children,
+    color,
+    className
+}) => {
 
     return (
-        <Text color={color} fontFamily="raleway" fontWeight={300}>
-            {children}
-        </Text>
+        <div className={className}>
+            <Text color={color} fontFamily="raleway" fontWeight={300}>
+                {children}
+            </Text>
+        </div>
     );
 };

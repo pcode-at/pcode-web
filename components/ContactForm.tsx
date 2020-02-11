@@ -20,9 +20,14 @@ export const ContactForm: React.FC<TContactFormProps> = ({
     const { light, normal } = theme.font;
     const { openPositionDestinationEmail } = CONSTANTS;
 
+    const StyledH2 = styled.h2`
+        font-family: ${normal.fontFamily};
+        font-weight: ${normal.fontWeight};
+    `;
+
     return (
         <div className={className}>
-            <h2>let's work together!</h2>
+            <StyledH2>let's work together!</StyledH2>
             <Input
                 placeholder="name"
                 sx={{

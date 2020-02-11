@@ -3,11 +3,15 @@ import { Color } from '../Color.enum';
 import { Flex, Box } from 'rebass';
 import { CopyText } from './CopyText';
 
-type TFooterProps = {};
+type TFooterProps = {
+    className?: string;
+};
 
-export const Footer: React.FC<TFooterProps> = ({}) => {
+export const Footer: React.FC<TFooterProps> = ({
+    className
+}) => {
     return (
-        <React.Fragment>
+        <div className={className}>
             <Flex
                 paddingTop="2em"
                 paddingBottom="2em"
@@ -83,18 +87,7 @@ export const Footer: React.FC<TFooterProps> = ({}) => {
                     </a>
                 </Box>
             </Flex>
-
-            <style jsx>{`
-                .legal-wrapper {
-                    line-height: 1.5em;
-                    padding-right: 4em;
-                }
-                .contact-1-wrapper {
-                    margin-right: 1.5em;
-                    margin-bottom: 1em;
-                }
-            `}</style>
-        </React.Fragment>
+        </div>
     );
 };
 
