@@ -12,6 +12,8 @@ import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
+import { Statement } from '../components/Statement';
+import { Statement2 } from '../components/Statement2';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
 import Router from "next/router";
 import { WordList } from "../components/WordList";
@@ -48,6 +50,24 @@ const MainPage = () => (
                 Höchste Eisenbahn
             </CopyText>
         </Box>
+        <Statement
+            backgroundColor={Color.White}
+            pCodeShapeColor={Color.Secondary}
+            color={Color.Secondary2}
+            personName={'christopher pernsteiner'}
+            personPosition={'CEO . founder'}
+        >
+            ' this project was a great challenge, <br></br> we learned a lot and
+            it was a journey with such an amazing customer! '
+        </Statement>
+        <Statement
+            //color={Color.Secondary2}
+            personName={'nico peham'}
+            personPosition={'lead fronted developer'}
+        >
+            ' we are adapting to new challenges by developing and investing in
+            our people '
+        </Statement>
         <ContactForm color={Color.Primary}>ContactForm Component</ContactForm>
         <SectionHeadline
             color={Color.Secondary2}
