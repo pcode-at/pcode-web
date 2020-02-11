@@ -15,29 +15,29 @@ type TProjectDetailTeaserProps = {
 };
 
 export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
-    description,
-    headline,
-    imageSrc,
-    headlineColor,
-    onClick
-}) => {
+     description,
+     headline,
+     imageSrc,
+     headlineColor,
+     onClick,
+ }) => {
 
 
     return (
         <div className="pcode-shape-background">
             <Flex alignItems="center" justifyContent="space-between">
                 <Box
-                    width={2/6}>
-                    <Box sx={{position: 'relative', marginLeft: "-40%"}}
-                    className="pCodeShape"
-                    width="100%">
+                    width={2 / 6}>
+                    <Box sx={{ position: 'relative', marginLeft: '-40%' }}
+                         className="pCodeShape"
+                         width="100%">
                         <PcodeShape color={Color.Primary} width="100%"/>
-                        <img src={imageSrc} width="50%" className="image" />
+                        <img src={imageSrc} width="50%" className="image"/>
                     </Box>
                 </Box>
                 <Box
-                    width={4/6}
-                    sx={{position: 'relative', textAlign: "left"}}>
+                    width={4 / 6}
+                    sx={{ position: 'relative', textAlign: 'left' }}>
                     <Box marginBottom="1rem">
                         <SectionHeadline color={headlineColor} headlinePartOne={headline} headlinePartTwo=""/>
                     </Box>
@@ -46,7 +46,7 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
                             {description}>
                         </CopyText>
                     </Box>
-                    <ActionButton label="learn more" thisColor={Color.Secondary2} onClick={onClick}/>
+                    <ActionButton label="learn more" color={Color.Secondary2} onClick={onClick}/>
                 </Box>
             </Flex>
 
