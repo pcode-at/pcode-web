@@ -19,8 +19,16 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Raleway:300,500&display=swap"
           />
           <link
+              rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css"
+          />
+          <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="../static/css/carousel.min.css"
           />
         </Head>
         <body>

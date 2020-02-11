@@ -60,7 +60,7 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
                 <a
                     href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                 >
-                    <ActionButton thisColor={Color.Secondary2} label="apply" />
+                    <ActionButton color={Color.Secondary2} label="apply" />
                 </a>
             </div>
 
