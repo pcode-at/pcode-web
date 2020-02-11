@@ -20,13 +20,6 @@ export const ContactForm: React.FC<TContactFormProps> = ({
     const { light, normal } = theme.font;
     const { openPositionDestinationEmail } = CONSTANTS;
 
-    const Wrapper = styled.div`
-        max-width: 700px;
-        padding: 1em;
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
-        `;
-
     return (
         <div className={className}>
             <h2>let's work together!</h2>
