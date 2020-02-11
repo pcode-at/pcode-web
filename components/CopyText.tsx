@@ -1,10 +1,17 @@
 import React from 'react';
 import { Color } from '../Color.enum';
 import { Text } from 'rebass';
+import { theme } from '../theme';
+
+export enum FontStyle {
+    Normal = 'normal',
+    Light = 'light',
+}
 
 type TCopyTextProps = {
     color: Color;
     className?: string;
+    fontStyle?: FontStyle;
 };
 
 export const CopyText: React.FC<TCopyTextProps> = ({
@@ -14,10 +21,12 @@ export const CopyText: React.FC<TCopyTextProps> = ({
 }) => {
 
     return (
-        <div className={className}>
-            <Text color={color} fontFamily="raleway" fontWeight={300}>
-                {children}
-            </Text>
-        </div>
+        <Text
+            color={color}
+            fontFamily={theme.font[fontStyle].fontFamily}
+            fontWeight={theme.font[fontStyle].fontWeight}
+        >
+            {children}
+        </Text>
     );
 };

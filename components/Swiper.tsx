@@ -31,7 +31,7 @@ export const Swiper: React.FC<TSwiperProps> = ({
                     />
                 </div>
                 <ActionButton
-                    thisColor={Color.Secondary2}
+                    color={Color.Secondary2}
                     padding="0.2rem 1.7rem"
                     label="learn more"
                     onClick={onClick}
