@@ -13,6 +13,7 @@ import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
 import { WordList } from "../components/WordList";
+import { ProjectSlider } from '../components/ProjectSlider';
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
@@ -51,6 +52,15 @@ const MainPage = () => (
             headlinePartOne="our free"
             headlinePartTwo="chairs, waiting for you!"
         />
+
+        <ProjectSlider 
+         width={400}
+         images={[
+            "../static/sandburg.jpg",
+            "../static/sandburg.jpg",
+        ]} />
+
+
         <FreeChair
             position="frontend developer"
             positionLevel={PositionLevel.Junior}

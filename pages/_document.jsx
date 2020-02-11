@@ -26,6 +26,10 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
           />
+          <link
+            rel="stylesheet"
+            href="../static/css/carousel.min.css"
+          />
         </Head>
         <body>
           <Main />
