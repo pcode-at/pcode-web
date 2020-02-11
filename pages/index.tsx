@@ -12,12 +12,22 @@ import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
+import { WordList } from "../components/WordList";
 import { ProjectSlider } from '../components/ProjectSlider';
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
         <Heading mb="2rem">Components</Heading>
         <Heading>PcodeShape</Heading>
+        <Box display="flex">
+            <WordList words={[
+                'praise',
+                'passion',
+                'potential',
+                'people',
+                'power',
+            ]}/>
+        </Box>
         <Box display="flex">
             <PcodeShape />
             <PcodeShape color={Color.Secondary2} />
