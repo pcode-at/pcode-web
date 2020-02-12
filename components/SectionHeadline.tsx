@@ -8,6 +8,7 @@ type TSectionHeadlineProps = {
     headlinePartTwo: string;
     separateWithBreak?: boolean;
     maxWidthPartTwo?: string;
+    className?: string;
 };
 
 export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
@@ -16,17 +17,16 @@ export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
     color,
     separateWithBreak = false,
     maxWidthPartTwo,
+    className,
 }) => {
     const defaultProps = {
         color,
         fontFamily: 'raleway',
         display: 'inline',
-        // fontSize: "1.4rem"
     };
 
     return (
-        // TODO: heading with spans
-        <React.Fragment>
+        <div className={className}>
             <Heading fontFamily="raleway" color={color}>
                 <span className="headline-part-one">{headlinePartOne}</span>
                 &nbsp;
@@ -44,6 +44,6 @@ export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
                     font-weight: 300;
                 }
             `}</style>
-        </React.Fragment>
+        </div>
     );
 };

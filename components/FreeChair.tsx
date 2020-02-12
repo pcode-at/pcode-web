@@ -9,6 +9,7 @@ import { ActionButton } from './ActionButton';
 import { SubHeadline } from './SubHeadline';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { CONSTANTS } from '../shared/constants';
+import { Monster } from './Monster';
 
 type TFreeChairProps = {
     position: string;
@@ -16,25 +17,29 @@ type TFreeChairProps = {
     positionDescription: string;
     monsterType?: MonsterType;
     colorMonster?: Color;
+    className?: string;
 };
 
 const { openPositionDestinationEmail } = CONSTANTS;
 
 export const FreeChair: React.FC<TFreeChairProps> = ({
-    colorMonster: color = Color.Primary,
-    position,
-    positionLevel,
-    positionDescription,
-}) => {
+     colorMonster: color = Color.Primary,
+     position,
+     positionLevel,
+     positionDescription,
+     className,
+ }) => {
     return (
-        <React.Fragment>
+        <div className={className}>
             <div className="free-chair-wrapper">
                 {/* TODO: use this instead of pcode shape after resolving the monster svg bug */}
-                {/* <Monster
-        type={MonsterSvgPath.StrategicWizard}
-        color={Color.Primary}
-        width="20%"
-      /> */}
+                {/*
+                    <Monster
+                        type={MonsterType.SupportiveChallenger}
+                        color={Color.Secondary2}
+                        width="20%"
+                    />
+                */}
 
                 <div className="svg-wrapper">
                     <PcodeShapeSvg
@@ -82,6 +87,6 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
                     margin-bottom: 0.8rem;
                 }
             `}</style>
-        </React.Fragment>
+        </div>
     );
 };

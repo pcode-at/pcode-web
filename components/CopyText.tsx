@@ -10,15 +10,15 @@ export enum FontStyle {
 
 type TCopyTextProps = {
     color: Color;
+    className?: string;
     fontStyle?: FontStyle;
 };
 
 export const CopyText: React.FC<TCopyTextProps> = ({
     children,
     color,
-    fontStyle = FontStyle.Normal,
+    className
 }) => {
-    // write some code
 
     return (
         <Text

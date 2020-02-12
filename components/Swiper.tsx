@@ -9,6 +9,7 @@ type TSwiperProps = {
     textPartOne: string;
     textPartTwo: string;
     onClick(): void;
+    className?: string;
 };
 
 export const Swiper: React.FC<TSwiperProps> = ({
@@ -16,9 +17,10 @@ export const Swiper: React.FC<TSwiperProps> = ({
     textPartTwo,
     color = Color.Secondary,
     onClick,
+    className
 }) => {
     return (
-        <React.Fragment>
+        <div className={className}>
             <div className="text-button-wrapper">
                 <div className="text-wrapper">
                     <SectionHeadline
@@ -44,10 +46,7 @@ export const Swiper: React.FC<TSwiperProps> = ({
                 .text-wrapper {
                     margin-bottom: 0.7rem;
                 }
-                .wrapper {
-                    padding: 1em;
-                }
             `}</style>
-        </React.Fragment>
+        </div>
     );
 };
