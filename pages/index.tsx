@@ -5,7 +5,7 @@ import { theme } from '../theme';
 import { ThemeProvider } from 'emotion-theming';
 import { PcodeShape } from '../components/PcodeShape';
 import { Color } from '../Color.enum';
-import { CopyText } from '../components/CopyText';
+import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
 import { FreeChair } from '../components/FreeChair';
 import { PositionLevel } from '../shared/PositionLevel.enum';
@@ -17,8 +17,8 @@ import { CookieMonsterBanner } from '../components/CookieMonsterBanner';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
-import Router from "next/router";
-import { WordList } from "../components/WordList";
+import Router from 'next/router';
+import { WordList } from '../components/WordList';
 import { ProjectSlider } from '../components/ProjectSlider';
 import styled from 'styled-components';
 
@@ -27,6 +27,7 @@ const { light, normal } = theme.font;
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
+
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
             <PcodeShape/>
@@ -36,7 +37,7 @@ const MainPage = () => (
         </StyledPcodeShapeBox>
 
         <StyledHeading>CopyText</StyledHeading>
-        <StyledCopyText color={Color.Secondary2}>
+        <StyledCopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
             Räuber. Die altbacken Freikörperkultur meucheln. Das Schelm
@@ -53,8 +54,8 @@ const MainPage = () => (
         <StyledContactForm color={Color.Primary}>
             ContactForm Component
         </StyledContactForm>
-      
-      <Box display="flex">
+
+        <Box display="flex">
             <WordList words={[
                 'praise',
                 'passion',
@@ -73,19 +74,17 @@ const MainPage = () => (
 
         <StyledHeading>FreeChair</StyledHeading>
         <StyledFreeChair
-        <ProjectSlider 
-         width={400}
-         images={[
-            "../static/sandburg.jpg",
-            "../static/sandburg.jpg",
-        ]} />
-
-
-        <FreeChair
             position="frontend developer"
             positionLevel={PositionLevel.Junior}
-            positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
-        />
+            positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6.">
+        </StyledFreeChair>
+
+        <StyledHeading>ProjectSlider</StyledHeading>
+        <StyledProjectSlider
+            images={[
+                '../static/sandburg.jpg',
+                '../static/sandburg.jpg',
+            ]}/>
 
         <StyledHeading>Swiper</StyledHeading>
         <StyledSwiper
@@ -95,14 +94,11 @@ const MainPage = () => (
             }}
         />
 
-        <StyledFooter/>
-        
         <Menu/>
 
-        <ProjectDetailTeaser      
-<CookieMonsterBanner></CookieMonsterBanner>
-    
-      <ProjectDetailTeaser
+        {/*<CookieMonsterBanner/>*/}
+
+        <ProjectDetailTeaser
 
             headline="Test Headline"
             description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
@@ -119,7 +115,9 @@ const MainPage = () => (
             headlineColor={Color.Primary}
             onClick={() => Router.push('/main')}
         />
-        <Footer />
+
+        <StyledHeading>Footer</StyledHeading>
+        <StyledFooter/>
     </ThemeProvider>
 );
 
@@ -157,6 +155,10 @@ const StyledFooter = styled(Footer)`
 const StyledPcodeShapeBox = styled(Box)`
     width: 50%;
     margin-left: 2em;
+`;
+
+const StyledProjectSlider = styled(ProjectSlider)`
+    width: 200px;
 `;
 
 export default MainPage;

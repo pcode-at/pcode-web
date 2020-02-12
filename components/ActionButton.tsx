@@ -3,7 +3,7 @@ import { Button } from 'rebass';
 
 import { theme } from '../theme';
 import { Color } from '../Color.enum';
-import { CopyText } from './CopyText';
+import { CopyText, FontStyle } from './CopyText';
 
 type TActionButtonProps = {
     color?: Color;
@@ -35,7 +35,7 @@ export const ActionButton: React.FC<TActionButtonProps> = ({
                     cursor: 'pointer',
                 }}
             >
-                <CopyText color={Color.White}>{label}</CopyText>
+                <CopyText color={Color.White} fontStyle={FontStyle.Light}>{label}</CopyText>
             </Button>
         </div>
     );
