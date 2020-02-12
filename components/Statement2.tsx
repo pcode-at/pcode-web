@@ -1,11 +1,9 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Text, Box, Flex } from 'rebass';
+import { Box, Flex } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
 import { theme } from '../theme';
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
-import { SectionHeadline } from './SectionHeadline';
-import { read } from 'fs';
 
 type TStatementProps = {
     personName: string;
@@ -15,12 +13,12 @@ type TStatementProps = {
 };
 
 export const Statement2: React.FC<TStatementProps> = ({
-    children,
-    personName,
-    personPosition,
-    width = '100%',
-    color = Color.Primary,
-}) => {
+                                                          children,
+                                                          personName,
+                                                          personPosition,
+                                                          width = '100%',
+                                                          color = Color.Primary,
+                                                      }) => {
     const { light, normal } = theme.font;
 
     return (
@@ -90,7 +88,10 @@ export const Statement2: React.FC<TStatementProps> = ({
                                 fontSize: '130%',
                             }}
                         >
-                            <CopyText color={Color.Secondary}>
+                            <CopyText
+                                color={Color.Secondary}
+                                fontStyle={FontStyle.Light}
+                            >
                                 {personName}
                             </CopyText>
                         </Box>

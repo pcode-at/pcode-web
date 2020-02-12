@@ -14,21 +14,22 @@ type ProjectSliderProps = {
 
 
 export const ProjectSlider: React.FC<ProjectSliderProps> = ({
-                                                                images,
-                                                                isPhone = true,
-                                                                width = 500,
-                                                                className,
-                                                            }) => {
+    images,
+    isPhone = true,
+    width = 500,
+    className,
+}) => {
 
     const divs = [];
 
     for (const value of images) {
         divs.push(
-            <div>
+            <div key={value}>
                 <img src={value}/>
             </div>);
     }
 
+    {/*TODO: Fix positioning and width*/}
     const ImageWrapper = styled.div`
         position: absolute;
     `;

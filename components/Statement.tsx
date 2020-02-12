@@ -1,12 +1,10 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Text, Box, Flex } from 'rebass';
+import { Box, Flex } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
 import { theme } from '../theme';
-import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
-import { SectionHeadline } from './SectionHeadline';
-import { read } from 'fs';
 import { PcodeShape } from './PcodeShape';
+import styled from 'styled-components';
 
 type TStatementProps = {
     personName: string;
@@ -15,19 +13,34 @@ type TStatementProps = {
     width?: string;
     backgroundColor?: Color;
     pCodeShapeColor?: Color;
+    className?: string;
 };
 
-const Shape: React.FC<Pick<
-    TStatementProps,
-    'personName' | 'personPosition' | 'pCodeShapeColor'
->> = ({ personName, personPosition, pCodeShapeColor }) => {
-    return (
-        <Box // Shape
-            sx={{
-                maxWidth: 700,
-                padding: 1,
-                width: '300px',
+const ShapeBox = styled(Box)`
+    padding: 1px;
+    width: 300px;
+`;
 
+const PersonNameWrapper = styled(Box)`
+    margin-top: 8%;
+    font-size: 130%;
+    text-align: center;
+`;
+
+const PersonPositionWrapper = styled(Box)`
+    font-size: 130%;
+    text-align: center;
+`;
+
+const Shape: React.FC<Pick<TStatementProps,
+    'personName' | 'personPosition' | 'pCodeShapeColor'>> = ({
+                                                                 personName,
+                                                                 personPosition,
+                                                                 pCodeShapeColor,
+                                                             }) => {
+    return (
+        <ShapeBox
+            sx={{
                 '@media screen and (min-width: 615px)': {
                     marginRight: '10%',
                 },
@@ -38,49 +51,58 @@ const Shape: React.FC<Pick<
                 flexDirection="column"
                 justifyContent="center"
             >
-                <PcodeShape color={pCodeShapeColor} width="80%" />
-                <Box
-                    css={{
-                        fontStyle: 'bold',
-                        marginTop: '8%',
-                        fontSize: '130%',
-                        textAlign: 'center'
-                    }}
-                >
-                    <CopyText color={pCodeShapeColor}>{personName}</CopyText>
-                </Box>
+                <PcodeShape color={pCodeShapeColor} width="80%"/>
+                <PersonNameWrapper>
+                    <CopyText
+                        color={pCodeShapeColor}
+                        fontStyle={FontStyle.Normal}
+                    >
+                        {personName}
+                    </CopyText>
+                </PersonNameWrapper>
 
-                <Box
-                    css={{
-                        fontSize: '130%',
-                        textAlign: 'center'
-                    }}
-                >
+                <PersonPositionWrapper>
                     <CopyText
                         fontStyle={FontStyle.Light}
                         color={pCodeShapeColor}
                     >
                         {personPosition}
                     </CopyText>
-                </Box>
+                </PersonPositionWrapper>
             </Flex>
-        </Box>
+        </ShapeBox>
     );
 };
 
 export const Statement: React.FC<TStatementProps> = ({
-    children,
-    personName,
-    personPosition,
-    width = '100%',
-    color = Color.White,
-    backgroundColor = Color.Secondary2,
-    pCodeShapeColor = Color.Secondary,
-}) => {
+     children,
+     personName,
+     personPosition,
+     width = '100%',
+     color = Color.White,
+     backgroundColor = Color.Secondary2,
+     pCodeShapeColor = Color.Secondary,
+     className,
+ }) => {
     const { light, normal } = theme.font;
 
+    const TextWrapper = styled(Flex)`
+        max-width: 700px;
+        width: 100%;
+        margin-left: 10%;
+        font-family: ${light.fontFamily};
+        font-weight: ${normal.fontWeight};
+        font-size: 250%;
+        @media screen and (max-width: 615px) {
+            align-items: center;
+            flex-direction: column;
+            padding-top: 1em;                        
+            padding-bottom: 1em;
+        }
+    `;
+
     return (
-        <React.Fragment>
+        <div className={className}>
             <Flex
                 paddingTop="3em"
                 paddingBottom="3em"
@@ -113,7 +135,7 @@ export const Statement: React.FC<TStatementProps> = ({
                             width: '90%',
                             fontSize: '150%',
                             textAlign: 'center',
-                            marginRight: '10%'
+                            marginRight: '10%',
                         },
                     }}
                 >
@@ -125,6 +147,6 @@ export const Statement: React.FC<TStatementProps> = ({
                     pCodeShapeColor={pCodeShapeColor}
                 />
             </Flex>
-        </React.Fragment>
+        </div>
     );
 };

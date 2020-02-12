@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box, Heading } from 'rebass';
+import { Box } from 'rebass';
 import { theme } from '../theme';
 import { ThemeProvider } from 'emotion-theming';
 import { PcodeShape } from '../components/PcodeShape';
@@ -13,21 +13,31 @@ import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
 import { Menu } from '../components/Menu';
-import { CookieMonsterBanner } from '../components/CookieMonsterBanner';
-import { Statement } from '../components/Statement';
-import { Statement2 } from '../components/Statement2';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
 import Router from 'next/router';
 import { WordList } from '../components/WordList';
 import { ProjectSlider } from '../components/ProjectSlider';
 import styled from 'styled-components';
+import { SiteHeader } from '../components/SiteHeader';
+import { Statement } from '../components/Statement';
+import { Statement2 } from '../components/Statement2';
 
 const { light, normal } = theme.font;
 
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
+        <StyledHeading>SiteHeader</StyledHeading>
+        <SiteHeader color={Color.Primary} onClick={() => {alert("Not Implemented Yet!")}}/>
 
+        <Statement personName={'Christoph Pernsteiner'} personPosition={'CEO .founder'}>
+            'this project was a great challenge, we learned a lot and it was a journey with such an amazing customer!'
+        </Statement>
+        <Statement2 personName={'Nico Peham'} personPosition={'see'} color={Color.Secondary2}>
+            'we are adapting to new challenges by developing and investing in our people'
+        </Statement2>
+
+        
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
             <PcodeShape/>
@@ -55,16 +65,6 @@ const MainPage = () => (
             ContactForm Component
         </StyledContactForm>
 
-        <Box display="flex">
-            <WordList words={[
-                'praise',
-                'passion',
-                'potential',
-                'people',
-                'power',
-            ]}/>
-        </Box>
-
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
             color={Color.Secondary2}
@@ -80,11 +80,13 @@ const MainPage = () => (
         </StyledFreeChair>
 
         <StyledHeading>ProjectSlider</StyledHeading>
-        <StyledProjectSlider
-            images={[
-                '../static/sandburg.jpg',
-                '../static/sandburg.jpg',
-            ]}/>
+        <ProjectSliderWrapper>
+            <ProjectSlider width={300}
+                           images={[
+                               '../static/sandburg.jpg',
+                               '../static/sandburg.jpg',
+                           ]}/>
+        </ProjectSliderWrapper>
 
         <StyledHeading>Swiper</StyledHeading>
         <StyledSwiper
@@ -116,6 +118,17 @@ const MainPage = () => (
             onClick={() => Router.push('/main')}
         />
 
+        <StyledHeading>WordList</StyledHeading>
+        <Box display="flex">
+            <StyledWordList words={[
+                'praise',
+                'passion',
+                'potential',
+                'people',
+                'power',
+            ]}/>
+        </Box>
+
         <StyledHeading>Footer</StyledHeading>
         <StyledFooter/>
     </ThemeProvider>
@@ -146,6 +159,7 @@ const StyledFreeChair = styled(FreeChair)`
 
 const StyledSwiper = styled(Swiper)`
     padding: 1em;
+    width: 300px;
 `;
 
 const StyledFooter = styled(Footer)`
@@ -157,8 +171,14 @@ const StyledPcodeShapeBox = styled(Box)`
     margin-left: 2em;
 `;
 
-const StyledProjectSlider = styled(ProjectSlider)`
-    width: 200px;
+const ProjectSliderWrapper = styled.div`
+    width: 250px;
+    {/*TODO: Fix padding (see ProjectSlider.tsx TODO)*/}
+    padding-bottom: 20em;
+`;
+
+const StyledWordList = styled(WordList)`
+    
 `;
 
 export default MainPage;
