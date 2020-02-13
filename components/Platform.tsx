@@ -8,18 +8,28 @@ import { PlatformType } from '../shared/PlatformType.enum';
 
 type TPlatformProps = {
     type: PlatformType;
+    className?: string;
 };
 
-export const Platform: React.FC<TPlatformProps> = ({ type }) => {
+export const Platform: React.FC<TPlatformProps> = ({
+                                                       type,
+                                                       className,
+                                                   }) => {
     switch (type) {
         case PlatformType.Web: {
-            return <WebSvg/>;
+            return <div className={className}>
+                <WebSvg/>
+            </div>;
         }
         case PlatformType.Mobile: {
-            return <MobileSvg/>;
+            return <div className={className}>
+                <MobileSvg/>
+            </div>;
         }
         case PlatformType.ArVr: {
-            return <ArVrSvg/>;
+            return <div className={className}>
+                <ArVrSvg/>
+            </div>;
         }
         default: {
             return <p>INVALID PLATFORM TYPE</p>;
