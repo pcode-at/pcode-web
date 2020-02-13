@@ -51,6 +51,7 @@ export const Menu: React.FC<TMenuProps> = ({
 
     return (
         <div className={className}>
+            {/*TODO: fix the background color*/}
             <Box
                 overflow="hidden"
                 bg='secondary2'

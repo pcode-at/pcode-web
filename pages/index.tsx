@@ -21,23 +21,28 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { SubHeadline } from '../components/SubHeadline';
 
 const { light, normal } = theme.font;
 
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
-        <StyledHeading>SiteHeader</StyledHeading>
-        <SiteHeader color={Color.Primary} onClick={() => {alert("Not Implemented Yet!")}}/>
+        <SiteHeader color={Color.Primary} onClick={() => {
+            alert('Not Implemented Yet!');
+        }}/>
 
+        <StyledHeading>Statement</StyledHeading>
         <Statement personName={'Christoph Pernsteiner'} personPosition={'CEO .founder'}>
             'this project was a great challenge, we learned a lot and it was a journey with such an amazing customer!'
         </Statement>
-        <Statement2 personName={'Nico Peham'} personPosition={'see'} color={Color.Secondary2}>
+
+        <StyledHeading>Statement2</StyledHeading>
+        <Statement2 personName={'Nico Peham'} personPosition={'tech lead'} color={Color.Secondary2}>
             'we are adapting to new challenges by developing and investing in our people'
         </Statement2>
 
-        
+
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
             <PcodeShape/>
@@ -71,6 +76,14 @@ const MainPage = () => (
             headlinePartOne="our free"
             headlinePartTwo="chairs, waiting for you!"
         />
+
+        <StyledHeading>SubHeadline</StyledHeading>
+        <StyledSubHeadline
+            color={Color.Secondary2}
+            fontStyle={FontStyle.Normal}
+        >
+            Nabend
+        </StyledSubHeadline>
 
         <StyledHeading>FreeChair</StyledHeading>
         <StyledFreeChair
@@ -133,6 +146,10 @@ const MainPage = () => (
         <StyledFooter/>
     </ThemeProvider>
 );
+
+const StyledSubHeadline = styled(SubHeadline)`
+    padding: 2em;
+`;
 
 const StyledHeading = styled.h1`
     font-family: ${normal.fontFamily};

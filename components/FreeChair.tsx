@@ -9,7 +9,6 @@ import { ActionButton } from './ActionButton';
 import { SubHeadline } from './SubHeadline';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { CONSTANTS } from '../shared/constants';
-import { Monster } from './Monster';
 import styled from 'styled-components';
 
 type TFreeChairProps = {
@@ -75,7 +74,9 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
                 </SvgWrapper>
 
                 <PositionWrapper>
-                    <SubHeadline color={Color.Secondary}>
+                    <SubHeadline
+                        color={Color.Secondary}
+                        fontStyle={FontStyle.Normal}>
                         {' '}
                         {position}{' '}
                     </SubHeadline>

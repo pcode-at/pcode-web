@@ -3,13 +3,15 @@ import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
 import { theme } from '../theme';
-import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
+import styled from 'styled-components';
+import { PcodeShape } from './PcodeShape';
 
 type TStatementProps = {
     personName: string;
     personPosition: string;
     color: Color;
     width?: string;
+    className?: string;
 };
 
 export const Statement2: React.FC<TStatementProps> = ({
@@ -18,16 +20,53 @@ export const Statement2: React.FC<TStatementProps> = ({
                                                           personPosition,
                                                           width = '100%',
                                                           color = Color.Primary,
+                                                          className,
                                                       }) => {
     const { light, normal } = theme.font;
 
+    const Wrapper = styled(Flex)`
+        padding-top: 3em;
+        padding-bottom: 3em;
+        background-color: ${Color.White};
+        align-items: center;
+    `;
+
+    const TextWrapper = styled(Flex)`
+        max-width: 700px;
+        margin-left: 10%;
+        width: 100%;
+        font-family: ${light.fontFamily};
+        font-weight: ${normal.fontWeight};
+        font-size: 250%;
+    `;
+
+    const PersonWrapper = styled(Flex)`
+        max-width: 700px;
+        padding: 1px;
+        width: 300px;
+        color: ${Color.White};
+    `;
+
+    const PersonNameWrapper = styled(Box)`
+    margin-top: 8%;
+    font-size: 130%;
+    text-align: center;
+    `;
+
+    const PersonPositionWrapper = styled(Box)`
+    font-size: 130%;
+    text-align: center;
+    `;
+
+    const StyledPersonFlex = styled(Flex)`
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    `;
+
     return (
-        <React.Fragment>
-            <Flex
-                paddingTop="3em"
-                paddingBottom="3em"
-                backgroundColor={Color.White}
-                alignItems="center"
+        <div className={className}>
+            <Wrapper
                 sx={{
                     '@media screen and (min-width: 615px)': {
                         justifyContent: 'space-between',
@@ -39,15 +78,10 @@ export const Statement2: React.FC<TStatementProps> = ({
                     },
                 }}
             >
-                <Flex
+                <TextWrapper
+                    color={Color.Secondary2}
                     sx={{
-                        maxWidth: 700,
                         marginLeft: '10%',
-                        width: '130%',
-                        fontFamily: light.fontFamily,
-                        fontWeight: normal.fontWeight,
-                        color: Color.Secondary2,
-                        fontSize: '250%',
                         '@media screen and (max-width: 615px)': {
                             width: '100%',
                             fontSize: '150%',
@@ -57,60 +91,37 @@ export const Statement2: React.FC<TStatementProps> = ({
                     }}
                 >
                     <p>{children}</p>
-                </Flex>
+                </TextWrapper>
 
-                <Box
+                <PersonWrapper
                     sx={{
-                        maxWidth: 700,
-                        padding: 1,
-                        width: '300px',
-                        color: Color.White,
                         '@media screen and (min-width: 615px)': {
                             marginRight: '10%',
                         },
                     }}
                 >
-                    <Flex
-                        alignItems="center"
-                        flexDirection="column"
-                        justifyContent="center"
-                    >
-                        <PcodeShapeSvg
-                            style={{
-                                color: theme.colors[Color.Secondary],
-                                width: '80%',
-                            }}
-                        />
-                        <Box
-                            css={{
-                                fontStyle: 'bold',
-                                marginTop: '8%',
-                                fontSize: '130%',
-                            }}
-                        >
+                    <StyledPersonFlex>
+                        <PcodeShape color={Color.Secondary} width="80%"/>
+                        <PersonNameWrapper>
                             <CopyText
                                 color={Color.Secondary}
-                                fontStyle={FontStyle.Light}
+                                fontStyle={FontStyle.Normal}
                             >
                                 {personName}
                             </CopyText>
-                        </Box>
+                        </PersonNameWrapper>
 
-                        <Box
-                            css={{
-                                fontSize: '130%',
-                            }}
-                        >
+                        <PersonPositionWrapper>
                             <CopyText
                                 fontStyle={FontStyle.Light}
                                 color={Color.Secondary}
                             >
                                 {personPosition}
                             </CopyText>
-                        </Box>
-                    </Flex>
-                </Box>
-            </Flex>
-        </React.Fragment>
+                        </PersonPositionWrapper>
+                    </StyledPersonFlex>
+                </PersonWrapper>
+            </Wrapper>
+        </div>
     );
 };
