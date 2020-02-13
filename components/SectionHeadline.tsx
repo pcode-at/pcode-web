@@ -1,6 +1,7 @@
 import React from 'react';
 import { Color } from '../Color.enum';
 import { Text, Heading } from 'rebass';
+import styled from 'styled-components';
 
 type TSectionHeadlineProps = {
     color: Color;
@@ -8,42 +9,41 @@ type TSectionHeadlineProps = {
     headlinePartTwo: string;
     separateWithBreak?: boolean;
     maxWidthPartTwo?: string;
+    className?: string;
 };
 
 export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
-    headlinePartOne,
-    headlinePartTwo,
-    color,
-    separateWithBreak = false,
-    maxWidthPartTwo,
-}) => {
+     headlinePartOne,
+     headlinePartTwo,
+     color,
+     separateWithBreak = false,
+     maxWidthPartTwo,
+     className,
+ }) => {
     const defaultProps = {
         color,
         fontFamily: 'raleway',
         display: 'inline',
-        // fontSize: "1.4rem"
     };
 
-    return (
-        // TODO: heading with spans
-        <React.Fragment>
-            <Heading fontFamily="raleway" color={color}>
-                <span className="headline-part-one">{headlinePartOne}</span>
-                &nbsp;
-                {separateWithBreak && <br />}
-                <span className="headline-part-two">{headlinePartTwo}</span>
-            </Heading>
+    const FirstSpan = styled.span`
+        font-weight: 500;
+    `;
 
-            <style jsx>{`
-                .headline-part-one {
-                    font-weight: 500;
-                }
-                .headline-part-two {
-                    display: ${maxWidthPartTwo ? 'block' : 'inline'};
-                    max-width: ${maxWidthPartTwo};
-                    font-weight: 300;
-                }
-            `}</style>
-        </React.Fragment>
+    const SecondSpan = styled.span`
+        display: ${maxWidthPartTwo ? 'block' : 'inline'};
+        max-width: ${maxWidthPartTwo};
+        font-weight: 300;
+    `;
+
+    return (
+        <div className={className}>
+            <Heading fontFamily="raleway" color={color}>
+                <FirstSpan>{headlinePartOne}</FirstSpan>
+                &nbsp;
+                {separateWithBreak && <br/>}
+                <SecondSpan>{headlinePartTwo}</SecondSpan>
+            </Heading>
+        </div>
     );
 };

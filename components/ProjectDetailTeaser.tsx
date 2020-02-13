@@ -3,8 +3,9 @@ import { PcodeShape } from '../components/PcodeShape';
 import { Color } from '../Color.enum';
 import { Box, Button, Flex } from 'rebass';
 import { ActionButton } from './ActionButton';
-import { CopyText } from './CopyText';
+import { CopyText, FontStyle } from './CopyText';
 import { SectionHeadline } from './SectionHeadline';
+import styled from 'styled-components';
 
 type TProjectDetailTeaserProps = {
     headline: string;
@@ -12,51 +13,63 @@ type TProjectDetailTeaserProps = {
     imageSrc: string;
     headlineColor: Color;
     onClick?(): void;
+    className?: string;
 };
 
 export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
-    description,
-    headline,
-    imageSrc,
-    headlineColor,
-    onClick
-}) => {
+     description,
+     headline,
+     imageSrc,
+     headlineColor,
+     onClick,
+     className,
+ }) => {
 
+    const StyledImage = styled.img`
+        width: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    `;
+
+    const GraphicWrapper = styled(Box)`
+        position: relative;
+        margin-left: -30%;
+        width: 100%;
+    `;
+
+    const TextWrapper = styled(Box)`
+        position: relative;
+        text-align: left;
+        width: 100%;
+    `;
+
+    const StyledSectionHeadline = styled(SectionHeadline)`
+        margin-bottom: 1rem;
+    `;
+
+    const StyledCopyText = styled(CopyText)`
+        margin-bottom: 1rem;
+        width: 50%;
+    `;
 
     return (
-        <div className="pcode-shape-background">
+        <div className={className}>
             <Flex alignItems="center" justifyContent="space-between">
-                <Box
-                    width={2/6}>
-                    <Box sx={{position: 'relative', marginLeft: "-40%"}}
-                    className="pCodeShape"
-                    width="100%">
-                        <PcodeShape color={Color.Primary} width="100%"/>
-                        <img src={imageSrc} width="50%" className="image" />
-                    </Box>
+                <Box width={2 / 6}>
+                    <GraphicWrapper>
+                        <PcodeShape color={Color.Primary}/>
+                        <StyledImage src={imageSrc}/>
+                    </GraphicWrapper>
                 </Box>
-                <Box
-                    width={4/6}
-                    sx={{position: 'relative', textAlign: "left"}}>
-                    <Box marginBottom="1rem">
-                        <SectionHeadline color={headlineColor} headlinePartOne={headline} headlinePartTwo=""/>
-                    </Box>
-                    <Box marginBottom="1rem" width="50%">
-                        <CopyText color={Color.Secondary}>
-                            {description}>
-                        </CopyText>
-                    </Box>
-                    <ActionButton label="learn more" thisColor={Color.Secondary2} onClick={onClick}/>
-                </Box>
+                <TextWrapper>
+                    <StyledSectionHeadline color={headlineColor} headlinePartOne={headline} headlinePartTwo=""/>
+                    <StyledCopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
+                        {description}>
+                    </StyledCopyText>
+                    <ActionButton label="learn more" color={Color.Secondary2} onClick={onClick}/>
+                </TextWrapper>
             </Flex>
-
-            <style jsx>{`
-                .image {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateX(-50%) translateY(-50%);
-                }
-            `}</style>
         </div>
     );
 };

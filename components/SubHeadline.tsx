@@ -1,20 +1,25 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Text } from 'rebass';
+import { CopyText, FontStyle } from './CopyText';
 
 type TSubHeadlineProps = {
     color: Color;
+    fontStyle: FontStyle;
+    className?: string;
 };
 
 export const SubHeadline: React.FC<TSubHeadlineProps> = ({
-    children,
-    color,
-}) => {
-    // write some code
+     children,
+     color,
+     fontStyle,
+     className,
+ }) => {
 
     return (
-        <Text color={color} fontFamily="raleway" fontWeight={500}>
-            {children}
-        </Text>
+        <div className={className}>
+            <CopyText fontStyle={fontStyle} color={color}>
+                {children}
+            </CopyText>
+        </div>
     );
 };

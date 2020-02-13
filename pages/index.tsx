@@ -1,82 +1,120 @@
 import * as React from 'react';
 
-import { Box, Flex, Heading } from 'rebass';
+import { Box } from 'rebass';
 import { theme } from '../theme';
 import { ThemeProvider } from 'emotion-theming';
 import { PcodeShape } from '../components/PcodeShape';
 import { Color } from '../Color.enum';
-import { CopyText } from '../components/CopyText';
+import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
 import { FreeChair } from '../components/FreeChair';
 import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
+import { Menu } from '../components/Menu';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
 import Router from 'next/router';
-import { TechnologyPlatform } from '../components/TechnologyPlatform';
-import { PlatformType } from '../shared/PlatformType.enum';
+import { WordList } from '../components/WordList';
+import { ProjectSlider } from '../components/ProjectSlider';
+import styled from 'styled-components';
+import { SiteHeader } from '../components/SiteHeader';
+import { Statement } from '../components/Statement';
+import { Statement2 } from '../components/Statement2';
+import { SubHeadline } from '../components/SubHeadline';
+
+const { light, normal } = theme.font;
+
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
-        <Heading mb="2rem">Components</Heading>
-        <Heading>PcodeShape</Heading>
-        <Flex flexWrap="wrap" justifyContent="space-evenly">
-            <TechnologyPlatform
-                name={"Web"}
-                platformType={PlatformType.Web}
-                languages={["SASS", "HTML"]}
-                technologies={["React", "Vue"]}>
-            </TechnologyPlatform>
-            <TechnologyPlatform
-                name={"Web"}
-                platformType={PlatformType.Mobile}
-                languages={["SASS", "HTML"]}
-                technologies={["React", "Vue"]}>
-            </TechnologyPlatform>
-            <TechnologyPlatform
-                name={"Web"}
-                platformType={PlatformType.ArVr}
-                languages={["SASS", "HTML"]}
-                technologies={["React", "Vue"]}>
-            </TechnologyPlatform>
-        </Flex>
-        <Box display="flex">
-            <PcodeShape />
-            <PcodeShape color={Color.Secondary2} />
-            <PcodeShape width="80%" />
-            <PcodeShape width="50%" color={Color.Secondary} />
-            <CopyText color={Color.Secondary2}>
-                Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
-                gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
-                Räuber. Die altbacken Freikörperkultur meucheln. Das Schelm
-                bauchpinseln das feist Groschengrab. Der gemach
-                Bürgermeisterstück verhaspeln. Das Franzosenkrankheit abkupfern
-                der hochgestochen Dachshund. Das pfundig Gamaschen frohlocken.
-                Der grobschlächtig Tausendsassa bauchpinseln. Die geflissentlich
-                Muckefuck erquicken. Der Tausendsassa anschwärzen der einfältig
-                Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
-                Höchste Eisenbahn
-            </CopyText>
-        </Box>
-        <ContactForm color={Color.Primary}>ContactForm Component</ContactForm>
-        <SectionHeadline
+        <SiteHeader color={Color.Primary} onClick={() => {
+            alert('Not Implemented Yet!');
+        }}/>
+
+        <StyledHeading>Statement</StyledHeading>
+        <Statement personName={'Christoph Pernsteiner'} personPosition={'CEO .founder'}>
+            'this project was a great challenge, we learned a lot and it was a journey with such an amazing customer!'
+        </Statement>
+
+        <StyledHeading>Statement2</StyledHeading>
+        <Statement2 personName={'Nico Peham'} personPosition={'tech lead'} color={Color.Secondary2}>
+            'we are adapting to new challenges by developing and investing in our people'
+        </Statement2>
+
+
+        <StyledHeading>PcodeShape</StyledHeading>
+        <StyledPcodeShapeBox display="flex">
+            <PcodeShape/>
+            <PcodeShape color={Color.Secondary2}/>
+            <PcodeShape width="80%"/>
+            <PcodeShape width="50%" color={Color.Secondary}/>
+        </StyledPcodeShapeBox>
+
+        <StyledHeading>CopyText</StyledHeading>
+        <StyledCopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
+            Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
+            gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
+            Räuber. Die altbacken Freikörperkultur meucheln. Das Schelm
+            bauchpinseln das feist Groschengrab. Der gemach
+            Bürgermeisterstück verhaspeln. Das Franzosenkrankheit abkupfern
+            der hochgestochen Dachshund. Das pfundig Gamaschen frohlocken.
+            Der grobschlächtig Tausendsassa bauchpinseln. Die geflissentlich
+            Muckefuck erquicken. Der Tausendsassa anschwärzen der einfältig
+            Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
+            Höchste Eisenbahn
+        </StyledCopyText>
+
+        <StyledHeading>ContactForm</StyledHeading>
+        <StyledContactForm color={Color.Primary}>
+            ContactForm Component
+        </StyledContactForm>
+
+        <StyledHeading>SectionHeadline</StyledHeading>
+        <StyledSectionHeadline
             color={Color.Secondary2}
             headlinePartOne="our free"
             headlinePartTwo="chairs, waiting for you!"
         />
-        <FreeChair
+
+        <StyledHeading>SubHeadline</StyledHeading>
+        <StyledSubHeadline
+            color={Color.Secondary2}
+            fontStyle={FontStyle.Normal}
+        >
+            Nabend
+        </StyledSubHeadline>
+
+        <StyledHeading>FreeChair</StyledHeading>
+        <StyledFreeChair
             position="frontend developer"
             positionLevel={PositionLevel.Junior}
-            positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
-        />
-        <Swiper
+            positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6.">
+        </StyledFreeChair>
+
+        <StyledHeading>ProjectSlider</StyledHeading>
+        <ProjectSliderWrapper>
+            <ProjectSlider width={300}
+                           images={[
+                               '../static/sandburg.jpg',
+                               '../static/sandburg.jpg',
+                           ]}/>
+        </ProjectSliderWrapper>
+
+        <StyledHeading>Swiper</StyledHeading>
+        <StyledSwiper
             textPartOne="we transform complexity"
             textPartTwo="to simplicity by delivering exceptional solutions."
-            onClick={() => {}}
+            onClick={() => {
+            }}
         />
 
+        <Menu/>
+
+        {/*<CookieMonsterBanner/>*/}
+
         <ProjectDetailTeaser
+
             headline="Test Headline"
             description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
@@ -92,9 +130,97 @@ const MainPage = () => (
             headlineColor={Color.Primary}
             onClick={() => Router.push('/main')}
         />
+    
+    <TechnologyFlex>
+        <StyledTechnologyPlatform name={'web'} platformType={PlatformType.Web}
+                            languages={['JavaScript', 'Angular', 'TypeScript', 'PHP', 'Symfony', '.Net (C#)', '(e-commerce)']}
+                            technologies={['ReactJs', 'Stylius', 'Spryker']}/>
 
-        <Footer />
+        <StyledTechnologyPlatform name={'mobile'} platformType={PlatformType.Mobile}
+                            languages={['React Native', 'Native iOS', 'Native Android']}
+                            technologies={['Progressive Web Apps (PWA)']}/>
+
+        <StyledTechnologyPlatform name={'ar . vr'} platformType={PlatformType.ArVr}
+                            languages={['React Native', 'Native iOS', 'Native Android']}
+                            technologies={['Progressive Web Apps (PWA)']}/>
+    </TechnologyFlex>
+
+        <StyledHeading>WordList</StyledHeading>
+        <Box display="flex">
+            <StyledWordList words={[
+                'praise',
+                'passion',
+                'potential',
+                'people',
+                'power',
+            ]}/>
+        </Box>
+
+        <StyledHeading>Footer</StyledHeading>
+        <StyledFooter/>
     </ThemeProvider>
 );
+
+const StyledTechnologyPlatform = styled(TechnologyPlatform)`
+    width: 250px;
+    background-color: aliceblue;
+`;
+
+const TechnologyFlex = styled(Flex)`
+    align-content: center;
+    justify-content: space-evenly;
+    max-width: 1200px;
+`;
+
+const StyledSubHeadline = styled(SubHeadline)`
+    padding: 2em;
+`;
+
+const StyledHeading = styled.h1`
+    font-family: ${normal.fontFamily};
+    font-weight: ${normal.fontWeight};
+    margin-top: 3em;
+`;
+
+const StyledContactForm = styled(ContactForm)`
+    max-width: 300px;
+`;
+
+const StyledCopyText = styled(CopyText)`
+    max-width: 900px;
+    padding: 3em;
+`;
+
+const StyledSectionHeadline = styled(SectionHeadline)`
+    padding: 1em;
+`;
+
+const StyledFreeChair = styled(FreeChair)`
+    margin-left: 1em;
+`;
+
+const StyledSwiper = styled(Swiper)`
+    padding: 1em;
+    width: 300px;
+`;
+
+const StyledFooter = styled(Footer)`
+    margin-top: 2em;
+`;
+
+const StyledPcodeShapeBox = styled(Box)`
+    width: 50%;
+    margin-left: 2em;
+`;
+
+const ProjectSliderWrapper = styled.div`
+    width: 250px;
+    {/*TODO: Fix padding (see ProjectSlider.tsx TODO)*/}
+    padding-bottom: 20em;
+`;
+
+const StyledWordList = styled(WordList)`
+    
+`;
 
 export default MainPage;
