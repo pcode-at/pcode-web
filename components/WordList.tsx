@@ -1,13 +1,15 @@
 import React from 'react';
-import { Box, Text } from "rebass";
-import { PcodeShape } from "./PcodeShape";
-import { Color } from "../Color.enum";
+import { Box, Text } from 'rebass';
+import { PcodeShape } from './PcodeShape';
+import { Color } from '../Color.enum';
+import styled from 'styled-components';
 
 type TWordList = {
-    words: Array<string>
+    words: Array<string>;
+    className?: string;
 };
 
-export const WordList: React.FC<TWordList> = ({words}) => {
+export const WordList: React.FC<TWordList> = ({ words, className }) => {
     const [itemsToSlide, setItemsToSlide] = React.useState(() => words);
     const middleWordIndex = parseInt((itemsToSlide.length / 2).toFixed(0)) - 1;
 
@@ -24,44 +26,69 @@ export const WordList: React.FC<TWordList> = ({words}) => {
         return () => clearInterval(interval);
     }, [itemsToSlide]);
 
+
     const items = itemsToSlide.map((word, index) => {
         let opacity = index === middleWordIndex ? '100%' : '10%';
         let animation = 'animated infinite slower ';
 
-        return <Text
-            className={index === middleWordIndex ? animation + 'fadeIn': animation}
-            color={Color.White}
-            fontFamily="raleway"
-            fontWeight={300}
-            sx={{
-                opacity: opacity,
-                order: index,
-            }}>
+        const StyledWordText = styled(Text)`
+        font-weight: 300;
+        font-family: 'raleway',serif;
+        color: ${Color.White};
+        opacity: ${opacity};
+        order: ${index};
+    `;
+
+        return <StyledWordText
+            className={index === middleWordIndex ? animation + 'fadeIn' : animation}
+            key={word}
+        >
             {word}
-        </Text>
+        </StyledWordText>;
     });
 
+    const WrapperBox = styled(Box)`
+        position: relative; 
+        display: flex;
+        align-items: center;
+        width: 100%;
+    `;
+
+    const CentralWrapperBox = styled(Box)`
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;        
+    `;
+
+    const ItemsWrapperBox = styled(Box)`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2rem;
+    `;
+
+    const PcodeShapeWrapperBox = styled(Box)`
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: -6%;
+        z-index: -1;
+    `;
+
     return (
-        <Box sx={{ position:"relative", display: "flex", alignItems: "center", height: "300px", width: "100%" }}>
-            <Box sx={{position: "absolute", display: "flex", justifyContent: "center", flexDirection: "column", width: "100%"}}>
-                <Box sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems:"center",
-                    fontSize: "2rem"
-                }}>
-                    <div>{items}</div>
-                </Box>
-            </Box>
-            <Box sx={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "center",
-                marginTop: "-6%",
-                zIndex: "-1"
-            }}>
-                <PcodeShape width="300px"/>
-            </Box>
-        </Box>
+        <div className={className}>
+            <WrapperBox>
+                <CentralWrapperBox>
+                    <ItemsWrapperBox>
+                        <div>{items}</div>
+                    </ItemsWrapperBox>
+                </CentralWrapperBox>
+                <PcodeShapeWrapperBox>
+                    <PcodeShape width="300px"/>
+                </PcodeShapeWrapperBox>
+            </WrapperBox>
+        </div>
     );
 };

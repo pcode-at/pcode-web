@@ -12,9 +12,9 @@ type TContactFormProps = {
 };
 
 export const ContactForm: React.FC<TContactFormProps> = ({
-    children,
-    color,
-    className
+     children,
+     color,
+     className
 }) => {
     const [textAreaContent, setTextAreaContent] = React.useState('');
     const { light, normal } = theme.font;

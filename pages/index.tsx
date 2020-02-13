@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { Box, Heading } from 'rebass';
+import { Box } from 'rebass';
 import { theme } from '../theme';
 import { ThemeProvider } from 'emotion-theming';
 import { PcodeShape } from '../components/PcodeShape';
 import { Color } from '../Color.enum';
-import { CopyText } from '../components/CopyText';
+import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
 import { FreeChair } from '../components/FreeChair';
 import { PositionLevel } from '../shared/PositionLevel.enum';
@@ -13,20 +13,36 @@ import { Swiper } from '../components/Swiper';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
 import { Menu } from '../components/Menu';
-import { CookieMonsterBanner } from '../components/CookieMonsterBanner';
-import { Statement } from '../components/Statement';
-import { Statement2 } from '../components/Statement2';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
-import Router from "next/router";
-import { WordList } from "../components/WordList";
+import Router from 'next/router';
+import { WordList } from '../components/WordList';
 import { ProjectSlider } from '../components/ProjectSlider';
 import styled from 'styled-components';
+import { SiteHeader } from '../components/SiteHeader';
+import { Statement } from '../components/Statement';
+import { Statement2 } from '../components/Statement2';
+import { SubHeadline } from '../components/SubHeadline';
 
 const { light, normal } = theme.font;
 
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
+        <SiteHeader color={Color.Primary} onClick={() => {
+            alert('Not Implemented Yet!');
+        }}/>
+
+        <StyledHeading>Statement</StyledHeading>
+        <Statement personName={'Christoph Pernsteiner'} personPosition={'CEO .founder'}>
+            'this project was a great challenge, we learned a lot and it was a journey with such an amazing customer!'
+        </Statement>
+
+        <StyledHeading>Statement2</StyledHeading>
+        <Statement2 personName={'Nico Peham'} personPosition={'tech lead'} color={Color.Secondary2}>
+            'we are adapting to new challenges by developing and investing in our people'
+        </Statement2>
+
+
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
             <PcodeShape/>
@@ -36,7 +52,7 @@ const MainPage = () => (
         </StyledPcodeShapeBox>
 
         <StyledHeading>CopyText</StyledHeading>
-        <StyledCopyText color={Color.Secondary2}>
+        <StyledCopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
             Räuber. Die altbacken Freikörperkultur meucheln. Das Schelm
@@ -53,16 +69,6 @@ const MainPage = () => (
         <StyledContactForm color={Color.Primary}>
             ContactForm Component
         </StyledContactForm>
-      
-      <Box display="flex">
-            <WordList words={[
-                'praise',
-                'passion',
-                'potential',
-                'people',
-                'power',
-            ]}/>
-        </Box>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
@@ -71,21 +77,29 @@ const MainPage = () => (
             headlinePartTwo="chairs, waiting for you!"
         />
 
+        <StyledHeading>SubHeadline</StyledHeading>
+        <StyledSubHeadline
+            color={Color.Secondary2}
+            fontStyle={FontStyle.Normal}
+        >
+            Nabend
+        </StyledSubHeadline>
+
         <StyledHeading>FreeChair</StyledHeading>
         <StyledFreeChair
-        <ProjectSlider 
-         width={400}
-         images={[
-            "../static/sandburg.jpg",
-            "../static/sandburg.jpg",
-        ]} />
-
-
-        <FreeChair
             position="frontend developer"
             positionLevel={PositionLevel.Junior}
-            positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
-        />
+            positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6.">
+        </StyledFreeChair>
+
+        <StyledHeading>ProjectSlider</StyledHeading>
+        <ProjectSliderWrapper>
+            <ProjectSlider width={300}
+                           images={[
+                               '../static/sandburg.jpg',
+                               '../static/sandburg.jpg',
+                           ]}/>
+        </ProjectSliderWrapper>
 
         <StyledHeading>Swiper</StyledHeading>
         <StyledSwiper
@@ -95,14 +109,11 @@ const MainPage = () => (
             }}
         />
 
-        <StyledFooter/>
-        
         <Menu/>
 
-        <ProjectDetailTeaser      
-<CookieMonsterBanner></CookieMonsterBanner>
-    
-      <ProjectDetailTeaser
+        {/*<CookieMonsterBanner/>*/}
+
+        <ProjectDetailTeaser
 
             headline="Test Headline"
             description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
@@ -119,9 +130,26 @@ const MainPage = () => (
             headlineColor={Color.Primary}
             onClick={() => Router.push('/main')}
         />
-        <Footer />
+
+        <StyledHeading>WordList</StyledHeading>
+        <Box display="flex">
+            <StyledWordList words={[
+                'praise',
+                'passion',
+                'potential',
+                'people',
+                'power',
+            ]}/>
+        </Box>
+
+        <StyledHeading>Footer</StyledHeading>
+        <StyledFooter/>
     </ThemeProvider>
 );
+
+const StyledSubHeadline = styled(SubHeadline)`
+    padding: 2em;
+`;
 
 const StyledHeading = styled.h1`
     font-family: ${normal.fontFamily};
@@ -148,6 +176,7 @@ const StyledFreeChair = styled(FreeChair)`
 
 const StyledSwiper = styled(Swiper)`
     padding: 1em;
+    width: 300px;
 `;
 
 const StyledFooter = styled(Footer)`
@@ -157,6 +186,16 @@ const StyledFooter = styled(Footer)`
 const StyledPcodeShapeBox = styled(Box)`
     width: 50%;
     margin-left: 2em;
+`;
+
+const ProjectSliderWrapper = styled.div`
+    width: 250px;
+    {/*TODO: Fix padding (see ProjectSlider.tsx TODO)*/}
+    padding-bottom: 20em;
+`;
+
+const StyledWordList = styled(WordList)`
+    
 `;
 
 export default MainPage;

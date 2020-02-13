@@ -1,15 +1,15 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Flex, Box } from 'rebass';
-import { CopyText } from './CopyText';
+import { Box, Flex } from 'rebass';
+import { CopyText, FontStyle } from './CopyText';
 
 type TFooterProps = {
     className?: string;
 };
 
 export const Footer: React.FC<TFooterProps> = ({
-    className
-}) => {
+                                                   className,
+                                               }) => {
     return (
         <div className={className}>
             <Flex
@@ -42,25 +42,25 @@ export const Footer: React.FC<TFooterProps> = ({
                             },
                         }}
                     >
-                        <CopyText color={Color.Secondary2}>
+                        <CopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
                             pcode - software engineering
                         </CopyText>
-                        <CopyText color={Color.Secondary2}>
+                        <CopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
                             +43 664 1652141
                         </CopyText>
-                        <CopyText color={Color.Secondary2}>
+                        <CopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
                             office@pcode.at
                         </CopyText>
                     </Box>
 
                     <div>
-                        <CopyText color={Color.Secondary2}>
+                        <CopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
                             peter-behrens platz 2
                         </CopyText>
-                        <CopyText color={Color.Secondary2}>
+                        <CopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
                             4020 Linz, Austria
                         </CopyText>
-                        <CopyText color={Color.Secondary2}>
+                        <CopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
                             Axis Coworking loft
                         </CopyText>
                     </div>
@@ -77,13 +77,13 @@ export const Footer: React.FC<TFooterProps> = ({
                     }}
                 >
                     <a href={IMPRESSUM_LINK} target="blank">
-                        <CopyText color={Color.White}>Impressum</CopyText>
+                        <CopyText color={Color.White} fontStyle={FontStyle.Light}>Impressum</CopyText>
                     </a>
                     <a href={DATA_PRIVACY_LINK} target="blank">
-                        <CopyText color={Color.White}>Datenschutz</CopyText>
+                        <CopyText color={Color.White} fontStyle={FontStyle.Light}>Datenschutz</CopyText>
                     </a>
                     <a href={AGB_LINK} target="blank">
-                        <CopyText color={Color.White}>AGB</CopyText>
+                        <CopyText color={Color.White} fontStyle={FontStyle.Light}>AGB</CopyText>
                     </a>
                 </Box>
             </Flex>

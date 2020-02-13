@@ -1,52 +1,87 @@
 import React from 'react';
-import {Box, Button, Flex} from 'rebass';
-import { CopyText } from './CopyText';
+import { Button, Flex } from 'rebass';
+import { CopyText, FontStyle } from './CopyText';
 import { Color } from '../Color.enum';
 import Logo from '../assets/pcode_shape.svg?sprite';
+import styled from 'styled-components';
 
 type TCookieMonsterBannerProps = {
     onClickAgreed?(): void;
     onClickDisagreed?(): void;
+    className?: string;
 };
 
 export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
-    onClickAgreed,
-    onClickDisagreed,
+     onClickAgreed,
+     onClickDisagreed,
+     className,
 }) => {
 
-    return (
-        <React.Fragment>
-            <div className="opacity"></div>
-            <div className="cookiebanner">
+    const OpacityDiv = styled.div`
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        opacity: 0.7;
+    `;
 
-                <div className="cookiemonster">
-                    <Logo></Logo>
-                </div>
+    const BannerWrapperDiv = styled.div`
+        position: fixed;
+        bottom: 0;
+        background: #eb425f;
+        padding: 6% 5% 3%;
+        display: flex;
+        justify-content: space-around;
+    `;
+
+    const ButtonWrapper = styled.div`
+        display: flex;
+        align-items: center;
+    `;
+
+    const StyledLogo = styled(Logo)`
+        width: 10%;
+        position: fixed;
+        margin-left: -35%;
+        margin-top: -12%;
+        z-index: 20;
+    `;
+
+    const StyledCopyTextForCookieInfo = styled(CopyText)`
+        margin-right: 5%;
+    `;
+
+    return (
+        <div className={className}>
+
+            <OpacityDiv/>
+
+            <BannerWrapperDiv>
+
+                <StyledLogo/>
 
                 <Flex
                     sx={{
                         '@media screen and (max-width: 615px)': {
                             flexDirection: 'column',
-                            alignItems: 'center'
+                            alignItems: 'center',
                         },
                     }}
                 >
-                    <div style={{
-                        marginRight: '5%'
-                    }}>
-                        <CopyText color={Color.White}>
-                            We use cookies to personalise contents and ads, to
-                            provide social media features and to analyse our
-                            traffic. We also share information about your use of
-                            our site with our social media, advertising and
-                            analytics partners who may combine it with other
-                            information that you've provided to them or that
-                            they've collected from your use of heir services.
-                            You consent to our cookies if you continue to your
-                            website.{' '}
-                        </CopyText>
-                    </div>
-                    <div className="buttons">
+                    <StyledCopyTextForCookieInfo color={Color.White} fontStyle={FontStyle.Light}>
+                        We use cookies to personalise contents and ads, to
+                        provide social media features and to analyse our
+                        traffic. We also share information about your use of
+                        our site with our social media, advertising and
+                        analytics partners who may combine it with other
+                        information that you've provided to them or that
+                        they've collected from your use of heir services.
+                        You consent to our cookies if you continue to your
+                        website.{' '}
+                    </StyledCopyTextForCookieInfo>
+
+                    <ButtonWrapper>
                         <Button
                             onClick={onClickAgreed}
                             style={{
@@ -72,42 +107,9 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                         >
                             Not sure!
                         </Button>
-                    </div>
+                    </ButtonWrapper>
                 </Flex>
-            </div>
-            <style jsx>{`
-                .opacity {
-                    position: fixed;
-                    bottom: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: #fff;
-                    opacity: 0.7;
-                }
-                .cookiewrapper {
-                    position: fixed;
-                    height: 10%;
-                }
-                .cookiemonster {
-                    width: 10%;
-                    position: fixed;
-                    margin-left: -35%;
-                    margin-top: -12%;
-                    z-index: 20;
-                }
-                .cookiebanner {
-                    position: fixed;
-                    bottom: 0;
-                    background: #eb425f;
-                    padding: 6% 5% 3%;
-                    display: flex;
-                    justify-content: space-around;
-                }
-                .buttons {
-                    display: flex;
-                    align-items: center;
-                }
-            `}</style>
-        </React.Fragment>
+            </BannerWrapperDiv>
+        </div>
     );
 };

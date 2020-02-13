@@ -6,54 +6,63 @@ import LogoSvg from '../assets/logo_claim.svg?sprite';
 
 import { theme } from '../theme';
 import { Color } from '../Color.enum';
+import styled from 'styled-components';
 
 type TSiteHeaderProps = {
-    thisColor: Color;
+    color: Color;
+    onClick?(): void;
 };
 
-export const SiteHeader: React.FC<TSiteHeaderProps> = ({ thisColor }) => {
+export const SiteHeader: React.FC<TSiteHeaderProps> = ({
+   color,
+   onClick,
+}) => {
+
+    const OuterFlex = styled(Flex)`
+        background-color: white;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        border-radius: 20px;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0.5em;
+    `;
+
+    const InnerFlex = styled(Flex)`
+        justify-content: flex-end;
+        align-items: flex-end;
+    `;
+
+    const LogoWrapper = styled(Box)`
+        padding: 0.5em 0 0 1.3em;
+    `;
+
+    const StyledLogo = styled(LogoSvg)`
+        height: 40px;
+    `;
+
+    const StyledNavbarSvg = styled(NavbarSvg)`
+        color: ${Color.Secondary2};
+        width: 30px;
+    `;
+
     return (
         <Headroom>
-            <Flex
-                style={{
-                    backgroundColor: 'white',
-                    borderBottom: '1px solid rgba(0,0,0,0.1)',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-end',
-                    padding: '0.5em',
-                }}
-            >
-                <Box sx={{ padding: '0.5em 0 0 1.3em' }} width={11 / 12}>
-                    <LogoSvg
-                        style={{
-                            height: '40px',
-                        }}
-                    ></LogoSvg>
-                </Box>
+            <OuterFlex>
+                <LogoWrapper width={11 / 12}>
+                    <StyledLogo/>
+                </LogoWrapper>
 
-                <Flex
+                <InnerFlex
                     sx={{ marginRight: '1.5em', marginBottom: '0.7em' }}
                     width={1 / 12}
                     color="white"
-                    bg={theme.colors[thisColor]}
-                    style={{
-                        justifyContent: 'flex-end',
-                        alignItems: 'flex-end',
-                    }}
                     onClick={() =>
-                        alert(
-                            'Not implemented yet! You want to do this and you are interested in the JAM Stack? \n\nIf the answer is yes then write us an e-mail to hackathon@pcode.at or speak to us for registering for our Hackathon where we will build our website together. Pizza and nice mood will be sponsored by pcode! \nDate: 21.12.2019',
-                        )
+                        onClick()
                     }
                 >
-                    <NavbarSvg
-                        style={{
-                            color: theme.colors.secondary2,
-                            width: '30px',
-                        }}
-                    ></NavbarSvg>
-                </Flex>
-            </Flex>
+                    <StyledNavbarSvg/>
+                </InnerFlex>
+            </OuterFlex>
         </Headroom>
     );
 };
