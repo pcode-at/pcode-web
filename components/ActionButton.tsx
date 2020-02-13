@@ -5,6 +5,7 @@ import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
 
+//ToDo: rename thisColor to color
 type TActionButtonProps = {
     color?: Color;
     label: string;

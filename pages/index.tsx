@@ -130,6 +130,20 @@ const MainPage = () => (
             headlineColor={Color.Primary}
             onClick={() => Router.push('/main')}
         />
+    
+    <TechnologyFlex>
+        <StyledTechnologyPlatform name={'web'} platformType={PlatformType.Web}
+                            languages={['JavaScript', 'Angular', 'TypeScript', 'PHP', 'Symfony', '.Net (C#)', '(e-commerce)']}
+                            technologies={['ReactJs', 'Stylius', 'Spryker']}/>
+
+        <StyledTechnologyPlatform name={'mobile'} platformType={PlatformType.Mobile}
+                            languages={['React Native', 'Native iOS', 'Native Android']}
+                            technologies={['Progressive Web Apps (PWA)']}/>
+
+        <StyledTechnologyPlatform name={'ar . vr'} platformType={PlatformType.ArVr}
+                            languages={['React Native', 'Native iOS', 'Native Android']}
+                            technologies={['Progressive Web Apps (PWA)']}/>
+    </TechnologyFlex>
 
         <StyledHeading>WordList</StyledHeading>
         <Box display="flex">
@@ -146,6 +160,17 @@ const MainPage = () => (
         <StyledFooter/>
     </ThemeProvider>
 );
+
+const StyledTechnologyPlatform = styled(TechnologyPlatform)`
+    width: 250px;
+    background-color: aliceblue;
+`;
+
+const TechnologyFlex = styled(Flex)`
+    align-content: center;
+    justify-content: space-evenly;
+    max-width: 1200px;
+`;
 
 const StyledSubHeadline = styled(SubHeadline)`
     padding: 2em;
