@@ -24,6 +24,7 @@ import { Statement2 } from '../components/Statement2';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
+import { PersonWithFunction } from '../components/PersonWithFunction';
 
 const { light, normal } = theme.font;
 
@@ -33,6 +34,13 @@ const MainPage = () => (
         <SiteHeader color={Color.Primary} onClick={() => {
             alert('Not Implemented Yet!');
         }}/>
+
+        <StyledHeading>Statement</StyledHeading>
+        <PersonWithFunction
+            color={Color.Secondary2}
+            personName={'Michael Kotek'}
+            personPosition={'web dev .coffeemaker'}/>
+
 
         <StyledHeading>Statement</StyledHeading>
         <Statement personName={'Christoph Pernsteiner'} personPosition={'CEO .founder'}>
