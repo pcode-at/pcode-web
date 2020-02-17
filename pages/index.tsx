@@ -36,10 +36,11 @@ const MainPage = () => (
         }}/>
 
         <StyledHeading>Statement</StyledHeading>
-        <PersonWithFunction
-            color={Color.Secondary2}
-            personName={'Michael Kotek'}
-            personPosition={'web dev .coffeemaker'}/>
+        <StyledPersonWithFunction
+            imagePath='../static/pernsteiner_christoph.png'
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}/>
 
 
         <StyledHeading>Statement</StyledHeading>
@@ -173,6 +174,10 @@ const MainPage = () => (
         <StyledFooter/>
     </ThemeProvider>
 );
+
+const StyledPersonWithFunction = styled(PersonWithFunction)`
+    width: 300px;
+`;
 
 const StyledTechnologyPlatform = styled(TechnologyPlatform)`
     width: 250px;

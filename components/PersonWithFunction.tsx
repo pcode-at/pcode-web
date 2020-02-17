@@ -1,10 +1,10 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Box, Flex, Text } from 'rebass';
+import { Box, Flex, Image, Text } from 'rebass';
 import { theme } from '../theme';
 import { PcodeShape } from './PcodeShape';
 import { CopyText, FontStyle } from './CopyText';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const { light, normal } = theme.font;
 
@@ -13,18 +13,19 @@ type TPersonWithFunctionProps = {
     personName: string;
     personPosition: string;
     className?: string;
+    imagePath: string;
 };
 
 export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
-   color,
-   className,
+    color,
+    className,
     personName,
-    personPosition
+    personPosition,
+    imagePath,
 }) => {
 
     const PersonWrapper = styled(Box)`
         padding: 1px;
-        width: 300px;
     `;
 
     const StyledPersonFlex = styled(Flex)`
@@ -34,7 +35,7 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
     `;
 
     const PersonNameWrapper = styled(Box)`
-        margin-top: 8%;
+        margin-top: 2em;
         font-size: 130%;
         text-align: center;
     `;
@@ -44,17 +45,28 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
         text-align: center;
     `;
 
+
+    const StyledPersonImageLayout = styled.div`
+        margin-left: 1em;
+        position: absolute;
+        max-width: 300px;
+    `;
+
+    const StyledPersonImage = styled(Image)`
+        mask: url(../static/pcode_shape.svg);
+        mask-position: top;
+        mask-repeat: no-repeat;
+        mask-size: 70%;
+    `;
+
     return (
         <div className={className}>
-            <PersonWrapper
-                sx={{
-                    '@media screen and (min-width: 615px)': {
-                        marginRight: '10%',
-                    },
-                }}
-            >
                 <StyledPersonFlex>
-                    <PcodeShape color={color} width="80%"/>
+                    <PcodeShape color={color} width="70%"/>
+
+                    <StyledPersonImageLayout>
+                        <StyledPersonImage src={imagePath}/>
+                    </StyledPersonImageLayout>
                     <PersonNameWrapper>
                         <CopyText color={color} fontStyle={FontStyle.Normal}>
                             {personName}
@@ -67,7 +79,6 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
                         </CopyText>
                     </PersonPositionWrapper>
                 </StyledPersonFlex>
-            </PersonWrapper>
         </div>
     );
 };
