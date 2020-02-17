@@ -25,6 +25,7 @@ import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
+import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 
 const { light, normal } = theme.font;
 
@@ -35,7 +36,10 @@ const MainPage = () => (
             alert('Not Implemented Yet!');
         }}/>
 
-        <StyledHeading>Statement</StyledHeading>
+        <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPcodeShapeWithImage/>
+
+        <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
             imagePath='../static/pernsteiner_christoph.png'
             color={Color.Secondary}
@@ -174,6 +178,10 @@ const MainPage = () => (
         <StyledFooter/>
     </ThemeProvider>
 );
+
+const StyledPcodeShapeWithImage = styled(PcodeShapeWithImage)`
+    width: 700px;
+`;
 
 const StyledPersonWithFunction = styled(PersonWithFunction)`
     width: 300px;
