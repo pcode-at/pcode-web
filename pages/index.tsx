@@ -26,6 +26,7 @@ import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
+import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 
 const { light, normal } = theme.font;
 
@@ -36,8 +37,8 @@ const MainPage = () => (
             alert('Not Implemented Yet!');
         }}/>
 
-        <StyledHeading>PersonWithFunction</StyledHeading>
-        <StyledPcodeShapeWithImage/>
+        <StyledHeading>WorkingAtPcode</StyledHeading>
+        <StyledWorkingAtPcode/>
 
         <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
@@ -178,6 +179,10 @@ const MainPage = () => (
         <StyledFooter/>
     </ThemeProvider>
 );
+
+const StyledWorkingAtPcode = styled(WorkingAtPcodeSection)`
+
+`;
 
 const StyledPcodeShapeWithImage = styled(PcodeShapeWithImage)`
     width: 700px;
