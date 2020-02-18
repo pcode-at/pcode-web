@@ -3,8 +3,8 @@ import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
 import { theme } from '../theme';
-import { PcodeShape } from './PcodeShape';
 import styled from 'styled-components';
+import { PersonWithFunction } from './PersonWithFunction';
 
 type TStatementProps = {
     personName: string;
@@ -112,24 +112,12 @@ export const Statement: React.FC<TStatementProps> = ({
                     }}
                 >
                     <StyledPersonFlex>
-                        <PcodeShape color={pCodeShapeColor} width="80%"/>
-                        <PersonNameWrapper>
-                            <CopyText
-                                color={pCodeShapeColor}
-                                fontStyle={FontStyle.Normal}
-                            >
-                                {personName}
-                            </CopyText>
-                        </PersonNameWrapper>
+                        <PersonWithFunction
+                            color={Color.Secondary}
+                            personName={'Christoph Pernsteiner'}
+                            personPosition={'.founder'}
+                            imagePath={'../static/pernsteiner_christoph.png'}/>
 
-                        <PersonPositionWrapper>
-                            <CopyText
-                                fontStyle={FontStyle.Light}
-                                color={pCodeShapeColor}
-                            >
-                                {personPosition}
-                            </CopyText>
-                        </PersonPositionWrapper>
                     </StyledPersonFlex>
                 </PersonWrapper>
 

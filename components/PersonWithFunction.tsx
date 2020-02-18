@@ -49,7 +49,7 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
     const StyledPersonImageLayout = styled.div`
         margin-left: 1em;
         position: absolute;
-        max-width: 300px;
+        width: 300px;
     `;
 
     const StyledPersonImage = styled(Image)`
@@ -62,7 +62,7 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
     return (
         <div className={className}>
                 <StyledPersonFlex>
-                    <PcodeShape color={color} width="70%"/>
+                    <PcodeShape color={color} width="200px"/>
 
                     <StyledPersonImageLayout>
                         <StyledPersonImage src={imagePath}/>
