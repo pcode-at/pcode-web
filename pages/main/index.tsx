@@ -1,21 +1,19 @@
-import * as React from "react";
-import { Flex, Box } from "rebass";
-import { theme } from "../../theme";
-import { ThemeProvider } from "emotion-theming";
-import { PcodeShape } from "../../components/PcodeShape";
-import { SiteHeader } from "../../components/SiteHeader";
-import { Color } from "../../Color.enum";
-import { Footer } from "../../components/Footer";
-import { Swiper } from "../../components/Swiper";
-import Router from "next/router";
-import { CodeStandsForSection } from "./sections/CodeStandsFor.section";
+import * as React from 'react';
+import { Box, Flex } from 'rebass';
+import { theme } from '../../theme';
+import { ThemeProvider } from 'emotion-theming';
+import { PcodeShape } from '../../components/PcodeShape';
+import { SiteHeader } from '../../components/SiteHeader';
+import { Color } from '../../Color.enum';
+import { Footer } from '../../components/Footer';
+import { Swiper } from '../../components/Swiper';
+import Router from 'next/router';
+import { CodeStandsForSection } from './sections/CodeStandsFor.section';
 
 const MainPage = () => (
   <React.Fragment>
     <ThemeProvider theme={theme}>
-      {/* TODO: test if this is working in safari */}
-      <Box overflowX="hidden">
-        <SiteHeader thisColor={Color.White} />
+        <SiteHeader color={Color.White} />
         <Flex
           justifyContent="space-between"
           sx={{ padding: "1.5em 1em", alignItems: "center" }}
@@ -42,7 +40,6 @@ const MainPage = () => (
         </Flex>
         <CodeStandsForSection />
         <Footer />
-      </Box>
     </ThemeProvider>
   </React.Fragment>
 );

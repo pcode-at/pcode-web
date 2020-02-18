@@ -30,15 +30,12 @@ import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section
 
 const { light, normal } = theme.font;
 
-
 const MainPage = () => (
     <ThemeProvider theme={theme}>
+
         <SiteHeader color={Color.Primary} onClick={() => {
             alert('Not Implemented Yet!');
         }}/>
-
-        <StyledHeading>WorkingAtPcode</StyledHeading>
-        <WorkingAtPcodeSection/>
 
         <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction

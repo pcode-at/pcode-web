@@ -1,19 +1,18 @@
-import * as React from "react";
-import { ThemeProvider } from "emotion-theming";
-import { theme } from "../../theme";
-import { SiteHeader } from "../../components/SiteHeader";
-import { Color } from "../../Color.enum";
-import { Footer } from "../../components/Footer";
-import { SectionHeadline } from "../../components/SectionHeadline";
-import { Box, Flex, Image } from "rebass";
-import { FreeChair } from "../../components/FreeChair";
-import { PositionLevel } from "../../shared/PositionLevel.enum";
-import { CopyText } from "../../components/CopyText";
-import { PcodeShape } from "../../components/PcodeShape";
-import { ActionButton } from "../../components/ActionButton";
+import * as React from 'react';
+import { ThemeProvider } from 'emotion-theming';
+import { theme } from '../../theme';
+import { SiteHeader } from '../../components/SiteHeader';
+import { Color } from '../../Color.enum';
+import { Footer } from '../../components/Footer';
+import { SectionHeadline } from '../../components/SectionHeadline';
+import { Box, Flex } from 'rebass';
+import { FreeChair } from '../../components/FreeChair';
+import { PositionLevel } from '../../shared/PositionLevel.enum';
+import { CopyText, FontStyle } from '../../components/CopyText';
+import { PcodeShape } from '../../components/PcodeShape';
+import { ActionButton } from '../../components/ActionButton';
 // @ts-ignore
-import ImagePcode from "../assets/tlp-pcode-27.jpg";
-import { WorkingAtPcodeSection } from "./sections/WorkingAtPcode.section";
+import { WorkingAtPcodeSection } from './sections/WorkingAtPcode.section';
 
 const freeChairWrapperProps = {
   p: 4
@@ -23,7 +22,7 @@ const JoinUsPage = () => (
   <React.Fragment>
     <ThemeProvider theme={theme}>
       <Box overflowX="hidden">
-        <SiteHeader thisColor={Color.White} />
+        <SiteHeader color={Color.White} />
 
         <Flex
           sx={{
@@ -46,7 +45,7 @@ const JoinUsPage = () => (
             <br />
             <br />
             <Box sx={{ maxWidth: "400px" }}>
-              <CopyText color={Color.White}>
+              <CopyText color={Color.White} fontStyle={FontStyle.Light}>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -56,7 +55,7 @@ const JoinUsPage = () => (
 
               <br />
               <ActionButton
-                thisColor={Color.Primary}
+                color={Color.Primary}
                 label="learn more"
                 padding="0.2rem 2rem"
               />
