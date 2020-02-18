@@ -8,8 +8,6 @@ import styled from 'styled-components';
 export const WorkingAtPcodeSection: React.FC = () => {
     const [isOverMobile, setOverMobileStatus] = React.useState();
 
-
-
     const HeaderLayout = styled(Flex)`
         justify-content: center;
         flex-wrap: wrap;
@@ -48,6 +46,14 @@ export const WorkingAtPcodeSection: React.FC = () => {
             margin-left: 5rem;
         },
     `;
+
+    const StyledImage = styled(Image)`
+        width: 100%;
+        margin-top: -20%;
+        position: relative;
+        z-index: -4;
+    `;
+
     return (
         <React.Fragment>
             <Flex backgroundColor={Color.Secondary}>
@@ -66,7 +72,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
                     </WordListLayout>
                 </HeaderLayout>
             </Flex>
-            <Image src="./static/tlp-pcode-27.jpg"/>
+            <StyledImage src="./static/tlp-pcode-27.jpg"/>
         </React.Fragment>
     );
 };
