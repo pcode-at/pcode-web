@@ -9,39 +9,45 @@ import { Footer } from '../../components/Footer';
 import { Swiper } from '../../components/Swiper';
 import Router from 'next/router';
 import { CodeStandsForSection } from './sections/CodeStandsFor.section';
+import styled from 'styled-components';
+
+const PageLayout = styled(Flex)`
+    justify-content: space-between;
+    padding: 1.5em 1em;
+    align-items: center;
+`;
+
+const PcodeShapeLayout = styled(Box)`
+  display: none;
+  position: relative;
+  
+  @media screen and (min-width: 615px) {
+      display: block;
+      margin-right: -150px;
+      overflow: hidden;
+  }
+`;
+
 
 const MainPage = () => (
-  <React.Fragment>
-    <ThemeProvider theme={theme}>
-        <SiteHeader color={Color.White} />
-        <Flex
-          justifyContent="space-between"
-          sx={{ padding: "1.5em 1em", alignItems: "center" }}
-        >
-          <Swiper
-            textPartOne="we transform complexity"
-            textPartTwo="to simplicity by delivering exceptional solutions."
-            onClick={() => Router.push("/join-us")}
-          />
+    <React.Fragment>
+        <ThemeProvider theme={theme}>
+            <SiteHeader color={Color.White}/>
+            <PageLayout>
+                <Swiper
+                    textPartOne="we transform complexity"
+                    textPartTwo="to simplicity by delivering exceptional solutions."
+                    onClick={() => Router.push('/join-us')}
+                />
 
-          <Box
-            sx={{
-              display: "none",
-              position: "relative",
-              "@media screen and (min-width: 615px)": {
-                display: "block"
-              }
-            }}
-          >
-            <Box sx={{ marginRight: "-150px", overflow: "hidden" }}>
-              <PcodeShape color={Color.Secondary} width="400px" />
-            </Box>
-          </Box>
-        </Flex>
-        <CodeStandsForSection />
-        <Footer />
-    </ThemeProvider>
-  </React.Fragment>
+                <PcodeShapeLayout>
+                    <PcodeShape color={Color.Secondary} width="400px"/>
+                </PcodeShapeLayout>
+            </PageLayout>
+            <CodeStandsForSection/>
+            <Footer/>
+        </ThemeProvider>
+    </React.Fragment>
 );
 
 export default MainPage;
