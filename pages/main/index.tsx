@@ -42,9 +42,8 @@ const ProjectDetailTeaserLayout = styled(Box)`
 `;
 
 const ContactFormLayout = styled(Box)`
-    margin: 0 auto;
     width: 70%;
-    margin-bottom: 100px;
+    margin: 100px auto;
 `;
 
 const MainPage = () => (
@@ -62,16 +61,6 @@ const MainPage = () => (
                     <PcodeShape color={Color.Secondary} width="400px"/>
                 </PcodeShapeLayout>
             </PageLayout>
-
-            <CodeStandsForSection/>
-
-            <StatementLayout>
-                <Statement personName={'Dr. Dipl-Ing Hans Friesenecker'}
-                           personPosition={'Lenvo rumble .it_forensic'}>
-                    ‘ it would have been impossible to build such a complicated
-                    project without the skills of pcode team. ’
-                </Statement>
-            </StatementLayout>
 
             <ProjectDetailTeaserLayout>
                 <ProjectDetailTeaser
@@ -93,8 +82,18 @@ const MainPage = () => (
                 />
             </ProjectDetailTeaserLayout>
 
+            <StatementLayout>
+                <Statement personName={'Dr. Dipl-Ing Hans Friesenecker'}
+                           personPosition={'Lenvo rumble .it_forensic'}>
+                    ‘ it would have been impossible to build such a complicated
+                    project without the skills of pcode team. ’
+                </Statement>
+            </StatementLayout>
+
+            <CodeStandsForSection/>
+
             <ContactFormLayout>
-                <ContactForm color={Color.Primary}/>
+                <ContactForm />
             </ContactFormLayout>
             <Footer/>
         </ThemeProvider>

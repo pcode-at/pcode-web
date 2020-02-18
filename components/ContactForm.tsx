@@ -7,13 +7,10 @@ import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 
 type TContactFormProps = {
-    color: Color;
     className?: string;
 };
 
 export const ContactForm: React.FC<TContactFormProps> = ({
-                                                             children,
-                                                             color,
                                                              className,
                                                          }) => {
     const [textAreaContent, setTextAreaContent] = React.useState('');
@@ -66,6 +63,7 @@ export const ContactForm: React.FC<TContactFormProps> = ({
                 />
             </ShortInputLayout>
 
+            {/*TODO: Fix TextArea bug (you can't write anything)*/}
             <TextAreaLayout>
                 <Textarea
                     placeholder="you are so cool people, let`s …"
@@ -78,7 +76,6 @@ export const ContactForm: React.FC<TContactFormProps> = ({
                     }}
                 />
             </TextAreaLayout>
-
                 <a
                     href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
                         &body=${replaceNewLineCharacters(textAreaContent)}`}
