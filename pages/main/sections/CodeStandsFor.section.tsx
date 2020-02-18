@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { Box, Image } from 'rebass';
 import { Color } from '../../../Color.enum';
-import { theme } from '../../../theme';
-import { PcodeShape } from '../../../components/PcodeShape';
-import { ActionButton } from '../../../components/ActionButton';
-import Router from 'next/router';
 import styled from 'styled-components';
+import { WordList } from '../../../components/WordList';
+import { CopyText, FontStyle } from '../../../components/CopyText';
 
 
 const PageLayout = styled(Box)`
@@ -22,29 +20,35 @@ const PcodeShapeLayout = styled(Box)`
     margin-top: -6%;
 `;
 
-const ActionButtonLayout = styled(Box)`
-    position: absolute;
-    width: 100%;
+const TextLayout = styled(Box)`
+    margin: 0 auto 20px;
+    width: 400px;
     display: flex;
-    justify-content: center;
-    margin-top: -5%;
+    justify-content: space-evenly;
+    font-size: 250%;
 `;
 
 export const CodeStandsForSection: React.FC = () => (
     <React.Fragment>
         <PageLayout>
+            <TextLayout>
+                <CopyText color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                    our
+                </CopyText>
+                <CopyText color={Color.Primary} fontStyle={FontStyle.Normal}>
+                    code
+                </CopyText>
+                <CopyText color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                    stands for
+                </CopyText>
+            </TextLayout>
+
             <Image src="./static/nebo_jure.jpg"/>
             <Image src="./static/sandburg.jpg"/>
 
             <PcodeShapeLayout>
-                <PcodeShape width="35%"/>
+                <WordList words={['praise', 'potential', 'people', 'passion', 'power', 'perfection']}/>
             </PcodeShapeLayout>
-            <ActionButtonLayout>
-                <ActionButton
-                    label="Join us"
-                    onClick={() => Router.push('/join-us')}
-                />
-            </ActionButtonLayout>
         </PageLayout>
     </React.Fragment>
 );
