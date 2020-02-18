@@ -38,7 +38,7 @@ const MainPage = () => (
         }}/>
 
         <StyledHeading>WorkingAtPcode</StyledHeading>
-        <StyledWorkingAtPcode/>
+        <WorkingAtPcodeSection/>
 
         <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
@@ -179,10 +179,6 @@ const MainPage = () => (
         <StyledFooter/>
     </ThemeProvider>
 );
-
-const StyledWorkingAtPcode = styled(WorkingAtPcodeSection)`
-
-`;
 
 const StyledPcodeShapeWithImage = styled(PcodeShapeWithImage)`
     width: 700px;

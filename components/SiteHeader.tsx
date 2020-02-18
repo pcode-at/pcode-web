@@ -45,6 +45,7 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({
         width: 30px;
     `;
 
+
     return (
         <Headroom>
             <OuterFlex>
