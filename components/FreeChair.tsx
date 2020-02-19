@@ -30,6 +30,7 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
 
     const FreeChairWrapper = styled.div`
         width: 200px;
+        height: 400px;
         text-align: center;
     `;
 

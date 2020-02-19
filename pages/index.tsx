@@ -38,7 +38,7 @@ const MainPage = () => (
         }}/>
 
         <StyledHeading>PersonWithFunction</StyledHeading>
-        <StyledPersonWithFunction
+        <PersonWithFunction
             imagePath='../static/pernsteiner_christoph.png'
             color={Color.Secondary}
             personName={'Christoph Pernsteiner'}
@@ -53,7 +53,8 @@ const MainPage = () => (
         </Statement>
 
         <StyledHeading>Statement2</StyledHeading>
-        <Statement2 personName={'Nico Peham'} personPosition={'tech lead'} color={Color.Secondary2}>
+        <Statement2 personName={'Nico Peham'} personPosition={'tech lead'} color={Color.Secondary2}
+                    imagePath={'../static/pernsteiner_christoph.png'}>
             'we are adapting to new challenges by developing and investing in our people'
         </Statement2>
 

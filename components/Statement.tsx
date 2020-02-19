@@ -30,27 +30,39 @@ export const Statement: React.FC<TStatementProps> = ({
         padding-top: 3em;
         padding-bottom: 3em;
         align-items: center;
+        
+        @media screen and (min-width: 615px) {
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        @media screen and (max-width: 615px) {
+            flex-direction: column;
+        }
     `;
 
     const TextWrapper = styled(Flex)`
-        max-width: 700px;
-        width: 100%;
-        margin-left: 10%;
+        padding: 10%;
+        width: 70%;
         font-family: ${light.fontFamily};
         font-weight: ${normal.fontWeight};
         font-size: 250%;
         color: ${color};
+        
         @media screen and (max-width: 615px) {
-            align-items: center;
-            flex-direction: column;
-            padding-top: 1em;                        
-            padding-bottom: 1em;
+            padding: 0;
+            width: 90%;
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
         }
     `;
 
     const PersonWrapper = styled(Box)`
-    padding: 1px;
-    width: 300px;
+        justify-content: center;
+        
+        @media screen and (min-width: 615px) {
+            margin-right: 10%;
+        }
     `;
 
     const StyledPersonFlex = styled(Flex)`
@@ -63,42 +75,12 @@ export const Statement: React.FC<TStatementProps> = ({
     return (
         <div className={className}>
             <Wrapper
-                backgroundColor={backgroundColor}
-                sx={{
-                    '@media screen and (min-width: 615px)': {
-                        justifyContent: 'space-between',
-                        flexDirection: 'row',
-                    },
-                    '@media screen and (max-width: 615px)': {
-                        alignItems: 'center',
-                        flexDirection: 'column',
-                        paddingTop: '1em',
-                        paddingBottom: '1em',
-                    },
-                }}
-            >
-                <TextWrapper
-                    sx={{
-                        /*TODO: Attributes from underneath won't be rendered when only written into the styled component*/
-                        marginLeft: '10%',
-                        '@media screen and (max-width: 615px)': {
-                            width: '90%',
-                            fontSize: '150%',
-                            textAlign: 'center',
-                            marginRight: '10%',
-                        },
-                    }}
-                >
+                backgroundColor={backgroundColor}>
+                <TextWrapper>
                     <p>{children}</p>
                 </TextWrapper>
 
-                <PersonWrapper
-                    sx={{
-                        '@media screen and (min-width: 615px)': {
-                            marginRight: '10%',
-                        },
-                    }}
-                >
+                <PersonWrapper>
                     <StyledPersonFlex>
                         <PersonWithFunction
                             color={Color.Secondary}
@@ -108,7 +90,6 @@ export const Statement: React.FC<TStatementProps> = ({
 
                     </StyledPersonFlex>
                 </PersonWrapper>
-
             </Wrapper>
         </div>
     );

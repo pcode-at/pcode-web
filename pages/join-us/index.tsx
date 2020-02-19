@@ -14,16 +14,17 @@ import { ActionButton } from '../../components/ActionButton';
 import { WorkingAtPcodeSection } from './sections/WorkingAtPcode.section';
 import { MonsterType } from '../../shared/MonsterType.enum';
 import styled from 'styled-components';
+import { Statement2 } from '../../components/Statement2';
+import { Statement } from '../../components/Statement';
 
 const FreeChairsLayout = styled(Flex)`
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 50px;
 `;
 
 const FreeChairHeadlineLayout = styled(Box)`
     text-align: center;
-    margin: 5rem 0 2rem 0;
+    margin: 7rem 0 5rem 0;
 `;
 
 const PcodeShapeLayout = styled(Box)`
@@ -54,6 +55,12 @@ const AboutPcodeLayout = styled(Box)`
     justify-content: space-between;
     @media screen and (min-width: 670px) {
         display: block;
+    }
+`;
+
+const StatementLayout = styled(Box)`
+    @media screen and (min-width: 616px) {
+        margin-top: -7rem;
     }
 `;
 
@@ -128,6 +135,18 @@ const JoinUsPage = () => (
             </FreeChairsLayout>
 
             <WorkingAtPcodeSection/>
+
+            <StatementLayout>
+                <Statement2
+                    personName={'Michael Kotek'}
+                    personPosition={'Frontend Developer'}
+                    imagePath={'../static/kotek_michael.png'}
+                    color={Color.Secondary}
+                >
+                    ‘ working at pcode means one simple thing:
+                    working for the future! ’
+                </Statement2>
+            </StatementLayout>
 
             <Footer/>
         </ThemeProvider>
