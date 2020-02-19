@@ -24,6 +24,8 @@ import { Statement2 } from '../components/Statement2';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
+import { PersonWithFunction } from '../components/PersonWithFunction';
+
 
 const { light, normal } = theme.font;
 
@@ -33,6 +35,14 @@ const MainPage = () => (
         <SiteHeader color={Color.Primary} onClick={() => {
             alert('Not Implemented Yet!');
         }}/>
+
+        <StyledHeading>Statement</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath='../static/pernsteiner_christoph.png'
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}/>
+
 
         <StyledHeading>Statement</StyledHeading>
         <Statement personName={'Christoph Pernsteiner'} personPosition={'CEO .founder'}>
@@ -141,6 +151,7 @@ const MainPage = () => (
                                       languages={['JavaScript', 'Angular', 'TypeScript', 'PHP', 'Symfony', '.Net (C#)', '(e-commerce)']}
                                       technologies={['ReactJs', 'Stylius', 'Spryker']}/>
 
+
             <StyledTechnologyPlatform name={'mobile'} platformType={PlatformType.Mobile}
                                       languages={['React Native', 'Native iOS', 'Native Android']}
                                       technologies={['Progressive Web Apps (PWA)']}/>
@@ -165,6 +176,10 @@ const MainPage = () => (
         <StyledFooter/>
     </ThemeProvider>
 );
+
+const StyledPersonWithFunction = styled(PersonWithFunction)`
+    width: 300px;
+`;
 
 const StyledTechnologyPlatform = styled(TechnologyPlatform)`
     width: 250px;
