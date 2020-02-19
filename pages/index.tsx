@@ -26,6 +26,7 @@ import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 
+
 const { light, normal } = theme.font;
 
 
@@ -149,6 +150,7 @@ const MainPage = () => (
             <StyledTechnologyPlatform name={'web'} platformType={PlatformType.Web}
                                       languages={['JavaScript', 'Angular', 'TypeScript', 'PHP', 'Symfony', '.Net (C#)', '(e-commerce)']}
                                       technologies={['ReactJs', 'Stylius', 'Spryker']}/>
+
 
             <StyledTechnologyPlatform name={'mobile'} platformType={PlatformType.Mobile}
                                       languages={['React Native', 'Native iOS', 'Native Android']}
