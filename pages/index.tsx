@@ -30,7 +30,6 @@ import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section
 
 const { light, normal } = theme.font;
 
-
 const MainPage = () => (
     <ThemeProvider theme={theme}>
         <SiteHeader color={Color.Primary} onClick={() => {
@@ -41,6 +40,14 @@ const MainPage = () => (
         <WorkingAtPcodeSection/>
 
         <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath='../static/pernsteiner_christoph.png'
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}/>
+
+
+        <StyledHeading>Statement</StyledHeading>
         <StyledPersonWithFunction
             imagePath='../static/pernsteiner_christoph.png'
             color={Color.Secondary}
@@ -154,6 +161,7 @@ const MainPage = () => (
             <StyledTechnologyPlatform name={'web'} platformType={PlatformType.Web}
                                       languages={['JavaScript', 'Angular', 'TypeScript', 'PHP', 'Symfony', '.Net (C#)', '(e-commerce)']}
                                       technologies={['ReactJs', 'Stylius', 'Spryker']}/>
+
 
             <StyledTechnologyPlatform name={'mobile'} platformType={PlatformType.Mobile}
                                       languages={['React Native', 'Native iOS', 'Native Android']}
