@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box } from 'rebass';
+import { Box, Flex } from 'rebass';
 import { theme } from '../theme';
 import { ThemeProvider } from 'emotion-theming';
 import { PcodeShape } from '../components/PcodeShape';
@@ -22,6 +22,8 @@ import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
 import { SubHeadline } from '../components/SubHeadline';
+import { TechnologyPlatform } from '../components/TechnologyPlatform';
+import { PlatformType } from '../shared/PlatformType.enum';
 
 const { light, normal } = theme.font;
 
@@ -109,10 +111,12 @@ const MainPage = () => (
             }}
         />
 
+        <StyledHeading>Menu</StyledHeading>
         <Menu/>
 
         {/*<CookieMonsterBanner/>*/}
 
+        <StyledHeading>ProjectDetailTeaser</StyledHeading>
         <ProjectDetailTeaser
 
             headline="Test Headline"
@@ -130,20 +134,21 @@ const MainPage = () => (
             headlineColor={Color.Primary}
             onClick={() => Router.push('/main')}
         />
-    
-    <TechnologyFlex>
-        <StyledTechnologyPlatform name={'web'} platformType={PlatformType.Web}
-                            languages={['JavaScript', 'Angular', 'TypeScript', 'PHP', 'Symfony', '.Net (C#)', '(e-commerce)']}
-                            technologies={['ReactJs', 'Stylius', 'Spryker']}/>
 
-        <StyledTechnologyPlatform name={'mobile'} platformType={PlatformType.Mobile}
-                            languages={['React Native', 'Native iOS', 'Native Android']}
-                            technologies={['Progressive Web Apps (PWA)']}/>
+        <StyledHeading>TechnologyPlatform</StyledHeading>
+        <TechnologyFlex>
+            <StyledTechnologyPlatform name={'web'} platformType={PlatformType.Web}
+                                      languages={['JavaScript', 'Angular', 'TypeScript', 'PHP', 'Symfony', '.Net (C#)', '(e-commerce)']}
+                                      technologies={['ReactJs', 'Stylius', 'Spryker']}/>
 
-        <StyledTechnologyPlatform name={'ar . vr'} platformType={PlatformType.ArVr}
-                            languages={['React Native', 'Native iOS', 'Native Android']}
-                            technologies={['Progressive Web Apps (PWA)']}/>
-    </TechnologyFlex>
+            <StyledTechnologyPlatform name={'mobile'} platformType={PlatformType.Mobile}
+                                      languages={['React Native', 'Native iOS', 'Native Android']}
+                                      technologies={['Progressive Web Apps (PWA)']}/>
+
+            <StyledTechnologyPlatform name={'ar . vr'} platformType={PlatformType.ArVr}
+                                      languages={['React Native', 'Native iOS', 'Native Android']}
+                                      technologies={['Progressive Web Apps (PWA)']}/>
+        </TechnologyFlex>
 
         <StyledHeading>WordList</StyledHeading>
         <Box display="flex">
@@ -163,7 +168,6 @@ const MainPage = () => (
 
 const StyledTechnologyPlatform = styled(TechnologyPlatform)`
     width: 250px;
-    background-color: aliceblue;
 `;
 
 const TechnologyFlex = styled(Flex)`
