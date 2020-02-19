@@ -6,7 +6,6 @@ import { WordList } from '../../../components/WordList';
 import styled from 'styled-components';
 
 export const WorkingAtPcodeSection: React.FC = () => {
-    const [isOverMobile, setOverMobileStatus] = React.useState();
 
     const HeaderLayout = styled(Flex)`
         justify-content: center;
@@ -40,7 +39,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
             position: static;
             top: 0;
             margin-bottom: -100px;
-            z-index: 1;
+            z-index: 0;
             width: auto;
             padding-top: 2rem;
             margin-left: 5rem;
@@ -51,7 +50,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
         width: 100%;
         margin-top: -20%;
         position: relative;
-        z-index: -4;
+        z-index: -1;
     `;
 
     return (
@@ -67,8 +66,16 @@ export const WorkingAtPcodeSection: React.FC = () => {
                         />
                     </SectionHeadlineLayout>
                     <WordListLayout>
-                        <WordList words={['free coffee', 'mobile office', 'network', 'international', 'perfection']}
-                                  color={Color.Secondary2}/>
+                        <WordList
+                            words={[
+                                'free coffee',
+                                'mobile office',
+                                'network',
+                                'international',
+                                'perfection',
+                            ]}
+                            color={Color.Secondary2}
+                        />
                     </WordListLayout>
                 </HeaderLayout>
             </Flex>

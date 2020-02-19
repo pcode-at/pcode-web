@@ -46,7 +46,9 @@ const MainPage = () => (
 
 
         <StyledHeading>Statement</StyledHeading>
-        <Statement personName={'Christoph Pernsteiner'} personPosition={'CEO .founder'}>
+        <Statement personName={'Christoph Pernsteiner'}
+                   personPosition={'CEO .founder'}
+                   imagePath={'../static/pernsteiner_christoph.png'}>
             'this project was a great challenge, we learned a lot and it was a journey with such an amazing customer!'
         </Statement>
 

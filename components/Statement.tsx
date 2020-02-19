@@ -1,7 +1,6 @@
 import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
-import { CopyText, FontStyle } from './CopyText';
 import { theme } from '../theme';
 import styled from 'styled-components';
 import { PersonWithFunction } from './PersonWithFunction';
@@ -13,17 +12,18 @@ type TStatementProps = {
     backgroundColor?: Color;
     pCodeShapeColor?: Color;
     className?: string;
+    imagePath: string;
 };
 
 export const Statement: React.FC<TStatementProps> = ({
-     children,
-     personName,
-     personPosition,
-     color = Color.White,
-     backgroundColor = Color.Secondary2,
-     pCodeShapeColor = Color.Secondary,
-     className,
- }) => {
+                                                         children,
+                                                         personName,
+                                                         personPosition,
+                                                         color = Color.White,
+                                                         backgroundColor = Color.Secondary2,
+                                                         imagePath,
+                                                         className,
+                                                     }) => {
     const { light, normal } = theme.font;
 
     const Wrapper = styled(Flex)`
@@ -53,23 +53,11 @@ export const Statement: React.FC<TStatementProps> = ({
     width: 300px;
     `;
 
-    const PersonNameWrapper = styled(Box)`
-    margin-top: 8%;
-    font-size: 130%;
-    text-align: center;
-    `;
-
-    const PersonPositionWrapper = styled(Box)`
-    font-size: 130%;
-    text-align: center;
-    `;
-
     const StyledPersonFlex = styled(Flex)`
         align-items: center;
         flex-direction: column;
         justify-content: center;
     `;
-
 
 
     return (
@@ -114,9 +102,9 @@ export const Statement: React.FC<TStatementProps> = ({
                     <StyledPersonFlex>
                         <PersonWithFunction
                             color={Color.Secondary}
-                            personName={'Christoph Pernsteiner'}
-                            personPosition={'.founder'}
-                            imagePath={'../static/pernsteiner_christoph.png'}/>
+                            personName={personName}
+                            personPosition={personPosition}
+                            imagePath={imagePath}/>
 
                     </StyledPersonFlex>
                 </PersonWrapper>
