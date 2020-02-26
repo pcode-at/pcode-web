@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Flex } from 'rebass';
-import { CopyText, FontStyle } from './CopyText';
 import { Color } from '../Color.enum';
 import Logo from '../assets/pcode_shape.svg?sprite';
 import styled from 'styled-components';
+import { FontStyle, Text } from '../shared/components/Text';
 
 type TCookieMonsterBannerProps = {
     onClickAgreed?(): void;
@@ -12,11 +12,10 @@ type TCookieMonsterBannerProps = {
 };
 
 export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
-     onClickAgreed,
-     onClickDisagreed,
-     className,
+    onClickAgreed,
+    onClickDisagreed,
+    className,
 }) => {
-
     const OpacityDiv = styled.div`
         position: fixed;
         bottom: 0;
@@ -48,18 +47,16 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
         z-index: 20;
     `;
 
-    const StyledCopyTextForCookieInfo = styled(CopyText)`
+    const StyledTextForCookieInfo = styled(Text)`
         margin-right: 5%;
     `;
 
     return (
         <div className={className}>
-
-            <OpacityDiv/>
+            <OpacityDiv />
 
             <BannerWrapperDiv>
-
-                <StyledLogo/>
+                <StyledLogo />
 
                 <Flex
                     sx={{
@@ -69,20 +66,23 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                         },
                     }}
                 >
-                    <StyledCopyTextForCookieInfo color={Color.White} fontStyle={FontStyle.Light}>
+                    <StyledTextForCookieInfo
+                        color={Color.White}
+                        fontStyle={FontStyle.Light}
+                    >
                         We use cookies to personalise contents and ads, to
                         provide social media features and to analyse our
-                        traffic. We also share information about your use of
-                        our site with our social media, advertising and
-                        analytics partners who may combine it with other
-                        information that you've provided to them or that
-                        they've collected from your use of heir services.
-                        You consent to our cookies if you continue to your
-                        website.{' '}
-                    </StyledCopyTextForCookieInfo>
+                        traffic. We also share information about your use of our
+                        site with our social media, advertising and analytics
+                        partners who may combine it with other information that
+                        you've provided to them or that they've collected from
+                        your use of heir services. You consent to our cookies if
+                        you continue to your website.{' '}
+                    </StyledTextForCookieInfo>
 
                     <ButtonWrapper>
                         <Button
+                            variant={'primary'}
                             onClick={onClickAgreed}
                             style={{
                                 minWidth: '120px',
@@ -95,6 +95,7 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                             Yes, I Agree
                         </Button>
                         <Button
+                            variant={'primary'}
                             onClick={onClickDisagreed}
                             style={{
                                 minWidth: '105px',

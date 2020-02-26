@@ -2,9 +2,9 @@ import React from 'react';
 import { PcodeShape } from '../components/PcodeShape';
 import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
-import { ActionButton } from './ActionButton';
-import { CopyText, FontStyle } from './CopyText';
 import styled from 'styled-components';
+import { Button } from '../shared/components/Button';
+import { FontStyle, Text } from '../shared/components/Text';
 
 type TProjectDetailTeaserProps = {
     headline: string;
@@ -16,14 +16,13 @@ type TProjectDetailTeaserProps = {
 };
 
 export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
-                                                                             description,
-                                                                             headline,
-                                                                             imageSrc,
-                                                                             headlineColor,
-                                                                             onClick,
-                                                                             className,
-                                                                         }) => {
-
+    description,
+    headline,
+    imageSrc,
+    headlineColor,
+    onClick,
+    className,
+}) => {
     const StyledImage = styled.img`
         width: 70%;
         position: absolute;
@@ -44,12 +43,12 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         width: 100%;
     `;
 
-    const StyledSectionHeadline = styled(CopyText)`
+    const StyledSectionHeadline = styled(Text)`
         margin-bottom: 1rem;
         font-size: 250%;
     `;
 
-    const StyledCopyText = styled(CopyText)`
+    const StyledText = styled(Text)`
         margin-bottom: 1rem;
         margin-right: 10%;
         max-width: 700px;
@@ -60,20 +59,28 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
                     <GraphicWrapper>
-                        <PcodeShape color={Color.Primary}/>
-                        <StyledImage src={imageSrc}/>
+                        <PcodeShape color={Color.Primary} />
+                        <StyledImage src={imageSrc} />
                     </GraphicWrapper>
                 </Box>
                 <TextWrapper>
                     <StyledSectionHeadline
                         color={headlineColor}
-                        fontStyle={FontStyle.Normal}>
+                        fontStyle={FontStyle.Normal}
+                    >
                         {headline}
                     </StyledSectionHeadline>
-                    <StyledCopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
+                    <StyledText
+                        color={Color.Secondary}
+                        fontStyle={FontStyle.Light}
+                    >
                         {description}
-                    </StyledCopyText>
-                    <ActionButton label="learn more" color={Color.Secondary2} onClick={onClick}/>
+                    </StyledText>
+                    <Button
+                        variant={'primary'}
+                        label="learn more"
+                        onClick={onClick}
+                    />
                 </TextWrapper>
             </Flex>
         </div>

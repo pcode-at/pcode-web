@@ -79,7 +79,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
                     </WordListLayout>
                 </HeaderLayout>
             </Flex>
-            <StyledImage src="./static/tlp-pcode-27.jpg"/>
+            <StyledImage src="./static/tlp-pcode-27.jpg" />
         </React.Fragment>
     );
 };

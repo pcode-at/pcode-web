@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { Color } from '../Color.enum';
-import { CopyText, FontStyle } from './CopyText';
-import { PositionLevel } from '../shared/PositionLevel.enum';
-import { ActionButton } from './ActionButton';
+import { PositionLevel } from '../shared/enums/PositionLevel.enum';
 import { SubHeadline } from './SubHeadline';
-import { MonsterType } from '../shared/MonsterType.enum';
+import { MonsterType } from '../shared/enums/MonsterType.enum';
 import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 import { Monster } from './Monster';
+import { Button } from '../shared/components/Button';
+import { FontStyle, Text } from '../shared/components/Text';
 
 type TFreeChairProps = {
     position: string;
@@ -21,13 +21,12 @@ type TFreeChairProps = {
 const { openPositionDestinationEmail } = CONSTANTS;
 
 export const FreeChair: React.FC<TFreeChairProps> = ({
-                                                         position,
-                                                         positionLevel,
-                                                         positionDescription,
-                                                         monsterType,
-                                                         className,
-                                                     }) => {
-
+    position,
+    positionLevel,
+    positionDescription,
+    monsterType,
+    className,
+}) => {
     const FreeChairWrapper = styled.div`
         width: 200px;
         height: 400px;
@@ -35,8 +34,8 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
     `;
 
     const SvgWrapper = styled.div`
-          width: 50%;
-          height: 170px;
+        width: 50%;
+        height: 170px;
     `;
 
     const PositionWrapper = styled.div`
@@ -59,34 +58,33 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
         <div className={className}>
             <FreeChairWrapper>
                 <SvgWrapper>
-                    <StyledMonster
-                        type={monsterType}
-                    />
+                    <StyledMonster type={monsterType} />
                 </SvgWrapper>
 
                 <PositionWrapper>
                     <SubHeadline
                         color={Color.Secondary}
-                        fontStyle={FontStyle.Normal}>
+                        fontStyle={FontStyle.Normal}
+                    >
                         {' '}
                         {position}{' '}
                     </SubHeadline>
-                    <CopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
+                    <Text color={Color.Secondary} fontStyle={FontStyle.Light}>
                         {' '}
                         {positionLevel}{' '}
-                    </CopyText>
+                    </Text>
                 </PositionWrapper>
 
                 <DescriptionWrapper>
-                    <CopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
+                    <Text color={Color.Secondary2} fontStyle={FontStyle.Light}>
                         {positionDescription}
-                    </CopyText>
+                    </Text>
                 </DescriptionWrapper>
 
                 <a
                     href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                 >
-                    <ActionButton color={Color.Secondary2} label="apply"/>
+                    <Button label="apply" variant={'secondary'} />
                 </a>
             </FreeChairWrapper>
         </div>

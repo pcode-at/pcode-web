@@ -1,6 +1,6 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { CopyText, FontStyle } from './CopyText';
+import { FontStyle, Text } from '../shared/components/Text';
 
 type TSubHeadlineProps = {
     color: Color;
@@ -9,17 +9,16 @@ type TSubHeadlineProps = {
 };
 
 export const SubHeadline: React.FC<TSubHeadlineProps> = ({
-     children,
-     color,
-     fontStyle,
-     className,
- }) => {
-
+    children,
+    color,
+    fontStyle,
+    className,
+}) => {
     return (
         <div className={className}>
-            <CopyText fontStyle={fontStyle} color={color}>
+            <Text fontStyle={fontStyle} color={color}>
                 {children}
-            </CopyText>
+            </Text>
         </div>
     );
 };

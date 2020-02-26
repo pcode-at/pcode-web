@@ -3,8 +3,6 @@ import { Box, Image } from 'rebass';
 import { Color } from '../../../Color.enum';
 import styled from 'styled-components';
 import { WordList } from '../../../components/WordList';
-import { CopyText, FontStyle } from '../../../components/CopyText';
-
 
 const PageLayout = styled(Box)`
     display: flex;
@@ -13,7 +11,7 @@ const PageLayout = styled(Box)`
 `;
 
 const PcodeShapeLayout = styled(Box)`
-    width: 100%;    
+    width: 100%;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -32,22 +30,31 @@ export const CodeStandsForSection: React.FC = () => (
     <React.Fragment>
         <PageLayout>
             <TextLayout>
-                <CopyText color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                <Text color={Color.Secondary2} fontStyle={FontStyle.Normal}>
                     our
-                </CopyText>
-                <CopyText color={Color.Primary} fontStyle={FontStyle.Normal}>
+                </Text>
+                <Text color={Color.Primary} fontStyle={FontStyle.Normal}>
                     code
-                </CopyText>
-                <CopyText color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                </Text>
+                <Text color={Color.Secondary2} fontStyle={FontStyle.Normal}>
                     stands for
-                </CopyText>
+                </Text>
             </TextLayout>
 
-            <Image src="./static/nebo_jure.jpg"/>
-            <Image src="./static/sandburg.jpg"/>
+            <Image src="./static/nebo_jure.jpg" />
+            <Image src="./static/sandburg.jpg" />
 
             <PcodeShapeLayout>
-                <WordList words={['praise', 'potential', 'people', 'passion', 'power', 'perfection']}/>
+                <WordList
+                    words={[
+                        'praise',
+                        'potential',
+                        'people',
+                        'passion',
+                        'power',
+                        'perfection',
+                    ]}
+                />
             </PcodeShapeLayout>
         </PageLayout>
     </React.Fragment>

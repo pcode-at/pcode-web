@@ -1,10 +1,10 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Box, Flex, Image, Text } from 'rebass';
+import { Box, Flex, Image } from 'rebass';
 import { theme } from '../theme';
 import { PcodeShape } from './PcodeShape';
-import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
+import { FontStyle, Text } from '../shared/components/Text';
 
 const { light, normal } = theme.font;
 
@@ -17,13 +17,12 @@ type TPersonWithFunctionProps = {
 };
 
 export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
-                                                                           color,
-                                                                           className,
-                                                                           personName,
-                                                                           personPosition,
-                                                                           imagePath,
-                                                                       }) => {
-
+    color,
+    className,
+    personName,
+    personPosition,
+    imagePath,
+}) => {
     const PersonWithFunctionLayout = styled(Flex)`
         align-items: center;
         flex-direction: column;
@@ -61,23 +60,22 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
     return (
         <div className={className}>
             <PersonWithFunctionLayout>
-
                 <PcodeShapeLayout>
-                    <PcodeShape color={color}/>
+                    <PcodeShape color={color} />
                 </PcodeShapeLayout>
                 <StyledPersonImageLayout>
-                    <StyledPersonImage src={imagePath}/>
+                    <StyledPersonImage src={imagePath} />
                 </StyledPersonImageLayout>
                 <PersonNameWrapper>
-                    <CopyText color={color} fontStyle={FontStyle.Normal}>
+                    <Text color={color} fontStyle={FontStyle.Normal}>
                         {personName}
-                    </CopyText>
+                    </Text>
                 </PersonNameWrapper>
 
                 <PersonPositionWrapper>
-                    <CopyText fontStyle={FontStyle.Light} color={color}>
+                    <Text fontStyle={FontStyle.Light} color={color}>
                         {personPosition}
-                    </CopyText>
+                    </Text>
                 </PersonPositionWrapper>
             </PersonWithFunctionLayout>
         </div>

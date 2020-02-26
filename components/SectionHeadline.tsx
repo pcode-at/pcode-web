@@ -13,13 +13,13 @@ type TSectionHeadlineProps = {
 };
 
 export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
-     headlinePartOne,
-     headlinePartTwo,
-     color,
-     separateWithBreak = false,
-     maxWidthPartTwo,
-     className,
- }) => {
+    headlinePartOne,
+    headlinePartTwo,
+    color,
+    separateWithBreak = false,
+    maxWidthPartTwo,
+    className,
+}) => {
     const defaultProps = {
         color,
         fontFamily: 'raleway',
@@ -41,7 +41,7 @@ export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
             <Heading fontFamily="raleway" color={color}>
                 <FirstSpan>{headlinePartOne}</FirstSpan>
                 &nbsp;
-                {separateWithBreak && <br/>}
+                {separateWithBreak && <br />}
                 <SecondSpan>{headlinePartTwo}</SecondSpan>
             </Heading>
         </div>
