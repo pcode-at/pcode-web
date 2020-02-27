@@ -7,7 +7,7 @@
 yarn install
 ```
 
-2. Start developing
+2. Run website
 ```
 yarn dev
 ```
@@ -76,6 +76,9 @@ const StatementLayout = styled(Box)`
  
 ### Sections
 When the pages are about to be built together we use section components to group 2..n components, that build a logical and optical section together. An example would be the footer area, that includes a contact form on every page, or the work-at-pcode section [WorkingAtPcodeSection](pages/join-us/sections/WorkingAtPcode.section.tsx).
+
+### theme.ts
+Please look at the [theme.ts file](theme.ts), where for example page breakpoints (e.g. used for seperating between mobile and desktop), or spacings are defined. Please do not define hard margins like 15rem - instead use ${theme.space[2]} to use a predefined space. This step unifies the appearance of the website due to increased styling consistency.
 
 ## Create a component
 You can go to the [ProjectDetailTeaser](components/ProjectDetailTeaser.tsx) component to see how a component is built. Here is the code:
