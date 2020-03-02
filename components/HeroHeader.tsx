@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Color } from '../Color.enum';
-import { SectionHeadline } from './SectionHeadline';
 import styled from 'styled-components';
 import { Button } from '../shared/components/Button';
+import { SectionHeadline } from './SectionHeadline';
 
 type TSwiperProps = {
     color?: Color;

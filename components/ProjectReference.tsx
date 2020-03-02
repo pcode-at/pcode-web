@@ -4,7 +4,7 @@ import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
 import styled from 'styled-components';
 import { Button } from '../shared/components/Button';
-import { FontStyle, Text } from '../shared/components/Text';
+import { Text } from '../shared/components/Text';
 
 type TProjectDetailTeaserProps = {
     headline: string;
@@ -66,14 +66,11 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
                 <TextWrapper>
                     <StyledSectionHeadline
                         color={headlineColor}
-                        fontStyle={FontStyle.Normal}
+                        variant={'light'}
                     >
                         {headline}
                     </StyledSectionHeadline>
-                    <StyledText
-                        color={Color.Secondary}
-                        fontStyle={FontStyle.Light}
-                    >
+                    <StyledText color={Color.Secondary} variant={'light'}>
                         {description}
                     </StyledText>
                     <Button
