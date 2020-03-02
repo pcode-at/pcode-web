@@ -3,6 +3,7 @@ import { Box, Image } from 'rebass';
 import { Color } from '../../../Color.enum';
 import styled from 'styled-components';
 import { WordList } from '../../../components/WordList';
+import { Text } from '../../../shared/components/Text';
 
 const PageLayout = styled(Box)`
     display: flex;
@@ -30,13 +31,13 @@ export const CodeStandsForSection: React.FC = () => (
     <React.Fragment>
         <PageLayout>
             <TextLayout>
-                <Text color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                <Text color={Color.Secondary2} variant={'normal'}>
                     our
                 </Text>
-                <Text color={Color.Primary} fontStyle={FontStyle.Normal}>
+                <Text color={Color.Primary} variant={'normal'}>
                     code
                 </Text>
-                <Text color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                <Text color={Color.Secondary2} variant={'normal'}>
                     stands for
                 </Text>
             </TextLayout>

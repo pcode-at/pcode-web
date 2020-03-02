@@ -6,11 +6,11 @@ import { PcodeShape } from '../../components/PcodeShape';
 import { SiteHeader } from '../../components/SiteHeader';
 import { Color } from '../../Color.enum';
 import { Footer } from '../../components/Footer';
-import { Swiper } from '../../components/Swiper';
+import { HeroHeader } from '../../components/HeroHeader';
 import Router from 'next/router';
 import { CodeStandsForSection } from './sections/CodeStandsFor.section';
 import styled from 'styled-components';
-import { ProjectDetailTeaser } from '../../components/ProjectDetailTeaser';
+import { ProjectReference } from '../../components/ProjectReference';
 import { Statement } from '../../components/Statement';
 import { ContactForm } from '../../components/ContactForm';
 
@@ -25,7 +25,7 @@ const PcodeShapeLayout = styled(Box)`
     position: relative;
     width: 400px;
 
-    @media screen and (min-width: 615px) {
+    @media screen and (min-width: ${theme.breakpoints[0]}) {
         display: block;
         margin-right: -150px;
         overflow: hidden;
@@ -52,7 +52,7 @@ const MainPage = () => (
         <ThemeProvider theme={theme}>
             <SiteHeader color={Color.White} />
             <PageLayout>
-                <Swiper
+                <HeroHeader
                     textPartOne="we transform complexity"
                     textPartTwo="to simplicity by delivering exceptional solutions."
                     onClick={() => Router.push('/join-us')}
@@ -64,7 +64,7 @@ const MainPage = () => (
             </PageLayout>
 
             <ProjectDetailTeaserLayout>
-                <ProjectDetailTeaser
+                <ProjectReference
                     headline="colors mobile app"
                     description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
                     gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
@@ -76,8 +76,7 @@ const MainPage = () => (
                     Muckefuck erquicken. Der Tausendsassa anschwärzen der einfältig
                     Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
                     Höchste Eisenbahn"
-                    imageSrc="../static/iPhone.png"
-                    headlineColor={Color.Primary}
+                    imageSource="../static/iPhone.png"
                     onClick={() => Router.push('/main')}
                 />
             </ProjectDetailTeaserLayout>

@@ -8,7 +8,7 @@ import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 import { Monster } from './Monster';
 import { Button } from '../shared/components/Button';
-import { FontStyle, Text } from '../shared/components/Text';
+import { Text } from '../shared/components/Text';
 
 type TFreeChairProps = {
     position: string;
@@ -62,21 +62,18 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
                 </SvgWrapper>
 
                 <PositionWrapper>
-                    <SubHeadline
-                        color={Color.Secondary}
-                        fontStyle={FontStyle.Normal}
-                    >
+                    <SubHeadline color={Color.Secondary}>
                         {' '}
                         {position}{' '}
                     </SubHeadline>
-                    <Text color={Color.Secondary} fontStyle={FontStyle.Light}>
+                    <Text color={Color.Secondary} variant={'light'}>
                         {' '}
                         {positionLevel}{' '}
                     </Text>
                 </PositionWrapper>
 
                 <DescriptionWrapper>
-                    <Text color={Color.Secondary2} fontStyle={FontStyle.Light}>
+                    <Text color={Color.Secondary2} variant={'light'}>
                         {positionDescription}
                     </Text>
                 </DescriptionWrapper>

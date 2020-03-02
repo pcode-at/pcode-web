@@ -8,11 +8,11 @@ import { Color } from '../Color.enum';
 import { SectionHeadline } from '../components/SectionHeadline';
 import { FreeChair } from '../components/FreeChair';
 import { PositionLevel } from '../shared/enums/PositionLevel.enum';
-import { Swiper } from '../components/Swiper';
+import { HeroHeader } from '../components/HeroHeader';
 import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
 import { Menu } from '../components/Menu';
-import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
+import { ProjectReference } from '../components/ProjectReference';
 import Router from 'next/router';
 import { WordList } from '../components/WordList';
 import { ProjectSlider } from '../components/ProjectSlider';
@@ -27,7 +27,8 @@ import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { MonsterType } from '../shared/enums/MonsterType.enum';
 import { Button } from '../shared/components/Button';
-import { FontStyle, Text } from '../shared/components/Text';
+import { Text } from '../shared/components/Text';
+import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
 
 const { light, normal } = theme.font;
 
@@ -40,10 +41,9 @@ const MainPage = () => (
             }}
         />
 
-        <Button
-            label={'action button'}
-            variant={'primary'}
-        />
+        <ProjectDetailTeaser />
+
+        <Button label={'action button'} variant={'primary'} />
 
         <StyledHeading>PersonWithFunction</StyledHeading>
         <PersonWithFunction
@@ -83,7 +83,7 @@ const MainPage = () => (
         </StyledPcodeShapeBox>
 
         <StyledHeading>Text</StyledHeading>
-        <StyledText color={Color.Secondary2} fontStyle={FontStyle.Light}>
+        <StyledText color={Color.Secondary2} variant={'light'}>
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig Räuber.
             Die altbacken Freikörperkultur meucheln. Das Schelm bauchpinseln das
@@ -106,12 +106,7 @@ const MainPage = () => (
         />
 
         <StyledHeading>SubHeadline</StyledHeading>
-        <StyledSubHeadline
-            color={Color.Secondary2}
-            fontStyle={FontStyle.Normal}
-        >
-            Nabend
-        </StyledSubHeadline>
+        <StyledSubHeadline color={Color.Secondary2}>Nabendt</StyledSubHeadline>
 
         <StyledHeading>FreeChair</StyledHeading>
         <StyledFreeChair
@@ -119,7 +114,7 @@ const MainPage = () => (
             position="frontend developer"
             positionLevel={PositionLevel.Junior}
             positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
-        ></StyledFreeChair>
+        />
 
         <StyledHeading>ProjectSlider</StyledHeading>
         <ProjectSliderWrapper>
@@ -142,7 +137,7 @@ const MainPage = () => (
         {/*<CookieMonsterBanner/>*/}
 
         <StyledHeading>ProjectDetailTeaser</StyledHeading>
-        <ProjectDetailTeaser
+        <ProjectReference
             headline="Test Headline"
             description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
@@ -154,8 +149,7 @@ const MainPage = () => (
             Muckefuck erquicken. Der Tausendsassa anschwärzen der einfältig
             Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
             Höchste Eisenbahn"
-            imageSrc="../static/testImage.png"
-            headlineColor={Color.Primary}
+            imageSource="../static/testImage.png"
             onClick={() => Router.push('/main')}
         />
 
@@ -248,7 +242,7 @@ const StyledFreeChair = styled(FreeChair)`
     margin-left: 1em;
 `;
 
-const StyledSwiper = styled(Swiper)`
+const StyledSwiper = styled(HeroHeader)`
     padding: 1em;
     width: 300px;
 `;

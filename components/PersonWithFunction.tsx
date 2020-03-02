@@ -4,7 +4,7 @@ import { Box, Flex, Image } from 'rebass';
 import { theme } from '../theme';
 import { PcodeShape } from './PcodeShape';
 import styled, { css } from 'styled-components';
-import { FontStyle, Text } from '../shared/components/Text';
+import { Text } from '../shared/components/Text';
 
 const { light, normal } = theme.font;
 
@@ -29,13 +29,11 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
     `;
 
     const PersonNameWrapper = styled(Box)`
-        margin-top: 2em;
-        font-size: 130%;
+        margin-top: ${theme.space[3]};
         text-align: center;
     `;
 
     const PersonPositionWrapper = styled(Box)`
-        font-size: 130%;
         text-align: center;
     `;
 
@@ -53,7 +51,7 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
 
     const PcodeShapeLayout = styled(Box)`
         position: relative;
-        margin-left: -40px;
+        margin-left: -${theme.space[3]};
         transform: rotate(-20deg);
         width: 200px;
     `;
@@ -67,13 +65,13 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
                     <StyledPersonImage src={imagePath} />
                 </StyledPersonImageLayout>
                 <PersonNameWrapper>
-                    <Text color={color} fontStyle={FontStyle.Normal}>
+                    <Text color={color} variant={'normal'}>
                         {personName}
                     </Text>
                 </PersonNameWrapper>
 
                 <PersonPositionWrapper>
-                    <Text fontStyle={FontStyle.Light} color={color}>
+                    <Text color={color} variant={'light'}>
                         {personPosition}
                     </Text>
                 </PersonPositionWrapper>

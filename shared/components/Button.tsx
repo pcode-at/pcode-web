@@ -3,7 +3,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { Color } from '../../Color.enum';
 import { theme } from '../../theme';
-import { FontStyle, Text } from './Text';
+import { Text } from './Text';
 
 type TButtonProps = {
     color?: Color;
@@ -31,16 +31,18 @@ export const Button: React.FC<TButtonProps> = ({
     variant,
 }) => {
     const StyledRebassButton = styled(RebassButton)`
+        font-size: 80%;
         width: 100%;
         border-radius: 15px;
         cursor: pointer;
+        padding: 0.5em 2em;
         ${variants[variant]};
     `;
 
     return (
         <div className={className}>
             <StyledRebassButton onClick={onClick}>
-                <Text color={Color.White} fontStyle={FontStyle.Light}>
+                <Text color={Color.White} variant={'light'}>
                     {label}
                 </Text>
             </StyledRebassButton>

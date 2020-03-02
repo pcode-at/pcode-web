@@ -1,7 +1,7 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
+import {Text} from '../shared/components/Text';
 
 type TSectionHeadlineProps = {
     color: Color;
@@ -38,12 +38,12 @@ export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
 
     return (
         <div className={className}>
-            <Heading fontFamily="raleway" color={color}>
+            <Text variant={'large'} color={color}>
                 <FirstSpan>{headlinePartOne}</FirstSpan>
                 &nbsp;
                 {separateWithBreak && <br />}
                 <SecondSpan>{headlinePartTwo}</SecondSpan>
-            </Heading>
+            </Text>
         </div>
     );
 };

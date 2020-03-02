@@ -6,23 +6,25 @@ import styled from 'styled-components';
 import { Button } from '../shared/components/Button';
 import { Text } from '../shared/components/Text';
 
-type TProjectDetailTeaserProps = {
+type TProjectReferenceProps = {
     headline: string;
     description: string;
-    imageSrc: string;
-    headlineColor: Color;
+    imageSource: string;
     onClick?(): void;
     className?: string;
 };
 
-export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
+export const ProjectReference: React.FC<TProjectReferenceProps> = ({
     description,
     headline,
-    imageSrc,
-    headlineColor,
+    imageSource,
     onClick,
     className,
 }) => {
+    const ProjectReferenceLayout = styled(Flex)`
+        align-items: center;
+        justify-content: space-between;
+    `;
     const StyledImage = styled.img`
         width: 70%;
         position: absolute;
@@ -31,55 +33,60 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         transform: translateX(-50%) translateY(-50%);
     `;
 
-    const GraphicWrapper = styled(Box)`
+    const ImageLayout = styled(Box)`
         position: relative;
         margin-left: -30%;
         width: 100%;
     `;
 
-    const TextWrapper = styled(Box)`
+    const TextLayout = styled(Box)`
         position: relative;
         text-align: left;
         width: 100%;
     `;
 
-    const StyledSectionHeadline = styled(Text)`
-        margin-bottom: 1rem;
-        font-size: 250%;
+    const StyledHeaderText = styled(Text)`
+        margin-bottom: 1em;
     `;
 
-    const StyledText = styled(Text)`
+    const DescriptionTextLayout = styled(Box)`
         margin-bottom: 1rem;
         margin-right: 10%;
         max-width: 700px;
     `;
 
+    const LearnMoreButtonLayout = styled(Box)`
+        float: left;
+    `;
+
     return (
         <div className={className}>
-            <Flex alignItems="center" justifyContent="space-between">
+            <ProjectReferenceLayout>
                 <Box width={2 / 6}>
-                    <GraphicWrapper>
+                    <ImageLayout>
                         <PcodeShape color={Color.Primary} />
-                        <StyledImage src={imageSrc} />
-                    </GraphicWrapper>
+                        <StyledImage src={imageSource} />
+                    </ImageLayout>
                 </Box>
-                <TextWrapper>
-                    <StyledSectionHeadline
-                        color={headlineColor}
-                        variant={'light'}
-                    >
+                <TextLayout>
+                    <StyledHeaderText color={Color.Primary} variant={'large'}>
                         {headline}
-                    </StyledSectionHeadline>
-                    <StyledText color={Color.Secondary} variant={'light'}>
-                        {description}
-                    </StyledText>
-                    <Button
-                        variant={'primary'}
-                        label="learn more"
-                        onClick={onClick}
-                    />
-                </TextWrapper>
-            </Flex>
+                    </StyledHeaderText>
+                    <DescriptionTextLayout>
+                        <Text color={Color.Secondary} variant={'light'}>
+                            {description}
+                        </Text>
+                    </DescriptionTextLayout>
+
+                    <LearnMoreButtonLayout>
+                        <Button
+                            variant={'secondary'}
+                            label="learn more"
+                            onClick={onClick}
+                        />
+                    </LearnMoreButtonLayout>
+                </TextLayout>
+            </ProjectReferenceLayout>
         </div>
     );
 };

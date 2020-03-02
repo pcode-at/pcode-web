@@ -14,7 +14,7 @@ import { MonsterType } from '../../shared/enums/MonsterType.enum';
 import styled from 'styled-components';
 import { Statement2 } from '../../components/Statement2';
 import { Button } from '../../shared/components/Button';
-import { FontStyle, Text } from '../../shared/components/Text';
+import { Text } from '../../shared/components/Text';
 
 const FreeChairsLayout = styled(Flex)`
     justify-content: center;
@@ -31,7 +31,7 @@ const PcodeShapeLayout = styled(Box)`
     right: -80px;
     bottom: -80px;
     display: none;
-    @media screen and (min-width: 670px) {
+    @media screen and (min-width: ${theme.breakpoints[0]}) {
         display: block;
     },
 `;
@@ -52,13 +52,13 @@ const AboutPcodeLayout = styled(Box)`
     position: relative;
     padding: 3.5rem 2rem 3.5rem 2rem;
     justify-content: space-between;
-    @media screen and (min-width: 670px) {
+    @media screen and (min-width: ${theme.breakpoints[0]}) {
         display: block;
     }
 `;
 
 const StatementLayout = styled(Box)`
-    @media screen and (min-width: 616px) {
+    @media screen and (min-width: ${theme.breakpoints[0]}) {
         margin-top: -7rem;
     }
 `;
@@ -78,7 +78,7 @@ const JoinUsPage = () => (
                     />
                 </HeadlineLayout>
                 <TextLayout>
-                    <Text color={Color.White} fontStyle={FontStyle.Light}>
+                    <Text color={Color.White} variant={'light'}>
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                         sed diam nonumy eirmod tempor invidunt ut labore et
                         dolore magna aliquyam erat, sed diam voluptua. At vero
@@ -89,7 +89,7 @@ const JoinUsPage = () => (
                 </TextLayout>
 
                 <LearnMoreButtonLayout>
-                    <Button color={Color.Primary} label="learn more" />
+                    <Button label="learn more" variant={'primary'} />
                 </LearnMoreButtonLayout>
                 <PcodeShapeLayout>
                     <PcodeShape color={Color.Secondary} />

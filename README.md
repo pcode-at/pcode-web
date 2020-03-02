@@ -26,21 +26,21 @@ Using these extensions is recommended for great developer experience:
 
 
 ## Create a component
-You can go to the [ProjectDetailTeaser](components/ProjectDetailTeaser.tsx) component to see how a component is built. Here is the code:
+You can go to the [ProjectReference](components/ProjectReference.tsx) component to see how a component is built. Here is the code:
 ```
 import React from "react";
 
 type TProjectDetailTeaserProps = {
   headline: string;
   description: string;
-  imageSrc: string;
+  imageSource: string;
   pcodeShapeBackground: boolean;
 };
 
-export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
+export const ProjectReference: React.FC<TProjectDetailTeaserProps> = ({
   description,
   headline,
-  imageSrc,
+  imageSource,
   pcodeShapeBackground
 }) => {
   // write some code
@@ -49,7 +49,7 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
     <div className="pcode-shape-background">
       <h1>{headline}</h1>
       <p>{description}</p>
-      <img src={imageSrc} />
+      <img src={imageSource} />
 
       <style jsx>{`
         .pcode-shape-background {

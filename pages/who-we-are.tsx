@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
 import { theme } from '../theme';
-import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
+import { ProjectReference } from '../components/ProjectReference';
 
 const WhoWeArePage = () => (
     <div>
@@ -34,7 +34,7 @@ const WhoWeArePage = () => (
 
         <div className="test">WORKING</div>
 
-        <ProjectDetailTeaser
+        <ProjectReference
             description="Description"
             headline="Headline"
             imageSrc=""

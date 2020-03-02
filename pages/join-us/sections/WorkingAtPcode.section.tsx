@@ -14,7 +14,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
         position: relative;
         padding-bottom: 15rem;
         
-        @media screen and (min-width: 670px) {
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
             padding-top: 1rem;
             padding-bottom: 1rem;
         }
@@ -23,7 +23,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
     const SectionHeadlineLayout = styled(Box)`
         padding: 2rem;
         max-width: 344px;
-        @media screen and (min-width: 670px) {
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
             width: 270px;
         }
     `;
@@ -35,7 +35,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
         display: flex;
         justify-content: center;
         
-        @media screen and (min-width: 670px) {
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
             position: static;
             top: 0;
             margin-bottom: -100px;

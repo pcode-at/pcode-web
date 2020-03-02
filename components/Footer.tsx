@@ -1,7 +1,7 @@
 import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
-import { FontStyle, Text } from '../shared/components/Text';
+import { Text } from '../shared/components/Text';
 
 type TFooterProps = {
     className?: string;
@@ -16,7 +16,7 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                 backgroundColor={Color.Secondary}
                 flexDirection="column"
                 sx={{
-                    '@media screen and (min-width: 615px)': {
+                    '@media screen and (min-width: ${theme.breakpoints[0]})': {
                         justifyContent: 'space-between',
                         flexDirection: 'row',
                     },
@@ -27,7 +27,7 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                     flexDirection="column"
                     marginBottom="2em"
                     sx={{
-                        '@media screen and (min-width: 615px)': {
+                        '@media screen and (min-width: ${theme.breakpoints[0]})': {
                             flexDirection: 'row',
                         },
                     }}
@@ -35,48 +35,30 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                     <Box
                         sx={{
                             margin: '0 0 1em 0',
-                            '@media screen and (min-width: 615px)': {
+                            '@media screen and (min-width: ${theme.breakpoints[0]})': {
                                 margin: '0 1.5em 1em 0',
                             },
                         }}
                     >
-                        <Text
-                            color={Color.Secondary2}
-                            fontStyle={FontStyle.Light}
-                        >
+                        <Text color={Color.Secondary2} variant={'light'}>
                             pcode - software engineering
                         </Text>
-                        <Text
-                            color={Color.Secondary2}
-                            fontStyle={FontStyle.Light}
-                        >
+                        <Text color={Color.Secondary2} variant={'light'}>
                             +43 664 1652141
                         </Text>
-                        <Text
-                            color={Color.Secondary2}
-                            fontStyle={FontStyle.Light}
-                        >
+                        <Text color={Color.Secondary2} variant={'light'}>
                             office@pcode.at
                         </Text>
                     </Box>
 
                     <div>
-                        <Text
-                            color={Color.Secondary2}
-                            fontStyle={FontStyle.Light}
-                        >
+                        <Text color={Color.Secondary2} variant={'light'}>
                             peter-behrens platz 2
                         </Text>
-                        <Text
-                            color={Color.Secondary2}
-                            fontStyle={FontStyle.Light}
-                        >
+                        <Text color={Color.Secondary2} variant={'light'}>
                             4020 Linz, Austria
                         </Text>
-                        <Text
-                            color={Color.Secondary2}
-                            fontStyle={FontStyle.Light}
-                        >
+                        <Text color={Color.Secondary2} variant={'light'}>
                             Axis Coworking loft
                         </Text>
                     </div>
@@ -86,33 +68,24 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                     sx={{
                         paddingLeft: '2em',
                         lineHeight: '1.5em',
-                        '@media screen and (min-width: 615px)': {
+                        '@media screen and (min-width: ${theme.breakpoints[0]})': {
                             paddingLeft: '0',
                             paddingRight: '4em',
                         },
                     }}
                 >
                     <a href={IMPRESSUM_LINK} target="blank">
-                        <Text
-                            color={Color.White}
-                            fontStyle={FontStyle.Light}
-                        >
+                        <Text color={Color.White} variant={'light'}>
                             Impressum
                         </Text>
                     </a>
                     <a href={DATA_PRIVACY_LINK} target="blank">
-                        <Text
-                            color={Color.White}
-                            fontStyle={FontStyle.Light}
-                        >
+                        <Text color={Color.White} variant={'light'}>
                             Datenschutz
                         </Text>
                     </a>
                     <a href={AGB_LINK} target="blank">
-                        <Text
-                            color={Color.White}
-                            fontStyle={FontStyle.Light}
-                        >
+                        <Text color={Color.White} variant={'light'}>
                             AGB
                         </Text>
                     </a>

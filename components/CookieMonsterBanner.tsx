@@ -3,7 +3,7 @@ import { Button, Flex } from 'rebass';
 import { Color } from '../Color.enum';
 import Logo from '../assets/pcode_shape.svg?sprite';
 import styled from 'styled-components';
-import { FontStyle, Text } from '../shared/components/Text';
+import { Text } from '../shared/components/Text';
 
 type TCookieMonsterBannerProps = {
     onClickAgreed?(): void;
@@ -60,7 +60,7 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
 
                 <Flex
                     sx={{
-                        '@media screen and (max-width: 615px)': {
+                        '@media screen and (max-width: ${theme.breakpoints[0]})': {
                             flexDirection: 'column',
                             alignItems: 'center',
                         },
@@ -68,7 +68,7 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                 >
                     <StyledTextForCookieInfo
                         color={Color.White}
-                        fontStyle={FontStyle.Light}
+                        variant={'light'}
                     >
                         We use cookies to personalise contents and ads, to
                         provide social media features and to analyse our

@@ -29,11 +29,11 @@ export const Statement2: React.FC<TStatementProps> = ({
         padding-bottom: 3em;
         align-items: center;
 
-        @media screen and (min-width: 615px) {
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
             justify-content: space-between;
             flex-direction: row;
         }
-        @media screen and (max-width: 615px) {
+        @media screen and (max-width: ${theme.breakpoints[0]}) {
             flex-direction: column;
         }
     `;
@@ -45,7 +45,7 @@ export const Statement2: React.FC<TStatementProps> = ({
         font-weight: ${normal.fontWeight};
         font-size: 150%;
 
-        @media screen and (max-width: 615px) {
+        @media screen and (max-width: ${theme.breakpoints[0]}) {
             padding: 0;
             width: 90%;
             text-align: center;
@@ -57,7 +57,7 @@ export const Statement2: React.FC<TStatementProps> = ({
     const PersonWrapper = styled(Flex)`
         justify-content: center;
 
-        @media screen and (min-width: 615px) {
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
             margin-right: 10%;
         }
     `;

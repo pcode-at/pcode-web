@@ -1,11 +1,12 @@
 import React from 'react';
-import { Box, Flex, Heading, Text } from 'rebass';
+import { Box, Flex, Heading } from 'rebass';
 import { Color } from '../Color.enum';
 import { theme } from '../theme';
 import { Platform } from './Platform';
 import { PlatformType } from '../shared/enums/PlatformType.enum';
 import styled from 'styled-components';
 import { Button } from '../shared/components/Button';
+import { Text } from '../shared/components/Text';
 
 type TTechnologyPlatformProps = {
     name: string;
@@ -26,38 +27,26 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
 }) => {
     const { light, normal } = theme.font;
 
-    const StyledHeading = styled(Heading)`
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
-        font-size: 200%;
-        text-align: center;
-        margin-top: 1em;
-        margin-bottom: 2em;
+    const TitleLayout = styled(Box)`
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     `;
 
-    const WrapperFlex = styled(Flex)`
+    const TechnologyPlatformLayout = styled(Flex)`
         flex-direction: column;
-        justify-content: center;
         align-items: center;
     `;
 
-    const PlatformSvgWrapper = styled.div`
+    const PlatformSvgLayout = styled(Box)`
         width: 60%;
         height: 170px;
     `;
 
-    const StyledSubHeading = styled(Heading)`
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
-        padding-top: 0.5em;
-        padding-bottom: 0.2em;
-    `;
-
-    const HeadingAndListContainer = styled.div`
+    const LanguageAndTechnologyLayout = styled(Box)`
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
         margin-bottom: 1em;
-        align-content: center;
+        width: 100%;
     `;
 
     const StyledPlatform = styled(Platform)`
@@ -69,50 +58,50 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
 
     return (
         <div className={className}>
-            <WrapperFlex>
-                <StyledHeading fontFamily={normal.fontFamily}>
-                    {name}
-                </StyledHeading>
+            <TechnologyPlatformLayout>
+                <TitleLayout>
+                    <Text variant={'large'} color={Color.Secondary}>
+                        {name}
+                    </Text>
+                </TitleLayout>
 
-                <PlatformSvgWrapper>
+                <PlatformSvgLayout>
                     <StyledPlatform type={platformType} />
-                </PlatformSvgWrapper>
+                </PlatformSvgLayout>
 
-                <div>
-                    <StyledSubHeading
-                        color={Color.Secondary2}
-                        fontFamily={normal.fontFamily}
-                    >
+                <Box>
+                    <Text color={Color.Secondary2} variant={'large'}>
                         Language
-                    </StyledSubHeading>
-                    <HeadingAndListContainer>
-                        {languages.map(lan => (
-                            <Text lineHeight="1.2" key={lan}>
-                                {lan}
+                    </Text>
+                    <LanguageAndTechnologyLayout>
+                        {languages.map(language => (
+                            <Text
+                                key={language}
+                                color={Color.Secondary}
+                                variant={'light'}
+                            >
+                                {language}
                             </Text>
                         ))}
-                    </HeadingAndListContainer>
+                    </LanguageAndTechnologyLayout>
 
-                    <StyledSubHeading
-                        color={Color.Secondary2}
-                        fontFamily={normal.fontFamily}
-                    >
+                    <Text color={Color.Secondary2} variant={'large'}>
                         Technology
-                    </StyledSubHeading>
-                    <HeadingAndListContainer>
-                        {technologies.map(tec => (
-                            <Text lineHeight="1.2" key={tec}>
-                                {tec}
+                    </Text>
+                    <LanguageAndTechnologyLayout>
+                        {technologies.map(technology => (
+                            <Text
+                                key={technology}
+                                color={Color.Secondary}
+                                variant={'light'}
+                            >
+                                {technology}
                             </Text>
                         ))}
-                    </HeadingAndListContainer>
-
-                    <Button
-                        variant={'secondary'}
-                        label="interested?"
-                    />
-                </div>
-            </WrapperFlex>
+                    </LanguageAndTechnologyLayout>
+                </Box>
+                <Button variant={'secondary'} label="interested?" />
+            </TechnologyPlatformLayout>
         </div>
     );
 };
