@@ -3,7 +3,7 @@ import { Color } from './Color.enum';
 const theme = {
     breakpoints: ['768px'],
     fontSizes: [11],
-    space: ['0px', '10px', '20px', '40px','50px'],
+    space: ['3px', '10px' ,'15px', '20px', '40px','50px'],
     colors: {
         [Color.Primary]: '#F73859',
         [Color.Secondary]: '#263958',

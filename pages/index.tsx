@@ -29,6 +29,7 @@ import { MonsterType } from '../shared/enums/MonsterType.enum';
 import { Button } from '../shared/components/Button';
 import { Text } from '../shared/components/Text';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
+import { CookieMonsterBanner } from '../components/CookieMonsterBanner';
 
 const { light, normal } = theme.font;
 

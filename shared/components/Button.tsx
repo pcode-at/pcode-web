@@ -11,7 +11,7 @@ type TButtonProps = {
     padding?: string;
     noBackground?: boolean;
     onClick?(): void;
-    variant: 'primary' | 'secondary';
+    variant: 'primary' | 'secondary' | 'secondary2';
     className?: string;
 };
 
@@ -20,6 +20,9 @@ const variants = {
         background-color: ${theme.colors[Color.Primary]};
     `,
     secondary: css`
+        background-color: ${theme.colors[Color.Secondary]};
+    `,
+    secondary2: css`
         background-color: ${theme.colors[Color.Secondary2]};
     `,
 };

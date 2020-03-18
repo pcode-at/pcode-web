@@ -22,35 +22,33 @@ export const ContactForm: React.FC<TContactFormProps> = ({ className }) => {
     `;
 
     const ShortInputLayout = styled(Box)`
-        margin-top: 10px;
+        margin-top: ${theme.space[1]};
         width: 50%;
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
     `;
 
     const TextAreaLayout = styled(Box)`
-        height: 100px;
-        margin-top: 10px;
+        margin-top: ${theme.space[1]};
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
     `;
 
     const StyledInput = styled(Input)`
-        border-width: 3px;
+        border-width: ${theme.space[0]};
         border-color: ${theme.colors[Color.Secondary2]};
-        border-radius: 13px;
+        border-radius: ${theme.space[2]};
     `;
 
     const StyledTextarea = styled(Textarea)`
-        border-width: 3px;
+        border-width: ${theme.space[0]};
         border-color: ${theme.colors[Color.Secondary2]};
-        border-radius: 13px;
-        height: 100%;
+        border-radius: ${theme.space[2]};
     `;
 
     const ContactButton = styled(Button)`
         float: right;
-        margin-top: 10px;
+        margin-top: ${theme.space[1]};;
     `;
 
     return (
