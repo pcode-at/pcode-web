@@ -97,7 +97,10 @@ const MainPage = () => (
         </StyledText>
 
         <StyledHeading>ContactForm</StyledHeading>
-        <StyledContactForm>ContactForm Component</StyledContactForm>
+
+        <ContactFormLayout>
+            <ContactForm>ContactForm Component</ContactForm>
+        </ContactFormLayout>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
@@ -226,7 +229,7 @@ const StyledHeading = styled.h1`
     margin-top: 3em;
 `;
 
-const StyledContactForm = styled(ContactForm)`
+const ContactFormLayout = styled.div`
     max-width: 300px;
 `;
 

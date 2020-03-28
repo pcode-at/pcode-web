@@ -53,9 +53,16 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
         margin-right: ${theme.space[4]};
     `;
 
-    const StyledButtonLayout = styled.div`
+    const ButtonLayout = styled.div`
         min-width: 120px;
         margin-right: ${theme.space[2]};
+    `;
+
+    const InfoTextAndButtonLayout = styled(Flex)`
+        @media screen and (max-width: ${theme.breakpoints[0]}) {
+            flex-direction: column;
+            align-items: center;
+        }
     `;
 
     return (
@@ -67,14 +74,7 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                     <Logo />
                 </LogoLayout>
 
-                <Flex
-                    sx={{
-                        '@media screen and (max-width: ${theme.breakpoints[0]})': {
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                        },
-                    }}
-                >
+                <InfoTextAndButtonLayout>
                     <InfoTextLayout>
                         <Text color={Color.White} variant={'light'}>
                             We use cookies to personalise contents and ads, to
@@ -90,22 +90,22 @@ export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
                     </InfoTextLayout>
 
                     <ButtonsSectionLayout>
-                        <StyledButtonLayout>
+                        <ButtonLayout>
                             <Button
                                 variant={'secondary'}
                                 onClick={onClickAgreed}
                                 label={'Yes, I Agree'}
                             />
-                        </StyledButtonLayout>
-                        <StyledButtonLayout>
+                        </ButtonLayout>
+                        <ButtonLayout>
                             <Button
                                 label={'Not sure!'}
                                 variant={'secondary2'}
                                 onClick={onClickDisagreed}
                             />
-                        </StyledButtonLayout>
+                        </ButtonLayout>
                     </ButtonsSectionLayout>
-                </Flex>
+                </InfoTextAndButtonLayout>
             </BannerLayout>
         </div>
     );

@@ -2,15 +2,45 @@ import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
 import { Text } from '../shared/components/Text';
+import styled from 'styled-components';
+import { theme } from '../theme';
 
 type TFooterProps = {
     className?: string;
 };
 
 export const Footer: React.FC<TFooterProps> = ({ className }) => {
+    const ContactBoxLayout = styled.div`
+        flex-direction: column;
+        margin-bottom: ${theme.space[4]};
+    `;
+
+    const LinkLayout = styled.div`
+        line-height: 150%;
+
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
+            padding-left: 0;
+        },
+    `;
+
+    const FooterLayout = styled(Flex)`
+        padding-top: ${theme.space[4]};
+        padding-bottom: ${theme.space[4]};
+        background-color: ${Color.Secondary};
+        flex-direction: column;
+        padding-left: ${theme.space[2]};
+        padding-right: ${theme.space[2]};
+
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
+            justify-content: space-between;
+            flex-direction: row;
+            padding-left: ${theme.space[4]};
+            padding-right: ${theme.space[4]};
+        }
+    `;
     return (
         <div className={className}>
-            <Flex
+            <FooterLayout
                 paddingTop="2em"
                 paddingBottom="2em"
                 backgroundColor={Color.Secondary}
@@ -22,24 +52,8 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                     },
                 }}
             >
-                <Flex
-                    paddingLeft="2em"
-                    flexDirection="column"
-                    marginBottom="2em"
-                    sx={{
-                        '@media screen and (min-width: ${theme.breakpoints[0]})': {
-                            flexDirection: 'row',
-                        },
-                    }}
-                >
-                    <Box
-                        sx={{
-                            margin: '0 0 1em 0',
-                            '@media screen and (min-width: ${theme.breakpoints[0]})': {
-                                margin: '0 1.5em 1em 0',
-                            },
-                        }}
-                    >
+                <ContactBoxLayout>
+                    <div>
                         <Text color={Color.Secondary2} variant={'light'}>
                             pcode - software engineering
                         </Text>
@@ -49,8 +63,10 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                         <Text color={Color.Secondary2} variant={'light'}>
                             office@pcode.at
                         </Text>
-                    </Box>
+                    </div>
+                </ContactBoxLayout>
 
+                <ContactBoxLayout>
                     <div>
                         <Text color={Color.Secondary2} variant={'light'}>
                             peter-behrens platz 2
@@ -62,35 +78,28 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                             Axis Coworking loft
                         </Text>
                     </div>
-                </Flex>
+                </ContactBoxLayout>
 
-                <Box
-                    sx={{
-                        paddingLeft: '2em',
-                        lineHeight: '1.5em',
-                        '@media screen and (min-width: ${theme.breakpoints[0]})': {
-                            paddingLeft: '0',
-                            paddingRight: '4em',
-                        },
-                    }}
-                >
-                    <a href={IMPRESSUM_LINK} target="blank">
-                        <Text color={Color.White} variant={'light'}>
-                            Impressum
-                        </Text>
-                    </a>
-                    <a href={DATA_PRIVACY_LINK} target="blank">
-                        <Text color={Color.White} variant={'light'}>
-                            Datenschutz
-                        </Text>
-                    </a>
-                    <a href={AGB_LINK} target="blank">
-                        <Text color={Color.White} variant={'light'}>
-                            AGB
-                        </Text>
-                    </a>
-                </Box>
-            </Flex>
+                <LinkLayout>
+                    <div>
+                        <a href={IMPRESSUM_LINK} target="blank">
+                            <Text color={Color.White} variant={'light'}>
+                                Impressum
+                            </Text>
+                        </a>
+                        <a href={DATA_PRIVACY_LINK} target="blank">
+                            <Text color={Color.White} variant={'light'}>
+                                Datenschutz
+                            </Text>
+                        </a>
+                        <a href={AGB_LINK} target="blank">
+                            <Text color={Color.White} variant={'light'}>
+                                AGB
+                            </Text>
+                        </a>
+                    </div>
+                </LinkLayout>
+            </FooterLayout>
         </div>
     );
 };

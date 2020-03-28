@@ -12,5 +12,5 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({}) => 
     const StyledBox = styled(Box)`
         background-color: red;
     `;
-    return <StyledBox mb={3}>Hallo</StyledBox>;
+    return <StyledBox mb={3}></StyledBox>;
 };

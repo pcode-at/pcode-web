@@ -33,7 +33,7 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
         text-align: center;
     `;
 
-    const SvgWrapper = styled.div`
+    const SvgLayout = styled.div`
         width: 50%;
         height: 170px;
     `;
@@ -57,9 +57,9 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
     return (
         <div className={className}>
             <FreeChairWrapper>
-                <SvgWrapper>
+                <SvgLayout>
                     <StyledMonster type={monsterType} />
-                </SvgWrapper>
+                </SvgLayout>
 
                 <PositionWrapper>
                     <SubHeadline color={Color.Secondary}>

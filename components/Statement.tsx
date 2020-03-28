@@ -26,7 +26,7 @@ export const Statement: React.FC<TStatementProps> = ({
 }) => {
     const { light, normal } = theme.font;
 
-    const Wrapper = styled(Flex)`
+    const StatementLayout = styled(Flex)`
         padding-top: 3em;
         padding-bottom: 3em;
         align-items: center;
@@ -73,7 +73,7 @@ export const Statement: React.FC<TStatementProps> = ({
 
     return (
         <div className={className}>
-            <Wrapper backgroundColor={backgroundColor}>
+            <StatementLayout backgroundColor={backgroundColor}>
                 <TextWrapper>
                     <p>{children}</p>
                 </TextWrapper>
@@ -88,7 +88,7 @@ export const Statement: React.FC<TStatementProps> = ({
                         />
                     </StyledPersonFlex>
                 </PersonWrapper>
-            </Wrapper>
+            </StatementLayout>
         </div>
     );
 };
