@@ -10,24 +10,35 @@ type TFooterProps = {
 };
 
 export const Footer: React.FC<TFooterProps> = ({ className }) => {
-    const ContactBoxLayout = styled.div`
-        flex-direction: column;
-        margin-bottom: ${theme.space[4]};
+    const ContactAndAddressBoxLayout = styled(Flex)`
+        flex-direction: row;
+    `;
+
+    const ContactLayout = styled.div`
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
+            margin-left: ${theme.space[4]};
+        }
+    `;
+
+    const AddressLayout = styled.div`
+        margin-left: ${theme.space[2]};
+
+        @media screen and (min-width: ${theme.breakpoints[0]}) {
+            margin-left: ${theme.space[4]};
+        }
     `;
 
     const LinkLayout = styled.div`
-        line-height: 150%;
-
-        @media screen and (min-width: ${theme.breakpoints[0]}) {
-            padding-left: 0;
-        },
+        @media screen and (max-width: ${theme.breakpoints[0]}) {
+            margin-top: ${theme.space[2]};
+        }
     `;
 
     const FooterLayout = styled(Flex)`
+        line-height: 150%;
         padding-top: ${theme.space[4]};
         padding-bottom: ${theme.space[4]};
         background-color: ${Color.Secondary};
-        flex-direction: column;
         padding-left: ${theme.space[2]};
         padding-right: ${theme.space[2]};
 
@@ -52,8 +63,8 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                     },
                 }}
             >
-                <ContactBoxLayout>
-                    <div>
+                <ContactAndAddressBoxLayout>
+                    <ContactLayout>
                         <Text color={Color.Secondary2} variant={'light'}>
                             pcode - software engineering
                         </Text>
@@ -63,11 +74,9 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                         <Text color={Color.Secondary2} variant={'light'}>
                             office@pcode.at
                         </Text>
-                    </div>
-                </ContactBoxLayout>
+                    </ContactLayout>
 
-                <ContactBoxLayout>
-                    <div>
+                    <AddressLayout>
                         <Text color={Color.Secondary2} variant={'light'}>
                             peter-behrens platz 2
                         </Text>
@@ -77,8 +86,8 @@ export const Footer: React.FC<TFooterProps> = ({ className }) => {
                         <Text color={Color.Secondary2} variant={'light'}>
                             Axis Coworking loft
                         </Text>
-                    </div>
-                </ContactBoxLayout>
+                    </AddressLayout>
+                </ContactAndAddressBoxLayout>
 
                 <LinkLayout>
                     <div>
