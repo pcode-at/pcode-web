@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import { Monster } from './Monster';
 import { Button } from '../shared/components/Button';
 import { Text } from '../shared/components/Text';
+import { theme } from '../theme';
 
 type TFreeChairProps = {
     position: string;
@@ -27,41 +28,40 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
     monsterType,
     className,
 }) => {
-    const FreeChairWrapper = styled.div`
-        width: 200px;
-        height: 400px;
+    const FreeChairLayout = styled.div`
+        width: ${theme.space[6]};
+        height: ${theme.space[7]};
         text-align: center;
     `;
 
     const SvgLayout = styled.div`
         width: 50%;
-        height: 170px;
+        height: ${theme.space[6]};
     `;
 
-    const PositionWrapper = styled.div`
-        margin-bottom: 0.8rem;
+    const PositionLayout = styled.div`
+        margin-bottom: ${theme.space[1]};
     `;
 
-    const DescriptionWrapper = styled.div`
-        display: block;
-        margin-bottom: 0.8rem;
+    const JobDescriptionLayout = styled.div`
+        margin-bottom: ${theme.space[1]};
     `;
 
     const StyledMonster = styled(Monster)`
         position: relative;
         top: 50%;
         left: 50%;
-        transform: translate(0%, -75%);
+        transform: translate(0%, -50%);
     `;
 
     return (
         <div className={className}>
-            <FreeChairWrapper>
+            <FreeChairLayout>
                 <SvgLayout>
                     <StyledMonster type={monsterType} />
                 </SvgLayout>
 
-                <PositionWrapper>
+                <PositionLayout>
                     <SubHeadline color={Color.Secondary}>
                         {' '}
                         {position}{' '}
@@ -70,20 +70,20 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
                         {' '}
                         {positionLevel}{' '}
                     </Text>
-                </PositionWrapper>
+                </PositionLayout>
 
-                <DescriptionWrapper>
+                <JobDescriptionLayout>
                     <Text color={Color.Secondary2} variant={'light'}>
                         {positionDescription}
                     </Text>
-                </DescriptionWrapper>
+                </JobDescriptionLayout>
 
                 <a
                     href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                 >
                     <Button label="apply" variant={'secondary'} />
                 </a>
-            </FreeChairWrapper>
+            </FreeChairLayout>
         </div>
     );
 };

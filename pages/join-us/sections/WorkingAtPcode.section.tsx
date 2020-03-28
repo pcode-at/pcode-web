@@ -4,6 +4,7 @@ import { Color } from '../../../Color.enum';
 import { SectionHeadline } from '../../../components/SectionHeadline';
 import { WordList } from '../../../components/WordList';
 import styled from 'styled-components';
+import { theme } from '../../../theme';
 
 export const WorkingAtPcodeSection: React.FC = () => {
 
