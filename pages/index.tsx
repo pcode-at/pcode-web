@@ -25,6 +25,7 @@ import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
+import { MultiColorHeadline } from '../components/MultiColorHeadline';
 
 
 const { light, normal } = theme.font;
@@ -53,6 +54,11 @@ const MainPage = () => (
         <Statement2 personName={'Nico Peham'} personPosition={'tech lead'} color={Color.Secondary2}>
             'we are adapting to new challenges by developing and investing in our people'
         </Statement2>
+
+        <StyledHeading>Multi Color Headline</StyledHeading>
+        <MultiColorHeadline leftAndRightTextColor={Color.Secondary2} middleTextColor={Color.Primary} leftText="our" middleText="code" rightText="stands for" >
+            'we are adapting to new challenges by developing and investing in our people'
+        </MultiColorHeadline>
 
 
         <StyledHeading>PcodeShape</StyledHeading>
