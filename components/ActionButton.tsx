@@ -7,7 +7,6 @@ import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
 
 type TActionButtonProps = {
-    //appearance: 'small' | 'large';
     color?: Color;
     label: string;
     padding?: string;

@@ -21,21 +21,20 @@ type TFreeChairProps = {
 const { openPositionDestinationEmail } = CONSTANTS;
 
 export const FreeChair: React.FC<TFreeChairProps> = ({
-                                                         position,
-                                                         positionLevel,
-                                                         positionDescription,
-                                                         monsterType,
-                                                         className,
-                                                     }) => {
-
+    position,
+    positionLevel,
+    positionDescription,
+    monsterType,
+    className,
+}) => {
     const FreeChairWrapper = styled.div`
         width: 200px;
         text-align: center;
     `;
 
     const SvgWrapper = styled.div`
-          width: 50%;
-          height: 170px;
+        width: 50%;
+        height: 170px;
     `;
 
     const PositionWrapper = styled.div`
@@ -58,26 +57,31 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
         <div className={className}>
             <FreeChairWrapper>
                 <SvgWrapper>
-                    <StyledMonster
-                        type={monsterType}
-                    />
+                    <StyledMonster type={monsterType} />
                 </SvgWrapper>
 
                 <PositionWrapper>
                     <SubHeadline
                         color={Color.Secondary}
-                        fontStyle={FontStyle.Normal}>
+                        fontStyle={FontStyle.Normal}
+                    >
                         {' '}
                         {position}{' '}
                     </SubHeadline>
-                    <CopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
+                    <CopyText
+                        color={Color.Secondary}
+                        fontStyle={FontStyle.Light}
+                    >
                         {' '}
                         {positionLevel}{' '}
                     </CopyText>
                 </PositionWrapper>
 
                 <DescriptionWrapper>
-                    <CopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
+                    <CopyText
+                        color={Color.Secondary2}
+                        fontStyle={FontStyle.Light}
+                    >
                         {positionDescription}
                     </CopyText>
                 </DescriptionWrapper>
@@ -85,7 +89,7 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
                 <a
                     href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                 >
-                    <ActionButton color={Color.Secondary2} label="apply"/>
+                    <ActionButton color={Color.Secondary2} label="apply" />
                 </a>
             </FreeChairWrapper>
         </div>
