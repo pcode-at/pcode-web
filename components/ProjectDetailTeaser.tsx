@@ -1,10 +1,9 @@
 import React from 'react';
 import { PcodeShape } from '../components/PcodeShape';
 import { Color } from '../Color.enum';
-import { Box, Button, Flex } from 'rebass';
+import { Box, Flex } from 'rebass';
 import { ActionButton } from './ActionButton';
 import { CopyText, FontStyle } from './CopyText';
-import { SectionHeadline } from './SectionHeadline';
 import styled from 'styled-components';
 
 type TProjectDetailTeaserProps = {
@@ -17,18 +16,19 @@ type TProjectDetailTeaserProps = {
 };
 
 export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
-     description,
-     headline,
-     imageSrc,
-     headlineColor,
-     onClick,
-     className,
- }) => {
+                                                                             description,
+                                                                             headline,
+                                                                             imageSrc,
+                                                                             headlineColor,
+                                                                             onClick,
+                                                                             className,
+                                                                         }) => {
 
     const StyledImage = styled.img`
-        width: 50%;
+        width: 70%;
         position: absolute;
         top: 50%;
+        left: 80%;
         transform: translateX(-50%) translateY(-50%);
     `;
 
@@ -44,13 +44,15 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         width: 100%;
     `;
 
-    const StyledSectionHeadline = styled(SectionHeadline)`
+    const StyledSectionHeadline = styled(CopyText)`
         margin-bottom: 1rem;
+        font-size: 250%;
     `;
 
     const StyledCopyText = styled(CopyText)`
         margin-bottom: 1rem;
-        width: 50%;
+        margin-right: 10%;
+        max-width: 700px;
     `;
 
     return (
@@ -63,9 +65,13 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
                     </GraphicWrapper>
                 </Box>
                 <TextWrapper>
-                    <StyledSectionHeadline color={headlineColor} headlinePartOne={headline} headlinePartTwo=""/>
+                    <StyledSectionHeadline
+                        color={headlineColor}
+                        fontStyle={FontStyle.Normal}>
+                        {headline}
+                    </StyledSectionHeadline>
                     <StyledCopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
-                        {description}>
+                        {description}
                     </StyledCopyText>
                     <ActionButton label="learn more" color={Color.Secondary2} onClick={onClick}/>
                 </TextWrapper>

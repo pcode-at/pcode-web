@@ -4,15 +4,25 @@ import { Button } from 'rebass';
 import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
+import styled, { css } from 'styled-components';
 
-//ToDo: rename thisColor to color
 type TActionButtonProps = {
+    //appearance: 'small' | 'large';
     color?: Color;
     label: string;
     padding?: string;
     noBackground?: boolean;
     onClick?(): void;
     className?: string;
+};
+
+const appearances = {
+    small: css`
+            font-size: 10px;
+        `,
+    large: css`
+            font-size: 20px;
+        `,
 };
 
 export const ActionButton: React.FC<TActionButtonProps> = ({
@@ -23,6 +33,7 @@ export const ActionButton: React.FC<TActionButtonProps> = ({
     noBackground = false,
     className
 }) => {
+
     return (
         <div className={className}>
             <Button
