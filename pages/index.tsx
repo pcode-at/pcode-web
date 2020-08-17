@@ -27,6 +27,7 @@ import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { ProjectHeader } from '../components/ProjectHeader';
+import { ServiceHeader } from '../components/ServiceHeader';
 
 const { light, normal } = theme.font;
 
@@ -91,6 +92,21 @@ const MainPage = () => (
             'we are adapting to new challenges by developing and investing in
             our people'
         </ProjectHeader>
+
+        <StyledHeading>Service Header</StyledHeading>
+        <ServiceHeader
+            leftText={"we develop impactful digital solutions"}
+            rightText={"that delive quality, create an impact, and that compete in the market"}
+            leftTextColor={Color.Secondary}
+            rightTextColor={Color.White}
+            buttonLabel={"our services"}
+            buttonColor={Color.Primary}
+            buttonNoBackground={false}
+            backgroundColor={Color.Secondary2}
+        >
+            'we are adapting to new challenges by developing and investing in
+            our people'
+        </ServiceHeader>
 
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">

@@ -10,6 +10,7 @@ type MultiColorHeadline = {
     leftText: string;
     middleText: string;
     rightText: string;
+    className?: string;
 };
 
 export const MultiColorHeadline: React.FC<MultiColorHeadline> = ({
@@ -18,12 +19,13 @@ export const MultiColorHeadline: React.FC<MultiColorHeadline> = ({
     leftText,
     middleText,
     rightText,
+    className,
 }) => {
     return (
         <div className="multi-color-headline-box">
             <Heading
                 fontFamily={theme.font.normal.fontFamily}
-                className="multi-color-headline"
+                className={"multi-color-headline " + className}
                 width="100%"
                 textAlign="center"
                 padding="2rem 0"
