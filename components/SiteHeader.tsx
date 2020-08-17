@@ -32,7 +32,7 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({
         align-items: flex-end;
     `;
 
-    const LogoWrapper = styled(Box)`
+    const LogoLayout = styled(Box)`
         padding: 0.5em 0 0 1.3em;
     `;
 
@@ -49,9 +49,9 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({
     return (
         <Headroom>
             <OuterFlex>
-                <LogoWrapper width={11 / 12}>
+                <LogoLayout width={11 / 12}>
                     <StyledLogo/>
-                </LogoWrapper>
+                </LogoLayout>
 
                 <InnerFlex
                     sx={{ marginRight: '1.5em', marginBottom: '0.7em' }}
