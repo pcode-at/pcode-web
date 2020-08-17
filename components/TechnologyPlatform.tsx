@@ -17,13 +17,13 @@ type TTechnologyPlatformProps = {
 };
 
 export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
-                                                                           name,
-                                                                           platformType,
-                                                                           languages,
-                                                                           technologies,
-                                                                           onClick,
-                                                                           className,
-                                                                       }) => {
+    name,
+    platformType,
+    languages,
+    technologies,
+    onClick,
+    className,
+}) => {
     const { light, normal } = theme.font;
 
     const StyledHeading = styled(Heading)`
@@ -31,17 +31,20 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
         font-weight: ${light.fontWeight};
         font-size: 200%;
         text-align: center;
+    `;
+
+    const HeadingLayout = styled.div`
         margin-top: 1em;
         margin-bottom: 2em;
     `;
 
-    const WrapperFlex = styled(Flex)`
+    const FlexStyle = styled(Flex)`
         flex-direction: column;
         justify-content: center;
         align-items: center;
     `;
 
-    const PlatformSvgWrapper = styled.div`
+    const PlatformSvgLayout = styled.div`
         width: 60%;
         height: 170px;
     `;
@@ -49,6 +52,9 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
     const StyledSubHeading = styled(Heading)`
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
+    `;
+
+    const SubHeadingLayout = styled.div`
         padding-top: 0.5em;
         padding-bottom: 0.2em;
     `;
@@ -56,12 +62,15 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
     const HeadingAndListContainer = styled.div`
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
-        margin-bottom: 1em;
         align-content: center;
     `;
 
+    const HeadingAndListContainerLayout = styled.div`
+        margin-bottom: 1em;
+    `;
+
     const StyledPlatform = styled(Platform)`
-    position: relative;
+        position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -69,43 +78,60 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
 
     return (
         <div className={className}>
-            <WrapperFlex>
-                <StyledHeading fontFamily={normal.fontFamily}>
-                    {name}
-                </StyledHeading>
+            <FlexStyle>
+                <HeadingLayout>
+                    <StyledHeading fontFamily={normal.fontFamily}>
+                        {name}
+                    </StyledHeading>
+                </HeadingLayout>
 
-                <PlatformSvgWrapper>
-                    <StyledPlatform type={platformType}/>
-                </PlatformSvgWrapper>
+                <PlatformSvgLayout>
+                    <StyledPlatform type={platformType} />
+                </PlatformSvgLayout>
 
                 <div>
-                    <StyledSubHeading
-                        color={Color.Secondary2}
-                        fontFamily={normal.fontFamily}
-                    >
-                        Language
-                    </StyledSubHeading>
-                    <HeadingAndListContainer>
-                        {
-                            languages.map(lan => <Text lineHeight="1.2" key={lan}>{lan}</Text>)
-                        }
-                    </HeadingAndListContainer>
+                    <SubHeadingLayout>
+                        <StyledSubHeading
+                            color={Color.Secondary2}
+                            fontFamily={normal.fontFamily}
+                        >
+                            Language
+                        </StyledSubHeading>
+                    </SubHeadingLayout>
+                    <HeadingAndListContainerLayout>
+                        <HeadingAndListContainer>
+                            {languages.map(lan => (
+                                <Text lineHeight="1.2" key={lan}>
+                                    {lan}
+                                </Text>
+                            ))}
+                        </HeadingAndListContainer>
+                    </HeadingAndListContainerLayout>
 
-                    <StyledSubHeading
-                        color={Color.Secondary2}
-                        fontFamily={normal.fontFamily}
-                    >
-                        Technology
-                    </StyledSubHeading>
-                    <HeadingAndListContainer>
-                        {
-                            technologies.map(tec => <Text lineHeight="1.2" key={tec}>{tec}</Text>)
-                        }
-                    </HeadingAndListContainer>
+                    <SubHeadingLayout>
+                        <StyledSubHeading
+                            color={Color.Secondary2}
+                            fontFamily={normal.fontFamily}
+                        >
+                            Technology
+                        </StyledSubHeading>
+                    </SubHeadingLayout>
+                    <HeadingAndListContainerLayout>
+                        <HeadingAndListContainer>
+                            {technologies.map(tec => (
+                                <Text lineHeight="1.2" key={tec}>
+                                    {tec}
+                                </Text>
+                            ))}
+                        </HeadingAndListContainer>
+                    </HeadingAndListContainerLayout>
 
-                    <ActionButton label='interested?' color={Color.Secondary2}/>
+                    <ActionButton
+                        label="interested?"
+                        color={Color.Secondary2}
+                    />
                 </div>
-            </WrapperFlex>
+            </FlexStyle>
         </div>
     );
 };
