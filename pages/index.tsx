@@ -27,64 +27,71 @@ import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { MonsterType } from '../shared/MonsterType.enum';
+import { Character } from '../components/Character';
 
 const { light, normal } = theme.font;
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
-
-        <SiteHeader color={Color.Primary} onClick={() => {
-            alert('Not Implemented Yet!');
-        }}/>
+        <SiteHeader
+            color={Color.Primary}
+            onClick={() => {
+                alert('Not Implemented Yet!');
+            }}
+        />
 
         <StyledHeading>PersonWithFunction</StyledHeading>
         <PersonWithFunction
-            imagePath='../static/pernsteiner_christoph.png'
+            imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
             personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}/>
-
+            personPosition={'CEO .founder'}
+        />
 
         <StyledHeading>Statement</StyledHeading>
-        <Statement personName={'Christoph Pernsteiner'}
-                   personPosition={'CEO .founder'}
-                   imagePath={'../static/pernsteiner_christoph.png'}>
-            'this project was a great challenge, we learned a lot and it was a journey with such an amazing customer!'
+        <Statement
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
+            imagePath={'../static/pernsteiner_christoph.png'}
+        >
+            'this project was a great challenge, we learned a lot and it was a
+            journey with such an amazing customer!'
         </Statement>
 
         <StyledHeading>Statement2</StyledHeading>
-        <Statement2 personName={'Nico Peham'} personPosition={'tech lead'} color={Color.Secondary2}
-                    imagePath={'../static/pernsteiner_christoph.png'}>
-            'we are adapting to new challenges by developing and investing in our people'
+        <Statement2
+            personName={'Nico Peham'}
+            personPosition={'tech lead'}
+            color={Color.Secondary2}
+            imagePath={'../static/pernsteiner_christoph.png'}
+        >
+            'we are adapting to new challenges by developing and investing in
+            our people'
         </Statement2>
-
 
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
-            <PcodeShape/>
-            <PcodeShape color={Color.Secondary2}/>
-            <PcodeShape width="80%"/>
-            <PcodeShape width="50%" color={Color.Secondary}/>
+            <PcodeShape />
+            <PcodeShape color={Color.Secondary2} />
+            <PcodeShape width="80%" />
+            <PcodeShape width="50%" color={Color.Secondary} />
         </StyledPcodeShapeBox>
 
         <StyledHeading>CopyText</StyledHeading>
         <StyledCopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
-            gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
-            Räuber. Die altbacken Freikörperkultur meucheln. Das Schelm
-            bauchpinseln das feist Groschengrab. Der gemach
-            Bürgermeisterstück verhaspeln. Das Franzosenkrankheit abkupfern
-            der hochgestochen Dachshund. Das pfundig Gamaschen frohlocken.
-            Der grobschlächtig Tausendsassa bauchpinseln. Die geflissentlich
-            Muckefuck erquicken. Der Tausendsassa anschwärzen der einfältig
-            Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
-            Höchste Eisenbahn
+            gutheißen adrett Ganove. Schmock und Kastrat grämen emsig Räuber.
+            Die altbacken Freikörperkultur meucheln. Das Schelm bauchpinseln das
+            feist Groschengrab. Der gemach Bürgermeisterstück verhaspeln. Das
+            Franzosenkrankheit abkupfern der hochgestochen Dachshund. Das
+            pfundig Gamaschen frohlocken. Der grobschlächtig Tausendsassa
+            bauchpinseln. Die geflissentlich Muckefuck erquicken. Der
+            Tausendsassa anschwärzen der einfältig Pranger. Das Schutzschwalbe
+            meucheln das feist Damenbart. Höchste Eisenbahn
         </StyledCopyText>
 
         <StyledHeading>ContactForm</StyledHeading>
-        <StyledContactForm>
-            ContactForm Component
-        </StyledContactForm>
+        <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
@@ -106,34 +113,39 @@ const MainPage = () => (
             monsterType={MonsterType.TentacleEye}
             position="frontend developer"
             positionLevel={PositionLevel.Junior}
-            positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6.">
-        </StyledFreeChair>
+            positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
+        ></StyledFreeChair>
+
+        <StyledHeading>Character</StyledHeading>
+        <StyledCharacter
+            characterTitle="strategic wizard"
+            characterDescription="Phasellus eget turpis dignissim. vestibulum libero non, fringilla nulla. Proin blandit cursus euismod. Proin viverra et diam vitae semper."
+            textColor={Color.Secondary}
+            monsterType={MonsterType.StrategicWizard}
+        ></StyledCharacter>
 
         <StyledHeading>ProjectSlider</StyledHeading>
         <ProjectSliderWrapper>
-            <ProjectSlider width={300}
-                           images={[
-                               '../static/sandburg.jpg',
-                               '../static/sandburg.jpg',
-                           ]}/>
+            <ProjectSlider
+                width={300}
+                images={['../static/sandburg.jpg', '../static/sandburg.jpg']}
+            />
         </ProjectSliderWrapper>
 
         <StyledHeading>Swiper</StyledHeading>
         <StyledSwiper
             textPartOne="we transform complexity"
             textPartTwo="to simplicity by delivering exceptional solutions."
-            onClick={() => {
-            }}
+            onClick={() => {}}
         />
 
         <StyledHeading>Menu</StyledHeading>
-        <Menu/>
+        <Menu />
 
         {/*<CookieMonsterBanner/>*/}
 
         <StyledHeading>ProjectDetailTeaser</StyledHeading>
         <ProjectDetailTeaser
-
             headline="Test Headline"
             description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
@@ -152,32 +164,45 @@ const MainPage = () => (
 
         <StyledHeading>TechnologyPlatform</StyledHeading>
         <TechnologyFlex>
-            <StyledTechnologyPlatform name={'web'} platformType={PlatformType.Web}
-                                      languages={['JavaScript', 'Angular', 'TypeScript', 'PHP', 'Symfony', '.Net (C#)', '(e-commerce)']}
-                                      technologies={['ReactJs', 'Stylius', 'Spryker']}/>
+            <StyledTechnologyPlatform
+                name={'web'}
+                platformType={PlatformType.Web}
+                languages={[
+                    'JavaScript',
+                    'Angular',
+                    'TypeScript',
+                    'PHP',
+                    'Symfony',
+                    '.Net (C#)',
+                    '(e-commerce)',
+                ]}
+                technologies={['ReactJs', 'Stylius', 'Spryker']}
+            />
 
-            <StyledTechnologyPlatform name={'mobile'} platformType={PlatformType.Mobile}
-                                      languages={['React Native', 'Native iOS', 'Native Android']}
-                                      technologies={['Progressive Web Apps (PWA)']}/>
+            <StyledTechnologyPlatform
+                name={'mobile'}
+                platformType={PlatformType.Mobile}
+                languages={['React Native', 'Native iOS', 'Native Android']}
+                technologies={['Progressive Web Apps (PWA)']}
+            />
 
-            <StyledTechnologyPlatform name={'ar . vr'} platformType={PlatformType.ArVr}
-                                      languages={['React Native', 'Native iOS', 'Native Android']}
-                                      technologies={['Progressive Web Apps (PWA)']}/>
+            <StyledTechnologyPlatform
+                name={'ar . vr'}
+                platformType={PlatformType.ArVr}
+                languages={['React Native', 'Native iOS', 'Native Android']}
+                technologies={['Progressive Web Apps (PWA)']}
+            />
         </TechnologyFlex>
 
         <StyledHeading>WordList</StyledHeading>
         <Box display="flex">
-            <StyledWordList words={[
-                'praise',
-                'passion',
-                'potential',
-                'people',
-                'power',
-            ]}/>
+            <StyledWordList
+                words={['praise', 'passion', 'potential', 'people', 'power']}
+            />
         </Box>
 
         <StyledHeading>Footer</StyledHeading>
-        <StyledFooter/>
+        <StyledFooter />
     </ThemeProvider>
 );
 
@@ -226,6 +251,10 @@ const StyledFreeChair = styled(FreeChair)`
     margin-left: 1em;
 `;
 
+const StyledCharacter = styled(Character)`
+    margin-left: 1em;
+`;
+
 const StyledSwiper = styled(Swiper)`
     padding: 1em;
     width: 300px;
@@ -242,12 +271,12 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-    {/*TODO: Fix padding (see ProjectSlider.tsx TODO)*/}
+     {
+        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
+    }
     padding-bottom: 20em;
 `;
 
-const StyledWordList = styled(WordList)`
-    
-`;
+const StyledWordList = styled(WordList)``;
 
 export default MainPage;
