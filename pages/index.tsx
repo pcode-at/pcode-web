@@ -72,6 +72,7 @@ const MainPage = () => (
             leftText="our"
             middleText="code"
             rightText="stands for"
+            fontSize="600%"
         >
             'we are adapting to new challenges by developing and investing in
             our people'

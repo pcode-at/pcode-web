@@ -10,6 +10,7 @@ type MultiColorHeadline = {
     leftText: string;
     middleText: string;
     rightText: string;
+    fontSize: string;
     className?: string;
 };
 
@@ -19,6 +20,7 @@ export const MultiColorHeadline: React.FC<MultiColorHeadline> = ({
     leftText,
     middleText,
     rightText,
+    fontSize,
     className,
 }) => {
     const MultiColorHeadlineLayout = styled.div`
@@ -29,17 +31,17 @@ export const MultiColorHeadline: React.FC<MultiColorHeadline> = ({
         display: flex;
         justify-content: center;
     `;
+    const StyledHeading = styled.h1`
+        font-family: ${theme.font.normal.fontFamily};
+        text-align: center;
+        font-size: ${fontSize};
+        font-weight: ${theme.font.normal.fontWeight};
+    `;
 
     return (
         <div className={className}>
             <MultiColorHeadlineLayout>
-                <Heading
-                    fontFamily={theme.font.normal.fontFamily}
-                    className="multi-color-headline"
-                    textAlign="center"
-                    fontSize="600%"
-                    fontWeight={theme.font.normal.fontWeight}
-                >
+                <StyledHeading className="multi-color-headline">
                     <MultiColorTextLayout>
                         <Text color={leftAndRightTextColor}>{leftText}</Text>
                         &nbsp;
@@ -47,7 +49,7 @@ export const MultiColorHeadline: React.FC<MultiColorHeadline> = ({
                         &nbsp;
                         <Text color={leftAndRightTextColor}>{rightText}</Text>
                     </MultiColorTextLayout>
-                </Heading>
+                </StyledHeading>
             </MultiColorHeadlineLayout>
         </div>
     );
