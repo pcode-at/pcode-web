@@ -21,7 +21,7 @@ export const Menu: React.FC<TMenuProps> = ({
    className
 }) => {
 
-    const ShapeAndLinksWrapper = styled(Box)`
+    const ShapeAndLinksLayout = styled(Box)`
         margin-top: -5vh;
         margin-left: auto;
         margin-right: 5vw;
@@ -29,11 +29,11 @@ export const Menu: React.FC<TMenuProps> = ({
         width: 80vh;
     `;
 
-    const PcodeShapeWrapper = styled.div`
+    const PcodeShapeLayout = styled.div`
         transform: rotate(-15deg);
     `;
 
-    const LinkWrapper = styled(Box)`
+    const LinkLayout = styled(Box)`
         top: 8rem;
         right: 6vw;
         z-index: 10;
@@ -41,13 +41,13 @@ export const Menu: React.FC<TMenuProps> = ({
         margin-right: 5vw;
     `;
 
-    const MenuWrapper = styled(Box)`
-        overflow: hidden;
-        background: ${Color.Secondary2};
-        height: 100vh;
-        width: 100vw;
-        position: relative;
-    `;
+    // const MenuWrapper = styled(Box)`
+    //     overflow: hidden;
+    //     background: ${Color.Secondary2};
+    //     height: 100vh;
+    //     width: 100vw;
+    //     position: relative;
+    // `;
 
     return (
         <div className={className}>
@@ -60,8 +60,8 @@ export const Menu: React.FC<TMenuProps> = ({
                 css={{ position: 'relative' }}
             >
                 <Flex>
-                    <ShapeAndLinksWrapper>
-                        <LinkWrapper>
+                    <ShapeAndLinksLayout>
+                        <LinkLayout>
                             <Flex flexDirection="column">
                                 <Link css={linkStyle} href='#'>who we are</Link>
                                 <Link css={linkStyle} href='#'>what we do</Link>
@@ -69,11 +69,11 @@ export const Menu: React.FC<TMenuProps> = ({
                                 <Link css={linkStyle} href='#'>join us</Link>
                                 <Link css={linkStyle} href='#'>contact us</Link>
                             </Flex>
-                        </LinkWrapper>
-                        <PcodeShapeWrapper>
+                        </LinkLayout>
+                        <PcodeShapeLayout>
                             <PcodeShape width="80vh" color={Color.Primary}/>
-                        </PcodeShapeWrapper>
-                    </ShapeAndLinksWrapper>
+                        </PcodeShapeLayout>
+                    </ShapeAndLinksLayout>
                 </Flex>
             </Box>
         </div>
