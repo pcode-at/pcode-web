@@ -15,20 +15,20 @@ type TStatementProps = {
 };
 
 export const Statement2: React.FC<TStatementProps> = ({
-                                                          children,
-                                                          personName,
-                                                          personPosition,
-                                                          color = Color.Primary,
-                                                          imagePath,
-                                                          className,
-                                                      }) => {
+    children,
+    personName,
+    personPosition,
+    color = Color.Primary,
+    imagePath,
+    className,
+}) => {
     const { light, normal } = theme.font;
 
-    const Wrapper = styled(Flex)`
+    const Statement2Layout = styled(Flex)`
         padding-top: 3em;
         padding-bottom: 3em;
         align-items: center;
-        
+
         @media screen and (min-width: 615px) {
             justify-content: space-between;
             flex-direction: row;
@@ -38,25 +38,31 @@ export const Statement2: React.FC<TStatementProps> = ({
         }
     `;
 
-    const TextWrapper = styled(Box)`
+    const TextLayout = styled(Box)`
         padding: 10%;
         width: 70%;
-        font-family: ${light.fontFamily};
-        font-weight: ${normal.fontWeight};
-        font-size: 150%;
-        
+
         @media screen and (max-width: 615px) {
             padding: 0;
             width: 90%;
-            text-align: center;
             margin-left: 10%;
             margin-right: 10%;
         }
     `;
 
-    const PersonWrapper = styled(Flex)`
+    const TextStyle = styled(Box)`
+        font-family: ${light.fontFamily};
+        font-weight: ${normal.fontWeight};
+        font-size: 150%;
+
+        @media screen and (max-width: 615px) {
+            text-align: center;
+        }
+    `;
+
+    const PersonLayout = styled(Flex)`
         justify-content: center;
-        
+
         @media screen and (min-width: 615px) {
             margin-right: 10%;
         }
@@ -70,22 +76,24 @@ export const Statement2: React.FC<TStatementProps> = ({
 
     return (
         <div className={className}>
-            <Wrapper>
-                <TextWrapper color={color}>
-                    <p>{children}</p>
-                </TextWrapper>
+            <Statement2Layout>
+                <TextLayout color={color}>
+                    <TextStyle>
+                        <p>{children}</p>
+                    </TextStyle>
+                </TextLayout>
 
-                <PersonWrapper>
+                <PersonLayout>
                     <StyledPersonFlex>
                         <PersonWithFunction
                             color={color}
                             personName={personName}
                             personPosition={personPosition}
-                            imagePath={imagePath}/>
-
+                            imagePath={imagePath}
+                        />
                     </StyledPersonFlex>
-                </PersonWrapper>
-            </Wrapper>
+                </PersonLayout>
+            </Statement2Layout>
         </div>
     );
 };
