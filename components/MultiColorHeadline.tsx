@@ -10,6 +10,7 @@ type MultiColorHeadline = {
     leftText: string;
     middleText: string;
     rightText: string;
+    className?: string;
 };
 
 export const MultiColorHeadline: React.FC<MultiColorHeadline> = ({
@@ -18,31 +19,36 @@ export const MultiColorHeadline: React.FC<MultiColorHeadline> = ({
     leftText,
     middleText,
     rightText,
+    className,
 }) => {
+    const MultiColorHeadlineLayout = styled.div`
+        width: 100%;
+        padding: 2rem 0;
+    `;
+    const MultiColorTextLayout = styled.div`
+        display: flex;
+        justify-content: center;
+    `;
+
     return (
-        <div className="multi-color-headline-box">
-            <Heading
-                fontFamily={theme.font.normal.fontFamily}
-                className="multi-color-headline"
-                width="100%"
-                textAlign="center"
-                padding="2rem 0"
-                fontSize="600%"
-                fontWeight={theme.font.normal.fontWeight}
-            >
-                <Text color={leftAndRightTextColor}>{leftText}</Text>
-                &nbsp;
-                <Text color={middleTextColor}>{middleText}</Text>
-                &nbsp;
-                <Text color={leftAndRightTextColor}>{rightText}</Text>
-            </Heading>
-            <style>
-                {`
-                .multi-color-headline *{
-                    display: inline-block;
-                }
-                `}
-            </style>
+        <div className={className}>
+            <MultiColorHeadlineLayout>
+                <Heading
+                    fontFamily={theme.font.normal.fontFamily}
+                    className="multi-color-headline"
+                    textAlign="center"
+                    fontSize="600%"
+                    fontWeight={theme.font.normal.fontWeight}
+                >
+                    <MultiColorTextLayout>
+                        <Text color={leftAndRightTextColor}>{leftText}</Text>
+                        &nbsp;
+                        <Text color={middleTextColor}>{middleText}</Text>
+                        &nbsp;
+                        <Text color={leftAndRightTextColor}>{rightText}</Text>
+                    </MultiColorTextLayout>
+                </Heading>
+            </MultiColorHeadlineLayout>
         </div>
     );
 };

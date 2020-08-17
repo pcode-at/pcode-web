@@ -18,21 +18,20 @@ export const Swiper: React.FC<TSwiperProps> = ({
     textPartTwo,
     color = Color.Secondary,
     onClick,
-    className
+    className,
 }) => {
-
     const StyledSectionHeadline = styled(SectionHeadline)`
         margin-bottom: 0.7rem;
     `;
 
     return (
         <div className={className}>
-                <StyledSectionHeadline
-                    color={color}
-                    headlinePartOne={textPartOne}
-                    headlinePartTwo={textPartTwo}
-                    separateWithBreak={true}
-                />
+            <StyledSectionHeadline
+                color={color}
+                headlinePartOne={textPartOne}
+                headlinePartTwo={textPartTwo}
+                separateWithBreak={true}
+            />
             <ActionButton
                 color={Color.Secondary2}
                 padding="0.2rem 1.7rem"
