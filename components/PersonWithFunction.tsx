@@ -17,27 +17,28 @@ type TPersonWithFunctionProps = {
 };
 
 export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
-                                                                           color,
-                                                                           className,
-                                                                           personName,
-                                                                           personPosition,
-                                                                           imagePath,
-                                                                       }) => {
-
+    color,
+    className,
+    personName,
+    personPosition,
+    imagePath,
+}) => {
     const PersonWithFunctionLayout = styled(Flex)`
         align-items: center;
         flex-direction: column;
     `;
 
-    const PersonNameWrapper = styled(Box)`
+    const PersonNameLayout = styled(Box)`
         margin-top: 2em;
         font-size: 130%;
+    `;
+
+    const TextPositionStyle = styled(Box)`
         text-align: center;
     `;
 
-    const PersonPositionWrapper = styled(Box)`
+    const PersonPositionLayout = styled(Box)`
         font-size: 130%;
-        text-align: center;
     `;
 
     const StyledPersonImageLayout = styled(Box)`
@@ -61,24 +62,27 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
     return (
         <div className={className}>
             <PersonWithFunctionLayout>
-
                 <PcodeShapeLayout>
-                    <PcodeShape color={color}/>
+                    <PcodeShape color={color} />
                 </PcodeShapeLayout>
                 <StyledPersonImageLayout>
-                    <StyledPersonImage src={imagePath}/>
+                    <StyledPersonImage src={imagePath} />
                 </StyledPersonImageLayout>
-                <PersonNameWrapper>
-                    <CopyText color={color} fontStyle={FontStyle.Normal}>
-                        {personName}
-                    </CopyText>
-                </PersonNameWrapper>
+                <PersonNameLayout>
+                    <TextPositionStyle>
+                        <CopyText color={color} fontStyle={FontStyle.Normal}>
+                            {personName}
+                        </CopyText>
+                    </TextPositionStyle>
+                </PersonNameLayout>
 
-                <PersonPositionWrapper>
-                    <CopyText fontStyle={FontStyle.Light} color={color}>
-                        {personPosition}
-                    </CopyText>
-                </PersonPositionWrapper>
+                <PersonPositionLayout>
+                    <TextPositionStyle>
+                        <CopyText fontStyle={FontStyle.Light} color={color}>
+                            {personPosition}
+                        </CopyText>
+                    </TextPositionStyle>
+                </PersonPositionLayout>
             </PersonWithFunctionLayout>
         </div>
     );
