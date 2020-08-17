@@ -10,9 +10,7 @@ type TContactFormProps = {
     className?: string;
 };
 
-export const ContactForm: React.FC<TContactFormProps> = ({
-                                                             className,
-                                                         }) => {
+export const ContactForm: React.FC<TContactFormProps> = ({ className }) => {
     const [textAreaContent, setTextAreaContent] = React.useState('');
     const { light, normal } = theme.font;
     const { openPositionDestinationEmail } = CONSTANTS;
@@ -25,6 +23,9 @@ export const ContactForm: React.FC<TContactFormProps> = ({
     const ShortInputLayout = styled(Box)`
         margin-top: 10px;
         width: 50%;
+    `;
+
+    const ShortInputStyle = styled(Box)`
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
     `;
@@ -32,6 +33,9 @@ export const ContactForm: React.FC<TContactFormProps> = ({
     const TextAreaLayout = styled(Box)`
         height: 100px;
         margin-top: 10px;
+    `;
+
+    const TextAreaStyle = styled(Box)`
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
     `;
@@ -41,63 +45,68 @@ export const ContactForm: React.FC<TContactFormProps> = ({
             <StyledH2>let's work together!</StyledH2>
 
             <ShortInputLayout>
-                <Input
-                    placeholder="name"
-                    sx={{
-                        borderWidth: '3px',
-                        borderColor: Color.Secondary2,
-                        borderRadius: 13,
-                    }}
-                />
+                <ShortInputStyle>
+                    <Input
+                        placeholder="name"
+                        sx={{
+                            borderWidth: '3px',
+                            borderColor: Color.Secondary2,
+                            borderRadius: 13,
+                        }}
+                    />
+                </ShortInputStyle>
             </ShortInputLayout>
 
-
             <ShortInputLayout>
-                <Input
-                    placeholder="email"
-                    sx={{
-                        borderWidth: '3px',
-                        borderColor: Color.Secondary2,
-                        borderRadius: 13,
-                    }}
-                />
+                <ShortInputStyle>
+                    <Input
+                        placeholder="email"
+                        sx={{
+                            borderWidth: '3px',
+                            borderColor: Color.Secondary2,
+                            borderRadius: 13,
+                        }}
+                    />
+                </ShortInputStyle>
             </ShortInputLayout>
 
             {/*TODO: Fix TextArea bug (you can't write anything)*/}
             <TextAreaLayout>
-                <Textarea
-                    placeholder="you are so cool people, let`s …"
-                    onChange={args => setTextAreaContent(args.target.value)}
-                    sx={{
-                        borderWidth: '3px',
-                        borderColor: Color.Secondary2,
-                        borderRadius: 13,
-                        height: '100%'
-                    }}
-                />
-            </TextAreaLayout>
-                <a
-                    href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
-                        &body=${replaceNewLineCharacters(textAreaContent)}`}
-                >
-                    <Button
-                        variant="primary"
+                <TextAreaStyle>
+                    <Textarea
+                        placeholder="you are so cool people, let`s …"
+                        onChange={args => setTextAreaContent(args.target.value)}
                         sx={{
-                            float: 'right',
-                            marginTop: 1,
-                            borderRadius: 20,
-                            fontFamily: light.fontFamily,
-                            fontWeight: light.fontWeight,
-                            fontSize: 11,
+                            borderWidth: '3px',
+                            borderColor: Color.Secondary2,
+                            borderRadius: 13,
+                            height: '100%',
                         }}
-                    >
-                        send message
-                    </Button>
-                </a>
+                    />
+                </TextAreaStyle>
+            </TextAreaLayout>
+            <a
+                href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
+                        &body=${replaceNewLineCharacters(textAreaContent)}`}
+            >
+                <Button
+                    variant="primary"
+                    sx={{
+                        float: 'right',
+                        marginTop: 1,
+                        borderRadius: 20,
+                        fontFamily: light.fontFamily,
+                        fontWeight: light.fontWeight,
+                        fontSize: 11,
+                    }}
+                >
+                    send message
+                </Button>
+            </a>
         </div>
-);
+    );
 
-function replaceNewLineCharacters(inputText: string) {
-    return inputText.replace('\n', '%0A');
-}
+    function replaceNewLineCharacters(inputText: string) {
+        return inputText.replace('\n', '%0A');
+    }
 };
