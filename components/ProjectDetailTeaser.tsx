@@ -16,14 +16,13 @@ type TProjectDetailTeaserProps = {
 };
 
 export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
-                                                                             description,
-                                                                             headline,
-                                                                             imageSrc,
-                                                                             headlineColor,
-                                                                             onClick,
-                                                                             className,
-                                                                         }) => {
-
+    description,
+    headline,
+    imageSrc,
+    headlineColor,
+    onClick,
+    className,
+}) => {
     const StyledImage = styled.img`
         width: 70%;
         position: absolute;
@@ -32,16 +31,19 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         transform: translateX(-50%) translateY(-50%);
     `;
 
-    const GraphicWrapper = styled(Box)`
+    const GraphicLayout = styled(Box)`
         position: relative;
         margin-left: -30%;
         width: 100%;
     `;
 
-    const TextWrapper = styled(Box)`
+    const TextLayout = styled(Box)`
         position: relative;
-        text-align: left;
         width: 100%;
+    `;
+
+    const TextStyle = styled(Box)`
+        text-align: left;
     `;
 
     const StyledSectionHeadline = styled(CopyText)`
@@ -59,22 +61,32 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         <div className={className}>
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
-                    <GraphicWrapper>
-                        <PcodeShape color={Color.Primary}/>
-                        <StyledImage src={imageSrc}/>
-                    </GraphicWrapper>
+                    <GraphicLayout>
+                        <PcodeShape color={Color.Primary} />
+                        <StyledImage src={imageSrc} />
+                    </GraphicLayout>
                 </Box>
-                <TextWrapper>
-                    <StyledSectionHeadline
-                        color={headlineColor}
-                        fontStyle={FontStyle.Normal}>
-                        {headline}
-                    </StyledSectionHeadline>
-                    <StyledCopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
-                        {description}
-                    </StyledCopyText>
-                    <ActionButton label="learn more" color={Color.Secondary2} onClick={onClick}/>
-                </TextWrapper>
+                <TextLayout>
+                    <TextStyle>
+                        <StyledSectionHeadline
+                            color={headlineColor}
+                            fontStyle={FontStyle.Normal}
+                        >
+                            {headline}
+                        </StyledSectionHeadline>
+                        <StyledCopyText
+                            color={Color.Secondary}
+                            fontStyle={FontStyle.Light}
+                        >
+                            {description}
+                        </StyledCopyText>
+                        <ActionButton
+                            label="learn more"
+                            color={Color.Secondary2}
+                            onClick={onClick}
+                        />
+                    </TextStyle>
+                </TextLayout>
             </Flex>
         </div>
     );
