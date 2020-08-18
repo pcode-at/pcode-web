@@ -13,19 +13,19 @@ const ButtonTestPage = () => (
         <hr></hr>
 
         <ActionButton
-            thisColor={Color.Primary}
+            color={Color.Primary}
             label="Primary"
             onClick={function01}
         ></ActionButton>
 
         <ActionButton
-            thisColor={Color.Secondary}
+            color={Color.Secondary}
             label="Secondary"
             onClick={function02}
         ></ActionButton>
 
         <ActionButton
-            thisColor={Color.Secondary2}
+            color={Color.Secondary2}
             label="Secondary 2"
         ></ActionButton>
 
