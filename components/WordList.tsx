@@ -4,13 +4,13 @@ import { PcodeShape } from './PcodeShape';
 import { Color } from '../Color.enum';
 import styled from 'styled-components';
 
-type TWordList = {
+type TWordListProps = {
     color?: Color;
     words: Array<string>;
     className?: string;
 };
 
-export const WordList: React.FC<TWordList> = ({
+export const WordList: React.FC<TWordListProps> = ({
     words,
     className,
     color = Color.Primary,
