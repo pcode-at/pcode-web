@@ -38,9 +38,10 @@ const MainPage = () => (
             }}
         />
 
-        <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledHeading>PcodeShapeWithImage</StyledHeading>
         <StyledPcodeShapeWithImage
             imageSource="../static/pernsteiner_christoph.png"
+            variant={1}
             color={Color.Secondary}
         />
 
