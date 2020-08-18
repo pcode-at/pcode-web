@@ -5,7 +5,7 @@ import { theme } from '../theme';
 import styled from 'styled-components';
 import { PcodeShapeWithImage } from './PcodeShapeWithImage';
 
-export type lightStatementVariant = 'imageRight' | 'imageLeft';
+type lightStatementVariant = 'imageRight' | 'imageLeft';
 
 type Props = {
     textAndPcodeShapeColor: Color;
