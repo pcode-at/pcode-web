@@ -50,6 +50,7 @@ const MainPage = () => (
 
         <StyledHeading>Statement</StyledHeading>
         <Statement
+            imagePath="../static/pernsteiner_christoph.png"
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
         >
@@ -59,6 +60,7 @@ const MainPage = () => (
 
         <StyledHeading>Statement2</StyledHeading>
         <Statement2
+            imagePath="../static/pernsteiner_christoph.png"
             personName={'Nico Peham'}
             personPosition={'tech lead'}
             color={Color.Secondary2}
