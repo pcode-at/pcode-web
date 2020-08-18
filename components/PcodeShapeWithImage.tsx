@@ -7,12 +7,12 @@ import { PcodeShape } from './PcodeShape';
 import styled from 'styled-components';
 import { Flex, Image } from 'rebass';
 
-type TPcodeShapeWithImageProps = {
+type Props = {
     color?: Color;
     className?: string;
 };
 
-export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImageProps> = ({
+export const PcodeShapeWithImage: React.FC<Props> = ({
     color = Color.Primary,
     className,
 }) => {
