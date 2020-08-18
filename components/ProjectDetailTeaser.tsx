@@ -42,7 +42,7 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         width: 100%;
     `;
 
-    const TextStyle = styled(Box)`
+    const CenteredText = styled(Box)`
         text-align: left;
     `;
 
@@ -67,7 +67,7 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
                     </GraphicLayout>
                 </Box>
                 <TextLayout>
-                    <TextStyle>
+                    <CenteredText>
                         <StyledSectionHeadline
                             color={headlineColor}
                             fontStyle={FontStyle.Normal}
@@ -85,7 +85,7 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
                             color={Color.Secondary2}
                             onClick={onClick}
                         />
-                    </TextStyle>
+                    </CenteredText>
                 </TextLayout>
             </Flex>
         </div>

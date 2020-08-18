@@ -32,7 +32,7 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
         height: 400px;
     `;
 
-    const FreeChairStyle = styled.div`
+    const CenteredFreeChair = styled.div`
         text-align: center;
     `;
 
@@ -60,7 +60,7 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
     return (
         <div className={className}>
             <FreeChairLayout>
-                <FreeChairStyle>
+                <CenteredFreeChair>
                     <SvgLayout>
                         <MonsterLayout>
                             <Monster type={monsterType} />
@@ -72,15 +72,13 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
                             color={Color.Secondary}
                             fontStyle={FontStyle.Normal}
                         >
-                            {' '}
-                            {position}{' '}
+                            {position}
                         </SubHeadline>
                         <CopyText
                             color={Color.Secondary}
                             fontStyle={FontStyle.Light}
                         >
-                            {' '}
-                            {positionLevel}{' '}
+                            {positionLevel}
                         </CopyText>
                     </PositionLayout>
 
@@ -98,8 +96,7 @@ export const FreeChair: React.FC<TFreeChairProps> = ({
                     >
                         <ActionButton color={Color.Secondary2} label="apply" />
                     </a>
-
-                </FreeChairStyle>
+                </CenteredFreeChair>
             </FreeChairLayout>
         </div>
     );
