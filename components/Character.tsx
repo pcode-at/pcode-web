@@ -64,8 +64,7 @@ export const Character: React.FC<TCharacterProps> = ({
                         color={textColor}
                         fontStyle={FontStyle.Normal}
                     >
-                        {' '}
-                        {characterTitle}{' '}
+                        {characterTitle}
                     </SubHeadline>
                 </PositionLayout>
 
