@@ -102,35 +102,21 @@ E.g. how to give a 50% margin-top and margin-bottom to the `Statement`-component
 ```
 
 const StatementLayout = styled(Box)`
+    margin-top: 50px;
 
-margin-top: 50px;
-
-margin-bottom: 50px;
-
+    margin-bottom: 50px;
 `;
 
-
-
-
 <StatementLayout>
-
-<Statement
-
-personName={'Christoph Pernsteiner'}
-
-personPosition={'CEO .founder'}
-
-imagePath={'../static/pernsteiner_christoph.png'}
-
->
-
-‘ it would have been impossible to build such a complicated
-
-project without the skills of the pcode team. ’
-
-</Statement>
-
-</StatementLayout>
+    <Statement
+        personName={'Christoph Pernsteiner'}
+        personPosition={'CEO .founder'}
+        imagePath={'../static/pernsteiner_christoph.png'}
+    >
+        ‘ it would have been impossible to build such a complicated project
+        without the skills of the pcode team. ’
+    </Statement>
+</StatementLayout>;
 
 ```
 
@@ -150,70 +136,47 @@ You can go to the [ProjectDetailTeaser](components/ProjectDetailTeaser.tsx) comp
 
 ```
 
-import React from "react";
-
-
+import React from 'react';
 
 type TProjectDetailTeaserProps = {
+    headline: string;
 
-headline: string;
+    description: string;
 
-description: string;
+    imageSrc: string;
 
-imageSrc: string;
-
-pcodeShapeBackground: boolean;
-
+    pcodeShapeBackground: boolean;
 };
-
-
 
 export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
+    description,
 
-description,
+    headline,
 
-headline,
+    imageSrc,
 
-imageSrc,
-
-pcodeShapeBackground
-
+    pcodeShapeBackground,
 }) => {
+    // write some code
 
-// write some code
+    return (
+        <div className="pcode-shape-background">
+            <h1>{headline}</h1>
 
+            <p>{description}</p>
 
+            <img src={imageSrc} />
 
-return (
-
-<div className="pcode-shape-background">
-
-<h1>{headline}</h1>
-
-<p>{description}</p>
-
-<img src={imageSrc} />
-
-
-
-<style jsx>{`
-
-.pcode-shape-background {
-
-background: ${pcodeShapeBackground ? "green" : "transparent"};
-
-}
-
-`}</style>
-
-</div>
-
-);
-
+            <style jsx>{`
+                .pcode-shape-background {
+                    background: ${pcodeShapeBackground
+                        ? 'green'
+                        : 'transparent'};
+                }
+            `}</style>
+        </div>
+    );
 };
-
-
-
 ```
 
 **Important**: Each component has to be created in the [components/](components/) folder.
