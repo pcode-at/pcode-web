@@ -8,7 +8,7 @@ import { Color } from '../../Color.enum';
 import { Footer } from '../../components/Footer';
 import { Swiper } from '../../components/Swiper';
 import Router from 'next/router';
-import { CodeStandsForSection } from './sections/CodeStandsFor.section';
+import CodeStandsForSection from './sections/CodeStandsFor.section';
 import styled from 'styled-components';
 import { ProjectDetailTeaser } from '../../components/ProjectDetailTeaser';
 import { Statement } from '../../components/Statement';
@@ -22,15 +22,15 @@ const PageLayout = styled(Flex)`
 `;
 
 const PcodeShapeLayout = styled(Box)`
-  display: none;
-  position: relative;
-  width: 400px;
-  
-  @media screen and (min-width: 615px) {
-      display: block;
-      margin-right: -150px;
-      overflow: hidden;
-  }
+    display: none;
+    position: relative;
+    width: 400px;
+
+    @media screen and (min-width: 615px) {
+        display: block;
+        margin-right: -150px;
+        overflow: hidden;
+    }
 `;
 
 const StatementLayout = styled(Box)`
@@ -51,7 +51,7 @@ const ContactFormLayout = styled(Box)`
 const MainPage = () => (
     <React.Fragment>
         <ThemeProvider theme={theme}>
-            <SiteHeader color={Color.White}/>
+            <SiteHeader color={Color.White} />
             <PageLayout>
                 <Swiper
                     textPartOne="we transform complexity"
@@ -60,13 +60,12 @@ const MainPage = () => (
                 />
 
                 <PcodeShapeLayout>
-                    <PcodeShape color={Color.Secondary}/>
+                    <PcodeShape color={Color.Secondary} />
                 </PcodeShapeLayout>
             </PageLayout>
 
             <ProjectDetailTeaserLayout>
                 <ProjectDetailTeaser
-
                     headline="colors mobile app"
                     description="Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
                     gutheißen adrett Ganove. Schmock und Kastrat grämen emsig
@@ -85,21 +84,22 @@ const MainPage = () => (
             </ProjectDetailTeaserLayout>
 
             <StatementLayout>
-                <Statement personName={'Christoph Pernsteiner'}
-                           personPosition={'CEO .founder'}
-                           imagePath={'../static/pernsteiner_christoph.png'}
+                <Statement
+                    personName={'Christoph Pernsteiner'}
+                    personPosition={'CEO .founder'}
+                    imagePath={'../static/pernsteiner_christoph.png'}
                 >
                     ‘ it would have been impossible to build such a complicated
                     project without the skills of the pcode team. ’
                 </Statement>
             </StatementLayout>
 
-            <CodeStandsForSection/>
+            <CodeStandsForSection />
 
             <ContactFormLayout>
-                <ContactForm/>
+                <ContactForm />
             </ContactFormLayout>
-            <Footer/>
+            <Footer />
         </ThemeProvider>
     </React.Fragment>
 );

@@ -5,15 +5,14 @@ import { SectionHeadline } from '../../../components/SectionHeadline';
 import { WordList } from '../../../components/WordList';
 import styled from 'styled-components';
 
-export const WorkingAtPcodeSection: React.FC = () => {
-
+const WorkingAtPcodeSection: React.FC = () => {
     const HeaderLayout = styled(Flex)`
         justify-content: center;
         flex-wrap: wrap;
         width: 100%;
         position: relative;
         padding-bottom: 15rem;
-        
+
         @media screen and (min-width: 670px) {
             padding-top: 1rem;
             padding-bottom: 1rem;
@@ -79,7 +78,9 @@ export const WorkingAtPcodeSection: React.FC = () => {
                     </WordListLayout>
                 </HeaderLayout>
             </Flex>
-            <StyledImage src="./static/tlp-pcode-27.jpg"/>
+            <StyledImage src="./static/tlp-pcode-27.jpg" />
         </React.Fragment>
     );
 };
+
+export default WorkingAtPcodeSection;
