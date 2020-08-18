@@ -83,10 +83,12 @@ const MainPage = () => (
             </ProjectDetailTeaserLayout>
 
             <StatementLayout>
-                <Statement personName={'Dr. Dipl-Ing Hans Friesenecker'}
-                           personPosition={'Lenvo rumble .it_forensic'}>
+                <Statement personName={'Christoph Pernsteiner'}
+                           personPosition={'CEO .founder'}
+                           imagePath={'../static/pernsteiner_christoph.png'}
+                >
                     ‘ it would have been impossible to build such a complicated
-                    project without the skills of pcode team. ’
+                    project without the skills of the pcode team. ’
                 </Statement>
             </StatementLayout>
 

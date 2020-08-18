@@ -51,7 +51,8 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
 
     const StyledCopyText = styled(CopyText)`
         margin-bottom: 1rem;
-        width: 50%;
+        margin-right: 10%;
+        max-width: 700px;
     `;
 
     return (
@@ -70,7 +71,7 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
                         {headline}
                     </StyledSectionHeadline>
                     <StyledCopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
-                        {description}>
+                        {description}
                     </StyledCopyText>
                     <ActionButton label="learn more" color={Color.Secondary2} onClick={onClick}/>
                 </TextWrapper>

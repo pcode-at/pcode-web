@@ -27,6 +27,7 @@ import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { MonsterType } from '../shared/MonsterType.enum';
+
 const { light, normal } = theme.font;
 
 const MainPage = () => (

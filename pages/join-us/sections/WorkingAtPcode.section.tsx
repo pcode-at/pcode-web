@@ -67,8 +67,16 @@ export const WorkingAtPcodeSection: React.FC = () => {
                         />
                     </SectionHeadlineLayout>
                     <WordListLayout>
-                        <WordList words={['free coffee', 'mobile office', 'network', 'international', 'perfection']}
-                                  color={Color.Secondary2}/>
+                        <WordList
+                            words={[
+                                'free coffee',
+                                'mobile office',
+                                'network',
+                                'international',
+                                'perfection',
+                            ]}
+                            color={Color.Secondary2}
+                        />
                     </WordListLayout>
                 </HeaderLayout>
             </Flex>
