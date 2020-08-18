@@ -16,6 +16,7 @@ export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImage> = ({
     color = Color.Primary,
     className,
 }) => {
+
     const StyledFlex = styled(Flex)`
         align-items: center;
         flex-direction: column;
@@ -37,9 +38,9 @@ export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImage> = ({
     return (
         <div className={className}>
             <StyledFlex>
-                <PcodeShape width="70%" />
+                <PcodeShape width='70%'/>
                 <StyledImageLayout>
-                    <StyledImage src="../static/sandburg.jpg" />
+                    <StyledImage src='../static/sandburg.jpg'/>
                 </StyledImageLayout>
             </StyledFlex>
         </div>

@@ -94,7 +94,7 @@ export const WordList: React.FC<TWordList> = ({
                     </ItemsWrapperBox>
                 </CentralWrapperBox>
                 <PcodeShapeWrapperBox>
-                    <PcodeShape width="300px" color={color} />
+                    <PcodeShape width="300px" color={color}/>
                 </PcodeShapeWrapperBox>
             </WrapperBox>
         </div>

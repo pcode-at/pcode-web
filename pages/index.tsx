@@ -27,11 +27,13 @@ import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
+import { MonsterType } from '../shared/MonsterType.enum';
 
 const { light, normal } = theme.font;
 
 const MainPage = () => (
     <ThemeProvider theme={theme}>
+
         <SiteHeader color={Color.Primary} onClick={() => {
             alert('Not Implemented Yet!');
         }}/>
@@ -56,12 +58,15 @@ const MainPage = () => (
 
 
         <StyledHeading>Statement</StyledHeading>
-        <Statement personName={'Christoph Pernsteiner'} personPosition={'CEO .founder'}>
+        <Statement personName={'Christoph Pernsteiner'}
+                   personPosition={'CEO .founder'}
+                   imagePath={'../static/pernsteiner_christoph.png'}>
             'this project was a great challenge, we learned a lot and it was a journey with such an amazing customer!'
         </Statement>
 
         <StyledHeading>Statement2</StyledHeading>
-        <Statement2 personName={'Nico Peham'} personPosition={'tech lead'} color={Color.Secondary2}>
+        <Statement2 personName={'Nico Peham'} personPosition={'tech lead'} color={Color.Secondary2}
+                    imagePath={'../static/pernsteiner_christoph.png'}>
             'we are adapting to new challenges by developing and investing in our people'
         </Statement2>
 
@@ -89,7 +94,7 @@ const MainPage = () => (
         </StyledCopyText>
 
         <StyledHeading>ContactForm</StyledHeading>
-        <StyledContactForm color={Color.Primary}>
+        <StyledContactForm>
             ContactForm Component
         </StyledContactForm>
 
@@ -110,6 +115,7 @@ const MainPage = () => (
 
         <StyledHeading>FreeChair</StyledHeading>
         <StyledFreeChair
+            monsterType={MonsterType.TentacleEye}
             position="frontend developer"
             positionLevel={PositionLevel.Junior}
             positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6.">
@@ -161,7 +167,6 @@ const MainPage = () => (
             <StyledTechnologyPlatform name={'web'} platformType={PlatformType.Web}
                                       languages={['JavaScript', 'Angular', 'TypeScript', 'PHP', 'Symfony', '.Net (C#)', '(e-commerce)']}
                                       technologies={['ReactJs', 'Stylius', 'Spryker']}/>
-
 
             <StyledTechnologyPlatform name={'mobile'} platformType={PlatformType.Mobile}
                                       languages={['React Native', 'Native iOS', 'Native Android']}

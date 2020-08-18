@@ -1,10 +1,9 @@
 import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
-import { CopyText, FontStyle } from './CopyText';
 import { theme } from '../theme';
 import styled from 'styled-components';
-import { PcodeShape } from './PcodeShape';
+import { PersonWithFunction } from './PersonWithFunction';
 
 type TStatementProps = {
     personName: string;
@@ -12,14 +11,15 @@ type TStatementProps = {
     color: Color;
     width?: string;
     className?: string;
+    imagePath: string;
 };
 
 export const Statement2: React.FC<TStatementProps> = ({
                                                           children,
                                                           personName,
                                                           personPosition,
-                                                          width = '100%',
                                                           color = Color.Primary,
+                                                          imagePath,
                                                           className,
                                                       }) => {
     const { light, normal } = theme.font;
@@ -27,35 +27,39 @@ export const Statement2: React.FC<TStatementProps> = ({
     const Wrapper = styled(Flex)`
         padding-top: 3em;
         padding-bottom: 3em;
-        background-color: ${Color.White};
         align-items: center;
+        
+        @media screen and (min-width: 615px) {
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        @media screen and (max-width: 615px) {
+            flex-direction: column;
+        }
     `;
 
-    const TextWrapper = styled(Flex)`
-        max-width: 700px;
-        margin-left: 10%;
-        width: 100%;
+    const TextWrapper = styled(Box)`
+        padding: 10%;
+        width: 70%;
         font-family: ${light.fontFamily};
         font-weight: ${normal.fontWeight};
-        font-size: 250%;
+        font-size: 150%;
+        
+        @media screen and (max-width: 615px) {
+            padding: 0;
+            width: 90%;
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
     `;
 
     const PersonWrapper = styled(Flex)`
-        max-width: 700px;
-        padding: 1px;
-        width: 300px;
-        color: ${Color.White};
-    `;
-
-    const PersonNameWrapper = styled(Box)`
-    margin-top: 8%;
-    font-size: 130%;
-    text-align: center;
-    `;
-
-    const PersonPositionWrapper = styled(Box)`
-    font-size: 130%;
-    text-align: center;
+        justify-content: center;
+        
+        @media screen and (min-width: 615px) {
+            margin-right: 10%;
+        }
     `;
 
     const StyledPersonFlex = styled(Flex)`
@@ -66,59 +70,19 @@ export const Statement2: React.FC<TStatementProps> = ({
 
     return (
         <div className={className}>
-            <Wrapper
-                sx={{
-                    '@media screen and (min-width: 615px)': {
-                        justifyContent: 'space-between',
-                        flexDirection: 'row',
-                    },
-                    '@media screen and (max-width: 615px)': {
-                        alignItems: 'center',
-                        flexDirection: 'column',
-                    },
-                }}
-            >
-                <TextWrapper
-                    color={Color.Secondary2}
-                    sx={{
-                        marginLeft: '10%',
-                        '@media screen and (max-width: 615px)': {
-                            width: '100%',
-                            fontSize: '150%',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                        },
-                    }}
-                >
+            <Wrapper>
+                <TextWrapper color={color}>
                     <p>{children}</p>
                 </TextWrapper>
 
-                <PersonWrapper
-                    sx={{
-                        '@media screen and (min-width: 615px)': {
-                            marginRight: '10%',
-                        },
-                    }}
-                >
+                <PersonWrapper>
                     <StyledPersonFlex>
-                        <PcodeShape color={Color.Secondary} width="80%"/>
-                        <PersonNameWrapper>
-                            <CopyText
-                                color={Color.Secondary}
-                                fontStyle={FontStyle.Normal}
-                            >
-                                {personName}
-                            </CopyText>
-                        </PersonNameWrapper>
+                        <PersonWithFunction
+                            color={color}
+                            personName={personName}
+                            personPosition={personPosition}
+                            imagePath={imagePath}/>
 
-                        <PersonPositionWrapper>
-                            <CopyText
-                                fontStyle={FontStyle.Light}
-                                color={Color.Secondary}
-                            >
-                                {personPosition}
-                            </CopyText>
-                        </PersonPositionWrapper>
                     </StyledPersonFlex>
                 </PersonWrapper>
             </Wrapper>
