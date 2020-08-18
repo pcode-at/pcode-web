@@ -15,12 +15,11 @@ type TCopyTextProps = {
 };
 
 export const CopyText: React.FC<TCopyTextProps> = ({
-   children,
-   color,
-   fontStyle,
-   className,
+    children,
+    color,
+    fontStyle,
+    className,
 }) => {
-
     return (
         <div className={className}>
             <Text

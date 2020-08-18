@@ -9,12 +9,11 @@ type TSubHeadlineProps = {
 };
 
 export const SubHeadline: React.FC<TSubHeadlineProps> = ({
-     children,
-     color,
-     fontStyle,
-     className,
- }) => {
-
+    children,
+    color,
+    fontStyle,
+    className,
+}) => {
     return (
         <div className={className}>
             <CopyText fontStyle={fontStyle} color={color}>

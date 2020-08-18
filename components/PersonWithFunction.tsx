@@ -17,13 +17,12 @@ type TPersonWithFunctionProps = {
 };
 
 export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
-                                                                           color,
-                                                                           className,
-                                                                           personName,
-                                                                           personPosition,
-                                                                           imagePath,
-                                                                       }) => {
-
+    color,
+    className,
+    personName,
+    personPosition,
+    imagePath,
+}) => {
     const PersonWithFunctionLayout = styled(Flex)`
         align-items: center;
         flex-direction: column;
@@ -61,12 +60,11 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
     return (
         <div className={className}>
             <PersonWithFunctionLayout>
-
                 <PcodeShapeLayout>
-                    <PcodeShape color={color}/>
+                    <PcodeShape color={color} />
                 </PcodeShapeLayout>
                 <StyledPersonImageLayout>
-                    <StyledPersonImage src={imagePath}/>
+                    <StyledPersonImage src={imagePath} />
                 </StyledPersonImageLayout>
                 <PersonNameWrapper>
                     <CopyText color={color} fontStyle={FontStyle.Normal}>

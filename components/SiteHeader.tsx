@@ -13,14 +13,10 @@ type TSiteHeaderProps = {
     onClick?(): void;
 };
 
-export const SiteHeader: React.FC<TSiteHeaderProps> = ({
-   color,
-   onClick,
-}) => {
-
+export const SiteHeader: React.FC<TSiteHeaderProps> = ({ color, onClick }) => {
     const OuterFlex = styled(Flex)`
         background-color: white;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: 20px;
         justify-content: space-between;
         align-items: flex-end;
@@ -45,23 +41,20 @@ export const SiteHeader: React.FC<TSiteHeaderProps> = ({
         width: 30px;
     `;
 
-
     return (
         <Headroom>
             <OuterFlex>
                 <LogoWrapper width={11 / 12}>
-                    <StyledLogo/>
+                    <StyledLogo />
                 </LogoWrapper>
 
                 <InnerFlex
                     sx={{ marginRight: '1.5em', marginBottom: '0.7em' }}
                     width={1 / 12}
                     color="white"
-                    onClick={() =>
-                        onClick()
-                    }
+                    onClick={() => onClick()}
                 >
-                    <StyledNavbarSvg/>
+                    <StyledNavbarSvg />
                 </InnerFlex>
             </OuterFlex>
         </Headroom>
