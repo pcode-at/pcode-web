@@ -28,7 +28,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
             width: 270px;
         }
     `;
-  
+
     const WordListLayout = styled(Box)`
         position: absolute;
         top: 163px;
@@ -55,7 +55,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
     `;
 
     const StyledImage = styled(Image)``;
-  
+
     return (
         <React.Fragment>
             <Flex backgroundColor={Color.Secondary}>
@@ -84,7 +84,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
             </Flex>
             <ImageLayout>
                 <StyledImage src="./static/tlp-pcode-27.jpg" />
-            </ImageLayout>   
+            </ImageLayout>
         </React.Fragment>
     );
 };

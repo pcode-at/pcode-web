@@ -5,7 +5,7 @@ import { ActionButton } from './ActionButton';
 import { SectionHeadline } from './SectionHeadline';
 import styled from 'styled-components';
 
-type TSwiperProps = {
+type Props = {
     color?: Color;
     textPartOne: string;
     textPartTwo: string;
@@ -13,26 +13,25 @@ type TSwiperProps = {
     className?: string;
 };
 
-export const Swiper: React.FC<TSwiperProps> = ({
+export const Swiper: React.FC<Props> = ({
     textPartOne,
     textPartTwo,
     color = Color.Secondary,
     onClick,
-    className
+    className,
 }) => {
-
     const StyledSectionHeadline = styled(SectionHeadline)`
         margin-bottom: 0.7rem;
     `;
 
     return (
         <div className={className}>
-                <StyledSectionHeadline
-                    color={color}
-                    headlinePartOne={textPartOne}
-                    headlinePartTwo={textPartTwo}
-                    separateWithBreak={true}
-                />
+            <StyledSectionHeadline
+                color={color}
+                headlinePartOne={textPartOne}
+                headlinePartTwo={textPartTwo}
+                separateWithBreak={true}
+            />
             <ActionButton
                 color={Color.Secondary2}
                 padding="0.2rem 1.7rem"
