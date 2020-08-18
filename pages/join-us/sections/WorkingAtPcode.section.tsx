@@ -1,88 +1,85 @@
-import * as React from "react";
-import { Flex, Box, Image } from "rebass";
-import { Color } from "../../../Color.enum";
-import { SectionHeadline } from "../../../components/SectionHeadline";
-import { PcodeShape } from "../../../components/PcodeShape";
+import * as React from 'react';
+import { Box, Flex, Image } from 'rebass';
+import { Color } from '../../../Color.enum';
+import { SectionHeadline } from '../../../components/SectionHeadline';
+import { WordList } from '../../../components/WordList';
+import styled from 'styled-components';
 
 export const WorkingAtPcodeSection: React.FC = () => {
-  const [isOverMobile, setOverMobileStatus] = React.useState();
 
-  // source: https://medium.com/better-programming/how-to-use-media-queries-programmatically-in-react-4d6562c3bc97
-  // TODO: refactor with better naming and use the context approach above
-  React.useEffect(() => {
-    const mqlDesktop = window.matchMedia("(min-width: 670px)");
-    setOverMobileStatus(mqlDesktop.matches);
+    const HeaderLayout = styled(Flex)`
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        position: relative;
+        padding-bottom: 15rem;
+        
+        @media screen and (min-width: 670px) {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    `;
 
-    mqlDesktop.addListener(() => {
-      setOverMobileStatus(mqlDesktop.matches);
-    });
-  }, []);
+    const SectionHeadlineLayout = styled(Box)`
+        padding: 2rem;
+        max-width: 344px;
+        @media screen and (min-width: 670px) {
+            width: 270px;
+        }
+    `;
 
-  return (
-    <React.Fragment>
-      <Flex
-        sx={{
-          backgroundColor: Color.Secondary,
-          "@media screen and (min-width: 670px)": {
-            justifyContent: "center"
-          }
-        }}
-      >
-        <Flex
-          justifyContent="center"
-          sx={{
-            position: "relative",
-            paddingBottom: "5rem",
-            width: "100%",
-            "@media screen and (min-width: 670px)": {
-              paddingTop: "1rem",
-              paddingBottom: "1rem"
-            }
-          }}
-        >
-          <Box
-            sx={{
-              padding: "2rem",
-              maxWidth: "344px",
-              "@media screen and (min-width: 670px)": {
-                width: "270px"
-              }
-            }}
-          >
-            <SectionHeadline
-              headlinePartOne="working at pcode"
-              headlinePartTwo="means you get a bunch of cool stuff and a great team count on!"
-              separateWithBreak={true}
-              maxWidthPartTwo={isOverMobile ? "127px" : ""}
-              color={Color.Secondary2}
-            />
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              top: 163,
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              "@media screen and (min-width: 670px)": {
-                position: "static",
-                top: 0,
-                marginBottom: "-100px",
-                zIndex: 1,
-                width: "auto",
-                paddingTop: "2rem",
-                marginLeft: "5rem"
-              }
-            }}
-          >
-            <PcodeShape
-              width={isOverMobile ? "290px" : "150px"}
-              color={Color.Secondary2}
-            />
-          </Box>
-        </Flex>
-      </Flex>
-      <Image src="./static/tlp-pcode-27.jpg" />
-    </React.Fragment>
-  );
+    const WordListLayout = styled(Box)`
+        position: absolute;
+        top: 163px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        
+        @media screen and (min-width: 670px) {
+            position: static;
+            top: 0;
+            margin-bottom: -100px;
+            z-index: 0;
+            width: auto;
+            padding-top: 2rem;
+            margin-left: 5rem;
+        },
+    `;
+
+    const StyledImage = styled(Image)`
+        width: 100%;
+        margin-top: -20%;
+        position: relative;
+        z-index: -1;
+    `;
+
+    return (
+        <React.Fragment>
+            <Flex backgroundColor={Color.Secondary}>
+                <HeaderLayout>
+                    <SectionHeadlineLayout>
+                        <SectionHeadline
+                            headlinePartOne="working at pcode"
+                            headlinePartTwo="means you get a bunch of cool stuff and a great team count on!"
+                            separateWithBreak={true}
+                            color={Color.Secondary2}
+                        />
+                    </SectionHeadlineLayout>
+                    <WordListLayout>
+                        <WordList
+                            words={[
+                                'free coffee',
+                                'mobile office',
+                                'network',
+                                'international',
+                                'perfection',
+                            ]}
+                            color={Color.Secondary2}
+                        />
+                    </WordListLayout>
+                </HeaderLayout>
+            </Flex>
+            <StyledImage src="./static/tlp-pcode-27.jpg"/>
+        </React.Fragment>
+    );
 };

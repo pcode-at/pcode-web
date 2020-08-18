@@ -5,11 +5,16 @@ import { Color } from '../Color.enum';
 import styled from 'styled-components';
 
 type TWordList = {
+    color?: Color;
     words: Array<string>;
     className?: string;
 };
 
-export const WordList: React.FC<TWordList> = ({ words, className }) => {
+export const WordList: React.FC<TWordList> = ({
+                                                  words,
+                                                  className,
+                                                  color = Color.Primary,
+                                              }) => {
     const [itemsToSlide, setItemsToSlide] = React.useState(() => words);
     const middleWordIndex = parseInt((itemsToSlide.length / 2).toFixed(0)) - 1;
 
@@ -67,6 +72,7 @@ export const WordList: React.FC<TWordList> = ({ words, className }) => {
         flex-direction: column;
         align-items: center;
         font-size: 2rem;
+        z-index: 1;
     `;
 
     const PcodeShapeWrapperBox = styled(Box)`
@@ -74,7 +80,6 @@ export const WordList: React.FC<TWordList> = ({ words, className }) => {
         display: flex;
         justify-content: center;
         margin-top: -6%;
-        z-index: -1;
     `;
 
     return (
@@ -86,7 +91,7 @@ export const WordList: React.FC<TWordList> = ({ words, className }) => {
                     </ItemsWrapperBox>
                 </CentralWrapperBox>
                 <PcodeShapeWrapperBox>
-                    <PcodeShape width="300px"/>
+                    <PcodeShape width="300px" color={color}/>
                 </PcodeShapeWrapperBox>
             </WrapperBox>
         </div>

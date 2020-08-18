@@ -26,6 +26,7 @@ import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
+import { MonsterType } from '../shared/MonsterType.enum';
 
 const { light, normal } = theme.font;
 
@@ -94,7 +95,7 @@ const MainPage = () => (
         </StyledCopyText>
 
         <StyledHeading>ContactForm</StyledHeading>
-        <StyledContactForm color={Color.Primary}>
+        <StyledContactForm>
             ContactForm Component
         </StyledContactForm>
 
@@ -115,6 +116,7 @@ const MainPage = () => (
 
         <StyledHeading>FreeChair</StyledHeading>
         <StyledFreeChair
+            monsterType={MonsterType.TentacleEye}
             position="frontend developer"
             positionLevel={PositionLevel.Junior}
             positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
