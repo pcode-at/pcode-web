@@ -7,14 +7,14 @@ import { PcodeShape } from './PcodeShape';
 import styled from 'styled-components';
 import { Flex, Image, Box } from 'rebass';
 
-type TPcodeShapeWithImage = {
+type Props = {
     imageSource: string;
     variant: number;
     color?: Color;
     className?: string;
 };
 
-export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImage> = ({
+export const PcodeShapeWithImage: React.FC<Props> = ({
     color = Color.Primary,
     variant,
     imageSource,
@@ -31,21 +31,21 @@ export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImage> = ({
         mask: url(../static/pcode_shape.svg);
         mask-position: top;
         mask-repeat: no-repeat;
-        mask-size: 70%;
+        mask-size: 92%;
     `;
 
     let StyledImageLayout = styled.div`
-        margin-left: 1rem;
+        margin-right: 4.9%;
         position: absolute;
-        max-width: 96%;
-        top: 4%;
+        max-width: 71%;
+        top: 5%;
     `;
 
     let PcodeShapeLayout = styled(Box)`
         width: 70%;
     `;
 
-    if(variant == 2) {
+    if (variant == 2) {
         StyledImageLayout = styled.div`
             margin-right: 2%;
             position: absolute;
