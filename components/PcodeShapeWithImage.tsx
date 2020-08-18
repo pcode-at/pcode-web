@@ -7,16 +7,15 @@ import { PcodeShape } from './PcodeShape';
 import styled from 'styled-components';
 import { Flex, Image } from 'rebass';
 
-type TPcodeShapeWithImage = {
+type Props = {
     color?: Color;
     className?: string;
 };
 
-export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImage> = ({
-                                                                        color = Color.Primary,
-                                                                        className,
-                                                                    }) => {
-
+export const PcodeShapeWithImage: React.FC<Props> = ({
+    color = Color.Primary,
+    className,
+}) => {
     const StyledFlex = styled(Flex)`
         align-items: center;
         flex-direction: column;
@@ -38,9 +37,9 @@ export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImage> = ({
     return (
         <div className={className}>
             <StyledFlex>
-                <PcodeShape width='70%'/>
+                <PcodeShape width="70%" />
                 <StyledImageLayout>
-                    <StyledImage src='../static/sandburg.jpg'/>
+                    <StyledImage src="../static/sandburg.jpg" />
                 </StyledImageLayout>
             </StyledFlex>
         </div>

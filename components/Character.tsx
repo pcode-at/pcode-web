@@ -8,7 +8,7 @@ import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 import { Monster } from './Monster';
 
-type TCharacterProps = {
+type Props = {
     characterTitle: string;
     characterDescription: string;
     monsterType: MonsterType;
@@ -18,7 +18,7 @@ type TCharacterProps = {
 
 const { openPositionDestinationEmail } = CONSTANTS;
 
-export const Character: React.FC<TCharacterProps> = ({
+export const Character: React.FC<Props> = ({
     characterTitle,
     characterDescription,
     monsterType,
@@ -60,19 +60,13 @@ export const Character: React.FC<TCharacterProps> = ({
                 </SvgLayout>
 
                 <PositionLayout>
-                    <SubHeadline
-                        color={textColor}
-                        fontStyle={FontStyle.Normal}
-                    >
+                    <SubHeadline color={textColor} fontStyle={FontStyle.Normal}>
                         {characterTitle}
                     </SubHeadline>
                 </PositionLayout>
 
                 <DescriptionLayout>
-                    <CopyText
-                        color={textColor}
-                        fontStyle={FontStyle.Light}
-                    >
+                    <CopyText color={textColor} fontStyle={FontStyle.Light}>
                         {characterDescription}
                     </CopyText>
                 </DescriptionLayout>
