@@ -5,7 +5,7 @@ import { theme } from '../theme';
 import styled from 'styled-components';
 import { PersonWithFunction } from './PersonWithFunction';
 
-type TStatementProps = {
+type Props = {
     personName: string;
     personPosition: string;
     color?: Color;
@@ -15,22 +15,22 @@ type TStatementProps = {
     imagePath: string;
 };
 
-export const Statement: React.FC<TStatementProps> = ({
-                                                         children,
-                                                         personName,
-                                                         personPosition,
-                                                         color = Color.White,
-                                                         backgroundColor = Color.Secondary2,
-                                                         imagePath,
-                                                         className,
-                                                     }) => {
+export const Statement: React.FC<Props> = ({
+    children,
+    personName,
+    personPosition,
+    color = Color.White,
+    backgroundColor = Color.Secondary2,
+    imagePath,
+    className,
+}) => {
     const { light, normal } = theme.font;
 
     const Wrapper = styled(Flex)`
         padding-top: 3em;
         padding-bottom: 3em;
         align-items: center;
-        
+
         @media screen and (min-width: 615px) {
             justify-content: space-between;
             flex-direction: row;
@@ -47,7 +47,7 @@ export const Statement: React.FC<TStatementProps> = ({
         font-weight: ${normal.fontWeight};
         font-size: 250%;
         color: ${color};
-        
+
         @media screen and (max-width: 615px) {
             padding: 0;
             width: 90%;
@@ -59,7 +59,7 @@ export const Statement: React.FC<TStatementProps> = ({
 
     const PersonWrapper = styled(Box)`
         justify-content: center;
-        
+
         @media screen and (min-width: 615px) {
             margin-right: 10%;
         }
@@ -71,11 +71,9 @@ export const Statement: React.FC<TStatementProps> = ({
         justify-content: center;
     `;
 
-
     return (
         <div className={className}>
-            <Wrapper
-                backgroundColor={backgroundColor}>
+            <Wrapper backgroundColor={backgroundColor}>
                 <TextWrapper>
                     <p>{children}</p>
                 </TextWrapper>
@@ -86,8 +84,8 @@ export const Statement: React.FC<TStatementProps> = ({
                             color={Color.Secondary}
                             personName={personName}
                             personPosition={personPosition}
-                            imagePath={imagePath}/>
-
+                            imagePath={imagePath}
+                        />
                     </StyledPersonFlex>
                 </PersonWrapper>
             </Wrapper>

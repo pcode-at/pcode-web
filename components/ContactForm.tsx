@@ -6,13 +6,11 @@ import { theme } from '../theme';
 import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 
-type TContactFormProps = {
+type Props = {
     className?: string;
 };
 
-export const ContactForm: React.FC<TContactFormProps> = ({
-                                                             className,
-                                                         }) => {
+export const ContactForm: React.FC<Props> = ({ className }) => {
     const [textAreaContent, setTextAreaContent] = React.useState('');
     const { light, normal } = theme.font;
     const { openPositionDestinationEmail } = CONSTANTS;
@@ -51,7 +49,6 @@ export const ContactForm: React.FC<TContactFormProps> = ({
                 />
             </ShortInputLayout>
 
-
             <ShortInputLayout>
                 <Input
                     placeholder="email"
@@ -72,32 +69,32 @@ export const ContactForm: React.FC<TContactFormProps> = ({
                         borderWidth: '3px',
                         borderColor: Color.Secondary2,
                         borderRadius: 13,
-                        height: '100%'
+                        height: '100%',
                     }}
                 />
             </TextAreaLayout>
-                <a
-                    href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
+            <a
+                href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
                         &body=${replaceNewLineCharacters(textAreaContent)}`}
+            >
+                <Button
+                    variant="primary"
+                    sx={{
+                        float: 'right',
+                        marginTop: 1,
+                        borderRadius: 20,
+                        fontFamily: light.fontFamily,
+                        fontWeight: light.fontWeight,
+                        fontSize: 11,
+                    }}
                 >
-                    <Button
-                        variant="primary"
-                        sx={{
-                            float: 'right',
-                            marginTop: 1,
-                            borderRadius: 20,
-                            fontFamily: light.fontFamily,
-                            fontWeight: light.fontWeight,
-                            fontSize: 11,
-                        }}
-                    >
-                        send message
-                    </Button>
-                </a>
+                    send message
+                </Button>
+            </a>
         </div>
-);
+    );
 
-function replaceNewLineCharacters(inputText: string) {
-    return inputText.replace('\n', '%0A');
-}
+    function replaceNewLineCharacters(inputText: string) {
+        return inputText.replace('\n', '%0A');
+    }
 };
