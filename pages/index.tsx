@@ -39,6 +39,9 @@ const MainPage = () => (
             }}
         />
 
+        <StyledHeading>PcodeShapeWithImage</StyledHeading>
+        <StyledPcodeShapeWithImageLayout/>
+        
         <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
@@ -59,6 +62,7 @@ const MainPage = () => (
         <Statement
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
+            imagePath="../static/pernsteiner_christoph.png"
         >
             'this project was a great challenge, we learned a lot and it was a
             journey with such an amazing customer!'
@@ -68,6 +72,7 @@ const MainPage = () => (
         <Statement2
             personName={'Nico Peham'}
             personPosition={'tech lead'}
+            imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary2}
         >
             'we are adapting to new challenges by developing and investing in
@@ -203,7 +208,7 @@ const MainPage = () => (
     </ThemeProvider>
 );
 
-const StyledPcodeShapeWithImage = styled(PcodeShapeWithImage)`
+const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
     width: 700px;
 `;
 

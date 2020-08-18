@@ -16,15 +16,14 @@ type TProjectDetailTeaserProps = {
 };
 
 export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
-                                                                             description,
-                                                                             headline,
-                                                                             imageSrc,
-                                                                             headlineColor,
-                                                                             onClick,
-                                                                             className,
-                                                                         }) => {
-
-    const StyledImage = styled.img`
+    description,
+    headline,
+    imageSrc,
+    headlineColor,
+    onClick,
+    className,
+}) => {
+    const StyledImageLayout = styled.img`
         width: 70%;
         position: absolute;
         top: 50%;
@@ -44,7 +43,7 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         width: 100%;
     `;
 
-    const StyledSectionHeadline = styled(CopyText)`
+    const StyledSectionHeadlineLayout = styled(CopyText)`
         margin-bottom: 1rem;
         font-size: 250%;
     `;
@@ -60,20 +59,28 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
                     <GraphicWrapper>
-                        <PcodeShape color={Color.Primary}/>
-                        <StyledImage src={imageSrc}/>
+                        <PcodeShape color={Color.Primary} />
+                        <StyledImageLayout src={imageSrc} />
                     </GraphicWrapper>
                 </Box>
                 <TextWrapper>
-                    <StyledSectionHeadline
+                    <StyledSectionHeadlineLayout
                         color={headlineColor}
-                        fontStyle={FontStyle.Normal}>
+                        fontStyle={FontStyle.Normal}
+                    >
                         {headline}
-                    </StyledSectionHeadline>
-                    <StyledCopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
+                    </StyledSectionHeadlineLayout>
+                    <StyledCopyText
+                        color={Color.Secondary}
+                        fontStyle={FontStyle.Light}
+                    >
                         {description}
                     </StyledCopyText>
-                    <ActionButton label="learn more" color={Color.Secondary2} onClick={onClick}/>
+                    <ActionButton
+                        label="learn more"
+                        color={Color.Secondary2}
+                        onClick={onClick}
+                    />
                 </TextWrapper>
             </Flex>
         </div>

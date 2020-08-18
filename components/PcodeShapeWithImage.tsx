@@ -13,11 +13,10 @@ type TPcodeShapeWithImage = {
 };
 
 export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImage> = ({
-                                                                        color = Color.Primary,
-                                                                        className,
-                                                                    }) => {
-
-    const StyledFlex = styled(Flex)`
+    color = Color.Primary,
+    className,
+}) => {
+    const StyledFlexLayout = styled(Flex)`
         align-items: center;
         flex-direction: column;
         justify-content: center;
@@ -37,12 +36,12 @@ export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImage> = ({
     `;
     return (
         <div className={className}>
-            <StyledFlex>
-                <PcodeShape width='70%'/>
+            <StyledFlexLayout>
+                <PcodeShape width="70%" />
                 <StyledImageLayout>
-                    <StyledImage src='../static/sandburg.jpg'/>
+                    <StyledImage src="../static/sandburg.jpg" />
                 </StyledImageLayout>
-            </StyledFlex>
+            </StyledFlexLayout>
         </div>
     );
 };
