@@ -3,18 +3,20 @@ import React from 'react';
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
 import { Color } from '../Color.enum';
 import { theme } from '../theme';
-import { WordList } from './WordList';
+import { WordList, intervalDuration } from './WordList';
 import styled from 'styled-components';
 import { Box, Flex, Image } from 'rebass';
 
-type TKeywordsWithImagesSliderProps = {
+export type keyWordsWithImagesSliderVariant = 'horizontal' | 'vertical';
+
+type Props = {
     wordList: string[][];
     imagePairs: string[][];
-    alignment: string; // horizontal | vertical
+    alignment: keyWordsWithImagesSliderVariant;
     className?: string;
 };
 
-export const KeywordsWithImagesSlider: React.FC<TKeywordsWithImagesSliderProps> = ({
+export const KeywordsWithImagesSlider: React.FC<Props> = ({
     wordList,
     imagePairs,
     alignment,
@@ -30,7 +32,7 @@ export const KeywordsWithImagesSlider: React.FC<TKeywordsWithImagesSliderProps> 
             let last = shuffledImages.pop();
             shuffledImages.unshift(last);
             setImagesToSlide(shuffledImages);
-        }, wordsToSlide[0].length * 3100);
+        }, wordsToSlide[0].length * intervalDuration);
 
         return () => clearInterval(interval);
     }, [imagesToSlide]);
@@ -41,7 +43,7 @@ export const KeywordsWithImagesSlider: React.FC<TKeywordsWithImagesSliderProps> 
             let last = shuffledWords.pop();
             shuffledWords.unshift(last);
             setWordsToSlide(shuffledWords);
-        }, wordsToSlide[0].length * 3100);
+        }, wordsToSlide[0].length * intervalDuration);
 
         return () => clearInterval(interval);
     }, [wordsToSlide]);

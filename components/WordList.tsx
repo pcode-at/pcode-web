@@ -4,6 +4,8 @@ import { PcodeShape } from './PcodeShape';
 import { Color } from '../Color.enum';
 import styled from 'styled-components';
 
+export const intervalDuration: number = 3100;
+
 type TWordList = {
     color?: Color;
     words: Array<string>;
@@ -11,10 +13,10 @@ type TWordList = {
 };
 
 export const WordList: React.FC<TWordList> = ({
-                                                  words,
-                                                  className,
-                                                  color = Color.Primary,
-                                              }) => {
+    words,
+    className,
+    color = Color.Primary,
+}) => {
     const [itemsToSlide, setItemsToSlide] = React.useState(() => words);
     const middleWordIndex = parseInt((itemsToSlide.length / 2).toFixed(0)) - 1;
 
@@ -26,34 +28,37 @@ export const WordList: React.FC<TWordList> = ({
             shuffledWords.unshift(last);
 
             setItemsToSlide(shuffledWords);
-        }, 3100);
+        }, intervalDuration);
 
         return () => clearInterval(interval);
     }, [itemsToSlide]);
-
 
     const items = itemsToSlide.map((word, index) => {
         let opacity = index === middleWordIndex ? '100%' : '10%';
         let animation = 'animated infinite slower ';
 
         const StyledWordText = styled(Text)`
-        font-weight: 300;
-        font-family: 'raleway',serif;
-        color: ${Color.White};
-        opacity: ${opacity};
-        order: ${index};
-    `;
+            font-weight: 300;
+            font-family: 'raleway', serif;
+            color: ${Color.White};
+            opacity: ${opacity};
+            order: ${index};
+        `;
 
-        return <StyledWordText
-            className={index === middleWordIndex ? animation + 'fadeIn' : animation}
-            key={word}
-        >
-            {word}
-        </StyledWordText>;
+        return (
+            <StyledWordText
+                className={
+                    index === middleWordIndex ? animation + 'fadeIn' : animation
+                }
+                key={word}
+            >
+                {word}
+            </StyledWordText>
+        );
     });
 
     const WrapperBox = styled(Box)`
-        position: relative; 
+        position: relative;
         display: flex;
         align-items: center;
         width: 100%;
@@ -64,7 +69,7 @@ export const WordList: React.FC<TWordList> = ({
         display: flex;
         justify-content: center;
         flex-direction: column;
-        width: 100%;        
+        width: 100%;
     `;
 
     const ItemsWrapperBox = styled(Box)`
@@ -91,7 +96,7 @@ export const WordList: React.FC<TWordList> = ({
                     </ItemsWrapperBox>
                 </CentralWrapperBox>
                 <PcodeShapeWrapperBox>
-                    <PcodeShape width="300px" color={color}/>
+                    <PcodeShape width="300px" color={color} />
                 </PcodeShapeWrapperBox>
             </WrapperBox>
         </div>
