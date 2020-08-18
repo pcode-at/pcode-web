@@ -5,14 +5,16 @@ import { theme } from '../theme';
 import styled from 'styled-components';
 import { PcodeShapeWithImage } from './PcodeShapeWithImage';
 
-type TLightStatementProps = {
+export type lightStatementVariant = 'imageRight' | 'imageLeft';
+
+type Props = {
     textAndPcodeShapeColor: Color;
-    variant: string; //imageRight | imageLeft
+    variant: lightStatementVariant;
     imagePath: string;
     className?: string;
 };
 
-export const LightStatement: React.FC<TLightStatementProps> = ({
+export const LightStatement: React.FC<Props> = ({
     children,
     textAndPcodeShapeColor,
     variant,
@@ -29,7 +31,7 @@ export const LightStatement: React.FC<TLightStatementProps> = ({
         padding: 0 15%;
     `;
 
-    const PcodeShapeWithImageStyled = styled(PcodeShapeWithImage)`
+    const PcodeShapeWithImageGrid = styled(PcodeShapeWithImage)`
         grid-column: ${variant == 'imageLeft' ? '1/2' : '2/3'};
     `;
 
@@ -51,9 +53,9 @@ export const LightStatement: React.FC<TLightStatementProps> = ({
         <div className={className}>
             <LightStatementLayout>
                 {/* ToDo: Implement the image source to the pcode shape wit image component */}
-                <PcodeShapeWithImageStyled
+                <PcodeShapeWithImageGrid
                     color={textAndPcodeShapeColor}
-                ></PcodeShapeWithImageStyled>
+                ></PcodeShapeWithImageGrid>
                 <StatementTextLayout>
                     <StatementText>'{children}'</StatementText>
                 </StatementTextLayout>
