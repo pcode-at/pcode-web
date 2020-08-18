@@ -4,7 +4,7 @@ import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
 import { Color } from '../Color.enum';
 
-type MultiColorHeadline = {
+type TMultiColorHeadlineProps = {
     leftAndRightTextColor: Color;
     middleTextColor: Color;
     leftText: string;
@@ -14,7 +14,7 @@ type MultiColorHeadline = {
     className?: string;
 };
 
-export const MultiColorHeadline: React.FC<MultiColorHeadline> = ({
+export const MultiColorHeadline: React.FC<TMultiColorHeadlineProps> = ({
     leftAndRightTextColor,
     middleTextColor,
     leftText,
