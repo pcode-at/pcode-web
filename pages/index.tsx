@@ -26,6 +26,7 @@ import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
+import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 
 const { light, normal } = theme.font;
@@ -45,8 +46,18 @@ const MainPage = () => (
             variant={1}
             color={Color.Secondary}
         />
+        <StyledHeading>WorkingAtPcode</StyledHeading>
+        <WorkingAtPcodeSection />
 
         <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath="../static/pernsteiner_christoph.png"
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
+        />
+
+        <StyledHeading>Statement</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
@@ -58,6 +69,7 @@ const MainPage = () => (
         <Statement
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
+            imagePath={'../static/pernsteiner_christoph.png'}
         >
             'this project was a great challenge, we learned a lot and it was a
             journey with such an amazing customer!'
@@ -68,6 +80,7 @@ const MainPage = () => (
             personName={'Nico Peham'}
             personPosition={'tech lead'}
             color={Color.Secondary2}
+            imagePath={'../static/pernsteiner_christoph.png'}
         >
             'we are adapting to new challenges by developing and investing in
             our people'
@@ -95,9 +108,7 @@ const MainPage = () => (
         </StyledCopyText>
 
         <StyledHeading>ContactForm</StyledHeading>
-        <StyledContactForm>
-            ContactForm Component
-        </StyledContactForm>
+        <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline

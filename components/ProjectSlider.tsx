@@ -4,32 +4,32 @@ import ReactDOM from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 import styled from 'styled-components';
 
-
-type ProjectSliderProps = {
-    images: string[],
-    isPhone?: boolean,
-    width?: number,
-    className?: string,
+type Props = {
+    images: string[];
+    isPhone?: boolean;
+    width?: number;
+    className?: string;
 };
 
-
-export const ProjectSlider: React.FC<ProjectSliderProps> = ({
+export const ProjectSlider: React.FC<Props> = ({
     images,
     isPhone = true,
     width = 500,
     className,
 }) => {
-
     const divs = [];
 
     for (const value of images) {
         divs.push(
             <div key={value}>
-                <img src={value}/>
-            </div>);
+                <img src={value} />
+            </div>,
+        );
     }
 
-    {/*TODO: Fix positioning and width*/}
+    {
+        /*TODO: Fix positioning and width*/
+    }
     const ImageWrapper = styled.div`
         position: absolute;
     `;
@@ -44,14 +44,12 @@ export const ProjectSlider: React.FC<ProjectSliderProps> = ({
     return (
         <div className={className}>
             <ImageWrapper>
-                <img src="../static/phone.svg" alt="" width={width}/>
+                <img src="../static/phone.svg" alt="" width={width} />
             </ImageWrapper>
 
             <div style={{ width: width }}>
                 <CarouselWrapper>
-                    <Carousel showThumbs={false}>
-                        {divs}
-                    </Carousel>
+                    <Carousel showThumbs={false}>{divs}</Carousel>
                 </CarouselWrapper>
             </div>
         </div>

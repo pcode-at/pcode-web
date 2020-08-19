@@ -8,7 +8,7 @@ import styled, { css } from 'styled-components';
 
 const { light, normal } = theme.font;
 
-type TPersonWithFunctionProps = {
+type Props = {
     color: Color;
     personName: string;
     personPosition: string;
@@ -16,14 +16,13 @@ type TPersonWithFunctionProps = {
     imagePath: string;
 };
 
-export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
-                                                                           color,
-                                                                           className,
-                                                                           personName,
-                                                                           personPosition,
-                                                                           imagePath,
-                                                                       }) => {
-
+export const PersonWithFunction: React.FC<Props> = ({
+    color,
+    className,
+    personName,
+    personPosition,
+    imagePath,
+}) => {
     const PersonWithFunctionLayout = styled(Flex)`
         align-items: center;
         flex-direction: column;
@@ -61,12 +60,11 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
     return (
         <div className={className}>
             <PersonWithFunctionLayout>
-
                 <PcodeShapeLayout>
-                    <PcodeShape color={color}/>
+                    <PcodeShape color={color} />
                 </PcodeShapeLayout>
                 <StyledPersonImageLayout>
-                    <StyledPersonImage src={imagePath}/>
+                    <StyledPersonImage src={imagePath} />
                 </StyledPersonImageLayout>
                 <PersonNameWrapper>
                     <CopyText color={color} fontStyle={FontStyle.Normal}>
