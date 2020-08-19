@@ -6,7 +6,7 @@ import { ActionButton } from './ActionButton';
 import { CopyText, FontStyle } from './CopyText';
 import styled from 'styled-components';
 
-type TProjectDetailTeaserProps = {
+type Props = {
     headline: string;
     description: string;
     imageSrc: string;
@@ -15,7 +15,7 @@ type TProjectDetailTeaserProps = {
     className?: string;
 };
 
-export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
+export const ProjectDetailTeaser: React.FC<Props> = ({
     description,
     headline,
     imageSrc,
@@ -31,13 +31,13 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         transform: translateX(-50%) translateY(-50%);
     `;
 
-    const GraphicWrapper = styled(Box)`
+    const GraphicLayout = styled(Box)`
         position: relative;
         margin-left: -30%;
         width: 100%;
     `;
 
-    const TextWrapper = styled(Box)`
+    const TextLayout = styled(Box)`
         position: relative;
         text-align: left;
         width: 100%;
@@ -58,12 +58,12 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         <div className={className}>
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
-                    <GraphicWrapper>
+                    <GraphicLayout>
                         <PcodeShape color={Color.Primary} />
                         <StyledImageLayout src={imageSrc} />
-                    </GraphicWrapper>
+                    </GraphicLayout>
                 </Box>
-                <TextWrapper>
+                <TextLayout>
                     <StyledSectionHeadlineLayout
                         color={headlineColor}
                         fontStyle={FontStyle.Normal}
@@ -81,7 +81,7 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
                         color={Color.Secondary2}
                         onClick={onClick}
                     />
-                </TextWrapper>
+                </TextLayout>
             </Flex>
         </div>
     );

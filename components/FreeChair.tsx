@@ -10,7 +10,7 @@ import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 import { Monster } from './Monster';
 
-type TFreeChairProps = {
+type Props = {
     position: string;
     positionLevel: PositionLevel;
     positionDescription: string;
@@ -20,7 +20,7 @@ type TFreeChairProps = {
 
 const { openPositionDestinationEmail } = CONSTANTS;
 
-export const FreeChair: React.FC<TFreeChairProps> = ({
+export const FreeChair: React.FC<Props> = ({
     position,
     positionLevel,
     positionDescription,

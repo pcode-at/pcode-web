@@ -5,41 +5,72 @@ import { Color } from '../Color.enum';
 import { theme } from '../theme';
 import { PcodeShape } from './PcodeShape';
 import styled from 'styled-components';
-import { Flex, Image } from 'rebass';
+import { Flex, Image, Box } from 'rebass';
 
-type TPcodeShapeWithImage = {
+type Props = {
+    imageSource: string;
+    variant: number;
     color?: Color;
     className?: string;
 };
 
-export const PcodeShapeWithImage: React.FC<TPcodeShapeWithImage> = ({
+export const PcodeShapeWithImage: React.FC<Props> = ({
     color = Color.Primary,
+    variant,
+    imageSource,
     className,
 }) => {
     const StyledFlexLayout = styled(Flex)`
         align-items: center;
         flex-direction: column;
         justify-content: center;
+        position: relative;
     `;
 
-    const StyledImageLayout = styled.div`
-        margin-left: 1em;
-        position: absolute;
-        max-width: 300px;
-    `;
-
-    const StyledImage = styled(Image)`
+    let StyledImage = styled(Image)`
         mask: url(../static/pcode_shape.svg);
         mask-position: top;
         mask-repeat: no-repeat;
-        mask-size: 50%;
+        mask-size: 92%;
     `;
+
+    let StyledImageLayout = styled.div`
+        margin-right: 4.9%;
+        position: absolute;
+        max-width: 71%;
+        top: 5%;
+    `;
+
+    let PcodeShapeLayout = styled(Box)`
+        width: 70%;
+    `;
+
+    if (variant == 2) {
+        StyledImageLayout = styled.div`
+            margin-right: 2%;
+            position: absolute;
+            max-width: 51%;
+            top: -1%;
+        `;
+        StyledImage = styled(Image)`
+            mask: url(../static/pcode_shape.svg);
+            mask-position: top;
+            mask-repeat: no-repeat;
+            mask-size: 92%;
+        `;
+        PcodeShapeLayout = styled(Box)`
+            transform: rotateZ(-195deg);
+            margin-right: 15%;
+        `;
+    }
     return (
         <div className={className}>
-            <StyledFlexLayout>
-                <PcodeShape width="70%" />
+            <StyledFlex>
+                <PcodeShapeLayout>
+                    <PcodeShape width="100%" color={color} />
+                </PcodeShapeLayout>
                 <StyledImageLayout>
-                    <StyledImage src="../static/sandburg.jpg" />
+                    <StyledImage src={imageSource} />
                 </StyledImageLayout>
             </StyledFlexLayout>
         </div>

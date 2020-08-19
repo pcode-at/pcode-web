@@ -8,12 +8,12 @@ import TentacleEyeSvg from '../assets/tentacle_eye.svg?sprite';
 
 import { MonsterType } from '../shared/MonsterType.enum';
 
-type TMonsterProps = {
+type Props = {
     type: MonsterType;
     className?: string;
 };
 
-export const Monster: React.FC<TMonsterProps> = ({ type, className }) => {
+export const Monster: React.FC<Props> = ({ type, className }) => {
     switch (type) {
         case MonsterType.GameChanger: {
             return (

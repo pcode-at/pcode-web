@@ -14,7 +14,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
         width: 100%;
         position: relative;
         padding-bottom: 15rem;
-        
+
         @media screen and (min-width: 670px) {
             padding-top: 1rem;
             padding-bottom: 1rem;
@@ -47,12 +47,14 @@ export const WorkingAtPcodeSection: React.FC = () => {
         },
     `;
 
-    const StyledImage = styled(Image)`
+    const ImageLayout = styled.div`
         width: 100%;
         margin-top: -20%;
         position: relative;
         z-index: -4;
     `;
+
+    const StyledImage = styled(Image)``;
 
     return (
         <React.Fragment>
@@ -80,7 +82,9 @@ export const WorkingAtPcodeSection: React.FC = () => {
                     </WordListLayout>
                 </HeaderLayout>
             </Flex>
-            <StyledImage src="./static/tlp-pcode-27.jpg"/>
+            <ImageLayout>
+                <StyledImage src="./static/tlp-pcode-27.jpg" />
+            </ImageLayout>
         </React.Fragment>
     );
 };

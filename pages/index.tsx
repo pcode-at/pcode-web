@@ -26,6 +26,7 @@ import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
+import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 
 const { light, normal } = theme.font;
@@ -40,7 +41,13 @@ const MainPage = () => (
         />
 
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImageLayout/>
+        <StyledPcodeShapeWithImage
+            imageSource="../static/pernsteiner_christoph.png"
+            variant={1}
+            color={Color.Secondary}
+        />
+        <StyledHeading>WorkingAtPcode</StyledHeading>
+        <WorkingAtPcodeSection />
         
         <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
@@ -62,7 +69,7 @@ const MainPage = () => (
         <Statement
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
-            imagePath="../static/pernsteiner_christoph.png"
+            imagePath={'../static/pernsteiner_christoph.png'}
         >
             'this project was a great challenge, we learned a lot and it was a
             journey with such an amazing customer!'
@@ -72,8 +79,8 @@ const MainPage = () => (
         <Statement2
             personName={'Nico Peham'}
             personPosition={'tech lead'}
-            imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary2}
+            imagePath={'../static/pernsteiner_christoph.png'}
         >
             'we are adapting to new challenges by developing and investing in
             our people'
