@@ -8,7 +8,7 @@ import styled, { css } from 'styled-components';
 
 const { light, normal } = theme.font;
 
-type TPersonWithFunctionProps = {
+type Props = {
     color: Color;
     personName: string;
     personPosition: string;
@@ -16,7 +16,7 @@ type TPersonWithFunctionProps = {
     imagePath: string;
 };
 
-export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
+export const PersonWithFunction: React.FC<Props> = ({
     color,
     className,
     personName,

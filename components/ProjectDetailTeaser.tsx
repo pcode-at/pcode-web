@@ -6,7 +6,7 @@ import { ActionButton } from './ActionButton';
 import { CopyText, FontStyle } from './CopyText';
 import styled from 'styled-components';
 
-type TProjectDetailTeaserProps = {
+type Props = {
     headline: string;
     description: string;
     imageSrc: string;
@@ -15,7 +15,7 @@ type TProjectDetailTeaserProps = {
     className?: string;
 };
 
-export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
+export const ProjectDetailTeaser: React.FC<Props> = ({
     description,
     headline,
     imageSrc,
@@ -23,7 +23,7 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
     onClick,
     className,
 }) => {
-    const StyledImage = styled.img`
+    const StyledImageLayout = styled.img`
         width: 70%;
         position: absolute;
         top: 50%;

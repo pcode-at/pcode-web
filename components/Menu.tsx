@@ -5,9 +5,9 @@ import { Color } from '../Color.enum';
 import { CSSObject } from '@styled-system/css';
 import styled from 'styled-components';
 
-type TMenuProps = {
+type Props = {
     className?: string;
-}
+};
 
 const linkStyle: CSSObject = {
     color: 'white',
@@ -17,7 +17,7 @@ const linkStyle: CSSObject = {
     marginTop: '2vh',
 };
 
-export const Menu: React.FC<TMenuProps> = ({
+export const Menu: React.FC<Props> = ({
    className
 }) => {
 
@@ -54,24 +54,34 @@ export const Menu: React.FC<TMenuProps> = ({
             {/*TODO: fix the background color*/}
             <Box
                 overflow="hidden"
-                bg='secondary2'
-                height='100vh'
-                width='100vw'
+                bg="secondary2"
+                height="100vh"
+                width="100vw"
                 css={{ position: 'relative' }}
             >
                 <Flex>
                     <ShapeAndLinksLayout>
                         <LinkLayout>
                             <Flex flexDirection="column">
-                                <Link css={linkStyle} href='#'>who we are</Link>
-                                <Link css={linkStyle} href='#'>what we do</Link>
-                                <Link css={linkStyle} href='#'>how we work</Link>
-                                <Link css={linkStyle} href='#'>join us</Link>
-                                <Link css={linkStyle} href='#'>contact us</Link>
+                                <Link css={linkStyle} href="#">
+                                    who we are
+                                </Link>
+                                <Link css={linkStyle} href="#">
+                                    what we do
+                                </Link>
+                                <Link css={linkStyle} href="#">
+                                    how we work
+                                </Link>
+                                <Link css={linkStyle} href="#">
+                                    join us
+                                </Link>
+                                <Link css={linkStyle} href="#">
+                                    contact us
+                                </Link>
                             </Flex>
                         </LinkLayout>
                         <PcodeShapeLayout>
-                            <PcodeShape width="80vh" color={Color.Primary}/>
+                            <PcodeShape width="80vh" color={Color.Primary} />
                         </PcodeShapeLayout>
                     </ShapeAndLinksLayout>
                 </Flex>
@@ -79,4 +89,3 @@ export const Menu: React.FC<TMenuProps> = ({
         </div>
     );
 };
-

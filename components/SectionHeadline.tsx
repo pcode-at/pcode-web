@@ -3,7 +3,7 @@ import { Color } from '../Color.enum';
 import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
 
-type TSectionHeadlineProps = {
+type Props = {
     color: Color;
     headlinePartOne: string;
     headlinePartTwo: string;
@@ -12,7 +12,7 @@ type TSectionHeadlineProps = {
     className?: string;
 };
 
-export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
+export const SectionHeadline: React.FC<Props> = ({
     headlinePartOne,
     headlinePartTwo,
     color,

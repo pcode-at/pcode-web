@@ -7,7 +7,7 @@ import { PlatformType } from '../shared/PlatformType.enum';
 import styled from 'styled-components';
 import { ActionButton } from './ActionButton';
 
-type TTechnologyPlatformProps = {
+type Props = {
     name: string;
     platformType: PlatformType;
     languages: string[];
@@ -16,7 +16,7 @@ type TTechnologyPlatformProps = {
     className?: string;
 };
 
-export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
+export const TechnologyPlatform: React.FC<Props> = ({
     name,
     platformType,
     languages,

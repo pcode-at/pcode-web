@@ -4,29 +4,27 @@ import ReactDOM from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 import styled from 'styled-components';
 
-
-type ProjectSliderProps = {
-    images: string[],
-    isPhone?: boolean,
-    width?: number,
-    className?: string,
+type Props = {
+    images: string[];
+    isPhone?: boolean;
+    width?: number;
+    className?: string;
 };
 
-
-export const ProjectSlider: React.FC<ProjectSliderProps> = ({
+export const ProjectSlider: React.FC<Props> = ({
     images,
     isPhone = true,
     width = 500,
     className,
 }) => {
-
     const divs = [];
 
     for (const value of images) {
         divs.push(
             <div key={value}>
-                <img src={value}/>
-            </div>);
+                <img src={value} />
+            </div>,
+        );
     }
 
     {/*TODO: Fix positioning and width*/}

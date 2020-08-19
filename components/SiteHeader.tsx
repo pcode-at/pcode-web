@@ -8,12 +8,12 @@ import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import styled from 'styled-components';
 
-type TSiteHeaderProps = {
+type Props = {
     color: Color;
     onClick?(): void;
 };
 
-export const SiteHeader: React.FC<TSiteHeaderProps> = ({
+export const SiteHeader: React.FC<Props> = ({
    color,
    onClick,
 }) => {
