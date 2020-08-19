@@ -59,7 +59,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
         margin-bottom: 1em;
         align-content: center;
     `;
-
+  
     const PlatformLayout = styled(Box)`
         position: relative;
         top: 50%;

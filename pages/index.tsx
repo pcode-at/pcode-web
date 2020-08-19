@@ -27,6 +27,7 @@ import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
+import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 
 const { light, normal } = theme.font;
@@ -40,6 +41,23 @@ const MainPage = () => (
             }}
         />
 
+        <StyledHeading>PcodeShapeWithImage</StyledHeading>
+        <StyledPcodeShapeWithImage
+            imageSource="../static/pernsteiner_christoph.png"
+            variant={1}
+            color={Color.Secondary}
+        />
+        <StyledHeading>WorkingAtPcode</StyledHeading>
+        <WorkingAtPcodeSection />
+
+        <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath="../static/pernsteiner_christoph.png"
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
+        />
+
         <StyledHeading>Statement</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
@@ -50,9 +68,9 @@ const MainPage = () => (
 
         <StyledHeading>Statement</StyledHeading>
         <Statement
-            imagePath="../static/pernsteiner_christoph.png"
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
+            imagePath={'../static/pernsteiner_christoph.png'}
         >
             'this project was a great challenge, we learned a lot and it was a
             journey with such an amazing customer!'
@@ -60,10 +78,10 @@ const MainPage = () => (
 
         <StyledHeading>Statement2</StyledHeading>
         <Statement2
-            imagePath="../static/pernsteiner_christoph.png"
             personName={'Nico Peham'}
             personPosition={'tech lead'}
             color={Color.Secondary2}
+            imagePath={'../static/pernsteiner_christoph.png'}
         >
             'we are adapting to new challenges by developing and investing in
             our people'

@@ -8,19 +8,18 @@ export enum FontStyle {
     Light = 'light',
 }
 
-type TCopyTextProps = {
+type Props = {
     color: Color;
     fontStyle: FontStyle;
     className?: string;
 };
 
-export const CopyText: React.FC<TCopyTextProps> = ({
-   children,
-   color,
-   fontStyle,
-   className,
+export const CopyText: React.FC<Props> = ({
+    children,
+    color,
+    fontStyle,
+    className,
 }) => {
-
     return (
         <div className={className}>
             <Text

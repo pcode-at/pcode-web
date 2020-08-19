@@ -5,7 +5,7 @@ import { theme } from '../theme';
 import styled from 'styled-components';
 import { PersonWithFunction } from './PersonWithFunction';
 
-type TStatementProps = {
+type Props = {
     personName: string;
     personPosition: string;
     color: Color;
@@ -14,21 +14,21 @@ type TStatementProps = {
     imagePath: string;
 };
 
-export const Statement2: React.FC<TStatementProps> = ({
-                                                          children,
-                                                          personName,
-                                                          personPosition,
-                                                          color = Color.Primary,
-                                                          imagePath,
-                                                          className,
-                                                      }) => {
+export const Statement2: React.FC<Props> = ({
+    children,
+    personName,
+    personPosition,
+    color = Color.Primary,
+    imagePath,
+    className,
+}) => {
     const { light, normal } = theme.font;
 
     const Wrapper = styled(Flex)`
         padding-top: 3em;
         padding-bottom: 3em;
         align-items: center;
-        
+
         @media screen and (min-width: 615px) {
             justify-content: space-between;
             flex-direction: row;
@@ -44,7 +44,7 @@ export const Statement2: React.FC<TStatementProps> = ({
         font-family: ${light.fontFamily};
         font-weight: ${normal.fontWeight};
         font-size: 150%;
-        
+
         @media screen and (max-width: 615px) {
             padding: 0;
             width: 90%;
@@ -56,7 +56,7 @@ export const Statement2: React.FC<TStatementProps> = ({
 
     const PersonWrapper = styled(Flex)`
         justify-content: center;
-        
+
         @media screen and (min-width: 615px) {
             margin-right: 10%;
         }
@@ -81,8 +81,8 @@ export const Statement2: React.FC<TStatementProps> = ({
                             color={color}
                             personName={personName}
                             personPosition={personPosition}
-                            imagePath={imagePath}/>
-
+                            imagePath={imagePath}
+                        />
                     </StyledPersonFlex>
                 </PersonWrapper>
             </Wrapper>
