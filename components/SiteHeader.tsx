@@ -8,12 +8,16 @@ import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import styled from 'styled-components';
 
-type TSiteHeaderProps = {
+type Props = {
     color: Color;
     onClick?(): void;
 };
 
-export const SiteHeader: React.FC<TSiteHeaderProps> = ({ color, onClick }) => {
+export const SiteHeader: React.FC<Props> = ({
+   color,
+   onClick,
+}) => {
+
     const OuterFlex = styled(Flex)`
         background-color: white;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);

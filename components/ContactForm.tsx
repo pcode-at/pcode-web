@@ -6,11 +6,11 @@ import { theme } from '../theme';
 import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 
-type TContactFormProps = {
+type Props = {
     className?: string;
 };
 
-export const ContactForm: React.FC<TContactFormProps> = ({ className }) => {
+export const ContactForm: React.FC<Props> = ({ className }) => {
     const [textAreaContent, setTextAreaContent] = React.useState('');
     const { light, normal } = theme.font;
     const { openPositionDestinationEmail } = CONSTANTS;

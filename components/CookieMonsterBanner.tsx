@@ -5,13 +5,13 @@ import { Color } from '../Color.enum';
 import Logo from '../assets/pcode_shape.svg?sprite';
 import styled from 'styled-components';
 
-type TCookieMonsterBannerProps = {
+type Props = {
     onClickAgreed?(): void;
     onClickDisagreed?(): void;
     className?: string;
 };
 
-export const CookieMonsterBanner: React.FC<TCookieMonsterBannerProps> = ({
+export const CookieMonsterBanner: React.FC<Props> = ({
     onClickAgreed,
     onClickDisagreed,
     className,

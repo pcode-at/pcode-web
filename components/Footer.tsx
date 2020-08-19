@@ -3,11 +3,11 @@ import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
 
-type TFooterProps = {
+type Props = {
     className?: string;
 };
 
-export const Footer: React.FC<TFooterProps> = ({ className }) => {
+export const Footer: React.FC<Props> = ({ className }) => {
     return (
         <div className={className}>
             <Flex

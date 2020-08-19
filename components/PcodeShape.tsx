@@ -4,12 +4,12 @@ import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
 import { Color } from '../Color.enum';
 import { theme } from '../theme';
 
-type TPcodeShapeProps = {
+type Props = {
     width?: string;
     color?: Color;
 };
 
-export const PcodeShape: React.FC<TPcodeShapeProps> = ({
+export const PcodeShape: React.FC<Props> = ({
     width = '100%',
     color = Color.Primary,
 }) => {

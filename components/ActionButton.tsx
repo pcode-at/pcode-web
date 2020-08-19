@@ -6,7 +6,7 @@ import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
 
-type TActionButtonProps = {
+type Props = {
     //appearance: 'small' | 'large';
     color?: Color;
     label: string;
@@ -25,7 +25,7 @@ const appearances = {
     `,
 };
 
-export const ActionButton: React.FC<TActionButtonProps> = ({
+export const ActionButton: React.FC<Props> = ({
     color = Color.Primary,
     label,
     onClick,

@@ -5,7 +5,7 @@ import { theme } from '../theme';
 import styled from 'styled-components';
 import { PersonWithFunction } from './PersonWithFunction';
 
-type TStatementProps = {
+type Props = {
     personName: string;
     personPosition: string;
     color: Color;
@@ -14,7 +14,7 @@ type TStatementProps = {
     imagePath: string;
 };
 
-export const Statement2: React.FC<TStatementProps> = ({
+export const Statement2: React.FC<Props> = ({
     children,
     personName,
     personPosition,

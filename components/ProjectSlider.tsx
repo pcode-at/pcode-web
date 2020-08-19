@@ -4,14 +4,14 @@ import ReactDOM from 'react-dom';
 import { Carousel } from 'react-responsive-carousel';
 import styled from 'styled-components';
 
-type ProjectSliderProps = {
+type Props = {
     images: string[];
     isPhone?: boolean;
     width?: number;
     className?: string;
 };
 
-export const ProjectSlider: React.FC<ProjectSliderProps> = ({
+export const ProjectSlider: React.FC<Props> = ({
     images,
     isPhone = true,
     width = 500,

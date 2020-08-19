@@ -6,12 +6,12 @@ import ArVrSvg from '../assets/ar-vr.svg?sprite';
 
 import { PlatformType } from '../shared/PlatformType.enum';
 
-type TPlatformProps = {
+type Props = {
     type: PlatformType;
     className?: string;
 };
 
-export const Platform: React.FC<TPlatformProps> = ({ type, className }) => {
+export const Platform: React.FC<Props> = ({ type, className }) => {
     switch (type) {
         case PlatformType.Web: {
             return (

@@ -5,7 +5,7 @@ import { ActionButton } from './ActionButton';
 import { SectionHeadline } from './SectionHeadline';
 import styled from 'styled-components';
 
-type TSwiperProps = {
+type Props = {
     color?: Color;
     textPartOne: string;
     textPartTwo: string;
@@ -13,7 +13,7 @@ type TSwiperProps = {
     className?: string;
 };
 
-export const Swiper: React.FC<TSwiperProps> = ({
+export const Swiper: React.FC<Props> = ({
     textPartOne,
     textPartTwo,
     color = Color.Secondary,

@@ -2,13 +2,13 @@ import React from 'react';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
 
-type TSubHeadlineProps = {
+type Props = {
     color: Color;
     fontStyle: FontStyle;
     className?: string;
 };
 
-export const SubHeadline: React.FC<TSubHeadlineProps> = ({
+export const SubHeadline: React.FC<Props> = ({
     children,
     color,
     fontStyle,
