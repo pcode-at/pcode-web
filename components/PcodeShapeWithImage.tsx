@@ -20,7 +20,7 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
     imageSource,
     className,
 }) => {
-    const StyledFlex = styled(Flex)`
+    const StyledFlexLayout = styled(Flex)`
         align-items: center;
         flex-direction: column;
         justify-content: center;
@@ -72,7 +72,7 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
                 <StyledImageLayout>
                     <StyledImage src={imageSource} />
                 </StyledImageLayout>
-            </StyledFlex>
+            </StyledFlexLayout>
         </div>
     );
 };

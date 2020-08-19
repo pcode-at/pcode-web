@@ -48,7 +48,7 @@ const MainPage = () => (
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
-
+        
         <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
@@ -215,7 +215,7 @@ const MainPage = () => (
     </ThemeProvider>
 );
 
-const StyledPcodeShapeWithImage = styled(PcodeShapeWithImage)`
+const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
     width: 700px;
 `;
 
