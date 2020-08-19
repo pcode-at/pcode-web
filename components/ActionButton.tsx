@@ -6,7 +6,7 @@ import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
 
-type TActionButtonProps = {
+type Props = {
     //appearance: 'small' | 'large';
     color?: Color;
     label: string;
@@ -18,22 +18,21 @@ type TActionButtonProps = {
 
 const appearances = {
     small: css`
-            font-size: 10px;
-        `,
+        font-size: 10px;
+    `,
     large: css`
-            font-size: 20px;
-        `,
+        font-size: 20px;
+    `,
 };
 
-export const ActionButton: React.FC<TActionButtonProps> = ({
+export const ActionButton: React.FC<Props> = ({
     color = Color.Primary,
     label,
     onClick,
     padding = '0.2rem 2.8rem',
     noBackground = false,
-    className
+    className,
 }) => {
-
     return (
         <div className={className}>
             <Button
@@ -47,7 +46,9 @@ export const ActionButton: React.FC<TActionButtonProps> = ({
                     cursor: 'pointer',
                 }}
             >
-                <CopyText color={Color.White} fontStyle={FontStyle.Light}>{label}</CopyText>
+                <CopyText color={Color.White} fontStyle={FontStyle.Light}>
+                    {label}
+                </CopyText>
             </Button>
         </div>
     );

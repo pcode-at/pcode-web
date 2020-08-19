@@ -13,7 +13,6 @@ import styled from 'styled-components';
 import { ProjectDetailTeaser } from '../../components/ProjectDetailTeaser';
 import { Statement } from '../../components/Statement';
 import { ContactForm } from '../../components/ContactForm';
-import { PersonWithFunction } from '../../components/PersonWithFunction';
 
 const PageLayout = styled(Flex)`
     justify-content: space-between;

@@ -7,7 +7,7 @@ import { PlatformType } from '../shared/PlatformType.enum';
 import styled from 'styled-components';
 import { ActionButton } from './ActionButton';
 
-type TTechnologyPlatformProps = {
+type Props = {
     name: string;
     platformType: PlatformType;
     languages: string[];
@@ -16,14 +16,14 @@ type TTechnologyPlatformProps = {
     className?: string;
 };
 
-export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
-                                                                           name,
-                                                                           platformType,
-                                                                           languages,
-                                                                           technologies,
-                                                                           onClick,
-                                                                           className,
-                                                                       }) => {
+export const TechnologyPlatform: React.FC<Props> = ({
+    name,
+    platformType,
+    languages,
+    technologies,
+    onClick,
+    className,
+}) => {
     const { light, normal } = theme.font;
 
     const StyledHeading = styled(Heading)`
@@ -61,7 +61,7 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
     `;
 
     const StyledPlatform = styled(Platform)`
-    position: relative;
+        position: relative;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -75,7 +75,7 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
                 </StyledHeading>
 
                 <PlatformSvgWrapper>
-                    <StyledPlatform type={platformType}/>
+                    <StyledPlatform type={platformType} />
                 </PlatformSvgWrapper>
 
                 <div>
@@ -86,9 +86,11 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
                         Language
                     </StyledSubHeading>
                     <HeadingAndListContainer>
-                        {
-                            languages.map(lan => <Text lineHeight="1.2" key={lan}>{lan}</Text>)
-                        }
+                        {languages.map(lan => (
+                            <Text lineHeight="1.2" key={lan}>
+                                {lan}
+                            </Text>
+                        ))}
                     </HeadingAndListContainer>
 
                     <StyledSubHeading
@@ -98,12 +100,17 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
                         Technology
                     </StyledSubHeading>
                     <HeadingAndListContainer>
-                        {
-                            technologies.map(tec => <Text lineHeight="1.2" key={tec}>{tec}</Text>)
-                        }
+                        {technologies.map(tec => (
+                            <Text lineHeight="1.2" key={tec}>
+                                {tec}
+                            </Text>
+                        ))}
                     </HeadingAndListContainer>
 
-                    <ActionButton label='interested?' color={Color.Secondary2}/>
+                    <ActionButton
+                        label="interested?"
+                        color={Color.Secondary2}
+                    />
                 </div>
             </WrapperFlex>
         </div>

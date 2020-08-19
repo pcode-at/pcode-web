@@ -6,16 +6,16 @@ import styled from 'styled-components';
 
 export const intervalDuration: number = 3100;
 
-type TWordList = {
+type Props = {
     color?: Color;
     words: Array<string>;
     className?: string;
 };
 
-export const WordList: React.FC<TWordList> = ({
+export const WordList: React.FC<Props> = ({
     words,
-    className,
     color = Color.Primary,
+    className,
 }) => {
     const [itemsToSlide, setItemsToSlide] = React.useState(() => words);
     const middleWordIndex = parseInt((itemsToSlide.length / 2).toFixed(0)) - 1;
@@ -57,14 +57,14 @@ export const WordList: React.FC<TWordList> = ({
         );
     });
 
-    const WrapperBox = styled(Box)`
+    const WordListLayout = styled(Box)`
         position: relative;
         display: flex;
         align-items: center;
         width: 100%;
     `;
 
-    const CentralWrapperBox = styled(Box)`
+    const CentralLayout = styled(Box)`
         position: absolute;
         display: flex;
         justify-content: center;
@@ -72,7 +72,7 @@ export const WordList: React.FC<TWordList> = ({
         width: 100%;
     `;
 
-    const ItemsWrapperBox = styled(Box)`
+    const ItemsLayout = styled(Box)`
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -80,7 +80,7 @@ export const WordList: React.FC<TWordList> = ({
         z-index: 1;
     `;
 
-    const PcodeShapeWrapperBox = styled(Box)`
+    const PcodeShapeLayout = styled(Box)`
         width: 100%;
         display: flex;
         justify-content: center;
@@ -89,16 +89,16 @@ export const WordList: React.FC<TWordList> = ({
 
     return (
         <div className={className}>
-            <WrapperBox>
-                <CentralWrapperBox>
-                    <ItemsWrapperBox>
+            <WordListLayout>
+                <CentralLayout>
+                    <ItemsLayout>
                         <div>{items}</div>
-                    </ItemsWrapperBox>
-                </CentralWrapperBox>
-                <PcodeShapeWrapperBox>
+                    </ItemsLayout>
+                </CentralLayout>
+                <PcodeShapeLayout>
                     <PcodeShape width="300px" color={color} />
-                </PcodeShapeWrapperBox>
-            </WrapperBox>
+                </PcodeShapeLayout>
+            </WordListLayout>
         </div>
     );
 };

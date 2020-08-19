@@ -38,19 +38,21 @@ const WorkingAtPcodeSection: React.FC = () => {
             position: static;
             top: 0;
             margin-bottom: -100px;
-            z-index: 0;
+            z-index: 1;
             width: auto;
             padding-top: 2rem;
             margin-left: 5rem;
         },
     `;
 
-    const StyledImage = styled(Image)`
+    const ImageLayout = styled.div`
         width: 100%;
         margin-top: -20%;
         position: relative;
-        z-index: -1;
+        z-index: -4;
     `;
+
+    const StyledImage = styled(Image)``;
 
     return (
         <React.Fragment>
@@ -78,7 +80,9 @@ const WorkingAtPcodeSection: React.FC = () => {
                     </WordListLayout>
                 </HeaderLayout>
             </Flex>
-            <StyledImage src="./static/tlp-pcode-27.jpg" />
+            <ImageLayout>
+                <StyledImage src="./static/tlp-pcode-27.jpg" />
+            </ImageLayout>
         </React.Fragment>
     );
 };
