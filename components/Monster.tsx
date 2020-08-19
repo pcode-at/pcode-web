@@ -8,30 +8,47 @@ import TentacleEyeSvg from '../assets/tentacle_eye.svg?sprite';
 
 import { MonsterType } from '../shared/MonsterType.enum';
 
-type TMonsterProps = {
+type Props = {
     type: MonsterType;
     className?: string;
 };
 
-export const Monster: React.FC<TMonsterProps> = ({
-                                                     type,
-                                                     className,
-                                                 }) => {
+export const Monster: React.FC<Props> = ({ type, className }) => {
     switch (type) {
         case MonsterType.GameChanger: {
-            return <div className={className}><GameChangerSvg/></div>;
+            return (
+                <div className={className}>
+                    <GameChangerSvg />
+                </div>
+            );
         }
         case MonsterType.StrategicWizard: {
-            return <div className={className}><StrategicWizardSvg/></div>;
+            return (
+                <div className={className}>
+                    <StrategicWizardSvg />
+                </div>
+            );
         }
         case MonsterType.SupportiveChallenger: {
-            return <div className={className}><SupportiveChallengerSvg/></div>;
+            return (
+                <div className={className}>
+                    <SupportiveChallengerSvg />
+                </div>
+            );
         }
         case MonsterType.EarBear: {
-            return <div className={className}><EarBearSvg/></div>;
+            return (
+                <div className={className}>
+                    <EarBearSvg />
+                </div>
+            );
         }
         case MonsterType.TentacleEye: {
-            return <div className={className}><TentacleEyeSvg/></div>;
+            return (
+                <div className={className}>
+                    <TentacleEyeSvg />
+                </div>
+            );
         }
         default: {
             return <p>INVALID MONSTER TYPE</p>;

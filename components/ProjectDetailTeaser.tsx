@@ -23,7 +23,7 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
     onClick,
     className,
 }) => {
-    const StyledImage = styled.img`
+    const StyledImageLayout = styled.img`
         width: 70%;
         position: absolute;
         top: 50%;
@@ -31,19 +31,19 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
         transform: translateX(-50%) translateY(-50%);
     `;
 
-    const GraphicWrapper = styled(Box)`
+    const GraphicLayout = styled(Box)`
         position: relative;
         margin-left: -30%;
         width: 100%;
     `;
 
-    const TextWrapper = styled(Box)`
+    const TextLayout = styled(Box)`
         position: relative;
         text-align: left;
         width: 100%;
     `;
 
-    const StyledSectionHeadline = styled(CopyText)`
+    const StyledSectionHeadlineLayout = styled(CopyText)`
         margin-bottom: 1rem;
         font-size: 250%;
     `;
@@ -58,18 +58,18 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
         <div className={className}>
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
-                    <GraphicWrapper>
+                    <GraphicLayout>
                         <PcodeShape color={Color.Primary} />
-                        <StyledImage src={imageSrc} />
-                    </GraphicWrapper>
+                        <StyledImageLayout src={imageSrc} />
+                    </GraphicLayout>
                 </Box>
-                <TextWrapper>
-                    <StyledSectionHeadline
+                <TextLayout>
+                    <StyledSectionHeadlineLayout
                         color={headlineColor}
                         fontStyle={FontStyle.Normal}
                     >
                         {headline}
-                    </StyledSectionHeadline>
+                    </StyledSectionHeadlineLayout>
                     <StyledCopyText
                         color={Color.Secondary}
                         fontStyle={FontStyle.Light}
@@ -81,7 +81,7 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
                         color={Color.Secondary2}
                         onClick={onClick}
                     />
-                </TextWrapper>
+                </TextLayout>
             </Flex>
         </div>
     );
