@@ -7,7 +7,7 @@ import { PlatformType } from '../shared/PlatformType.enum';
 import styled from 'styled-components';
 import { ActionButton } from './ActionButton';
 
-type TTechnologyPlatformProps = {
+type Props = {
     name: string;
     platformType: PlatformType;
     languages: string[];
@@ -16,7 +16,7 @@ type TTechnologyPlatformProps = {
     className?: string;
 };
 
-export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
+export const TechnologyPlatform: React.FC<Props> = ({
     name,
     platformType,
     languages,
@@ -41,7 +41,7 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
         align-items: center;
     `;
 
-    const PlatformSvgWrapper = styled.div`
+    const PlatformSvgLayout = styled.div`
         width: 60%;
         height: 170px;
     `;
@@ -60,7 +60,7 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
         align-content: center;
     `;
 
-    const StyledPlatform = styled(Platform)`
+    const PlatformLayout = styled(Box)`
         position: relative;
         top: 50%;
         left: 50%;
@@ -74,9 +74,11 @@ export const TechnologyPlatform: React.FC<TTechnologyPlatformProps> = ({
                     {name}
                 </StyledHeading>
 
-                <PlatformSvgWrapper>
-                    <StyledPlatform type={platformType} />
-                </PlatformSvgWrapper>
+                <PlatformSvgLayout>
+                    <PlatformLayout>
+                        <Platform type={platformType} />
+                    </PlatformLayout>
+                </PlatformSvgLayout>
 
                 <div>
                     <StyledSubHeading

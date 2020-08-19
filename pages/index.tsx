@@ -104,9 +104,7 @@ const MainPage = () => (
         </StyledCopyText>
 
         <StyledHeading>ContactForm</StyledHeading>
-        <StyledContactForm>
-            ContactForm Component
-        </StyledContactForm>
+        <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
@@ -132,12 +130,12 @@ const MainPage = () => (
         ></StyledFreeChair>
 
         <StyledHeading>ProjectSlider</StyledHeading>
-        <ProjectSliderWrapper>
+        <ProjectSliderLayout>
             <ProjectSlider
                 width={300}
                 images={['../static/sandburg.jpg', '../static/sandburg.jpg']}
             />
-        </ProjectSliderWrapper>
+        </ProjectSliderLayout>
 
         <StyledHeading>Swiper</StyledHeading>
         <StyledSwiper
@@ -272,9 +270,9 @@ const StyledPcodeShapeBox = styled(Box)`
     margin-left: 2em;
 `;
 
-const ProjectSliderWrapper = styled.div`
+const ProjectSliderLayout = styled.div`
     width: 250px;
-     {
+    {
         /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     }
     padding-bottom: 20em;
