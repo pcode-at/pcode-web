@@ -103,7 +103,6 @@ E.g. how to give a 50% margin-top and margin-bottom to the `Statement`-component
 
 const StatementLayout = styled(Box)`
     margin-top: 50px;
-
     margin-bottom: 50px;
 `;
 
@@ -140,21 +139,15 @@ import React from 'react';
 
 type TProjectDetailTeaserProps = {
     headline: string;
-
     description: string;
-
     imageSrc: string;
-
     pcodeShapeBackground: boolean;
 };
 
 export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
-    description,
-
     headline,
-
+    description,
     imageSrc,
-
     pcodeShapeBackground,
 }) => {
     // write some code
@@ -162,11 +155,8 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
     return (
         <div className="pcode-shape-background">
             <h1>{headline}</h1>
-
             <p>{description}</p>
-
             <img src={imageSrc} />
-
             <style jsx>{`
                 .pcode-shape-background {
                     background: ${pcodeShapeBackground
