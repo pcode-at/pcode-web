@@ -41,14 +41,14 @@ const MainPage = () => (
         />
 
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
-        
+
         <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
@@ -166,7 +166,7 @@ const MainPage = () => (
             Muckefuck erquicken. Der Tausendsassa anschwärzen der einfältig
             Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
             Höchste Eisenbahn"
-            imageSrc="../static/testImage.png"
+            imageSrc="../static/iPhone_webpage.png"
             headlineColor={Color.Primary}
             onClick={() => Router.push('/main')}
         />

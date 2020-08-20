@@ -24,11 +24,20 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
     className,
 }) => {
     const StyledImageLayout = styled.img`
-        width: 70%;
+        width: 100%;
         position: absolute;
-        top: 50%;
-        left: 80%;
+        top: 45%;
+        left: 88%;
         transform: translateX(-50%) translateY(-50%);
+    `;
+
+    const StyledWebImageLayout = styled.img`
+        width: 33%;
+        position: absolute;
+        top: 17%;
+        left: 58%;
+        transform: translateX(50%) translateY(-61%) translateZ(-9px)
+            rotateX(0deg) rotateY(27deg) rotateZ(0deg);
     `;
 
     const GraphicLayout = styled(Box)`
@@ -54,13 +63,22 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
         max-width: 700px;
     `;
 
+    const StyledLayout = styled(Box)`
+        position: ablsolute;
+        perspective: 120px;
+        -webkit-perspektive: 120px;
+    `;
+
     return (
         <div className={className}>
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
                     <GraphicLayout>
                         <PcodeShape color={Color.Primary} />
-                        <StyledImageLayout src={imageSrc} />
+                        <StyledImageLayout src="../static/iPhone.svg" />
+                        <StyledLayout>
+                            <StyledWebImageLayout src={imageSrc} />
+                        </StyledLayout>
                     </GraphicLayout>
                 </Box>
                 <TextLayout>
