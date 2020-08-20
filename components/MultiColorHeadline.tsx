@@ -4,14 +4,16 @@ import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
 import { Color } from '../Color.enum';
 
+export type multiColorHeadlineVariant = 'small' | 'normal' | 'big';
+
 type Props = {
     leftAndRightTextColor: Color;
     middleTextColor: Color;
     leftText: string;
     middleText: string;
     rightText: string;
-    fontSize: string;
     className?: string;
+    variant: multiColorHeadlineVariant;
 };
 
 export const MultiColorHeadline: React.FC<Props> = ({
@@ -20,9 +22,19 @@ export const MultiColorHeadline: React.FC<Props> = ({
     leftText,
     middleText,
     rightText,
-    fontSize,
     className,
+    variant,
 }) => {
+    const variantProps = {
+        fontSize: '300%',
+    };
+
+    if (variant == 'big') {
+        variantProps.fontSize = '600%';
+    } else if (variant == 'normal') {
+        variantProps.fontSize = '450%';
+    }
+
     const MultiColorHeadlineLayout = styled.div`
         width: 100%;
         padding: 2rem 0;
@@ -34,7 +46,7 @@ export const MultiColorHeadline: React.FC<Props> = ({
     const StyledHeading = styled.h1`
         font-family: ${theme.font.normal.fontFamily};
         text-align: center;
-        font-size: ${fontSize};
+        font-size: ${variantProps.fontSize};
         font-weight: ${theme.font.normal.fontWeight};
     `;
 

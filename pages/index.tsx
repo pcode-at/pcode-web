@@ -94,11 +94,8 @@ const MainPage = () => (
             leftText="our"
             middleText="code"
             rightText="stands for"
-            fontSize="600%"
-        >
-            'we are adapting to new challenges by developing and investing in
-            our people'
-        </MultiColorHeadline>
+            variant="big"
+        />
 
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
@@ -290,7 +287,7 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderLayout = styled.div`
     width: 250px;
-    {
+     {
         /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     }
     padding-bottom: 20em;
