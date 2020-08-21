@@ -7,20 +7,20 @@ import { Box } from 'rebass';
 
 export type waveVariants = 'top' | 'bottom';
 
-export type shapeVariants = 1 | 2 | 3 | 4 | 5;
+export type shapeVariants = 1 | 2 | 3 | 4;
 
 type Props = {
-    variant: waveVariants; // top | bottom
+    variant: waveVariants;
     color: Color;
     shape: shapeVariants;
     className?: string;
 };
 
 export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
-    let waveLayoutHeight = '75px';
+    let waveLayoutHeight = '4vw';
     let WavePosition = styled(Box)`
         width: 100%;
-        height: 75px;
+        height: 4vw;
     `;
 
     let WaveStyle = styled(Box)`
@@ -50,7 +50,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
         case 3:
             WavePosition = styled(Box)`
                 width: 100%;
-                height: 200px;
+                height: 13vw;
             `;
 
             WaveStyle = styled(Box)`
@@ -63,12 +63,12 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
                 mask-repeat: no-repeat;
                 mask-size: 100%;
             `;
-            waveLayoutHeight = '200px';
+            waveLayoutHeight = '13vw';
             break;
         case 4:
             WavePosition = styled(Box)`
                 width: 100%;
-                height: 850px;
+                height: 45vw;
             `;
 
             WaveStyle = styled(Box)`
@@ -79,11 +79,11 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
                 mask-position: top;
                 ${variant == 'top'
                     ? 'transform: scaleY(-1);'
-                    : 'transform: scaleY(1) translateY(-517px);'}
+                    : 'transform: translateY(-26.8vw);'}
                 mask-repeat: no-repeat;
                 mask-size: 100%;
             `;
-            waveLayoutHeight = '333px';
+            waveLayoutHeight = '18.2vw';
             break;
     }
 
@@ -97,7 +97,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
         <div className={className}>
             <WaveLayout>
                 <WavePosition>
-                    <WaveStyle></WaveStyle>
+                    <WaveStyle />
                 </WavePosition>
             </WaveLayout>
         </div>
