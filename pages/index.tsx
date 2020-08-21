@@ -27,6 +27,7 @@ import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
+import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 
 const { light, normal } = theme.font;
@@ -40,8 +41,17 @@ const MainPage = () => (
             }}
         />
 
+        <StyledHeading>PcodeShapeWithImage</StyledHeading>
+        <StyledPcodeShapeWithImage
+            imageSource="../static/pernsteiner_christoph.png"
+            variant={1}
+            color={Color.Secondary}
+        />
+        <StyledHeading>WorkingAtPcode</StyledHeading>
+        <WorkingAtPcodeSection />
+        
         <StyledHeading>PersonWithFunction</StyledHeading>
-        <PersonWithFunction
+        <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
             personName={'Christoph Pernsteiner'}
@@ -201,7 +211,7 @@ const MainPage = () => (
     </ThemeProvider>
 );
 
-const StyledPcodeShapeWithImage = styled(PcodeShapeWithImage)`
+const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
     width: 700px;
 `;
 

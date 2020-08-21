@@ -13,7 +13,6 @@ import styled from 'styled-components';
 import { ProjectDetailTeaser } from '../../components/ProjectDetailTeaser';
 import { Statement } from '../../components/Statement';
 import { ContactForm } from '../../components/ContactForm';
-import { PersonWithFunction } from '../../components/PersonWithFunction';
 
 const PageLayout = styled(Flex)`
     justify-content: space-between;
@@ -24,7 +23,6 @@ const PageLayout = styled(Flex)`
 const PcodeShapeLayout = styled(Box)`
   display: none;
   position: relative;
-  width: 400px;
   
   @media screen and (min-width: 615px) {
       display: block;
@@ -60,7 +58,7 @@ const MainPage = () => (
                 />
 
                 <PcodeShapeLayout>
-                    <PcodeShape color={Color.Secondary}/>
+                    <PcodeShape color={Color.Secondary} width="400px"/>
                 </PcodeShapeLayout>
             </PageLayout>
 
@@ -97,7 +95,7 @@ const MainPage = () => (
             <CodeStandsForSection/>
 
             <ContactFormLayout>
-                <ContactForm/>
+                <ContactForm />
             </ContactFormLayout>
             <Footer/>
         </ThemeProvider>
