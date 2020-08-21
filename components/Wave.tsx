@@ -17,13 +17,8 @@ type Props = {
 };
 
 export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
-    const WaveLayout = styled(Box)`
-        width: 100%;
-        height: ${shape == 3 || 4 ? '200px' : '75px'};
-    `;
-
+    let waveLayoutHeight = '75px';
     let WavePosition = styled(Box)`
-        position: absolute;
         width: 100%;
         height: 75px;
     `;
@@ -54,7 +49,6 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
             break;
         case 3:
             WavePosition = styled(Box)`
-                position: absolute;
                 width: 100%;
                 height: 200px;
             `;
@@ -69,29 +63,35 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
                 mask-repeat: no-repeat;
                 mask-size: 100%;
             `;
+            waveLayoutHeight = '200px';
             break;
         case 4:
             WavePosition = styled(Box)`
-                position: absolute;
                 width: 100%;
-                height: 200px;
-                overflow: hidden;
+                height: 850px;
             `;
 
             WaveStyle = styled(Box)`
-                width: 2216px;
-                height: 2500px;
+                width: 100%;
+                height: 100%;
                 background-color: ${theme.colors[color]};
-                mask: url(../static/pcode_shape.svg);
+                mask: url(../static/wave4.svg);
                 mask-position: top;
                 ${variant == 'top'
-                    ? 'transform: scaleY(-1) rotateZ(-18deg) translateX(120px);'
-                    : ''}
+                    ? 'transform: scaleY(-1);'
+                    : 'transform: scaleY(1) translateY(-517px);'}
                 mask-repeat: no-repeat;
                 mask-size: 100%;
             `;
+            waveLayoutHeight = '333px';
             break;
     }
+
+    const WaveLayout = styled(Box)`
+        width: 100%;
+        height: ${waveLayoutHeight};
+        overflow: hidden;
+    `;
 
     return (
         <div className={className}>

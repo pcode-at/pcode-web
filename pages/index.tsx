@@ -94,7 +94,7 @@ const MainPage = () => (
         <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>Wave</StyledHeading>
-        <Wave variant={'top'} color={Color.Primary} shape={4}></Wave>
+        <Wave variant={'bottom'} color={Color.Primary} shape={4}></Wave>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
