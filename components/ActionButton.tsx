@@ -4,7 +4,6 @@ import { Button } from 'rebass';
 import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
-import styled from 'styled-components';
 
 export type appearance = 'small' | 'large';
 
@@ -27,11 +26,6 @@ export const ActionButton: React.FC<Props> = ({
     noBackground = false,
     className,
 }) => {
-    let fontSize = '';
-    if (appearance == 'large') {
-        fontSize = '50px';
-    }
-
     return (
         <div className={className}>
             <Button
@@ -41,9 +35,9 @@ export const ActionButton: React.FC<Props> = ({
                 onClick={onClick}
                 style={{
                     padding,
-                    borderRadius: appearance == "small" ? '15px' : '50px',
+                    borderRadius: appearance == 'small' ? '15px' : '50px',
                     cursor: 'pointer',
-                    fontSize,
+                    fontSize: appearance == 'large' ? '50px' : '',
                 }}
             >
                 <CopyText
