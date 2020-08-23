@@ -4,6 +4,9 @@ import { Button } from 'rebass';
 import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
+import styled from 'styled-components';
+
+export type appearance = 'small' | 'large';
 
 type Props = {
     color?: Color;
@@ -12,16 +15,23 @@ type Props = {
     noBackground?: boolean;
     onClick?(): void;
     className?: string;
+    appearance?: appearance;
 };
 
 export const ActionButton: React.FC<Props> = ({
     color = Color.Primary,
     label,
     onClick,
-    padding = '0.2rem 2.8rem',
+    appearance = 'small',
+    padding = appearance == 'small' ? '0.2rem 2.8rem' : '1.5rem 8rem',
     noBackground = false,
     className,
 }) => {
+    let fontSize = '';
+    if (appearance == 'large') {
+        fontSize = '50px';
+    }
+
     return (
         <div className={className}>
             <Button
@@ -31,11 +41,19 @@ export const ActionButton: React.FC<Props> = ({
                 onClick={onClick}
                 style={{
                     padding,
-                    borderRadius: '15px',
+                    borderRadius: appearance == "small" ? '15px' : '50px',
                     cursor: 'pointer',
+                    fontSize,
                 }}
             >
-                <CopyText color={Color.White} fontStyle={FontStyle.Light}>
+                <CopyText
+                    color={Color.White}
+                    fontStyle={
+                        appearance == 'small'
+                            ? FontStyle.Light
+                            : FontStyle.Normal
+                    }
+                >
                     {label}
                 </CopyText>
             </Button>

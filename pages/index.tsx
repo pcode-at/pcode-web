@@ -21,6 +21,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { ActionButton } from '../components/ActionButton';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
@@ -66,6 +67,9 @@ const MainPage = () => (
             'we are adapting to new challenges by developing and investing in
             our people'
         </Statement2>
+
+        <StyledHeading>ActionButton Large</StyledHeading>
+        <StyledActionButton label={'Green Technology'} appearance={'large'} />
 
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
@@ -245,6 +249,13 @@ const StyledPersonWithFunction = styled(PersonWithFunction)`
 
 const StyledTechnologyPlatform = styled(TechnologyPlatform)`
     width: 250px;
+`;
+
+const StyledActionButton = styled(ActionButton)`
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
 `;
 
 const TechnologyFlex = styled(Flex)`
