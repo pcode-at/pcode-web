@@ -5,7 +5,7 @@ import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
 
-type TActionButtonProps = {
+type Props = {
     color?: Color;
     label: string;
     padding?: string;
@@ -14,13 +14,13 @@ type TActionButtonProps = {
     className?: string;
 };
 
-export const ActionButton: React.FC<TActionButtonProps> = ({
+export const ActionButton: React.FC<Props> = ({
     color = Color.Primary,
     label,
     onClick,
     padding = '0.2rem 2.8rem',
     noBackground = false,
-    className
+    className,
 }) => {
     return (
         <div className={className}>
@@ -35,7 +35,9 @@ export const ActionButton: React.FC<TActionButtonProps> = ({
                     cursor: 'pointer',
                 }}
             >
-                <CopyText color={Color.White} fontStyle={FontStyle.Light}>{label}</CopyText>
+                <CopyText color={Color.White} fontStyle={FontStyle.Light}>
+                    {label}
+                </CopyText>
             </Button>
         </div>
     );

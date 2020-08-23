@@ -95,13 +95,14 @@ const MainPage = () => (
 
         <StyledHeading>Service Header</StyledHeading>
         <ServiceHeader
-            leftText={"we develop impactful digital solutions"}
-            rightText={"that delive quality, create an impact, and that compete in the market"}
+            leftText={'we develop impactful digital solutions'}
+            rightText={
+                'that delive quality, create an impact, and that compete in the market'
+            }
             leftTextColor={Color.Secondary}
             rightTextColor={Color.White}
-            buttonLabel={"our services"}
+            buttonLabel={'our services'}
             buttonColor={Color.Primary}
-            buttonNoBackground={false}
             backgroundColor={Color.Secondary2}
         >
             'we are adapting to new challenges by developing and investing in
