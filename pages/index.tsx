@@ -29,6 +29,9 @@ import { PersonWithFunction } from '../components/PersonWithFunction';
 import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { ProjectHeader } from '../components/ProjectHeader';
 import { ServiceHeader } from '../components/ServiceHeader';
+import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
+import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
+import { MonsterType } from '../shared/MonsterType.enum';
 
 const { light, normal } = theme.font;
 
@@ -39,6 +42,23 @@ const MainPage = () => (
             onClick={() => {
                 alert('Not Implemented Yet!');
             }}
+        />
+
+        <StyledHeading>PcodeShapeWithImage</StyledHeading>
+        <StyledPcodeShapeWithImage
+            imageSource="../static/pernsteiner_christoph.png"
+            variant={1}
+            color={Color.Secondary}
+        />
+        <StyledHeading>WorkingAtPcode</StyledHeading>
+        <WorkingAtPcodeSection />
+        
+        <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath="../static/pernsteiner_christoph.png"
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
         />
 
         <StyledHeading>Statement</StyledHeading>
@@ -53,6 +73,7 @@ const MainPage = () => (
         <Statement
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
+            imagePath={'../static/pernsteiner_christoph.png'}
         >
             'this project was a great challenge, we learned a lot and it was a
             journey with such an amazing customer!'
@@ -63,6 +84,7 @@ const MainPage = () => (
             personName={'Nico Peham'}
             personPosition={'tech lead'}
             color={Color.Secondary2}
+            imagePath={'../static/pernsteiner_christoph.png'}
         >
             'we are adapting to new challenges by developing and investing in
             our people'
@@ -135,9 +157,7 @@ const MainPage = () => (
         </StyledCopyText>
 
         <StyledHeading>ContactForm</StyledHeading>
-        <StyledContactForm color={Color.Primary}>
-            ContactForm Component
-        </StyledContactForm>
+        <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
@@ -156,6 +176,7 @@ const MainPage = () => (
 
         <StyledHeading>FreeChair</StyledHeading>
         <StyledFreeChair
+            monsterType={MonsterType.TentacleEye}
             position="frontend developer"
             positionLevel={PositionLevel.Junior}
             positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
@@ -242,6 +263,10 @@ const MainPage = () => (
         <StyledFooter />
     </ThemeProvider>
 );
+
+const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
+    width: 700px;
+`;
 
 const StyledPersonWithFunction = styled(PersonWithFunction)`
     width: 300px;

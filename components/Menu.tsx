@@ -5,9 +5,9 @@ import { Color } from '../Color.enum';
 import { CSSObject } from '@styled-system/css';
 import styled from 'styled-components';
 
-type TMenuProps = {
+type Props = {
     className?: string;
-}
+};
 
 const linkStyle: CSSObject = {
     color: 'white',
@@ -17,11 +17,8 @@ const linkStyle: CSSObject = {
     marginTop: '2vh',
 };
 
-export const Menu: React.FC<TMenuProps> = ({
-   className
-}) => {
-
-    const ShapeAndLinksWrapper = styled(Box)`
+export const Menu: React.FC<Props> = ({ className }) => {
+    const ShapeAndLinksLayout = styled(Box)`
         margin-top: -5vh;
         margin-left: auto;
         margin-right: 5vw;
@@ -29,11 +26,11 @@ export const Menu: React.FC<TMenuProps> = ({
         width: 80vh;
     `;
 
-    const PcodeShapeWrapper = styled.div`
+    const PcodeShapeLayout = styled.div`
         transform: rotate(-15deg);
     `;
 
-    const LinkWrapper = styled(Box)`
+    const LinkLayout = styled(Box)`
         top: 8rem;
         right: 6vw;
         z-index: 10;
@@ -41,42 +38,43 @@ export const Menu: React.FC<TMenuProps> = ({
         margin-right: 5vw;
     `;
 
-    const MenuWrapper = styled(Box)`
-        overflow: hidden;
-        background: ${Color.Secondary2};
-        height: 100vh;
-        width: 100vw;
-        position: relative;
-    `;
-
     return (
         <div className={className}>
             {/*TODO: fix the background color*/}
             <Box
                 overflow="hidden"
-                bg='secondary2'
-                height='100vh'
-                width='100vw'
+                bg="secondary2"
+                height="100vh"
+                width="100vw"
                 css={{ position: 'relative' }}
             >
                 <Flex>
-                    <ShapeAndLinksWrapper>
-                        <LinkWrapper>
+                    <ShapeAndLinksLayout>
+                        <LinkLayout>
                             <Flex flexDirection="column">
-                                <Link css={linkStyle} href='#'>who we are</Link>
-                                <Link css={linkStyle} href='#'>what we do</Link>
-                                <Link css={linkStyle} href='#'>how we work</Link>
-                                <Link css={linkStyle} href='#'>join us</Link>
-                                <Link css={linkStyle} href='#'>contact us</Link>
+                                <Link css={linkStyle} href="#">
+                                    who we are
+                                </Link>
+                                <Link css={linkStyle} href="#">
+                                    what we do
+                                </Link>
+                                <Link css={linkStyle} href="#">
+                                    how we work
+                                </Link>
+                                <Link css={linkStyle} href="#">
+                                    join us
+                                </Link>
+                                <Link css={linkStyle} href="#">
+                                    contact us
+                                </Link>
                             </Flex>
-                        </LinkWrapper>
-                        <PcodeShapeWrapper>
-                            <PcodeShape width="80vh" color={Color.Primary}/>
-                        </PcodeShapeWrapper>
-                    </ShapeAndLinksWrapper>
+                        </LinkLayout>
+                        <PcodeShapeLayout>
+                            <PcodeShape width="80vh" color={Color.Primary} />
+                        </PcodeShapeLayout>
+                    </ShapeAndLinksLayout>
                 </Flex>
             </Box>
         </div>
     );
 };
-

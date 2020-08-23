@@ -1,8 +1,6 @@
 import React from 'react';
 
-import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
 import { Color } from '../Color.enum';
-import { theme } from '../theme';
 import { CopyText, FontStyle } from './CopyText';
 import { PositionLevel } from '../shared/PositionLevel.enum';
 import { ActionButton } from './ActionButton';
@@ -10,94 +8,93 @@ import { SubHeadline } from './SubHeadline';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
+import { Monster } from './Monster';
 
-type TFreeChairProps = {
+type Props = {
     position: string;
     positionLevel: PositionLevel;
     positionDescription: string;
-    monsterType?: MonsterType;
-    colorMonster?: Color;
+    monsterType: MonsterType;
     className?: string;
 };
 
 const { openPositionDestinationEmail } = CONSTANTS;
 
-export const FreeChair: React.FC<TFreeChairProps> = ({
-     colorMonster: color = Color.Primary,
-     position,
-     positionLevel,
-     positionDescription,
-     className,
+export const FreeChair: React.FC<Props> = ({
+    position,
+    positionLevel,
+    positionDescription,
+    monsterType,
+    className,
 }) => {
-
-    const FreeChairWrapper = styled.div`
+    const FreeChairLayout = styled.div`
         width: 200px;
+        height: 400px;
         text-align: center;
     `;
 
-    const SvgWrapper = styled.div`
-        display: flex;
-        justify-content: center;
-        margin-bottom: 1.5rem;
+    const SvgLayout = styled.div`
+        width: 50%;
+        height: 170px;
     `;
 
-    const StyledPcodeShapeSvg = styled(PcodeShapeSvg)`
-        color: ${theme.colors[color]};
-        width: 100px;
-    `;
-
-    const PositionWrapper = styled.div`
+    const PositionLayout = styled.div`
         margin-bottom: 0.8rem;
     `;
 
-    const DescriptionWrapper = styled.div`
+    const DescriptionLayout = styled.div`
         display: block;
         margin-bottom: 0.8rem;
     `;
 
+    const MonsterLayout = styled.div`
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, -75%);
+    `;
+
     return (
         <div className={className}>
-            <FreeChairWrapper>
-                {/* TODO: use this instead of pcode shape after resolving the monster svg bug */}
-                {/*
-                    <Monster
-                        type={MonsterType.SupportiveChallenger}
-                        color={Color.Secondary2}
-                        width="20%"
-                    />
-                */}
+            <FreeChairLayout>
+                <SvgLayout>
+                    <MonsterLayout>
+                        <Monster type={monsterType} />
+                    </MonsterLayout>
+                </SvgLayout>
 
-                <SvgWrapper>
-                    <PcodeShapeSvg
-                        style={{ color: theme.colors[color], width: '100px' }}
-                    />
-                </SvgWrapper>
-
-                <PositionWrapper>
+                <PositionLayout>
                     <SubHeadline
                         color={Color.Secondary}
-                        fontStyle={FontStyle.Normal}>
+                        fontStyle={FontStyle.Normal}
+                    >
                         {' '}
                         {position}{' '}
                     </SubHeadline>
-                    <CopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
+                    <CopyText
+                        color={Color.Secondary}
+                        fontStyle={FontStyle.Light}
+                    >
                         {' '}
                         {positionLevel}{' '}
                     </CopyText>
-                </PositionWrapper>
+                </PositionLayout>
 
-                <DescriptionWrapper>
-                    <CopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
+                <DescriptionLayout>
+                    <CopyText
+                        color={Color.Secondary2}
+                        fontStyle={FontStyle.Light}
+                    >
                         {positionDescription}
                     </CopyText>
-                </DescriptionWrapper>
+                </DescriptionLayout>
 
                 <a
                     href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                 >
-                    <ActionButton color={Color.Secondary2} label="apply"/>
+                    <ActionButton color={Color.Secondary2} label="apply" />
                 </a>
-            </FreeChairWrapper>
+            </FreeChairLayout>
         </div>
     );
 };
