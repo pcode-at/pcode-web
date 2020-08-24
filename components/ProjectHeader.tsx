@@ -76,7 +76,7 @@ export const ProjectHeader: React.FC<ProjectHeader> = ({
                     .project-header-headline h2{
                         font-size: 300%;
                     }
-                    .project-header-info, .project-header-box img{
+                    .project-header-info{
                         padding: 10%;
                     }
                     

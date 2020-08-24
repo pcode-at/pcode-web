@@ -85,7 +85,7 @@ const MainPage = () => (
             detailText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
             detailLink="www.pcode.at
         "
-            imageSource="../static/pernsteiner_christoph.png"
+            imageSource="../static/iPad.svg"
             backgroundColor={Color.Primary}
         >
             'we are adapting to new challenges by developing and investing in
