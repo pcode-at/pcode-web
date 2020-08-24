@@ -40,6 +40,12 @@ const MainPage = () => (
             }}
         />
 
+        <StyledHeading>PcodeShapeWithImage</StyledHeading>
+        <StyledPcodeShapeWithImageLayout
+            imageSource="../static/pernsteiner_christoph.png"
+            variant={1}
+            color={Color.Secondary}
+        />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
 
@@ -209,7 +215,7 @@ const MainPage = () => (
     </ThemeProvider>
 );
 
-const StyledPcodeShapeWithImage = styled(PcodeShapeWithImage)`
+const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
     width: 700px;
 `;
 

@@ -5,7 +5,7 @@ import { Color } from '../Color.enum';
 import { theme } from '../theme';
 import { PcodeShape } from './PcodeShape';
 import styled from 'styled-components';
-import { Flex, Image } from 'rebass';
+import { Flex, Box, Image } from 'rebass';
 
 type Props = {
     color?: Color;
@@ -16,7 +16,7 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
     color = Color.Primary,
     className,
 }) => {
-    const StyledFlex = styled(Flex)`
+    const StyledFlexLayout = styled(Flex)`
         align-items: center;
         flex-direction: column;
         justify-content: center;
@@ -28,7 +28,7 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
         max-width: 300px;
     `;
 
-    const StyledImage = styled(Image)`
+    const PcodeShapeLayout = styled(Box)`
         mask: url(../static/pcode_shape.svg);
         mask-position: top;
         mask-repeat: no-repeat;
@@ -36,12 +36,14 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
     `;
     return (
         <div className={className}>
-            <StyledFlex>
-                <PcodeShape width="70%" />
+            <StyledFlexLayout>
+                <PcodeShapeLayout>
+                    <PcodeShape width="100%" color={color} />
+                </PcodeShapeLayout>
                 <StyledImageLayout>
-                    <StyledImage src="../static/sandburg.jpg" />
+                    <Image src="../static/sandburg.jpg" />
                 </StyledImageLayout>
-            </StyledFlex>
+            </StyledFlexLayout>
         </div>
     );
 };
