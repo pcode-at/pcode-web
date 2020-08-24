@@ -21,6 +21,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { QuotedCompanies } from '../components/QuotedCompanies';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
@@ -85,6 +86,21 @@ const MainPage = () => (
             'we are adapting to new challenges by developing and investing in
             our people'
         </Statement2>
+
+        <StyledHeading>QuotedCompanies</StyledHeading>
+        <QuotedCompanies
+            svgSources={[
+                '../static/quoted_company1.svg',
+                '../static/quoted_company2.svg',
+                '../static/quoted_company3.svg',
+                '../static/quoted_company4.svg',
+                '../static/quoted_company5.svg',
+            ]}
+            selectedCompanyIndex={2}
+            selectCompany={index => {
+                console.log('Index: ' + index);
+            }}
+        ></QuotedCompanies>
 
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
