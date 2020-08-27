@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'rebass';
 
-import { theme } from '../theme';
+import theme from '../theme';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';

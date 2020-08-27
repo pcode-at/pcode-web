@@ -1,7 +1,7 @@
 import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Flex, Image, Text } from 'rebass';
-import { theme } from '../theme';
+import theme from '../theme';
 import { PcodeShape } from './PcodeShape';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';

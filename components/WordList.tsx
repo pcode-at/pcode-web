@@ -3,6 +3,9 @@ import { Box, Text } from 'rebass';
 import { PcodeShape } from './PcodeShape';
 import { Color } from '../Color.enum';
 import styled from 'styled-components';
+import fluid from 'fluid-system';
+import typography from '@styled-system/typography';
+import theme from '../theme';
 
 type Props = {
     color?: Color;
@@ -34,7 +37,6 @@ export const WordList: React.FC<Props> = ({
     const items = itemsToSlide.map((word, index) => {
         let opacity = index === middleWordIndex ? '100%' : '10%';
         let animation = 'animated infinite slower ';
-
         const StyledWordText = styled(Text)`
             font-weight: 300;
             font-family: 'raleway', serif;

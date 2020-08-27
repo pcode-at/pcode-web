@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
-import { theme } from '../theme';
+import theme from '../theme';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
 
 const WhoWeArePage = () => (

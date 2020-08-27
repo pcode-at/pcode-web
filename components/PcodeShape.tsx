@@ -2,7 +2,7 @@ import React from 'react';
 
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
 import { Color } from '../Color.enum';
-import { theme } from '../theme';
+import theme from '../theme';
 
 type Props = {
     width?: string;

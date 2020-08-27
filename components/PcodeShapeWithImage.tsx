@@ -2,7 +2,7 @@ import React from 'react';
 
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
 import { Color } from '../Color.enum';
-import { theme } from '../theme';
+import theme from '../theme';
 import { PcodeShape } from './PcodeShape';
 import styled from 'styled-components';
 import { Flex, Image, Box } from 'rebass';
@@ -65,7 +65,7 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
     }
     return (
         <div className={className}>
-            <StyledFlex>
+            <StyledFlexLayout>
                 <PcodeShapeLayout>
                     <PcodeShape width="100%" color={color} />
                 </PcodeShapeLayout>
