@@ -42,14 +42,14 @@ const MainPage = () => (
         />
 
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
-            variant={1}
+            variant={'imageRight'}
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
-        
+
         <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
@@ -83,6 +83,7 @@ const MainPage = () => (
         <LightStatement
             textAndPcodeShapeColor={Color.Primary}
             variant={'imageLeft'}
+            position={'bottom'}
             imagePath={'../static/pernsteiner_christoph.png'}
         >
             we are adapting to new challenges by developing and investing in our
@@ -218,7 +219,7 @@ const MainPage = () => (
 );
 
 const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
-    width: 700px;
+    width: 400px;
 `;
 
 const StyledPersonWithFunction = styled(PersonWithFunction)`
