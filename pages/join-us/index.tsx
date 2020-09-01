@@ -11,7 +11,7 @@ import { PositionLevel } from '../../shared/PositionLevel.enum';
 import { CopyText, FontStyle } from '../../components/CopyText';
 import { PcodeShape } from '../../components/PcodeShape';
 import { ActionButton } from '../../components/ActionButton';
-import { WorkingAtPcodeSection } from './sections/WorkingAtPcode.section';
+import WorkingAtPcodeSection from './sections/WorkingAtPcode.section';
 import { MonsterType } from '../../shared/MonsterType.enum';
 import styled from 'styled-components';
 import { Statement2 } from '../../components/Statement2';

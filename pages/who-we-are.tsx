@@ -1,8 +1,9 @@
-import * as React from 'react';
-import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
-import { theme } from '../theme';
+import * as React from 'react';
+import { Box, Button, Flex } from 'rebass';
+import { Color } from '../Color.enum';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
+import { theme } from '../theme';
 
 const WhoWeArePage = () => (
     <div>
@@ -35,10 +36,10 @@ const WhoWeArePage = () => (
         <div className="test">WORKING</div>
 
         <ProjectDetailTeaser
+            headlineColor={Color.Primary}
             description="Description"
             headline="Headline"
             imageSrc=""
-            pcodeShapeBackground={false}
         />
 
         <style jsx>{`
