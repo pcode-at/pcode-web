@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@xstyled/styled-components'
 import * as React from 'react';
 
 import { Box, Flex } from 'rebass';
@@ -16,11 +17,14 @@ import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { WordList } from '../components/WordList';
 import { XStyled } from '../components/XStyledTest';
 import { theme } from '../theme';
+import WorkingAtPcodeSection from './join-us/sections/WorkingAtPcode.section';
 
 const { light, normal } = theme.font;
 
 const MainPage = () => (
-    <XStyled color={Color.Primary} />
+    <ThemeProvider theme={theme}>
+      <XStyled color={Color.Primary} />
+    </ThemeProvider>
 );
 
 const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
