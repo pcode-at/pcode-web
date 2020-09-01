@@ -1,10 +1,9 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Box, Text, Button } from 'rebass';
-import { Input, Textarea } from '@rebass/forms';
 import { theme } from '../theme';
 import { CONSTANTS } from '../shared/constants';
-import styled from 'styled-components';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
+import { ActionButton } from './ActionButton';
 
 type Props = {
     className?: string;
@@ -16,22 +15,45 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
     const { openPositionDestinationEmail } = CONSTANTS;
 
     const StyledH2 = styled.h2`
-        font-family: ${normal.fontFamily};
-        font-weight: ${normal.fontWeight};
+        font-family: normal;
+        font-weight: normal;
     `;
 
-    const ShortInputLayout = styled(Box)`
+    const ShortInputLayout = styled.div`
+        font-family: light;
+        font-weight: light;
         margin-top: 10px;
         width: 50%;
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
     `;
 
-    const TextAreaLayout = styled(Box)`
+    const TextAreaLayout = styled.div`
+        font-family: normal;
+        font-weight: light;
         height: 100px;
         margin-top: 10px;
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
+    `;
+
+    const StyledInput = styled.input`
+        border-radius: 13px;
+        border: solid 3px ${theme.colors[Color.Secondary2]};
+        padding: extraSmall small;
+    `;
+
+    //Fix design and layout component
+    const StyledTextarea = styled.textarea`
+        border-radius: 13px;
+        border: solid 3px ${theme.colors[Color.Secondary2]};
+        height: 100%;
+        padding: small;
+        width: 100%;
+    `;
+
+    const ActionButtonLayout = styled.div`
+        float: right;
+        left: 10px;
+        position: relative;
+        top: -15px;
+        z-index: 2;
     `;
 
     return (
@@ -39,58 +61,28 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
             <StyledH2>let's work together!</StyledH2>
 
             <ShortInputLayout>
-                <Input
-                    placeholder="name"
-                    sx={{
-                        borderWidth: '3px',
-                        borderColor: Color.Secondary2,
-                        borderRadius: 13,
-                    }}
-                />
+                <StyledInput placeholder="name" />
             </ShortInputLayout>
 
             <ShortInputLayout>
-                <Input
-                    placeholder="email"
-                    sx={{
-                        borderWidth: '3px',
-                        borderColor: Color.Secondary2,
-                        borderRadius: 13,
-                    }}
-                />
+                <StyledInput placeholder="email" />
             </ShortInputLayout>
 
             {/*TODO: Fix TextArea bug (you can't write anything)*/}
             <TextAreaLayout>
-                <Textarea
+                <StyledTextarea
                     placeholder="you are so cool people, let`s …"
                     onChange={args => setTextAreaContent(args.target.value)}
-                    sx={{
-                        borderWidth: '3px',
-                        borderColor: Color.Secondary2,
-                        borderRadius: 13,
-                        height: '100%',
-                    }}
                 />
             </TextAreaLayout>
-            <a
-                href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
+            <ActionButtonLayout>
+                <a
+                    href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
                         &body=${replaceNewLineCharacters(textAreaContent)}`}
-            >
-                <Button
-                    variant="primary"
-                    sx={{
-                        float: 'right',
-                        marginTop: 1,
-                        borderRadius: 20,
-                        fontFamily: light.fontFamily,
-                        fontWeight: light.fontWeight,
-                        fontSize: 11,
-                    }}
                 >
-                    send message
-                </Button>
-            </a>
+                    <ActionButton label="send message" padding="4px 20px" />
+                </a>
+            </ActionButtonLayout>
         </div>
     );
 

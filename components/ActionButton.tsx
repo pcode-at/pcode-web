@@ -32,10 +32,10 @@ export const ActionButton: React.FC<Props> = ({
 }) => {
     const Button = styled.button`
         background-color: ${noBackground ? 'transparent' : color};
-        padding: ${padding};
-        border: none;
         border-radius: 15px;
+        border: none;
         cursor: pointer;
+        padding: ${padding};
     `;
     return (
         <div className={className}>

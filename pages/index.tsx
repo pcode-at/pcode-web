@@ -232,8 +232,8 @@ const StyledTechnologyPlatform = styled(TechnologyPlatform)`
 `;
 
 const TechnologyFlex = styled.div`
-    display: flex;
     align-content: center;
+    display: flex;
     justify-content: space-evenly;
     max-width: 1200px;
 `;
@@ -275,14 +275,14 @@ const StyledFooter = styled(Footer)`
 `;
 
 const StyledPcodeShapeBox = styled.div`
-    width: 50%;
     margin-left: 2em;
+    width: 50%;
 `;
 
 const ProjectSliderWrapper = styled.div`
+    padding-bottom: 20em;
     width: 250px;
     /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    padding-bottom: 20em;
 `;
 
 const StyledWordList = styled(WordList)``;

@@ -60,8 +60,8 @@ export const LightStatement: React.FC<Props> = ({
                 padding: 0 medium;
             `,
             tablet: css`
-                padding: 0;
                 grid-column: ${variant == 'imageLeft' ? '1/2' : '2/3'};
+                padding: 0;
             `,
         }),
     );
@@ -69,13 +69,13 @@ export const LightStatement: React.FC<Props> = ({
     const StatementText = styled.p(
         breakpoints({
             allDevices: css`
-                font-family: normal;
                 color: ${textAndPcodeShapeColor};
-                line-height: 1.333;
-                text-align: center;
+                font-family: normal;
                 font-size: headline5;
+                line-height: 1.333;
                 line-height: normal;
                 margin: 0;
+                text-align: center;
             `,
             tablet: css`
                 text-align: ${variant == 'imageLeft' ? 'left' : 'right'};
@@ -89,15 +89,16 @@ export const LightStatement: React.FC<Props> = ({
     const StatementTextLayout = styled.div(
         breakpoints({
             allDevices: css`
-                margin-top: medium;
-                grid-row: 2/3;
                 ${imagePaddingCss}
+
+                grid-row: 2/3;
+                margin-top: medium;
             `,
             tablet: css`
-                grid-row: 1/2;
-                grid-column: ${variant == 'imageLeft' ? '2/3' : '1/2'};
                 display: flex;
                 flex-direction: column;
+                grid-column: ${variant == 'imageLeft' ? '2/3' : '1/2'};
+                grid-row: 1/2;
                 justify-content: ${position == 'bottom'
                     ? 'flex-end'
                     : 'center'};
