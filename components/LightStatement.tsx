@@ -62,13 +62,12 @@ export const LightStatement: React.FC<Props> = ({
     const StatementTextLayout = styled(Box)`
         margin-top: ${theme.space.l}px;
         grid-row: 2/3;
-        ${theme.mediaQueries.tablet}{
+        ${theme.mediaQueries.tablet} {
             grid-row: 1/2;
             grid-column: ${variant == 'imageLeft' ? '2/3' : '1/2'};
             display: flex;
             flex-direction: column;
             justify-content: ${position == 'bottom' ? 'flex-end' : 'center'};
-
         }
     `;
 
@@ -80,7 +79,18 @@ export const LightStatement: React.FC<Props> = ({
                     imageSource={imagePath}
                     variant={'imageRight'}
                 ></PcodeShapeWithImageGrid>
-                <StatementTextLayout pl={position == 'bottom' && variant == 'imageLeft' ? theme.space.s + 'px' : theme.space.m + 'px'} pr={position == 'bottom' && variant == 'imageRight' ? theme.space.s + 'px' : theme.space.m + 'px'}>
+                <StatementTextLayout
+                    pl={
+                        position == 'bottom' && variant == 'imageLeft'
+                            ? theme.space.s + 'px'
+                            : theme.space.m + 'px'
+                    }
+                    pr={
+                        position == 'bottom' && variant == 'imageRight'
+                            ? theme.space.s + 'px'
+                            : theme.space.m + 'px'
+                    }
+                >
                     <StatementText
                         fontSize={['h5', 'h5', 'h4']}
                         lineHeight={normal.lineHeight}

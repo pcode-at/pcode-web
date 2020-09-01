@@ -21,6 +21,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { XStyled } from '../components/XStyledTest';
 import { LightStatement } from '../components/LightStatement';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
@@ -47,6 +48,10 @@ const MainPage = () => (
             variant={'imageRight'}
             color={Color.Secondary}
         />
+
+        <StyledHeading>XStyled Test</StyledHeading>
+        <XStyled color={Color.Secondary}>Lorem ipsum dolor sit amet,</XStyled>
+
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
 
@@ -279,10 +284,12 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
+`;
+
+const XStyledLayout = styled(XStyled)`
+    width: 100vw;
 `;
 
 const StyledWordList = styled(WordList)``;
