@@ -1,8 +1,8 @@
 import * as React from 'react';
 
+import { ThemeProvider } from '@xstyled/styled-components';
 import { Box, Flex } from 'rebass';
 import { theme } from '../theme';
-import { ThemeProvider } from 'emotion-theming';
 import { PcodeShape } from '../components/PcodeShape';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
@@ -17,11 +17,10 @@ import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
 import Router from 'next/router';
 import { WordList } from '../components/WordList';
 import { ProjectSlider } from '../components/ProjectSlider';
-import styled from 'styled-components';
+import styled from '@xstyled/styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
-import { XStyled } from '../components/XStyledTest';
 import { LightStatement } from '../components/LightStatement';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
@@ -48,9 +47,6 @@ const MainPage = () => (
             variant={'imageRight'}
             color={Color.Secondary}
         />
-
-        <StyledHeading>XStyled Test</StyledHeading>
-        <XStyled color={Color.Secondary}>Lorem ipsum dolor sit amet,</XStyled>
 
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
@@ -87,7 +83,7 @@ const MainPage = () => (
         <StyledHeading>LightStatement</StyledHeading>
         <LightStatement
             textAndPcodeShapeColor={Color.Primary}
-            variant={'imageLeft'}
+            variant={'imageRight'}
             position={'bottom'}
             imagePath={'../static/pernsteiner_christoph.png'}
         >
@@ -235,7 +231,8 @@ const StyledTechnologyPlatform = styled(TechnologyPlatform)`
     width: 250px;
 `;
 
-const TechnologyFlex = styled(Flex)`
+const TechnologyFlex = styled.div`
+    display: flex;
     align-content: center;
     justify-content: space-evenly;
     max-width: 1200px;
@@ -277,7 +274,7 @@ const StyledFooter = styled(Footer)`
     margin-top: 2em;
 `;
 
-const StyledPcodeShapeBox = styled(Box)`
+const StyledPcodeShapeBox = styled.div`
     width: 50%;
     margin-left: 2em;
 `;
@@ -286,10 +283,6 @@ const ProjectSliderWrapper = styled.div`
     width: 250px;
     /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
-`;
-
-const XStyledLayout = styled(XStyled)`
-    width: 100vw;
 `;
 
 const StyledWordList = styled(WordList)``;
