@@ -1,7 +1,6 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Text } from 'rebass';
-import { theme } from '../theme';
+import styled from '@xstyled/styled-components';
 
 export enum FontStyle {
     Normal = 'normal',
@@ -20,15 +19,14 @@ export const CopyText: React.FC<Props> = ({
     fontStyle,
     className,
 }) => {
+    const StyledText = styled.p`
+        color: ${color};
+        font-family: ${fontStyle};
+        font-weight: ${fontStyle};
+    `;
     return (
         <div className={className}>
-            <Text
-                color={color}
-                fontFamily={theme.font[fontStyle].fontFamily}
-                fontWeight={theme.font[fontStyle].fontWeight}
-            >
-                {children}
-            </Text>
+            <StyledText>{children}</StyledText>
         </div>
     );
 };
