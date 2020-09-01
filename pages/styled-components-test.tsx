@@ -9,7 +9,7 @@ const { light, normal } = theme.font;
 const Home = () => (
     <Container>
         <Heading>hi there</Heading>
-        <StyledContactForm color={Color.Primary} />
+        <StyledContactForm />
     </Container>
 );
 

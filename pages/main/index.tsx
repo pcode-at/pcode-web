@@ -8,7 +8,7 @@ import { Color } from '../../Color.enum';
 import { Footer } from '../../components/Footer';
 import { Swiper } from '../../components/Swiper';
 import Router from 'next/router';
-import { CodeStandsForSection } from './sections/CodeStandsFor.section';
+import CodeStandsForSection from './sections/CodeStandsFor.section';
 import styled from 'styled-components';
 import { ProjectDetailTeaser } from '../../components/ProjectDetailTeaser';
 import { Statement } from '../../components/Statement';

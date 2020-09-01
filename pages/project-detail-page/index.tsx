@@ -11,6 +11,7 @@ const ProjectDetailPage = () => (
             <SiteHeader color={Color.White} />
 
             <Statement
+                imagePath=""
                 personName={'Christoph Pernsteiner'}
                 personPosition={'CEO .founder'}
             >

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Box, Image } from 'rebass';
-import { Color } from '../../../Color.enum';
 import styled from 'styled-components';
-import { WordList } from '../../../components/WordList';
+import { Color } from '../../../Color.enum';
 import { CopyText, FontStyle } from '../../../components/CopyText';
+import { WordList } from '../../../components/WordList';
 
 
 const PageLayout = styled(Box)`
@@ -28,7 +28,7 @@ const TextLayout = styled(Box)`
     font-size: 250%;
 `;
 
-export const CodeStandsForSection: React.FC = () => (
+const CodeStandsForSection: React.FC = () => (
     <React.Fragment>
         <PageLayout>
             <TextLayout>
@@ -52,3 +52,5 @@ export const CodeStandsForSection: React.FC = () => (
         </PageLayout>
     </React.Fragment>
 );
+
+export default CodeStandsForSection

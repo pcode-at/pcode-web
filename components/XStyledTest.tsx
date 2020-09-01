@@ -36,6 +36,7 @@ export const XStyled: React.FC<Props> = ({
         text-align: center;
         margin-top: l;
     `;
+
     return (
         <div className={className}>
             <TextLayout>
