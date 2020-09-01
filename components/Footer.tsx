@@ -1,45 +1,70 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Box, Flex } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
+import { theme } from '../theme';
 
 type Props = {
     className?: string;
 };
 
 export const Footer: React.FC<Props> = ({ className }) => {
+    const FooterLayout = styled.div(
+        breakpoints({
+            allDevices: css`
+                padding: extraLarge;
+                background-color: ${theme.colors[Color.Secondary]};
+                display: flex;
+                flex-direction: column;
+            `,
+            tablet: css`
+                justify-content: space-between;
+                flex-direction: row;
+            `,
+        }),
+    );
+
+    const FirstColumnLayout = styled.div(
+        breakpoints({
+            allDevices: css`
+                flex-direction: column;
+            `,
+            tablet: css`
+                flex-direction: row;
+            `,
+        }),
+    );
+
+    const ContactBoxLayout = styled.div(
+        breakpoints({
+            allDevices: css`
+                margin: 0 0 large 0;
+                display: inline-block;
+            `,
+            tablet: css`
+                margin: 0 extraLarge 0 0;
+            `,
+        }),
+    );
+
+    const SecondColumnLayout = styled.div(
+        breakpoints({
+            allDevices: css`
+                padding-left: large;
+                line-height: normal;
+            `,
+            tablet: css`
+                padding-left: 0;
+                padding-right: extraLarge;
+            `,
+        }),
+    );
+
     return (
         <div className={className}>
-            <Flex
-                paddingTop="2em"
-                paddingBottom="2em"
-                backgroundColor={Color.Secondary}
-                flexDirection="column"
-                sx={{
-                    '@media screen and (min-width: 615px)': {
-                        justifyContent: 'space-between',
-                        flexDirection: 'row',
-                    },
-                }}
-            >
-                <Flex
-                    paddingLeft="2em"
-                    flexDirection="column"
-                    marginBottom="2em"
-                    sx={{
-                        '@media screen and (min-width: 615px)': {
-                            flexDirection: 'row',
-                        },
-                    }}
-                >
-                    <Box
-                        sx={{
-                            margin: '0 0 1em 0',
-                            '@media screen and (min-width: 615px)': {
-                                margin: '0 1.5em 1em 0',
-                            },
-                        }}
-                    >
+            <FooterLayout>
+                <FirstColumnLayout>
+                    <ContactBoxLayout>
                         <CopyText
                             color={Color.Secondary2}
                             fontStyle={FontStyle.Light}
@@ -58,9 +83,9 @@ export const Footer: React.FC<Props> = ({ className }) => {
                         >
                             office@pcode.at
                         </CopyText>
-                    </Box>
+                    </ContactBoxLayout>
 
-                    <div>
+                    <ContactBoxLayout>
                         <CopyText
                             color={Color.Secondary2}
                             fontStyle={FontStyle.Light}
@@ -79,19 +104,10 @@ export const Footer: React.FC<Props> = ({ className }) => {
                         >
                             Axis Coworking loft
                         </CopyText>
-                    </div>
-                </Flex>
+                    </ContactBoxLayout>
+                </FirstColumnLayout>
 
-                <Box
-                    sx={{
-                        paddingLeft: '2em',
-                        lineHeight: '1.5em',
-                        '@media screen and (min-width: 615px)': {
-                            paddingLeft: '0',
-                            paddingRight: '4em',
-                        },
-                    }}
-                >
+                <SecondColumnLayout>
                     <a href={IMPRESSUM_LINK} target="blank">
                         <CopyText
                             color={Color.White}
@@ -116,8 +132,8 @@ export const Footer: React.FC<Props> = ({ className }) => {
                             AGB
                         </CopyText>
                     </a>
-                </Box>
-            </Flex>
+                </SecondColumnLayout>
+            </FooterLayout>
         </div>
     );
 };
