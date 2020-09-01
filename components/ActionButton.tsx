@@ -1,10 +1,7 @@
 import React from 'react';
-import { Button } from 'rebass';
-
-import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
-import styled, { css } from 'styled-components';
+import styled, { css } from '@xstyled/styled-components';
 
 type Props = {
     //appearance: 'small' | 'large';
@@ -33,19 +30,16 @@ export const ActionButton: React.FC<Props> = ({
     noBackground = false,
     className,
 }) => {
+    const Button = styled.button`
+        background-color: ${noBackground ? 'transparent' : color};
+        padding: ${padding};
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+    `;
     return (
         <div className={className}>
-            <Button
-                backgroundColor={
-                    noBackground ? 'transparent' : theme.colors[color]
-                }
-                onClick={onClick}
-                style={{
-                    padding,
-                    borderRadius: '15px',
-                    cursor: 'pointer',
-                }}
-            >
+            <Button onClick={onClick}>
                 <CopyText color={Color.White} fontStyle={FontStyle.Light}>
                     {label}
                 </CopyText>
