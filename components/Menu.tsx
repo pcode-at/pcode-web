@@ -1,28 +1,20 @@
 import React from 'react';
-import { Box, Flex, Link } from 'rebass';
 import { PcodeShape } from './PcodeShape';
 import { Color } from '../Color.enum';
 import { CSSObject } from '@styled-system/css';
-import styled from 'styled-components';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
+import { theme } from '../theme';
 
 type Props = {
     className?: string;
 };
 
-const linkStyle: CSSObject = {
-    color: 'white',
-    textDecoration: 'none',
-    fontSize: '7vh',
-    fontFamily: 'raleway',
-    marginTop: '2vh',
-};
-
 export const Menu: React.FC<Props> = ({ className }) => {
-    const ShapeAndLinksLayout = styled(Box)`
-        margin-top: -5vh;
+    const ShapeAndLinksLayout = styled.div`
+        height: auto;
         margin-left: auto;
         margin-right: 5vw;
-        height: auto;
+        margin-top: -5vh;
         width: 80vh;
     `;
 
@@ -30,51 +22,50 @@ export const Menu: React.FC<Props> = ({ className }) => {
         transform: rotate(-15deg);
     `;
 
-    const LinkLayout = styled(Box)`
-        top: 8rem;
-        right: 6vw;
-        z-index: 10;
-        position: absolute;
+    const LinkLayout = styled.div`
+        display: flex;
+        flex-direction: column;
         margin-right: 5vw;
+        position: absolute;
+        right: 6vw;
+        top: 8rem;
+        z-index: 10;
+    `;
+
+    const MenuLayout = styled.div`
+        background-color: ${theme.colors[Color.Secondary2]};
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        width: 100vw;
+    `;
+
+    const StyledLink = styled.a`
+        color: White;
+        font-family: normal;
+        font-size: headline3;
+        margin-top: small;
+        text-decoration: none;
     `;
 
     return (
         <div className={className}>
             {/*TODO: fix the background color*/}
-            <Box
-                overflow="hidden"
-                bg="secondary2"
-                height="100vh"
-                width="100vw"
-                css={{ position: 'relative' }}
-            >
-                <Flex>
-                    <ShapeAndLinksLayout>
-                        <LinkLayout>
-                            <Flex flexDirection="column">
-                                <Link css={linkStyle} href="#">
-                                    who we are
-                                </Link>
-                                <Link css={linkStyle} href="#">
-                                    what we do
-                                </Link>
-                                <Link css={linkStyle} href="#">
-                                    how we work
-                                </Link>
-                                <Link css={linkStyle} href="#">
-                                    join us
-                                </Link>
-                                <Link css={linkStyle} href="#">
-                                    contact us
-                                </Link>
-                            </Flex>
-                        </LinkLayout>
-                        <PcodeShapeLayout>
-                            <PcodeShape width="80vh" color={Color.Primary} />
-                        </PcodeShapeLayout>
-                    </ShapeAndLinksLayout>
-                </Flex>
-            </Box>
+            <MenuLayout>
+                <ShapeAndLinksLayout>
+                    <LinkLayout>
+                        <StyledLink href="#">who we are</StyledLink>
+                        <StyledLink href="#">what we do</StyledLink>
+                        <StyledLink href="#">how we work</StyledLink>
+                        <StyledLink href="#">join us</StyledLink>
+                        <StyledLink href="#">contact us</StyledLink>
+                    </LinkLayout>
+                    <PcodeShapeLayout>
+                        <PcodeShape width="80vh" color={Color.Primary} />
+                    </PcodeShapeLayout>
+                </ShapeAndLinksLayout>
+            </MenuLayout>
         </div>
     );
 };
