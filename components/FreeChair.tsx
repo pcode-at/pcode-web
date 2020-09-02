@@ -28,14 +28,14 @@ export const FreeChair: React.FC<Props> = ({
     className,
 }) => {
     const FreeChairLayout = styled.div`
-        width: 200px;
         height: 400px;
         text-align: center;
+        width: 200px;
     `;
 
     const SvgLayout = styled.div`
-        width: 50%;
         height: 170px;
+        width: 50%;
     `;
 
     const PositionLayout = styled.div`
@@ -48,9 +48,9 @@ export const FreeChair: React.FC<Props> = ({
     `;
 
     const MonsterLayout = styled.div`
+        left: 50%;
         position: relative;
         top: 50%;
-        left: 50%;
         transform: translate(0%, -75%);
     `;
 
@@ -92,7 +92,11 @@ export const FreeChair: React.FC<Props> = ({
                 <a
                     href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                 >
-                    <ActionButton color={Color.Secondary2} label="apply" padding="extraSmall large" />
+                    <ActionButton
+                        color={Color.Secondary2}
+                        label="apply"
+                        padding="extraSmall large"
+                    />
                 </a>
             </FreeChairLayout>
         </div>
