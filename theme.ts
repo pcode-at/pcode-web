@@ -1,8 +1,6 @@
 import { Color } from './Color.enum';
 import React from 'react';
 
-const breakpoints = ['768px', '1024px'];
-
 export const theme = {
     colors: {
         [Color.Primary]: '#F73859',
@@ -75,9 +73,5 @@ export const theme = {
         large: 32,
         extraLarge: 64,
         ultraLarge: 128
-    },
-    mediaQueries: {
-        tablet: `@media screen and (min-width: ${breakpoints[0]})`,
-        desktop: `@media screen and (min-width: ${breakpoints[1]})`,
-    },
+    }
 };

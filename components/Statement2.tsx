@@ -1,8 +1,6 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Box, Flex } from 'rebass';
-import { theme } from '../theme';
-import styled from 'styled-components';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
 import { PersonWithFunction } from './PersonWithFunction';
 
 type Props = {
@@ -22,48 +20,59 @@ export const Statement2: React.FC<Props> = ({
     imagePath,
     className,
 }) => {
-    const { light, normal } = theme.font;
+    const Wrapper = styled.div(
+        breakpoints({
+            allDevices: css`
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: large;
+                padding-top: large;
+            `,
+            tablet: css`
+                flex-direction: row;
+                justify-content: space-between;
+            `,
+        }),
+    );
 
-    const Wrapper = styled(Flex)`
-        padding-top: 3em;
-        padding-bottom: 3em;
+    const TextWrapper = styled.div(
+        breakpoints({
+            allDevices: css`
+                color: ${color};
+                font-family: light;
+                font-size: headline5;
+                font-weight: normal;
+                margin-left: large;
+                margin-right: large;
+                padding: 0;
+                text-align: center;
+                width: 90%;
+            `,
+            tablet: css`
+                font-size: headline4;
+                margin: initial;
+                padding: large;
+                width: 70%;
+            `,
+        }),
+    );
+
+    const PersonWrapper = styled.div(
+        breakpoints({
+            allDevices: css`
+                display: flex;
+                justify-content: center;
+            `,
+            tablet: css`
+                margin-right: large;
+            `,
+        }),
+    );
+
+    const StyledPersonFlex = styled.div`
         align-items: center;
-
-        @media screen and (min-width: 615px) {
-            justify-content: space-between;
-            flex-direction: row;
-        }
-        @media screen and (max-width: 615px) {
-            flex-direction: column;
-        }
-    `;
-
-    const TextWrapper = styled(Box)`
-        padding: 10%;
-        width: 70%;
-        font-family: ${light.fontFamily};
-        font-weight: ${normal.fontWeight};
-        font-size: 150%;
-
-        @media screen and (max-width: 615px) {
-            padding: 0;
-            width: 90%;
-            text-align: center;
-            margin-left: 10%;
-            margin-right: 10%;
-        }
-    `;
-
-    const PersonWrapper = styled(Flex)`
-        justify-content: center;
-
-        @media screen and (min-width: 615px) {
-            margin-right: 10%;
-        }
-    `;
-
-    const StyledPersonFlex = styled(Flex)`
-        align-items: center;
+        display: flex;
         flex-direction: column;
         justify-content: center;
     `;
@@ -71,7 +80,7 @@ export const Statement2: React.FC<Props> = ({
     return (
         <div className={className}>
             <Wrapper>
-                <TextWrapper color={color}>
+                <TextWrapper>
                     <p>{children}</p>
                 </TextWrapper>
 
