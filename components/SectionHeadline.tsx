@@ -3,7 +3,7 @@ import { Color } from '../Color.enum';
 import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
 
-type TSectionHeadlineProps = {
+type Props = {
     color: Color;
     headlinePartOne: string;
     headlinePartTwo: string;
@@ -12,14 +12,14 @@ type TSectionHeadlineProps = {
     className?: string;
 };
 
-export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
-     headlinePartOne,
-     headlinePartTwo,
-     color,
-     separateWithBreak = false,
-     maxWidthPartTwo,
-     className,
- }) => {
+export const SectionHeadline: React.FC<Props> = ({
+    headlinePartOne,
+    headlinePartTwo,
+    color,
+    separateWithBreak = false,
+    maxWidthPartTwo,
+    className,
+}) => {
     const defaultProps = {
         color,
         fontFamily: 'raleway',
@@ -41,7 +41,7 @@ export const SectionHeadline: React.FC<TSectionHeadlineProps> = ({
             <Heading fontFamily="raleway" color={color}>
                 <FirstSpan>{headlinePartOne}</FirstSpan>
                 &nbsp;
-                {separateWithBreak && <br/>}
+                {separateWithBreak && <br />}
                 <SecondSpan>{headlinePartTwo}</SecondSpan>
             </Heading>
         </div>

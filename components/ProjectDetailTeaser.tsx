@@ -6,7 +6,7 @@ import { ActionButton } from './ActionButton';
 import { CopyText, FontStyle } from './CopyText';
 import styled from 'styled-components';
 
-type TProjectDetailTeaserProps = {
+type Props = {
     headline: string;
     description: string;
     imageSrc: string;
@@ -15,16 +15,15 @@ type TProjectDetailTeaserProps = {
     className?: string;
 };
 
-export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
-                                                                             description,
-                                                                             headline,
-                                                                             imageSrc,
-                                                                             headlineColor,
-                                                                             onClick,
-                                                                             className,
-                                                                         }) => {
-
-    const StyledImage = styled.img`
+export const ProjectDetailTeaser: React.FC<Props> = ({
+    description,
+    headline,
+    imageSrc,
+    headlineColor,
+    onClick,
+    className,
+}) => {
+    const StyledImageLayout = styled.img`
         width: 70%;
         position: absolute;
         top: 50%;
@@ -32,19 +31,19 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         transform: translateX(-50%) translateY(-50%);
     `;
 
-    const GraphicWrapper = styled(Box)`
+    const GraphicLayout = styled(Box)`
         position: relative;
         margin-left: -30%;
         width: 100%;
     `;
 
-    const TextWrapper = styled(Box)`
+    const TextLayout = styled(Box)`
         position: relative;
         text-align: left;
         width: 100%;
     `;
 
-    const StyledSectionHeadline = styled(CopyText)`
+    const StyledSectionHeadlineLayout = styled(CopyText)`
         margin-bottom: 1rem;
         font-size: 250%;
     `;
@@ -59,22 +58,30 @@ export const ProjectDetailTeaser: React.FC<TProjectDetailTeaserProps> = ({
         <div className={className}>
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
-                    <GraphicWrapper>
-                        <PcodeShape color={Color.Primary}/>
-                        <StyledImage src={imageSrc}/>
-                    </GraphicWrapper>
+                    <GraphicLayout>
+                        <PcodeShape color={Color.Primary} />
+                        <StyledImageLayout src={imageSrc} />
+                    </GraphicLayout>
                 </Box>
-                <TextWrapper>
-                    <StyledSectionHeadline
+                <TextLayout>
+                    <StyledSectionHeadlineLayout
                         color={headlineColor}
-                        fontStyle={FontStyle.Normal}>
+                        fontStyle={FontStyle.Normal}
+                    >
                         {headline}
-                    </StyledSectionHeadline>
-                    <StyledCopyText color={Color.Secondary} fontStyle={FontStyle.Light}>
+                    </StyledSectionHeadlineLayout>
+                    <StyledCopyText
+                        color={Color.Secondary}
+                        fontStyle={FontStyle.Light}
+                    >
                         {description}
                     </StyledCopyText>
-                    <ActionButton label="learn more" color={Color.Secondary2} onClick={onClick}/>
-                </TextWrapper>
+                    <ActionButton
+                        label="learn more"
+                        color={Color.Secondary2}
+                        onClick={onClick}
+                    />
+                </TextLayout>
             </Flex>
         </div>
     );
