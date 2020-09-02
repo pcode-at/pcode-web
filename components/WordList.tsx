@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Text } from 'rebass';
 import { PcodeShape } from './PcodeShape';
 import { Color } from '../Color.enum';
-import styled from 'styled-components';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
+import { theme } from '../theme';
 
 type Props = {
     color?: Color;
@@ -35,10 +35,13 @@ export const WordList: React.FC<Props> = ({
         let opacity = index === middleWordIndex ? '100%' : '10%';
         let animation = 'animated infinite slower ';
 
-        const StyledWordText = styled(Text)`
-            font-weight: 300;
-            font-family: 'raleway', serif;
+        const StyledWordText = styled.p`
             color: ${Color.White};
+            font-family: normal;
+            font-size: headline3;
+            font-weight: 300;
+            line-height: ${theme.fontSizes.headline4}px;
+            margin: 0;
             opacity: ${opacity};
             order: ${index};
         `;
@@ -55,34 +58,34 @@ export const WordList: React.FC<Props> = ({
         );
     });
 
-    const WordListLayout = styled(Box)`
+    const WordListLayout = styled.div`
+        align-items: center;
+        display: flex;
         position: relative;
-        display: flex;
-        align-items: center;
         width: 100%;
     `;
 
-    const CentralLayout = styled(Box)`
-        position: absolute;
+    const CentralLayout = styled.div`
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        flex-direction: column;
+        position: absolute;
         width: 100%;
     `;
 
-    const ItemsLayout = styled(Box)`
+    const ItemsLayout = styled.div`
+        align-items: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
         font-size: 2rem;
         z-index: 1;
     `;
 
-    const PcodeShapeLayout = styled(Box)`
-        width: 100%;
+    const PcodeShapeLayout = styled.div`
         display: flex;
         justify-content: center;
         margin-top: -6%;
+        width: 100%;
     `;
 
     return (
