@@ -13,6 +13,7 @@ type ProjectHeader = {
     detailLink: string;
     imageSource: string;
     backgroundColor: Color;
+    className?: string;
 };
 
 export const ProjectHeader: React.FC<ProjectHeader> = ({
@@ -22,62 +23,67 @@ export const ProjectHeader: React.FC<ProjectHeader> = ({
     detailLink,
     imageSource,
     backgroundColor,
+    className,
 }) => {
+    const ProjectHeaderLayout = styled.div`
+        display: grid;
+        width: 100vw;
+        grid-template-columns: 1fr 1fr;
+        background-color: ${theme.colors[backgroundColor]};
+        justify-content: center;
+        align-items: center;
+    `;
+
+    const ProjectHeaderInfoLayout = styled.div`
+        padding: 10%;
+    `;
+
+    const StyledLink = styled.a`
+        text-decoration: none;
+    `;
+
+    const StyledProjectImage = styled.img`
+        width: 80%;
+        justify-self: center;
+    `;
     return (
-        <div className="project-header-box">
-            <div className="project-header-info">
-                <SectionHeadline
-                    className="project-header-headline"
-                    color={Color.Secondary}
-                    headlinePartOne={startHeadlineOne}
-                    headlinePartTwo={startHeadlineTwo}
-                    separateWithBreak={true}
-                ></SectionHeadline>
-                <br />
-                <CopyText
-                    className="project-header-detail"
-                    color={Color.White}
-                    fontStyle={FontStyle.Light}
-                >
-                    {detailText}
-                </CopyText>
-                <br />
-                <a
-                    href={'https://' + detailLink}
-                    className="project-header-link"
-                    target="_blank"
-                >
-                    <CopyText
+        <div className={className}>
+            <ProjectHeaderLayout>
+                <ProjectHeaderInfoLayout>
+                    <SectionHeadline
+                        className="project-header-headline"
                         color={Color.Secondary}
-                        fontStyle={FontStyle.Normal}
+                        headlinePartOne={startHeadlineOne}
+                        headlinePartTwo={startHeadlineTwo}
+                        separateWithBreak={true}
+                    ></SectionHeadline>
+                    <br />
+                    <CopyText
+                        className="project-header-detail"
+                        color={Color.White}
+                        fontStyle={FontStyle.Light}
                     >
-                        {detailLink}
+                        {detailText}
                     </CopyText>
-                </a>
-            </div>
-            <img
-                className="project-header-img"
-                src={imageSource}
-                alt="Projekt-Header-Bild"
-            />
+                    <br />
+                    <StyledLink href={'https://' + detailLink} target="_blank">
+                        <CopyText
+                            color={Color.Secondary}
+                            fontStyle={FontStyle.Normal}
+                        >
+                            {detailLink}
+                        </CopyText>
+                    </StyledLink>
+                </ProjectHeaderInfoLayout>
+                <StyledProjectImage
+                    src={imageSource}
+                    alt="Projekt-Header-Bild"
+                />
+            </ProjectHeaderLayout>
             <style>
                 {`
-                    *{
-                        box-sizing: border-box;
-                    }
-                    .project-header-box{
-                        display: grid;
-                        width: 100vw;
-                        grid-template-columns: 1fr 1fr;
-                        background-color: lightblue;
-                        justify-content: center;
-                        align-items: center;
-                    }
                     .project-header-headline h2{
                         font-size: 300%;
-                    }
-                    .project-header-info{
-                        padding: 10%;
                     }
                     
                     .project-header-detail{
@@ -85,15 +91,7 @@ export const ProjectHeader: React.FC<ProjectHeader> = ({
                         padding: 0;
                         margin: 0;
                     }
-                    .project-header-img{
-                        max-width: 100%;
-                        max-height: 40vw;
-                        justify-self: center;
-                    }
-                    .project-header-link{
-                        text-decoration: none;
-                    }
-                    `}
+                `}
             </style>
         </div>
     );
