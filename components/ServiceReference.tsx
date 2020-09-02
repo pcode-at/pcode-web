@@ -26,30 +26,35 @@ export const ServiceReference: React.FC<Props> = ({
     className,
 }) => {
     const TextLayout = styled(Box)`
-        width: 70%;
         margin-bottom: 2rem;
         margin-top: 1rem;
+        width: 70%;
     `;
 
     const ServiceReferenceLayout = styled(Box)`
-        display: grid;
-        grid-template-columns: 2fr 5fr 6fr;
-        grid-template-areas: '. text-block image-block';
-        width: 100%;
-        justify-content: center;
         align-items: bottom;
+        display: grid;
+        grid-template-areas: '. text-block image-block';
+        grid-template-columns: 2fr 5fr 6fr;
+        justify-content: center;
+        width: 100%;
     `;
 
     const InfoLayout = styled(Box)`
-        grid-area: text-block;
+        align-items: flex-start;
         display: flex;
         flex-direction: column;
+        grid-area: text-block;
         justify-content: flex-end;
-        align-items: flex-start;
     `;
 
     const ImageLayout = styled(Box)`
         grid-area: image-block;
+    `;
+
+    const StyledImage = styled.img`
+        margin-left: 10%;
+        width: 80%;
     `;
 
     return (
@@ -82,7 +87,7 @@ export const ServiceReference: React.FC<Props> = ({
                     />
                 </InfoLayout>
                 <ImageLayout>
-                    <Image src={imageSource} />
+                    <StyledImage src={imageSource} />
                 </ImageLayout>
             </ServiceReferenceLayout>
         </div>

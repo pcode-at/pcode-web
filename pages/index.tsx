@@ -72,7 +72,7 @@ const MainPage = () => (
         <StyledHeading>ServiceReference</StyledHeading>
         <ServiceReference
             title={'rose e-commerce online store'}
-            imageSource={'../static/tlp-pcode-27.jpg'}
+            imageSource={'../static/iPad_pcode.png'}
             buttonClick={() => alert('Not implemented yet')}
         >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -270,9 +270,6 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
     padding-bottom: 20em;
 `;
 
