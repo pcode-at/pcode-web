@@ -3,7 +3,7 @@ import React from 'react';
 import { Color } from '../Color.enum';
 import { ActionButton } from './ActionButton';
 import { SectionHeadline } from './SectionHeadline';
-import styled from 'styled-components';
+import styled from '@xstyled/styled-components';
 
 type Props = {
     color?: Color;
@@ -21,7 +21,7 @@ export const Swiper: React.FC<Props> = ({
     className,
 }) => {
     const StyledSectionHeadline = styled(SectionHeadline)`
-        margin-bottom: 0.7rem;
+        margin-bottom: medium;
     `;
 
     return (
