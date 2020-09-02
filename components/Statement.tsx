@@ -30,8 +30,8 @@ export const Statement: React.FC<Props> = ({
                 background-color: ${theme.colors[backgroundColor]};
                 display: flex;
                 flex-direction: column;
-                padding-bottom: 3em;
-                padding-top: 3em;
+                padding-bottom: large;
+                padding-top: large;
             `,
             tablet: css`
                 flex-direction: row;
@@ -47,8 +47,8 @@ export const Statement: React.FC<Props> = ({
                 font-family: light;
                 font-size: headline4;
                 font-weight: normal;
-                margin-left: 10%;
-                margin-right: 10%;
+                margin-left: extraLarge;
+                margin-right: extraLarge;
                 padding: 0;
                 text-align: center;
                 width: 90%;
@@ -59,18 +59,6 @@ export const Statement: React.FC<Props> = ({
                 padding: large medium large ultraLarge;
                 text-align: initial;
                 width: 70%;
-            `,
-        }),
-    );
-
-    const PersonWrapper = styled.div(
-        breakpoints({
-            allDevices: css`
-                justify-content: center;
-                margin-right: 10%;
-            `,
-            tablet: css`
-                margin: initial;
             `,
         }),
     );
@@ -89,16 +77,14 @@ export const Statement: React.FC<Props> = ({
                     <p>{children}</p>
                 </TextWrapper>
 
-                <PersonWrapper>
-                    <StyledPersonFlex>
-                        <PersonWithFunction
-                            color={Color.Secondary}
-                            personName={personName}
-                            personPosition={personPosition}
-                            imagePath={imagePath}
-                        />
-                    </StyledPersonFlex>
-                </PersonWrapper>
+                <StyledPersonFlex>
+                    <PersonWithFunction
+                        color={Color.Secondary}
+                        personName={personName}
+                        personPosition={personPosition}
+                        imagePath={imagePath}
+                    />
+                </StyledPersonFlex>
             </Wrapper>
         </div>
     );
