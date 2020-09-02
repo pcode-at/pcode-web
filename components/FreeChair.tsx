@@ -7,7 +7,7 @@ import { ActionButton } from './ActionButton';
 import { SubHeadline } from './SubHeadline';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { CONSTANTS } from '../shared/constants';
-import styled from 'styled-components';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
 import { Monster } from './Monster';
 
 type Props = {
@@ -28,29 +28,29 @@ export const FreeChair: React.FC<Props> = ({
     className,
 }) => {
     const FreeChairLayout = styled.div`
-        width: 200px;
         height: 400px;
         text-align: center;
+        width: 200px;
     `;
 
     const SvgLayout = styled.div`
-        width: 50%;
         height: 170px;
+        width: 50%;
     `;
 
     const PositionLayout = styled.div`
-        margin-bottom: 0.8rem;
+        margin-bottom: small;
     `;
 
     const DescriptionLayout = styled.div`
         display: block;
-        margin-bottom: 0.8rem;
+        margin-bottom: small;
     `;
 
     const MonsterLayout = styled.div`
+        left: 50%;
         position: relative;
         top: 50%;
-        left: 50%;
         transform: translate(0%, -75%);
     `;
 
@@ -92,7 +92,11 @@ export const FreeChair: React.FC<Props> = ({
                 <a
                     href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                 >
-                    <ActionButton color={Color.Secondary2} label="apply" />
+                    <ActionButton
+                        color={Color.Secondary2}
+                        label="apply"
+                        padding="extraSmall large"
+                    />
                 </a>
             </FreeChairLayout>
         </div>

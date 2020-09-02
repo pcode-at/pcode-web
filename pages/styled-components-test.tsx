@@ -9,7 +9,7 @@ const { light, normal } = theme.font;
 const Home = () => (
     <Container>
         <Heading>hi there</Heading>
-        <StyledContactForm color={Color.Primary}/>
+        <StyledContactForm color={Color.Primary} />
     </Container>
 );
 
@@ -22,7 +22,7 @@ const Container = styled.div`
 `;
 
 const StyledContactForm = styled(ContactForm)`
-  width: 100px;
+    width: 100px;
 `;
 
 const Heading = styled.h1`

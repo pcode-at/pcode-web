@@ -2,14 +2,14 @@ import React from 'react';
 
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
 import { Color } from '../Color.enum';
-import { theme } from '../theme';
 import { PcodeShape } from './PcodeShape';
-import styled from 'styled-components';
-import { Flex, Image, Box } from 'rebass';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
+
+export type PcodeShapeWithImageVariant = 'imageLeft' | 'imageRight';
 
 type Props = {
     imageSource: string;
-    variant: number;
+    variant: PcodeShapeWithImageVariant;
     color?: Color;
     className?: string;
 };
@@ -20,54 +20,60 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
     imageSource,
     className,
 }) => {
-    const StyledFlexLayout = styled(Flex)`
+    const StyledFlexLayout = styled.div`
         align-items: center;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         position: relative;
     `;
 
-    let StyledImage = styled(Image)`
+    let StyledImage = styled.img`
         mask: url(../static/pcode_shape.svg);
         mask-position: top;
         mask-repeat: no-repeat;
         mask-size: 92%;
+        width: 100%;
     `;
 
     let StyledImageLayout = styled.div`
         margin-right: 4.9%;
+        max-width: 100%;
         position: absolute;
-        max-width: 71%;
-        top: 5%;
+        top: 8%;
+        transform: scale(1.08);
     `;
 
-    let PcodeShapeLayout = styled(Box)`
-        width: 70%;
+    let PcodeShapeLayout = styled.div`
+        width: 100%;
     `;
 
-    if (variant == 2) {
+    if (variant == 'imageRight') {
         StyledImageLayout = styled.div`
-            margin-right: 2%;
+            margin-left: 8%;
+            margin-right: 0;
+            max-width: 100%;
             position: absolute;
-            max-width: 51%;
-            top: -1%;
+            top: 5%;
         `;
-        StyledImage = styled(Image)`
+        StyledImage = styled.img`
             mask: url(../static/pcode_shape.svg);
             mask-position: top;
             mask-repeat: no-repeat;
             mask-size: 92%;
+            width: 100%;
         `;
-        PcodeShapeLayout = styled(Box)`
-            transform: rotateZ(-195deg);
-            margin-right: 15%;
+        PcodeShapeLayout = styled.div`
+            margin: 5% 15% 0 0;
+            transform: rotateZ(-189deg);
+            width: 81%;
         `;
     }
     return (
         <div className={className}>
-            <StyledFlex>
+            <StyledFlexLayout>
                 <PcodeShapeLayout>
-                    <PcodeShape width="100%" color={color} />
+                    <PcodeShape color={color} />
                 </PcodeShapeLayout>
                 <StyledImageLayout>
                     <StyledImage src={imageSource} />

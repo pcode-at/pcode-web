@@ -1,12 +1,8 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Box, Flex, Image, Text } from 'rebass';
-import { theme } from '../theme';
-import { PcodeShape } from './PcodeShape';
+import { PcodeShapeWithImage } from './PcodeShapeWithImage';
 import { CopyText, FontStyle } from './CopyText';
-import styled, { css } from 'styled-components';
-
-const { light, normal } = theme.font;
+import styled, { css, breakpoints } from '@xstyled/styled-components';
 
 type Props = {
     color: Color;
@@ -23,49 +19,36 @@ export const PersonWithFunction: React.FC<Props> = ({
     personPosition,
     imagePath,
 }) => {
-    const PersonWithFunctionLayout = styled(Flex)`
+    const PersonWithFunctionLayout = styled.div`
         align-items: center;
+        display: flex;
         flex-direction: column;
     `;
 
-    const PersonNameWrapper = styled(Box)`
+    const PersonNameWrapper = styled.div`
+        font-size: 130%;
         margin-top: 2em;
+        text-align: center;
+    `;
+
+    const PersonPositionWrapper = styled.div`
         font-size: 130%;
         text-align: center;
     `;
 
-    const PersonPositionWrapper = styled(Box)`
-        font-size: 130%;
-        text-align: center;
-    `;
-
-    const StyledPersonImageLayout = styled(Box)`
-        position: absolute;
-        width: 300px;
-    `;
-
-    const StyledPersonImage = styled(Image)`
-        mask: url(../static/pcode_shape.svg);
-        mask-position: top;
-        mask-repeat: no-repeat;
-        mask-size: 70%;
-    `;
-
-    const PcodeShapeLayout = styled(Box)`
-        position: relative;
-        margin-left: -40px;
-        transform: rotate(-20deg);
+    const PcodeShapeLayout = styled.div`
         width: 200px;
     `;
     return (
         <div className={className}>
             <PersonWithFunctionLayout>
                 <PcodeShapeLayout>
-                    <PcodeShape color={color} />
+                    <PcodeShapeWithImage
+                        imageSource={imagePath}
+                        variant={'imageRight'}
+                        color={Color.Secondary}
+                    />
                 </PcodeShapeLayout>
-                <StyledPersonImageLayout>
-                    <StyledPersonImage src={imagePath} />
-                </StyledPersonImageLayout>
                 <PersonNameWrapper>
                     <CopyText color={color} fontStyle={FontStyle.Normal}>
                         {personName}

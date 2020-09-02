@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button, Flex } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
 import { Color } from '../Color.enum';
 import Logo from '../assets/pcode_shape.svg?sprite';
-import styled from 'styled-components';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
+import { ActionButton } from './ActionButton';
 
 type Props = {
     onClickAgreed?(): void;
@@ -17,38 +17,57 @@ export const CookieMonsterBanner: React.FC<Props> = ({
     className,
 }) => {
     const OpacityDiv = styled.div`
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
         background: #fff;
+        bottom: 0;
+        height: 100%;
         opacity: 0.7;
+        position: fixed;
+        width: 100%;
     `;
 
     const BannerWrapperDiv = styled.div`
-        position: fixed;
-        bottom: 0;
         background: #eb425f;
-        padding: 6% 5% 3%;
+        bottom: 0;
         display: flex;
         justify-content: space-around;
+        padding: 6% 5% 3%;
+        position: fixed;
     `;
 
     const ButtonWrapper = styled.div`
-        display: flex;
         align-items: center;
+        display: flex;
     `;
 
     const StyledLogo = styled(Logo)`
-        width: 10%;
-        position: fixed;
         margin-left: -35%;
         margin-top: -12%;
+        position: fixed;
+        width: 10%;
         z-index: 20;
     `;
 
     const StyledCopyTextForCookieInfo = styled(CopyText)`
-        margin-right: 5%;
+        margin-right: 10%;
+        width: 60%;
+    `;
+
+    const StyledFlexBox = styled.div(
+        breakpoints({
+            allDevices: css`
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            `,
+            tablet: css`
+                align-items: initial;
+                flex-direction: row;
+            `,
+        }),
+    );
+
+    const RightActionButtonPadding = styled.div`
+        margin-left: medium;
     `;
 
     return (
@@ -58,14 +77,7 @@ export const CookieMonsterBanner: React.FC<Props> = ({
             <BannerWrapperDiv>
                 <StyledLogo />
 
-                <Flex
-                    sx={{
-                        '@media screen and (max-width: 615px)': {
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                        },
-                    }}
-                >
+                <StyledFlexBox>
                     <StyledCopyTextForCookieInfo
                         color={Color.White}
                         fontStyle={FontStyle.Light}
@@ -76,38 +88,25 @@ export const CookieMonsterBanner: React.FC<Props> = ({
                         site with our social media, advertising and analytics
                         partners who may combine it with other information that
                         you've provided to them or that they've collected from
-                        your use of heir services. You consent to our cookies if
-                        you continue to your website.{' '}
+                        your use of their services. You consent to our cookies
+                        if you continue to your website.{' '}
                     </StyledCopyTextForCookieInfo>
 
                     <ButtonWrapper>
-                        <Button
+                        <ActionButton
                             onClick={onClickAgreed}
-                            style={{
-                                minWidth: '120px',
-                                background: '#2E3C58',
-                                borderRadius: '15px',
-                                cursor: 'pointer',
-                                fontFamily: 'raleway',
-                            }}
-                        >
-                            Yes, I Agree
-                        </Button>
-                        <Button
-                            onClick={onClickDisagreed}
-                            style={{
-                                minWidth: '105px',
-                                background: '#85C5C1',
-                                borderRadius: '15px',
-                                cursor: 'pointer',
-                                fontFamily: 'raleway',
-                                marginLeft: '2vh',
-                            }}
-                        >
-                            Not sure!
-                        </Button>
+                            color={Color.Secondary}
+                            label="Yes, I Agree"
+                        />
+                        <RightActionButtonPadding>
+                            <ActionButton
+                                onClick={onClickDisagreed}
+                                color={Color.Secondary2}
+                                label="Not sure!"
+                            />
+                        </RightActionButtonPadding>
                     </ButtonWrapper>
-                </Flex>
+                </StyledFlexBox>
             </BannerWrapperDiv>
         </div>
     );

@@ -1,8 +1,8 @@
 import * as React from 'react';
 
+import { ThemeProvider } from '@xstyled/styled-components';
 import { Box, Flex } from 'rebass';
 import { theme } from '../theme';
-import { ThemeProvider } from 'emotion-theming';
 import { PcodeShape } from '../components/PcodeShape';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
@@ -17,10 +17,11 @@ import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
 import Router from 'next/router';
 import { WordList } from '../components/WordList';
 import { ProjectSlider } from '../components/ProjectSlider';
-import styled from 'styled-components';
+import styled from '@xstyled/styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { LightStatement } from '../components/LightStatement';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
@@ -41,23 +42,16 @@ const MainPage = () => (
         />
 
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
-            variant={1}
+            variant={'imageRight'}
             color={Color.Secondary}
-        />
-        <StyledHeading>WorkingAtPcode</StyledHeading>
-        <WorkingAtPcodeSection />
-        
-        <StyledHeading>PersonWithFunction</StyledHeading>
-        <StyledPersonWithFunction
-            imagePath="../static/pernsteiner_christoph.png"
-            color={Color.Secondary}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
         />
 
-        <StyledHeading>Statement</StyledHeading>
+        <StyledHeading>WorkingAtPcode</StyledHeading>
+        <WorkingAtPcodeSection />
+
+        <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
@@ -86,6 +80,16 @@ const MainPage = () => (
             our people'
         </Statement2>
 
+        <StyledHeading>LightStatement</StyledHeading>
+        <LightStatement
+            textAndPcodeShapeColor={Color.Primary}
+            variant={'imageRight'}
+            position={'bottom'}
+            imagePath={'../static/pernsteiner_christoph.png'}
+        >
+            we are adapting to new challenges by developing and investing in our
+            people
+        </LightStatement>
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
             <PcodeShape />
@@ -216,7 +220,7 @@ const MainPage = () => (
 );
 
 const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
-    width: 700px;
+    width: 400px;
 `;
 
 const StyledPersonWithFunction = styled(PersonWithFunction)`
@@ -227,8 +231,9 @@ const StyledTechnologyPlatform = styled(TechnologyPlatform)`
     width: 250px;
 `;
 
-const TechnologyFlex = styled(Flex)`
+const TechnologyFlex = styled.div`
     align-content: center;
+    display: flex;
     justify-content: space-evenly;
     max-width: 1200px;
 `;
@@ -269,17 +274,15 @@ const StyledFooter = styled(Footer)`
     margin-top: 2em;
 `;
 
-const StyledPcodeShapeBox = styled(Box)`
-    width: 50%;
+const StyledPcodeShapeBox = styled.div`
     margin-left: 2em;
+    width: 50%;
 `;
 
 const ProjectSliderWrapper = styled.div`
-    width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
     padding-bottom: 20em;
+    width: 250px;
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
 `;
 
 const StyledWordList = styled(WordList)``;

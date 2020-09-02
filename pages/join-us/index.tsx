@@ -67,7 +67,7 @@ const StatementLayout = styled(Box)`
 const JoinUsPage = () => (
     <React.Fragment>
         <ThemeProvider theme={theme}>
-            <SiteHeader color={Color.White}/>
+            <SiteHeader color={Color.White} />
 
             <AboutPcodeLayout backgroundColor={Color.Secondary2}>
                 <HeadlineLayout>
@@ -80,22 +80,20 @@ const JoinUsPage = () => (
                 </HeadlineLayout>
                 <CopyTextLayout>
                     <CopyText color={Color.White} fontStyle={FontStyle.Light}>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                        diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                        aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                        takimata sanctus est Lorem ipsum dolor sit amet.
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                        sed diam nonumy eirmod tempor invidunt ut labore et
+                        dolore magna aliquyam erat, sed diam voluptua. At vero
+                        eos et accusam et justo duo dolores et ea rebum. Stet
+                        clita kasd gubergren, no sea takimata sanctus est Lorem
+                        ipsum dolor sit amet.
                     </CopyText>
                 </CopyTextLayout>
 
                 <LearnMoreButtonLayout>
-                    <ActionButton
-                        color={Color.Primary}
-                        label="learn more"
-                    />
+                    <ActionButton color={Color.Primary} label="learn more" />
                 </LearnMoreButtonLayout>
                 <PcodeShapeLayout>
-                    <PcodeShape color={Color.Secondary}/>
+                    <PcodeShape color={Color.Secondary} />
                 </PcodeShapeLayout>
             </AboutPcodeLayout>
 
@@ -134,7 +132,7 @@ const JoinUsPage = () => (
                 />
             </FreeChairsLayout>
 
-            <WorkingAtPcodeSection/>
+            <WorkingAtPcodeSection />
 
             <StatementLayout>
                 <Statement2
@@ -143,12 +141,12 @@ const JoinUsPage = () => (
                     imagePath={'../static/kotek_michael.png'}
                     color={Color.Secondary}
                 >
-                    ‘ working at pcode means one simple thing:
-                    working for the future! ’
+                    ‘ working at pcode means one simple thing: working for the
+                    future! ’
                 </Statement2>
             </StatementLayout>
 
-            <Footer/>
+            <Footer />
         </ThemeProvider>
     </React.Fragment>
 );
