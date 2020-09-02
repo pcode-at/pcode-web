@@ -23,6 +23,8 @@ export const CopyText: React.FC<Props> = ({
         color: ${color};
         font-family: ${fontStyle};
         font-weight: ${fontStyle};
+        /* Is there a better way to apply the margin on the text? */
+        margin: 0;
     `;
     return (
         <div className={className}>
