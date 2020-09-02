@@ -39,12 +39,12 @@ export const FreeChair: React.FC<Props> = ({
     `;
 
     const PositionLayout = styled.div`
-        margin-bottom: 0.8rem;
+        margin-bottom: small;
     `;
 
     const DescriptionLayout = styled.div`
         display: block;
-        margin-bottom: 0.8rem;
+        margin-bottom: small;
     `;
 
     const MonsterLayout = styled.div`
