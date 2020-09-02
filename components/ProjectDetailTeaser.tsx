@@ -1,10 +1,9 @@
 import React from 'react';
-import { PcodeShape } from '../components/PcodeShape';
+import { PcodeShape } from './PcodeShape';
 import { Color } from '../Color.enum';
-import { Box, Flex } from 'rebass';
 import { ActionButton } from './ActionButton';
 import { CopyText, FontStyle } from './CopyText';
-import styled from 'styled-components';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
 
 type Props = {
     headline: string;
@@ -24,28 +23,28 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
     className,
 }) => {
     const StyledImageLayout = styled.img`
-        width: 70%;
+        left: 80%;
         position: absolute;
         top: 50%;
-        left: 80%;
         transform: translateX(-50%) translateY(-50%);
+        width: 70%;
     `;
 
-    const GraphicLayout = styled(Box)`
+    const GraphicLayout = styled.div`
         position: relative;
-        margin-left: -30%;
-        width: 100%;
+        width: 33.33%;
     `;
 
-    const TextLayout = styled(Box)`
+    const TextLayout = styled.div`
+        margin-left: extraLarge;
         position: relative;
         text-align: left;
         width: 100%;
     `;
 
     const StyledSectionHeadlineLayout = styled(CopyText)`
-        margin-bottom: 1rem;
         font-size: 250%;
+        margin-bottom: 1rem;
     `;
 
     const StyledCopyText = styled(CopyText)`
@@ -54,15 +53,19 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
         max-width: 700px;
     `;
 
+    const ProjectDetailTeaserLayout = styled.div`
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    `;
+
     return (
         <div className={className}>
-            <Flex alignItems="center" justifyContent="space-between">
-                <Box width={2 / 6}>
-                    <GraphicLayout>
-                        <PcodeShape color={Color.Primary} />
-                        <StyledImageLayout src={imageSrc} />
-                    </GraphicLayout>
-                </Box>
+            <ProjectDetailTeaserLayout>
+                <GraphicLayout>
+                    <PcodeShape color={Color.Primary} />
+                    <StyledImageLayout src={imageSrc} />
+                </GraphicLayout>
                 <TextLayout>
                     <StyledSectionHeadlineLayout
                         color={headlineColor}
@@ -82,7 +85,7 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
                         onClick={onClick}
                     />
                 </TextLayout>
-            </Flex>
+            </ProjectDetailTeaserLayout>
         </div>
     );
 };
