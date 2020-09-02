@@ -8,7 +8,7 @@ import styled, { css } from 'styled-components';
 
 const { light, normal } = theme.font;
 
-type TPersonWithFunctionProps = {
+type Props = {
     color: Color;
     personName: string;
     personPosition: string;
@@ -16,22 +16,16 @@ type TPersonWithFunctionProps = {
     imagePath: string;
 };
 
-export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
+export const PersonWithFunction: React.FC<Props> = ({
     color,
     className,
     personName,
     personPosition,
     imagePath,
 }) => {
-
-    const PersonWrapper = styled(Box)`
-        padding: 1px;
-    `;
-
-    const StyledPersonFlex = styled(Flex)`
+    const PersonWithFunctionLayout = styled(Flex)`
         align-items: center;
         flex-direction: column;
-        justify-content: center;
     `;
 
     const PersonNameWrapper = styled(Box)`
@@ -45,11 +39,9 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
         text-align: center;
     `;
 
-
-    const StyledPersonImageLayout = styled.div`
-        margin-left: 1em;
+    const StyledPersonImageLayout = styled(Box)`
         position: absolute;
-        max-width: 300px;
+        width: 300px;
     `;
 
     const StyledPersonImage = styled(Image)`
@@ -59,26 +51,33 @@ export const PersonWithFunction: React.FC<TPersonWithFunctionProps> = ({
         mask-size: 70%;
     `;
 
+    const PcodeShapeLayout = styled(Box)`
+        position: relative;
+        margin-left: -40px;
+        transform: rotate(-20deg);
+        width: 200px;
+    `;
     return (
         <div className={className}>
-                <StyledPersonFlex>
-                    <PcodeShape color={color} width="70%"/>
+            <PersonWithFunctionLayout>
+                <PcodeShapeLayout>
+                    <PcodeShape color={color} />
+                </PcodeShapeLayout>
+                <StyledPersonImageLayout>
+                    <StyledPersonImage src={imagePath} />
+                </StyledPersonImageLayout>
+                <PersonNameWrapper>
+                    <CopyText color={color} fontStyle={FontStyle.Normal}>
+                        {personName}
+                    </CopyText>
+                </PersonNameWrapper>
 
-                    <StyledPersonImageLayout>
-                        <StyledPersonImage src={imagePath}/>
-                    </StyledPersonImageLayout>
-                    <PersonNameWrapper>
-                        <CopyText color={color} fontStyle={FontStyle.Normal}>
-                            {personName}
-                        </CopyText>
-                    </PersonNameWrapper>
-
-                    <PersonPositionWrapper>
-                        <CopyText fontStyle={FontStyle.Light} color={color}>
-                            {personPosition}
-                        </CopyText>
-                    </PersonPositionWrapper>
-                </StyledPersonFlex>
+                <PersonPositionWrapper>
+                    <CopyText fontStyle={FontStyle.Light} color={color}>
+                        {personPosition}
+                    </CopyText>
+                </PersonPositionWrapper>
+            </PersonWithFunctionLayout>
         </div>
     );
 };
