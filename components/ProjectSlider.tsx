@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import styled from 'styled-components';
+import styled from '@xstyled/styled-components';
 
 type Props = {
     images: string[];
@@ -27,18 +27,16 @@ export const ProjectSlider: React.FC<Props> = ({
         );
     }
 
-    {
-        /*TODO: Fix positioning and width*/
-    }
     const ImageWrapper = styled.div`
         position: absolute;
     `;
 
     const CarouselWrapper = styled.div`
-        width: ${width};
-        padding-top: 20%;
+        box-sizing: border-box;
         padding-left: 3%;
         padding-right: 3.5%;
+        padding-top: 20%;
+        width: ${width};
     `;
 
     return (
