@@ -1,10 +1,8 @@
 import React from 'react';
-import { Box, Flex, Heading, Text } from 'rebass';
 import { Color } from '../Color.enum';
-import { theme } from '../theme';
 import { Platform } from './Platform';
 import { PlatformType } from '../shared/PlatformType.enum';
-import styled from 'styled-components';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
 import { ActionButton } from './ActionButton';
 
 type Props = {
@@ -24,86 +22,77 @@ export const TechnologyPlatform: React.FC<Props> = ({
     onClick,
     className,
 }) => {
-    const { light, normal } = theme.font;
-
-    const StyledHeading = styled(Heading)`
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
-        font-size: 200%;
+    const StyledHeading = styled.h1`
+        font-family: normal;
+        font-size: headline3;
+        font-weight: light;
+        margin-bottom: medium;
+        margin-top: large;
         text-align: center;
-        margin-top: 1em;
-        margin-bottom: 2em;
     `;
 
-    const WrapperFlex = styled(Flex)`
+    const WrapperFlex = styled.div`
+        align-items: center;
+        display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
     `;
 
     const PlatformSvgWrapper = styled.div`
-        width: 60%;
         height: 170px;
+        width: 60%;
     `;
 
-    const StyledSubHeading = styled(Heading)`
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
-        padding-top: 0.5em;
-        padding-bottom: 0.2em;
+    const StyledSubHeading = styled.h1`
+        color: Secondary2;
+        font-family: normal;
+        font-size: headline5;
+        font-weight: light;
+        padding-bottom: small;
+        padding-top: medium;
     `;
 
     const HeadingAndListContainer = styled.div`
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
-        margin-bottom: 1em;
         align-content: center;
+        font-family: light;
+        font-weight: light;
+        margin-bottom: large;
     `;
 
     const StyledPlatform = styled(Platform)`
+        left: 50%;
         position: relative;
         top: 50%;
-        left: 50%;
         transform: translate(-50%, -50%);
+    `;
+
+    const StyledText = styled.p`
+        line-height: normal;
     `;
 
     return (
         <div className={className}>
             <WrapperFlex>
-                <StyledHeading fontFamily={normal.fontFamily}>
-                    {name}
-                </StyledHeading>
+                <StyledHeading>{name}</StyledHeading>
 
                 <PlatformSvgWrapper>
                     <StyledPlatform type={platformType} />
                 </PlatformSvgWrapper>
 
                 <div>
-                    <StyledSubHeading
-                        color={Color.Secondary2}
-                        fontFamily={normal.fontFamily}
-                    >
-                        Language
-                    </StyledSubHeading>
+                    <StyledSubHeading>Language</StyledSubHeading>
                     <HeadingAndListContainer>
                         {languages.map(lan => (
-                            <Text lineHeight="1.2" key={lan}>
-                                {lan}
-                            </Text>
+                            <StyledText className={lan}>{lan}</StyledText>
                         ))}
                     </HeadingAndListContainer>
 
-                    <StyledSubHeading
-                        color={Color.Secondary2}
-                        fontFamily={normal.fontFamily}
-                    >
+                    <StyledSubHeading color={Color.Secondary2}>
                         Technology
                     </StyledSubHeading>
                     <HeadingAndListContainer>
                         {technologies.map(tec => (
-                            <Text lineHeight="1.2" key={tec}>
-                                {tec}
-                            </Text>
+                            <StyledText className={tec}>{tec}</StyledText>
                         ))}
                     </HeadingAndListContainer>
 
