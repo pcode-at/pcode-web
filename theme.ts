@@ -74,6 +74,7 @@ export const theme = {
         medium: 16,
         large: 32,
         extraLarge: 64,
+        ultraLarge: 128
     },
     mediaQueries: {
         tablet: `@media screen and (min-width: ${breakpoints[0]})`,

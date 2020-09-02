@@ -1,8 +1,7 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Box, Flex } from 'rebass';
 import { theme } from '../theme';
-import styled from 'styled-components';
+import styled, { css, breakpoints } from '@xstyled/styled-components';
 import { PersonWithFunction } from './PersonWithFunction';
 
 type Props = {
@@ -24,49 +23,61 @@ export const Statement: React.FC<Props> = ({
     imagePath,
     className,
 }) => {
-    const { light, normal } = theme.font;
+    const Wrapper = styled.div(
+        breakpoints({
+            allDevices: css`
+                align-items: center;
+                background-color: ${theme.colors[backgroundColor]};
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 3em;
+                padding-top: 3em;
+            `,
+            tablet: css`
+                flex-direction: row;
+                justify-content: center;
+            `,
+        }),
+    );
 
-    const Wrapper = styled(Flex)`
-        padding-top: 3em;
-        padding-bottom: 3em;
+    const TextWrapper = styled.div(
+        breakpoints({
+            allDevices: css`
+                color: ${color};
+                font-family: light;
+                font-size: headline4;
+                font-weight: normal;
+                margin-left: 10%;
+                margin-right: 10%;
+                padding: 0;
+                text-align: center;
+                width: 90%;
+            `,
+            tablet: css`
+                margin: initial;
+                font-size: headline3;
+                padding: large medium large ultraLarge;
+                text-align: initial;
+                width: 70%;
+            `,
+        }),
+    );
+
+    const PersonWrapper = styled.div(
+        breakpoints({
+            allDevices: css`
+                justify-content: center;
+                margin-right: 10%;
+            `,
+            tablet: css`
+                margin: initial;
+            `,
+        }),
+    );
+
+    const StyledPersonFlex = styled.div`
         align-items: center;
-
-        @media screen and (min-width: 615px) {
-            justify-content: space-between;
-            flex-direction: row;
-        }
-        @media screen and (max-width: 615px) {
-            flex-direction: column;
-        }
-    `;
-
-    const TextWrapper = styled(Flex)`
-        padding: 10%;
-        width: 70%;
-        font-family: ${light.fontFamily};
-        font-weight: ${normal.fontWeight};
-        font-size: 250%;
-        color: ${color};
-
-        @media screen and (max-width: 615px) {
-            padding: 0;
-            width: 90%;
-            text-align: center;
-            margin-left: 10%;
-            margin-right: 10%;
-        }
-    `;
-
-    const PersonWrapper = styled(Box)`
-        justify-content: center;
-
-        @media screen and (min-width: 615px) {
-            margin-right: 10%;
-        }
-    `;
-
-    const StyledPersonFlex = styled(Flex)`
-        align-items: center;
+        display: flex;
         flex-direction: column;
         justify-content: center;
     `;
