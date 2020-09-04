@@ -1,7 +1,6 @@
 import React from 'react';
 import { Color } from '../Color.enum';
-import { Text } from 'rebass';
-import { theme } from '../theme';
+import { styled } from '../stitches.config';
 
 export enum FontStyle {
     Normal = 'normal',
@@ -20,15 +19,21 @@ export const CopyText: React.FC<Props> = ({
     fontStyle,
     className,
 }) => {
+    const Headline = styled('h1', {
+        backgroundColor: 'red',
+        color: `$${color}`,
+        width: '100%',
+        textAlign: 'center',
+        fontSize: '$headline2',
+
+        desktop: {
+            fontSize: '$headline1',
+        },
+    });
+
     return (
         <div className={className}>
-            <Text
-                color={color}
-                fontFamily={theme.font[fontStyle].fontFamily}
-                fontWeight={theme.font[fontStyle].fontWeight}
-            >
-                {children}
-            </Text>
+            <Headline>{children}</Headline>
         </div>
     );
 };
