@@ -28,6 +28,7 @@ import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
+import { SkillDetail } from '../components/SkillDetail';
 
 const { light, normal } = theme.font;
 
@@ -106,6 +107,17 @@ const MainPage = () => (
             Tausendsassa anschwärzen der einfältig Pranger. Das Schutzschwalbe
             meucheln das feist Damenbart. Höchste Eisenbahn
         </StyledCopyText>
+
+        <StyledHeading>Skill Detail</StyledHeading>
+        <StyledSkillDetail
+            headlineColor={Color.White}
+            textColor={Color.Secondary}
+            headlineContent="scrum"
+        >
+            Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
+            gutheißen adrett Ganove. Schmock und Kastrat grämen emsig Räuber.
+            Die altbacken Freikörperkultur meucheln.
+        </StyledSkillDetail>
 
         <StyledHeading>ContactForm</StyledHeading>
         <StyledContactForm>ContactForm Component</StyledContactForm>
@@ -283,5 +295,10 @@ const ProjectSliderWrapper = styled.div`
 `;
 
 const StyledWordList = styled(WordList)``;
+
+const StyledSkillDetail = styled(SkillDetail)`
+    width: 250px;
+    background-color: ${theme.colors.primary};
+`;
 
 export default MainPage;
