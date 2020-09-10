@@ -21,6 +21,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
@@ -40,7 +41,6 @@ const MainPage = () => (
                 alert('Not Implemented Yet!');
             }}
         />
-
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
         <StyledPcodeShapeWithImage
             imageSource="../static/pernsteiner_christoph.png"
@@ -49,17 +49,6 @@ const MainPage = () => (
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
-        
-        <StyledHeading>PersonWithFunction</StyledHeading>
-        <StyledPersonWithFunction
-            imagePath="../static/pernsteiner_christoph.png"
-            color={Color.Secondary}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-        />
-
-        <StyledHeading>Statement</StyledHeading>
-        <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
             personName={'Christoph Pernsteiner'}
@@ -152,6 +141,26 @@ const MainPage = () => (
                 images={['../static/sandburg.jpg', '../static/sandburg.jpg']}
             />
         </ProjectSliderWrapper>
+
+        <StyledHeading>KeyWordsWithImagesSlider</StyledHeading>
+        <KeywordsWithImagesSlider
+            wordList={[
+                [
+                    'praise',
+                    'potential',
+                    'people',
+                    'passion',
+                    'power',
+                    'perfection',
+                ],
+                ['Test1', 'Test2', 'Test3', 'Test4', 'Test5'],
+            ]}
+            imagePairs={[
+                ['../static/nebo_jure.jpg', '../static/sandburg.jpg'],
+                ['../static/sandburg.jpg', '../static/nebo_jure.jpg'],
+            ]}
+            alignment="horizontal"
+        ></KeywordsWithImagesSlider>
 
         <StyledHeading>Swiper</StyledHeading>
         <StyledSwiper
