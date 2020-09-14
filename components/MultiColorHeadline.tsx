@@ -4,46 +4,63 @@ import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
 import { Color } from '../Color.enum';
 
-type MultiColorHeadline = {
+type Props = {
     leftAndRightTextColor: Color;
     middleTextColor: Color;
     leftText: string;
     middleText: string;
     rightText: string;
     className?: string;
+    variant: 'Small' | 'Normal' | 'Big';
 };
 
-export const MultiColorHeadline: React.FC<MultiColorHeadline> = ({
+export const MultiColorHeadline: React.FC<Props> = ({
     leftAndRightTextColor,
     middleTextColor,
     leftText,
     middleText,
     rightText,
     className,
+    variant,
 }) => {
+    const variantProps = {
+        fontSize: '300%',
+    };
+
+    if (variant == 'Big') {
+        variantProps.fontSize = '600%';
+    } else if (variant == 'Normal') {
+        variantProps.fontSize = '450%';
+    }
+
+    const MultiColorHeadlineLayout = styled.div`
+        width: 100%;
+        padding: 2rem 0;
+    `;
+    const MultiColorTextLayout = styled.div`
+        display: flex;
+        justify-content: center;
+    `;
+    const StyledHeading = styled.h1`
+        font-family: ${theme.font.normal.fontFamily};
+        text-align: center;
+        font-size: ${variantProps.fontSize};
+        font-weight: ${theme.font.normal.fontWeight};
+    `;
+
     return (
-        <div className="multi-color-headline-box">
-            <Heading
-                fontFamily={theme.font.normal.fontFamily}
-                className={"multi-color-headline " + className}
-                width="100%"
-                textAlign="center"
-                padding="2rem 0"
-                fontSize="600%"
-                fontWeight= {theme.font.normal.fontWeight}
-            >
-                <Text color={leftAndRightTextColor}>{leftText}</Text>
-                &nbsp;
-                <Text color={middleTextColor}>{middleText}</Text>
-                &nbsp;
-                <Text color={leftAndRightTextColor}>{rightText}</Text>
-            </Heading>
-            <style>{`
-                .multi-color-headline *{
-                    display: inline-block;
-                }
-                `}
-            </style>
+        <div className={className}>
+            <MultiColorHeadlineLayout>
+                <StyledHeading className="multi-color-headline">
+                    <MultiColorTextLayout>
+                        <Text color={leftAndRightTextColor}>{leftText}</Text>
+                        &nbsp;
+                        <Text color={middleTextColor}>{middleText}</Text>
+                        &nbsp;
+                        <Text color={leftAndRightTextColor}>{rightText}</Text>
+                    </MultiColorTextLayout>
+                </StyledHeading>
+            </MultiColorHeadlineLayout>
         </div>
     );
 };

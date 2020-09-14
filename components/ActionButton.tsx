@@ -6,8 +6,6 @@ import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
 
-export type appearance = 'small' | 'large';
-
 type Props = {
     color?: Color;
     label: string;
@@ -15,7 +13,7 @@ type Props = {
     noBackground?: boolean;
     onClick?(): void;
     className?: string;
-    appearance?: appearance;
+    appearance?: 'Small' | 'Large';
 };
 
 export const ActionButton: React.FC<Props> = ({
@@ -36,9 +34,9 @@ export const ActionButton: React.FC<Props> = ({
                 onClick={onClick}
                 style={{
                     padding,
-                    borderRadius: appearance == 'small' ? '15px' : '50px',
+                    borderRadius: appearance == 'Small' ? '15px' : '50px',
                     cursor: 'pointer',
-                    fontSize: appearance == 'large' ? '50px' : '',
+                    fontSize: appearance == 'Large' ? '50px' : '',
                 }}
             >
                 <CopyText

@@ -45,14 +45,14 @@ const MainPage = () => (
         />
 
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
-        
+
         <StyledHeading>PersonWithFunction</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
@@ -91,7 +91,7 @@ const MainPage = () => (
         </Statement2>
 
         <StyledHeading>ActionButton Large</StyledHeading>
-        <StyledActionButton label={'Green Technology'} appearance={'large'} />
+        <StyledActionButton label={'Green Technology'} appearance={'Large'} />
 
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
@@ -100,6 +100,7 @@ const MainPage = () => (
             leftText="our"
             middleText="code"
             rightText="stands for"
+            variant="Normal"
         >
             'we are adapting to new challenges by developing and investing in
             our people'
@@ -280,7 +281,6 @@ const StyledActionButton = styled(ActionButton)`
     width: 100vw;
     display: flex;
     justify-content: center;
-
 `;
 
 const TechnologyFlex = styled(Flex)`
@@ -332,9 +332,7 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
 `;
 

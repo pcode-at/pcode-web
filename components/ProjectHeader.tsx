@@ -6,7 +6,7 @@ import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
 
-type ProjectHeader = {
+type Props = {
     startHeadlineOne: string;
     startHeadlineTwo: string;
     detailText: string;
@@ -15,7 +15,7 @@ type ProjectHeader = {
     backgroundColor: Color;
 };
 
-export const ProjectHeader: React.FC<ProjectHeader> = ({
+export const ProjectHeader: React.FC<Props> = ({
     startHeadlineOne,
     startHeadlineTwo,
     detailText,
