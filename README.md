@@ -46,7 +46,7 @@ Standard html tags may be styled e.g.
 
 const StyledHeaderDiv = styled.div`
 
-border-width: 3px;
+    border-width: 3px;
 
 `;
 
@@ -58,7 +58,7 @@ You can also style Rebass, or custom made components e.g.
 
 const StyledButton = styled(Button)`
 
-border-radius: 10px;
+    border-radius: 10px;
 
 `;
 
