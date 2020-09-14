@@ -29,6 +29,7 @@ import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
+import { Character } from '../components/Character';
 import { SkillDetail } from '../components/SkillDetail';
 
 const { light, normal } = theme.font;
@@ -133,6 +134,14 @@ const MainPage = () => (
             positionLevel={PositionLevel.Junior}
             positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
         ></StyledFreeChair>
+
+        <StyledHeading>Character</StyledHeading>
+        <StyledCharacter
+            characterTitle="strategic wizard"
+            characterDescription="Phasellus eget turpis dignissim. vestibulum libero non, fringilla nulla. Proin blandit cursus euismod. Proin viverra et diam vitae semper."
+            textColor={Color.Secondary}
+            monsterType={MonsterType.StrategicWizard}
+        ></StyledCharacter>
 
         <StyledHeading>ProjectSlider</StyledHeading>
         <ProjectSliderWrapper>
@@ -278,6 +287,10 @@ const StyledSectionHeadline = styled(SectionHeadline)`
 `;
 
 const StyledFreeChair = styled(FreeChair)`
+    margin-left: 1em;
+`;
+
+const StyledCharacter = styled(Character)`
     margin-left: 1em;
 `;
 

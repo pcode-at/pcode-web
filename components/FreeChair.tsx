@@ -60,27 +60,27 @@ export const FreeChair: React.FC<Props> = ({
     return (
         <div className={className}>
             <FreeChairLayout>
-                <CenteredFreeChair>
-                    <SvgLayout>
-                        <MonsterLayout>
-                            <Monster type={monsterType} />
-                        </MonsterLayout>
-                    </SvgLayout>
-
-                    <PositionLayout>
-                        <SubHeadline
-                            color={Color.Secondary}
-                            fontStyle={FontStyle.Normal}
-                        >
-                            {position}
-                        </SubHeadline>
-                        <CopyText
-                            color={Color.Secondary}
-                            fontStyle={FontStyle.Light}
-                        >
-                            {positionLevel}
-                        </CopyText>
-                    </PositionLayout>
+                <SvgLayout>
+                    <MonsterLayout>
+                        <Monster type={monsterType} />
+                    </MonsterLayout>
+                </SvgLayout>
+                <PositionLayout>
+                    <SubHeadline
+                        color={Color.Secondary}
+                        fontStyle={FontStyle.Normal}
+                    >
+                        {' '}
+                        {position}{' '}
+                    </SubHeadline>
+                    <CopyText
+                        color={Color.Secondary}
+                        fontStyle={FontStyle.Light}
+                    >
+                        {' '}
+                        {positionLevel}{' '}
+                    </CopyText>
+                </PositionLayout>
 
                     <DescriptionLayout>
                         <CopyText
