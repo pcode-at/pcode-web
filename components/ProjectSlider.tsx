@@ -27,14 +27,12 @@ export const ProjectSlider: React.FC<Props> = ({
         );
     }
 
-    {
-        /*TODO: Fix positioning and width*/
-    }
-    const ImageWrapper = styled.div`
+    {/*TODO: Fix positioning and width*/}
+    const ImageLayout = styled.div`
         position: absolute;
     `;
 
-    const CarouselWrapper = styled.div`
+    const CarouselLayout = styled.div`
         width: ${width};
         padding-top: 20%;
         padding-left: 3%;
@@ -43,14 +41,16 @@ export const ProjectSlider: React.FC<Props> = ({
 
     return (
         <div className={className}>
-            <ImageWrapper>
-                <img src="../static/phone.svg" alt="" width={width} />
-            </ImageWrapper>
+            <ImageLayout>
+                <img src="../static/phone.svg" alt="" width={width}/>
+            </ImageLayout>
 
             <div style={{ width: width }}>
-                <CarouselWrapper>
-                    <Carousel showThumbs={false}>{divs}</Carousel>
-                </CarouselWrapper>
+                <CarouselLayout>
+                    <Carousel showThumbs={false}>
+                        {divs}
+                    </Carousel>
+                </CarouselLayout>
             </div>
         </div>
     );

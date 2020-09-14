@@ -52,6 +52,7 @@ export const SiteHeader: React.FC<Props> = ({ color, onClick }) => {
             <OuterFlex>
                 <LogoLayout width={11 / 12}>
                     <StyledLogo />
+                    <StyledLogo/>
                 </LogoLayout>
 
                 <InnerFlex

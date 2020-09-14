@@ -61,12 +61,16 @@ export const WordList: React.FC<Props> = ({
         position: relative;
         display: flex;
         align-items: center;
+    `;
+
+    const WordListLayout = styled(Box)`
         width: 100%;
     `;
 
     const CentralLayout = styled(Box)`
         position: absolute;
         display: flex;
+        width: 100%;
         justify-content: center;
         flex-direction: column;
         width: 100%;
@@ -76,14 +80,12 @@ export const WordList: React.FC<Props> = ({
         display: flex;
         flex-direction: column;
         align-items: center;
-        font-size: 2rem;
-        z-index: 1;
     `;
 
     const PcodeShapeLayout = styled(Box)`
         width: 100%;
-        display: flex;
         justify-content: center;
+        display: flex;
         margin-top: -6%;
     `;
 

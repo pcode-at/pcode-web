@@ -30,9 +30,12 @@ export const SectionHeadline: React.FC<Props> = ({
         font-weight: 500;
     `;
 
-    const SecondSpan = styled.span`
+    const SecondSpanLayout = styled.span`
         display: ${maxWidthPartTwo ? 'block' : 'inline'};
         max-width: ${maxWidthPartTwo};
+    `;
+
+    const SecondSpanStyle = styled.span`
         font-weight: 300;
     `;
 
@@ -42,7 +45,9 @@ export const SectionHeadline: React.FC<Props> = ({
                 <FirstSpan>{headlinePartOne}</FirstSpan>
                 &nbsp;
                 {separateWithBreak && <br />}
-                <SecondSpan>{headlinePartTwo}</SecondSpan>
+                <SecondSpanLayout>
+                    <SecondSpanStyle>{headlinePartTwo}</SecondSpanStyle>
+                </SecondSpanLayout>
             </Heading>
         </div>
     );
