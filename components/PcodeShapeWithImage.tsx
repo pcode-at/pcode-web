@@ -5,11 +5,13 @@ import { Color } from '../Color.enum';
 import { theme } from '../theme';
 import { PcodeShape } from './PcodeShape';
 import styled from 'styled-components';
-import { Flex, Image, Box } from 'rebass';
+import { Flex, Box, Image } from 'rebass';
+
+export type pcodeShapeWithImageVariant = 1 | 2;
 
 type Props = {
+    variant: pcodeShapeWithImageVariant,
     imageSource: string;
-    variant: number;
     color?: Color;
     className?: string;
 };
@@ -27,7 +29,7 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
         position: relative;
     `;
 
-    let StyledImage = styled(Image)`
+    let StyledPcodeShape = styled(PcodeShape)`
         mask: url(../static/pcode_shape.svg);
         mask-position: top;
         mask-repeat: no-repeat;
@@ -43,6 +45,13 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
 
     let PcodeShapeLayout = styled(Box)`
         width: 70%;
+    `;
+    
+    let StyledImage = styled(Image)`
+        mask: url(../static/pcode_shape.svg);
+        mask-position: top;
+        mask-repeat: no-repeat;
+        mask-size: 92%;
     `;
 
     if (variant == 2) {
@@ -65,9 +74,9 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
     }
     return (
         <div className={className}>
-            <StyledFlex>
+            <StyledFlexLayout>
                 <PcodeShapeLayout>
-                    <PcodeShape width="100%" color={color} />
+                    <StyledPcodeShape width="100%" color={color} />
                 </PcodeShapeLayout>
                 <StyledImageLayout>
                     <StyledImage src={imageSource} />

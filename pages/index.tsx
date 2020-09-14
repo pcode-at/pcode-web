@@ -21,6 +21,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { QuotedCompanies } from '../components/QuotedCompanies';
 import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
@@ -43,13 +44,23 @@ const MainPage = () => (
             }}
         />
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
+        <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath="../static/pernsteiner_christoph.png"
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
+        />
+
+        <StyledHeading>Statement</StyledHeading>
+        <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
             personName={'Christoph Pernsteiner'}
@@ -76,6 +87,21 @@ const MainPage = () => (
             'we are adapting to new challenges by developing and investing in
             our people'
         </Statement2>
+
+        <StyledHeading>QuotedCompanies</StyledHeading>
+        <QuotedCompanies
+            logoSvgSources={[
+                '../static/quoted_company1.svg',
+                '../static/quoted_company2.svg',
+                '../static/quoted_company3.svg',
+                '../static/quoted_company4.svg',
+                '../static/quoted_company5.svg',
+            ]}
+            selectedCompanyIndex={2}
+            selectCompany={index => {
+                console.log('Index: ' + index);
+            }}
+        ></QuotedCompanies>
 
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
@@ -310,9 +336,7 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
 `;
 
