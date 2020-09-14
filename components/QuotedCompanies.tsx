@@ -6,14 +6,14 @@ import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 
 type Props = {
-    svgSources: string[];
+    logoSvgSources: string[];
     selectedCompanyIndex: number;
     selectCompany(index: number): void;
     className?: string;
 };
 
 export const QuotedCompanies: React.FC<Props> = ({
-    svgSources,
+    logoSvgSources,
     selectedCompanyIndex,
     selectCompany,
     className,
@@ -31,13 +31,13 @@ export const QuotedCompanies: React.FC<Props> = ({
     };
 
     function getCodeOfCompanyIndex(selectedIndex) {
-        svgSources.forEach((svgSource, index) => {
+        logoSvgSources.forEach((svgSource, index) => {
             let color = index == selectedIndex ? Color.Secondary : Color.White;
 
             const SvgBoxPadding = styled(Box)`
                 padding: 2% 6%;
-                height: ${100 / svgSources.length}vw;
-                width: ${100 / svgSources.length}vw;
+                height: ${100 / logoSvgSources.length}vw;
+                width: ${100 / logoSvgSources.length}vw;
             `;
 
             const StyledSvgButton = styled(Button)`

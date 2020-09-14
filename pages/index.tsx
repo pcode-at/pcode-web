@@ -89,7 +89,7 @@ const MainPage = () => (
 
         <StyledHeading>QuotedCompanies</StyledHeading>
         <QuotedCompanies
-            svgSources={[
+            logoSvgSources={[
                 '../static/quoted_company1.svg',
                 '../static/quoted_company2.svg',
                 '../static/quoted_company3.svg',
