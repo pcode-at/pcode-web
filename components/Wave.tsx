@@ -5,14 +5,10 @@ import { theme } from '../theme';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 
-export type waveVariants = 'top' | 'bottom';
-
-export type shapeVariants = 1 | 2 | 3 | 4;
-
 type Props = {
-    variant: waveVariants;
+    variant: 'Top' | 'Bottom';
     color: Color;
-    shape: shapeVariants;
+    shape: 1 | 2 | 3 | 4;
     className?: string;
 };
 
@@ -29,7 +25,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
         background-color: ${theme.colors[color]};
         mask: url(../static/wave1.svg);
         mask-position: top;
-        ${variant == 'top' ? 'transform: scaleY(-1);' : ''}
+        ${variant == 'Top' ? 'transform: scaleY(-1);' : ''}
         mask-repeat: no-repeat;
         mask-size: 100%;
     `;
@@ -42,7 +38,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
                 background-color: ${theme.colors[color]};
                 mask: url(../static/wave2.svg);
                 mask-position: top;
-                ${variant == 'top' ? 'transform: scaleY(-1);' : ''}
+                ${variant == 'Top' ? 'transform: scaleY(-1);' : ''}
                 mask-repeat: no-repeat;
                 mask-size: 100%;
             `;
@@ -59,7 +55,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
                 background-color: ${theme.colors[color]};
                 mask: url(../static/wave3.svg);
                 mask-position: bottom;
-                ${variant == 'bottom' ? 'transform: scaleY(-1);' : ''}
+                ${variant == 'Bottom' ? 'transform: scaleY(-1);' : ''}
                 mask-repeat: no-repeat;
                 mask-size: 100%;
             `;
@@ -77,7 +73,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
                 background-color: ${theme.colors[color]};
                 mask: url(../static/wave4.svg);
                 mask-position: top;
-                ${variant == 'top'
+                ${variant == 'Top'
                     ? 'transform: scaleY(-1);'
                     : 'transform: translateY(-26.8vw);'}
                 mask-repeat: no-repeat;

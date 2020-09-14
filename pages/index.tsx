@@ -42,7 +42,7 @@ const MainPage = () => (
         />
 
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
@@ -104,7 +104,7 @@ const MainPage = () => (
         <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>Wave</StyledHeading>
-        <Wave variant={'top'} color={Color.Primary} shape={1}></Wave>
+        <Wave variant={'Top'} color={Color.Primary} shape={1}></Wave>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
