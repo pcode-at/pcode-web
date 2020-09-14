@@ -94,7 +94,7 @@ const MainPage = () => (
             leftText="our"
             middleText="code"
             rightText="stands for"
-            variant="big"
+            variant="Big"
         />
 
         <StyledHeading>PcodeShape</StyledHeading>
@@ -287,9 +287,7 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderLayout = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
 `;
 
