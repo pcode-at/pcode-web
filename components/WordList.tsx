@@ -4,6 +4,8 @@ import { PcodeShape } from './PcodeShape';
 import { Color } from '../Color.enum';
 import styled from 'styled-components';
 
+export const intervalDuration: number = 3100;
+
 type Props = {
     color?: Color;
     words: Array<string>;
@@ -12,8 +14,8 @@ type Props = {
 
 export const WordList: React.FC<Props> = ({
     words,
-    className,
     color = Color.Primary,
+    className,
 }) => {
     const [itemsToSlide, setItemsToSlide] = React.useState(() => words);
     const middleWordIndex = parseInt((itemsToSlide.length / 2).toFixed(0)) - 1;
@@ -26,7 +28,7 @@ export const WordList: React.FC<Props> = ({
             shuffledWords.unshift(last);
 
             setItemsToSlide(shuffledWords);
-        }, 3100);
+        }, intervalDuration);
 
         return () => clearInterval(interval);
     }, [itemsToSlide]);

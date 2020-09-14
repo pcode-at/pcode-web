@@ -3,6 +3,7 @@ import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
 import { theme } from '../theme';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
+import { Color } from '../Color.enum';
 
 const WhoWeArePage = () => (
     <div>
@@ -38,7 +39,7 @@ const WhoWeArePage = () => (
             description="Description"
             headline="Headline"
             imageSrc=""
-            pcodeShapeBackground={false}
+            headlineColor={Color.Primary}
         />
 
         <style jsx>{`
