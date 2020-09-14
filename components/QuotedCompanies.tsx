@@ -19,7 +19,7 @@ export const QuotedCompanies: React.FC<Props> = ({
     className,
 }) => {
     const [companyIndex, setCompanyIndex] = React.useState(
-        () => selectedCompanyIndex,
+        selectedCompanyIndex,
     );
 
     let items = [];

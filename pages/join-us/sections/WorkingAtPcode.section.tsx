@@ -5,7 +5,7 @@ import { SectionHeadline } from '../../../components/SectionHeadline';
 import { WordList } from '../../../components/WordList';
 import styled from 'styled-components';
 
-const WorkingAtPcodeSection: React.FC = () => {
+export const WorkingAtPcodeSection: React.FC = () => {
     const HeaderLayout = styled(Flex)`
         justify-content: center;
         flex-wrap: wrap;

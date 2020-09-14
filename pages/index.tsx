@@ -323,9 +323,7 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
 `;
 
