@@ -5,9 +5,7 @@ import { SectionHeadline } from '../../../components/SectionHeadline';
 import { WordList } from '../../../components/WordList';
 import styled from 'styled-components';
 
-export const WorkingAtPcodeSection: React.FC = () => {
-    const [isOverMobile, setOverMobileStatus] = React.useState();
-
+const WorkingAtPcodeSection: React.FC = () => {
     const HeaderLayout = styled(Flex)`
         justify-content: space-between;
         flex-wrap: wrap;
@@ -98,3 +96,5 @@ export const WorkingAtPcodeSection: React.FC = () => {
         </React.Fragment>
     );
 };
+
+export default WorkingAtPcodeSection;

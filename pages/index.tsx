@@ -21,6 +21,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
@@ -28,6 +29,7 @@ import { PersonWithFunction } from '../components/PersonWithFunction';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
+import { SkillDetail } from '../components/SkillDetail';
 
 const { light, normal } = theme.font;
 
@@ -39,7 +41,6 @@ const MainPage = () => (
                 alert('Not Implemented Yet!');
             }}
         />
-
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
         <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
@@ -106,6 +107,17 @@ const MainPage = () => (
             meucheln das feist Damenbart. Höchste Eisenbahn
         </StyledCopyText>
 
+        <StyledHeading>Skill Detail</StyledHeading>
+        <StyledSkillDetail
+            headlineColor={Color.White}
+            textColor={Color.Secondary}
+            headlineContent="scrum"
+        >
+            Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
+            gutheißen adrett Ganove. Schmock und Kastrat grämen emsig Räuber.
+            Die altbacken Freikörperkultur meucheln.
+        </StyledSkillDetail>
+
         <StyledHeading>ContactForm</StyledHeading>
         <StyledContactForm>ContactForm Component</StyledContactForm>
 
@@ -139,6 +151,26 @@ const MainPage = () => (
                 images={['../static/sandburg.jpg', '../static/sandburg.jpg']}
             />
         </ProjectSliderWrapper>
+
+        <StyledHeading>KeyWordsWithImagesSlider</StyledHeading>
+        <KeywordsWithImagesSlider
+            wordList={[
+                [
+                    'praise',
+                    'potential',
+                    'people',
+                    'passion',
+                    'power',
+                    'perfection',
+                ],
+                ['Test1', 'Test2', 'Test3', 'Test4', 'Test5'],
+            ]}
+            imagePairs={[
+                ['../static/nebo_jure.jpg', '../static/sandburg.jpg'],
+                ['../static/sandburg.jpg', '../static/nebo_jure.jpg'],
+            ]}
+            alignment="horizontal"
+        ></KeywordsWithImagesSlider>
 
         <StyledHeading>Swiper</StyledHeading>
         <StyledSwiper
@@ -282,5 +314,10 @@ const ProjectSliderWrapper = styled.div`
 `;
 
 const StyledWordList = styled(WordList)``;
+
+const StyledSkillDetail = styled(SkillDetail)`
+    width: 250px;
+    background-color: ${theme.colors.primary};
+`;
 
 export default MainPage;
