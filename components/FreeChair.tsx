@@ -30,6 +30,9 @@ export const FreeChair: React.FC<Props> = ({
     const FreeChairLayout = styled.div`
         width: 200px;
         height: 400px;
+    `;
+
+    const CenteredFreeChair = styled.div`
         text-align: center;
     `;
 
@@ -79,20 +82,21 @@ export const FreeChair: React.FC<Props> = ({
                     </CopyText>
                 </PositionLayout>
 
-                <DescriptionLayout>
-                    <CopyText
-                        color={Color.Secondary2}
-                        fontStyle={FontStyle.Light}
-                    >
-                        {positionDescription}
-                    </CopyText>
-                </DescriptionLayout>
+                    <DescriptionLayout>
+                        <CopyText
+                            color={Color.Secondary2}
+                            fontStyle={FontStyle.Light}
+                        >
+                            {positionDescription}
+                        </CopyText>
+                    </DescriptionLayout>
 
-                <a
-                    href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
-                >
-                    <ActionButton color={Color.Secondary2} label="apply" />
-                </a>
+                    <a
+                        href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
+                    >
+                        <ActionButton color={Color.Secondary2} label="apply" />
+                    </a>
+                </CenteredFreeChair>
             </FreeChairLayout>
         </div>
     );
