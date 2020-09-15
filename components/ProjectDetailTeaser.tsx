@@ -63,7 +63,7 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
                 <Box width={2 / 6}>
                     <GraphicLayout>
                         <PcodeShape color={Color.Primary} />
-                        <StyledImage src={imageSrc} />
+                        <StyledImageLayout src={imageSrc} />
                     </GraphicLayout>
                 </Box>
                 <TextLayout>

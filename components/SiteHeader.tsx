@@ -13,11 +13,7 @@ type Props = {
     onClick?(): void;
 };
 
-export const SiteHeader: React.FC<Props> = ({
-   color,
-   onClick,
-}) => {
-
+export const SiteHeader: React.FC<Props> = ({ color, onClick }) => {
     const OuterFlex = styled(Flex)`
         background-color: white;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -25,6 +21,7 @@ export const SiteHeader: React.FC<Props> = ({
         justify-content: space-between;
         align-items: flex-end;
         padding: 0.5em;
+        width: 100vw;
     `;
 
     const InnerFlex = styled(Flex)`
@@ -45,11 +42,17 @@ export const SiteHeader: React.FC<Props> = ({
         width: 30px;
     `;
 
+    const StyledHeadroom = styled(Headroom)`
+        z-index: 2;
+        position: fixed;
+        top: 0;
+    `;
+
     return (
-        <Headroom>
+        <StyledHeadroom>
             <OuterFlex>
                 <LogoLayout width={11 / 12}>
-                    <StyledLogo/>
+                    <StyledLogo />
                 </LogoLayout>
 
                 <InnerFlex
@@ -61,6 +64,6 @@ export const SiteHeader: React.FC<Props> = ({
                     <StyledNavbarSvg />
                 </InnerFlex>
             </OuterFlex>
-        </Headroom>
+        </StyledHeadroom>
     );
 };

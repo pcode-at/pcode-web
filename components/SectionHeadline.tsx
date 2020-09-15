@@ -2,6 +2,7 @@ import React from 'react';
 import { Color } from '../Color.enum';
 import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
+import { theme } from '../theme';
 
 type Props = {
     color: Color;
@@ -9,6 +10,7 @@ type Props = {
     headlinePartTwo: string;
     separateWithBreak?: boolean;
     maxWidthPartTwo?: string;
+    variant?: 'Normal' | 'Big';
     className?: string;
 };
 
@@ -18,6 +20,7 @@ export const SectionHeadline: React.FC<Props> = ({
     color,
     separateWithBreak = false,
     maxWidthPartTwo,
+    variant = 'Normal',
     className,
 }) => {
     const defaultProps = {
@@ -39,16 +42,22 @@ export const SectionHeadline: React.FC<Props> = ({
         font-weight: 300;
     `;
 
+    const HeadingDesign = styled.h1`
+        ${variant == 'Big' ? 'font-size: 40px' : 'font-size: 24px'};
+        font-family: 'raleway';
+        color: ${theme.colors[color]};
+    `;
+
     return (
         <div className={className}>
-            <Heading fontFamily="raleway" color={color}>
+            <HeadingDesign>
                 <FirstSpan>{headlinePartOne}</FirstSpan>
                 &nbsp;
                 {separateWithBreak && <br />}
                 <SecondSpanLayout>
                     <SecondSpanStyle>{headlinePartTwo}</SecondSpanStyle>
                 </SecondSpanLayout>
-            </Heading>
+            </HeadingDesign>
         </div>
     );
 };

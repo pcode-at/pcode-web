@@ -5,9 +5,9 @@ import { SectionHeadline } from '../../../components/SectionHeadline';
 import { WordList } from '../../../components/WordList';
 import styled from 'styled-components';
 
-const WorkingAtPcodeSection: React.FC = () => {
+export const WorkingAtPcodeSection: React.FC = () => {
     const HeaderLayout = styled(Flex)`
-        justify-content: center;
+        justify-content: space-between;
         flex-wrap: wrap;
         width: 100%;
         position: relative;
@@ -15,7 +15,7 @@ const WorkingAtPcodeSection: React.FC = () => {
 
         @media screen and (min-width: 670px) {
             padding-top: 1rem;
-            padding-bottom: 1rem;
+            padding-bottom: 4rem;
         }
     `;
 
@@ -23,7 +23,8 @@ const WorkingAtPcodeSection: React.FC = () => {
         padding: 2rem;
         max-width: 344px;
         @media screen and (min-width: 670px) {
-            width: 270px;
+            margin-left: 5rem;
+            max-width: 400px;
         }
     `;
 
@@ -41,18 +42,21 @@ const WorkingAtPcodeSection: React.FC = () => {
             z-index: 1;
             width: auto;
             padding-top: 2rem;
-            margin-left: 5rem;
+            margin-right: 20rem;
         },
     `;
 
     const ImageLayout = styled.div`
         width: 100%;
-        margin-top: -20%;
+        margin: 0;
+        margin-top: -50px;
         position: relative;
-        z-index: -4;
+        z-index: 0;
     `;
 
-    const StyledImage = styled(Image)``;
+    const StyledPcodeOfficeImage = styled(Image)`
+        width: 100%;
+    `;
 
     return (
         <React.Fragment>
@@ -64,6 +68,8 @@ const WorkingAtPcodeSection: React.FC = () => {
                             headlinePartTwo="means you get a bunch of cool stuff and a great team count on!"
                             separateWithBreak={true}
                             color={Color.Secondary2}
+                            className="working-at-pcode-headline"
+                            variant="Big"
                         />
                     </SectionHeadlineLayout>
                     <WordListLayout>
@@ -81,7 +87,7 @@ const WorkingAtPcodeSection: React.FC = () => {
                 </HeaderLayout>
             </Flex>
             <ImageLayout>
-                <StyledImage src="./static/tlp-pcode-27.jpg" />
+                <StyledPcodeOfficeImage src="./static/working_at_pcode.png" />
             </ImageLayout>
         </React.Fragment>
     );

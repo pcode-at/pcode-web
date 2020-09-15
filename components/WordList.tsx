@@ -43,6 +43,7 @@ export const WordList: React.FC<Props> = ({
             color: ${Color.White};
             opacity: ${opacity};
             order: ${index};
+            font-size: 30px;
         `;
 
         return (
@@ -61,10 +62,6 @@ export const WordList: React.FC<Props> = ({
         position: relative;
         display: flex;
         align-items: center;
-    `;
-
-    const WordListLayout = styled(Box)`
-        width: 100%;
     `;
 
     const CentralLayout = styled(Box)`
