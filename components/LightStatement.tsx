@@ -24,26 +24,27 @@ export const LightStatement: React.FC<Props> = ({
 }) => {
     const LightStatementLayout = styled('div', {
         display: 'grid',
-
-        tablet: {
-            padding: '0 $medium',
-        },
-        desktop: {
-            padding: '0 $ultraLarge',
-        },
         variants: {
             horizontalPosition: {
-                imageLeft: {
-                    tablet: {
+                imageLeft: {},
+                imageRight: {},
+            },
+        },
+        tablet: {
+            padding: '0 $medium',
+            variants: {
+                horizontalPosition: {
+                    imageLeft: {
                         gridTemplateColumns: '1fr 3fr',
                     },
-                },
-                imageRight: {
-                    tablet: {
+                    imageRight: {
                         gridTemplateColumns: '3fr 1fr',
                     },
                 },
             },
+        },
+        desktop: {
+            padding: '0 $ultraLarge',
         },
     });
 
