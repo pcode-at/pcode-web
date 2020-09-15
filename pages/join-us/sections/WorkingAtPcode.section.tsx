@@ -5,7 +5,7 @@ import { SectionHeadline } from '../../../components/SectionHeadline';
 import { WordList } from '../../../components/WordList';
 import styled from 'styled-components';
 
-const WorkingAtPcodeSection: React.FC = () => {
+export const WorkingAtPcodeSection: React.FC = () => {
     const HeaderLayout = styled(Flex)`
         justify-content: space-between;
         flex-wrap: wrap;
@@ -54,7 +54,7 @@ const WorkingAtPcodeSection: React.FC = () => {
         z-index: 0;
     `;
 
-    const StyledImage = styled(Image)`
+    const StyledPcodeOfficeImage = styled(Image)`
         width: 100%;
     `;
 
@@ -69,6 +69,7 @@ const WorkingAtPcodeSection: React.FC = () => {
                             separateWithBreak={true}
                             color={Color.Secondary2}
                             className="working-at-pcode-headline"
+                            variant="Big"
                         />
                     </SectionHeadlineLayout>
                     <WordListLayout>
@@ -86,13 +87,8 @@ const WorkingAtPcodeSection: React.FC = () => {
                 </HeaderLayout>
             </Flex>
             <ImageLayout>
-                <StyledImage src="./static/working_at_pcode.png" />
+                <StyledPcodeOfficeImage src="./static/working_at_pcode.png" />
             </ImageLayout>
-            <style>{`
-                .working-at-pcode-headline h2{
-                    font-size: 40px;
-                }
-            `}</style>
         </React.Fragment>
     );
 };

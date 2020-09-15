@@ -7,10 +7,8 @@ import { PcodeShape } from './PcodeShape';
 import styled from 'styled-components';
 import { Flex, Box, Image } from 'rebass';
 
-export type pcodeShapeWithImageVariant = 1 | 2;
-
 type Props = {
-    variant: pcodeShapeWithImageVariant,
+    variant: 1 | 2,
     imageSource: string;
     color?: Color;
     className?: string;
@@ -27,13 +25,6 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
         flex-direction: column;
         justify-content: center;
         position: relative;
-    `;
-
-    let StyledPcodeShape = styled(PcodeShape)`
-        mask: url(../static/pcode_shape.svg);
-        mask-position: top;
-        mask-repeat: no-repeat;
-        mask-size: 92%;
     `;
 
     let StyledImageLayout = styled.div`
@@ -76,7 +67,7 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
         <div className={className}>
             <StyledFlexLayout>
                 <PcodeShapeLayout>
-                    <StyledPcodeShape width="100%" color={color} />
+                    <PcodeShape width="100%" color={color} />
                 </PcodeShapeLayout>
                 <StyledImageLayout>
                     <StyledImage src={imageSource} />

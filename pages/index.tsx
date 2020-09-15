@@ -31,6 +31,9 @@ import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section
 import { MonsterType } from '../shared/MonsterType.enum';
 import { Character } from '../components/Character';
 import { SkillDetail } from '../components/SkillDetail';
+//ToDo ...
+//@ts-ignore
+import ChristophImage from '../static/pernsteiner_christoph.png';
 
 const { light, normal } = theme.font;
 
@@ -44,7 +47,7 @@ const MainPage = () => (
         />
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
         <StyledPcodeShapeWithImageLayout
-            imageSource="../static/pernsteiner_christoph.png"
+            imageSource={ChristophImage}
             variant={1}
             color={Color.Secondary}
         />
@@ -54,23 +57,23 @@ const MainPage = () => (
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
+            personName='Christoph Pernsteiner'
+            personPosition='CEO .founder'
         />
 
         <StyledHeading>Statement</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
+            personName='Christoph Pernsteiner'
+            personPosition='CEO .founder'
         />
 
         <StyledHeading>Statement</StyledHeading>
         <Statement
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-            imagePath={'../static/pernsteiner_christoph.png'}
+            personName='Christoph Pernsteiner'
+            personPosition='CEO .founder'
+            imagePath='../static/pernsteiner_christoph.png'
         >
             'this project was a great challenge, we learned a lot and it was a
             journey with such an amazing customer!'
@@ -78,10 +81,10 @@ const MainPage = () => (
 
         <StyledHeading>Statement2</StyledHeading>
         <Statement2
-            personName={'Nico Peham'}
-            personPosition={'tech lead'}
+            personName='Nico Peham'
+            personPosition='tech lead'
             color={Color.Secondary2}
-            imagePath={'../static/pernsteiner_christoph.png'}
+            imagePath='../static/pernsteiner_christoph.png'
         >
             'we are adapting to new challenges by developing and investing in
             our people'
@@ -214,7 +217,7 @@ const MainPage = () => (
         <StyledHeading>TechnologyPlatform</StyledHeading>
         <TechnologyFlex>
             <StyledTechnologyPlatform
-                name={'web'}
+                name='web'
                 platformType={PlatformType.Web}
                 languages={[
                     'JavaScript',
@@ -229,14 +232,14 @@ const MainPage = () => (
             />
 
             <StyledTechnologyPlatform
-                name={'mobile'}
+                name='mobile'
                 platformType={PlatformType.Mobile}
                 languages={['React Native', 'Native iOS', 'Native Android']}
                 technologies={['Progressive Web Apps (PWA)']}
             />
 
             <StyledTechnologyPlatform
-                name={'ar . vr'}
+                name='ar . vr'
                 platformType={PlatformType.ArVr}
                 languages={['React Native', 'Native iOS', 'Native Android']}
                 technologies={['Progressive Web Apps (PWA)']}
@@ -320,9 +323,7 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
 `;
 

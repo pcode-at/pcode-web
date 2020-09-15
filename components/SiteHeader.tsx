@@ -21,6 +21,7 @@ export const SiteHeader: React.FC<Props> = ({ color, onClick }) => {
         justify-content: space-between;
         align-items: flex-end;
         padding: 0.5em;
+        width: 100vw;
     `;
 
     const InnerFlex = styled(Flex)`
@@ -52,7 +53,6 @@ export const SiteHeader: React.FC<Props> = ({ color, onClick }) => {
             <OuterFlex>
                 <LogoLayout width={11 / 12}>
                     <StyledLogo />
-                    <StyledLogo/>
                 </LogoLayout>
 
                 <InnerFlex
