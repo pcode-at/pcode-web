@@ -21,6 +21,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
@@ -29,6 +30,8 @@ import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
+import { Character } from '../components/Character';
+import { SkillDetail } from '../components/SkillDetail';
 
 const { light, normal } = theme.font;
 
@@ -40,7 +43,6 @@ const MainPage = () => (
                 alert('Not Implemented Yet!');
             }}
         />
-
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
         <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
@@ -117,6 +119,17 @@ const MainPage = () => (
             meucheln das feist Damenbart. Höchste Eisenbahn
         </StyledCopyText>
 
+        <StyledHeading>Skill Detail</StyledHeading>
+        <StyledSkillDetail
+            headlineColor={Color.White}
+            textColor={Color.Secondary}
+            headlineContent="scrum"
+        >
+            Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
+            gutheißen adrett Ganove. Schmock und Kastrat grämen emsig Räuber.
+            Die altbacken Freikörperkultur meucheln.
+        </StyledSkillDetail>
+
         <StyledHeading>ContactForm</StyledHeading>
         <StyledContactForm>ContactForm Component</StyledContactForm>
 
@@ -143,6 +156,14 @@ const MainPage = () => (
             positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
         ></StyledFreeChair>
 
+        <StyledHeading>Character</StyledHeading>
+        <StyledCharacter
+            characterTitle="strategic wizard"
+            characterDescription="Phasellus eget turpis dignissim. vestibulum libero non, fringilla nulla. Proin blandit cursus euismod. Proin viverra et diam vitae semper."
+            textColor={Color.Secondary}
+            monsterType={MonsterType.StrategicWizard}
+        ></StyledCharacter>
+
         <StyledHeading>ProjectSlider</StyledHeading>
         <ProjectSliderLayout>
             <ProjectSlider
@@ -150,6 +171,26 @@ const MainPage = () => (
                 images={['../static/sandburg.jpg', '../static/sandburg.jpg']}
             />
         </ProjectSliderLayout>
+
+        <StyledHeading>KeyWordsWithImagesSlider</StyledHeading>
+        <KeywordsWithImagesSlider
+            wordList={[
+                [
+                    'praise',
+                    'potential',
+                    'people',
+                    'passion',
+                    'power',
+                    'perfection',
+                ],
+                ['Test1', 'Test2', 'Test3', 'Test4', 'Test5'],
+            ]}
+            imagePairs={[
+                ['../static/nebo_jure.jpg', '../static/sandburg.jpg'],
+                ['../static/sandburg.jpg', '../static/nebo_jure.jpg'],
+            ]}
+            alignment="horizontal"
+        ></KeywordsWithImagesSlider>
 
         <StyledHeading>Swiper</StyledHeading>
         <StyledSwiper
@@ -270,6 +311,10 @@ const StyledFreeChair = styled(FreeChair)`
     margin-left: 1em;
 `;
 
+const StyledCharacter = styled(Character)`
+    margin-left: 1em;
+`;
+
 const StyledSwiper = styled(Swiper)`
     padding: 1em;
     width: 300px;
@@ -291,5 +336,10 @@ const ProjectSliderLayout = styled.div`
 `;
 
 const StyledWordList = styled(WordList)``;
+
+const StyledSkillDetail = styled(SkillDetail)`
+    width: 250px;
+    background-color: ${theme.colors.primary};
+`;
 
 export default MainPage;

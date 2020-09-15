@@ -26,7 +26,7 @@ export const Statement: React.FC<Props> = ({
 }) => {
     const { light, normal } = theme.font;
 
-    const Wrapper = styled(Flex)`
+    const StatementLayout = styled(Flex)`
         padding-top: 3em;
         padding-bottom: 3em;
         align-items: center;
@@ -40,24 +40,30 @@ export const Statement: React.FC<Props> = ({
         }
     `;
 
-    const TextWrapper = styled(Flex)`
+    const TextLayout = styled(Flex)`
         padding: 10%;
         width: 70%;
+
+        @media screen and (max-width: 615px) {
+            padding: 0;
+            width: 90%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    `;
+
+    const TextStyle = styled(Flex)`
         font-family: ${light.fontFamily};
         font-weight: ${normal.fontWeight};
         font-size: 250%;
         color: ${color};
 
         @media screen and (max-width: 615px) {
-            padding: 0;
-            width: 90%;
             text-align: center;
-            margin-left: 10%;
-            margin-right: 10%;
         }
     `;
 
-    const PersonWrapper = styled(Box)`
+    const PersonLayout = styled(Box)`
         justify-content: center;
 
         @media screen and (min-width: 615px) {
@@ -73,12 +79,14 @@ export const Statement: React.FC<Props> = ({
 
     return (
         <div className={className}>
-            <Wrapper backgroundColor={backgroundColor}>
-                <TextWrapper>
-                    <p>{children}</p>
-                </TextWrapper>
+            <StatementLayout backgroundColor={backgroundColor}>
+                <TextLayout>
+                    <TextStyle>
+                        <p>{children}</p>
+                    </TextStyle>
+                </TextLayout>
 
-                <PersonWrapper>
+                <PersonLayout>
                     <StyledPersonFlex>
                         <PersonWithFunction
                             color={Color.Secondary}
@@ -87,8 +95,8 @@ export const Statement: React.FC<Props> = ({
                             imagePath={imagePath}
                         />
                     </StyledPersonFlex>
-                </PersonWrapper>
-            </Wrapper>
+                </PersonLayout>
+            </StatementLayout>
         </div>
     );
 };

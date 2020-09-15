@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { WordList } from '../../../components/WordList';
 import { CopyText, FontStyle } from '../../../components/CopyText';
 
-
 const PageLayout = styled(Box)`
     display: flex;
     align-items: center;
@@ -13,7 +12,7 @@ const PageLayout = styled(Box)`
 `;
 
 const PcodeShapeLayout = styled(Box)`
-    width: 100%;    
+    width: 100%;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -28,7 +27,7 @@ const TextLayout = styled(Box)`
     font-size: 250%;
 `;
 
-export const CodeStandsForSection: React.FC = () => (
+const CodeStandsForSection: React.FC = () => (
     <React.Fragment>
         <PageLayout>
             <TextLayout>
@@ -43,12 +42,23 @@ export const CodeStandsForSection: React.FC = () => (
                 </CopyText>
             </TextLayout>
 
-            <Image src="./static/nebo_jure.jpg"/>
-            <Image src="./static/sandburg.jpg"/>
+            <Image src="./static/nebo_jure.jpg" />
+            <Image src="./static/sandburg.jpg" />
 
             <PcodeShapeLayout>
-                <WordList words={['praise', 'potential', 'people', 'passion', 'power', 'perfection']}/>
+                <WordList
+                    words={[
+                        'praise',
+                        'potential',
+                        'people',
+                        'passion',
+                        'power',
+                        'perfection',
+                    ]}
+                />
             </PcodeShapeLayout>
         </PageLayout>
     </React.Fragment>
 );
+
+export default CodeStandsForSection;

@@ -31,11 +31,14 @@ export const TechnologyPlatform: React.FC<Props> = ({
         font-weight: ${light.fontWeight};
         font-size: 200%;
         text-align: center;
+    `;
+
+    const HeadingLayout = styled.div`
         margin-top: 1em;
         margin-bottom: 2em;
     `;
 
-    const WrapperFlex = styled(Flex)`
+    const FlexStyle = styled(Flex)`
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -49,6 +52,9 @@ export const TechnologyPlatform: React.FC<Props> = ({
     const StyledSubHeading = styled(Heading)`
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
+    `;
+
+    const SubHeadingLayout = styled.div`
         padding-top: 0.5em;
         padding-bottom: 0.2em;
     `;
@@ -56,7 +62,6 @@ export const TechnologyPlatform: React.FC<Props> = ({
     const HeadingAndListContainer = styled.div`
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
-        margin-bottom: 1em;
         align-content: center;
     `;
   
@@ -69,10 +74,12 @@ export const TechnologyPlatform: React.FC<Props> = ({
 
     return (
         <div className={className}>
-            <WrapperFlex>
-                <StyledHeading fontFamily={normal.fontFamily}>
-                    {name}
-                </StyledHeading>
+            <FlexStyle>
+                <HeadingLayout>
+                    <StyledHeading fontFamily={normal.fontFamily}>
+                        {name}
+                    </StyledHeading>
+                </HeadingLayout>
 
                 <PlatformSvgLayout>
                     <PlatformLayout>
@@ -81,40 +88,48 @@ export const TechnologyPlatform: React.FC<Props> = ({
                 </PlatformSvgLayout>
 
                 <div>
-                    <StyledSubHeading
-                        color={Color.Secondary2}
-                        fontFamily={normal.fontFamily}
-                    >
-                        Language
-                    </StyledSubHeading>
-                    <HeadingAndListContainer>
-                        {languages.map(lan => (
-                            <Text lineHeight="1.2" key={lan}>
-                                {lan}
-                            </Text>
-                        ))}
-                    </HeadingAndListContainer>
+                    <SubHeadingLayout>
+                        <StyledSubHeading
+                            color={Color.Secondary2}
+                            fontFamily={normal.fontFamily}
+                        >
+                            Language
+                        </StyledSubHeading>
+                    </SubHeadingLayout>
+                    <HeadingAndListContainerLayout>
+                        <HeadingAndListContainer>
+                            {languages.map(lan => (
+                                <Text lineHeight="1.2" key={lan}>
+                                    {lan}
+                                </Text>
+                            ))}
+                        </HeadingAndListContainer>
+                    </HeadingAndListContainerLayout>
 
-                    <StyledSubHeading
-                        color={Color.Secondary2}
-                        fontFamily={normal.fontFamily}
-                    >
-                        Technology
-                    </StyledSubHeading>
-                    <HeadingAndListContainer>
-                        {technologies.map(tec => (
-                            <Text lineHeight="1.2" key={tec}>
-                                {tec}
-                            </Text>
-                        ))}
-                    </HeadingAndListContainer>
+                    <SubHeadingLayout>
+                        <StyledSubHeading
+                            color={Color.Secondary2}
+                            fontFamily={normal.fontFamily}
+                        >
+                            Technology
+                        </StyledSubHeading>
+                    </SubHeadingLayout>
+                    <HeadingAndListContainerLayout>
+                        <HeadingAndListContainer>
+                            {technologies.map(tec => (
+                                <Text lineHeight="1.2" key={tec}>
+                                    {tec}
+                                </Text>
+                            ))}
+                        </HeadingAndListContainer>
+                    </HeadingAndListContainerLayout>
 
                     <ActionButton
                         label="interested?"
                         color={Color.Secondary2}
                     />
                 </div>
-            </WrapperFlex>
+            </FlexStyle>
         </div>
     );
 };

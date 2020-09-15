@@ -17,7 +17,10 @@ const linkStyle: CSSObject = {
     marginTop: '2vh',
 };
 
-export const Menu: React.FC<Props> = ({ className }) => {
+export const Menu: React.FC<Props> = ({
+   className
+}) => {
+
     const ShapeAndLinksLayout = styled(Box)`
         margin-top: -5vh;
         margin-left: auto;
@@ -37,6 +40,14 @@ export const Menu: React.FC<Props> = ({ className }) => {
         position: absolute;
         margin-right: 5vw;
     `;
+
+    // const MenuWrapper = styled(Box)`
+    //     overflow: hidden;
+    //     background: ${Color.Secondary2};
+    //     height: 100vh;
+    //     width: 100vw;
+    //     position: relative;
+    // `;
 
     return (
         <div className={className}>

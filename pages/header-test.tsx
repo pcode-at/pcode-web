@@ -7,7 +7,7 @@ import { Color } from '../Color.enum';
 
 const HeaderTestPage = () => (
     <div>
-        <SiteHeader thisColor={Color.White}></SiteHeader>
+        <SiteHeader color={Color.White}></SiteHeader>
 
         <p>Test Page for Header Menu</p>
         <div
