@@ -21,11 +21,15 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { ActionButton } from '../components/ActionButton';
 import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
+import { MultiColorHeadline } from '../components/MultiColorHeadline';
+import { ProjectHeader } from '../components/ProjectHeader';
+import { ServiceHeader } from '../components/ServiceHeader';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
@@ -43,13 +47,23 @@ const MainPage = () => (
             }}
         />
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
+        <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath="../static/pernsteiner_christoph.png"
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
+        />
+
+        <StyledHeading>Statement</StyledHeading>
+        <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
             personName={'Christoph Pernsteiner'}
@@ -76,6 +90,52 @@ const MainPage = () => (
             'we are adapting to new challenges by developing and investing in
             our people'
         </Statement2>
+
+        <StyledHeading>ActionButton Large</StyledHeading>
+        <StyledActionButton label={'Green Technology'} appearance={'Large'} />
+
+        <StyledHeading>Multi Color Headline</StyledHeading>
+        <MultiColorHeadline
+            leftAndRightTextColor={Color.Secondary2}
+            middleTextColor={Color.Primary}
+            leftText="our"
+            middleText="code"
+            rightText="stands for"
+            variant="Normal"
+        >
+            'we are adapting to new challenges by developing and investing in
+            our people'
+        </MultiColorHeadline>
+
+        <StyledHeading>Project Header</StyledHeading>
+        <ProjectHeader
+            startHeadlineOne={'rose e-commerce'}
+            startHeadlineTwo={'online store'}
+            detailText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            detailLink="www.pcode.at
+        "
+            imageSource="../static/pernsteiner_christoph.png"
+            backgroundColor={Color.Primary}
+        >
+            'we are adapting to new challenges by developing and investing in
+            our people'
+        </ProjectHeader>
+
+        <StyledHeading>Service Header</StyledHeading>
+        <ServiceHeader
+            leftText={'we develop impactful digital solutions'}
+            rightText={
+                'that delive quality, create an impact, and that compete in the market'
+            }
+            leftTextColor={Color.Secondary}
+            rightTextColor={Color.White}
+            buttonLabel={'our services'}
+            buttonColor={Color.Primary}
+            backgroundColor={Color.Secondary2}
+        >
+            'we are adapting to new challenges by developing and investing in
+            our people'
+        </ServiceHeader>
 
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
@@ -257,6 +317,12 @@ const StyledTechnologyPlatform = styled(TechnologyPlatform)`
     width: 250px;
 `;
 
+const StyledActionButton = styled(ActionButton)`
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+`;
+
 const TechnologyFlex = styled(Flex)`
     align-content: center;
     justify-content: space-evenly;
@@ -310,9 +376,7 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
 `;
 

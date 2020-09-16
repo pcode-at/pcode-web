@@ -7,29 +7,21 @@ import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
 
 type Props = {
-    //appearance: 'small' | 'large';
     color?: Color;
     label: string;
     padding?: string;
     noBackground?: boolean;
     onClick?(): void;
     className?: string;
-};
-
-const appearances = {
-    small: css`
-        font-size: 10px;
-    `,
-    large: css`
-        font-size: 20px;
-    `,
+    appearance?: 'Small' | 'Large';
 };
 
 export const ActionButton: React.FC<Props> = ({
     color = Color.Primary,
     label,
     onClick,
-    padding = '0.2rem 2.8rem',
+    appearance = 'small',
+    padding = appearance == 'small' ? '0.2rem 2.8rem' : '1.5rem 8rem',
     noBackground = false,
     className,
 }) => {
@@ -42,11 +34,19 @@ export const ActionButton: React.FC<Props> = ({
                 onClick={onClick}
                 style={{
                     padding,
-                    borderRadius: '15px',
+                    borderRadius: appearance == 'Small' ? '15px' : '50px',
                     cursor: 'pointer',
+                    fontSize: appearance == 'Large' ? '50px' : '',
                 }}
             >
-                <CopyText color={Color.White} fontStyle={FontStyle.Light}>
+                <CopyText
+                    color={Color.White}
+                    fontStyle={
+                        appearance == 'small'
+                            ? FontStyle.Light
+                            : FontStyle.Normal
+                    }
+                >
                     {label}
                 </CopyText>
             </Button>
