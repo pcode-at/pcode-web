@@ -65,7 +65,7 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
     }
     return (
         <div className={className}>
-            <StyledFlex>
+            <StyledFlexLayout>
                 <PcodeShapeLayout>
                     <PcodeShape width="100%" color={color} />
                 </PcodeShapeLayout>
