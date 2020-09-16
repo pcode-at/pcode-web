@@ -26,6 +26,8 @@ import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
+import { MultiColorHeadline } from '../components/MultiColorHeadline';
+import { ProjectHeader } from '../components/ProjectHeader';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
@@ -43,7 +45,7 @@ const MainPage = () => (
             }}
         />
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
@@ -77,6 +79,31 @@ const MainPage = () => (
             our people'
         </Statement2>
 
+        <StyledHeading>Multi Color Headline</StyledHeading>
+        <MultiColorHeadline
+            leftAndRightTextColor={Color.Secondary2}
+            middleTextColor={Color.Primary}
+            leftText="our"
+            middleText="code"
+            rightText="stands for"
+        >
+            'we are adapting to new challenges by developing and investing in
+            our people'
+        </MultiColorHeadline>
+
+        <StyledHeading>Project Header</StyledHeading>
+        <ProjectHeader
+            startHeadlineOne={'rose e-commerce'}
+            startHeadlineTwo={'online store'}
+            detailText="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            linkSource="https://www.pcode.at/"
+            linkLabel="www.pcode.at"
+            imageSource="../static/iPad_pcode.png"
+            backgroundColor={Color.Primary}
+        >
+            'we are adapting to new challenges by developing and investing in
+            our people'
+        </ProjectHeader>
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
             <PcodeShape />
