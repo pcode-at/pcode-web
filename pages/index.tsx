@@ -43,24 +43,19 @@ const MainPage = () => (
             }}
         />
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
-            imagePath="../static/pernsteiner_christoph.png"
-            color={Color.Secondary}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-        />
 
         <StyledHeading>Statement</StyledHeading>
         <Statement
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-            imagePath={'../static/pernsteiner_christoph.png'}
+            personName='Christoph Pernsteiner'
+            personPosition='CEO .founder'
+            imagePath='../static/pernsteiner_christoph.png'
         >
             'this project was a great challenge, we learned a lot and it was a
             journey with such an amazing customer!'
@@ -68,10 +63,10 @@ const MainPage = () => (
 
         <StyledHeading>Statement2</StyledHeading>
         <Statement2
-            personName={'Nico Peham'}
-            personPosition={'tech lead'}
+            personName='Nico Peham'
+            personPosition='tech lead'
             color={Color.Secondary2}
-            imagePath={'../static/pernsteiner_christoph.png'}
+            imagePath='../static/pernsteiner_christoph.png'
         >
             'we are adapting to new challenges by developing and investing in
             our people'
@@ -79,8 +74,8 @@ const MainPage = () => (
 
         <StyledHeading>ServiceReference</StyledHeading>
         <ServiceReference
-            title={'rose e-commerce online store'}
-            imageSource={'../static/iPad_pcode.png'}
+            title='rose e-commerce online store'
+            imageSource='../static/iPad_pcode.png'
             buttonClick={() => alert('Not implemented yet')}
         >
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam

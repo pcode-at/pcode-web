@@ -13,7 +13,6 @@ type Props = {
     buttonClick(): void;
     buttonColor?: Color;
     color?: Color;
-    className?: string;
 };
 
 export const ServiceReference: React.FC<Props> = ({
@@ -23,7 +22,6 @@ export const ServiceReference: React.FC<Props> = ({
     buttonClick,
     color = Color.Secondary,
     buttonColor = Color.Secondary2,
-    className,
 }) => {
     const TextLayout = styled(Box)`
         margin-bottom: 2rem;
@@ -52,44 +50,42 @@ export const ServiceReference: React.FC<Props> = ({
         grid-area: image-block;
     `;
 
-    const StyledImage = styled.img`
+    const StyledProjectImage = styled.img`
         margin-left: 10%;
         width: 80%;
     `;
 
     return (
-        <div className={className}>
-            <ServiceReferenceLayout>
-                <InfoLayout>
-                    <Heading
+        <ServiceReferenceLayout>
+            <InfoLayout>
+                <Heading
+                    color={theme.colors[color]}
+                    fontSize={[5, 6, 7]}
+                    fontFamily={theme.font.normal.fontFamily}
+                    fontWeight={theme.font.light.fontWeight}
+                >
+                    {title}
+                </Heading>
+                <TextLayout>
+                    <Text
+                        fontSize={[3]}
+                        fontWeight={theme.font.normal.fontWeight}
+                        fontFamily={theme.font.light.fontFamily}
                         color={theme.colors[color]}
-                        fontSize={[5, 6, 7]}
-                        fontFamily={theme.font.normal.fontFamily}
-                        fontWeight={theme.font.light.fontWeight}
                     >
-                        {title}
-                    </Heading>
-                    <TextLayout>
-                        <Text
-                            fontSize={[3]}
-                            fontWeight={theme.font.normal.fontWeight}
-                            fontFamily={theme.font.light.fontFamily}
-                            color={theme.colors[color]}
-                        >
-                            {children}
-                        </Text>
-                    </TextLayout>
-                    <ActionButton
-                        color={buttonColor}
-                        label="learn more"
-                        padding="0.4rem 2rem"
-                        onClick={buttonClick}
-                    />
-                </InfoLayout>
-                <ImageLayout>
-                    <StyledImage src={imageSource} />
-                </ImageLayout>
-            </ServiceReferenceLayout>
-        </div>
+                        {children}
+                    </Text>
+                </TextLayout>
+                <ActionButton
+                    color={buttonColor}
+                    label="learn more"
+                    padding="0.4rem 2rem"
+                    onClick={buttonClick}
+                />
+            </InfoLayout>
+            <ImageLayout>
+                <StyledProjectImage src={imageSource} />
+            </ImageLayout>
+        </ServiceReferenceLayout>
     );
 };
