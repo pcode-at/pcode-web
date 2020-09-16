@@ -21,6 +21,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { ServiceReference } from '../components/ServiceReference';
 import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
@@ -43,24 +44,19 @@ const MainPage = () => (
             }}
         />
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
-            imagePath="../static/pernsteiner_christoph.png"
-            color={Color.Secondary}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-        />
 
         <StyledHeading>Statement</StyledHeading>
         <Statement
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-            imagePath={'../static/pernsteiner_christoph.png'}
+            personName='Christoph Pernsteiner'
+            personPosition='CEO .founder'
+            imagePath='../static/pernsteiner_christoph.png'
         >
             'this project was a great challenge, we learned a lot and it was a
             journey with such an amazing customer!'
@@ -68,14 +64,25 @@ const MainPage = () => (
 
         <StyledHeading>Statement2</StyledHeading>
         <Statement2
-            personName={'Nico Peham'}
-            personPosition={'tech lead'}
+            personName='Nico Peham'
+            personPosition='tech lead'
             color={Color.Secondary2}
-            imagePath={'../static/pernsteiner_christoph.png'}
+            imagePath='../static/pernsteiner_christoph.png'
         >
             'we are adapting to new challenges by developing and investing in
             our people'
         </Statement2>
+
+        <StyledHeading>ServiceReference</StyledHeading>
+        <ServiceReference
+            title='rose e-commerce online store'
+            imageSource='../static/iPad_pcode.png'
+            buttonClick={() => alert('Not implemented yet')}
+        >
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+            erat, sed diam voluptua. At vero eos et accusam et
+        </ServiceReference>
 
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
@@ -310,9 +317,6 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
     padding-bottom: 20em;
 `;
 
