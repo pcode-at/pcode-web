@@ -14,7 +14,6 @@ type Props = {
     buttonFn?(): void;
     buttonColor: Color;
     backgroundColor: Color;
-    className?: string;
 };
 
 export const ServiceHeader: React.FC<Props> = ({
@@ -26,7 +25,6 @@ export const ServiceHeader: React.FC<Props> = ({
     buttonFn = () => {},
     buttonColor,
     backgroundColor,
-    className,
 }) => {
     const ServiceHeaderContentLayout = styled.div`
         display: inline-block;
@@ -51,22 +49,19 @@ export const ServiceHeader: React.FC<Props> = ({
         font-family: ${theme.font.normal.fontFamily};
     `;
     return (
-        <div className={className}>
-            <ServiceHeaderBackground>
-                <ServiceHeaderContentLayout>
-                    <Text>
-                        <FirstText>{leftText}&nbsp;</FirstText>
-                        <SecondText>{rightText}</SecondText>
-                        <ActionButton
-                            className="service-header-button"
-                            label={buttonLabel}
-                            color={buttonColor}
-                            onClick={buttonFn}
-                        />
-                    </Text>
-                </ServiceHeaderContentLayout>
-            </ServiceHeaderBackground>
-
+        <ServiceHeaderBackground>
+            <ServiceHeaderContentLayout>
+                <Text>
+                    <FirstText>{leftText}&nbsp;</FirstText>
+                    <SecondText>{rightText}</SecondText>
+                    <ActionButton
+                        className="service-header-button"
+                        label={buttonLabel}
+                        color={buttonColor}
+                        onClick={buttonFn}
+                    />
+                </Text>
+            </ServiceHeaderContentLayout>
             <style>{`
             .service-header-button {
                 display: inline-block;
@@ -74,6 +69,6 @@ export const ServiceHeader: React.FC<Props> = ({
                 vertical-align: top;
             }
             `}</style>
-        </div>
+        </ServiceHeaderBackground>
     );
 };

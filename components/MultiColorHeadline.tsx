@@ -10,7 +10,6 @@ type Props = {
     leftText: string;
     middleText: string;
     rightText: string;
-    className?: string;
     variant: 'Small' | 'Normal' | 'Big';
 };
 
@@ -20,7 +19,6 @@ export const MultiColorHeadline: React.FC<Props> = ({
     leftText,
     middleText,
     rightText,
-    className,
     variant,
 }) => {
     const variantProps = {
@@ -49,18 +47,16 @@ export const MultiColorHeadline: React.FC<Props> = ({
     `;
 
     return (
-        <div className={className}>
-            <MultiColorHeadlineLayout>
-                <StyledHeading className="multi-color-headline">
-                    <MultiColorTextLayout>
-                        <Text color={leftAndRightTextColor}>{leftText}</Text>
-                        &nbsp;
-                        <Text color={middleTextColor}>{middleText}</Text>
-                        &nbsp;
-                        <Text color={leftAndRightTextColor}>{rightText}</Text>
-                    </MultiColorTextLayout>
-                </StyledHeading>
-            </MultiColorHeadlineLayout>
-        </div>
+        <MultiColorHeadlineLayout>
+            <StyledHeading className="multi-color-headline">
+                <MultiColorTextLayout>
+                    <Text color={leftAndRightTextColor}>{leftText}</Text>
+                    &nbsp;
+                    <Text color={middleTextColor}>{middleText}</Text>
+                    &nbsp;
+                    <Text color={leftAndRightTextColor}>{rightText}</Text>
+                </MultiColorTextLayout>
+            </StyledHeading>
+        </MultiColorHeadlineLayout>
     );
 };
