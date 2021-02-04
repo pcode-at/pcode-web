@@ -61,9 +61,6 @@ export const WordList: React.FC<Props> = ({
         position: relative;
         display: flex;
         align-items: center;
-    `;
-
-    const WordListLayout = styled(Box)`
         width: 100%;
     `;
 

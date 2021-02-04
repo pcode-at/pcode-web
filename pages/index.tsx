@@ -43,18 +43,13 @@ const MainPage = () => (
             }}
         />
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
-        <WorkingAtPcodeSection />
-            imagePath="../static/pernsteiner_christoph.png"
-            color={Color.Secondary}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-        />
+        <WorkingAtPcodeSection/>
 
         <StyledHeading>Statement</StyledHeading>
         <Statement
@@ -310,10 +305,8 @@ const StyledPcodeShapeBox = styled(Box)`
 
 const ProjectSliderWrapper = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
     padding-bottom: 20em;
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
 `;
 
 const StyledWordList = styled(WordList)``;

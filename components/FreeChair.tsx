@@ -96,7 +96,6 @@ export const FreeChair: React.FC<Props> = ({
                     >
                         <ActionButton color={Color.Secondary2} label="apply" />
                     </a>
-                </CenteredFreeChair>
             </FreeChairLayout>
         </div>
     );

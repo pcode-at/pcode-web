@@ -34,7 +34,7 @@ const PcodeShapeLayout = styled(Box)`
     display: none;
     @media screen and (min-width: 670px) {
         display: block;
-    },
+    }
 `;
 
 const LearnMoreButtonLayout = styled(Box)`
