@@ -51,7 +51,7 @@ export const KeywordsWithImagesSlider: React.FC<Props> = ({
     const KeywordsWithImagesSliderLayout = styled(Box)`
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rosw: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: ${alignment == 'horizontal'
             ? '"firstImg firstImg""secondImg secondImg"'
             : '"firstImg secondImg""condImg secondImg"'};
