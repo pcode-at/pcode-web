@@ -16,7 +16,7 @@ type Props = {
 export const Swiper: React.FC<Props> = ({
     textPartOne,
     textPartTwo,
-    color = Color.Secondary,
+    color = Color.SecondaryDark,
     onClick,
     className,
 }) => {
@@ -33,7 +33,7 @@ export const Swiper: React.FC<Props> = ({
                 separateWithBreak={true}
             />
             <ActionButton
-                color={Color.Secondary2}
+                color={Color.SecondaryLight}
                 padding="0.2rem 1.7rem"
                 label="learn more"
                 onClick={onClick}

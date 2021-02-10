@@ -56,14 +56,14 @@ export const WorkingAtPcodeSection: React.FC = () => {
 
     return (
         <React.Fragment>
-            <Flex backgroundColor={Color.Secondary}>
+            <Flex backgroundColor={Color.SecondaryDark}>
                 <HeaderLayout>
                     <SectionHeadlineLayout>
                         <SectionHeadline
                             headlinePartOne="working at pcode"
                             headlinePartTwo="means you get a bunch of cool stuff and a great team count on!"
                             separateWithBreak={true}
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                         />
                     </SectionHeadlineLayout>
                     <WordListLayout>
@@ -75,7 +75,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
                                 'international',
                                 'perfection',
                             ]}
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                         />
                     </WordListLayout>
                 </HeaderLayout>

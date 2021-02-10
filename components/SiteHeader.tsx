@@ -41,7 +41,7 @@ export const SiteHeader: React.FC<Props> = ({
     `;
 
     const StyledNavbarSvg = styled(NavbarSvg)`
-        color: ${Color.Secondary2};
+        color: ${Color.SecondaryLight};
         width: 30px;
     `;
 

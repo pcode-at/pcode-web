@@ -69,10 +69,10 @@ const JoinUsPage = () => (
         <ThemeProvider theme={theme}>
             <SiteHeader color={Color.White} />
 
-            <AboutPcodeLayout backgroundColor={Color.Secondary2}>
+            <AboutPcodeLayout backgroundColor={Color.SecondaryLight}>
                 <HeadlineLayout>
                     <SectionHeadline
-                        color={Color.Secondary}
+                        color={Color.SecondaryDark}
                         headlinePartOne="we are adapting to new challenges"
                         headlinePartTwo="by developing and investing in our people"
                         separateWithBreak={true}
@@ -93,13 +93,13 @@ const JoinUsPage = () => (
                     <ActionButton color={Color.Primary} label="learn more" />
                 </LearnMoreButtonLayout>
                 <PcodeShapeLayout>
-                    <PcodeShape color={Color.Secondary} />
+                    <PcodeShape color={Color.SecondaryDark} />
                 </PcodeShapeLayout>
             </AboutPcodeLayout>
 
             <FreeChairHeadlineLayout>
                 <SectionHeadline
-                    color={Color.Secondary2}
+                    color={Color.SecondaryLight}
                     headlinePartOne="our free"
                     headlinePartTwo="chairs, waiting for you!"
                 />
@@ -139,7 +139,7 @@ const JoinUsPage = () => (
                     personName={'Michael Kotek'}
                     personPosition={'Frontend Developer'}
                     imagePath={'../static/kotek_michael.png'}
-                    color={Color.Secondary}
+                    color={Color.SecondaryDark}
                 >
                     ‘ working at pcode means one simple thing: working for the
                     future! ’

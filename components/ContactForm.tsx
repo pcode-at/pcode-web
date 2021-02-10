@@ -50,7 +50,7 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
                         placeholder="name"
                         sx={{
                             borderWidth: '3px',
-                            borderColor: Color.Secondary2,
+                            borderColor: Color.SecondaryLight,
                             borderRadius: 13,
                         }}
                     />
@@ -63,7 +63,7 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
                         placeholder="email"
                         sx={{
                             borderWidth: '3px',
-                            borderColor: Color.Secondary2,
+                            borderColor: Color.SecondaryLight,
                             borderRadius: 13,
                         }}
                     />
@@ -78,7 +78,7 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
                         onChange={args => setTextAreaContent(args.target.value)}
                         sx={{
                             borderWidth: '3px',
-                            borderColor: Color.Secondary2,
+                            borderColor: Color.SecondaryLight,
                             borderRadius: 13,
                             height: '100%',
                         }}

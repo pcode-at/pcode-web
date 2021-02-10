@@ -75,14 +75,14 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
                             {headline}
                         </StyledSectionHeadline>
                         <StyledCopyText
-                            color={Color.Secondary}
+                            color={Color.SecondaryDark}
                             fontStyle={FontStyle.Light}
                         >
                             {description}
                         </StyledCopyText>
                         <ActionButton
                             label="learn more"
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             onClick={onClick}
                         />
                     </CenteredText>

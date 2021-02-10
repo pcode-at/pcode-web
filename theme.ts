@@ -4,8 +4,8 @@ import React from "react";
 export const theme = {
   colors: {
     [Color.Primary]: "#F73859",
-    [Color.Secondary]: "#263958",
-    [Color.Secondary2]: "#7AC7C4",
+    [Color.SecondaryDark]: "#263958",
+    [Color.SecondaryLight]: "#7AC7C4",
     [Color.White]: "#fff"
   },
   font: {

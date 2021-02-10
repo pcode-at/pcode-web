@@ -20,7 +20,7 @@ export const Statement: React.FC<Props> = ({
     personName,
     personPosition,
     color = Color.White,
-    backgroundColor = Color.Secondary2,
+    backgroundColor = Color.SecondaryLight,
     imagePath,
     className,
 }) => {
@@ -89,7 +89,7 @@ export const Statement: React.FC<Props> = ({
                 <PersonLayout>
                     <StyledPersonFlex>
                         <PersonWithFunction
-                            color={Color.Secondary}
+                            color={Color.SecondaryDark}
                             personName={personName}
                             personPosition={personPosition}
                             imagePath={imagePath}

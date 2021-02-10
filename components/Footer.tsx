@@ -13,7 +13,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
             <Flex
                 paddingTop="2em"
                 paddingBottom="2em"
-                backgroundColor={Color.Secondary}
+                backgroundColor={Color.SecondaryDark}
                 flexDirection="column"
                 sx={{
                     '@media screen and (min-width: 615px)': {
@@ -41,19 +41,19 @@ export const Footer: React.FC<Props> = ({ className }) => {
                         }}
                     >
                         <CopyText
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             fontStyle={FontStyle.Light}
                         >
                             pcode - software engineering
                         </CopyText>
                         <CopyText
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             fontStyle={FontStyle.Light}
                         >
                             +43 664 1652141
                         </CopyText>
                         <CopyText
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             fontStyle={FontStyle.Light}
                         >
                             office@pcode.at
@@ -62,19 +62,19 @@ export const Footer: React.FC<Props> = ({ className }) => {
 
                     <div>
                         <CopyText
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             fontStyle={FontStyle.Light}
                         >
                             peter-behrens platz 2
                         </CopyText>
                         <CopyText
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             fontStyle={FontStyle.Light}
                         >
                             4020 Linz, Austria
                         </CopyText>
                         <CopyText
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             fontStyle={FontStyle.Light}
                         >
                             Axis Coworking loft

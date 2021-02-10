@@ -19,13 +19,13 @@ const ButtonTestPage = () => (
         ></ActionButton>
 
         <ActionButton
-            color={Color.Secondary}
+            color={Color.SecondaryDark}
             label="Secondary"
             onClick={function02}
         ></ActionButton>
 
         <ActionButton
-            color={Color.Secondary2}
+            color={Color.SecondaryLight}
             label="Secondary 2"
         ></ActionButton>
 

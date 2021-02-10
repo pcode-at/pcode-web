@@ -92,7 +92,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
                 <div>
                     <SubHeadingLayout>
                         <StyledSubHeading
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             fontFamily={normal.fontFamily}
                         >
                             Language
@@ -110,7 +110,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
 
                     <SubHeadingLayout>
                         <StyledSubHeading
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             fontFamily={normal.fontFamily}
                         >
                             Technology
@@ -128,7 +128,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
 
                     <ActionButton
                         label="interested?"
-                        color={Color.Secondary2}
+                        color={Color.SecondaryLight}
                     />
                 </div>
             </FlexStyle>

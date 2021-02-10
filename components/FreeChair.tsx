@@ -67,14 +67,14 @@ export const FreeChair: React.FC<Props> = ({
                 </SvgLayout>
                 <PositionLayout>
                     <SubHeadline
-                        color={Color.Secondary}
+                        color={Color.SecondaryDark}
                         fontStyle={FontStyle.Normal}
                     >
                         {' '}
                         {position}{' '}
                     </SubHeadline>
                     <CopyText
-                        color={Color.Secondary}
+                        color={Color.SecondaryDark}
                         fontStyle={FontStyle.Light}
                     >
                         {' '}
@@ -84,7 +84,7 @@ export const FreeChair: React.FC<Props> = ({
 
                     <DescriptionLayout>
                         <CopyText
-                            color={Color.Secondary2}
+                            color={Color.SecondaryLight}
                             fontStyle={FontStyle.Light}
                         >
                             {positionDescription}
@@ -94,7 +94,7 @@ export const FreeChair: React.FC<Props> = ({
                     <a
                         href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                     >
-                        <ActionButton color={Color.Secondary2} label="apply" />
+                        <ActionButton color={Color.SecondaryLight} label="apply" />
                     </a>
             </FreeChairLayout>
         </div>

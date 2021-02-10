@@ -59,7 +59,7 @@ const MainPage = () => (
                 />
 
                 <PcodeShapeLayout>
-                    <PcodeShape color={Color.Secondary} />
+                    <PcodeShape color={Color.SecondaryDark} />
                 </PcodeShapeLayout>
             </PageLayout>
 

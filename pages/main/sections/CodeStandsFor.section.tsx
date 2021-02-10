@@ -31,13 +31,13 @@ const CodeStandsForSection: React.FC = () => (
     <React.Fragment>
         <PageLayout>
             <TextLayout>
-                <CopyText color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                <CopyText color={Color.SecondaryLight} fontStyle={FontStyle.Normal}>
                     our
                 </CopyText>
                 <CopyText color={Color.Primary} fontStyle={FontStyle.Normal}>
                     code
                 </CopyText>
-                <CopyText color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                <CopyText color={Color.SecondaryLight} fontStyle={FontStyle.Normal}>
                     stands for
                 </CopyText>
             </TextLayout>

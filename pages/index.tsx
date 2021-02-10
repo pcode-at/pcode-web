@@ -46,7 +46,7 @@ const MainPage = () => (
         <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
-            color={Color.Secondary}
+            color={Color.SecondaryDark}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection/>
@@ -65,7 +65,7 @@ const MainPage = () => (
         <Statement2
             personName={'Nico Peham'}
             personPosition={'tech lead'}
-            color={Color.Secondary2}
+            color={Color.SecondaryLight}
             imagePath={'../static/pernsteiner_christoph.png'}
         >
             'we are adapting to new challenges by developing and investing in
@@ -75,13 +75,13 @@ const MainPage = () => (
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
             <PcodeShape />
-            <PcodeShape color={Color.Secondary2} />
+            <PcodeShape color={Color.SecondaryLight} />
             <PcodeShape width="80%" />
-            <PcodeShape width="50%" color={Color.Secondary} />
+            <PcodeShape width="50%" color={Color.SecondaryDark} />
         </StyledPcodeShapeBox>
 
         <StyledHeading>CopyText</StyledHeading>
-        <StyledCopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
+        <StyledCopyText color={Color.SecondaryLight} fontStyle={FontStyle.Light}>
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig Räuber.
             Die altbacken Freikörperkultur meucheln. Das Schelm bauchpinseln das
@@ -96,7 +96,7 @@ const MainPage = () => (
         <StyledHeading>Skill Detail</StyledHeading>
         <StyledSkillDetail
             headlineColor={Color.White}
-            textColor={Color.Secondary}
+            textColor={Color.SecondaryDark}
             headlineContent="scrum"
         >
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
@@ -109,14 +109,14 @@ const MainPage = () => (
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
-            color={Color.Secondary2}
+            color={Color.SecondaryLight}
             headlinePartOne="our free"
             headlinePartTwo="chairs, waiting for you!"
         />
 
         <StyledHeading>SubHeadline</StyledHeading>
         <StyledSubHeadline
-            color={Color.Secondary2}
+            color={Color.SecondaryLight}
             fontStyle={FontStyle.Normal}
         >
             Nabend
@@ -134,7 +134,7 @@ const MainPage = () => (
         <StyledCharacter
             characterTitle="strategic wizard"
             characterDescription="Phasellus eget turpis dignissim. vestibulum libero non, fringilla nulla. Proin blandit cursus euismod. Proin viverra et diam vitae semper."
-            textColor={Color.Secondary}
+            textColor={Color.SecondaryDark}
             monsterType={MonsterType.StrategicWizard}
         ></StyledCharacter>
 
