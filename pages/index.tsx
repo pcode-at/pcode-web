@@ -31,6 +31,7 @@ import { MonsterType } from '../shared/MonsterType.enum';
 import { Character } from '../components/Character';
 import { SkillDetail } from '../components/SkillDetail';
 import { ImageBubble } from '../components/ImageBubble';
+import { PersonBubble } from '../components/PersonBubble';
 
 const { light, normal } = theme.font;
 
@@ -42,11 +43,11 @@ const MainPage = () => (
                 alert('Not Implemented Yet!');
             }}
         />
-        
+
         <StyledHeading>ImageBubble : Overlay</StyledHeading>
         <StyledImageBubbleLayout 
             imageSource="../static/pernsteiner_christoph.png"
-            color={Color.Primary}
+            color={Color.SecondaryDark}
             variant={"overlay"}
         />
 
@@ -57,6 +58,31 @@ const MainPage = () => (
             variant={"shifted"}
         />
 
+        <StyledHeading>Bubble</StyledHeading>
+        <StyledBubbleBox display="flex">
+            <Bubble />
+            <Bubble color={Color.SecondaryLight} layout={"centered"}/>
+            <Bubble width="80%" />
+            <Bubble color={Color.SecondaryDark} layout={"centered"}/>
+        </StyledBubbleBox>    
+
+        <StyledHeading>PersonBubble : Overlay</StyledHeading>
+        <PersonBubble 
+            color = {Color.Primary} 
+            imageSource = "../static/pernsteiner_christoph.png"
+            personName = "Christoph Pernsteiner"
+            personPosition = "CEO . founder"
+            variant = "overlay"
+        />
+
+        <StyledHeading>PersonBubble: Shifted</StyledHeading>
+        <PersonBubble 
+            color = {Color.SecondaryLight} 
+            imageSource = "../static/kotek_michael.png"
+            personName = "Michael Kotek"
+            personPosition = "frontend developer"
+            variant = "shifted"
+        />
 
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection/>
@@ -81,14 +107,6 @@ const MainPage = () => (
             'we are adapting to new challenges by developing and investing in
             our people'
         </Statement2>
-
-        <StyledHeading>Bubble</StyledHeading>
-        <StyledBubbleBox display="flex">
-            <Bubble />
-            <Bubble color={Color.SecondaryLight} layout={"centered"}/>
-            <Bubble width="80%" />
-            <Bubble color={Color.SecondaryDark} layout={"centered"}/>
-        </StyledBubbleBox>      
 
         <StyledHeading>CopyText</StyledHeading>
         <StyledCopyText color={Color.SecondaryLight} fontStyle={FontStyle.Light}>
