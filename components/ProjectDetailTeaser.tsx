@@ -1,5 +1,5 @@
 import React from 'react';
-import { PcodeShape } from '../components/PcodeShape';
+import { Bubble } from './Bubble';
 import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
 import { ActionButton } from './ActionButton';
@@ -62,7 +62,7 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
                     <GraphicLayout>
-                        <PcodeShape color={Color.Primary} />
+                        <Bubble color={Color.Primary} />
                         <StyledImageLayout src={imageSrc} />
                     </GraphicLayout>
                 </Box>

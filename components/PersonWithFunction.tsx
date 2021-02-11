@@ -2,7 +2,7 @@ import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Flex, Image, Text } from 'rebass';
 import { theme } from '../theme';
-import { PcodeShape } from './PcodeShape';
+import { Bubble } from './Bubble';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
 
@@ -63,7 +63,7 @@ export const PersonWithFunction: React.FC<Props> = ({
         <div className={className}>
             <PersonWithFunctionLayout>
                 <PcodeShapeLayout>
-                    <PcodeShape color={color} />
+                    <Bubble color={color} />
                 </PcodeShapeLayout>
                 <StyledPersonImageLayout>
                     <StyledPersonImage src={imagePath} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text } from 'rebass';
-import { PcodeShape } from './PcodeShape';
+import { Bubble } from './Bubble';
 import { Color } from '../Color.enum';
 import styled from 'styled-components';
 
@@ -95,7 +95,7 @@ export const WordList: React.FC<Props> = ({
                     </ItemsLayout>
                 </CentralLayout>
                 <PcodeShapeLayout>
-                    <PcodeShape width="300px" color={color} />
+                    <Bubble width="300px" color={color} />
                 </PcodeShapeLayout>
             </WordListLayout>
         </div>
