@@ -1,6 +1,6 @@
 export enum Color {
   Primary = "primary",
-  SecondaryDark = "secondary",
-  SecondaryLight = "secondary2",
+  SecondaryDark = "secondaryDark",
+  SecondaryLight = "secondaryLight",
   White = "white"
 }
