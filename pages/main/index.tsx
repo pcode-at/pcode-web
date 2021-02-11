@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Flex } from 'rebass';
 import { theme } from '../../theme';
 import { ThemeProvider } from 'emotion-theming';
-import { PcodeShape } from '../../components/PcodeShape';
+import { Bubble } from '../../components/Bubble';
 import { SiteHeader } from '../../components/SiteHeader';
 import { Color } from '../../Color.enum';
 import { Footer } from '../../components/Footer';
@@ -59,7 +59,7 @@ const MainPage = () => (
                 />
 
                 <PcodeShapeLayout>
-                    <PcodeShape color={Color.SecondaryDark} />
+                    <Bubble color={Color.SecondaryDark} />
                 </PcodeShapeLayout>
             </PageLayout>
 

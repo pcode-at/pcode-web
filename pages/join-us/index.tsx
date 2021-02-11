@@ -9,7 +9,7 @@ import { Box, Flex } from 'rebass';
 import { FreeChair } from '../../components/FreeChair';
 import { PositionLevel } from '../../shared/PositionLevel.enum';
 import { CopyText, FontStyle } from '../../components/CopyText';
-import { PcodeShape } from '../../components/PcodeShape';
+import { Bubble } from '../../components/Bubble';
 import { ActionButton } from '../../components/ActionButton';
 import WorkingAtPcodeSection from './sections/WorkingAtPcode.section';
 import { MonsterType } from '../../shared/MonsterType.enum';
@@ -93,7 +93,7 @@ const JoinUsPage = () => (
                     <ActionButton color={Color.Primary} label="learn more" />
                 </LearnMoreButtonLayout>
                 <PcodeShapeLayout>
-                    <PcodeShape color={Color.SecondaryDark} />
+                    <Bubble color={Color.SecondaryDark} />
                 </PcodeShapeLayout>
             </AboutPcodeLayout>
 

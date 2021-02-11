@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box, Flex } from 'rebass';
 import { theme } from '../theme';
 import { ThemeProvider } from 'emotion-theming';
-import { PcodeShape } from '../components/PcodeShape';
+import { Bubble } from '../components/Bubble';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
@@ -26,11 +26,11 @@ import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
-import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { Character } from '../components/Character';
 import { SkillDetail } from '../components/SkillDetail';
+import { ImageBubble } from '../components/ImageBubble';
 
 const { light, normal } = theme.font;
 
@@ -42,12 +42,22 @@ const MainPage = () => (
                 alert('Not Implemented Yet!');
             }}
         />
-        <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImageLayout
+        
+        <StyledHeading>ImageBubble : Overlay</StyledHeading>
+        <StyledImageBubbleLayout 
             imageSource="../static/pernsteiner_christoph.png"
-            variant={1}
-            color={Color.SecondaryDark}
+            color={Color.Primary}
+            variant={"overlay"}
         />
+
+        <StyledHeading>ImageBubble : Shifted</StyledHeading>
+        <StyledImageBubbleLayout 
+            imageSource="../static/pernsteiner_christoph.png"
+            color={Color.SecondaryLight}
+            variant={"shifted"}
+        />
+
+
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection/>
 
@@ -72,13 +82,13 @@ const MainPage = () => (
             our people'
         </Statement2>
 
-        <StyledHeading>PcodeShape</StyledHeading>
-        <StyledPcodeShapeBox display="flex">
-            <PcodeShape />
-            <PcodeShape color={Color.SecondaryLight} />
-            <PcodeShape width="80%" />
-            <PcodeShape width="50%" color={Color.SecondaryDark} />
-        </StyledPcodeShapeBox>
+        <StyledHeading>Bubble</StyledHeading>
+        <StyledBubbleBox display="flex">
+            <Bubble />
+            <Bubble color={Color.SecondaryLight} layout={"centered"}/>
+            <Bubble width="80%" />
+            <Bubble color={Color.SecondaryDark} layout={"centered"}/>
+        </StyledBubbleBox>      
 
         <StyledHeading>CopyText</StyledHeading>
         <StyledCopyText color={Color.SecondaryLight} fontStyle={FontStyle.Light}>
@@ -240,7 +250,7 @@ const MainPage = () => (
     </ThemeProvider>
 );
 
-const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
+const StyledImageBubbleLayout = styled(ImageBubble)`
     width: 700px;
 `;
 
@@ -298,7 +308,7 @@ const StyledFooter = styled(Footer)`
     margin-top: 2em;
 `;
 
-const StyledPcodeShapeBox = styled(Box)`
+const StyledBubbleBox = styled(Box)`
     width: 50%;
     margin-left: 2em;
 `;
