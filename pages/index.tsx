@@ -25,7 +25,6 @@ import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
-import { PersonWithFunction } from '../components/PersonWithFunction';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { Character } from '../components/Character';
@@ -270,10 +269,6 @@ const MainPage = () => (
 
 const StyledImageBubbleLayout = styled(ImageBubble)`
     width: 700px;
-`;
-
-const StyledPersonWithFunction = styled(PersonWithFunction)`
-    width: 300px;
 `;
 
 const StyledTechnologyPlatform = styled(TechnologyPlatform)`

@@ -3,7 +3,7 @@ import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
 import { theme } from '../theme';
 import styled from 'styled-components';
-import { PersonWithFunction } from './PersonWithFunction';
+import { PersonBubble } from './PersonBubble';
 
 type Props = {
     personName: string;
@@ -85,11 +85,12 @@ export const Statement2: React.FC<Props> = ({
 
                 <PersonLayout>
                     <StyledPersonFlex>
-                        <PersonWithFunction
-                            color={color}
+                        <PersonBubble 
+                            color={Color.SecondaryDark}
                             personName={personName}
                             personPosition={personPosition}
-                            imagePath={imagePath}
+                            imageSource={imagePath}
+                            variant={"shifted"}
                         />
                     </StyledPersonFlex>
                 </PersonLayout>
