@@ -19,13 +19,13 @@ export const Bubble: React.FC<Props> = ({
 }) => {
 
     let BubbleLayout = styled(Box)`
-        margin-right: 5%;
+        margin-right: 4%;
     `;
 
     if ( layout == "centered" ){
         BubbleLayout = styled(Box)`
             transform: rotateZ(-195deg);
-            margin-right: 5%;
+            margin-right: 1%;
         `;
     }
 
