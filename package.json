@@ -15,7 +15,7 @@
         "@rebass/forms": "^4.0.6",
         "emotion-theming": "^10.0.19",
         "next": "^10.0.7",
-        "react": "16.11.0",
+        "react": "^16.11.0",
         "react-dom": "^16.13.1",
         "react-headroom": "^3.0.0",
         "react-responsive-carousel": "^3.1.51",
@@ -32,7 +32,6 @@
         "lqip-loader": "^2.2.0",
         "next-compose-plugins": "^2.2.0",
         "next-optimized-images": "^2.5.4",
-        "prettier": "1.19.1",
         "responsive-loader": "^1.2.0",
         "sharp": "^0.23.2",
         "typescript": "^3.6.4",
@@ -42,7 +41,8 @@
         "@types/headroom": "^0.7.31",
         "@types/node": "^12.11.6",
         "@types/react": "^16.9.9",
-        "@types/rebass": "^4.0.3"
+        "@types/rebass": "^4.0.3",
+        "prettier": "1.19.1"
     },
     "main": "index.tsx",
     "license": "MIT"
