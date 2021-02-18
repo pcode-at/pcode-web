@@ -51,6 +51,7 @@ export const ImageBubble: React.FC<Props> = ({
                 mask-repeat: no-repeat;
                 mask-size: 91%;
             `;
+            
             StyledImageLayout = styled.div`
                 margin-right: 5%;
                 position: absolute;

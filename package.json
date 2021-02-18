@@ -20,6 +20,7 @@
         "react-headroom": "^3.0.0",
         "react-responsive-carousel": "^3.1.51",
         "rebass": "^4.0.6",
+        "svg-sprite-loader": "4.1.2",
         "styled-components": "^4.4.1"
     },
     "devDependencies": {
@@ -40,7 +41,6 @@
         "prettier": "1.19.1",
         "responsive-loader": "^1.2.0",
         "sharp": "^0.23.2",
-        "svg-sprite-loader": "4.1.2",
         "typescript": "^3.6.4",
         "webp-loader": "^0.5.0"
     },
