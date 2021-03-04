@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box, Flex } from 'rebass';
+import { Box, Button as Button2, Flex } from 'rebass';
 import { theme } from '../theme';
 import { ThemeProvider } from 'emotion-theming';
 import { Bubble } from '../components/Bubble';
@@ -31,6 +31,7 @@ import { Character } from '../components/Character';
 import { SkillDetail } from '../components/SkillDetail';
 import { ImageBubble } from '../components/ImageBubble';
 import { PersonBubble } from '../components/PersonBubble';
+import { Button } from '../components/Button';
 
 const { light, normal } = theme.font;
 
@@ -42,6 +43,11 @@ const MainPage = () => (
                 alert('Not Implemented Yet!');
             }}
         />
+
+        <Button color={'primary'}>Primary Button</Button>
+        <Button color={'primary'} disabled={true}>Inactive Primary Button</Button>
+        <Button color={'secondary'}>Secondary Button</Button>
+        <Button color={'secondary'} disabled={true}> Inactive Secondary Button</Button>
 
         <StyledHeading>ImageBubble : Overlay</StyledHeading>
         <StyledImageBubbleLayout 
