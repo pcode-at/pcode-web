@@ -44,10 +44,18 @@ const MainPage = () => (
             }}
         />
 
-        <Button color={'primary'}>Primary Button</Button>
-        <Button color={'primary'} disabled={true}>Inactive Primary Button</Button>
-        <Button color={'secondary'}>Secondary Button</Button>
-        <Button color={'secondary'} disabled={true}> Inactive Secondary Button</Button>
+
+        <Button color={'primaryFilled'}>Primary Filled Button</Button>
+        <Button color={'primaryOutlined'}>Primary Outlined Button</Button>
+        <Button color={'primaryFilled'} disabled={true}>Inactive Primary Filled Button</Button>
+        <br/>
+        <Button color={'secondaryFilled'}>Secondary Filled Button</Button>
+        <Button color={'secondaryOutlined'}>Secondary Outlined</Button>
+        <Button color={'secondaryFilled'} disabled={true}> Inactive Secondary Filled Button</Button>
+        <br/>
+        <Button color={'tertiary'}>Tertiary Button</Button>
+
+
 
         <StyledHeading>ImageBubble : Overlay</StyledHeading>
         <StyledImageBubbleLayout 

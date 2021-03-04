@@ -9,7 +9,6 @@ export const Button = styled('button', {
     fontSize: '$s',
     fontWeight: '$regular',
     lineHeight: '$s',
-    border: 'none',
     fontFamily: '$default',
     boxShadow: '$regular',
 
@@ -20,11 +19,14 @@ export const Button = styled('button', {
     justifyContent: 'center',
     alignItems: 'flex-end',
 
+    margin: '$xxs',
+
     variants: {
         color: {
-            primary: {
+            primaryFilled: {
                 backgroundColor: '$red77',
                 color: '$white',
+                border: 'none',
                 '&:hover': {
                     backgroundColor: '$red60',                 
                 },
@@ -32,27 +34,36 @@ export const Button = styled('button', {
                     backgroundColor: '$red30'
                 }
             },
-            secondary: {
+            primaryOutlined: {
+                backgroundColor: '$white',
+                borderColor: '$red77',
+                color: '$red77',
+                borderWidth: '$regular'
+            },
+            secondaryFilled: {
                 backgroundColor: '$blue35',
                 color: '$white',
+                border: 'none',
                 '&:hover': {
                     backgroundColor: '$blue50'
                 },
                 '&:disabled': {
                     backgroundColor: '$blue60'
                 }
+            },
+            secondaryOutlined: {
+                backgroundColor: '$white',
+                borderColor: '$blue35',
+                color: '$blue35',
+                borderWidth: '$regular'
+            },
+            tertiary: {
+                backgroundColor: '$green',
+                color: '$grey',
+                border: 'none'
             }
         }
 
     }
-
-// height: 48px;
-// width: 169px;
-// left: 505px;
-// top: 400.5px;
-// border-radius: 29px;
-// padding: 16px, 24px, 16px, 24px;
-
-
 
 });
