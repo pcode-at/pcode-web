@@ -3,40 +3,29 @@ import { createStyled } from '@stitches/react';
 export const { styled, css } = createStyled({
     prefix: '',
     tokens: {
-        colors: {
-            // accent colors            
-            $grey500: '#3B3734',
-            $turquoise500: '#42E8E0',
-            $lilac500: '#C5C5FF',
-            
-            // alert
-            $cherry500: '#CC0C00',
-            $alert: '$cherry500',
-
-            $white: '#FFFFFF',
-
-            // tertiary
-            $green500: '#7AC7C4',
-            $tertiaryDefault: '$green500',
-
-            // secondary
-            $blue500: '#263958',
-            $blue300: '#375380',
-            $blue100: '#7A8699',
-            $secondaryDefault: '$blue500',
-            $secondaryHover: '$blue300',
-            $secondaryInactive: '$blue100',
-
-            // primary
+        colors: {       
             $red500: '#F73859',
             $red300: '#F7637C',
             $red100: '#F7ADBA',
-            $primaryDefault: '$red500',
-            $primaryHover: '$red300',
-            $primaryInactive: '$red100'
 
+            $blue500: '#263958',
+            $blue300: '#375380',
+            $blue100: '#7A8699',
+
+            $grey500: '#3B3734',
+
+            $turquoise500: '#42E8E0',
+            
+            $lilac500: '#C5C5FF',
+            
+            $cherry500: '#CC0C00',
+        
+            $green500: '#7AC7C4',
+
+            $white: '#FFFFFF',
         },
         space: {
+            $none: '0px',
             $xxs: '4px',
             $xs: '8px',
             $s: '16px',
@@ -67,8 +56,8 @@ export const { styled, css } = createStyled({
             $default: 'raleway'
         },
         letterSpacings: {
-            $tight: '-0.3rem',
-            $wide: '0.6rem'
+            $tight: '-0.003em',
+            $wide: '0.006em'
         },
         borderWidths: {
             $regular: '1px',

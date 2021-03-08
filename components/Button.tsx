@@ -1,64 +1,63 @@
 import React from 'react';
-import { alignItems, justifyContent } from 'styled-system';
 import { styled } from '../stitches.config';
+import { theme } from '../themeNew';
 
 export const Button = styled('button', {
-    // theme 
-    borderRadius: '$circle',
-    fontSize: '$s',
-    fontWeight: '$regular',
-    lineHeight: '$s',
-    fontFamily: '$default',
-    boxShadow: '$regular',
 
-    // figma
-    padding: '16px 24px',
-    display: 'flex',
-    flexDirection: 'row',
+    borderRadius:   theme.Button.Border.Radius,
+    fontFamily:     theme.Font.Default,   
+    fontSize:       theme.Button.Font.Size,
+    fontWeight:     '$regular',
+    // fontWeight:  theme.Button.Font.Weight, 
+    lineHeight:     theme.Button.LineHeight,
+    boxShadow:      theme.Button.BoxShadow,
+    padding:        theme.Button.Padding,
+    display:        'flex',
+    flexDirection:  'row',
     justifyContent: 'center',
-    alignItems: 'flex-end',
+    alignItems:     'flex-end',
 
-    margin: '$xxs',
-
+    // TODO: Change structure of variants (filled/outlined)
+    // reference: https://codesandbox.io/s/ecstatic-meninsky-o6l2d?file=/src/App.js 
     variants: {
         color: {
             primaryFilled: {
-                backgroundColor: '$red500',
+                backgroundColor: theme.Color.Primary.Default,
                 color: '$white',
                 border: 'none',
                 '&:hover': {
-                    backgroundColor: '$red300',                 
+                    backgroundColor: theme.Color.Primary.Hover,                 
                 },
                 '&:disabled': {
-                    backgroundColor: '$red100'
+                    backgroundColor: theme.Color.Primary.Inactive
                 }
             },
             primaryOutlined: {
                 backgroundColor: '$white',
-                borderColor: '$red500',
-                color: '$red500',
-                borderWidth: '$regular'
+                borderColor: theme.Color.Primary.Default,
+                color: theme.Color.Primary.Default,
+                borderWidth: theme.Button.Border.Width,
             },
             secondaryFilled: {
-                backgroundColor: '$blue500',
-                color: '$white',
+                backgroundColor: theme.Color.Secondary.Default,
+                color: theme.Color.White,
                 border: 'none',
                 '&:hover': {
-                    backgroundColor: '$blue300'
+                    backgroundColor: theme.Color.Secondary.Hover,
                 },
                 '&:disabled': {
-                    backgroundColor: '$blue100'
+                    backgroundColor: theme.Color.Secondary.Default,
                 }
             },
             secondaryOutlined: {
-                backgroundColor: '$white',
-                borderColor: '$blue500',
-                color: '$blue500',
-                borderWidth: '$regular'
+                backgroundColor: theme.Color.White,
+                borderColor: theme.Color.Secondary.Default,
+                color: theme.Color.Secondary.Default,
+                borderWidth: theme.Button.Border.Width,
             },
             tertiary: {
-                backgroundColor: '$green500',
-                color: '$grey500',
+                backgroundColor: theme.Color.Tertiary.Default,
+                color: theme.Color.Accent.Grey,
                 border: 'none'
             }
         }
