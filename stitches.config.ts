@@ -5,37 +5,35 @@ export const { styled, css } = createStyled({
     tokens: {
         colors: {
             // accent colors            
-            $grey: '#3B3734',
-            $turquoise: '#42E8E0',
-            $lilac: '#C5C5FF',
+            $grey500: '#3B3734',
+            $turquoise500: '#42E8E0',
+            $lilac500: '#C5C5FF',
             
             // alert
-            $red: '#CC0C00',
-            $alert: '$red',
+            $cherry500: '#CC0C00',
+            $alert: '$cherry500',
 
             $white: '#FFFFFF',
 
             // tertiary
-            $green: '#7AC7C4',
-            $tertiaryDefault: '$green',
+            $green500: '#7AC7C4',
+            $tertiaryDefault: '$green500',
 
             // secondary
-            $blue35: '#263958',
-            $blue50: '#375380',
-            $blue60: '#7A8699',
-
-            $secondaryDefault: '$blue35',
-            $secondaryHover: '$blue50',
-            $secondaryInactive: '$blue60',
+            $blue500: '#263958',
+            $blue300: '#375380',
+            $blue100: '#7A8699',
+            $secondaryDefault: '$blue500',
+            $secondaryHover: '$blue300',
+            $secondaryInactive: '$blue100',
 
             // primary
-            $red77: '#F73859',
-            $red60: '#F7637C',
-            $red30: '#F7ADBA',
-
-            $primaryDefault: '$red77',
-            $primaryHover: '$red60',
-            $primaryInactive: '$red30'
+            $red500: '#F73859',
+            $red300: '#F7637C',
+            $red100: '#F7ADBA',
+            $primaryDefault: '$red500',
+            $primaryHover: '$red300',
+            $primaryInactive: '$red100'
 
         },
         space: {
@@ -76,6 +74,7 @@ export const { styled, css } = createStyled({
             $regular: '1px',
             $medium: '2px'
         },
+        borderStyles: {},
         radii: {
             $none: '0px',
             $rounded: '5px',
@@ -98,7 +97,9 @@ export const { styled, css } = createStyled({
             $highest: '20', 
             $focus: '30',
             $top: '1000'
-        }
+        },
+        sizes: {},
+        transitions: {}
     },
     breakpoints: {},
     utils: {},

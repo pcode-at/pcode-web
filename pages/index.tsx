@@ -54,6 +54,7 @@ const MainPage = () => (
         <Button color={'secondaryFilled'} disabled={true}> Inactive Secondary Filled Button</Button>
         <br/>
         <Button color={'tertiary'}>Tertiary Button</Button>
+        
 
 
 
@@ -286,7 +287,8 @@ const StyledImageBubbleLayout = styled(ImageBubble)`
 `;
 
 const StyledTechnologyPlatform = styled(TechnologyPlatform)`
-    width: 250px;
+    /* width: 250px; */
+    width: 500px;
 `;
 
 const TechnologyFlex = styled(Flex)`
