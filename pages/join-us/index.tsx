@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { ThemeProvider } from 'emotion-theming';
+<<<<<<< HEAD
 import { themeDeprecated } from '../../themeDeprecated';
+=======
+import { theme } from '../../themeDeprecated';
+>>>>>>> a1406cc18eb21743f80ff948b98dccfbf89dd9ef
 import { SiteHeader } from '../../components/SiteHeader';
 import { Color } from '../../Color.enum';
 import { Footer } from '../../components/Footer';

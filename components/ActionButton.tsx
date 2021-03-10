@@ -1,6 +1,10 @@
 import React from 'react';
 import { Button } from 'rebass';
+<<<<<<< HEAD
 import { themeDeprecated } from '../themeDeprecated';
+=======
+../themeDeprecated
+>>>>>>> a1406cc18eb21743f80ff948b98dccfbf89dd9ef
 import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
