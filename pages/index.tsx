@@ -26,6 +26,7 @@ import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
+import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
@@ -43,13 +44,23 @@ const MainPage = () => (
             }}
         />
         <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImage
+        <StyledPcodeShapeWithImageLayout
             imageSource="../static/pernsteiner_christoph.png"
             variant={1}
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
+        <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath="../static/pernsteiner_christoph.png"
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
+        />
+
+        <StyledHeading>Statement</StyledHeading>
+        <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
             personName={'Christoph Pernsteiner'}
@@ -76,6 +87,16 @@ const MainPage = () => (
             'we are adapting to new challenges by developing and investing in
             our people'
         </Statement2>
+
+        <StyledHeading>Multi Color Headline</StyledHeading>
+        <MultiColorHeadline
+            leftAndRightTextColor={Color.Secondary2}
+            middleTextColor={Color.Primary}
+            leftText="our"
+            middleText="code"
+            rightText="stands for"
+            variant="Big"
+        />
 
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
@@ -144,12 +165,12 @@ const MainPage = () => (
         ></StyledCharacter>
 
         <StyledHeading>ProjectSlider</StyledHeading>
-        <ProjectSliderWrapper>
+        <ProjectSliderLayout>
             <ProjectSlider
                 width={300}
                 images={['../static/sandburg.jpg', '../static/sandburg.jpg']}
             />
-        </ProjectSliderWrapper>
+        </ProjectSliderLayout>
 
         <StyledHeading>KeyWordsWithImagesSlider</StyledHeading>
         <KeywordsWithImagesSlider
@@ -308,11 +329,9 @@ const StyledPcodeShapeBox = styled(Box)`
     margin-left: 2em;
 `;
 
-const ProjectSliderWrapper = styled.div`
+const ProjectSliderLayout = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
 `;
 

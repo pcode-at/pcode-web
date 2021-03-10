@@ -1,4 +1,5 @@
 import React from 'react';
+import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
@@ -41,7 +42,7 @@ export const SectionHeadline: React.FC<Props> = ({
 
     return (
         <div className={className}>
-            <Heading fontFamily="raleway" color={color}>
+            <Heading fontFamily={theme.font.normal.fontFamily} color={color}>
                 <FirstSpan>{headlinePartOne}</FirstSpan>
                 &nbsp;
                 {separateWithBreak && <br />}
