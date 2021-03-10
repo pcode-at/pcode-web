@@ -1,11 +1,7 @@
 import * as React from 'react';
 import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
-<<<<<<< HEAD
 import { themeDeprecated } from '../themeDeprecated';
-=======
-import { theme } from '../themeDeprecated';
->>>>>>> a1406cc18eb21743f80ff948b98dccfbf89dd9ef
 
 const function02 = () => alert('hello 2');
 

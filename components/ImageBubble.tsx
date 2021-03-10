@@ -1,11 +1,7 @@
 import React from 'react';
 
 import { Color } from '../Color.enum';
-<<<<<<< HEAD
 import { themeDeprecated } from '../themeDeprecated';
-=======
-import { theme } from '../themeDeprecated';
->>>>>>> a1406cc18eb21743f80ff948b98dccfbf89dd9ef
 import { Bubble } from './Bubble';
 import styled from 'styled-components';
 import { Flex, Image, Box } from 'rebass';
