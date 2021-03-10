@@ -21,6 +21,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { Wave } from '../components/Wave';
 import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
@@ -132,6 +133,9 @@ const MainPage = () => (
 
         <StyledHeading>ContactForm</StyledHeading>
         <StyledContactForm>ContactForm Component</StyledContactForm>
+
+        <StyledHeading>Wave</StyledHeading>
+        <Wave variant={'Top'} color={Color.Primary} shape={1}></Wave>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
