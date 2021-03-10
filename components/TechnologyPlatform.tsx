@@ -1,11 +1,7 @@
 import React from 'react';
 import { Box, Flex, Heading, Text } from 'rebass';
 import { Color } from '../Color.enum';
-<<<<<<< HEAD
 import { themeDeprecated } from '../themeDeprecated';
-=======
-import { theme } from '../themeDeprecated';
->>>>>>> a1406cc18eb21743f80ff948b98dccfbf89dd9ef
 import { Platform } from './Platform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import styled from 'styled-components';

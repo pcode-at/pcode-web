@@ -1,11 +1,8 @@
 import { Color } from "./Color.enum";
 import React from "react";
 
-<<<<<<< HEAD
 export const themeDeprecated = {
-=======
-export const theme = {
->>>>>>> a1406cc18eb21743f80ff948b98dccfbf89dd9ef
+
   colors: {
     [Color.Primary]: "#F73859",
     [Color.SecondaryDark]: "#263958",
