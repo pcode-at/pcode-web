@@ -2,7 +2,7 @@ import React from 'react';
 
 import BubbleSvg from '../assets/bubble.svg?sprite';
 import { Color } from '../Color.enum';
-import { theme } from '../theme';
+import { theme } from '../themeDeprecated';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Text, Button } from 'rebass';
 import { Input, Textarea } from '@rebass/forms';
-import { theme } from '../theme';
+import { theme } from '../themeDeprecated';
 import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 

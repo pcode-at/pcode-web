@@ -1,7 +1,7 @@
 import React from 'react';
 import { Color } from '../Color.enum';
 import { Text } from 'rebass';
-import { theme } from '../theme';
+import { theme } from '../themeDeprecated';
 
 export enum FontStyle {
     Normal = 'normal',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
-import { theme } from '../theme';
+import { theme } from '../themeDeprecated';
 import styled from 'styled-components';
 import { PersonBubble } from './PersonBubble';
 

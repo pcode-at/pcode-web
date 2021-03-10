@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Flex } from 'rebass';
-import { theme } from '../../theme';
+import { theme } from '../../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
 import { Bubble } from '../../components/Bubble';
 import { SiteHeader } from '../../components/SiteHeader';

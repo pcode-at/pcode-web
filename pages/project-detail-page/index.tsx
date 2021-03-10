@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ThemeProvider } from 'emotion-theming';
-import { theme } from '../../theme';
+import { theme } from '../../themeDeprecated';
 import { SiteHeader } from '../../components/SiteHeader';
 import { Color } from '../../Color.enum';
 import { Statement } from '../../components/Statement';

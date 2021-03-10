@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Box, Button as Button2, Flex } from 'rebass';
-import { theme } from '../theme';
+import { theme } from '../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
 import { Bubble } from '../components/Bubble';
 import { Color } from '../Color.enum';
