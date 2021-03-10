@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Flex, Heading, Text } from 'rebass';
 import { Color } from '../Color.enum';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import { Platform } from './Platform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import styled from 'styled-components';
@@ -24,7 +24,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
     onClick,
     className,
 }) => {
-    const { light, normal } = theme.font;
+    const { light, normal } = themeDeprecated.font;
 
     const StyledHeading = styled(Heading)`
         font-family: ${light.fontFamily};

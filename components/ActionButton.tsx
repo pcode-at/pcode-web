@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'rebass';
-
+import { themeDeprecated } from '../themeDeprecated';
 import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
@@ -37,7 +37,7 @@ export const ActionButton: React.FC<Props> = ({
         <div className={className}>
             <Button
                 backgroundColor={
-                    noBackground ? 'transparent' : theme.colors[color]
+                    noBackground ? 'transparent' : themeDeprecated.colors[color]
                 }
                 onClick={onClick}
                 style={{

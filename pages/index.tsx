@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { Box, Button as Button2, Flex } from 'rebass';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
 import { Bubble } from '../components/Bubble';
 import { Color } from '../Color.enum';
@@ -33,10 +33,10 @@ import { ImageBubble } from '../components/ImageBubble';
 import { PersonBubble } from '../components/PersonBubble';
 import { Button } from '../components/Button';
 
-const { light, normal } = theme.font;
+const { light, normal } = themeDeprecated.font;
 
 const MainPage = () => (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeDeprecated}>
         <SiteHeader
             color={Color.Primary}
             onClick={() => {
@@ -352,7 +352,7 @@ const StyledWordList = styled(WordList)``;
 
 const StyledSkillDetail = styled(SkillDetail)`
     width: 250px;
-    background-color: ${theme.colors.primary};
+    background-color: ${themeDeprecated.colors.primary};
 `;
 
 export default MainPage;

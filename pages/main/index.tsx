@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Flex } from 'rebass';
-import { theme } from '../../theme';
+import { themeDeprecated } from '../../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
 import { Bubble } from '../../components/Bubble';
 import { SiteHeader } from '../../components/SiteHeader';
@@ -49,7 +49,7 @@ const ContactFormLayout = styled(Box)`
 
 const MainPage = () => (
     <React.Fragment>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={themeDeprecated}>
             <SiteHeader color={Color.White} />
             <PageLayout>
                 <Swiper

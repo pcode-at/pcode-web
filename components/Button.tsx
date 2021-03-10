@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '../stitches.config';
-import { theme } from '../themeNew';
+import { theme } from '../theme';
 
 export const Button = styled('button', {
 

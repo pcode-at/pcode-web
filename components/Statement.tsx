@@ -1,7 +1,7 @@
 import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Flex } from 'rebass';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
 import { PersonBubble } from './PersonBubble';
 
@@ -24,7 +24,7 @@ export const Statement: React.FC<Props> = ({
     imagePath,
     className,
 }) => {
-    const { light, normal } = theme.font;
+    const { light, normal } = themeDeprecated.font;
 
     const StatementLayout = styled(Flex)`
         padding-top: 3em;

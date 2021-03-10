@@ -2,7 +2,7 @@ import React from 'react';
 
 import BubbleSvg from '../assets/bubble.svg?sprite';
 import { Color } from '../Color.enum';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 
@@ -33,7 +33,7 @@ export const Bubble: React.FC<Props> = ({
         <React.Fragment>
             <BubbleLayout>
                 <BubbleSvg
-                    style={{color: theme.colors[color], width: width, layout: layout}}
+                    style={{color: themeDeprecated.colors[color], width: width, layout: layout}}
                 />
             </BubbleLayout>
         </React.Fragment>

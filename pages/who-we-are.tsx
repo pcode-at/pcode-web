@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
 import { Color } from '../Color.enum';
 
 const WhoWeArePage = () => (
     <div>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={themeDeprecated}>
             <Box
                 p={5}
                 fontSize={4}

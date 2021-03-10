@@ -5,7 +5,7 @@ import NavbarSvg from '../assets/burger.svg?sprite';
 import LogoSvg from '../assets/logo_claim.svg?sprite';
 
 import { theme } from '../theme';
-import { Color } from '../Color.enum';
+import { Color } from../themeDeprecatedor.enum';
 import styled from 'styled-components';
 
 type Props = {

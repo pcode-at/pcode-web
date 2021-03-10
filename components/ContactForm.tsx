@@ -2,7 +2,7 @@ import React from 'react';
 import { Color } from '../Color.enum';
 import { Box, Text, Button } from 'rebass';
 import { Input, Textarea } from '@rebass/forms';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import { CONSTANTS } from '../shared/constants';
 import styled from 'styled-components';
 
@@ -12,7 +12,7 @@ type Props = {
 
 export const ContactForm: React.FC<Props> = ({ className }) => {
     const [textAreaContent, setTextAreaContent] = React.useState('');
-    const { light, normal } = theme.font;
+    const { light, normal } = themeDeprecated.font;
     const { openPositionDestinationEmail } = CONSTANTS;
 
     const StyledH2 = styled.h2`
