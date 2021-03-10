@@ -27,9 +27,11 @@ import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { PersonWithFunction } from '../components/PersonWithFunction';
+import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
+import { Character } from '../components/Character';
 import { SkillDetail } from '../components/SkillDetail';
 
 const { light, normal } = theme.font;
@@ -49,8 +51,16 @@ const MainPage = () => (
             color={Color.Secondary}
         />
         <StyledHeading>WorkingAtPcode</StyledHeading>
-        <WorkingAtPcodeSection />        
+        <WorkingAtPcodeSection />
         <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath="../static/pernsteiner_christoph.png"
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
+        />
+
+        <StyledHeading>Statement</StyledHeading>
         <StyledPersonWithFunction
             imagePath="../static/pernsteiner_christoph.png"
             color={Color.Secondary}
@@ -78,6 +88,16 @@ const MainPage = () => (
             'we are adapting to new challenges by developing and investing in
             our people'
         </Statement2>
+
+        <StyledHeading>Multi Color Headline</StyledHeading>
+        <MultiColorHeadline
+            leftAndRightTextColor={Color.Secondary2}
+            middleTextColor={Color.Primary}
+            leftText="our"
+            middleText="code"
+            rightText="stands for"
+            variant="Big"
+        />
 
         <StyledHeading>PcodeShape</StyledHeading>
         <StyledPcodeShapeBox display="flex">
@@ -140,13 +160,21 @@ const MainPage = () => (
             positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
         ></StyledFreeChair>
 
+        <StyledHeading>Character</StyledHeading>
+        <StyledCharacter
+            characterTitle="strategic wizard"
+            characterDescription="Phasellus eget turpis dignissim. vestibulum libero non, fringilla nulla. Proin blandit cursus euismod. Proin viverra et diam vitae semper."
+            textColor={Color.Secondary}
+            monsterType={MonsterType.StrategicWizard}
+        ></StyledCharacter>
+
         <StyledHeading>ProjectSlider</StyledHeading>
-        <ProjectSliderWrapper>
+        <ProjectSliderLayout>
             <ProjectSlider
                 width={300}
                 images={['../static/sandburg.jpg', '../static/sandburg.jpg']}
             />
-        </ProjectSliderWrapper>
+        </ProjectSliderLayout>
 
         <StyledHeading>KeyWordsWithImagesSlider</StyledHeading>
         <KeywordsWithImagesSlider
@@ -287,6 +315,10 @@ const StyledFreeChair = styled(FreeChair)`
     margin-left: 1em;
 `;
 
+const StyledCharacter = styled(Character)`
+    margin-left: 1em;
+`;
+
 const StyledSwiper = styled(Swiper)`
     padding: 1em;
     width: 300px;
@@ -301,11 +333,9 @@ const StyledPcodeShapeBox = styled(Box)`
     margin-left: 2em;
 `;
 
-const ProjectSliderWrapper = styled.div`
+const ProjectSliderLayout = styled.div`
     width: 250px;
-     {
-        /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
-    }
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
 `;
 

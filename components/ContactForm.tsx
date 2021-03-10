@@ -23,6 +23,9 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
     const ShortInputLayout = styled(Box)`
         margin-top: 10px;
         width: 50%;
+    `;
+
+    const ShortInputStyle = styled(Box)`
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
     `;
@@ -30,6 +33,9 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
     const TextAreaLayout = styled(Box)`
         height: 100px;
         margin-top: 10px;
+    `;
+
+    const TextAreaStyle = styled(Box)`
         font-family: ${light.fontFamily};
         font-weight: ${light.fontWeight};
     `;
@@ -39,39 +45,45 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
             <StyledH2>let's work together!</StyledH2>
 
             <ShortInputLayout>
-                <Input
-                    placeholder="name"
-                    sx={{
-                        borderWidth: '3px',
-                        borderColor: Color.Secondary2,
-                        borderRadius: 13,
-                    }}
-                />
+                <ShortInputStyle>
+                    <Input
+                        placeholder="name"
+                        sx={{
+                            borderWidth: '3px',
+                            borderColor: Color.Secondary2,
+                            borderRadius: 13,
+                        }}
+                    />
+                </ShortInputStyle>
             </ShortInputLayout>
 
             <ShortInputLayout>
-                <Input
-                    placeholder="email"
-                    sx={{
-                        borderWidth: '3px',
-                        borderColor: Color.Secondary2,
-                        borderRadius: 13,
-                    }}
-                />
+                <ShortInputStyle>
+                    <Input
+                        placeholder="email"
+                        sx={{
+                            borderWidth: '3px',
+                            borderColor: Color.Secondary2,
+                            borderRadius: 13,
+                        }}
+                    />
+                </ShortInputStyle>
             </ShortInputLayout>
 
             {/*TODO: Fix TextArea bug (you can't write anything)*/}
             <TextAreaLayout>
-                <Textarea
-                    placeholder="you are so cool people, let`s …"
-                    onChange={args => setTextAreaContent(args.target.value)}
-                    sx={{
-                        borderWidth: '3px',
-                        borderColor: Color.Secondary2,
-                        borderRadius: 13,
-                        height: '100%',
-                    }}
-                />
+                <TextAreaStyle>
+                    <Textarea
+                        placeholder="you are so cool people, let`s …"
+                        onChange={args => setTextAreaContent(args.target.value)}
+                        sx={{
+                            borderWidth: '3px',
+                            borderColor: Color.Secondary2,
+                            borderRadius: 13,
+                            height: '100%',
+                        }}
+                    />
+                </TextAreaStyle>
             </TextAreaLayout>
             <a
                 href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!

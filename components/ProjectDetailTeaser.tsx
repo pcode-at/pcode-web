@@ -39,11 +39,14 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
 
     const TextLayout = styled(Box)`
         position: relative;
-        text-align: left;
         width: 100%;
     `;
 
-    const StyledSectionHeadlineLayout = styled(CopyText)`
+    const CenteredText = styled(Box)`
+        text-align: left;
+    `;
+
+    const StyledSectionHeadline = styled(CopyText)`
         margin-bottom: 1rem;
         font-size: 250%;
     `;
@@ -60,27 +63,29 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
                 <Box width={2 / 6}>
                     <GraphicLayout>
                         <PcodeShape color={Color.Primary} />
-                        <StyledImageLayout src={imageSrc} />
+                        <StyledImage src={imageSrc} />
                     </GraphicLayout>
                 </Box>
                 <TextLayout>
-                    <StyledSectionHeadlineLayout
-                        color={headlineColor}
-                        fontStyle={FontStyle.Normal}
-                    >
-                        {headline}
-                    </StyledSectionHeadlineLayout>
-                    <StyledCopyText
-                        color={Color.Secondary}
-                        fontStyle={FontStyle.Light}
-                    >
-                        {description}
-                    </StyledCopyText>
-                    <ActionButton
-                        label="learn more"
-                        color={Color.Secondary2}
-                        onClick={onClick}
-                    />
+                    <CenteredText>
+                        <StyledSectionHeadline
+                            color={headlineColor}
+                            fontStyle={FontStyle.Normal}
+                        >
+                            {headline}
+                        </StyledSectionHeadline>
+                        <StyledCopyText
+                            color={Color.Secondary}
+                            fontStyle={FontStyle.Light}
+                        >
+                            {description}
+                        </StyledCopyText>
+                        <ActionButton
+                            label="learn more"
+                            color={Color.Secondary2}
+                            onClick={onClick}
+                        />
+                    </CenteredText>
                 </TextLayout>
             </Flex>
         </div>

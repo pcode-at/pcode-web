@@ -1,4 +1,5 @@
 import React from 'react';
+import { theme } from '../theme';
 import { Color } from '../Color.enum';
 import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
@@ -30,19 +31,24 @@ export const SectionHeadline: React.FC<Props> = ({
         font-weight: 500;
     `;
 
-    const SecondSpan = styled.span`
+    const SecondSpanLayout = styled.span`
         display: ${maxWidthPartTwo ? 'block' : 'inline'};
         max-width: ${maxWidthPartTwo};
+    `;
+
+    const SecondSpanStyle = styled.span`
         font-weight: 300;
     `;
 
     return (
         <div className={className}>
-            <Heading fontFamily="raleway" color={color}>
+            <Heading fontFamily={theme.font.normal.fontFamily} color={color}>
                 <FirstSpan>{headlinePartOne}</FirstSpan>
                 &nbsp;
                 {separateWithBreak && <br />}
-                <SecondSpan>{headlinePartTwo}</SecondSpan>
+                <SecondSpanLayout>
+                    <SecondSpanStyle>{headlinePartTwo}</SecondSpanStyle>
+                </SecondSpanLayout>
             </Heading>
         </div>
     );
