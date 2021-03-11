@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Color } from '../Color.enum';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 
@@ -22,7 +22,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
     let WaveStyle = styled(Box)`
         width: 100%;
         height: 100%;
-        background-color: ${theme.colors[color]};
+        background-color: ${themeDeprecated.colors[color]};
         mask: url(../static/wave1.svg);
         mask-position: top;
         ${variant == 'Top' ? 'transform: scaleY(-1);' : ''}
@@ -35,7 +35,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
             WaveStyle = styled(Box)`
                 width: 100%;
                 height: 100%;
-                background-color: ${theme.colors[color]};
+                background-color: ${themeDeprecated.colors[color]};
                 mask: url(../static/wave2.svg);
                 mask-position: top;
                 ${variant == 'Top' ? 'transform: scaleY(-1);' : ''}
@@ -52,7 +52,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
             WaveStyle = styled(Box)`
                 width: 100%;
                 height: 100%;
-                background-color: ${theme.colors[color]};
+                background-color: ${themeDeprecated.colors[color]};
                 mask: url(../static/wave3.svg);
                 mask-position: bottom;
                 ${variant == 'Bottom' ? 'transform: scaleY(-1);' : ''}
@@ -70,7 +70,7 @@ export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
             WaveStyle = styled(Box)`
                 width: 100%;
                 height: 100%;
-                background-color: ${theme.colors[color]};
+                background-color: ${themeDeprecated.colors[color]};
                 mask: url(../static/wave4.svg);
                 mask-position: top;
                 ${variant == 'Top'

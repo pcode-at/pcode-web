@@ -42,7 +42,7 @@ export const SectionHeadline: React.FC<Props> = ({
 
     return (
         <div className={className}>
-            <Heading fontFamily={theme.font.normal.fontFamily} color={color}>
+            <Heading fontFamily={theme.Font.Default} color={color}>
                 <FirstSpan>{headlinePartOne}</FirstSpan>
                 &nbsp;
                 {separateWithBreak && <br />}

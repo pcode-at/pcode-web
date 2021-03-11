@@ -42,10 +42,10 @@ export const MultiColorHeadline: React.FC<Props> = ({
         justify-content: center;
     `;
     const StyledHeading = styled.h1`
-        font-family: ${theme.font.normal.fontFamily};
+        font-family: ${theme.Font.Default};
         text-align: center;
         font-size: ${variantProps.fontSize};
-        font-weight: ${theme.font.normal.fontWeight};
+        font-weight: ${'$regular'};
     `;
 
     return (

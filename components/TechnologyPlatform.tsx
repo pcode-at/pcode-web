@@ -65,6 +65,11 @@ export const TechnologyPlatform: React.FC<Props> = ({
         align-content: center;
     `;
   
+    // `HeadingAndListContainerLayout` was not defined ->
+    const HeadingAndListContainerLayout = styled(HeadingAndListContainer)`
+        position: relative; // -> just random value to resolve error
+    `;
+
     const PlatformLayout = styled(Box)`
         position: relative;
         top: 50%;
