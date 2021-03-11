@@ -23,24 +23,106 @@ Using these extensions is recommended for great developer experience:
   - [Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight)
   - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 
-## Styled Components
-In this project we don't use inline styling in order to keep the html code clean from confusinc styles. Check out the [website of styled-components](https://styled-components.com/) to learn more about this way to style your components. 
+## Design Tokens
+Further details about  out naming conventions and token structure can be found in [DESIGNTOKENS.md](DESIGNTOKES.md). 
+### Design Options
+The design options are defined in [stitches.config.ts](stitches.config.ts). Here you find design-based variables defining which values we are allowed to use. 
 
-Standard html tags may be styled e.g. 
-```
-const StyledHeaderDiv = styled.div`
-  border-width: 3px;
-`;
-```
+e.g. allowed font sizes:
 
-You can also style Rebass, or custom made components e.g.
-```
-const StyledButton = styled(Button)`
-  border-radius: 10px;
-`;
-```
+`fontSizes: {
+    $xs: '12px',
+    $s: '14px',
+    $m: '16px',
+    $l: '24px',
+    $xl: '36px',
+    $xxl: '54px'  
+},`
 
-Please use styled-components for all components.
+or a section of the colors: 
+
+`colors: {
+    $grey500: '#3B3734',
+    $turquoise500: '#42E8E0',
+    $lilac500: '#C5C5FF',
+    $cherry500: '#CC0C00',
+    $white: '#FFFFFF',
+},
+`
+
+### Design Decisions in theme.ts
+Based on the available options we can now make _decisions_ about how and where we use certain tokens. This way we can make sure, that the components match the design and prevent the usage of magic numbers. 
+
+e.g. we define, that the option `$cherry500` is used applied in _alert_-scenarios: 
+
+`Color: {
+    Alert: '$cherry500',
+},`
+
+another example is the `Button`-component. Via theme.ts we're able to define, that a `Button`-component has a specified border-radius. 
+
+Within `stitches.config.ts` we defined the possible radii values: 
+`radii: {
+    $none: '0px',
+    $rounded: '5px',
+    $circle: '100px'
+},`
+
+Within `theme.ts` we define, that a `Button` has only one border-radius option: 
+`Button: {
+    Border: {
+        //** .. */
+        Radius: '$circle',
+    },
+`
+Within `Button.tsx` we can now define that the component has the pre-defined radius `theme.Button.Border.Radius`: 
+`export const Button = styled('button', {
+
+    borderRadius:   theme.Button.Border.Radius,
+    //** .. */
+
+});
+`
+## Stitches
+The [`Stitches` library](https://stitches.dev/docs/installation) enables the simple usage of variants within components using said design tokens. 
+
+`variants: {
+    color: {
+        primary: {
+            backgroundColor: theme.Color.Primary.Default,
+            color: theme.Color.White,
+            border: theme.Button.Border.Width.None,
+            '&:hover': {
+                backgroundColor: theme.Color.Primary.Hover,                 
+            },
+            '&:disabled': {
+                backgroundColor: theme.Color.Primary.Inactive
+            }
+        },
+        //** .. */
+        secondary: {
+            backgroundColor: theme.Color.Secondary.Default,
+            color: theme.Color.White,
+            border: theme.Button.Border.Width.None,
+            '&:hover': {
+                backgroundColor: theme.Color.Secondary.Hover,
+            },
+            '&:disabled': {
+                backgroundColor: theme.Color.Secondary.Default,
+            }
+        },
+        //** .. */
+`
+
+By defining the variants and their properties, you can easily decide which color the `Button`-component should have. 
+
+        <Button color={'primary'}>Primary Button</Button>
+        <Button 
+          color={'secondary'} 
+          disabled={true}
+        >
+        Secondary Inactive Button
+        </Button>
 
 ## Styling and layouting conventions
 To keep working on the pcode-web project as easy and straight forward as possible we came up with styling and layouting conventions:
@@ -61,7 +143,6 @@ const StatementLayout = styled(Box)`
     margin-bottom: 50px;
 `;
 
-
 <StatementLayout>
   <Statement
       personName={'Christoph Pernsteiner'}
@@ -73,12 +154,8 @@ const StatementLayout = styled(Box)`
   </Statement>
 </StatementLayout>
 ```
- 
 ### Sections
 When the pages are about to be built together we use section components to group 2..n components, that build a logical and optical section together. An example would be the footer area, that includes a contact form on every page, or the work-at-pcode section [WorkingAtPcodeSection](pages/join-us/sections/WorkingAtPcode.section.tsx).
-
-### theme.ts
-Please look at the [theme.ts file](theme.ts), where for example page breakpoints (e.g. used for seperating between mobile and desktop), or spacings are defined. Please do not define hard margins like 15rem - instead use ${theme.space[2]} to use a predefined space. This step unifies the appearance of the website due to increased styling consistency.
 
 ## Create a component
 You can go to the [ProjectDetailTeaser](components/ProjectDetailTeaser.tsx) component to see how a component is built. Here is the code:
