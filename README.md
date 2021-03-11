@@ -24,7 +24,7 @@ Using these extensions is recommended for great developer experience:
   - [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 
 ## Design Tokens
-Further details about  out naming conventions and token structure can be found in [DESIGNTOKENS.md](DESIGNTOKES.md). 
+Further details about  out naming conventions and token structure can be found in [DESIGNTOKENS.md](DESIGNTOKENS.md). 
 ### Design Options
 The design options are defined in [stitches.config.ts](stitches.config.ts). Here you find design-based variables defining which values we are allowed to use. 
 
@@ -49,8 +49,8 @@ or a section of the colors:
         $white: '#FFFFFF',  
     },
 
-### Design Decisions in theme.ts
-Based on the available options we can now make _decisions_ about how and where we use certain tokens. This way we can make sure, that the components match the design and prevent the usage of magic numbers. 
+### Design Decisions
+Based on the available options we can now make _decisions_ about how and where we use certain tokens. These decisions are defined in [theme.ts](theme.ts). This way we can ensure that the components match the design and further prevent the usage of magic numbers etc. 
 
 e.g. we define, that the option `$cherry500` is used applied in _alert_-scenarios: 
 
