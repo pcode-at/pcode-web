@@ -60,7 +60,8 @@ e.g. we define, that the option `$cherry500` is used applied in _alert_-scenario
 
 another example is the `Button`-component. Via theme.ts we're able to define, that a `Button`-component has a specified border-radius. 
 
-Within `stitches.config.ts` we defined the possible radii values: 
+Within `stitches.config.ts` we defined the possible radii values:   
+
     radii: {   
         $none: '0px',   
         $rounded: '5px',    
@@ -68,13 +69,15 @@ Within `stitches.config.ts` we defined the possible radii values:
     },
 
 Within `theme.ts` we define, that a `Button` has only one border-radius option: 
+
     Button: {    
         Border: {   
             //** .. */  
             Radius: '$circle',  
         },  
 
-Within `Button.tsx` we can now define that the component has the pre-defined radius `theme.Button.Border.Radius`: 
+Within `Button.tsx` we can now define that the component has the pre-defined radius `theme.Button.Border.Radius`:   
+
     export const Button = styled('button', {   
         borderRadius:   theme.Button.Border.Radius,   
         //** .. */  
@@ -83,34 +86,34 @@ Within `Button.tsx` we can now define that the component has the pre-defined rad
 ## Stitches
 The [`Stitches` library](https://stitches.dev/docs/installation) enables the simple usage of variants within components using said design tokens. 
 
-  variants: {  
-    color: {  
-        primary: {  
-            backgroundColor: theme.Color.Primary.Default, 
-            color: theme.Color.White, 
-            border: theme.Button.Border.Width.None, 
-            '&:hover': {  
-                backgroundColor: theme.Color.Primary.Hover, 
-            },  
-            '&:disabled': { 
-                backgroundColor: theme.Color.Primary.Inactive 
-            } 
-        },  
-        //** .. */  
-        secondary: {  
-            backgroundColor: theme.Color.Secondary.Default, 
-            color: theme.Color.White, 
-            border: theme.Button.Border.Width.None, 
-            '&:hover': {  
-                backgroundColor: theme.Color.Secondary.Hover, 
-            },  
-            '&:disabled': { 
-                backgroundColor: theme.Color.Secondary.Default, 
-            } 
-        },  
-        //** .. */  
-    },
-  }
+    variants: {  
+      color: {  
+          primary: {  
+              backgroundColor: theme.Color.Primary.Default, 
+              color: theme.Color.White, 
+              border: theme.Button.Border.Width.None, 
+              '&:hover': {  
+                  backgroundColor: theme.Color.Primary.Hover, 
+              },  
+              '&:disabled': { 
+                  backgroundColor: theme.Color.Primary.Inactive 
+              } 
+          },  
+          //** .. */  
+          secondary: {  
+              backgroundColor: theme.Color.Secondary.Default, 
+              color: theme.Color.White, 
+              border: theme.Button.Border.Width.None, 
+              '&:hover': {  
+                  backgroundColor: theme.Color.Secondary.Hover, 
+              },  
+              '&:disabled': { 
+                  backgroundColor: theme.Color.Secondary.Default, 
+              } 
+          },  
+          //** .. */  
+      },
+    }
 
 By defining the variants and their properties, you can easily decide which color the `Button`-component should have. 
 
