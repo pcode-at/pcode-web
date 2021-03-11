@@ -64,12 +64,8 @@ export const TechnologyPlatform: React.FC<Props> = ({
         font-weight: ${light.fontWeight};
         align-content: center;
     `;
-
-    const HeadingAndListContainerLayout = styled.div`
-        margin-bottom: 1em;
-    `;
-
-    const StyledPlatform = styled(Platform)`
+  
+    const PlatformLayout = styled(Box)`
         position: relative;
         top: 50%;
         left: 50%;
@@ -86,7 +82,9 @@ export const TechnologyPlatform: React.FC<Props> = ({
                 </HeadingLayout>
 
                 <PlatformSvgLayout>
-                    <StyledPlatform type={platformType} />
+                    <PlatformLayout>
+                        <Platform type={platformType} />
+                    </PlatformLayout>
                 </PlatformSvgLayout>
 
                 <div>

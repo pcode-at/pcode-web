@@ -21,10 +21,14 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
+import { Wave } from '../components/Wave';
 import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
+import { PersonWithFunction } from '../components/PersonWithFunction';
+import { MultiColorHeadline } from '../components/MultiColorHeadline';
+import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { Character } from '../components/Character';
@@ -43,6 +47,8 @@ const MainPage = () => (
                 alert('Not Implemented Yet!');
             }}
         />
+        <StyledHeading>PcodeShapeWithImage</StyledHeading>
+        <StyledPcodeShapeWithImageLayout
 
 
         <Button color={'primaryFilled'}>Primary Filled Button</Button>
@@ -54,19 +60,19 @@ const MainPage = () => (
         <Button color={'secondaryFilled'} disabled={true}> Inactive Secondary Filled Button</Button>
         <br/>
         <Button color={'tertiary'}>Tertiary Button</Button>
-        
+
 
 
 
         <StyledHeading>ImageBubble : Overlay</StyledHeading>
-        <StyledImageBubbleLayout 
+        <StyledImageBubbleLayout
             imageSource="../static/pernsteiner_christoph.png"
             color={Color.SecondaryDark}
             variant={"overlay"}
         />
 
         <StyledHeading>ImageBubble : Shifted</StyledHeading>
-        <StyledImageBubbleLayout 
+        <StyledImageBubbleLayout
             imageSource="../static/pernsteiner_christoph.png"
             color={Color.SecondaryLight}
             variant={"shifted"}
@@ -78,11 +84,11 @@ const MainPage = () => (
             <Bubble color={Color.SecondaryLight} layout={"centered"}/>
             <Bubble width="80%" />
             <Bubble color={Color.SecondaryDark} layout={"centered"}/>
-        </StyledBubbleBox>    
+        </StyledBubbleBox>
 
         <StyledHeading>PersonBubble : Overlay</StyledHeading>
-        <PersonBubble 
-            color = {Color.Primary} 
+        <PersonBubble
+            color = {Color.Primary}
             imageSource = "../static/pernsteiner_christoph.png"
             personName = "Christoph Pernsteiner"
             personPosition = "CEO . founder"
@@ -90,8 +96,8 @@ const MainPage = () => (
         />
 
         <StyledHeading>PersonBubble: Shifted</StyledHeading>
-        <PersonBubble 
-            color = {Color.SecondaryLight} 
+        <PersonBubble
+            color = {Color.SecondaryLight}
             imageSource = "../static/kotek_michael.png"
             personName = "Michael Kotek"
             personPosition = "frontend developer"
@@ -99,7 +105,22 @@ const MainPage = () => (
         />
 
         <StyledHeading>WorkingAtPcode</StyledHeading>
-        <WorkingAtPcodeSection/>
+        <WorkingAtPcodeSection />
+        <StyledHeading>PersonWithFunction</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath="../static/pernsteiner_christoph.png"
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
+        />
+
+        <StyledHeading>Statement</StyledHeading>
+        <StyledPersonWithFunction
+            imagePath="../static/pernsteiner_christoph.png"
+            color={Color.Secondary}
+            personName={'Christoph Pernsteiner'}
+            personPosition={'CEO .founder'}
+        />
 
         <StyledHeading>Statement</StyledHeading>
         <Statement
@@ -121,6 +142,24 @@ const MainPage = () => (
             'we are adapting to new challenges by developing and investing in
             our people'
         </Statement2>
+
+        <StyledHeading>Multi Color Headline</StyledHeading>
+        <MultiColorHeadline
+            leftAndRightTextColor={Color.Secondary2}
+            middleTextColor={Color.Primary}
+            leftText="our"
+            middleText="code"
+            rightText="stands for"
+            variant="Big"
+        />
+
+        <StyledHeading>PcodeShape</StyledHeading>
+        <StyledPcodeShapeBox display="flex">
+            <PcodeShape />
+            <PcodeShape color={Color.Secondary2} />
+            <PcodeShape width="80%" />
+            <PcodeShape width="50%" color={Color.Secondary} />
+        </StyledPcodeShapeBox>
 
         <StyledHeading>CopyText</StyledHeading>
         <StyledCopyText color={Color.SecondaryLight} fontStyle={FontStyle.Light}>
@@ -148,6 +187,9 @@ const MainPage = () => (
 
         <StyledHeading>ContactForm</StyledHeading>
         <StyledContactForm>ContactForm Component</StyledContactForm>
+
+        <StyledHeading>Wave</StyledHeading>
+        <Wave variant={'Top'} color={Color.Primary} shape={1}></Wave>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
@@ -181,12 +223,12 @@ const MainPage = () => (
         ></StyledCharacter>
 
         <StyledHeading>ProjectSlider</StyledHeading>
-        <ProjectSliderWrapper>
+        <ProjectSliderLayout>
             <ProjectSlider
                 width={300}
                 images={['../static/sandburg.jpg', '../static/sandburg.jpg']}
             />
-        </ProjectSliderWrapper>
+        </ProjectSliderLayout>
 
         <StyledHeading>KeyWordsWithImagesSlider</StyledHeading>
         <KeywordsWithImagesSlider
@@ -342,7 +384,7 @@ const StyledBubbleBox = styled(Box)`
     margin-left: 2em;
 `;
 
-const ProjectSliderWrapper = styled.div`
+const ProjectSliderLayout = styled.div`
     width: 250px;
     padding-bottom: 20em;
     /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
