@@ -26,7 +26,6 @@ import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
-import { PersonWithFunction } from '../components/PersonWithFunction';
 import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
@@ -47,9 +46,6 @@ const MainPage = () => (
                 alert('Not Implemented Yet!');
             }}
         />
-        <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImageLayout
-
 
         <Button color={'primaryFilled'}>Primary Filled Button</Button>
         <Button color={'primaryOutlined'}>Primary Outlined Button</Button>
@@ -106,18 +102,10 @@ const MainPage = () => (
 
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
-        <StyledHeading>PersonWithFunction</StyledHeading>
-        <StyledPersonWithFunction
-            imagePath="../static/pernsteiner_christoph.png"
-            color={Color.Secondary}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-        />
-
-        <StyledHeading>Statement</StyledHeading>
-        <StyledPersonWithFunction
-            imagePath="../static/pernsteiner_christoph.png"
-            color={Color.Secondary}
+        <StyledHeading>PersonBubble</StyledHeading>
+        <PersonBubble
+            imageSource="../static/pernsteiner_christoph.png"
+            color={Color.SecondaryLight}
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
         />
@@ -145,7 +133,7 @@ const MainPage = () => (
 
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
-            leftAndRightTextColor={Color.Secondary2}
+            leftAndRightTextColor={Color.SecondaryLight}
             middleTextColor={Color.Primary}
             leftText="our"
             middleText="code"
@@ -153,13 +141,11 @@ const MainPage = () => (
             variant="Big"
         />
 
-        <StyledHeading>PcodeShape</StyledHeading>
-        <StyledPcodeShapeBox display="flex">
-            <PcodeShape />
-            <PcodeShape color={Color.Secondary2} />
-            <PcodeShape width="80%" />
-            <PcodeShape width="50%" color={Color.Secondary} />
-        </StyledPcodeShapeBox>
+        <StyledHeading>Bubble</StyledHeading>
+        <Bubble />
+        <Bubble color={Color.SecondaryLight} />
+        <Bubble width="80%" />
+        <Bubble width="50%" color={Color.SecondaryDark} />
 
         <StyledHeading>CopyText</StyledHeading>
         <StyledCopyText color={Color.SecondaryLight} fontStyle={FontStyle.Light}>
