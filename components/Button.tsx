@@ -19,12 +19,13 @@ export const Button = styled('button', {
 
     // TODO: Change structure of variants (filled/outlined)
     // reference: https://codesandbox.io/s/ecstatic-meninsky-o6l2d?file=/src/App.js 
+    
     variants: {
         color: {
             primaryFilled: {
                 backgroundColor: theme.Color.Primary.Default,
-                color: '$white',
-                border: 'none',
+                color: theme.Color.White,
+                border: theme.Button.Border.Width.None,
                 '&:hover': {
                     backgroundColor: theme.Color.Primary.Hover,                 
                 },
@@ -33,15 +34,15 @@ export const Button = styled('button', {
                 }
             },
             primaryOutlined: {
-                backgroundColor: '$white',
+                backgroundColor: theme.Color.White,
                 borderColor: theme.Color.Primary.Default,
                 color: theme.Color.Primary.Default,
-                borderWidth: theme.Button.Border.Width,
+                borderWidth: theme.Button.Border.Width.Regular,
             },
             secondaryFilled: {
                 backgroundColor: theme.Color.Secondary.Default,
                 color: theme.Color.White,
-                border: 'none',
+                border: theme.Button.Border.Width.None,
                 '&:hover': {
                     backgroundColor: theme.Color.Secondary.Hover,
                 },
@@ -53,12 +54,12 @@ export const Button = styled('button', {
                 backgroundColor: theme.Color.White,
                 borderColor: theme.Color.Secondary.Default,
                 color: theme.Color.Secondary.Default,
-                borderWidth: theme.Button.Border.Width,
+                borderWidth: theme.Button.Border.Width.Regular,
             },
             tertiary: {
                 backgroundColor: theme.Color.Tertiary.Default,
                 color: theme.Color.Accent.Grey,
-                border: 'none'
+                border: theme.Button.Border.Width.None,
             }
         }
 

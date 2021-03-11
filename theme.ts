@@ -34,7 +34,10 @@ export const theme = {
     // ---------- BUTTON ----------
     Button: {
         Border: {
-            Width: '$default',
+            Width: {
+                None: 'none',
+                Regular: '$regular',
+            },
             Radius: '$circle',
         },
         Font: {

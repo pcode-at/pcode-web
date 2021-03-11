@@ -56,8 +56,8 @@ export const { styled, css } = createStyled({
             $default: 'raleway'
         },
         letterSpacings: {
-            $tight: '-0.003em',
-            $wide: '0.006em'
+            $tight: '-0.003rem',
+            $wide: '0.006rem'
         },
         borderWidths: {
             $regular: '1px',
