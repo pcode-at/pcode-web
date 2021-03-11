@@ -30,99 +30,97 @@ The design options are defined in [stitches.config.ts](stitches.config.ts). Here
 
 e.g. allowed font sizes:
 
-`fontSizes: {
-    $xs: '12px',
-    $s: '14px',
-    $m: '16px',
-    $l: '24px',
-    $xl: '36px',
-    $xxl: '54px'  
-},`
+    fontSizes: {   
+        $xs: '12px',  
+        $s: '14px',   
+        $m: '16px',   
+        $l: '24px',   
+        $xl: '36px',    
+        $xxl: '54px'    
+    },
 
 or a section of the colors: 
 
-`colors: {
-    $grey500: '#3B3734',
-    $turquoise500: '#42E8E0',
-    $lilac500: '#C5C5FF',
-    $cherry500: '#CC0C00',
-    $white: '#FFFFFF',
-},
-`
+    colors: {    
+        $grey500: '#3B3734',  
+        $turquoise500: '#42E8E0',   
+        $lilac500: '#C5C5FF',   
+        $cherry500: '#CC0C00',    
+        $white: '#FFFFFF',  
+    },
 
 ### Design Decisions in theme.ts
 Based on the available options we can now make _decisions_ about how and where we use certain tokens. This way we can make sure, that the components match the design and prevent the usage of magic numbers. 
 
 e.g. we define, that the option `$cherry500` is used applied in _alert_-scenarios: 
 
-`Color: {
-    Alert: '$cherry500',
-},`
+    Color: {   
+        Alert: '$cherry500',    
+    },
 
 another example is the `Button`-component. Via theme.ts we're able to define, that a `Button`-component has a specified border-radius. 
 
 Within `stitches.config.ts` we defined the possible radii values: 
-`radii: {
-    $none: '0px',
-    $rounded: '5px',
-    $circle: '100px'
-},`
+    radii: {   
+        $none: '0px',   
+        $rounded: '5px',    
+        $circle: '100px'    
+    },
 
 Within `theme.ts` we define, that a `Button` has only one border-radius option: 
-`Button: {
-    Border: {
-        //** .. */
-        Radius: '$circle',
-    },
-`
+    Button: {    
+        Border: {   
+            //** .. */  
+            Radius: '$circle',  
+        },  
+
 Within `Button.tsx` we can now define that the component has the pre-defined radius `theme.Button.Border.Radius`: 
-`export const Button = styled('button', {
+    export const Button = styled('button', {   
+        borderRadius:   theme.Button.Border.Radius,   
+        //** .. */  
+    });
 
-    borderRadius:   theme.Button.Border.Radius,
-    //** .. */
-
-});
-`
 ## Stitches
 The [`Stitches` library](https://stitches.dev/docs/installation) enables the simple usage of variants within components using said design tokens. 
 
-`variants: {
-    color: {
-        primary: {
-            backgroundColor: theme.Color.Primary.Default,
-            color: theme.Color.White,
-            border: theme.Button.Border.Width.None,
-            '&:hover': {
-                backgroundColor: theme.Color.Primary.Hover,                 
-            },
-            '&:disabled': {
-                backgroundColor: theme.Color.Primary.Inactive
-            }
-        },
-        //** .. */
-        secondary: {
-            backgroundColor: theme.Color.Secondary.Default,
-            color: theme.Color.White,
-            border: theme.Button.Border.Width.None,
-            '&:hover': {
-                backgroundColor: theme.Color.Secondary.Hover,
-            },
-            '&:disabled': {
-                backgroundColor: theme.Color.Secondary.Default,
-            }
-        },
-        //** .. */
-`
+  variants: {  
+    color: {  
+        primary: {  
+            backgroundColor: theme.Color.Primary.Default, 
+            color: theme.Color.White, 
+            border: theme.Button.Border.Width.None, 
+            '&:hover': {  
+                backgroundColor: theme.Color.Primary.Hover, 
+            },  
+            '&:disabled': { 
+                backgroundColor: theme.Color.Primary.Inactive 
+            } 
+        },  
+        //** .. */  
+        secondary: {  
+            backgroundColor: theme.Color.Secondary.Default, 
+            color: theme.Color.White, 
+            border: theme.Button.Border.Width.None, 
+            '&:hover': {  
+                backgroundColor: theme.Color.Secondary.Hover, 
+            },  
+            '&:disabled': { 
+                backgroundColor: theme.Color.Secondary.Default, 
+            } 
+        },  
+        //** .. */  
+    },
+  }
 
 By defining the variants and their properties, you can easily decide which color the `Button`-component should have. 
 
-        <Button color={'primary'}>Primary Button</Button>
-        <Button 
-          color={'secondary'} 
-          disabled={true}
-        >
-        Secondary Inactive Button
-        </Button>
+    <Button color={'primary'}>Primary Button</Button> 
+    <Button 
+      color={'secondary'} 
+      disabled={true}
+    >
+    Secondary Inactive Button
+    </Button>
 
 ## Styling and layouting conventions
 To keep working on the pcode-web project as easy and straight forward as possible we came up with styling and layouting conventions:
