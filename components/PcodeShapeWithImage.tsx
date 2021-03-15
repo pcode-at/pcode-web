@@ -3,7 +3,8 @@ import React from 'react';
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
 import { Color } from '../Color.enum';
 import { theme } from '../theme';
-import { PcodeShape } from './PcodeShape';
+// import { PcodeShape } from './PcodeShape';
+import { Bubble } from './Bubble';
 import styled from 'styled-components';
 import { Flex, Box, Image } from 'rebass';
 
@@ -29,7 +30,7 @@ export const PcodeShapeWithImage: React.FC<Props> = ({
         position: relative;
     `;
 
-    let StyledPcodeShape = styled(PcodeShape)`
+    let StyledPcodeShape = styled(Bubble)`
         mask: url(../static/pcode_shape.svg);
         mask-position: top;
         mask-repeat: no-repeat;

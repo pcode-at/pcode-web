@@ -10,7 +10,6 @@ import { SectionHeadline } from '../components/SectionHeadline';
 import { FreeChair } from '../components/FreeChair';
 import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
-import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
 import { Menu } from '../components/Menu';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
@@ -35,6 +34,7 @@ import { SkillDetail } from '../components/SkillDetail';
 import { ImageBubble } from '../components/ImageBubble';
 import { PersonBubble } from '../components/PersonBubble';
 import { Button } from '../components/Button';
+import { Footer } from '../components/Footer';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -306,7 +306,8 @@ const MainPage = () => (
         </Box>
 
         <StyledHeading>Footer</StyledHeading>
-        <StyledFooter />
+        {/* <StyledFooter /> */}
+        <Footer/>
     </ThemeProvider>
 );
 
@@ -361,9 +362,9 @@ const StyledSwiper = styled(Swiper)`
     width: 300px;
 `;
 
-const StyledFooter = styled(Footer)`
-    margin-top: 2em;
-`;
+// const StyledFooter = styled(Footer)`
+//     margin-top: 2em;
+// `;
 
 const StyledBubbleBox = styled(Box)`
     width: 50%;
