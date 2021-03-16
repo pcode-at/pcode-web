@@ -35,17 +35,20 @@ import { ImageBubble } from '../components/ImageBubble';
 import { PersonBubble } from '../components/PersonBubble';
 import { Button } from '../components/Button';
 import { Footer } from '../components/Footer';
+import { Navbar } from '../components/Navbar';
 
 const { light, normal } = themeDeprecated.font;
 
 const MainPage = () => (
     <ThemeProvider theme={themeDeprecated}>
-        <SiteHeader
+        {/* <SiteHeader
             color={Color.Primary}
             onClick={() => {
                 alert('Not Implemented Yet!');
             }}
-        />
+        /> */}
+
+        <Navbar/>
 
         <Button color={'primaryFilled'}>Primary Filled Button</Button>
         <Button color={'primaryOutlined'}>Primary Outlined Button</Button>
