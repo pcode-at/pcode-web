@@ -9,31 +9,27 @@ type Props = { className?: string; }
 export const Navbar: React.FC<Props> = ({ className }) => {
  
     let NavbarLayout = styled(Flex, {
-
+        maxWidth: '100%',
     })
 
     let LogoLayout = styled('a', {
         margin: '17px auto',
         justifyContent: 'center',
         display: 'flex',
-
+        maxWidth: '45%',
     })
 
     let Logo = styled('img', {
-        maxWidth: '60%',
-    
-    
+        maxWidth: '60%',    
     })
 
     let NavbarItemsLayout = styled('nav', {
-        // width: theme.Navbar.Items.Width,
-        // height: theme.Navbar.Items.Height,
-        width: '60%',
+        width: '55%',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        padding: '35.5px 165px 35.5px 0px',
+        padding: '$none $l',
         marginLeft: 'auto',
         marginRight: 'auto',
 
@@ -45,7 +41,6 @@ export const Navbar: React.FC<Props> = ({ className }) => {
         lineHeight: theme.Navbar.Items.LineHeight,
         color: theme.Navbar.Items.Font.Color,
         // fontWeight: theme.Navbar.Items.Font.Weight,
-        // marginLeft: 'auto',
         marginRight: 'auto',
         textDecoration: 'none',
 
@@ -57,17 +52,14 @@ export const Navbar: React.FC<Props> = ({ className }) => {
                         color: theme.Color.Primary.Default,
                         textDecorationColor: theme.Color.Primary.Default,
                         textDecorationLine: 'underline',
-
                     },
                     '&::selection': {
                         color: theme.Color.Primary.Default,
                         textDecorationColor: theme.Color.Primary.Default,
                         textDecorationLine: 'underline',
-
                     },
                     '&~a': {
                         marginLeft: 'auto',
-
                     },
                 },
             }
