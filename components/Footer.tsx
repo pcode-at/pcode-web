@@ -11,28 +11,37 @@ type Props = { className?: string; }
 
 export const Footer: React.FC<Props> = ({ className }) => { 
 
-    let FooterLayout = styled(Flex, {
-        width: theme.Footer.Background.Width,
-        height: theme.Footer.Background.Height,
-        backgroundColor: theme.Footer.Background.Color,
+    let FooterLayout = styled('div', {
         alignItems: 'center',
-        // backgroundImage: ('../static/rectangle.svg'),
+        maxWidth: '100%',
+        backgroundImage: `url(${'../static/rectangle.jpg'})`,
+        backgroundRepeat: 'no-repeat',
+        
+        backgroundSize: '100%',
+        // backgroundSize: 'cover',
+        
+        // backgroundPosition: 'center',
+
+
     })
 
     // area containing the whole footer content
-    let TextAreaLayout = styled(Box, {
-        width: theme.Footer.TextArea.Width,
-        height: theme.Footer.TextArea.Height,
+    let TextAreaLayout = styled('div', {
+        // width: theme.Footer.TextArea.Width,
+        // height: theme.Footer.TextArea.Height,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
         alignItems: 'center',
         padding: '$none',
+        maxWidth: '100%',
+
+
     })
     // area containing contact, pages and address
-    let FooterTextLayout = styled(Box, {
-        width: theme.Footer.TextArea.FooterText.Width,
-        height: theme.Footer.TextArea.FooterText.Height,
+    let FooterTextLayout = styled('div', {
+        // width: theme.Footer.TextArea.FooterText.Width,
+        // height: theme.Footer.TextArea.FooterText.Height,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
@@ -41,43 +50,60 @@ export const Footer: React.FC<Props> = ({ className }) => {
         order: 0,
         flexGrow: 0,
         margin: '34px 0px',
+
+        // '&>div': {
+        //     marginLeft: '50px',
+        //     marginRight: '50px',
+        // }
+
+    })
+
+    let FooterTextEntryLayout = styled('div', {
+        textAlign: 'center',
+        textTransform: 'lowercase',
+        marginRight: '50px',
+
+        '&~div': {
+            marginLeft: '50px',
+            // marginRight: '50px',
+        }
     })
 
     // text areas within the footer text layout
     let ContactLayout = styled('div', {
-        width: theme.Footer.TextArea.FooterText.Contact.Width,
-        height: theme.Footer.TextArea.FooterText.Contact.Height,
+        // width: theme.Footer.TextArea.FooterText.Contact.Width,
+        // height: theme.Footer.TextArea.FooterText.Contact.Height,
 
         textAlign: 'center',
         textTransform: 'lowercase',
 
         order: 0,
-        flexGrow: 0,
+
     })
     let PagesLayout = styled('div', {
-        width: theme.Footer.TextArea.FooterText.Pages.Width,
-        height: theme.Footer.TextArea.FooterText.Pages.Height,
+        // width: theme.Footer.TextArea.FooterText.Pages.Width,
+        // height: theme.Footer.TextArea.FooterText.Pages.Height,
 
         textAlign: 'center',
         textTransform: 'lowercase',
 
         order: 1,
-        flexGrow: 0,
+
     })
     let AddressLayout = styled('div', {
-        width: theme.Footer.TextArea.FooterText.Address.Width,
-        height: theme.Footer.TextArea.FooterText.Address.Height,
+        // width: theme.Footer.TextArea.FooterText.Address.Width,
+        // height: theme.Footer.TextArea.FooterText.Address.Height,
 
         textAlign: 'center',
         textTransform: 'lowercase',
 
         order: 2,
-        flexGrow: 0,
+
     })
 
     let SocialMediaIconsLayout = styled('div', {
-        width: theme.Footer.TextArea.SocialMedia.Width,
-        height: theme.Footer.TextArea.SocialMedia.Height,
+        // width: theme.Footer.TextArea.SocialMedia.Width,
+        // height: theme.Footer.TextArea.SocialMedia.Height,
 
         display: 'flex',
         flexDirection: 'row',
@@ -91,8 +117,8 @@ export const Footer: React.FC<Props> = ({ className }) => {
         flexGrow: 0,
     })
     let ImpressumLayout = styled('div', {
-        width: theme.Footer.TextArea.Impressum.Width,
-        height: theme.Footer.TextArea.Impressum.Height,
+        // width: theme.Footer.TextArea.Impressum.Width,
+        // height: theme.Footer.TextArea.Impressum.Height,
 
         display: 'flex',
         flexDirection: 'row',
@@ -121,7 +147,9 @@ export const Footer: React.FC<Props> = ({ className }) => {
         textDecoration: 'none',
     })
     let ImpressumEntry = styled(PageReference, {
-        paddingRight: '1rem',
+        '&~a': {
+            marginLeft: '1rem',
+        },
     })
     let Icon = styled('img', {
         width: '16px',
@@ -133,14 +161,14 @@ export const Footer: React.FC<Props> = ({ className }) => {
         <FooterLayout className={className}>
             <TextAreaLayout>
                 <FooterTextLayout>
-                    <ContactLayout>
+                    <FooterTextEntryLayout>
                         <Text>
                         pcode – software engineering <br/>
                         +43 664 1652141 <br/>
                         jobs@pcode.at <br/>
                         </Text>
-                    </ContactLayout>
-                    <PagesLayout>
+                    </FooterTextEntryLayout>
+                    <FooterTextEntryLayout>
                         <Text>
                             <PageReference href="">home</PageReference><br/>
                             <PageReference href="">who we are</PageReference><br/>
@@ -149,14 +177,14 @@ export const Footer: React.FC<Props> = ({ className }) => {
                             <PageReference href="">join us</PageReference><br/>
                             <PageReference href="">contact us</PageReference><br/>
                         </Text>
-                    </PagesLayout>
-                    <AddressLayout>
+                    </FooterTextEntryLayout>
+                    <FooterTextEntryLayout>
                         <Text>
                         peter-behrens-platz 9 <br/>
                         stiege d / 3. stock <br/>
                         4020 linz – austria <br/>
                         </Text>
-                    </AddressLayout>
+                    </FooterTextEntryLayout>
                 </FooterTextLayout>
                 <SocialMediaIconsLayout>
                     <PageReference href="">
