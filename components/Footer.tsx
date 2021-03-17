@@ -16,132 +16,63 @@ export const Footer: React.FC<Props> = ({ className }) => {
         maxWidth: '100%',
         backgroundImage: `url(${'../static/rectangle.jpg'})`,
         backgroundRepeat: 'no-repeat',
-        
         backgroundSize: '100%',
-        // backgroundSize: 'cover',
-        
-        // backgroundPosition: 'center',
-
-
     })
 
     // area containing the whole footer content
     let TextAreaLayout = styled('div', {
-        // width: theme.Footer.TextArea.Width,
-        // height: theme.Footer.TextArea.Height,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
         alignItems: 'center',
         padding: '$none',
         maxWidth: '100%',
-
-
     })
     // area containing contact, pages and address
     let FooterTextLayout = styled('div', {
-        // width: theme.Footer.TextArea.FooterText.Width,
-        // height: theme.Footer.TextArea.FooterText.Height,
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'flex-start',
         padding: '$none',
-        order: 0,
-        flexGrow: 0,
-        margin: '34px 0px',
-
-        // '&>div': {
-        //     marginLeft: '50px',
-        //     marginRight: '50px',
-        // }
-
+        margin: '$l $none',
     })
-
     let FooterTextEntryLayout = styled('div', {
         textAlign: 'center',
         textTransform: 'lowercase',
-        marginRight: '50px',
-
+        marginRight: '$xxl',
         '&~div': {
-            marginLeft: '50px',
-            // marginRight: '50px',
+            marginLeft: '$xxl',
         }
     })
 
-    // text areas within the footer text layout
-    let ContactLayout = styled('div', {
-        // width: theme.Footer.TextArea.FooterText.Contact.Width,
-        // height: theme.Footer.TextArea.FooterText.Contact.Height,
-
-        textAlign: 'center',
-        textTransform: 'lowercase',
-
-        order: 0,
-
-    })
-    let PagesLayout = styled('div', {
-        // width: theme.Footer.TextArea.FooterText.Pages.Width,
-        // height: theme.Footer.TextArea.FooterText.Pages.Height,
-
-        textAlign: 'center',
-        textTransform: 'lowercase',
-
-        order: 1,
-
-    })
-    let AddressLayout = styled('div', {
-        // width: theme.Footer.TextArea.FooterText.Address.Width,
-        // height: theme.Footer.TextArea.FooterText.Address.Height,
-
-        textAlign: 'center',
-        textTransform: 'lowercase',
-
-        order: 2,
-
-    })
-
     let SocialMediaIconsLayout = styled('div', {
-        // width: theme.Footer.TextArea.SocialMedia.Width,
-        // height: theme.Footer.TextArea.SocialMedia.Height,
-
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'flex-end',
-        
         padding: '$none',
-        margin: '12px 0px',
-
-        order: 1,
-        flexGrow: 0,
+        margin: '$s $none',
     })
     let ImpressumLayout = styled('div', {
-        // width: theme.Footer.TextArea.Impressum.Width,
-        // height: theme.Footer.TextArea.Impressum.Height,
-
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'flex-start',
-        
         padding: '$none',
-
-        order: 2,
-        flexGrow: 0,
-        margin: '12px 0px',
+        margin: '$s $none',
     })
 
     let Text = styled('p', {
         fontFamily: theme.Font.Default,
         fontSize: theme.Footer.TextArea.Font.Size,
-        // fontWeight: theme.Footer.TextArea.Font.Weight,
+        fontWeight: theme.Footer.TextArea.Font.Weight,
         color: theme.Footer.TextArea.Font.Color,
         lineHeight: theme.Footer.TextArea.LineHeight,
     })
     let PageReference = styled('a', {
         fontFamily: theme.Font.Default,
         fontSize: theme.Footer.TextArea.Font.Size,
-        // fontWeight: theme.Footer.TextArea.Font.Weight,
+        fontWeight: theme.Footer.TextArea.Font.Weight,
         color: theme.Footer.TextArea.Font.Color,
         lineHeight: theme.Footer.TextArea.LineHeight,
         textDecoration: 'none',
@@ -152,9 +83,9 @@ export const Footer: React.FC<Props> = ({ className }) => {
         },
     })
     let Icon = styled('img', {
-        width: '16px',
-        height: '16px',
-        margin: '0px 30px',
+        width: '$s',
+        height: '$s',
+        margin: '$none $l',
     })
 
     return (
