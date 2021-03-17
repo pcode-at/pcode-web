@@ -35,18 +35,46 @@ export const theme = {
     Button: {
         Border: {
             Width: {
-                None: 'none',
-                Regular: '$regular',
+                Primary: 'none',
+                Secondary: 'none',
+                Tertiary: '$regular',
             },
             Radius: '$circle',
         },
         Font: {
             Weight: '$regular',
             Size: '$s',
+            Color: {
+                Primary: {
+                    Default: '$white',
+                    White: '$blue500',
+                },
+                Secondary: '$red500',
+                Tertiary: '$red500',
+            },
         },
         LineHeight: '$s',
-        Padding: '16px 24px',
+        Padding: '$s $m',
         BoxShadow: '$regular',
+        Background: {
+            Color: {
+                Primary: {
+                    Red: {
+                        Default: '$red500',
+                        Hover: '$red300',
+                        Inactive: '$red100',
+                    },
+                    Blue: {
+                        Default: '$blue500',
+                        Hover: '$blue300',
+                        Inactive: '$blue100',
+                    },
+                    White: '$white',
+                },
+                Secondary: 'transparent',
+                Tertiary: 'transparent',
+            }
+        }
     },
 
     // ---------- CONTACT FORM ----------

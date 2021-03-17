@@ -50,18 +50,18 @@ const MainPage = () => (
 
         <Navbar/>
 
-        <Button color={'primaryFilled'}>Primary Filled Button</Button>
-        <Button color={'primaryOutlined'}>Primary Outlined Button</Button>
-        <Button color={'primaryFilled'} disabled={true}>Inactive Primary Filled Button</Button>
+        <StyledHeading>Button</StyledHeading>
+        <Button variant={'primaryRed'}>Primary Red</Button>
+        <Button variant={'primaryRed'} disabled={true}>Primary Red - Disabled</Button>
         <br/>
-        <Button color={'secondaryFilled'}>Secondary Filled Button</Button>
-        <Button color={'secondaryOutlined'}>Secondary Outlined</Button>
-        <Button color={'secondaryFilled'} disabled={true}> Inactive Secondary Filled Button</Button>
+        <Button variant={'primaryBlue'}>Primary Blue</Button>
+        <Button variant={'primaryBlue'} disabled={true}>Primary Blue - Disabled</Button>
         <br/>
-        <Button color={'tertiary'}>Tertiary Button</Button>
-
-
-
+        <Button variant={'primaryWhite'}>Primary White</Button>
+        <br/>
+        <Button variant={'secondary'}>Secondary</Button>
+        <br/>
+        <Button variant={'tertiary'}>Tertiary</Button>
 
         <StyledHeading>ImageBubble : Overlay</StyledHeading>
         <StyledImageBubbleLayout
