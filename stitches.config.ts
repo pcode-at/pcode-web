@@ -77,7 +77,7 @@ export const { styled, css } = createStyled({
             $s: '16px',
             $m: '24px',
             $l: '32px',
-            $xl: '40',
+            $xl: '40px',
             $xxl: '64px',
         },
         zIndices: {
