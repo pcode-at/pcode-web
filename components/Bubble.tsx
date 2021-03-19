@@ -1,15 +1,8 @@
 import React from 'react';
-
 import BubbleSvg from '../assets/bubble.svg?sprite';
-
-import { Box } from 'rebass';
 import { Color } from '../Color.enum';
-import { themeDeprecated } from '../themeDeprecated';
-
 import { styled } from '../stitches.config';
 import { theme } from '../theme';
-import { colorStyle, height, Theme, width } from 'styled-system';
-
 
 type Props = {
     width?: string;
@@ -17,12 +10,12 @@ type Props = {
 };
 
 export const BubbleBlank: React.FC<Props> = ({
-    width, 
+    width = '45%',
     color = theme.Bubble.Background.Color.Blue,
 }) => {
 
     let BubbleLayout = styled('div', {
-        
+        width: width,
     })
 
     let Bubble = styled(BubbleSvg, {
