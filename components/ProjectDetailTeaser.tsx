@@ -61,10 +61,10 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
         <div className={className}>
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
-                    <GraphicLayout>
-                        <Bubble color={Color.Primary} />
+                    {/* <GraphicLayout>
+                        <BubbleBubbleBlank color={Color.Primary} />
                         <StyledImageLayout src={imageSrc} />
-                    </GraphicLayout>
+                    </GraphicLayout> */}
                 </Box>
                 <TextLayout>
                     <CenteredText>

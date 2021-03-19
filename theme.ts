@@ -128,6 +128,10 @@ export const theme = {
                 White: '$white'
             }
         },
+        Blank: {
+            Height: '648px',
+            Width: '570px',
+        },
         Image: {
             Height: '648px',
             Width: '570px',

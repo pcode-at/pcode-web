@@ -80,9 +80,9 @@ export const Menu: React.FC<Props> = ({
                                 </Link>
                             </Flex>
                         </LinkLayout>
-                        <PcodeShapeLayout>
+                        {/* <PcodeShapeLayout>
                             <Bubble width="80vh" color={Color.Primary} />
-                        </PcodeShapeLayout>
+                        </PcodeShapeLayout> */}
                     </ShapeAndLinksLayout>
                 </Flex>
             </Box>

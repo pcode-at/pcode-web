@@ -66,7 +66,7 @@ export const ImageBubble: React.FC<Props> = ({
                 <div className={className}>
                     <StyledFlexLayout>
                         <BubbleLayout>
-                            <Bubble width="100%" color={color} />
+                            <BubbleBlank width="100%" color={color} />
                         </BubbleLayout>
                         <StyledImageLayout>
                             <StyledImage src={imageSource} />
@@ -103,7 +103,7 @@ export const ImageBubble: React.FC<Props> = ({
                 <div className={className}>
                     <ImageBubbleLayout>
                         <BubbleLayout>
-                            <Bubble color={color}/> 
+                            <BubbleBlank color={color}/> 
                         </BubbleLayout>
                         <StyledImageLayout>
                             <StyledImage src={imageSource}/>

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box, Button as Button2, Flex } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
-import { Bubble } from '../components/Bubble';
+import { Bubble, BubbleBlank } from '../components/Bubble';
 import { Color } from '../Color.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
@@ -35,6 +35,7 @@ import { SkillDetail } from '../components/SkillDetail';
 import { ImageBubble } from '../components/ImageBubble';
 import { PersonBubble } from '../components/PersonBubble';
 import { Button } from '../components/Button';
+import { theme } from '../theme';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -47,6 +48,10 @@ const MainPage = () => (
             }}
         />
 
+        <StyledHeading>Bubble Blank</StyledHeading>
+        <BubbleBlank color={theme.Bubble.Background.Color.Red}/>
+
+        <StyledHeading>Buttons</StyledHeading>
         <Button color={'primaryFilled'}>Primary Filled Button</Button>
         <Button color={'primaryOutlined'}>Primary Outlined Button</Button>
         <Button color={'primaryFilled'} disabled={true}>Inactive Primary Filled Button</Button>
@@ -60,7 +65,7 @@ const MainPage = () => (
 
 
 
-        <StyledHeading>ImageBubble : Overlay</StyledHeading>
+        {/* <StyledHeading>ImageBubble : Overlay</StyledHeading>
         <StyledImageBubbleLayout
             imageSource="../static/pernsteiner_christoph.png"
             color={Color.SecondaryDark}
@@ -98,19 +103,20 @@ const MainPage = () => (
             personName = "Michael Kotek"
             personPosition = "frontend developer"
             variant = "shifted"
-        />
+        /> */}
 
         <StyledHeading>WorkingAtPcode</StyledHeading>
         <WorkingAtPcodeSection />
-        <StyledHeading>PersonBubble</StyledHeading>
+
+        {/* <StyledHeading>PersonBubble</StyledHeading>
         <PersonBubble
             imageSource="../static/pernsteiner_christoph.png"
             color={Color.SecondaryLight}
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
-        />
+        /> */}
 
-        <StyledHeading>Statement</StyledHeading>
+        {/* <StyledHeading>Statement</StyledHeading>
         <Statement
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
@@ -129,7 +135,7 @@ const MainPage = () => (
         >
             'we are adapting to new challenges by developing and investing in
             our people'
-        </Statement2>
+        </Statement2> */}
 
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
@@ -141,11 +147,11 @@ const MainPage = () => (
             variant="Big"
         />
 
-        <StyledHeading>Bubble</StyledHeading>
+        {/* <StyledHeading>Bubble</StyledHeading>
         <Bubble />
         <Bubble color={Color.SecondaryLight} />
         <Bubble width="80%" />
-        <Bubble width="50%" color={Color.SecondaryDark} />
+        <Bubble width="50%" color={Color.SecondaryDark} /> */}
 
         <StyledHeading>CopyText</StyledHeading>
         <StyledCopyText color={Color.SecondaryLight} fontStyle={FontStyle.Light}>
