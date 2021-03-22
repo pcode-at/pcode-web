@@ -4,7 +4,7 @@ import { themeDeprecated } from '../../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
 import { Bubble } from '../../components/Bubble';
 import { SiteHeader } from '../../components/SiteHeader';
-import { DeprecatedColor } from '../../Color.enum';
+import { DeprecatedColor } from '../../DeprecatedColor.enum';
 import { Footer } from '../../components/Footer';
 import { Swiper } from '../../components/Swiper';
 import Router from 'next/router';

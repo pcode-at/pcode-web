@@ -365,10 +365,6 @@ const StyledSwiper = styled(Swiper)`
     width: 300px;
 `;
 
-// const StyledFooter = styled(Footer)`
-//     margin-top: 2em;
-// `;
-
 const StyledBubbleBox = styled(Box)`
     width: 50%;
     margin-left: 2em;

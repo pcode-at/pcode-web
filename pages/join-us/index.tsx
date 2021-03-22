@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { themeDeprecated } from '../../themeDeprecated';
 import { SiteHeader } from '../../components/SiteHeader';
-import { DeprecatedColor } from '../../Color.enum';
+import { DeprecatedColor } from '../../DeprecatedColor.enum';
 import { Footer } from '../../components/Footer';
 import { SectionHeadline } from '../../components/SectionHeadline';
 import { Box, Flex } from 'rebass';

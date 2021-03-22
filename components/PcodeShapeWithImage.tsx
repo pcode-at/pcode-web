@@ -1,9 +1,8 @@
 import React from 'react';
 
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { theme } from '../theme';
-// import { PcodeShape } from './PcodeShape';
 import { Bubble } from './Bubble';
 import styled from 'styled-components';
 import { Flex, Box, Image } from 'rebass';
