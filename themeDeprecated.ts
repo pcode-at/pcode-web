@@ -1,4 +1,4 @@
-import { DeprecatedColor } from "./Color.enum";
+import { DeprecatedColor } from './DeprecatedColor.enum';
 import React from "react";
 
 export const themeDeprecated = {

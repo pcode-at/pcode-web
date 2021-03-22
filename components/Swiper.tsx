@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { ActionButton } from './ActionButton';
 import { SectionHeadline } from './SectionHeadline';
 import styled from 'styled-components';

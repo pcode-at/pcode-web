@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import { theme } from '../theme';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
 

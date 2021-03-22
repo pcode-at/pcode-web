@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex, Heading, Text } from 'rebass';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { themeDeprecated } from '../themeDeprecated';
 import { Platform } from './Platform';
 import { PlatformType } from '../shared/PlatformType.enum';

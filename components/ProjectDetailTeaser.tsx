@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bubble } from './Bubble';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex } from 'rebass';
 import { ActionButton } from './ActionButton';
 import { CopyText, FontStyle } from './CopyText';

@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { themeDeprecated } from '../themeDeprecated';
 import { Bubble } from './Bubble';
 import styled from 'styled-components';

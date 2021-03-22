@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Flex, Link } from 'rebass';
 import { Bubble } from './Bubble';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CSSObject } from '@styled-system/css';
 import styled from 'styled-components';
 

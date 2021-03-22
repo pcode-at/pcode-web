@@ -1,5 +1,5 @@
 import React from 'react';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';

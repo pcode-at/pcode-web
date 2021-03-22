@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { theme } from '../theme';
 import { WordList, intervalDuration } from './WordList';
 import styled from 'styled-components';

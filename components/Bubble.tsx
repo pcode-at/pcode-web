@@ -1,7 +1,7 @@
 import React from 'react';
 
 import BubbleSvg from '../assets/bubble.svg?sprite';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
 import { Box } from 'rebass';

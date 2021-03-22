@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from './CopyText';
 import { PositionLevel } from '../shared/PositionLevel.enum';
 import { ActionButton } from './ActionButton';

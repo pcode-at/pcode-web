@@ -4,7 +4,7 @@ import { Box, Button as Button2, Flex } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
 import { Bubble } from '../components/Bubble';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
 import { FreeChair } from '../components/FreeChair';

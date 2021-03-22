@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Text } from 'rebass';
 import { Bubble } from './Bubble';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import styled from 'styled-components';
 
 export const intervalDuration: number = 3100;
