@@ -1,5 +1,5 @@
 import React from 'react';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { Text } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 
@@ -9,7 +9,7 @@ export enum FontStyle {
 }
 
 type Props = {
-    color: Color;
+    color: DeprecatedColor;
     fontStyle: FontStyle;
     className?: string;
 };

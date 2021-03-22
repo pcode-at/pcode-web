@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { theme } from '../theme';
 import { WordList, intervalDuration } from './WordList';
 import styled from 'styled-components';
@@ -85,7 +85,7 @@ export const KeywordsWithImagesSlider: React.FC<Props> = ({
                 <StyledImageTwo src={imagesToSlide[0][1]}></StyledImageTwo>
                 <WordlistPositionLayout>
                     <WordList
-                        color={Color.Primary}
+                        color={DeprecatedColor.Primary}
                         words={wordsToSlide[0]}
                     ></WordList>
                 </WordlistPositionLayout>

@@ -1,20 +1,20 @@
 import React from 'react';
 
 import BubbleSvg from '../assets/bubble.svg?sprite';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 
 type Props = {
     width?: string;
-    color?: Color;
+    color?: DeprecatedColor;
     layout?: "shifted" | "centered";
 };
 
 export const Bubble: React.FC<Props> = ({
     width = "100%",
-    color = Color.Primary,
+    color = DeprecatedColor.Primary,
     layout = "shifted"
 }) => {
 

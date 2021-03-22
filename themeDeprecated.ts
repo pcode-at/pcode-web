@@ -1,13 +1,13 @@
-import { Color } from "./Color.enum";
+import { DeprecatedColor } from "./Color.enum";
 import React from "react";
 
 export const themeDeprecated = {
 
   colors: {
-    [Color.Primary]: "#F73859",
-    [Color.SecondaryDark]: "#263958",
-    [Color.SecondaryLight]: "#7AC7C4",
-    [Color.White]: "#fff"
+    [DeprecatedColor.Primary]: "#F73859",
+    [DeprecatedColor.SecondaryDark]: "#263958",
+    [DeprecatedColor.SecondaryLight]: "#7AC7C4",
+    [DeprecatedColor.White]: "#fff"
   },
   font: {
     light: {

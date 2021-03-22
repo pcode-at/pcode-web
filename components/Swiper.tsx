@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { ActionButton } from './ActionButton';
 import { SectionHeadline } from './SectionHeadline';
 import styled from 'styled-components';
 
 type Props = {
-    color?: Color;
+    color?: DeprecatedColor;
     textPartOne: string;
     textPartTwo: string;
     onClick(): void;
@@ -16,7 +16,7 @@ type Props = {
 export const Swiper: React.FC<Props> = ({
     textPartOne,
     textPartTwo,
-    color = Color.SecondaryDark,
+    color = DeprecatedColor.SecondaryDark,
     onClick,
     className,
 }) => {
@@ -33,7 +33,7 @@ export const Swiper: React.FC<Props> = ({
                 separateWithBreak={true}
             />
             <ActionButton
-                color={Color.SecondaryLight}
+                color={DeprecatedColor.SecondaryLight}
                 padding="0.2rem 1.7rem"
                 label="learn more"
                 onClick={onClick}

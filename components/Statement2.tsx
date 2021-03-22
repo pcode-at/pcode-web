@@ -1,5 +1,5 @@
 import React from 'react';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { Box, Flex } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
@@ -8,7 +8,7 @@ import { PersonBubble } from './PersonBubble';
 type Props = {
     personName: string;
     personPosition: string;
-    color: Color;
+    color: DeprecatedColor;
     width?: string;
     className?: string;
     imagePath: string;
@@ -18,7 +18,7 @@ export const Statement2: React.FC<Props> = ({
     children,
     personName,
     personPosition,
-    color = Color.Primary,
+    color = DeprecatedColor.Primary,
     imagePath,
     className,
 }) => {
@@ -86,7 +86,7 @@ export const Statement2: React.FC<Props> = ({
                 <PersonLayout>
                     <StyledPersonFlex>
                         <PersonBubble 
-                            color={Color.SecondaryDark}
+                            color={DeprecatedColor.SecondaryDark}
                             personName={personName}
                             personPosition={personPosition}
                             imageSource={imagePath}

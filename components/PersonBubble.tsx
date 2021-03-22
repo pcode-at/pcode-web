@@ -1,12 +1,12 @@
 import React from 'react';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { Box, Flex, Image, Text } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
 import { ImageBubble } from './ImageBubble';
 
 type Props = {
-    color: Color;
+    color: DeprecatedColor;
     personName?: string;
     personPosition?: string;
     className?: string;
@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const PersonBubble: React.FC<Props> = ({
-    color = Color.Primary,
+    color = DeprecatedColor.Primary,
     className,
     personName = "John Doe",
     personPosition = "Chief Anonymous Officer",

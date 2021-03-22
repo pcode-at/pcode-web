@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex, Heading, Text } from 'rebass';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { themeDeprecated } from '../themeDeprecated';
 import { Platform } from './Platform';
 import { PlatformType } from '../shared/PlatformType.enum';
@@ -95,7 +95,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
                 <div>
                     <SubHeadingLayout>
                         <StyledSubHeading
-                            color={Color.SecondaryLight}
+                            color={DeprecatedColor.SecondaryLight}
                             fontFamily={normal.fontFamily}
                         >
                             Language
@@ -113,7 +113,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
 
                     <SubHeadingLayout>
                         <StyledSubHeading
-                            color={Color.SecondaryLight}
+                            color={DeprecatedColor.SecondaryLight}
                             fontFamily={normal.fontFamily}
                         >
                             Technology
@@ -131,7 +131,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
 
                     <ActionButton
                         label="interested?"
-                        color={Color.SecondaryLight}
+                        color={DeprecatedColor.SecondaryLight}
                     />
                 </div>
             </FlexStyle>

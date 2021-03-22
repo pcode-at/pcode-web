@@ -1,11 +1,11 @@
 import React from 'react';
 import { theme } from '../theme';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
 
 type Props = {
-    color: Color;
+    color: DeprecatedColor;
     headlinePartOne: string;
     headlinePartTwo: string;
     separateWithBreak?: boolean;

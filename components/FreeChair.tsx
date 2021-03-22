@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { CopyText, FontStyle } from './CopyText';
 import { PositionLevel } from '../shared/PositionLevel.enum';
 import { ActionButton } from './ActionButton';
@@ -67,14 +67,14 @@ export const FreeChair: React.FC<Props> = ({
                 </SvgLayout>
                 <PositionLayout>
                     <SubHeadline
-                        color={Color.SecondaryDark}
+                        color={DeprecatedColor.SecondaryDark}
                         fontStyle={FontStyle.Normal}
                     >
                         {' '}
                         {position}{' '}
                     </SubHeadline>
                     <CopyText
-                        color={Color.SecondaryDark}
+                        color={DeprecatedColor.SecondaryDark}
                         fontStyle={FontStyle.Light}
                     >
                         {' '}
@@ -84,7 +84,7 @@ export const FreeChair: React.FC<Props> = ({
 
                     <DescriptionLayout>
                         <CopyText
-                            color={Color.SecondaryLight}
+                            color={DeprecatedColor.SecondaryLight}
                             fontStyle={FontStyle.Light}
                         >
                             {positionDescription}
@@ -94,7 +94,7 @@ export const FreeChair: React.FC<Props> = ({
                     <a
                         href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                     >
-                        <ActionButton color={Color.SecondaryLight} label="apply" />
+                        <ActionButton color={DeprecatedColor.SecondaryLight} label="apply" />
                     </a>
             </FreeChairLayout>
         </div>

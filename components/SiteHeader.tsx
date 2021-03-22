@@ -5,11 +5,11 @@ import NavbarSvg from '../assets/burger.svg?sprite';
 import LogoSvg from '../assets/logo_claim.svg?sprite';
 
 import { theme } from '../theme';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import styled from 'styled-components';
 
 type Props = {
-    color: Color;
+    color: DeprecatedColor;
     onClick?(): void;
 };
 
@@ -41,7 +41,7 @@ export const SiteHeader: React.FC<Props> = ({
     `;
 
     const StyledNavbarSvg = styled(NavbarSvg)`
-        color: ${Color.SecondaryLight};
+        color: ${DeprecatedColor.SecondaryLight};
         width: 30px;
     `;
 

@@ -2,11 +2,11 @@ import React from 'react';
 import { theme } from '../theme';
 import { Text, Heading } from 'rebass';
 import styled from 'styled-components';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 
 type Props = {
-    leftAndRightTextColor: Color;
-    middleTextColor: Color;
+    leftAndRightTextColor: DeprecatedColor;
+    middleTextColor: DeprecatedColor;
     leftText: string;
     middleText: string;
     rightText: string;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { themeDeprecated } from '../themeDeprecated';
 import { Bubble } from './Bubble';
 import styled from 'styled-components';
@@ -8,7 +8,7 @@ import { Flex, Image, Box } from 'rebass';
 
 type Props = {
     imageSource: string;
-    color?: Color;
+    color?: DeprecatedColor;
     className?: string;
     variant?: "overlay" | "shifted";
 };
@@ -26,7 +26,7 @@ type Props = {
  */
 
 export const ImageBubble: React.FC<Props> = ({
-    color = Color.SecondaryDark,
+    color = DeprecatedColor.SecondaryDark,
     imageSource,
     className,
     variant = "overlay"

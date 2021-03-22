@@ -4,7 +4,7 @@ import { Box, Button as Button2, Flex } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
 import { Bubble } from '../components/Bubble';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../Color.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
 import { FreeChair } from '../components/FreeChair';
@@ -66,28 +66,28 @@ const MainPage = () => (
         <StyledHeading>ImageBubble : Overlay</StyledHeading>
         <StyledImageBubbleLayout
             imageSource="../static/pernsteiner_christoph.png"
-            color={Color.SecondaryDark}
+            color={DeprecatedColor.SecondaryDark}
             variant={"overlay"}
         />
 
         <StyledHeading>ImageBubble : Shifted</StyledHeading>
         <StyledImageBubbleLayout
             imageSource="../static/pernsteiner_christoph.png"
-            color={Color.SecondaryLight}
+            color={DeprecatedColor.SecondaryLight}
             variant={"shifted"}
         />
 
         <StyledHeading>Bubble</StyledHeading>
         <StyledBubbleBox display="flex">
             <Bubble />
-            <Bubble color={Color.SecondaryLight} layout={"centered"}/>
+            <Bubble color={DeprecatedColor.SecondaryLight} layout={"centered"}/>
             <Bubble width="80%" />
-            <Bubble color={Color.SecondaryDark} layout={"centered"}/>
+            <Bubble color={DeprecatedColor.SecondaryDark} layout={"centered"}/>
         </StyledBubbleBox>
 
         <StyledHeading>PersonBubble : Overlay</StyledHeading>
         <PersonBubble
-            color = {Color.Primary}
+            color = {DeprecatedColor.Primary}
             imageSource = "../static/pernsteiner_christoph.png"
             personName = "Christoph Pernsteiner"
             personPosition = "CEO . founder"
@@ -96,7 +96,7 @@ const MainPage = () => (
 
         <StyledHeading>PersonBubble: Shifted</StyledHeading>
         <PersonBubble
-            color = {Color.SecondaryLight}
+            color = {DeprecatedColor.SecondaryLight}
             imageSource = "../static/kotek_michael.png"
             personName = "Michael Kotek"
             personPosition = "frontend developer"
@@ -108,7 +108,7 @@ const MainPage = () => (
         <StyledHeading>PersonBubble</StyledHeading>
         <PersonBubble
             imageSource="../static/pernsteiner_christoph.png"
-            color={Color.SecondaryLight}
+            color={DeprecatedColor.SecondaryLight}
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
         />
@@ -127,7 +127,7 @@ const MainPage = () => (
         <Statement2
             personName={'Nico Peham'}
             personPosition={'tech lead'}
-            color={Color.SecondaryLight}
+            color={DeprecatedColor.SecondaryLight}
             imagePath={'../static/pernsteiner_christoph.png'}
         >
             'we are adapting to new challenges by developing and investing in
@@ -136,8 +136,8 @@ const MainPage = () => (
 
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
-            leftAndRightTextColor={Color.SecondaryLight}
-            middleTextColor={Color.Primary}
+            leftAndRightTextColor={DeprecatedColor.SecondaryLight}
+            middleTextColor={DeprecatedColor.Primary}
             leftText="our"
             middleText="code"
             rightText="stands for"
@@ -146,12 +146,12 @@ const MainPage = () => (
 
         <StyledHeading>Bubble</StyledHeading>
         <Bubble />
-        <Bubble color={Color.SecondaryLight} />
+        <Bubble color={DeprecatedColor.SecondaryLight} />
         <Bubble width="80%" />
-        <Bubble width="50%" color={Color.SecondaryDark} />
+        <Bubble width="50%" color={DeprecatedColor.SecondaryDark} />
 
         <StyledHeading>CopyText</StyledHeading>
-        <StyledCopyText color={Color.SecondaryLight} fontStyle={FontStyle.Light}>
+        <StyledCopyText color={DeprecatedColor.SecondaryLight} fontStyle={FontStyle.Light}>
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig Räuber.
             Die altbacken Freikörperkultur meucheln. Das Schelm bauchpinseln das
@@ -165,8 +165,8 @@ const MainPage = () => (
 
         <StyledHeading>Skill Detail</StyledHeading>
         <StyledSkillDetail
-            headlineColor={Color.White}
-            textColor={Color.SecondaryDark}
+            headlineColor={DeprecatedColor.White}
+            textColor={DeprecatedColor.SecondaryDark}
             headlineContent="scrum"
         >
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
@@ -178,18 +178,18 @@ const MainPage = () => (
         <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>Wave</StyledHeading>
-        <Wave variant={'Top'} color={Color.Primary} shape={1}></Wave>
+        <Wave variant={'Top'} color={DeprecatedColor.Primary} shape={1}></Wave>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
-            color={Color.SecondaryLight}
+            color={DeprecatedColor.SecondaryLight}
             headlinePartOne="our free"
             headlinePartTwo="chairs, waiting for you!"
         />
 
         <StyledHeading>SubHeadline</StyledHeading>
         <StyledSubHeadline
-            color={Color.SecondaryLight}
+            color={DeprecatedColor.SecondaryLight}
             fontStyle={FontStyle.Normal}
         >
             Nabend
@@ -207,7 +207,7 @@ const MainPage = () => (
         <StyledCharacter
             characterTitle="strategic wizard"
             characterDescription="Phasellus eget turpis dignissim. vestibulum libero non, fringilla nulla. Proin blandit cursus euismod. Proin viverra et diam vitae semper."
-            textColor={Color.SecondaryDark}
+            textColor={DeprecatedColor.SecondaryDark}
             monsterType={MonsterType.StrategicWizard}
         ></StyledCharacter>
 
@@ -265,7 +265,7 @@ const MainPage = () => (
             Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
             Höchste Eisenbahn"
             imageSrc="../static/testImage.png"
-            headlineColor={Color.Primary}
+            headlineColor={DeprecatedColor.Primary}
             onClick={() => Router.push('/main')}
         />
 
