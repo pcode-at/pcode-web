@@ -15,7 +15,7 @@ export const Button = styled('button', {
     display:        'flex',
     flexDirection:  'row',
     justifyContent: 'center',
-    alignItems:     'flex-end',
+    alignItems:     'center',
 
     variants: {
         variant: {
