@@ -37,6 +37,7 @@ import { PersonBubble } from '../components/PersonBubble';
 import { Button } from '../components/Button';
 import { theme } from '../theme';
 import { BubbleWordlist } from '../components/BubbleWordlist';
+import { BubbleImage } from '../components/BubbleImage';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -55,6 +56,9 @@ const MainPage = () => (
 
         <StyledHeading>Bubble Wordlist</StyledHeading>
         <BubbleWordlist color={theme.Bubble.Background.Color.Red}/>
+
+        <StyledHeading>Bubble Image</StyledHeading>
+        <BubbleImage/>
 
         <StyledHeading>Buttons</StyledHeading>
         <Button color={'primaryFilled'}>Primary Filled Button</Button>

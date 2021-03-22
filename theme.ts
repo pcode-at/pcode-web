@@ -138,6 +138,7 @@ export const theme = {
             Mask: {
                 Height: '604px',
                 Width: '531px',
+                Size: '93%', // MaskWidth / ImageWidth 
             }
         },
         Portrait: {
