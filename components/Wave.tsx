@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 
 type Props = {
     variant: 'Top' | 'Bottom';
-    color: Color;
+    color: DeprecatedColor;
     shape: 1 | 2 | 3 | 4;
     className?: string;
 };

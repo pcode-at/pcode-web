@@ -1,11 +1,8 @@
 import React from 'react';
-import { Color } from '../Color.enum';
 import { Box, Flex, Text } from 'rebass';
-import { CopyText, FontStyle } from './CopyText';
 import { theme } from '../theme';
 import { styled } from '../stitches.config';
 import { CONSTANTS } from '../shared/constants';
-import { fontFamily, fontSize, fontWeight } from 'styled-system';
 
 type Props = { className?: string; }
 

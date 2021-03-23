@@ -1,14 +1,10 @@
 import * as React from 'react';
 import { Box, Flex } from 'rebass';
-<<<<<<< HEAD
 import { themeDeprecated } from '../../themeDeprecated';
-=======
-import { theme } from '../../themeDeprecated';
->>>>>>> a1406cc18eb21743f80ff948b98dccfbf89dd9ef
 import { ThemeProvider } from 'emotion-theming';
 import { Bubble } from '../../components/Bubble';
 import { SiteHeader } from '../../components/SiteHeader';
-import { Color } from '../../Color.enum';
+import { DeprecatedColor } from '../../DeprecatedColor.enum';
 import { Footer } from '../../components/Footer';
 import { Swiper } from '../../components/Swiper';
 import Router from 'next/router';
@@ -54,7 +50,7 @@ const ContactFormLayout = styled(Box)`
 const MainPage = () => (
     <React.Fragment>
         <ThemeProvider theme={themeDeprecated}>
-            <SiteHeader color={Color.White} />
+            <SiteHeader color={DeprecatedColor.White} />
             <PageLayout>
                 <Swiper
                     textPartOne="we transform complexity"
@@ -63,7 +59,7 @@ const MainPage = () => (
                 />
 
                 <PcodeShapeLayout>
-                    <Bubble color={Color.SecondaryDark} />
+                    <Bubble color={DeprecatedColor.SecondaryDark} />
                 </PcodeShapeLayout>
             </PageLayout>
 
@@ -81,7 +77,7 @@ const MainPage = () => (
                     Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
                     Höchste Eisenbahn"
                     imageSrc="../static/iPhone.png"
-                    headlineColor={Color.Primary}
+                    headlineColor={DeprecatedColor.Primary}
                     onClick={() => Router.push('/main')}
                 />
             </ProjectDetailTeaserLayout>

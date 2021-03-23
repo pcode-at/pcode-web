@@ -2,7 +2,7 @@
 ## Options 
 * definition of tokens is located in stitches.config.ts     
 * 14 pre-defined token types    
-* naming of the options/choices based on what they are, not what they do 
+* naming of the options/choices based on what they are, not what they do (@see [`Choices`](https://lukasoppermann.medium.com/design-tokens-what-are-they-how-will-they-help-you-b73f80f602ab))
 * consider reasonable scaling 
 * later design decisions are based upon the available options 
 
@@ -21,7 +21,7 @@
     * when using in the context of font: `$semibold` -> `$bold`
     * otherwise: `$heavy` -> .. 
 
-#### IDK YET 
+#### Looseness 
 * horizontal spacing, e.g. letterSpacings 
 * `$tight` -> `$regular` -> `$wide` 
 
@@ -69,7 +69,7 @@
 * `variant`: e.g. primary, main, ..
 * `state`: e.g. default, hover, disabled, ..
 * `scale`: e.g. s, m, l, .. 
-* mode
+* mode: e.g. light, dark, ..
 
 ### Examples
 #### Button 

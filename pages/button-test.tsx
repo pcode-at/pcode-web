@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ActionButton } from '../components/ActionButton';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const function01 = () => alert('hello 1');
 
@@ -13,19 +13,19 @@ const ButtonTestPage = () => (
         <hr></hr>
 
         <ActionButton
-            color={Color.Primary}
+            color={DeprecatedColor.Primary}
             label="Primary"
             onClick={function01}
         ></ActionButton>
 
         <ActionButton
-            color={Color.SecondaryDark}
+            color={DeprecatedColor.SecondaryDark}
             label="Secondary"
             onClick={function02}
         ></ActionButton>
 
         <ActionButton
-            color={Color.SecondaryLight}
+            color={DeprecatedColor.SecondaryLight}
             label="Secondary 2"
         ></ActionButton>
 

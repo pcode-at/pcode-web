@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Flex, Link } from 'rebass';
 import { Bubble } from './Bubble';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CSSObject } from '@styled-system/css';
 import styled from 'styled-components';
 
@@ -81,7 +81,7 @@ export const Menu: React.FC<Props> = ({
                             </Flex>
                         </LinkLayout>
                         <PcodeShapeLayout>
-                            <Bubble width="80vh" color={Color.Primary} />
+                            <Bubble width="80vh" color={DeprecatedColor.Primary} />
                         </PcodeShapeLayout>
                     </ShapeAndLinksLayout>
                 </Flex>

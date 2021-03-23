@@ -120,7 +120,25 @@ export const theme = {
         },
     },
 
-    // ---------- ----------
+    // ---------- NAVBAR ----------
+    Navbar: {
+        Width: '1440px',
+        Height: '88px',
+        
+        Items: {
+            Width: '795px',
+            Height: '88px',
+            LineHeight: '$m',
+            Font: {
+                Weight: '$medium',
+                Size: '$m',
+                Color: '$blue500',
+
+            }
+        }
+
+    }
+
     // ---------- ----------
     // ---------- ----------
     // ---------- ----------
