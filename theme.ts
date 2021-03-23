@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStyled } from '@stitches/react';
+import { createCss } from '@stitches/react';
 
 export const theme = {
 
