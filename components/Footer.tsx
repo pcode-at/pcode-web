@@ -1,128 +1,139 @@
 import React from 'react';
-import { Color } from '../Color.enum';
-import { Box, Flex } from 'rebass';
-import { CopyText, FontStyle } from './CopyText';
+import { Text } from 'rebass';
+import { theme } from '../theme';
+import { styled } from '../stitches.config';
+import { CONSTANTS } from '../shared/constants';
 
-type Props = {
-    className?: string;
-};
+type Props = { className?: string; }
 
-export const Footer: React.FC<Props> = ({ className }) => {
+export const Footer: React.FC<Props> = ({ className }) => { 
+
+    let FooterLayout = styled('div', {
+        alignItems: 'center',
+        maxWidth: '100%',
+        backgroundImage: `url(${'../static/rectangle.jpg'})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: '100%',
+    })
+
+    // area containing the whole footer content
+    let TextAreaLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        padding: '$none',
+        maxWidth: '100%',
+    })
+    // area containing contact, pages and address
+    let FooterTextLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        padding: '$none',
+        margin: '$l $none',
+    })
+    let FooterTextEntryLayout = styled('div', {
+        textAlign: 'center',
+        textTransform: 'lowercase',
+        marginRight: '$xxl',
+        '&~div': {
+            marginLeft: '$xxl',
+        }
+    })
+
+    let SocialMediaIconsLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'flex-end',
+        padding: '$none',
+        margin: '$s $none',
+    })
+    let ImpressumLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        padding: '$none',
+        margin: '$s $none',
+    })
+
+    let Text = styled('p', {
+        fontFamily: theme.Font.Default,
+        fontSize: theme.Footer.TextArea.Font.Size,
+        fontWeight: theme.Footer.TextArea.Font.Weight,
+        color: theme.Footer.TextArea.Font.Color,
+        lineHeight: theme.Footer.TextArea.LineHeight,
+    })
+    let PageReference = styled('a', {
+        fontFamily: theme.Font.Default,
+        fontSize: theme.Footer.TextArea.Font.Size,
+        fontWeight: theme.Footer.TextArea.Font.Weight,
+        color: theme.Footer.TextArea.Font.Color,
+        lineHeight: theme.Footer.TextArea.LineHeight,
+        textDecoration: 'none',
+    })
+    let ImpressumEntry = styled(PageReference, {
+        '&~a': {
+            marginLeft: '1rem',
+        },
+    })
+    let Icon = styled('img', {
+        width: '$s',
+        height: '$s',
+        margin: '$none $l',
+    })
+
     return (
-        <div className={className}>
-            <Flex
-                paddingTop="2em"
-                paddingBottom="2em"
-                backgroundColor={Color.SecondaryDark}
-                flexDirection="column"
-                sx={{
-                    '@media screen and (min-width: 615px)': {
-                        justifyContent: 'space-between',
-                        flexDirection: 'row',
-                    },
-                }}
-            >
-                <Flex
-                    paddingLeft="2em"
-                    flexDirection="column"
-                    marginBottom="2em"
-                    sx={{
-                        '@media screen and (min-width: 615px)': {
-                            flexDirection: 'row',
-                        },
-                    }}
-                >
-                    <Box
-                        sx={{
-                            margin: '0 0 1em 0',
-                            '@media screen and (min-width: 615px)': {
-                                margin: '0 1.5em 1em 0',
-                            },
-                        }}
-                    >
-                        <CopyText
-                            color={Color.SecondaryLight}
-                            fontStyle={FontStyle.Light}
-                        >
-                            pcode - software engineering
-                        </CopyText>
-                        <CopyText
-                            color={Color.SecondaryLight}
-                            fontStyle={FontStyle.Light}
-                        >
-                            +43 664 1652141
-                        </CopyText>
-                        <CopyText
-                            color={Color.SecondaryLight}
-                            fontStyle={FontStyle.Light}
-                        >
-                            office@pcode.at
-                        </CopyText>
-                    </Box>
-
-                    <div>
-                        <CopyText
-                            color={Color.SecondaryLight}
-                            fontStyle={FontStyle.Light}
-                        >
-                            peter-behrens platz 2
-                        </CopyText>
-                        <CopyText
-                            color={Color.SecondaryLight}
-                            fontStyle={FontStyle.Light}
-                        >
-                            4020 Linz, Austria
-                        </CopyText>
-                        <CopyText
-                            color={Color.SecondaryLight}
-                            fontStyle={FontStyle.Light}
-                        >
-                            Axis Coworking loft
-                        </CopyText>
-                    </div>
-                </Flex>
-
-                <Box
-                    sx={{
-                        paddingLeft: '2em',
-                        lineHeight: '1.5em',
-                        '@media screen and (min-width: 615px)': {
-                            paddingLeft: '0',
-                            paddingRight: '4em',
-                        },
-                    }}
-                >
-                    <a href={IMPRESSUM_LINK} target="blank">
-                        <CopyText
-                            color={Color.White}
-                            fontStyle={FontStyle.Light}
-                        >
-                            Impressum
-                        </CopyText>
-                    </a>
-                    <a href={DATA_PRIVACY_LINK} target="blank">
-                        <CopyText
-                            color={Color.White}
-                            fontStyle={FontStyle.Light}
-                        >
-                            Datenschutz
-                        </CopyText>
-                    </a>
-                    <a href={AGB_LINK} target="blank">
-                        <CopyText
-                            color={Color.White}
-                            fontStyle={FontStyle.Light}
-                        >
-                            AGB
-                        </CopyText>
-                    </a>
-                </Box>
-            </Flex>
-        </div>
+        <FooterLayout className={className}>
+            <TextAreaLayout>
+                <FooterTextLayout>
+                    <FooterTextEntryLayout>
+                        <Text>
+                        pcode – software engineering <br/>
+                        +43 664 1652141 <br/>
+                        jobs@pcode.at <br/>
+                        </Text>
+                    </FooterTextEntryLayout>
+                    <FooterTextEntryLayout>
+                        <Text>
+                            <PageReference href="">home</PageReference><br/>
+                            <PageReference href="">who we are</PageReference><br/>
+                            <PageReference href="">what we do</PageReference><br/>
+                            <PageReference href="">whom we work with</PageReference><br/>
+                            <PageReference href="">join us</PageReference><br/>
+                            <PageReference href="">contact us</PageReference><br/>
+                        </Text>
+                    </FooterTextEntryLayout>
+                    <FooterTextEntryLayout>
+                        <Text>
+                        peter-behrens-platz 9 <br/>
+                        stiege d / 3. stock <br/>
+                        4020 linz – austria <br/>
+                        </Text>
+                    </FooterTextEntryLayout>
+                </FooterTextLayout>
+                <SocialMediaIconsLayout>
+                    <PageReference href="">
+                        <Icon src={'../static/instagram.svg'}></Icon>
+                    </PageReference>
+                    <PageReference href="">
+                        <Icon src={'../static/facebook.svg'}></Icon>
+                    </PageReference>
+                    <PageReference href="">
+                        <Icon src={'../static/twitter.svg'}></Icon>
+                    </PageReference>
+                    <PageReference href="">
+                        <Icon src={'../static/linkedin.svg'}></Icon>
+                    </PageReference>
+                </SocialMediaIconsLayout>
+                <ImpressumLayout>
+                    <ImpressumEntry href={CONSTANTS.DATA_PRIVACY_LINK}>datenschutz</ImpressumEntry>
+                    <ImpressumEntry href={CONSTANTS.AGB_LINK}>agb</ImpressumEntry>
+                    <ImpressumEntry href={CONSTANTS.IMPRESSUM_LINK}>impressum</ImpressumEntry>
+                </ImpressumLayout>
+            </TextAreaLayout>
+        </FooterLayout>
     );
-};
-
-const IMPRESSUM_LINK =
-    'https://www.wkoecg.at/WEB/Ecg.aspx?FirmaID=d47bddb7-e386-4c13-88c5-2fb80722752d';
-const DATA_PRIVACY_LINK = 'https://www.pcode.at/datenschutz/Datenschutz.pdf';
-const AGB_LINK = 'https://www.pcode.at/agb/AGB.pdf';
+}

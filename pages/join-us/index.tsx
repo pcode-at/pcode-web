@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ThemeProvider } from 'emotion-theming';
 import { themeDeprecated } from '../../themeDeprecated';
 import { SiteHeader } from '../../components/SiteHeader';
-import { Color } from '../../Color.enum';
+import { DeprecatedColor } from '../../DeprecatedColor.enum';
 import { Footer } from '../../components/Footer';
 import { SectionHeadline } from '../../components/SectionHeadline';
 import { Box, Flex } from 'rebass';
@@ -67,19 +67,19 @@ const StatementLayout = styled(Box)`
 const JoinUsPage = () => (
     <React.Fragment>
         <ThemeProvider theme={themeDeprecated}>
-            <SiteHeader color={Color.White} />
+            <SiteHeader color={DeprecatedColor.White} />
 
-            <AboutPcodeLayout backgroundColor={Color.SecondaryLight}>
+            <AboutPcodeLayout backgroundColor={DeprecatedColor.SecondaryLight}>
                 <HeadlineLayout>
                     <SectionHeadline
-                        color={Color.SecondaryDark}
+                        color={DeprecatedColor.SecondaryDark}
                         headlinePartOne="we are adapting to new challenges"
                         headlinePartTwo="by developing and investing in our people"
                         separateWithBreak={true}
                     />
                 </HeadlineLayout>
                 <CopyTextLayout>
-                    <CopyText color={Color.White} fontStyle={FontStyle.Light}>
+                    <CopyText color={DeprecatedColor.White} fontStyle={FontStyle.Light}>
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                         sed diam nonumy eirmod tempor invidunt ut labore et
                         dolore magna aliquyam erat, sed diam voluptua. At vero
@@ -90,16 +90,16 @@ const JoinUsPage = () => (
                 </CopyTextLayout>
 
                 <LearnMoreButtonLayout>
-                    <ActionButton color={Color.Primary} label="learn more" />
+                    <ActionButton color={DeprecatedColor.Primary} label="learn more" />
                 </LearnMoreButtonLayout>
                 <PcodeShapeLayout>
-                    <BubbleBlank color={Color.SecondaryDark} />
+                    <Bubble color={DeprecatedColor.SecondaryDark} />
                 </PcodeShapeLayout>
             </AboutPcodeLayout>
 
             <FreeChairHeadlineLayout>
                 <SectionHeadline
-                    color={Color.SecondaryLight}
+                    color={DeprecatedColor.SecondaryLight}
                     headlinePartOne="our free"
                     headlinePartTwo="chairs, waiting for you!"
                 />
@@ -139,7 +139,7 @@ const JoinUsPage = () => (
                     personName={'Michael Kotek'}
                     personPosition={'Frontend Developer'}
                     imagePath={'../static/kotek_michael.png'}
-                    color={Color.SecondaryDark}
+                    color={DeprecatedColor.SecondaryDark}
                 >
                     ‘ working at pcode means one simple thing: working for the
                     future! ’

@@ -35,12 +35,21 @@ export const BubbleBlank: React.FC<Props> = ({
 type Props2 = {
     width?: string;
     color?: Color;
+
+import { DeprecatedColor } from '../DeprecatedColor.enum';
+import { themeDeprecated } from '../themeDeprecated';
+import styled from 'styled-components';
+import { Box } from 'rebass';
+
+type Props = {
+    width?: string;
+    color?: DeprecatedColor;
     layout?: "shifted" | "centered";
 };
 
 export const Bubble: React.FC<Props2> = ({
     width = "100%",
-    color = Color.Primary,
+    color = DeprecatedColor.Primary,
     layout = "shifted"
 }) => {
 

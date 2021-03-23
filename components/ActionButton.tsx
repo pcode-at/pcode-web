@@ -2,13 +2,13 @@ import React from 'react';
 import { Button } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import { theme } from '../theme';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
 
 type Props = {
     //appearance: 'small' | 'large';
-    color?: Color;
+    color?: DeprecatedColor;
     label: string;
     padding?: string;
     noBackground?: boolean;
@@ -26,7 +26,7 @@ const appearances = {
 };
 
 export const ActionButton: React.FC<Props> = ({
-    color = Color.Primary,
+    color = DeprecatedColor.Primary,
     label,
     onClick,
     padding = '0.2rem 2.8rem',
@@ -46,7 +46,7 @@ export const ActionButton: React.FC<Props> = ({
                     cursor: 'pointer',
                 }}
             >
-                <CopyText color={Color.White} fontStyle={FontStyle.Light}>
+                <CopyText color={DeprecatedColor.White} fontStyle={FontStyle.Light}>
                     {label}
                 </CopyText>
             </Button>

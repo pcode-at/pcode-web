@@ -1,13 +1,12 @@
 import React from 'react';
-import { Color } from '../Color.enum';
-import { Text, Heading } from 'rebass';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import styled from 'styled-components';
 import { SectionHeadline } from './SectionHeadline';
 import { CopyText, FontStyle } from './CopyText';
 
 type TSkillDetailProps = {
-    headlineColor: Color;
-    textColor: Color;
+    headlineColor: DeprecatedColor;
+    textColor: DeprecatedColor;
     headlineContent: string;
     className?: string;
 };

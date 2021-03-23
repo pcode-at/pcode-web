@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bubble } from './Bubble';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex } from 'rebass';
 import { ActionButton } from './ActionButton';
 import { CopyText, FontStyle } from './CopyText';
@@ -10,7 +10,7 @@ type Props = {
     headline: string;
     description: string;
     imageSrc: string;
-    headlineColor: Color;
+    headlineColor: DeprecatedColor;
     onClick?(): void;
     className?: string;
 };
@@ -61,10 +61,13 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
         <div className={className}>
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
-                    {/* <GraphicLayout>
-                        <BubbleBubbleBlank color={Color.Primary} />
+                    {/* 
+                    <GraphicLayout>
+                        <Bubble color={DeprecatedColor.Primary} />
+
                         <StyledImageLayout src={imageSrc} />
-                    </GraphicLayout> */}
+                    </GraphicLayout> 
+                    */}
                 </Box>
                 <TextLayout>
                     <CenteredText>
@@ -75,14 +78,14 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
                             {headline}
                         </StyledSectionHeadline>
                         <StyledCopyText
-                            color={Color.SecondaryDark}
+                            color={DeprecatedColor.SecondaryDark}
                             fontStyle={FontStyle.Light}
                         >
                             {description}
                         </StyledCopyText>
                         <ActionButton
                             label="learn more"
-                            color={Color.SecondaryLight}
+                            color={DeprecatedColor.SecondaryLight}
                             onClick={onClick}
                         />
                     </CenteredText>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Flex, Image } from 'rebass';
-import { Color } from '../../../Color.enum';
+import { DeprecatedColor } from '../../../DeprecatedColor.enum';
 import { SectionHeadline } from '../../../components/SectionHeadline';
 import { WordList } from '../../../components/WordList';
 import styled from 'styled-components';
@@ -56,14 +56,14 @@ export const WorkingAtPcodeSection: React.FC = () => {
 
     return (
         <React.Fragment>
-            <Flex backgroundColor={Color.SecondaryDark}>
+            <Flex backgroundColor={DeprecatedColor.SecondaryDark}>
                 <HeaderLayout>
                     <SectionHeadlineLayout>
                         <SectionHeadline
                             headlinePartOne="working at pcode"
                             headlinePartTwo="means you get a bunch of cool stuff and a great team count on!"
                             separateWithBreak={true}
-                            color={Color.SecondaryLight}
+                            color={DeprecatedColor.SecondaryLight}
                         />
                     </SectionHeadlineLayout>
                     <WordListLayout>
@@ -75,7 +75,7 @@ export const WorkingAtPcodeSection: React.FC = () => {
                                 'international',
                                 'perfection',
                             ]}
-                            color={Color.SecondaryLight}
+                            color={DeprecatedColor.SecondaryLight}
                         />
                     </WordListLayout>
                 </HeaderLayout>

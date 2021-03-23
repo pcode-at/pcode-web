@@ -3,7 +3,7 @@ import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
 import { themeDeprecated } from '../themeDeprecated';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const WhoWeArePage = () => (
     <div>
@@ -39,7 +39,7 @@ const WhoWeArePage = () => (
             description="Description"
             headline="Headline"
             imageSrc=""
-            headlineColor={Color.Primary}
+            headlineColor={DeprecatedColor.Primary}
         />
 
         <style jsx>{`

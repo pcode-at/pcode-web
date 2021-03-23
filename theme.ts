@@ -74,36 +74,38 @@ export const theme = {
     Footer: {
         Background: {
             Width: '1440px',
-            Height: '324px',
+            Height: '336px',
+            Color: '$blue500',
         },
-        TextArea: {
+        TextArea: { 
             Width: '1180px',
-            Height: '209px',
+            Height: '196px',
             LineHeight: '$s',
-
-            Display: 'flex',
-            FlexDirection: 'column',
-            JustifyContent: 'flex-end',
-            AlignItems: 'center',
-
+            
             Font: {
                 Weight: '$regular',
                 Size: '$s',
+                Color: '$green500',
             },
-
-            Contact: {
-                Width: '222px',
-                Height: '58px',
-            },
-            Pages: {
-                Width: '222px',
-                Height: '109px',
-            },
-            Address: {
-                Width: '222px',
-                Height: '58px',
+            FooterText: {
+                Width: '',
+                Height: '',
+                Contact: {
+                    Width: '222px',
+                    Height: '58px',
+                },
+                Pages: {
+                    Width: '222px',
+                    Height: '96px',
+                },
+                Address: {
+                    Width: '222px',
+                    Height: '58px',
+                },
             },
             SocialMedia: {
+                Width: '154px',
+                Height: '16px',
                 FlexDirection: 'row',
                 JustifyContent: 'center',
                 AlignItems: 'flex-end',
@@ -178,6 +180,25 @@ export const theme = {
             },
         },
     },
+
+    // ---------- NAVBAR ----------
+    Navbar: {
+        Width: '1440px',
+        Height: '88px',
+        
+        Items: {
+            Width: '795px',
+            Height: '88px',
+            LineHeight: '$m',
+            Font: {
+                Weight: '$medium',
+                Size: '$m',
+                Color: '$blue500',
+
+            }
+        }
+
+    }
 
     // ---------- ----------
     // ---------- ----------
