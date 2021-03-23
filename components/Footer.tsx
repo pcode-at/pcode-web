@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Text } from 'rebass';
+import { Text } from 'rebass';
 import { theme } from '../theme';
 import { styled } from '../stitches.config';
 import { CONSTANTS } from '../shared/constants';
