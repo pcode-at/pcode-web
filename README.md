@@ -36,35 +36,108 @@ Using these extensions is recommended for great developer experience:
 
 -   [Todo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 
-## Styled Components
+## Design Tokens
+Further details about  out naming conventions and token structure can be found in [DESIGNTOKENS.md](DESIGNTOKENS.md). 
+### Design Options
 
-In this project we don't use inline styling in order to keep the html code clean from confusinc styles. Check out the [website of styled-components](https://styled-components.com/) to learn more about this way to style your components.
+The design options are defined in [stitches.config.ts](stitches.config.ts). Here you find design-based variables defining which values we are allowed to use. 
 
-Standard html tags may be styled e.g.
+e.g. allowed font sizes:
 
-```
+    fontSizes: {   
+        $xs: '12px',  
+        $s: '14px',   
+        $m: '16px',   
+        $l: '24px',   
+        $xl: '36px',    
+        $xxl: '54px'    
+    },
 
-const StyledHeaderDiv = styled.div`
+or a section of the colors: 
 
-    border-width: 3px;
+    colors: {    
+        $grey500: '#3B3734',  
+        $turquoise500: '#42E8E0',   
+        $lilac500: '#C5C5FF',   
+        $cherry500: '#CC0C00',    
+        $white: '#FFFFFF',  
+    },
 
-`;
+### Design Decisions
+Based on the available options we can now make _decisions_ about how and where we use certain tokens. These decisions are defined in [theme.ts](theme.ts). This way we can ensure that the components match the design and further prevent the usage of magic numbers etc. 
 
-```
+e.g. we define, that the option `$cherry500` is used applied in _alert_-scenarios: 
 
-You can also style Rebass, or custom made components e.g.
+    Color: {   
+        Alert: '$cherry500',    
+    },
 
-```
+another example is the `Button`-component. Via theme.ts we're able to define, that a `Button`-component has a specified border-radius. 
 
-const StyledButton = styled(Button)`
+Within `stitches.config.ts` we defined the possible radii values:   
 
-    border-radius: 10px;
+    radii: {   
+        $none: '0px',   
+        $rounded: '5px',    
+        $circle: '100px'    
+    },
 
-`;
+Within `theme.ts` we define, that a `Button` has only one border-radius option: 
 
-```
+    Button: {    
+        Border: {   
+            //** .. */  
+            Radius: '$circle',  
+        },  
 
-Please use styled-components for all components.
+Within `Button.tsx` we can now define that the component has the pre-defined radius `theme.Button.Border.Radius`:   
+
+    export const Button = styled('button', {   
+        borderRadius:   theme.Button.Border.Radius,   
+        //** .. */  
+    });
+
+## Stitches
+The [`Stitches` library](https://stitches.dev/docs/installation) enables the simple usage of variants within components using said design tokens. 
+
+    variants: {  
+      color: {  
+          primary: {  
+              backgroundColor: theme.Color.Primary.Default, 
+              color: theme.Color.White, 
+              border: theme.Button.Border.Width.None, 
+              '&:hover': {  
+                  backgroundColor: theme.Color.Primary.Hover, 
+              },  
+              '&:disabled': { 
+                  backgroundColor: theme.Color.Primary.Inactive 
+              } 
+          },  
+          //** .. */  
+          secondary: {  
+              backgroundColor: theme.Color.Secondary.Default, 
+              color: theme.Color.White, 
+              border: theme.Button.Border.Width.None, 
+              '&:hover': {  
+                  backgroundColor: theme.Color.Secondary.Hover, 
+              },  
+              '&:disabled': { 
+                  backgroundColor: theme.Color.Secondary.Default, 
+              } 
+          },  
+          //** .. */  
+      },
+    }
+
+By defining the variants and their properties, you can easily decide which color the `Button`-component should have. 
+
+    <Button color={'primary'}>Primary Button</Button> 
+    <Button 
+      color={'secondary'} 
+      disabled={true}
+    >
+    Secondary Inactive Button
+    </Button>
 
 ## Styling and layouting conventions
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Image } from 'rebass';
-import { Color } from '../../../Color.enum';
+import { DeprecatedColor } from '../../../DeprecatedColor.enum';
 import styled from 'styled-components';
 import { WordList } from '../../../components/WordList';
 import { CopyText, FontStyle } from '../../../components/CopyText';
@@ -31,13 +31,13 @@ const CodeStandsForSection: React.FC = () => (
     <React.Fragment>
         <PageLayout>
             <TextLayout>
-                <CopyText color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                <CopyText color={DeprecatedColor.SecondaryLight} fontStyle={FontStyle.Normal}>
                     our
                 </CopyText>
-                <CopyText color={Color.Primary} fontStyle={FontStyle.Normal}>
+                <CopyText color={DeprecatedColor.Primary} fontStyle={FontStyle.Normal}>
                     code
                 </CopyText>
-                <CopyText color={Color.Secondary2} fontStyle={FontStyle.Normal}>
+                <CopyText color={DeprecatedColor.SecondaryLight} fontStyle={FontStyle.Normal}>
                     stands for
                 </CopyText>
             </TextLayout>

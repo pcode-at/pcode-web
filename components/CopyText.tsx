@@ -1,7 +1,7 @@
 import React from 'react';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Text } from 'rebass';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 
 export enum FontStyle {
     Normal = 'normal',
@@ -9,7 +9,7 @@ export enum FontStyle {
 }
 
 type Props = {
-    color: Color;
+    color: DeprecatedColor;
     fontStyle: FontStyle;
     className?: string;
 };
@@ -24,8 +24,8 @@ export const CopyText: React.FC<Props> = ({
         <div className={className}>
             <Text
                 color={color}
-                fontFamily={theme.font[fontStyle].fontFamily}
-                fontWeight={theme.font[fontStyle].fontWeight}
+                fontFamily={themeDeprecated.font[fontStyle].fontFamily}
+                fontWeight={themeDeprecated.font[fontStyle].fontWeight}
             >
                 {children}
             </Text>

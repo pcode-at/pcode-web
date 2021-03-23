@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { theme } from '../theme';
 import { WordList, intervalDuration } from './WordList';
 import styled from 'styled-components';
@@ -51,7 +51,7 @@ export const KeywordsWithImagesSlider: React.FC<Props> = ({
     const KeywordsWithImagesSliderLayout = styled(Box)`
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rosw: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: ${alignment == 'horizontal'
             ? '"firstImg firstImg""secondImg secondImg"'
             : '"firstImg secondImg""condImg secondImg"'};
@@ -85,7 +85,7 @@ export const KeywordsWithImagesSlider: React.FC<Props> = ({
                 <StyledImageTwo src={imagesToSlide[0][1]}></StyledImageTwo>
                 <WordlistPositionLayout>
                     <WordList
-                        color={Color.Primary}
+                        color={DeprecatedColor.Primary}
                         words={wordsToSlide[0]}
                     ></WordList>
                 </WordlistPositionLayout>

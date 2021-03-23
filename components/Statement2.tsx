@@ -1,14 +1,14 @@
 import React from 'react';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex } from 'rebass';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
-import { PersonWithFunction } from './PersonWithFunction';
+import { PersonBubble } from './PersonBubble';
 
 type Props = {
     personName: string;
     personPosition: string;
-    color: Color;
+    color: DeprecatedColor;
     width?: string;
     className?: string;
     imagePath: string;
@@ -18,11 +18,11 @@ export const Statement2: React.FC<Props> = ({
     children,
     personName,
     personPosition,
-    color = Color.Primary,
+    color = DeprecatedColor.Primary,
     imagePath,
     className,
 }) => {
-    const { light, normal } = theme.font;
+    const { light, normal } = themeDeprecated.font;
 
     const Statement2Layout = styled(Flex)`
         padding-top: 3em;
@@ -85,11 +85,12 @@ export const Statement2: React.FC<Props> = ({
 
                 <PersonLayout>
                     <StyledPersonFlex>
-                        <PersonWithFunction
-                            color={color}
+                        <PersonBubble 
+                            color={DeprecatedColor.SecondaryDark}
                             personName={personName}
                             personPosition={personPosition}
-                            imagePath={imagePath}
+                            imageSource={imagePath}
+                            variant={"shifted"}
                         />
                     </StyledPersonFlex>
                 </PersonLayout>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { theme } from '../theme';
-import { Color } from '../Color.enum';
-import { Text, Heading } from 'rebass';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
+import { Heading } from 'rebass';
 import styled from 'styled-components';
 
 type Props = {
-    color: Color;
+    color: DeprecatedColor;
     headlinePartOne: string;
     headlinePartTwo: string;
     separateWithBreak?: boolean;
@@ -42,7 +42,7 @@ export const SectionHeadline: React.FC<Props> = ({
 
     return (
         <div className={className}>
-            <Heading fontFamily={theme.font.normal.fontFamily} color={color}>
+            <Heading fontFamily={theme.Font.Default} color={color}>
                 <FirstSpan>{headlinePartOne}</FirstSpan>
                 &nbsp;
                 {separateWithBreak && <br />}

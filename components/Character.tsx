@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from './CopyText';
 import { SubHeadline } from './SubHeadline';
 import { MonsterType } from '../shared/MonsterType.enum';
@@ -12,7 +12,7 @@ type Props = {
     characterTitle: string;
     characterDescription: string;
     monsterType: MonsterType;
-    textColor: Color;
+    textColor: DeprecatedColor;
     className?: string;
 };
 

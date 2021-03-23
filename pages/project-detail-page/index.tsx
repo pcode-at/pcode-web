@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { ThemeProvider } from 'emotion-theming';
-import { theme } from '../../theme';
+import { themeDeprecated } from '../../themeDeprecated';
 import { SiteHeader } from '../../components/SiteHeader';
-import { Color } from '../../Color.enum';
+import { DeprecatedColor } from '../../DeprecatedColor.enum';
 import { Statement } from '../../components/Statement';
 
 const ProjectDetailPage = () => (
     <React.Fragment>
-        <ThemeProvider theme={theme}>
-            <SiteHeader color={Color.White} />
+        <ThemeProvider theme={themeDeprecated}>
+            <SiteHeader color={DeprecatedColor.White} />
 
             <Statement
                 imagePath=""

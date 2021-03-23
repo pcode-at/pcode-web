@@ -1,16 +1,16 @@
 import React from 'react';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex } from 'rebass';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
-import { PersonWithFunction } from './PersonWithFunction';
+import { PersonBubble } from './PersonBubble';
 
 type Props = {
     personName: string;
     personPosition: string;
-    color?: Color;
-    backgroundColor?: Color;
-    pCodeShapeColor?: Color;
+    color?: DeprecatedColor;
+    backgroundColor?: DeprecatedColor;
+    pCodeShapeColor?: DeprecatedColor;
     className?: string;
     imagePath: string;
 };
@@ -19,12 +19,12 @@ export const Statement: React.FC<Props> = ({
     children,
     personName,
     personPosition,
-    color = Color.White,
-    backgroundColor = Color.Secondary2,
+    color = DeprecatedColor.White,
+    backgroundColor = DeprecatedColor.SecondaryLight,
     imagePath,
     className,
 }) => {
-    const { light, normal } = theme.font;
+    const { light, normal } = themeDeprecated.font;
 
     const StatementLayout = styled(Flex)`
         padding-top: 3em;
@@ -88,11 +88,12 @@ export const Statement: React.FC<Props> = ({
 
                 <PersonLayout>
                     <StyledPersonFlex>
-                        <PersonWithFunction
-                            color={Color.Secondary}
+                        <PersonBubble 
+                            color={DeprecatedColor.SecondaryDark}
                             personName={personName}
                             personPosition={personPosition}
-                            imagePath={imagePath}
+                            imageSource={imagePath}
+                            variant={"shifted"}
                         />
                     </StyledPersonFlex>
                 </PersonLayout>

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Box, Flex, Image } from 'rebass';
-import { Color } from '../../../Color.enum';
+import { DeprecatedColor } from '../../../DeprecatedColor.enum';
 import { SectionHeadline } from '../../../components/SectionHeadline';
 import { WordList } from '../../../components/WordList';
 import styled from 'styled-components';
 
-const WorkingAtPcodeSection: React.FC = () => {
+export const WorkingAtPcodeSection: React.FC = () => {
     const HeaderLayout = styled(Flex)`
         justify-content: center;
         flex-wrap: wrap;
@@ -42,7 +42,7 @@ const WorkingAtPcodeSection: React.FC = () => {
             width: auto;
             padding-top: 2rem;
             margin-left: 5rem;
-        },
+        }
     `;
 
     const ImageLayout = styled.div`
@@ -56,14 +56,14 @@ const WorkingAtPcodeSection: React.FC = () => {
 
     return (
         <React.Fragment>
-            <Flex backgroundColor={Color.Secondary}>
+            <Flex backgroundColor={DeprecatedColor.SecondaryDark}>
                 <HeaderLayout>
                     <SectionHeadlineLayout>
                         <SectionHeadline
                             headlinePartOne="working at pcode"
                             headlinePartTwo="means you get a bunch of cool stuff and a great team count on!"
                             separateWithBreak={true}
-                            color={Color.Secondary2}
+                            color={DeprecatedColor.SecondaryLight}
                         />
                     </SectionHeadlineLayout>
                     <WordListLayout>
@@ -75,7 +75,7 @@ const WorkingAtPcodeSection: React.FC = () => {
                                 'international',
                                 'perfection',
                             ]}
-                            color={Color.Secondary2}
+                            color={DeprecatedColor.SecondaryLight}
                         />
                     </WordListLayout>
                 </HeaderLayout>

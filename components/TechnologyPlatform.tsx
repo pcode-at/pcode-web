@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Flex, Heading, Text } from 'rebass';
-import { Color } from '../Color.enum';
-import { theme } from '../theme';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
+import { themeDeprecated } from '../themeDeprecated';
 import { Platform } from './Platform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import styled from 'styled-components';
@@ -24,7 +24,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
     onClick,
     className,
 }) => {
-    const { light, normal } = theme.font;
+    const { light, normal } = themeDeprecated.font;
 
     const StyledHeading = styled(Heading)`
         font-family: ${light.fontFamily};
@@ -65,6 +65,11 @@ export const TechnologyPlatform: React.FC<Props> = ({
         align-content: center;
     `;
   
+    // `HeadingAndListContainerLayout` was not defined ->
+    const HeadingAndListContainerLayout = styled(HeadingAndListContainer)`
+        position: relative; // -> just random value to resolve error
+    `;
+
     const PlatformLayout = styled(Box)`
         position: relative;
         top: 50%;
@@ -90,7 +95,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
                 <div>
                     <SubHeadingLayout>
                         <StyledSubHeading
-                            color={Color.Secondary2}
+                            color={DeprecatedColor.SecondaryLight}
                             fontFamily={normal.fontFamily}
                         >
                             Language
@@ -108,7 +113,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
 
                     <SubHeadingLayout>
                         <StyledSubHeading
-                            color={Color.Secondary2}
+                            color={DeprecatedColor.SecondaryLight}
                             fontFamily={normal.fontFamily}
                         >
                             Technology
@@ -126,7 +131,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
 
                     <ActionButton
                         label="interested?"
-                        color={Color.Secondary2}
+                        color={DeprecatedColor.SecondaryLight}
                     />
                 </div>
             </FlexStyle>

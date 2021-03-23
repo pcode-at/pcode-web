@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const WhoWeArePage = () => (
     <div>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={themeDeprecated}>
             <Box
                 p={5}
                 fontSize={4}
@@ -39,7 +39,7 @@ const WhoWeArePage = () => (
             description="Description"
             headline="Headline"
             imageSrc=""
-            headlineColor={Color.Primary}
+            headlineColor={DeprecatedColor.Primary}
         />
 
         <style jsx>{`

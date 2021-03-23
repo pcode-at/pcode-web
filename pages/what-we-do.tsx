@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
-import { theme } from '../theme';
+import { themeDeprecated } from '../themeDeprecated';
 
 const function02 = () => alert('hello 2');
 
 const WhatWeDoPage = () => (
     <div>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={themeDeprecated}>
             <Box
                 p={5}
                 fontSize={4}

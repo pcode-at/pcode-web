@@ -1,20 +1,20 @@
 import React from 'react';
 import { Box, Text } from 'rebass';
-import { PcodeShape } from './PcodeShape';
-import { Color } from '../Color.enum';
+import { Bubble } from './Bubble';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import styled from 'styled-components';
 
 export const intervalDuration: number = 3100;
 
 type Props = {
-    color?: Color;
+    color?: DeprecatedColor;
     words: Array<string>;
     className?: string;
 };
 
 export const WordList: React.FC<Props> = ({
     words,
-    color = Color.Primary,
+    color = DeprecatedColor.Primary,
     className,
 }) => {
     const [itemsToSlide, setItemsToSlide] = React.useState(() => words);
@@ -40,7 +40,7 @@ export const WordList: React.FC<Props> = ({
         const StyledWordText = styled(Text)`
             font-weight: 300;
             font-family: 'raleway', serif;
-            color: ${Color.White};
+            color: ${DeprecatedColor.White};
             opacity: ${opacity};
             order: ${index};
         `;
@@ -61,9 +61,6 @@ export const WordList: React.FC<Props> = ({
         position: relative;
         display: flex;
         align-items: center;
-    `;
-
-    const WordListLayout = styled(Box)`
         width: 100%;
     `;
 
@@ -98,7 +95,7 @@ export const WordList: React.FC<Props> = ({
                     </ItemsLayout>
                 </CentralLayout>
                 <PcodeShapeLayout>
-                    <PcodeShape width="300px" color={color} />
+                    <Bubble width="300px" color={color} />
                 </PcodeShapeLayout>
             </WordListLayout>
         </div>

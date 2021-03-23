@@ -1,16 +1,15 @@
 import * as React from 'react';
 
-import { Box, Flex } from 'rebass';
-import { theme } from '../theme';
+import { Box, Button as Button2, Flex } from 'rebass';
+import { themeDeprecated } from '../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
-import { PcodeShape } from '../components/PcodeShape';
-import { Color } from '../Color.enum';
+import { Bubble } from '../components/Bubble';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
 import { FreeChair } from '../components/FreeChair';
 import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
-import { Footer } from '../components/Footer';
 import { ContactForm } from '../components/ContactForm';
 import { Menu } from '../components/Menu';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
@@ -26,44 +25,90 @@ import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
-import { PersonWithFunction } from '../components/PersonWithFunction';
 import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { Character } from '../components/Character';
 import { SkillDetail } from '../components/SkillDetail';
+import { ImageBubble } from '../components/ImageBubble';
+import { PersonBubble } from '../components/PersonBubble';
+import { Button } from '../components/Button';
+import { Footer } from '../components/Footer';
+import { Navbar } from '../components/Navbar';
 
-const { light, normal } = theme.font;
+const { light, normal } = themeDeprecated.font;
 
 const MainPage = () => (
-    <ThemeProvider theme={theme}>
-        <SiteHeader
+    <ThemeProvider theme={themeDeprecated}>
+        {/* <SiteHeader
             color={Color.Primary}
             onClick={() => {
                 alert('Not Implemented Yet!');
             }}
-        />
-        <StyledHeading>PcodeShapeWithImage</StyledHeading>
-        <StyledPcodeShapeWithImageLayout
+        /> */}
+
+        <Navbar/>
+
+        <Button color={'primaryFilled'}>Primary Filled Button</Button>
+        <Button color={'primaryOutlined'}>Primary Outlined Button</Button>
+        <Button color={'primaryFilled'} disabled={true}>Inactive Primary Filled Button</Button>
+        <br/>
+        <Button color={'secondaryFilled'}>Secondary Filled Button</Button>
+        <Button color={'secondaryOutlined'}>Secondary Outlined</Button>
+        <Button color={'secondaryFilled'} disabled={true}> Inactive Secondary Filled Button</Button>
+        <br/>
+        <Button color={'tertiary'}>Tertiary Button</Button>
+
+
+
+
+        <StyledHeading>ImageBubble : Overlay</StyledHeading>
+        <StyledImageBubbleLayout
             imageSource="../static/pernsteiner_christoph.png"
-            variant={1}
-            color={Color.Secondary}
-        />
-        <StyledHeading>WorkingAtPcode</StyledHeading>
-        <WorkingAtPcodeSection />
-        <StyledHeading>PersonWithFunction</StyledHeading>
-        <StyledPersonWithFunction
-            imagePath="../static/pernsteiner_christoph.png"
-            color={Color.Secondary}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
+            color={DeprecatedColor.SecondaryDark}
+            variant={"overlay"}
         />
 
-        <StyledHeading>Statement</StyledHeading>
-        <StyledPersonWithFunction
-            imagePath="../static/pernsteiner_christoph.png"
-            color={Color.Secondary}
+        <StyledHeading>ImageBubble : Shifted</StyledHeading>
+        <StyledImageBubbleLayout
+            imageSource="../static/pernsteiner_christoph.png"
+            color={DeprecatedColor.SecondaryLight}
+            variant={"shifted"}
+        />
+
+        <StyledHeading>Bubble</StyledHeading>
+        <StyledBubbleBox display="flex">
+            <Bubble />
+            <Bubble color={DeprecatedColor.SecondaryLight} layout={"centered"}/>
+            <Bubble width="80%" />
+            <Bubble color={DeprecatedColor.SecondaryDark} layout={"centered"}/>
+        </StyledBubbleBox>
+
+        <StyledHeading>PersonBubble : Overlay</StyledHeading>
+        <PersonBubble
+            color = {DeprecatedColor.Primary}
+            imageSource = "../static/pernsteiner_christoph.png"
+            personName = "Christoph Pernsteiner"
+            personPosition = "CEO . founder"
+            variant = "overlay"
+        />
+
+        <StyledHeading>PersonBubble: Shifted</StyledHeading>
+        <PersonBubble
+            color = {DeprecatedColor.SecondaryLight}
+            imageSource = "../static/kotek_michael.png"
+            personName = "Michael Kotek"
+            personPosition = "frontend developer"
+            variant = "shifted"
+        />
+
+        <StyledHeading>WorkingAtPcode</StyledHeading>
+        <WorkingAtPcodeSection />
+        <StyledHeading>PersonBubble</StyledHeading>
+        <PersonBubble
+            imageSource="../static/pernsteiner_christoph.png"
+            color={DeprecatedColor.SecondaryLight}
             personName={'Christoph Pernsteiner'}
             personPosition={'CEO .founder'}
         />
@@ -82,7 +127,7 @@ const MainPage = () => (
         <Statement2
             personName={'Nico Peham'}
             personPosition={'tech lead'}
-            color={Color.Secondary2}
+            color={DeprecatedColor.SecondaryLight}
             imagePath={'../static/pernsteiner_christoph.png'}
         >
             'we are adapting to new challenges by developing and investing in
@@ -91,24 +136,22 @@ const MainPage = () => (
 
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
-            leftAndRightTextColor={Color.Secondary2}
-            middleTextColor={Color.Primary}
+            leftAndRightTextColor={DeprecatedColor.SecondaryLight}
+            middleTextColor={DeprecatedColor.Primary}
             leftText="our"
             middleText="code"
             rightText="stands for"
             variant="Big"
         />
 
-        <StyledHeading>PcodeShape</StyledHeading>
-        <StyledPcodeShapeBox display="flex">
-            <PcodeShape />
-            <PcodeShape color={Color.Secondary2} />
-            <PcodeShape width="80%" />
-            <PcodeShape width="50%" color={Color.Secondary} />
-        </StyledPcodeShapeBox>
+        <StyledHeading>Bubble</StyledHeading>
+        <Bubble />
+        <Bubble color={DeprecatedColor.SecondaryLight} />
+        <Bubble width="80%" />
+        <Bubble width="50%" color={DeprecatedColor.SecondaryDark} />
 
         <StyledHeading>CopyText</StyledHeading>
-        <StyledCopyText color={Color.Secondary2} fontStyle={FontStyle.Light}>
+        <StyledCopyText color={DeprecatedColor.SecondaryLight} fontStyle={FontStyle.Light}>
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
             gutheißen adrett Ganove. Schmock und Kastrat grämen emsig Räuber.
             Die altbacken Freikörperkultur meucheln. Das Schelm bauchpinseln das
@@ -122,8 +165,8 @@ const MainPage = () => (
 
         <StyledHeading>Skill Detail</StyledHeading>
         <StyledSkillDetail
-            headlineColor={Color.White}
-            textColor={Color.Secondary}
+            headlineColor={DeprecatedColor.White}
+            textColor={DeprecatedColor.SecondaryDark}
             headlineContent="scrum"
         >
             Horrido! Die bräsig Gamaschen frickeln. Dachshund und Pranger
@@ -135,18 +178,18 @@ const MainPage = () => (
         <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>Wave</StyledHeading>
-        <Wave variant={'Top'} color={Color.Primary} shape={1}></Wave>
+        <Wave variant={'Top'} color={DeprecatedColor.Primary} shape={1}></Wave>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
-            color={Color.Secondary2}
+            color={DeprecatedColor.SecondaryLight}
             headlinePartOne="our free"
             headlinePartTwo="chairs, waiting for you!"
         />
 
         <StyledHeading>SubHeadline</StyledHeading>
         <StyledSubHeadline
-            color={Color.Secondary2}
+            color={DeprecatedColor.SecondaryLight}
             fontStyle={FontStyle.Normal}
         >
             Nabend
@@ -164,7 +207,7 @@ const MainPage = () => (
         <StyledCharacter
             characterTitle="strategic wizard"
             characterDescription="Phasellus eget turpis dignissim. vestibulum libero non, fringilla nulla. Proin blandit cursus euismod. Proin viverra et diam vitae semper."
-            textColor={Color.Secondary}
+            textColor={DeprecatedColor.SecondaryDark}
             monsterType={MonsterType.StrategicWizard}
         ></StyledCharacter>
 
@@ -222,7 +265,7 @@ const MainPage = () => (
             Pranger. Das Schutzschwalbe meucheln das feist Damenbart.
             Höchste Eisenbahn"
             imageSrc="../static/testImage.png"
-            headlineColor={Color.Primary}
+            headlineColor={DeprecatedColor.Primary}
             onClick={() => Router.push('/main')}
         />
 
@@ -266,20 +309,18 @@ const MainPage = () => (
         </Box>
 
         <StyledHeading>Footer</StyledHeading>
-        <StyledFooter />
+        {/* <StyledFooter /> */}
+        <Footer/>
     </ThemeProvider>
 );
 
-const StyledPcodeShapeWithImageLayout = styled(PcodeShapeWithImage)`
+const StyledImageBubbleLayout = styled(ImageBubble)`
     width: 700px;
 `;
 
-const StyledPersonWithFunction = styled(PersonWithFunction)`
-    width: 300px;
-`;
-
 const StyledTechnologyPlatform = styled(TechnologyPlatform)`
-    width: 250px;
+    /* width: 250px; */
+    width: 500px;
 `;
 
 const TechnologyFlex = styled(Flex)`
@@ -324,26 +365,22 @@ const StyledSwiper = styled(Swiper)`
     width: 300px;
 `;
 
-const StyledFooter = styled(Footer)`
-    margin-top: 2em;
-`;
-
-const StyledPcodeShapeBox = styled(Box)`
+const StyledBubbleBox = styled(Box)`
     width: 50%;
     margin-left: 2em;
 `;
 
 const ProjectSliderLayout = styled.div`
     width: 250px;
-    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
     padding-bottom: 20em;
+    /*TODO: Fix padding (see ProjectSlider.tsx TODO)*/
 `;
 
 const StyledWordList = styled(WordList)``;
 
 const StyledSkillDetail = styled(SkillDetail)`
     width: 250px;
-    background-color: ${theme.colors.primary};
+    background-color: ${themeDeprecated.colors.primary};
 `;
 
 export default MainPage;

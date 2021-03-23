@@ -1,12 +1,12 @@
 import React from 'react';
 import { theme } from '../theme';
-import { Text, Heading } from 'rebass';
+import { Text } from 'rebass';
 import styled from 'styled-components';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 type Props = {
-    leftAndRightTextColor: Color;
-    middleTextColor: Color;
+    leftAndRightTextColor: DeprecatedColor;
+    middleTextColor: DeprecatedColor;
     leftText: string;
     middleText: string;
     rightText: string;
@@ -42,10 +42,10 @@ export const MultiColorHeadline: React.FC<Props> = ({
         justify-content: center;
     `;
     const StyledHeading = styled.h1`
-        font-family: ${theme.font.normal.fontFamily};
+        font-family: ${theme.Font.Default};
         text-align: center;
         font-size: ${variantProps.fontSize};
-        font-weight: ${theme.font.normal.fontWeight};
+        font-weight: ${'$regular'};
     `;
 
     return (
