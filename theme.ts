@@ -51,8 +51,6 @@ export const theme = {
 
     // ---------- CONTACT FORM ----------
     ContactForm: {
-        Height: '473px',
-        Width: '580px',
         Input: {
             Width: '580px',
             Height: {
@@ -73,23 +71,16 @@ export const theme = {
     // ---------- FOOTER ----------
     Footer: {
         Background: {
-            Width: '1440px',
-            Height: '336px',
             Color: '$blue500',
         },
         TextArea: { 
-            Width: '1180px',
-            Height: '196px',
             LineHeight: '$s',
-            
             Font: {
                 Weight: '$regular',
                 Size: '$s',
                 Color: '$green500',
             },
             FooterText: {
-                Width: '',
-                Height: '',
                 Contact: {
                     Width: '222px',
                     Height: '58px',
@@ -104,16 +95,11 @@ export const theme = {
                 },
             },
             SocialMedia: {
-                Width: '154px',
-                Height: '16px',
                 FlexDirection: 'row',
                 JustifyContent: 'center',
                 AlignItems: 'flex-end',
             },
             Impressum: {
-                Width: '238px',
-                Height: '16px',
-
                 FlexDirection: 'row',
                 AlignItems: 'flex-start',
             },
@@ -122,12 +108,7 @@ export const theme = {
 
     // ---------- NAVBAR ----------
     Navbar: {
-        Width: '1440px',
-        Height: '88px',
-        
         Items: {
-            Width: '795px',
-            Height: '88px',
             LineHeight: '$m',
             Font: {
                 Weight: '$medium',
