@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Flex } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import Logo from '../assets/pcode_shape.svg?sprite';
 import styled from 'styled-components';
 

@@ -3,7 +3,7 @@ import { Flex, Button, Box } from 'rebass';
 import { ThemeProvider } from 'emotion-theming';
 import { themeDeprecated } from '../themeDeprecated';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const WhoWeArePage = () => (
     <div>

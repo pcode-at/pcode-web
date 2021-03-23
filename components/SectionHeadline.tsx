@@ -1,7 +1,7 @@
 import React from 'react';
 import { theme } from '../theme';
-import { DeprecatedColor } from '../Color.enum';
-import { Text, Heading } from 'rebass';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
+import { Heading } from 'rebass';
 import styled from 'styled-components';
 
 type Props = {

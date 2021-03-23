@@ -1,8 +1,8 @@
 import React from 'react';
 import { theme } from '../theme';
-import { Text, Heading } from 'rebass';
+import { Text } from 'rebass';
 import styled from 'styled-components';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 type Props = {
     leftAndRightTextColor: DeprecatedColor;

@@ -1,11 +1,9 @@
 import React from 'react';
 import Headroom from 'react-headroom';
-import { Flex, Box } from 'rebass';
+import { Box, Flex } from 'rebass';
 import NavbarSvg from '../assets/burger.svg?sprite';
 import LogoSvg from '../assets/logo_claim.svg?sprite';
-
-import { theme } from '../theme';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import styled from 'styled-components';
 
 type Props = {

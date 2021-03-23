@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box, Image } from 'rebass';
-import { DeprecatedColor } from '../../../Color.enum';
+import { DeprecatedColor } from '../../../DeprecatedColor.enum';
 import styled from 'styled-components';
 import { WordList } from '../../../components/WordList';
 import { CopyText, FontStyle } from '../../../components/CopyText';

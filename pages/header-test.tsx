@@ -1,9 +1,6 @@
 import * as React from 'react';
-import { Flex, Button, Box } from 'rebass';
-import { ThemeProvider } from 'emotion-theming';
-import { theme } from '../theme';
 import { SiteHeader } from '../components/SiteHeader';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const HeaderTestPage = () => (
     <div>

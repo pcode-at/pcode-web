@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ActionButton } from '../components/ActionButton';
-import { DeprecatedColor } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const function01 = () => alert('hello 1');
 
