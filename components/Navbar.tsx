@@ -1,15 +1,15 @@
 import React from 'react';
 import { theme } from '../theme';
 import { styled } from '../stitches.config';
-import { Box, Flex, Text } from 'rebass';
-import { CONSTANTS } from '../shared/constants';
 
 type Props = { className?: string; }
 
 export const Navbar: React.FC<Props> = ({ className }) => {
  
-    let NavbarLayout = styled(Flex, {
+    let NavbarLayout = styled('div', {
         maxWidth: '100%',
+        display: 'flex',
+
     })
 
     let LogoLayout = styled('a', {
@@ -29,7 +29,7 @@ export const Navbar: React.FC<Props> = ({ className }) => {
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        padding: '$none $l',
+        padding: '0px $l',
         marginLeft: 'auto',
         marginRight: 'auto',
 
@@ -40,6 +40,7 @@ export const Navbar: React.FC<Props> = ({ className }) => {
         fontSize: theme.Navbar.Items.Font.Size,
         lineHeight: theme.Navbar.Items.LineHeight,
         color: theme.Navbar.Items.Font.Color,
+        fontWeight: '$medium',
         // fontWeight: theme.Navbar.Items.Font.Weight,
         marginRight: 'auto',
         textDecoration: 'none',
@@ -73,10 +74,10 @@ export const Navbar: React.FC<Props> = ({ className }) => {
             </LogoLayout>
             <NavbarItemsLayout>
                 <NavbarItem color={'default'} href="">home</NavbarItem>
-                <NavbarItem color={'default'} href="">who we are</NavbarItem>
-                <NavbarItem color={'default'} href="">what we do</NavbarItem>
+                <NavbarItem color={'default'} href="./who-we-are">who we are</NavbarItem>
+                <NavbarItem color={'default'} href="./what-we-do">what we do</NavbarItem>
                 <NavbarItem color={'default'} href="">our clients</NavbarItem>
-                <NavbarItem color={'default'} href="">join us</NavbarItem>
+                <NavbarItem color={'default'} href="./join-us">join us</NavbarItem>
                 <NavbarItem color={'default'} href="">blog</NavbarItem>
             </NavbarItemsLayout>
         </NavbarLayout>
