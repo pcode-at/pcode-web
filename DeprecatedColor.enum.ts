@@ -1,4 +1,4 @@
-export enum Color {
+export enum DeprecatedColor {
   Primary = "primary",
   SecondaryDark = "secondaryDark",
   SecondaryLight = "secondaryLight",

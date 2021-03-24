@@ -4,18 +4,17 @@ import { theme } from '../theme';
 
 export const Button = styled('button', {
 
+    alignItems:     'flex-end',
     borderRadius:   theme.Button.Border.Radius,
+    boxShadow:      theme.Button.BoxShadow,
+    display:        'flex',
+    flexDirection:  'row',
     fontFamily:     theme.Font.Default,   
     fontSize:       theme.Button.Font.Size,
     fontWeight:     '$regular',
-    // fontWeight:  theme.Button.Font.Weight, 
-    lineHeight:     theme.Button.LineHeight,
-    boxShadow:      theme.Button.BoxShadow,
-    padding:        theme.Button.Padding,
-    display:        'flex',
-    flexDirection:  'row',
     justifyContent: 'center',
-    alignItems:     'center',
+    lineHeight:     theme.Button.LineHeight,
+    padding:        theme.Button.Padding,
 
     variants: {
         variant: {

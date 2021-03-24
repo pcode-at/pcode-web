@@ -1,9 +1,8 @@
 import React from 'react';
 
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { theme } from '../theme';
-// import { PcodeShape } from './PcodeShape';
 import { Bubble } from './Bubble';
 import styled from 'styled-components';
 import { Flex, Box, Image } from 'rebass';
@@ -13,12 +12,12 @@ export type pcodeShapeWithImageVariant = 1 | 2;
 type Props = {
     variant: pcodeShapeWithImageVariant,
     imageSource: string;
-    color?: Color;
+    color?: DeprecatedColor;
     className?: string;
 };
 
 export const PcodeShapeWithImage: React.FC<Props> = ({
-    color = Color.Primary,
+    color = DeprecatedColor.Primary,
     variant,
     imageSource,
     className,

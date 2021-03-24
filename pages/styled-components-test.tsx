@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { themeDeprecated } from '../themeDeprecated';
 import { ContactForm } from '../components/ContactForm';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const { light, normal } = themeDeprecated.font;
 

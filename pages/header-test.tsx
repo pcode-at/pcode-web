@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { Flex, Button, Box } from 'rebass';
-import { ThemeProvider } from 'emotion-theming';
-import { theme } from '../theme';
 import { SiteHeader } from '../components/SiteHeader';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const HeaderTestPage = () => (
     <div>
-        <SiteHeader color={Color.White}></SiteHeader>
+        <SiteHeader color={DeprecatedColor.White}></SiteHeader>
 
         <p>Test Page for Header Menu</p>
         <div

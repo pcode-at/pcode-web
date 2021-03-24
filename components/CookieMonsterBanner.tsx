@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Flex } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import Logo from '../assets/pcode_shape.svg?sprite';
 import styled from 'styled-components';
 
@@ -67,7 +67,7 @@ export const CookieMonsterBanner: React.FC<Props> = ({
                     }}
                 >
                     <StyledCopyTextForCookieInfo
-                        color={Color.White}
+                        color={DeprecatedColor.White}
                         fontStyle={FontStyle.Light}
                     >
                         We use cookies to personalise contents and ads, to

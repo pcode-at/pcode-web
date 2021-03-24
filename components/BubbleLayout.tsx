@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box } from 'rebass';
 import styled from 'styled-components';
-import { Color } from '../Color.enum';
 import { BubbleVariant } from '../shared/BubbleVariant.enum';
 
 type Props = {
