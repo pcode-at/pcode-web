@@ -80,29 +80,6 @@ export const theme = {
                 Size: '$s',
                 Color: '$green500',
             },
-            FooterText: {
-                Contact: {
-                    Width: '222px',
-                    Height: '58px',
-                },
-                Pages: {
-                    Width: '222px',
-                    Height: '96px',
-                },
-                Address: {
-                    Width: '222px',
-                    Height: '58px',
-                },
-            },
-            SocialMedia: {
-                FlexDirection: 'row',
-                JustifyContent: 'center',
-                AlignItems: 'flex-end',
-            },
-            Impressum: {
-                FlexDirection: 'row',
-                AlignItems: 'flex-start',
-            },
         },
     },
 
