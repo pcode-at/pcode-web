@@ -34,12 +34,18 @@ export const theme = {
     // ---------- BUTTON ----------
     Button: {
         Border: {
+            Color: {
+                Tertiary: {
+                    Default: '$red500',
+                    Disabled: '$red100',
+                },
+            },
+            Radius: '$circle',
             Width: {
                 Primary: 'none',
                 Secondary: 'none',
                 Tertiary: '$regular',
             },
-            Radius: '$circle',
         },
         Font: {
             Weight: '$regular',
@@ -50,7 +56,12 @@ export const theme = {
                     White: '$blue500',
                 },
                 Secondary: '$red500',
-                Tertiary: '$red500',
+                Tertiary: {
+                    Default: '$red500',
+                    Hover: '$white',
+                    Disabled: '$red100',
+                    Active: '$white',
+                },
             },
         },
         LineHeight: '$s',
@@ -62,17 +73,24 @@ export const theme = {
                     Red: {
                         Default: '$red500',
                         Hover: '$red300',
-                        Inactive: '$red100',
+                        Disabled: '$red100',
+                        Active: '$red500',
                     },
                     Blue: {
                         Default: '$blue500',
                         Hover: '$blue300',
-                        Inactive: '$blue100',
+                        Disabled: '$blue100',
+                        Active: '$blue500',
                     },
                     White: '$white',
                 },
                 Secondary: 'transparent',
-                Tertiary: 'transparent',
+                Tertiary: {
+                    Default: 'transparent',
+                    Hover: '$red100',
+                    Disabled: 'transparent',
+                    Active: '$red500',
+                },
             }
         }
     },
