@@ -24,7 +24,7 @@ type Props = {
  - portrait-bubble has an slight offset and is leaned to the right 
  */
 
-export const ImageBubble: React.FC<Props> = ({
+export const ImageBubbleDeprecated: React.FC<Props> = ({
     color = DeprecatedColor.SecondaryDark,
     imageSource,
     className,

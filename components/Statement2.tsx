@@ -3,7 +3,7 @@ import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import styled from 'styled-components';
-import { PersonBubble } from './PersonBubble';
+import { PersonBubbleDeprecated } from './PersonBubbleDeprecated';
 
 type Props = {
     personName: string;
@@ -85,7 +85,7 @@ export const Statement2: React.FC<Props> = ({
 
                 <PersonLayout>
                     <StyledPersonFlex>
-                        <PersonBubble 
+                        <PersonBubbleDeprecated 
                             color={DeprecatedColor.SecondaryDark}
                             personName={personName}
                             personPosition={personPosition}

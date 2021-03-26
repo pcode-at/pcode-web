@@ -2,7 +2,7 @@ import React from 'react';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from './CopyText';
 import { PositionLevel } from '../shared/PositionLevel.enum';
-import { ActionButton } from './ActionButton';
+import { ActionButtonDeprecated } from './ActionButtonDeprecated';
 import { SubHeadline } from './SubHeadline';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { CONSTANTS } from '../shared/constants';
@@ -93,7 +93,7 @@ export const FreeChair: React.FC<Props> = ({
                     <a
                         href={`mailto:${openPositionDestinationEmail}?subject=${position} - ${positionLevel}`}
                     >
-                        <ActionButton color={DeprecatedColor.SecondaryLight} label="apply" />
+                        <ActionButtonDeprecated color={DeprecatedColor.SecondaryLight} label="apply" />
                     </a>
             </FreeChairLayout>
         </div>

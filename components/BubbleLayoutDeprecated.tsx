@@ -7,7 +7,7 @@ type Props = {
     layout?: BubbleVariant;
 };
 
-export const BubbleLayout: React.FC<Props> = ({
+export const BubbleLayoutDeprecated: React.FC<Props> = ({
     layout = BubbleVariant.Shifted
 }) => {
 
@@ -25,7 +25,7 @@ export const BubbleLayout: React.FC<Props> = ({
 
     return (
         <React.Fragment>
-            <BubbleLayout/>
+            <BubbleLayoutDeprecated/>
         </React.Fragment>
     );
 

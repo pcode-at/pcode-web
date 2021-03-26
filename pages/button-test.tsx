@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ActionButton } from '../components/ActionButton';
+import { ActionButtonDeprecated } from '../components/ActionButtonDeprecated';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const function01 = () => alert('hello 1');
@@ -12,22 +12,22 @@ const ButtonTestPage = () => (
 
         <hr></hr>
 
-        <ActionButton
+        <ActionButtonDeprecated
             color={DeprecatedColor.Primary}
             label="Primary"
             onClick={function01}
-        ></ActionButton>
+        ></ActionButtonDeprecated>
 
-        <ActionButton
+        <ActionButtonDeprecated
             color={DeprecatedColor.SecondaryDark}
             label="Secondary"
             onClick={function02}
-        ></ActionButton>
+        ></ActionButtonDeprecated>
 
-        <ActionButton
+        <ActionButtonDeprecated
             color={DeprecatedColor.SecondaryLight}
             label="Secondary 2"
-        ></ActionButton>
+        ></ActionButtonDeprecated>
 
         <style jsx>{`
             .test {

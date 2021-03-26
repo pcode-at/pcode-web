@@ -3,7 +3,7 @@ import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex, Image, Text } from 'rebass';
 import { CopyText, FontStyle } from './CopyText';
 import styled, { css } from 'styled-components';
-import { ImageBubble } from './ImageBubble';
+import { ImageBubbleDeprecated } from './ImageBubbleDeprecated';
 
 type Props = {
     color: DeprecatedColor;
@@ -14,7 +14,7 @@ type Props = {
     variant?: "overlay" | "shifted"
 };
 
-export const PersonBubble: React.FC<Props> = ({
+export const PersonBubbleDeprecated: React.FC<Props> = ({
     color = DeprecatedColor.Primary,
     className,
     personName = "John Doe",
@@ -37,7 +37,7 @@ export const PersonBubble: React.FC<Props> = ({
     const PersonPositionLayout = styled(Box)`
         font-size: 130%;
     `;
-    const StyledImageBubbleLayout = styled(ImageBubble)`
+    const StyledImageBubbleLayout = styled(ImageBubbleDeprecated)`
         position: absolute;
         width: 300px;
     `;

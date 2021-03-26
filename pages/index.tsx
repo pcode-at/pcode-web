@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box, Button as Button2, Flex } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
-import { Bubble } from '../components/Bubble';
+import { BubbleBlank, Bubble } from '../components/Bubble';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
@@ -26,13 +26,13 @@ import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { MultiColorHeadline } from '../components/MultiColorHeadline';
-import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
+import { PcodeShapeWithImageDeprecated } from '../components/PcodeShapeWithImageDeprecated';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { Character } from '../components/Character';
 import { SkillDetail } from '../components/SkillDetail';
-import { ImageBubble } from '../components/ImageBubble';
-import { PersonBubble } from '../components/PersonBubble';
+import { ImageBubbleDeprecated } from '../components/ImageBubbleDeprecated';
+import { PersonBubbleDeprecated } from '../components/PersonBubbleDeprecated';
 import { Button } from '../components/Button';
 import { theme } from '../theme';
 import { BubbleWordlist } from '../components/BubbleWordlist';
@@ -331,7 +331,7 @@ const MainPage = () => (
     </ThemeProvider>
 );
 
-const StyledImageBubbleLayout = styled(ImageBubble)`
+const StyledImageBubbleLayout = styled(ImageBubbleDeprecated)`
     width: 700px;
 `;
 

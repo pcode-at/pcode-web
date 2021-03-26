@@ -16,7 +16,7 @@ type Props = {
     className?: string;
 };
 
-export const PcodeShapeWithImage: React.FC<Props> = ({
+export const PcodeShapeWithImageDeprecated: React.FC<Props> = ({
     color = DeprecatedColor.Primary,
     variant,
     imageSource,

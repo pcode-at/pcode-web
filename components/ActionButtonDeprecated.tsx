@@ -25,7 +25,7 @@ const appearances = {
     `,
 };
 
-export const ActionButton: React.FC<Props> = ({
+export const ActionButtonDeprecated: React.FC<Props> = ({
     color = DeprecatedColor.Primary,
     label,
     onClick,

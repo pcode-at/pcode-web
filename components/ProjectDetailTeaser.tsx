@@ -2,7 +2,7 @@ import React from 'react';
 import { Bubble } from './Bubble';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex } from 'rebass';
-import { ActionButton } from './ActionButton';
+import { ActionButtonDeprecated } from './ActionButtonDeprecated';
 import { CopyText, FontStyle } from './CopyText';
 import styled from 'styled-components';
 
@@ -83,7 +83,7 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
                         >
                             {description}
                         </StyledCopyText>
-                        <ActionButton
+                        <ActionButtonDeprecated
                             label="learn more"
                             color={DeprecatedColor.SecondaryLight}
                             onClick={onClick}
