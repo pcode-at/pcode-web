@@ -1,7 +1,7 @@
 import React from 'react';
 import { width } from 'styled-system';
 import BubbleSvg from '../assets/bubble.svg?sprite';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { styled } from '../stitches.config';
 import { theme } from '../theme';
 import { Image } from 'rebass';

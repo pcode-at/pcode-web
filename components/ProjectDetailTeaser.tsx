@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bubble } from './Bubble';
+import { BubbleDeprecated } from './Bubble';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex } from 'rebass';
 import { ActionButtonDeprecated } from './ActionButtonDeprecated';

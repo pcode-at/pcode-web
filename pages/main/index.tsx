@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Box, Flex } from 'rebass';
 import { themeDeprecated } from '../../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
-import { Bubble } from '../../components/Bubble';
+import { BubbleDeprecated } from '../../components/Bubble';
 import { SiteHeader } from '../../components/SiteHeader';
 import { DeprecatedColor } from '../../DeprecatedColor.enum';
 import { Footer } from '../../components/Footer';
@@ -59,7 +59,7 @@ const MainPage = () => (
                 />
 
                 <PcodeShapeLayout>
-                    <Bubble color={DeprecatedColor.SecondaryDark} />
+                    <BubbleDeprecated color={DeprecatedColor.SecondaryDark} />
                 </PcodeShapeLayout>
             </PageLayout>
 

@@ -3,7 +3,7 @@ import React from 'react';
 import PcodeShapeSvg from '../assets/pcode_shape.svg?sprite';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { theme } from '../theme';
-import { Bubble } from './Bubble';
+import { BubbleDeprecated } from './Bubble';
 import styled from 'styled-components';
 import { Flex, Box, Image } from 'rebass';
 
@@ -29,7 +29,7 @@ export const PcodeShapeWithImageDeprecated: React.FC<Props> = ({
         position: relative;
     `;
 
-    let StyledPcodeShape = styled(Bubble)`
+    let StyledPcodeShape = styled(BubbleDeprecated)`
         mask: url(../static/pcode_shape.svg);
         mask-position: top;
         mask-repeat: no-repeat;

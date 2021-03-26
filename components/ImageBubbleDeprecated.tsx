@@ -1,7 +1,7 @@
 import React from 'react';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { themeDeprecated } from '../themeDeprecated';
-import { Bubble } from './Bubble';
+import { BubbleDeprecated } from './Bubble';
 import styled from 'styled-components';
 import { Flex, Image, Box } from 'rebass';
 

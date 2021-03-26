@@ -1,8 +1,11 @@
 import React from 'react';
+import { Box } from 'rebass';
 import BubbleSvg from '../assets/bubble.svg?sprite';
-import { Color } from '../Color.enum';
+import { DeprecatedColor } from '../DeprecatedColor.enum';
+// import { DeprecatedColor } from '../DeprecatedColor.enum'; // from old bubble version 
 import { styled } from '../stitches.config';
 import { theme } from '../theme';
+import { themeDeprecated} from '../themeDeprecated';
 
 type Props = {
     width?: string;
@@ -31,23 +34,19 @@ export const BubbleBlank: React.FC<Props> = ({
 };
 
 // OLD VERSION -- keeping code until new bubble component is finished and the old version can be replaced 
-
 type Props2 = {
-    width?: string;
-    color?: Color;
-
-import { DeprecatedColor } from '../DeprecatedColor.enum';
-import { themeDeprecated } from '../themeDeprecated';
-import styled from 'styled-components';
-import { Box } from 'rebass';
-
-type Props = {
     width?: string;
     color?: DeprecatedColor;
     layout?: "shifted" | "centered";
-};
+}
 
-export const Bubble: React.FC<Props2> = ({
+// type Props = {
+//     width?: string;
+//     color?: DeprecatedColor;
+//     layout?: "shifted" | "centered";
+// };
+
+export const BubbleDeprecated: React.FC<Props2> = ({
     width = "100%",
     color = DeprecatedColor.Primary,
     layout = "shifted"
@@ -58,10 +57,10 @@ export const Bubble: React.FC<Props2> = ({
     // `;
 
     // if ( layout == "centered" ){
-    //     BubbleLayout = styled(Box)`
-    //         transform: rotateZ(-195deg);
-    //         margin-right: 1%;
-    //     `;
+    //     // BubbleLayout = styled(Box)`
+    //     //     transform: rotateZ(-195deg);
+    //     //     margin-right: 1%;
+    //     // `;
     // }
 
     return (

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box, Button as Button2, Flex } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
-import { BubbleBlank, Bubble } from '../components/Bubble';
+import { BubbleBlank, BubbleDeprecated } from '../components/Bubble';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
@@ -164,7 +164,7 @@ const MainPage = () => (
         <Bubble color={DeprecatedColor.SecondaryLight} />
         <Bubble width="80%" />
          */}
-        <Bubble width="50%" color={DeprecatedColor.SecondaryDark} />
+        <BubbleDeprecated width="50%" color={DeprecatedColor.SecondaryDark} />
 
 
         <StyledHeading>CopyText</StyledHeading>
