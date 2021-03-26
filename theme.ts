@@ -33,40 +33,6 @@ export const theme = {
 
     // ---------- BUTTON ----------
     Button: {
-        Border: {
-            Color: {
-                Tertiary: {
-                    Default: '$red500',
-                    Disabled: '$red100',
-                },
-            },
-            Radius: '$circle',
-            Width: {
-                Primary: 'none',
-                Secondary: 'none',
-                Tertiary: '$regular',
-            },
-        },
-        Font: {
-            Weight: '$regular',
-            Size: '$s',
-            Color: {
-                Primary: {
-                    Default: '$white',
-                    White: '$blue500',
-                },
-                Secondary: '$red500',
-                Tertiary: {
-                    Default: '$red500',
-                    Hover: '$white',
-                    Disabled: '$red100',
-                    Active: '$white',
-                },
-            },
-        },
-        LineHeight: '$s',
-        Padding: '$s $m',
-        BoxShadow: '$regular',
         Background: {
             Color: {
                 Primary: {
@@ -92,7 +58,49 @@ export const theme = {
                     Active: '$red500',
                 },
             }
-        }
+        },
+        Border: {
+            Color: {
+                Tertiary: {
+                    Default: '$red500',
+                    Disabled: '$red100',
+                },
+            },
+            Radius: '$circle',
+            Width: {
+                Primary: 'none',
+                Secondary: 'none',
+                Tertiary: '$regular',
+            },
+        },
+        BoxShadow: '$regular',
+        Font: {
+            Weight: '$regular',
+            Size: '$s',
+            Color: {
+                Primary: {
+                    Default: '$white',
+                    White: '$blue500',
+                },
+                Secondary: '$red500',
+                Tertiary: {
+                    Default: '$red500',
+                    Hover: '$white',
+                    Disabled: '$red100',
+                    Active: '$white',
+                },
+            },
+        },
+        LineHeight: '$s',
+        Padding: '$s $m',
+        TextDecoration: {
+            Secondary: {
+                TextDecoration: 'underline',
+                TextDecorationThickness: '0.063rem', // Figma: 1px
+                TextUnderlineOffset: '0.25rem', // Figma: 4px
+
+            },
+        },
     },
 
     // ---------- CONTACT FORM ----------

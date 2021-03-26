@@ -84,9 +84,10 @@ export const Button = styled('button', {
                 color: theme.Button.Font.Color.Secondary,
 
                 '&:hover': {
-                    // TODO: change textDecoration: underline thickness, space between text and underline
-                    textDecoration: 'underline',
+                    textDecoration: theme.Button.TextDecoration.Secondary.TextDecoration,
                     textDecorationColor: theme.Button.Font.Color.Secondary,
+                    textDecorationThickness: theme.Button.TextDecoration.Secondary.TextDecorationThickness,
+                    textUnderlineOffset: theme.Button.TextDecoration.Secondary.TextUnderlineOffset,
                 }
 
             },
