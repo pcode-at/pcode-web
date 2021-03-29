@@ -39,6 +39,7 @@ import { BubbleWordlist } from '../components/BubbleWordlist';
 import { BubbleImage } from '../components/BubbleImage';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
+import { BubblePortrait } from '../components/BubblePortrait';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -62,6 +63,11 @@ const MainPage = () => (
 
         <StyledHeading>Bubble Image</StyledHeading>
         <BubbleImage imageSource={'../static/stock01.jpg'}/>
+        <BubbleImage color={theme.Bubble.Background.Color.Green} imageSource={'../static/stock01.jpg'}/>
+
+        <StyledHeading>Bubble Portrait</StyledHeading>
+        <BubblePortrait/>
+        <BubblePortrait color={theme.Bubble.Background.Color.Red} imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}/>
 
         <StyledHeading>Buttons</StyledHeading>
         <Button color={'primaryFilled'}>Primary Filled Button</Button>
