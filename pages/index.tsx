@@ -61,7 +61,7 @@ const MainPage = () => (
         <BubbleWordlist color={theme.Bubble.Background.Color.Red}/>
 
         <StyledHeading>Bubble Image</StyledHeading>
-        <BubbleImage/>
+        <BubbleImage imageSource={'../static/stock01.jpg'}/>
 
         <StyledHeading>Buttons</StyledHeading>
         <Button color={'primaryFilled'}>Primary Filled Button</Button>

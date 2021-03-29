@@ -1,10 +1,7 @@
 import React from 'react';
-import { width } from 'styled-system';
 import BubbleSvg from '../assets/bubble.svg?sprite';
-import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { styled } from '../stitches.config';
 import { theme } from '../theme';
-import { Image } from 'rebass';
 
 type Props = {
     width?: string;
@@ -14,29 +11,36 @@ type Props = {
 
 export const BubbleImage: React.FC<Props> = ({
     width = '45%',
-    color = theme.Bubble.Background.Color.Green,
-    imageSource = '../static/kotek_michael.png',
+    color = theme.Bubble.Background.Color.Blue,
+    imageSource = '../static/memberPortraits/kotek_michael.jpg',
 }) => {
 
     let BubbleLayout = styled('div', {
         width: width,
-        // width: theme.Bubble.Image.Width,
+        position: 'relative',     
     })
 
     let Bubble = styled(BubbleSvg, {
-        zIndex: '$regular',
         color: color, 
+        position: 'absolute',
         width: '100%',
+        // zIndex: '$regular',
 
     })
 
-    let BubbleImage = styled(Image, {
-        zIndex: '$higher',
+    let BubbleImage = styled('img', {
+        alt: '',
+        position: 'absolute',
         width: '100%',
-        // maskImage: '../assets/bubble.svg?sprite',
-        maskSize: '90%',
-        mask: '../assets/bubble.svg?sprite', 
+        maskImage: `url(${'../static/bubble.svg'})`,
+        maskPosition: 'top',
         maskRepeat: 'no-repeat',
+        maskSize: '90%',
+
+        // TODO: correct positioning of image within bubble
+        // top: '2.041rem',
+        // bottom: '0.724rem',    
+        // zIndex: '$top',
     })
 
     return (

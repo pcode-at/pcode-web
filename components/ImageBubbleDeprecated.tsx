@@ -65,7 +65,7 @@ export const ImageBubbleDeprecated: React.FC<Props> = ({
                 <div className={className}>
                     <StyledFlexLayout>
                         <BubbleLayout>
-                            <BubbleBlank width="100%" color={color} />
+                            <BubbleDeprecated width="100%" color={color} />
                         </BubbleLayout>
                         <StyledImageLayout>
                             <StyledImage src={imageSource} />
@@ -102,7 +102,7 @@ export const ImageBubbleDeprecated: React.FC<Props> = ({
                 <div className={className}>
                     <ImageBubbleLayout>
                         <BubbleLayout>
-                            <BubbleBlank color={color}/> 
+                            <BubbleDeprecated color={color}/> 
                         </BubbleLayout>
                         <StyledImageLayout>
                             <StyledImage src={imageSource}/>

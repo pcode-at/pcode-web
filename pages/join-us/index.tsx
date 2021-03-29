@@ -138,7 +138,7 @@ const JoinUsPage = () => (
                 <Statement2
                     personName={'Michael Kotek'}
                     personPosition={'Frontend Developer'}
-                    imagePath={'../static/kotek_michael.png'}
+                    imagePath={'../static/memberPortraits/kotek_michael.jpg'}
                     color={DeprecatedColor.SecondaryDark}
                 >
                     ‘ working at pcode means one simple thing: working for the
