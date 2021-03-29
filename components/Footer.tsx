@@ -62,14 +62,16 @@ export const Footer: React.FC<Props> = ({ className }) => {
     let Text = styled('p', {
         fontFamily: theme.Font.Default,
         fontSize: theme.Footer.TextArea.Font.Size,
-        fontWeight: theme.Footer.TextArea.Font.Weight,
+        fontWeight: '$regular',
+        // fontWeight: theme.Footer.TextArea.Font.Weight,
         color: theme.Footer.TextArea.Font.Color,
         lineHeight: theme.Footer.TextArea.LineHeight,
     })
     let PageReference = styled('a', {
         fontFamily: theme.Font.Default,
         fontSize: theme.Footer.TextArea.Font.Size,
-        fontWeight: theme.Footer.TextArea.Font.Weight,
+        fontWeight: '$regular',
+        // fontWeight: theme.Footer.TextArea.Font.Weight,
         color: theme.Footer.TextArea.Font.Color,
         lineHeight: theme.Footer.TextArea.LineHeight,
         textDecoration: 'none',
