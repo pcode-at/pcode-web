@@ -41,47 +41,10 @@ export const BubblePortrait: React.FC<Props> = ({
         width: '100%',
     })
 
-    let TextLayout = styled('div', {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '$m 0px 0px',      
-
-        '&~p': {
-            alignItems: 'flex-start',
-            flexDirection: 'row',
-            margin: '$xs 0px',
-            padding: '0px',
-        }
-
-    })
-    let Name = styled('p', {
-        color: theme.Bubble.Portrait.Name.FullName.Font.Color,
-        fontFamily: theme.Bubble.Portrait.Name.FontFamily,
-        // fontSize: '1.5rem',
-        fontSize: theme.Bubble.Portrait.Name.FullName.Font.Size,
-        fontWeight: '$medium',
-        // fontWeight: theme.Bubble.Portrait.Name.FullName.Font.Weight,
-        lineHeight: theme.Bubble.Portrait.Name.LineHeight,
-
-    })
-    let Position = styled('p', {
-        color: theme.Bubble.Portrait.Name.Position.Font.Color,
-        fontFamily: theme.Bubble.Portrait.Name.FontFamily,
-        fontSize: theme.Bubble.Portrait.Name.Position.Font.Size,
-        fontWeight: '$light',
-        // fontWeight: theme.Bubble.Portrait.Name.Position.Font.Weight,
-        lineHeight: theme.Bubble.Portrait.Name.LineHeight,
-    })
-
     return (
         <BubbleLayout>
             <Bubble/>
             <BubbleImage src={imageSource}/>
-            <TextLayout>
-                <Name>{name}</Name>
-                <Position>{position}</Position>
-            </TextLayout>
         </BubbleLayout>
     );
 }

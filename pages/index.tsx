@@ -40,6 +40,7 @@ import { BubbleImage } from '../components/BubbleImage';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
 import { BubblePortrait } from '../components/BubblePortrait';
+import { BubblePortraitAndName } from '../components/BubblePortraitAndName';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -69,17 +70,32 @@ const MainPage = () => (
 
         <StyledHeading>Bubble Portrait</StyledHeading>
         <BubblePortrait/>
-        <BubblePortrait 
+        <BubblePortrait
+            color={theme.Bubble.Background.Color.Red} 
+            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
+        />
+        <BubblePortrait
+            color={theme.Bubble.Background.Color.Blue} 
+            imageSource={'../static/memberPortraits/kotek_michael.jpg'}
+        />
+
+        <StyledHeading>Bubble Portrait and Name</StyledHeading>
+        <BubblePortraitAndName/>
+        <BubblePortraitAndName
+            color={theme.Bubble.Background.Color.Blue} 
+            imageSource={'../static/memberPortraits/kotek_michael.jpg'}
+            name={'Michael Kotek'}
+            position={'web developer'}
+        />
+        <BubblePortraitAndName
             color={theme.Bubble.Background.Color.Red} 
             imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
             name={'Christoph Pernsteiner'}
             position={'CEO . founder'}
         />
-        <BubblePortrait 
-            color={theme.Bubble.Background.Color.Blue} 
-            imageSource={'../static/memberPortraits/kotek_michael.jpg'}
-            name={'Michael Kotek'}
-        />
+        
+
+
 
         <StyledHeading>Buttons</StyledHeading>
         <Button color={'primaryFilled'}>Primary Filled Button</Button>
