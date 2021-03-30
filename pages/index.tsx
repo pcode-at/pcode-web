@@ -94,9 +94,6 @@ const MainPage = () => (
             position={'CEO . founder'}
         />
         
-
-
-
         <StyledHeading>Buttons</StyledHeading>
         <Button color={'primaryFilled'}>Primary Filled Button</Button>
         <Button color={'primaryOutlined'}>Primary Outlined Button</Button>
@@ -107,9 +104,6 @@ const MainPage = () => (
         <Button color={'secondaryFilled'} disabled={true}> Inactive Secondary Filled Button</Button>
         <br/>
         <Button color={'tertiary'}>Tertiary Button</Button>
-
-
-
 
         {/* <StyledHeading>ImageBubble : Overlay</StyledHeading>
         <StyledImageBubbleLayout

@@ -16,12 +16,15 @@ export const BubblePortraitAndName: React.FC<Props> = ({
     imageSource = '../static/default-member.png',
     name = 'Joe Doe',
     position = 'Chief Anonymous Officer',
-    width = '45%',
+    // width = '25%',
+    width = '228px',
 }) => {
 
     let BubbleLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'column',
         position: 'relative', 
-        width: width,    
+        width: width,              
     })
 
     let Bubble = styled(BubbleSvg, {
@@ -45,12 +48,12 @@ export const BubblePortraitAndName: React.FC<Props> = ({
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
-        padding: '$m 0px 0px',      
+        padding: '$l 0px 0px',      
+        textAlign: 'center',
 
-        '&~p': {
+        '&>p': {
             alignItems: 'flex-start',
             flexDirection: 'row',
-            //margin: '$xs 0px',
             padding: '0px',
             position: 'static',
         }
@@ -63,6 +66,7 @@ export const BubblePortraitAndName: React.FC<Props> = ({
         fontWeight: '$medium',
         // fontWeight: theme.Bubble.Portrait.Name.FullName.Font.Weight,
         lineHeight: theme.Bubble.Portrait.Name.LineHeight,
+        marginBottom: '$xs',
     })
 
     let Position = styled('p', {

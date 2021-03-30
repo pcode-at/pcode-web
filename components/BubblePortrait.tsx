@@ -7,16 +7,12 @@ type Props = {
     width?: string;
     color?: string;
     imageSource?: string;
-    name?: string;
-    position?: string;
 };
 
 export const BubblePortrait: React.FC<Props> = ({
     color = theme.Bubble.Background.Color.Green,
     imageSource = '../static/default-member.png',
-    name,
-    position,
-    width = '45%',
+    width = '25%',
 }) => {
 
     let BubbleLayout = styled('div', {
