@@ -30,7 +30,7 @@ export const { styled, css } = createStyled({
             $xs: '8px',
             $s: '16px',
             $m: '24px',
-            $l: '36px',
+            $l: '32px',
             $xl: '40px',
             $xxl: '56px',
             $3xl: '64px',
