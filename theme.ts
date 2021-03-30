@@ -130,27 +130,20 @@ export const theme = {
                 White: '$white'
             }
         },
-        Blank: {
-            Height: '648px',
-            Width: '570px',
-        },
         Image: {
-            Height: '648px',
-            Width: '570px',
             Mask: {
-                Height: '604px',
-                Width: '531px',
-                Size: '93%', // MaskWidth / ImageWidth 
-            }
+                Size: '90%', // MaskWidth / ImageWidth 
+            },
+            Background: {
+                Width: '93%',
+            },
         },
         Portrait: {
             Background: {
-                Height: '232px',
-                Width: '200px',
+                Width: '87%',
             },
             Mask: {
-                Width: '213px',
-                Height: '240px',
+                Size: '90%',
             },
             Name: {
                 FontFamily: '$default',

@@ -1,5 +1,5 @@
 import React from 'react';
-import BubbleSvg from '../assets/bubble.svg?sprite';
+import BubbleSvg from '../static/bubble.svg?sprite';
 import { styled } from '../stitches.config';
 import { theme } from '../theme';
 
@@ -12,35 +12,30 @@ type Props = {
 export const BubbleImage: React.FC<Props> = ({
     width = '45%',
     color = theme.Bubble.Background.Color.Blue,
-    imageSource = '../static/memberPortraits/kotek_michael.jpg',
+    imageSource = '../static/stock01.jpg', 
 }) => {
 
+    // TODO: correct positioning of image within bubble
+    
     let BubbleLayout = styled('div', {
         width: width,
-        position: 'relative',     
+        position: 'relative',
     })
 
     let Bubble = styled(BubbleSvg, {
         color: color, 
         position: 'absolute',
         width: '100%',
-        // zIndex: '$regular',
-
     })
 
     let BubbleImage = styled('img', {
         alt: '',
-        position: 'absolute',
-        width: '100%',
+        position: 'relative',
+        width: theme.Bubble.Image.Background.Width,
         maskImage: `url(${'../static/bubble.svg'})`,
         maskPosition: 'top',
         maskRepeat: 'no-repeat',
-        maskSize: '90%',
-
-        // TODO: correct positioning of image within bubble
-        // top: '2.041rem',
-        // bottom: '0.724rem',    
-        // zIndex: '$top',
+        maskSize: theme.Bubble.Image.Mask.Size,
     })
 
     return (
