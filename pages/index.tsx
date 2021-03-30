@@ -62,12 +62,24 @@ const MainPage = () => (
         <BubbleWordlist color={theme.Bubble.Background.Color.Red}/>
 
         <StyledHeading>Bubble Image</StyledHeading>
-        <BubbleImage imageSource={'../static/stock01.jpg'}/>
-        <BubbleImage color={theme.Bubble.Background.Color.Green} imageSource={'../static/stock01.jpg'}/>
+        <BubbleImage/>
+        <BubbleImage 
+            color={theme.Bubble.Background.Color.Green} 
+        />
 
         <StyledHeading>Bubble Portrait</StyledHeading>
         <BubblePortrait/>
-        <BubblePortrait color={theme.Bubble.Background.Color.Red} imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}/>
+        <BubblePortrait 
+            color={theme.Bubble.Background.Color.Red} 
+            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
+            name={'Christoph Pernsteiner'}
+            position={'CEO . founder'}
+        />
+        <BubblePortrait 
+            color={theme.Bubble.Background.Color.Blue} 
+            imageSource={'../static/memberPortraits/kotek_michael.jpg'}
+            name={'Michael Kotek'}
+        />
 
         <StyledHeading>Buttons</StyledHeading>
         <Button color={'primaryFilled'}>Primary Filled Button</Button>
