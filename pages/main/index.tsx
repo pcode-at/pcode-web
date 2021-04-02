@@ -12,7 +12,7 @@ import CodeStandsForSection from './sections/CodeStandsFor.section';
 import styled from 'styled-components';
 import { ProjectDetailTeaser } from '../../components/ProjectDetailTeaser';
 import { Statement } from '../../components/Statement';
-import { ContactForm } from '../../components/ContactForm';
+import { ContactFormDeprecated } from '../../components/ContactFormDeprecated';
 
 const PageLayout = styled(Flex)`
     justify-content: space-between;
@@ -96,7 +96,7 @@ const MainPage = () => (
             <CodeStandsForSection />
 
             <ContactFormLayout>
-                <ContactForm />
+                <ContactFormDeprecated />
             </ContactFormLayout>
             <Footer />
         </ThemeProvider>

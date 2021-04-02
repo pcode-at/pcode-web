@@ -10,7 +10,7 @@ import { SectionHeadline } from '../components/SectionHeadline';
 import { FreeChair } from '../components/FreeChair';
 import { PositionLevel } from '../shared/PositionLevel.enum';
 import { Swiper } from '../components/Swiper';
-import { ContactForm } from '../components/ContactForm';
+import { ContactFormDeprecated } from '../components/ContactFormDeprecated';
 import { Menu } from '../components/Menu';
 import { ProjectDetailTeaser } from '../components/ProjectDetailTeaser';
 import Router from 'next/router';
@@ -36,6 +36,7 @@ import { PersonBubble } from '../components/PersonBubble';
 import { Button } from '../components/Button';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
+import { ContactForm } from '../components/ContactForm';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -49,6 +50,9 @@ const MainPage = () => (
         /> */}
 
         <Navbar/>
+
+        <StyledHeading>ContactForm Neu</StyledHeading>
+        <ContactForm/>
 
         <StyledHeading>Button</StyledHeading>
         <Button variant={'primaryRed'}>Primary Red</Button>
@@ -176,8 +180,8 @@ const MainPage = () => (
             Die altbacken Freikörperkultur meucheln.
         </StyledSkillDetail>
 
-        <StyledHeading>ContactForm</StyledHeading>
-        <StyledContactForm>ContactForm Component</StyledContactForm>
+        <StyledHeading>ContactFormDeprecated</StyledHeading>
+        <StyledContactFormDeprecated>ContactFormDeprecated Component</StyledContactFormDeprecated>
 
         <StyledHeading>Wave</StyledHeading>
         <Wave variant={'Top'} color={DeprecatedColor.Primary} shape={1}></Wave>
@@ -341,7 +345,7 @@ const StyledHeading = styled.h1`
     margin-top: 3em;
 `;
 
-const StyledContactForm = styled(ContactForm)`
+const StyledContactFormDeprecated = styled(ContactFormDeprecated)`
     max-width: 300px;
 `;
 

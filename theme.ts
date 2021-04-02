@@ -105,21 +105,63 @@ export const theme = {
 
     // ---------- CONTACT FORM ----------
     ContactForm: {
+        Width: '85%',
+        H1: {
+            Font: {
+                Family: '$default',
+                Size: '$xxl',
+                Weight: '$medium',
+                Color: '$blue500',
+            },
+            LineHeight: '$xxl',
+            LetterSpacing: '$tight',
+            
+        },
         Input: {
             Width: '580px',
             Height: {
                 Small: '40px',
                 Large: '201px'
-            }
+            },
+            Font: {
+                Family: '$default',
+                Color: '$blue500',
+                Size: '$m',
+                Weight: '$medium',
+            },
+            LineHeight: '24px',
         },
         Border: {
             Color: {
-                Default: '$green500',
+                Default: '$blue500',
                 Alert: '$cherry500',
             },
             Width: '$medium',
             Radius: '$rounded',
-        }
+        },
+        Label: {
+            Font: {
+                Family: '$default',
+                Size: '$xs',
+                Weight: '$semibold',
+            },
+            LineHeight: '$s',
+            LetterSpacing: '$wide',
+
+            /**
+             * 
+             * //styleName: label 1 12 600;
+                font-family: Raleway;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 16px;
+                letter-spacing: 0.006em;
+                text-align: left;
+
+             */
+
+        },
     },
 
     // ---------- FOOTER ----------
@@ -148,7 +190,6 @@ export const theme = {
 
             }
         }
-
     }
 
     // ---------- ----------
