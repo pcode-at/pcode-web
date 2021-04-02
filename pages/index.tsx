@@ -64,9 +64,15 @@ const MainPage = () => (
 
         <StyledHeading>Bubble Image</StyledHeading>
         <BubbleImage/>
-        <BubbleImage 
+        {/* <BubbleImage 
             color={theme.Bubble.Background.Color.Green} 
+            imageSource={'../static/stock/stock06.jpg'}
         />
+        <BubbleImage 
+            color={theme.Bubble.Background.Color.Red} 
+            imageSource={'../static/stock/stock05.jpg'}
+        /> */}
+
 
         <StyledHeading>Bubble Portrait</StyledHeading>
         <BubblePortrait/>
@@ -81,6 +87,9 @@ const MainPage = () => (
 
         <StyledHeading>Bubble Portrait and Name</StyledHeading>
         <BubblePortraitAndName/>
+        <BubblePortraitAndName 
+            imageSource={'../static/stock/stock01.jpg'}
+        />
         <BubblePortraitAndName
             color={theme.Bubble.Background.Color.Blue} 
             imageSource={'../static/memberPortraits/kotek_michael.jpg'}

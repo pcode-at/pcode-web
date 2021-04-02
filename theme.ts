@@ -134,9 +134,7 @@ export const theme = {
             Mask: {
                 Size: '90%', // MaskWidth / ImageWidth 
             },
-            Background: {
-                Width: '93%',
-            },
+            Width: '93%',
         },
         Portrait: {
             Background: {
