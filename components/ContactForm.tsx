@@ -14,26 +14,17 @@ const FormInput = styled('input', {
     fontWeight: '$medium',
     lineHeight: theme.ContactForm.Input.LineHeight,
 
-    margin: '$xxs',
-
+    margin: '$xs 0px',
     width: '65%',
-
+    alignSelf: 'center',
 })
 
 const ContactFormLabel = styled('label', {
-
     fontFamily: theme.ContactForm.Label.Font.Family,
     fontSize: theme.ContactForm.Label.Font.Size,
     fontWeight: '$semibold',
     lineHeight: theme.ContactForm.Label.LineHeight,
     letterSpacing: theme.ContactForm.Label.LetterSpacing,
-
-    // fontFamily: '$default',
-    // fontSize: '$xs',
-    // fontWeight: '$semibold',
-    // lineHeight: '$s',
-    // letterSpacing: '$wide',
-    // textAlign: 'left'
 })
 
 const HeadingLight = styled('h1', {
@@ -70,25 +61,22 @@ const Heading = styled('h1', {
     letterSpacing: theme.ContactForm.H1.LetterSpacing,
     fontWeight: '$light',
 
-    textAlign: 'center',
-
-    // display: 'flex',
-    // justifyContent: 'center',
-    // marginLeft: 'auto',
-    // marginRight: 'auto',
-    // flexDirection: 'row',
-
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    padding: '$m 0px $s',
     width: '100%',
 })
+/**
+ * display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: flex-end;
+padding: 24px 0px 16px;
+ */
 
-const InputLayout = styled('div', {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    width: '85%',
 
-})
 
 type Props = {
     className?: string;
@@ -98,20 +86,53 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
 
     /** TODO:
      * - align labels to the left 
-     * - input width 
      * - align button to the right 
      */
 
     const ContactFormLayout = styled('div', {
-        width: '85%',
+        // width: '85%',
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+
     })
 
-    const ButtonLayout = styled('div', {
+    const InputFieldsLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        width: '49%',
+    })
+
+    const InputFieldLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        margin: '$m 0px',
+        width: '100%',
+    })
+
+    const ButtonsLayout = styled('div', {
         display: 'flex',
         flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-start',
+        margin: '$m 0px',
+
+        '> button': {
+            marginRight: '10px',
+        },
     })
+    // const ButtonLayout = styled('div', {
+    //     margin: '0px 10px',
+    //     display: 'flex',
+    //     flexDirection: 'row',
+    //     justifyContent: 'flex-end',
+    //     alignItems: 'flex-start',
+    //     padding: '$x $m',
+    // })
 
     return (
         <ContactFormLayout className={className}>
@@ -120,21 +141,35 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
                 <HeadingStrong>zusammen arbeiten!</HeadingStrong>
             </HeadingLayout> */}
             <Heading>lass uns zusammen arbeiten!</Heading>
-            <InputLayout>
-                <ContactFormLabel>Name</ContactFormLabel>
-                <FormInput placeholder="Name"></FormInput>
+            <InputFieldsLayout>
+                <InputFieldLayout>
+                    <ContactFormLabel>Name</ContactFormLabel>
+                    <FormInput placeholder="Name"></FormInput>
+                </InputFieldLayout>
 
-                <ContactFormLabel>EMail</ContactFormLabel>
-                <FormInput placeholder="EMail"></FormInput>
+                <InputFieldLayout>
+                    <ContactFormLabel>EMail</ContactFormLabel>
+                    <FormInput placeholder="EMail"></FormInput>
+                </InputFieldLayout>
 
-                <ContactFormLabel>Nachricht</ContactFormLabel>
-                <FormInput placeholder="Hallo! Ich wollte euch nur mal sagen.."></FormInput>
+                <InputFieldLayout>
+                    <ContactFormLabel>Nachricht</ContactFormLabel>
+                    <FormInput placeholder="Hallo! Ich wollte euch nur mal sagen.."></FormInput>
+                </InputFieldLayout>
 
-                <ButtonLayout>
+                <ButtonsLayout>
                     <Button variant={'tertiary'}>Abbrechen</Button>
                     <Button variant={'primaryRed'}>Senden</Button>
-                </ButtonLayout>
-            </InputLayout>
+                </ButtonsLayout>
+                {/* <ButtonsLayout>
+                    <ButtonLayout>
+                        
+                    </ButtonLayout>
+                    <ButtonLayout>
+                        
+                    </ButtonLayout>
+                </ButtonsLayout> */}
+            </InputFieldsLayout>
         </ContactFormLayout>
 
 
