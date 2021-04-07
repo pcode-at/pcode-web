@@ -1,4 +1,3 @@
-import { url } from 'node:inspector';
 import React from 'react';
 import BubbleSvg from '../assets/bubble.svg?sprite';
 import { styled } from '../stitches.config';
@@ -18,19 +17,19 @@ export const BubblePortraitAndName: React.FC<Props> = ({
     name = 'Joe Doe',
     position = 'Chief Anonymous Officer',
     // width = '45%',
-    width = '228px',
+    width = '344px',
 }) => {
 
     let BubblePortraitAndNameLayout = styled('div', {
         display: 'flex',
         flexDirection: 'column',
         position: 'relative', 
-        width: width,       
-        height: '344px',   
+        width: width,         
     })
 
     let BubblePortraitLayout = styled('div', {
-        // width: '228px',
+        // width: '66%',
+
 
     })
 
@@ -57,6 +56,7 @@ export const BubblePortraitAndName: React.FC<Props> = ({
         padding: '$l 0px 0px',      
         textAlign: 'center',
         width: '100%',
+
         '&>p': {
             alignItems: 'flex-start',
             flexDirection: 'row',

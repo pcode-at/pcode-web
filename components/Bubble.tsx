@@ -1,11 +1,8 @@
 import React from 'react';
-import { Box } from 'rebass';
 import BubbleSvg from '../assets/bubble.svg?sprite';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
-// import { DeprecatedColor } from '../DeprecatedColor.enum'; // from old bubble version 
 import { styled } from '../stitches.config';
 import { theme } from '../theme';
-import { themeDeprecated} from '../themeDeprecated';
 
 type Props = {
     width?: string;
@@ -13,7 +10,8 @@ type Props = {
 };
 
 export const BubbleBlank: React.FC<Props> = ({
-    width = '45%',
+    // width = '45%',
+    width = '570px',
     color = theme.Bubble.Background.Color.Blue,
 }) => {
 
@@ -39,12 +37,6 @@ type Props2 = {
     color?: DeprecatedColor;
     layout?: "shifted" | "centered";
 }
-
-// type Props = {
-//     width?: string;
-//     color?: DeprecatedColor;
-//     layout?: "shifted" | "centered";
-// };
 
 export const BubbleDeprecated: React.FC<Props2> = ({
     width = "100%",

@@ -1,5 +1,4 @@
 import React from 'react';
-import { width } from 'styled-system';
 import BubbleSvg from '../static/bubble.svg?sprite';
 import { styled } from '../stitches.config';
 import { theme } from '../theme';
@@ -13,21 +12,21 @@ type Props = {
 export const BubbleImage: React.FC<Props> = ({
     color = theme.Bubble.Background.Color.Blue,
     imageSource = '../static/stock/stock01.jpg',
-    width = '55%',
-    // width = '570px', 
-    
+    // width = '45%',
+    width = '570px',
 }) => {
 
     let BubbleImageLayout = styled('div', {
-        width: width,
-        position: 'relative',
         display: 'flex',
+        position: 'relative',
+        width: width,
         
     })
 
     let BubbleLayout = styled('div', {
-        width: '100%',
         position: 'relative',
+        width: '100%',
+
     })
 
     let Bubble = styled(BubbleSvg, {
@@ -37,21 +36,19 @@ export const BubbleImage: React.FC<Props> = ({
     })
 
     let ImageLayout = styled('div', {
-        width: '100%',
         position: 'absolute',
-        // display: 'flex',
         top: '33px',
-        
+        width: '100%',
     })
 
     let Image = styled('img', {
         maskImage: `url(${'../static/bubble.svg'})`,
         maskPosition: 'top',
         maskRepeat: 'no-repeat',
-        maskSize: theme.Bubble.Image.Mask.Size,
-        width: '100%',   
+        maskSize: theme.Bubble.Image.Mask.Size,   
         position: 'relative',    
         scale: 'crop',
+        width: '100%',
 
     })
 

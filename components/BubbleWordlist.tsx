@@ -9,7 +9,8 @@ type Props = {
 };
 
 export const BubbleWordlist: React.FC<Props> = ({
-    width = '45%',
+    // width = '45%',
+    width = '570px',
     color = theme.Bubble.Background.Color.Blue,
 }) => {
 
