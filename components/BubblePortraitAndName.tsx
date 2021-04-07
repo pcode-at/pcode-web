@@ -38,6 +38,7 @@ export const BubblePortraitAndName: React.FC<Props> = ({
         position: 'absolute',
         transform: 'rotateZ(-195deg)',
         width: theme.Bubble.Portrait.Background.Width,
+        // width: '100%',
     })
 
     let Portrait = styled('img', {

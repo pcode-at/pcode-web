@@ -56,35 +56,34 @@ const MainPage = () => (
         <Navbar/>
 
         <StyledHeading>Bubble Blank</StyledHeading>
-        <BubbleBlank color={theme.Bubble.Background.Color.Green}/>
-        <BubbleBlank color={theme.Bubble.Background.Color.Blue}/>
+        <BubbleBlank/>
+        <BubbleBlank width={'250px'} color={'primary'}/>
+        <BubbleBlank width={'200px'} color={'secondary'}/>
+        <BubbleBlank width={'150px'} color={'tertiary'}/>
 
         <StyledHeading>Bubble Wordlist</StyledHeading>
         <BubbleWordlist color={theme.Bubble.Background.Color.Red}/>
 
         <StyledHeading>Bubble Image</StyledHeading>
-        <BubbleImage/>
-        {/* <BubbleImage 
-            color={theme.Bubble.Background.Color.Green} 
-            imageSource={'../static/stock/stock06.jpg'}
-        />
-        <BubbleImage 
-            color={theme.Bubble.Background.Color.Red} 
-            imageSource={'../static/stock/stock05.jpg'}
-        /> */}
+        <BubbleImage position={'left'}/>
+        <BubbleImage width={'230px'}/>
+        <BubbleImage color={'primary'} width={'100px'}/> 
 
-
+         
         <StyledHeading>Bubble Portrait</StyledHeading>
         <BubblePortrait/>
         <BubblePortrait
-            color={theme.Bubble.Background.Color.Red} 
-            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
-        />
-        <BubblePortrait
-            color={theme.Bubble.Background.Color.Blue} 
+            color={'primary'}
+            width={'200px'}
             imageSource={'../static/memberPortraits/kotek_michael.jpg'}
         />
+        <BubblePortrait
+            color={'secondary'} 
+            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
+        />
 
+
+        {/*
         <StyledHeading>Bubble Portrait and Name</StyledHeading>
         <BubblePortraitAndName/>
         <BubblePortraitAndName 

@@ -9,24 +9,41 @@ type Props = {
     color?: string;
 };
 
+const Bubble = styled(BubbleSvg, {
+    width: '100%',
+    variants: {
+        color: {
+            primary: {
+                color: theme.Bubble.Background.Color.Red,
+            },
+            secondary: {
+                color: theme.Bubble.Background.Color.Blue,
+            },
+            tertiary: {
+                color: theme.Bubble.Background.Color.Green,
+            },
+            white: {
+                color: theme.Bubble.Background.Color.White,
+            }
+        }
+    },
+    defaultVariant: {
+        color: theme.Bubble.Background.Color.Blue,
+    }
+})
+
 export const BubbleBlank: React.FC<Props> = ({
-    // width = '45%',
     width = '570px',
-    color = theme.Bubble.Background.Color.Blue,
+    color = 'secondary',
 }) => {
 
     let BubbleLayout = styled('div', {
         width: width,
     })
 
-    let Bubble = styled(BubbleSvg, {
-        width: '100%',
-        color: color,
-    })
-
     return (
         <BubbleLayout>
-            <Bubble/>
+            <Bubble color={color}/>
         </BubbleLayout>
     );
 };
