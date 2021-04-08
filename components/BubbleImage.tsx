@@ -4,7 +4,6 @@ import { BubbleBlank as Bubble } from './Bubble';
 import { styled } from '../stitches.config';
 import { theme } from '../theme';
 
-
 type Props = {
     width?: string;
     color?: string;
@@ -12,7 +11,6 @@ type Props = {
     position?: 'left' | 'right';
 };
 
-// TODO: implement "right" variant for BubblePortrait
 export const BubbleImage: React.FC<Props> = ({
     color = 'secondary',
     imageSource = '../static/stock/stock01.jpg',
@@ -27,25 +25,22 @@ export const BubbleImage: React.FC<Props> = ({
     })
 
     let BubbleLayout = styled('div', {
-        variants: {
-            positioning: {
-                left: {
-                    position: 'relative',
-                    width: '100%',
-                },
-                right: {
+        position: 'relative',
+        // variants: {
+        //     positioning: {
+        //         left: { },
+        //         right: {
+        //             // right: `calc(28 / 228 * ${width})`,
+        //             // bottom: `calc(8 / 228 * ${width})`,
                     
-                }
-            },
-        }, 
-        defaultVariant: {
-            positioning: {
-                left: {
-                    position: 'relative',
-                    width: '100%',
-                }
-            },
-        }
+        //         }
+        //     }
+        // },
+        // defaultVariant: {
+        //     positioning: {
+        //         left: { },
+        //     }
+        // }
     })
 
     let ImageLayout = styled('div', {
@@ -58,8 +53,7 @@ export const BubbleImage: React.FC<Props> = ({
                 },
                 right: {
                     position: 'absolute',
-                    top: `calc( ((648 / 570) * ${width}) * (32.66 / 648))`,           
-                    left: `calc( 15 / 228 * ${width}) `,
+                    left: `calc(15 / 228 * ${width})`,
                 },
             }
         },
@@ -74,7 +68,6 @@ export const BubbleImage: React.FC<Props> = ({
                 }
             }
         }
-
     })
 
     let BubbleMask = styled('img', {
@@ -82,17 +75,18 @@ export const BubbleImage: React.FC<Props> = ({
         maskRepeat: 'no-repeat',
         position: 'relative',    
         scale: 'crop',
-        width: '100%',
 
         variants: {
             positioning: {
                 left: {
                     maskPosition: 'left top',
                     maskSize: `calc(${width}*0.9)`, 
+                    width: `calc((531.3 / 570) * ${width})`,
                 },
                 right: {
                     maskPosition: 'right top',
-                    maskSize: `calc(${width}*0.93)`, 
+                    maskSize: `calc(${width}*0.93)`,
+                    width: `calc((213 / 228) * ${width})`,  
                 },
             },
         },
@@ -101,7 +95,26 @@ export const BubbleImage: React.FC<Props> = ({
                 left: {
                     maskPosition: 'left top',
                     maskSize: `calc(${width}*0.9)`, 
+                    width: `calc((531.3 / 570) * ${width})`,
                 },   
+            }
+        }
+    })
+
+    let BubbleBackground = styled(Bubble, {
+        variants: {
+            positioning: {
+                left: { }, 
+                right: {
+                    // width: '200px',
+                    // width: `calc((200/228) * ${width})`,
+                    // width: `calc(${width} * 0.87)`,
+                },
+            }
+        },
+        defaultVariant: {
+            positioning: {
+                left: { },
             }
         }
     })
@@ -109,15 +122,18 @@ export const BubbleImage: React.FC<Props> = ({
     return (
         <BubbleImageLayout>
             <BubbleLayout>
-                <Bubble 
-                    width={width} 
-                    color={color}
+                <Bubble
+                    color={color}    
+                    width={width}
                 />
             </BubbleLayout>
-            {/* <Bubble 
-                width={width} 
-                color={color}
-            /> */}
+            {/* <BubbleLayout positioning={position}>
+                <BubbleBackground 
+                    color={color}    
+                    width={width}
+                    positioning={position}
+                />
+            </BubbleLayout> */}
             <ImageLayout positioning={position}>
                 <BubbleMask 
                     src={imageSource} 

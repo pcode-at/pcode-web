@@ -24,23 +24,6 @@ export const BubblePortrait: React.FC<Props> = ({
         width: width,    
     })
 
-    // let Bubble = styled(BubbleSvg, {
-    //     color: color, 
-    //     position: 'absolute',
-    //     transform: 'rotateZ(-195deg)',
-    //     width: theme.Bubble.Portrait.Background.Width,
-    // })
-
-    // let BubbleImage = styled('img', {
-    //     alt: '',
-    //     maskImage: `url(${'../static/bubble.svg'})`,
-    //     maskPosition: 'top',
-    //     maskRepeat: 'no-repeat',
-    //     maskSize: theme.Bubble.Portrait.Mask.Size,
-    //     position: 'relative',
-    //     width: '100%',
-    // })
-
     return (
         <BubbleLayout>
             <BubbleImage 
@@ -48,7 +31,6 @@ export const BubblePortrait: React.FC<Props> = ({
                 width={width}
                 imageSource={imageSource} 
                 position={position}
-                
             />
         </BubbleLayout>
     );
