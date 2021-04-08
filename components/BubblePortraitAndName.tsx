@@ -1,23 +1,22 @@
 import React from 'react';
-import BubbleSvg from '../assets/bubble.svg?sprite';
 import { styled } from '../stitches.config';
 import { theme } from '../theme';
+import { BubblePortrait } from './BubblePortrait';
 
 type Props = {
     width?: string;
     color?: string;
     imageSource?: string;
     name?: string;
-    position?: string;
+    position?: string; // description of the person's position (e.g. developer) ; do not confuse with 'positioning' in BubbleImage and BubblePortrait 
 };
 
 export const BubblePortraitAndName: React.FC<Props> = ({
-    color = theme.Bubble.Background.Color.Green,
+    color = 'secondary',
     imageSource = '../static/default-member.png',
     name = 'Joe Doe',
     position = 'Chief Anonymous Officer',
-    // width = '45%',
-    width = '344px',
+    width = '288px',
 }) => {
 
     let BubblePortraitAndNameLayout = styled('div', {
@@ -28,32 +27,13 @@ export const BubblePortraitAndName: React.FC<Props> = ({
     })
 
     let BubblePortraitLayout = styled('div', {
-        // width: '66%',
-
-
-    })
-
-    let Bubble = styled(BubbleSvg, {
-        color: color, 
-        position: 'absolute',
-        transform: 'rotateZ(-195deg)',
-        width: theme.Bubble.Portrait.Background.Width,
-        // width: '100%',
-    })
-
-    let Portrait = styled('img', {
-        alt: '',
-        maskImage: `url(${'../static/bubble.svg'})`,
-        maskPosition: 'top',
-        maskRepeat: 'no-repeat',
-        maskSize: theme.Bubble.Portrait.Mask.Size,
-        position: 'relative',
-        width: '100%',
+        // width: `calc((228 / 288) * ${width})`,
+        // marginLeft: 'calc(50% - 228px/2)', 
+        // paddingLeft: 'calc(50% - 228px/2)', 
+        width: width,
     })
 
     let TextLayout = styled('div', {
-        alignItems: 'center',
-        display: 'block',
         padding: '$l 0px 0px',      
         textAlign: 'center',
         width: '100%',
@@ -70,7 +50,7 @@ export const BubblePortraitAndName: React.FC<Props> = ({
     let Name = styled('p', {
         color: theme.Bubble.Portrait.Name.FullName.Font.Color,
         fontFamily: theme.Bubble.Portrait.Name.FontFamily,
-        fontSize: '1.5rem',
+        fontSize: '24px',
         fontWeight: '$medium',
         lineHeight: theme.Bubble.Portrait.Name.LineHeight,
         marginBottom: '$xs',
@@ -79,7 +59,7 @@ export const BubblePortraitAndName: React.FC<Props> = ({
     let Position = styled('p', {
         color: theme.Bubble.Portrait.Name.Position.Font.Color,
         fontFamily: theme.Bubble.Portrait.Name.FontFamily,
-        fontSize: '1.5rem',
+        fontSize: '24px',
         fontWeight: '$light',
         lineHeight: theme.Bubble.Portrait.Name.LineHeight,
     })
@@ -87,8 +67,11 @@ export const BubblePortraitAndName: React.FC<Props> = ({
     return (
         <BubblePortraitAndNameLayout>
             <BubblePortraitLayout>
-                <Bubble/>
-                <Portrait src={imageSource}/>
+                <BubblePortrait
+                    imageSource={imageSource}
+                    color={color}
+                    width={width}
+                />
             </BubblePortraitLayout>
             <TextLayout>
                 <Name>{name}</Name>

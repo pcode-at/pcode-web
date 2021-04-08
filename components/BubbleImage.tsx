@@ -1,8 +1,6 @@
 import React from 'react';
-// import { BubbleSvg as Bubble } from '../static/bubble.svg?sprite';
 import { BubbleBlank as Bubble } from './Bubble';
 import { styled } from '../stitches.config';
-import { theme } from '../theme';
 
 type Props = {
     width?: string;

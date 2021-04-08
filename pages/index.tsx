@@ -74,116 +74,36 @@ const MainPage = () => (
         <BubblePortrait/>
         <BubblePortrait
             color={'primary'}
-            width={'200px'}
+            width={'175px'}
             imageSource={'../static/memberPortraits/kotek_michael.jpg'}
         />
         <BubblePortrait
             color={'secondary'} 
+            width={'99px'}
+            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
+        />
+        <BubblePortrait
+            color={'secondary'} 
+            width={'265px'}
             imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
         />
 
-
-        {/*
         <StyledHeading>Bubble Portrait and Name</StyledHeading>
-        <BubblePortraitAndName/>
-        <BubblePortraitAndName 
-            imageSource={'../static/stock/stock01.jpg'}
-        />
         <BubblePortraitAndName
-            color={theme.Bubble.Background.Color.Blue} 
-            imageSource={'../static/memberPortraits/kotek_michael.jpg'}
-            name={'Michael Kotek'}
-            position={'web developer'}
-        />
-        <BubblePortraitAndName
-            color={theme.Bubble.Background.Color.Red} 
             imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
-            name={'Christoph Pernsteiner'}
-            position={'CEO . founder'}
         />
-        
-        <StyledHeading>Buttons</StyledHeading>
-        <Button color={'primaryFilled'}>Primary Filled Button</Button>
-        <Button color={'primaryOutlined'}>Primary Outlined Button</Button>
-        <Button color={'primaryFilled'} disabled={true}>Inactive Primary Filled Button</Button>
-        <br/>
-        <Button color={'secondaryFilled'}>Secondary Filled Button</Button>
-        <Button color={'secondaryOutlined'}>Secondary Outlined</Button>
-        <Button color={'secondaryFilled'} disabled={true}> Inactive Secondary Filled Button</Button>
-        <br/>
-        <Button color={'tertiary'}>Tertiary Button</Button>
-
-        {/* <StyledHeading>ImageBubble : Overlay</StyledHeading>
-        <StyledImageBubbleLayout
-            imageSource="../static/pernsteiner_christoph.png"
-            color={DeprecatedColor.SecondaryDark}
-            variant={"overlay"}
+        <BubblePortraitAndName
+            color={'tertiary'}
+            width={'235.33px'}
+            name={'Jeanette Doe'}
+            position={'amazing web developer'}
         />
-
-        <StyledHeading>ImageBubble : Shifted</StyledHeading>
-        <StyledImageBubbleLayout
-            imageSource="../static/pernsteiner_christoph.png"
-            color={DeprecatedColor.SecondaryLight}
-            variant={"shifted"}
+        <BubblePortraitAndName
+            color={'primary'}
+            width={'200px'}
+            name={'John Doe'}
+            position={'great web developer'}
         />
-
-        <StyledHeading>Bubble</StyledHeading>
-        <StyledBubbleBox display="flex">
-            <Bubble />
-            <Bubble color={DeprecatedColor.SecondaryLight} layout={"centered"}/>
-            <Bubble width="80%" />
-            <Bubble color={DeprecatedColor.SecondaryDark} layout={"centered"}/>
-        </StyledBubbleBox>
-
-        <StyledHeading>PersonBubble : Overlay</StyledHeading>
-        <PersonBubble
-            color = {DeprecatedColor.Primary}
-            imageSource = "../static/pernsteiner_christoph.png"
-            personName = "Christoph Pernsteiner"
-            personPosition = "CEO . founder"
-            variant = "overlay"
-        />
-
-        <StyledHeading>PersonBubble: Shifted</StyledHeading>
-        <PersonBubble
-            color = {DeprecatedColor.SecondaryLight}
-            imageSource = "../static/kotek_michael.png"
-            personName = "Michael Kotek"
-            personPosition = "frontend developer"
-            variant = "shifted"
-        /> */}
-
-        <StyledHeading>WorkingAtPcode</StyledHeading>
-        <WorkingAtPcodeSection />
-
-        {/* <StyledHeading>PersonBubble</StyledHeading>
-        <PersonBubble
-            imageSource="../static/pernsteiner_christoph.png"
-            color={DeprecatedColor.SecondaryLight}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-        /> */}
-
-        {/* <StyledHeading>Statement</StyledHeading>
-        <Statement
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-            imagePath={'../static/pernsteiner_christoph.png'}
-        >
-            'this project was a great challenge, we learned a lot and it was a
-            journey with such an amazing customer!'
-        </Statement>
-
-        <StyledHeading>Statement2</StyledHeading>
-        <Statement2
-            personName={'Nico Peham'}
-            personPosition={'tech lead'}
-            color={DeprecatedColor.SecondaryLight}
-            imagePath={'../static/pernsteiner_christoph.png'}
-        >
-            'we are adapting to new challenges by developing and investing in
-            our people'
-        </Statement2> */}
 
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
@@ -194,14 +114,6 @@ const MainPage = () => (
             rightText="stands for"
             variant="Big"
         />
-
-        {/* <StyledHeading>Bubble</StyledHeading>
-        <Bubble />
-        <Bubble color={DeprecatedColor.SecondaryLight} />
-        <Bubble width="80%" />
-         */}
-        <BubbleDeprecated width="50%" color={DeprecatedColor.SecondaryDark} />
-
 
         <StyledHeading>CopyText</StyledHeading>
         <StyledCopyText color={DeprecatedColor.SecondaryLight} fontStyle={FontStyle.Light}>
