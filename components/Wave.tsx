@@ -9,8 +9,11 @@ type Props = {
     width?: string;
     color?: string;
     size?: "small" | "medium" | "large";
+    // TODO: variant (empty, quote, cta)
+    // TODO: contentText (optional; only for quote and cta)
 };
 
+// TODO: create design tokens in theme 
 export const Wave: React.FC<Props> = ({ 
     className,
     width = '100%',
@@ -22,7 +25,8 @@ export const Wave: React.FC<Props> = ({
         width: width,
     })
 
-    function getWaveComponent(size) {
+    // returns the correct 'background' wave component based on given size
+    function getBaseWaveComponent(size) {
         switch(size){
             case 'small':
                 return <WaveS color={color}/>;
@@ -35,7 +39,7 @@ export const Wave: React.FC<Props> = ({
 
     return(
         <WaveLayout className={className}>
-            {getWaveComponent(size)}
+            {getBaseWaveComponent(size)}
         </WaveLayout>
 
     );

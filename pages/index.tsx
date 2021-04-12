@@ -52,14 +52,21 @@ const MainPage = () => (
         <Navbar/>
 
         <StyledHeading>wave-s</StyledHeading>
-        <Wave/>
-        <Wave color={'secondary'}/>
+        <Wave size={'small'} color={'primary'}/>
+
+        <StyledHeading>wave-s-quote</StyledHeading>
+        <Wave 
+            size={'small'} 
+            color={'primary'}
+            // variant={'quote'}
+            // contentText={''}
+        />
 
         <StyledHeading>wave-m</StyledHeading>
-        <Wave size={'medium'}/>
+        <Wave size={'medium'} color={'secondary'}/>
 
         <StyledHeading>wave-l</StyledHeading>
-        <Wave size={'large'}/>
+        <Wave size={'large'} color={'tertiary'}/>
 
         <StyledHeading>Button</StyledHeading>
         <Button variant={'primaryRed'}>Primary Red</Button>
