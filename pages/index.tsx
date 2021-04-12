@@ -20,7 +20,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
-import { Wave } from '../components/Wave';
+import { WaveDeprecated } from '../components/WaveDeprecated';
 import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
@@ -36,6 +36,7 @@ import { PersonBubble } from '../components/PersonBubble';
 import { Button } from '../components/Button';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
+import { Wave } from '../components/Wave';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -49,6 +50,16 @@ const MainPage = () => (
         /> */}
 
         <Navbar/>
+
+        <StyledHeading>wave-s</StyledHeading>
+        <Wave/>
+        <Wave color={'secondary'}/>
+
+        <StyledHeading>wave-m</StyledHeading>
+        <Wave size={'medium'}/>
+
+        <StyledHeading>wave-l</StyledHeading>
+        <Wave size={'large'}/>
 
         <StyledHeading>Button</StyledHeading>
         <Button variant={'primaryRed'}>Primary Red</Button>
@@ -180,7 +191,7 @@ const MainPage = () => (
         <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>Wave</StyledHeading>
-        <Wave variant={'Top'} color={DeprecatedColor.Primary} shape={1}></Wave>
+        <WaveDeprecated variant={'Top'} color={DeprecatedColor.Primary} shape={1}></WaveDeprecated>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
