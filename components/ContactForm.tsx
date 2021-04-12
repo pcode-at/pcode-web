@@ -15,7 +15,7 @@ const FormInput = styled('input', {
     lineHeight: theme.ContactForm.Input.LineHeight,
 
     margin: '$xs 0px',
-    width: '65%',
+    width: '49%',
     alignSelf: 'center',
 })
 
@@ -63,22 +63,19 @@ const Heading = styled('h1', {
     justifyContent: 'center',
     alignItems: 'flex-end',
     padding: '$m 0px $s',
-    width: '100%',
+    // width: '100%',
+    width: '85%',
 })
 
 type Props = {
     className?: string;
 };
 
+// TODO: align buttons correctly ; currently they're centered
+// TODO: correct width of input fields ; currently they're too broad
 export const ContactForm: React.FC<Props> = ({ className }) => {
 
-    /** TODO:
-     * - align labels 
-     * - align button to the right 
-     */
-
     const ContactFormLayout = styled('div', {
-        // width: '85%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
@@ -89,17 +86,19 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
     const InputFieldsLayout = styled('div', {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-end',
         alignItems: 'center',
-        width: '100%',
+        width: '85%',
     })
 
     const InputFieldLayout = styled('div', {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-start',
-        // margin: '$m 0px',
-        margin: '32px 0px',
+        alignItems: 'center',
+        margin: '$m 0px',
+        width: '100%',
+    })
+
+    const LabelLayout = styled('div', {
         width: '49%',
     })
 
@@ -113,6 +112,7 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
         '> button': {
             marginRight: '10px',
         },
+
     })
 
     return (
@@ -120,17 +120,23 @@ export const ContactForm: React.FC<Props> = ({ className }) => {
             <Heading>lass uns zusammen arbeiten!</Heading>
             <InputFieldsLayout>
                 <InputFieldLayout>
-                    <ContactFormLabel>Name</ContactFormLabel>
+                    <LabelLayout>
+                        <ContactFormLabel>Name</ContactFormLabel>
+                    </LabelLayout>
                     <FormInput/>
                 </InputFieldLayout>
 
                 <InputFieldLayout>
-                    <ContactFormLabel>EMail</ContactFormLabel>
+                    <LabelLayout>
+                        <ContactFormLabel>EMail</ContactFormLabel>
+                    </LabelLayout>
                     <FormInput/>
                 </InputFieldLayout>
 
                 <InputFieldLayout>
-                    <ContactFormLabel>Nachricht</ContactFormLabel>
+                    <LabelLayout>
+                        <ContactFormLabel>Nachricht</ContactFormLabel>
+                    </LabelLayout>
                     <FormInput/>
                 </InputFieldLayout>
 
