@@ -149,9 +149,150 @@ export const theme = {
             }
         }
 
+    },
+
+    // ----------  WAVE ----------
+    Wave: {
+        Empty: {
+            Small: {
+                Color: {
+                    Red: '$red500',
+                    Blue: '$blue500',
+                    Green: '$green500',
+                    White: '$white',
+                },
+            },
+            Medium: {
+                Color: {
+                    Red: '$red500',
+                    Blue: '$blue500',
+                    Green: '$green500',
+                    White: '$white',
+                },
+            },
+            Large: {
+                Color: {
+                    Red: '$red500',
+                    Blue: '$blue500',
+                    Green: '$green500',
+                },
+            },
+        },
+
+        // Font.Color does NOT describe the actual color, but the background color. 
+        // > Why? The font color depends on the background color
+        //          -> no arbitrary choices/combinations allowed
+        // same with button variants
+        Quote: {
+            Small: {
+                Color: {
+                    Blue: '$blue500',
+                    Green: '$green500',
+                    Red: '$red500',
+                },
+                Font: {
+                    Color: {
+                        Blue: '$white',
+                        Green: '$blue500',
+                        Red: '$blue500',
+                    },
+                    Family: '$default',
+                    Size: '$xl',
+                    Weight: {
+                        Light: '$light',
+                        Medium: '$medium'
+                    },
+                },
+                LineHeight: '$xl',
+            },
+            Large: {
+                Color: {
+                    Blue: '$blue500',
+                    Green: '$green500',
+                    Red: '$red500',
+                },
+                Font: {
+                    Color: {
+                        Blue: '$white',
+                        Green: '$blue500',
+                        Red: '$white',
+                    },
+                    Family: '$default',
+                    Size: '$xxl',
+                    Weight: {
+                        Light: '$light',
+                        Medium: '$medium'
+                    },
+                },
+                LineHeight: '$xxl',
+            },
+        },
+
+        CallToAction: {
+            Medium: {
+                Button: 'primaryWhite',
+                Bubble: {
+                    Color: '$green500',
+                },
+                Color: '$blue500',
+                Font: {
+                    Color: {
+                        Blue: '$green500',
+                    },
+                    Family: '$default',
+                    Size: '$xl',
+                    Weight: {
+                        Light: '$light',
+                        Medium: '$medium',
+                    },
+                },
+                LineHeight: '$xl',
+            },
+            Large: {
+                Button: {
+                    Blue: 'primaryRed',
+                    Green: 'primaryBlue',
+                    Red: 'primaryWhite',
+                },
+                Color: {
+                    Red: '$red500',
+                    Blue: '$blue500',
+                    Green: '$green500',
+                },
+                Header: {
+                    Font: {
+                        Color: {
+                            Blue: '$white',
+                            Green: '$blue500',
+                            Red: '$blue500',
+                        },
+                        Family: '$default',
+                        Size: '$xxl',
+                        Weight: {
+                            Light: '$light',
+                            Medium: '$medium',
+                        },
+                    },
+                    LetterSpacing: '$tight',
+                    LineHeight: '$xxl',
+                },
+                Body: {
+                    Font: {
+                        Color: {
+                            Blue: '$white',
+                            Green: '$blue500',
+                            Red: '$blue500',
+                        },
+                        Family: '$default',
+                        Size: '$m',
+                        Weight: '$regular',
+                    },
+                    LineHeight: '$m',
+                },
+            }
+        },      
     }
 
-    // ---------- ----------
     // ---------- ----------
     // ---------- ----------
 
