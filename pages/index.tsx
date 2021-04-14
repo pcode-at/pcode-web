@@ -37,6 +37,7 @@ import { Button } from '../components/Button';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
 import { Wave } from '../components/Wave';
+import { WaveQuote } from '../components/WaveQuote';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -51,22 +52,17 @@ const MainPage = () => (
 
         <Navbar/>
 
-        <StyledHeading>wave-s</StyledHeading>
-        <Wave size={'small'} color={'primary'}/>
-
         <StyledHeading>wave-s-quote</StyledHeading>
-        <Wave 
-            size={'small'} 
-            color={'primary'}
-            // variant={'quote'}
-            // contentText={''}
-        />
+        <WaveQuote/>
 
+        <StyledHeading>wave-s</StyledHeading>
+        <Wave size={'small'} color={'red'}/>
+        
         <StyledHeading>wave-m</StyledHeading>
-        <Wave size={'medium'} color={'secondary'}/>
+        <Wave size={'medium'} color={'blue'}/>
 
         <StyledHeading>wave-l</StyledHeading>
-        <Wave size={'large'} color={'tertiary'}/>
+        <Wave size={'large'} color={'green'}/>
 
         <StyledHeading>Button</StyledHeading>
         <Button variant={'primaryRed'}>Primary Red</Button>

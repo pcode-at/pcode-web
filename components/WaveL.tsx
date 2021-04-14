@@ -7,17 +7,17 @@ export const WaveL = styled(WaveLarge, {
     width: '100%',
     variants: {
         color: {
-            primary: {
-                color: theme.Color.Primary.Default,
+            blue: {
+                color: theme.Wave.Color.Blue,
             },
-            secondary: {
-                color: theme.Color.Secondary.Default,
+            green: {
+                color: theme.Wave.Color.Green,
             },
-            tertiary: {
-                color: theme.Color.Tertiary.Default,
+            red: {
+                color: theme.Wave.Color.Red,
             },
             white: {
-                color: theme.Color.White,
+                color: theme.Wave.Color.White,
             },
         }
     },

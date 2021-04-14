@@ -153,32 +153,12 @@ export const theme = {
 
     // ----------  WAVE ----------
     Wave: {
-        Empty: {
-            Small: {
-                Color: {
-                    Red: '$red500',
-                    Blue: '$blue500',
-                    Green: '$green500',
-                    White: '$white',
-                },
-            },
-            Medium: {
-                Color: {
-                    Red: '$red500',
-                    Blue: '$blue500',
-                    Green: '$green500',
-                    White: '$white',
-                },
-            },
-            Large: {
-                Color: {
-                    Red: '$red500',
-                    Blue: '$blue500',
-                    Green: '$green500',
-                },
-            },
+        Color: {
+            Red: '$red500',
+            Blue: '$blue500',
+            Green: '$green500',
+            White: '$white',
         },
-
         // Font.Color does NOT describe the actual color, but the background color. 
         // > Why? The font color depends on the background color
         //          -> no arbitrary choices/combinations allowed

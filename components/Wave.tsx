@@ -9,19 +9,17 @@ type Props = {
     width?: string;
     color?: string;
     size?: "small" | "medium" | "large";
-    // TODO: variant (empty, quote, cta)
-    // TODO: contentText (optional; only for quote and cta)
 };
 
-// TODO: create design tokens in theme 
+// TODO: use design tokens for colors, not 'regular' strings 
 export const Wave: React.FC<Props> = ({ 
     className,
     width = '100%',
-    color = 'tertiary',
+    color = 'red',
     size = 'small',
 }) => {
 
-    let WaveLayout = styled('div', {
+    let BaseLayout = styled('div', {
         width: width,
     })
 
@@ -38,12 +36,9 @@ export const Wave: React.FC<Props> = ({
     }
 
     return(
-        <WaveLayout className={className}>
+        <BaseLayout className={className}>
             {getBaseWaveComponent(size)}
-        </WaveLayout>
-
+        </BaseLayout>
     );
 
 }
-
-
