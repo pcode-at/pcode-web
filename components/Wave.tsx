@@ -21,6 +21,7 @@ export const Wave: React.FC<Props> = ({
 
     let BaseLayout = styled('div', {
         width: width,
+        position: 'relative',
     })
 
     // returns the correct 'background' wave component based on given size

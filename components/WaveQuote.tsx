@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from '../stitches.config';
 import { Wave } from '../components/Wave';
 import { theme } from '../theme';
+import { rootCertificates } from 'node:tls';
 
 // idea: 
 // * introduce WaveQuote as variant in Wave
@@ -23,15 +24,21 @@ type Props = {
 
 export const WaveQuote: React.FC<Props> = ({
     className,
-    contentText = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, ',
+    contentText = 'Unsere besondere Fähigkeit liegt darin, dass wir den Dingen auf den Grund gehen und mutige Entscheidungen treffen.',
     color = 'red',
     size = 'small',
     width = '100%',
+    // width = '1440px',
 }) => {
 
     let WaveQuoteLayout = styled('div', {
         width: width,
-        position: 'absolute',
+        position: 'relative',
+    })
+
+    let WaveLayout = styled('div', {
+        position: 'relative',
+        transform: 'rotate(180deg)',
     })
 
     let QuoteLayout = styled('div', {
@@ -39,13 +46,19 @@ export const WaveQuote: React.FC<Props> = ({
         flexDirection: 'row',
         alignItems: 'flex-start',
         padding: '80px 0px 0px',
+        
+        position: 'absolute',
+
         // width: `calc( (808/1440) * ${width} )`,
 
+        // transform: 'translate(-50%, -50%)',
         
     })
 
     let Quote = styled('p', {
+        // position: 'relative',
         // position: 'static',
+        // position: 'absolute',
         
         // top: '20.83%',
         // left: `calc(50% - 808px/2)`,
@@ -60,10 +73,10 @@ export const WaveQuote: React.FC<Props> = ({
             },
             size: {
                 small: {
-                    fontsize: theme.Wave.Quote.Small.Font.Size,
+                    fontSize: theme.Wave.Quote.Small.Font.Size,
                     fontFamily: theme.Wave.Quote.Small.Font.Family,
                     fontWeight: '$light', // TODO: 2 different weights used
-                    // lineHeight: theme.Wave.Quote.Small.LineHeight,
+                    lineHeight: theme.Wave.Quote.Small.LineHeight,
                 }
             },
         }
@@ -71,7 +84,9 @@ export const WaveQuote: React.FC<Props> = ({
 
     return (
         <WaveQuoteLayout className={className}>
-            <Wave color={color} size={size}/>
+            <WaveLayout>
+                <Wave color={color} size={size}/>
+            </WaveLayout>
             <QuoteLayout>
                 <Quote color={color} size={size}>
                     {contentText}
