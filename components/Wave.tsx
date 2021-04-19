@@ -11,7 +11,6 @@ type Props = {
     size?: "small" | "medium" | "large";
 };
 
-// TODO: use design tokens for colors, not 'regular' strings 
 export const Wave: React.FC<Props> = ({ 
     className,
     width = '100%',
