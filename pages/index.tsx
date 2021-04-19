@@ -54,9 +54,7 @@ const MainPage = () => (
         <Navbar/>
 
         <StyledHeading>wave-s-quote</StyledHeading>
-        <WaveQuote 
-            // width={'1440px'}
-        />
+        <WaveQuote/>
 
         <WaveQuote 
             color={'blue'} 
@@ -73,9 +71,9 @@ const MainPage = () => (
         />
 
         <StyledHeading>wave-l-cta</StyledHeading>
-        <WaveCTA
-            
-        />
+        <WaveCTA/>
+        <WaveCTA color={'blue'}/>
+        <WaveCTA color={'green'}/>
 
         <StyledHeading>wave-s</StyledHeading>
         <Wave size={'small'} color={'red'}/>
