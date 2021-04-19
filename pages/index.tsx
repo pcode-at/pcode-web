@@ -38,6 +38,7 @@ import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
 import { Wave } from '../components/Wave';
 import { WaveQuote } from '../components/WaveQuote';
+import { WaveCTA } from '../components/WaveCTA';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -53,7 +54,28 @@ const MainPage = () => (
         <Navbar/>
 
         <StyledHeading>wave-s-quote</StyledHeading>
-        <WaveQuote/>
+        <WaveQuote 
+            // width={'1440px'}
+        />
+
+        <WaveQuote 
+            color={'blue'} 
+            contentText={'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. '}
+            // width={'1440px'}
+        />
+        <WaveQuote 
+            color={'green'}
+            contentText={'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'}    
+            // width={'1440px'}
+        />
+        <WaveQuote 
+            size={'large'}
+        />
+
+        <StyledHeading>wave-l-cta</StyledHeading>
+        <WaveCTA
+            
+        />
 
         <StyledHeading>wave-s</StyledHeading>
         <Wave size={'small'} color={'red'}/>
