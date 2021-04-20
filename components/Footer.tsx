@@ -57,10 +57,12 @@ export const Footer: React.FC<Props> = ({ className }) => {
         fontSize: theme.Footer.TextArea.Font.Size,
         fontWeight: '$regular',
         lineHeight: theme.Footer.TextArea.LineHeight,
-        textDecoration: 'none',
+        textDecoration: theme.Footer.TextArea.TextDecoration.Default,
 
         '&:hover': {
-            textDecoration: 'underline',      
+            textDecoration: theme.Footer.TextArea.TextDecoration.Hover,
+            textDecorationThickness: theme.Footer.TextArea.TextDecorationThickness,
+            textUnderlineOffset: theme.Footer.TextArea.TextUnderlineOffset,
         }
 
     })
