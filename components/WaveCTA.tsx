@@ -44,11 +44,13 @@ export const WaveCTA: React.FC<Props> = ({
                     maskImage: `url(${'../static/wave/wave-m.svg?sprite'})`,
                     maskRepeat: 'no-repeat',
                     maskSize: 'cover', 
+                    maskPosition: 'top',
                 },
                 large: {
                     maskImage: `url(${'../static/wave/wave-l.svg?sprite'})`,
                     maskRepeat: 'no-repeat',
                     maskSize: 'cover', 
+                    maskPosition: 'bottom',
                 }
             }
         }
@@ -59,6 +61,7 @@ export const WaveCTA: React.FC<Props> = ({
         alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'column',
+        margin: '32px 0px', // ?? 
         paddingTop: `calc(80/1440 * ${width})`,
         paddingBottom: `calc(104/1440 * ${width})`,
         position: 'relative',
@@ -123,18 +126,10 @@ export const WaveCTA: React.FC<Props> = ({
                 },
             },
             size: {
-                // medium: { 
-                //     fontSize: theme.Wave.CallToAction.Medium.Font.Size,
-                //     fontWeight: '$regular',
-                //     lineHeight: theme.Wave.CallToAction.Medium.LineHeight,
-                //     // 'medium'-cta has different font color 
-                //     color: theme.Wave.CallToAction.Large.Body.Font.Color.Green,
-                // },
                 large: {
                     fontSize: theme.Wave.CallToAction.Large.Body.Font.Size,
                     fontWeight: '$regular',
                     lineHeight: theme.Wave.CallToAction.Large.Body.LineHeight,
-                    // letterSpacing: theme.Wave.CallToAction.Large.Body.LetterSpacing,
                 },
             }
         }
@@ -159,17 +154,17 @@ export const WaveCTA: React.FC<Props> = ({
         switch(size){
             case "large":
                 return <div>
-                            <HeaderLayout>
+                            <Header color={color} size={size}>{headerText}</Header>    
+                            <Body color={color}>{bodyText}</Body>
+                            {/* <HeaderLayout>
                                 <Header color={color} size={size}>{headerText}</Header>
-                            </HeaderLayout>    
-                            <BodyLayout>
+                            </HeaderLayout>     */}
+                            {/* <BodyLayout>
                                 <Body color={color}>{bodyText}</Body>
-                            </BodyLayout>
+                            </BodyLayout> */}
                         </div>             
             case "medium":
-                return <HeaderLayout>
-                            <Header color={color} size={size}>{headerText}</Header>
-                        </HeaderLayout> 
+                return <Header color={color} size={size}>{headerText}</Header>
         }
     }
 

@@ -41,12 +41,16 @@ export const WaveQuote: React.FC<Props> = ({
                 small: {
                     maskImage: `url(${'../static/wave/wave-s.svg?sprite'})`,
                     maskRepeat: 'no-repeat',
+                    maskSize: 'cover', 
+                    maskPosition: 'top',
                     // TODO: flip mask
                     // transform: 'rotate(180deg)', // flips whole component
                 },
                 large: {
                     maskImage: `url(${'../static/wave/wave-l.svg?sprite'})`,
                     maskRepeat: 'no-repeat',
+                    maskSize: 'cover', 
+                    maskPosition: 'bottom',
                 }
             }
         }
