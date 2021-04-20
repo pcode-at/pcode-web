@@ -12,7 +12,7 @@ type Props = {
     bodyText?: string;
     buttonText?: string;
 };
-
+// TODO: different font weights within text 
 export const WaveCTA: React.FC<Props> = ({
     className,
     color = 'blue',
@@ -54,23 +54,17 @@ export const WaveCTA: React.FC<Props> = ({
                 }
             }
         }
-
     })
 
     let ContentLayout = styled('div', {
         alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'column',
-        margin: '32px 0px', // ?? 
+        left: `calc( (108/1440) * ${width})`,
         paddingTop: `calc(80/1440 * ${width})`,
         paddingBottom: `calc(104/1440 * ${width})`,
         position: 'relative',
         width: `calc((600/1440) * ${width})`,
-        left: `calc( (108/1440) * ${width})`,
-    })
-
-    let HeaderLayout = styled('div',{
-        // margin: '32px 0px',
     })
 
     let BodyLayout = styled('div', {
@@ -102,7 +96,8 @@ export const WaveCTA: React.FC<Props> = ({
                 },
                 large: {
                     fontSize: theme.Wave.CallToAction.Large.Header.Font.Size,
-                    fontWeight: '$light',
+                    // fontWeight: '$light',
+                    fontWeight: '$medium',
                     lineHeight: theme.Wave.CallToAction.Large.Header.LineHeight,
                     letterSpacing: theme.Wave.CallToAction.Large.Header.LetterSpacing,
                 },
@@ -155,13 +150,9 @@ export const WaveCTA: React.FC<Props> = ({
             case "large":
                 return <div>
                             <Header color={color} size={size}>{headerText}</Header>    
-                            <Body color={color}>{bodyText}</Body>
-                            {/* <HeaderLayout>
-                                <Header color={color} size={size}>{headerText}</Header>
-                            </HeaderLayout>     */}
-                            {/* <BodyLayout>
+                            <BodyLayout>
                                 <Body color={color}>{bodyText}</Body>
-                            </BodyLayout> */}
+                            </BodyLayout>
                         </div>             
             case "medium":
                 return <Header color={color} size={size}>{headerText}</Header>
