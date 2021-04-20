@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from 'rebass';
 import { theme } from '../theme';
 import { styled } from '../stitches.config';
 import { CONSTANTS } from '../shared/constants';
@@ -8,71 +7,64 @@ type Props = { className?: string; }
 
 export const Footer: React.FC<Props> = ({ className }) => { 
 
-    let FooterLayout = styled('div', {
+    // area containing the whole footer content
+    let FooterLayout = styled('nav', {
         alignItems: 'center',
-        maxWidth: '100%',
-        backgroundImage: `url(${'../static/rectangle.jpg'})`,
+        backgroundImage: `url(${'../static/rectangle.svg'})`, // TO DO: rename rectangle
         backgroundRepeat: 'no-repeat',
         backgroundSize: '100%',
-    })
-
-    // area containing the whole footer content
-    let TextAreaLayout = styled('div', {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        alignItems: 'center',
-        padding: '$none',
         maxWidth: '100%',
     })
     // area containing contact, pages and address
-    let FooterTextLayout = styled('div', {
+    let TextLayout = styled('div', {
+        alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'flex-start',
-        padding: '$none',
-        margin: '$l $none',
+        margin: '$l 0px',
     })
-    let FooterTextEntryLayout = styled('div', {
+    let TextEntryLayout = styled('ul', {
+        marginRight: '$xxl',
         textAlign: 'center',
         textTransform: 'lowercase',
-        marginRight: '$xxl',
+
         '&~div': {
             marginLeft: '$xxl',
         }
     })
-
-    let SocialMediaIconsLayout = styled('div', {
+    let ReferencesLayout = styled('ul', {
+        alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'flex-end',
-        padding: '$none',
-        margin: '$s $none',
+        margin: '$s 0px',
+        listStyleType: 'none', 
     })
-    let ImpressumLayout = styled('div', {
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        padding: '$none',
-        margin: '$s $none',
-    })
-
-    let Text = styled('p', {
+    let ListItem = styled('li', {
+        color: theme.Footer.TextArea.Font.Color,
         fontFamily: theme.Font.Default,
         fontSize: theme.Footer.TextArea.Font.Size,
-        fontWeight: theme.Footer.TextArea.Font.Weight,
-        color: theme.Footer.TextArea.Font.Color,
+        fontWeight: '$regular',
         lineHeight: theme.Footer.TextArea.LineHeight,
+        listStyleType: 'none', 
     })
     let PageReference = styled('a', {
+        color: theme.Footer.TextArea.Font.Color,
         fontFamily: theme.Font.Default,
         fontSize: theme.Footer.TextArea.Font.Size,
-        fontWeight: theme.Footer.TextArea.Font.Weight,
-        color: theme.Footer.TextArea.Font.Color,
+        fontWeight: '$regular',
         lineHeight: theme.Footer.TextArea.LineHeight,
-        textDecoration: 'none',
+        textDecoration: theme.Footer.TextArea.TextDecoration.Default,
+
+        '&:hover': {
+            textDecoration: theme.Footer.TextArea.TextDecoration.Hover,
+            textDecorationThickness: theme.Footer.TextArea.TextDecorationThickness,
+            textUnderlineOffset: theme.Footer.TextArea.TextUnderlineOffset,
+        }
+
     })
     let ImpressumEntry = styled(PageReference, {
         '&~a': {
@@ -80,60 +72,52 @@ export const Footer: React.FC<Props> = ({ className }) => {
         },
     })
     let Icon = styled('img', {
-        width: '$s',
         height: '$s',
-        margin: '$none $l',
+        margin: '0px $l',
+        width: '$s',
     })
 
     return (
         <FooterLayout className={className}>
-            <TextAreaLayout>
-                <FooterTextLayout>
-                    <FooterTextEntryLayout>
-                        <Text>
-                        pcode – software engineering <br/>
-                        +43 664 1652141 <br/>
-                        jobs@pcode.at <br/>
-                        </Text>
-                    </FooterTextEntryLayout>
-                    <FooterTextEntryLayout>
-                        <Text>
-                            <PageReference href="">home</PageReference><br/>
-                            <PageReference href="">who we are</PageReference><br/>
-                            <PageReference href="">what we do</PageReference><br/>
-                            <PageReference href="">whom we work with</PageReference><br/>
-                            <PageReference href="">join us</PageReference><br/>
-                            <PageReference href="">contact us</PageReference><br/>
-                        </Text>
-                    </FooterTextEntryLayout>
-                    <FooterTextEntryLayout>
-                        <Text>
-                        peter-behrens-platz 9 <br/>
-                        stiege d / 3. stock <br/>
-                        4020 linz – austria <br/>
-                        </Text>
-                    </FooterTextEntryLayout>
-                </FooterTextLayout>
-                <SocialMediaIconsLayout>
-                    <PageReference href="">
-                        <Icon src={'../static/instagram.svg'}></Icon>
-                    </PageReference>
-                    <PageReference href="">
-                        <Icon src={'../static/facebook.svg'}></Icon>
-                    </PageReference>
-                    <PageReference href="">
-                        <Icon src={'../static/twitter.svg'}></Icon>
-                    </PageReference>
-                    <PageReference href="">
-                        <Icon src={'../static/linkedin.svg'}></Icon>
-                    </PageReference>
-                </SocialMediaIconsLayout>
-                <ImpressumLayout>
-                    <ImpressumEntry href={CONSTANTS.DATA_PRIVACY_LINK}>datenschutz</ImpressumEntry>
-                    <ImpressumEntry href={CONSTANTS.AGB_LINK}>agb</ImpressumEntry>
-                    <ImpressumEntry href={CONSTANTS.IMPRESSUM_LINK}>impressum</ImpressumEntry>
-                </ImpressumLayout>
-            </TextAreaLayout>
+            <TextLayout>
+                <TextEntryLayout>
+                    <ListItem>pcode – software engineering</ListItem>
+                    <ListItem>+43 664 1652141</ListItem>
+                    <ListItem>jobs@pcode.at</ListItem>
+                </TextEntryLayout>
+                <TextEntryLayout>
+                    <PageReference href="">home</PageReference><br/>
+                    <PageReference href="./who-we-are">who we are</PageReference><br/>
+                    <PageReference href="./what-we-do">what we do</PageReference><br/>
+                    <PageReference href="">our clients</PageReference><br/>
+                    <PageReference href="./join-us">join us</PageReference><br/>
+                    <PageReference href="">contact us</PageReference><br/>
+                </TextEntryLayout>
+                <TextEntryLayout>
+                    <ListItem>peter-behrens-platz 9</ListItem>
+                    <ListItem>stiege d / 3. stock</ListItem>
+                    <ListItem>4020 linz – austria</ListItem>
+                </TextEntryLayout>
+            </TextLayout>
+            <ReferencesLayout>
+                <PageReference href="https://www.instagram.com/pcode.at/">
+                    <Icon src={'../static/instagram.svg'}></Icon>
+                </PageReference>
+                <PageReference href="https://www.facebook.com/pcode.at/">
+                    <Icon src={'../static/facebook.svg'}></Icon>
+                </PageReference>
+                <PageReference href="https://twitter.com/pcode_at">
+                    <Icon src={'../static/twitter.svg'}></Icon>
+                </PageReference>
+                <PageReference href="https://www.linkedin.com/company/pcode">
+                    <Icon src={'../static/linkedin.svg'}></Icon>
+                </PageReference>
+            </ReferencesLayout>
+            <ReferencesLayout>
+                <ImpressumEntry href={CONSTANTS.DATA_PRIVACY_LINK}>datenschutz</ImpressumEntry>
+                <ImpressumEntry href={CONSTANTS.AGB_LINK}>agb</ImpressumEntry>
+                <ImpressumEntry href={CONSTANTS.IMPRESSUM_LINK}>impressum</ImpressumEntry>
+            </ReferencesLayout>
         </FooterLayout>
     );
 }

@@ -4,19 +4,19 @@ import { theme } from '../theme';
 
 export const Button = styled('button', {
 
+    alignItems:     'flex-end',
     borderRadius:   theme.Button.Border.Radius,
+    boxShadow:      theme.Button.BoxShadow,
+    display:        'flex',
+    flexDirection:  'row',
     fontFamily:     theme.Font.Default,   
     fontSize:       theme.Button.Font.Size,
     fontWeight:     '$regular',
     // fontWeight:  theme.Button.Font.Weight, 
-    lineHeight:     theme.Button.LineHeight,
-    boxShadow:      theme.Button.BoxShadow,
-    padding:        theme.Button.Padding,
-    display:        'flex',
-    flexDirection:  'row',
     justifyContent: 'center',
-    alignItems:     'flex-end',
-
+    lineHeight:     theme.Button.LineHeight,
+    padding:        theme.Button.Padding,
+      
     // TODO: Change structure of variants (filled/outlined)
     // reference: https://codesandbox.io/s/ecstatic-meninsky-o6l2d?file=/src/App.js 
     

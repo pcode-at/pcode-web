@@ -9,6 +9,12 @@ export const theme = {
     
     // ---------- COLORS ---------- 
     Color: {
+        Accent: {
+            Grey: '$grey500',
+            Lilac: '$lilac500',
+            Turquoise: '$turquoise500',
+        },
+        Alert: '$cherry500',
         Primary: {
             Default: '$red500',
             Hover: '$red300',
@@ -22,37 +28,29 @@ export const theme = {
         Tertiary: {
             Default: '$green500',
         },
-        Accent: {
-            Grey: '$grey500',
-            Lilac: '$lilac500',
-            Turquoise: '$turquoise500',
-        },
         White: '$white',
-        Alert: '$cherry500',
     },
 
     // ---------- BUTTON ----------
     Button: {
         Border: {
+            Radius: '$circle',
             Width: {
                 None: 'none',
                 Regular: '$regular',
             },
-            Radius: '$circle',
         },
+        BoxShadow: '$regular',
         Font: {
-            Weight: '$regular',
             Size: '$s',
+            Weight: '$regular',
         },
         LineHeight: '$s',
         Padding: '16px 24px',
-        BoxShadow: '$regular',
     },
 
     // ---------- CONTACT FORM ----------
     ContactForm: {
-        Height: '473px',
-        Width: '580px',
         Input: {
             Width: '580px',
             Height: {
@@ -62,87 +60,51 @@ export const theme = {
         },
         Border: {
             Color: {
-                Default: '$green500',
                 Alert: '$cherry500',
+                Default: '$green500',
             },
-            Width: '$medium',
             Radius: '$rounded',
+            Width: '$medium',
         }
     },
 
     // ---------- FOOTER ----------
     Footer: {
         Background: {
-            Width: '1440px',
-            Height: '336px',
             Color: '$blue500',
         },
         TextArea: { 
-            Width: '1180px',
-            Height: '196px',
-            LineHeight: '$s',
-            
             Font: {
                 Weight: '$regular',
                 Size: '$s',
                 Color: '$green500',
             },
-            FooterText: {
-                Width: '',
-                Height: '',
-                Contact: {
-                    Width: '222px',
-                    Height: '58px',
-                },
-                Pages: {
-                    Width: '222px',
-                    Height: '96px',
-                },
-                Address: {
-                    Width: '222px',
-                    Height: '58px',
-                },
+            LineHeight: '$s',
+            TextDecoration: {
+                Default: 'none',
+                Hover: 'underline',
             },
-            SocialMedia: {
-                Width: '154px',
-                Height: '16px',
-                FlexDirection: 'row',
-                JustifyContent: 'center',
-                AlignItems: 'flex-end',
-            },
-            Impressum: {
-                Width: '238px',
-                Height: '16px',
-
-                FlexDirection: 'row',
-                AlignItems: 'flex-start',
-            },
+            TextDecorationThickness: '0.063rem',
+            TextUnderlineOffset: '0.25rem', 
         },
     },
 
     // ---------- NAVBAR ----------
     Navbar: {
-        Width: '1440px',
-        Height: '88px',
-        
         Items: {
-            Width: '795px',
-            Height: '88px',
-            LineHeight: '$m',
             Font: {
                 Weight: '$medium',
                 Size: '$m',
-                Color: '$blue500',
-
-            }
-        }
-
-    }
-
-    // ---------- ----------
-    // ---------- ----------
-    // ---------- ----------
-
-    
-
+                Color: {
+                    Default: '$blue500',
+                    Hover: '$red500',
+                }
+            },
+            LineHeight: '$m',
+            TextDecoration: 'underline',
+            TextDecorationColor: '$red500',
+            TextDecorationThickness: '0.063rem', 
+            TextUnderlineOffset: '0.25rem', 
+        },
+    },
 }
