@@ -119,7 +119,9 @@ export const WaveCTA: React.FC<Props> = ({
             },
             size: {
                 medium: { 
-                    // TODO 
+                    fontSize: theme.Wave.CallToAction.Medium.Font.Size,
+                    fontWeight: '$regular',
+                    lineHeight: theme.Wave.CallToAction.Medium.LineHeight,
                 },
                 large: {
                     fontSize: theme.Wave.CallToAction.Large.Body.Font.Size,

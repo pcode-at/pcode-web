@@ -72,8 +72,15 @@ const MainPage = () => (
 
         <StyledHeading>wave-l-cta</StyledHeading>
         <WaveCTA/>
-        <WaveCTA color={'blue'}/>
+        <WaveCTA 
+            color={'blue'}
+            bodyText={'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'}
+            headerText={'Lorem ipsum dolor sit amet'}
+        />
         <WaveCTA color={'green'}/>
+
+        <StyledHeading>wave-m-cta</StyledHeading>
+        <WaveCTA size={'medium'}/>
 
         <StyledHeading>wave-s</StyledHeading>
         <Wave size={'small'} color={'red'}/>
