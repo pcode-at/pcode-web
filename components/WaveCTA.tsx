@@ -15,7 +15,7 @@ type Props = {
 
 export const WaveCTA: React.FC<Props> = ({
     className,
-    color = 'red',
+    color = 'blue',
     size = 'large',
     width = '100%',
     headerText = "wir verwandeln komplexe probleme in einfache lösungen",
@@ -43,6 +43,7 @@ export const WaveCTA: React.FC<Props> = ({
                 medium: {
                     maskImage: `url(${'../static/wave/wave-m.svg?sprite'})`,
                     maskRepeat: 'no-repeat',
+                    maskSize: 'cover', 
                 },
                 large: {
                     maskImage: `url(${'../static/wave/wave-l.svg?sprite'})`,
@@ -54,7 +55,7 @@ export const WaveCTA: React.FC<Props> = ({
 
     })
 
-    let TextLayout = styled('div', {
+    let ContentLayout = styled('div', {
         alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'column',
@@ -90,7 +91,11 @@ export const WaveCTA: React.FC<Props> = ({
             },
             size: {
                 medium: {
-                    // TODO
+                    fontSize: theme.Wave.CallToAction.Medium.Font.Size,
+                    fontWeight: '$regular',
+                    lineHeight: theme.Wave.CallToAction.Medium.LineHeight,
+                    // 'medium'-cta has different font color 
+                    color: theme.Wave.CallToAction.Medium.Font.Color.Blue,
                 },
                 large: {
                     fontSize: theme.Wave.CallToAction.Large.Header.Font.Size,
@@ -118,11 +123,13 @@ export const WaveCTA: React.FC<Props> = ({
                 },
             },
             size: {
-                medium: { 
-                    fontSize: theme.Wave.CallToAction.Medium.Font.Size,
-                    fontWeight: '$regular',
-                    lineHeight: theme.Wave.CallToAction.Medium.LineHeight,
-                },
+                // medium: { 
+                //     fontSize: theme.Wave.CallToAction.Medium.Font.Size,
+                //     fontWeight: '$regular',
+                //     lineHeight: theme.Wave.CallToAction.Medium.LineHeight,
+                //     // 'medium'-cta has different font color 
+                //     color: theme.Wave.CallToAction.Large.Body.Font.Color.Green,
+                // },
                 large: {
                     fontSize: theme.Wave.CallToAction.Large.Body.Font.Size,
                     fontWeight: '$regular',
@@ -133,14 +140,36 @@ export const WaveCTA: React.FC<Props> = ({
         }
     })
 
-    function getButton(color) {
+    function getButton() {
         switch(color) {
             case 'blue': 
-                return <Button variant={'primaryRed'}>{buttonText}</Button>
+                if (size === "large"){
+                    return <Button variant={'primaryRed'}>{buttonText}</Button>
+                } else { // if size === medium 
+                    return <Button variant={'primaryWhite'}>{buttonText}</Button>
+                }
             case 'green':
                 return <Button variant={'primaryBlue'}>{buttonText}</Button>
             case 'red':
                 return <Button variant={'primaryWhite'}>{buttonText}</Button>
+        }
+    }
+
+    function getText() {
+        switch(size){
+            case "large":
+                return <div>
+                            <HeaderLayout>
+                                <Header color={color} size={size}>{headerText}</Header>
+                            </HeaderLayout>    
+                            <BodyLayout>
+                                <Body color={color}>{bodyText}</Body>
+                            </BodyLayout>
+                        </div>             
+            case "medium":
+                return <HeaderLayout>
+                            <Header color={color} size={size}>{headerText}</Header>
+                        </HeaderLayout> 
         }
     }
 
@@ -150,15 +179,10 @@ export const WaveCTA: React.FC<Props> = ({
             color={color}
             size={size}
         >
-            <TextLayout>
-                <HeaderLayout>
-                    <Header color={color} size={size}>{headerText}</Header>
-                </HeaderLayout>
-                <BodyLayout>
-                    <Body color={color}>{bodyText}</Body>
-                </BodyLayout>
-                {getButton(color)}
-            </TextLayout>
+            <ContentLayout>
+                {getText()}
+                {getButton()}
+            </ContentLayout>
         </WaveCTALayout>
     );
 }

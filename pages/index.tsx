@@ -59,23 +59,24 @@ const MainPage = () => (
         <WaveQuote 
             color={'blue'} 
             contentText={'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. '}
-            // width={'1440px'}
         />
         <WaveQuote 
             color={'green'}
-            contentText={'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'}    
-            // width={'1440px'}
+            contentText={'At vero eos et accusam et justo duo dolores et ea rebum.'}    
         />
         <WaveQuote 
             size={'large'}
         />
 
         <StyledHeading>wave-l-cta</StyledHeading>
-        <WaveCTA/>
+        <WaveCTA
+            color={'red'}
+        />
         <WaveCTA 
             color={'blue'}
-            bodyText={'At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'}
+            bodyText={'At vero eos et accusam et justo duo dolores et ea rebum.'}
             headerText={'Lorem ipsum dolor sit amet'}
+            buttonText={'Lorem Ipsum!'}
         />
         <WaveCTA color={'green'}/>
 
