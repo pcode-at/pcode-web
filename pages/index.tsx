@@ -55,15 +55,22 @@ const MainPage = () => (
 
         <StyledHeading>wave-s-quote</StyledHeading>
         <WaveQuote/>
-
         <WaveQuote 
-            color={'blue'} 
-            contentText={'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. '}
+            color={'green'}
+            contentText={'Ich bin eine wave quote small component mit default width=100%'}    
         />
         <WaveQuote 
             color={'green'}
-            contentText={'At vero eos et accusam et justo duo dolores et ea rebum.'}    
+            contentText={'Ich bin eine wave quote small component mit width=1440px'}
+            width={'1440px'}
         />
+        <WaveQuote 
+            color={'blue'} 
+            contentText={'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. '}
+            width={'1440px'}
+        />
+
+        <StyledHeading>wave-l-quote</StyledHeading>
         <WaveQuote 
             size={'large'}
         />
@@ -81,7 +88,10 @@ const MainPage = () => (
         <WaveCTA color={'green'}/>
 
         <StyledHeading>wave-m-cta</StyledHeading>
-        <WaveCTA size={'medium'}/>
+        <WaveCTA 
+            headerText={'Seit Anbeginn empowern wir unsere Member:innen und bereiten uns so auf die Herausforderungen von morgen vor.'}
+            size={'medium'}
+        />
 
         <StyledHeading>wave-s</StyledHeading>
         <Wave size={'small'} color={'red'}/>

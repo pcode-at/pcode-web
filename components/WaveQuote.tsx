@@ -39,12 +39,10 @@ export const WaveQuote: React.FC<Props> = ({
             },
             size: {
                 small: {
-                    maskImage: `url(${'../static/wave/wave-s.svg?sprite'})`,
+                    maskImage: `url(${'../static/wave/wave-s-flipped.svg?sprite'})`,
                     maskRepeat: 'no-repeat',
                     maskSize: 'cover', 
-                    maskPosition: 'top',
-                    // TODO: flip mask
-                    // transform: 'rotate(180deg)', // flips whole component
+                    maskPosition: 'bottom',
                 },
                 large: {
                     maskImage: `url(${'../static/wave/wave-l.svg?sprite'})`,
@@ -54,7 +52,6 @@ export const WaveQuote: React.FC<Props> = ({
                 }
             }
         }
-
     })
 
     let QuoteLayout = styled('div', {
@@ -62,7 +59,8 @@ export const WaveQuote: React.FC<Props> = ({
         display: 'flex',
         flexDirection: 'row',
         marginLeft: `calc( (108/1440) * ${width} )`,
-        padding: '80px 0px 0px',
+        paddingTop: `calc(80/1440 * ${width})`,
+        paddingBottom: `calc(176/1440 * ${width})`,
         position: 'relative',
         width: `calc( (808/1440) * ${width} )`,        
     })
