@@ -26,7 +26,7 @@ export const Navbar: React.FC<Props> = ({ className }) => {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         marginLeft: 'auto',
         marginRight: 'auto',
         padding: '0px $l',

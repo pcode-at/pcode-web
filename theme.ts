@@ -33,20 +33,73 @@ export const theme = {
 
     // ---------- BUTTON ----------
     Button: {
+        Background: {
+            Color: {
+                Primary: {
+                    Red: {
+                        Default: '$red500',
+                        Hover: '$red300',
+                        Disabled: '$red100',
+                        Active: '$red500',
+                    },
+                    Blue: {
+                        Default: '$blue500',
+                        Hover: '$blue300',
+                        Disabled: '$blue100',
+                        Active: '$blue500',
+                    },
+                    White: '$white',
+                },
+                Secondary: 'transparent',
+                Tertiary: {
+                    Default: 'transparent',
+                    Hover: '$red100',
+                    Disabled: 'transparent',
+                    Active: '$red500',
+                },
+            }
+        },
         Border: {
+            Color: {
+                Tertiary: {
+                    Default: '$red500',
+                    Disabled: '$red100',
+                },
+            },
             Radius: '$circle',
             Width: {
-                None: 'none',
-                Regular: '$regular',
+                Primary: 'none',
+                Secondary: 'none',
+                Tertiary: '$regular',
             },
         },
         BoxShadow: '$regular',
         Font: {
             Size: '$s',
-            Weight: '$regular',
+            Color: {
+                Primary: {
+                    Default: '$white',
+                    White: '$blue500',
+                },
+                Secondary: '$red500',
+                Tertiary: {
+                    Default: '$red500',
+                    Hover: '$white',
+                    Disabled: '$red100',
+                    Active: '$white',
+                },
+            },
         },
         LineHeight: '$s',
-        Padding: '16px 24px',
+        Padding: '$s $m',
+        TextDecoration: {
+            Secondary: {
+                TextDecoration: 'underline',
+                TextDecorationThickness: '0.063rem', // Figma: 1px
+                TextUnderlineOffset: '0.25rem', // Figma: 4px
+
+            },
+        },
     },
 
     // ---------- CONTACT FORM ----------
