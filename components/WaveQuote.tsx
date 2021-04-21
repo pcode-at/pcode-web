@@ -13,9 +13,10 @@ type Props = {
 
 export const WaveQuote: React.FC<Props> = ({
     className,
-     contentText = 'Unsere besondere Fähigkeit liegt darin, dass wir den Dingen auf den Grund gehen und mutige Entscheidungen treffen.',
-    //boldText = 'Unsere besondere Fähigkeit liegt darin, ',
-    //contentText = 'dass wir den Dingen auf den Grund gehen und mutige Entscheidungen treffen.',
+    contentText = 'Unsere besondere Fähigkeit liegt darin, dass wir den Dingen auf den Grund gehen und mutige Entscheidungen treffen.',
+    // boldText = 'Unsere besondere Fähigkeit liegt darin, ',
+    // boldText,
+    // contentText = 'dass wir den Dingen auf den Grund gehen und mutige Entscheidungen treffen.',
     color = 'red',
     size = 'small',
     width = '100%',
@@ -68,7 +69,6 @@ export const WaveQuote: React.FC<Props> = ({
     let Quote = styled('p', {
         textTransform: 'lowercase',
         variants: {
-            // TODO: find solution for font color of large, red wave (fontColor of 'red' wave depends on size)
             color: {
                 blue: {
                     color: theme.Wave.Quote.Small.Font.Color.Blue,
@@ -92,6 +92,7 @@ export const WaveQuote: React.FC<Props> = ({
                     fontFamily: theme.Wave.Quote.Large.Font.Family,
                     fontWeight: '$light', // TODO: 2 different weights used
                     lineHeight: theme.Wave.Quote.Large.LineHeight,
+                    color: theme.Wave.Quote.Large.Font.Color.Red,
                 },
             },
         }

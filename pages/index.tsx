@@ -56,12 +56,12 @@ const MainPage = () => (
         <StyledHeading>wave-s-quote</StyledHeading>
         <WaveQuote/>
         <WaveQuote 
-            color={'green'}
-            contentText={'Ich bin eine wave quote small component mit default width=100%'}    
+            color={'blue'}
+            contentText={'Ich bin eine WaveQuote-Small Komponente mit default width=100%'}    
         />
         <WaveQuote 
             color={'green'}
-            contentText={'Ich bin eine wave quote small component mit width=1440px'}
+            contentText={'Ich bin eine WaveQuote-Small Komponente mit width=1440px'}
             width={'1440px'}
         />
         <WaveQuote 
@@ -73,6 +73,13 @@ const MainPage = () => (
         <StyledHeading>wave-l-quote</StyledHeading>
         <WaveQuote 
             size={'large'}
+        />
+        <WaveQuote 
+            size={'large'}
+            color={'blue'}
+            // boldText={'Unsere besondere Fähigkeit liegt darin, '}
+            contentText={'Ich bin eine WaveQuote-Large Komponente mit width=1440px'}
+            width={'1440px'}
         />
 
         <StyledHeading>wave-l-cta</StyledHeading>
