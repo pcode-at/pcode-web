@@ -61,7 +61,7 @@ export const WaveCTA: React.FC<Props> = ({
         flexDirection: 'column',
         // calculations are based on the relations in the design, e.g.
         // the width of ContentLayout in the design is 600px
-        // the width of the whole design page is 1440
+        // the width of the whole design page is 1440px
         left: `calc( (108/1440) * ${width})`,
         paddingTop: `calc(80/1440 * ${width})`,
         paddingBottom: `calc(104/1440 * ${width})`,
@@ -70,7 +70,7 @@ export const WaveCTA: React.FC<Props> = ({
     })
 
     let BodyLayout = styled('div', {
-        margin: '32px 0px',
+        margin: '$l 0px',
     })
 
     let Header = styled('h1', {
