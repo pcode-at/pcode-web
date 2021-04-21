@@ -76,7 +76,22 @@ const MainPage = () => (
             color={'primary'}
             width={'175px'}
             imageSource={'../static/memberPortraits/kotek_michael.jpg'}
-        />
+
+        <StyledHeading>Button</StyledHeading>
+        <Button variant={'primaryRed'}>Primary Red</Button>
+        <Button variant={'primaryRed'} disabled={true}>Primary Red - Disabled</Button>
+        <br/>
+        <Button variant={'primaryBlue'}>Primary Blue</Button>
+        <Button variant={'primaryBlue'} disabled={true}>Primary Blue - Disabled</Button>
+        <br/>
+        <Button variant={'primaryWhite'}>Primary White</Button>
+        <Button variant={'primaryWhite'} disabled={true}>Primary White - Disabled</Button>
+        <br/>
+        <Button variant={'secondary'}>Secondary</Button>
+        <br/>
+        <Button variant={'tertiary'}>Tertiary</Button>
+        <Button variant={'tertiary'} disabled={true}>Tertiary - Disabled</Button>
+
         <BubblePortrait
             color={'secondary'} 
             width={'99px'}
