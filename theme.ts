@@ -9,6 +9,12 @@ export const theme = {
     
     // ---------- COLORS ---------- 
     Color: {
+        Accent: {
+            Grey: '$grey500',
+            Lilac: '$lilac500',
+            Turquoise: '$turquoise500',
+        },
+        Alert: '$cherry500',
         Primary: {
             Default: '$red500',
             Hover: '$red300',
@@ -22,13 +28,7 @@ export const theme = {
         Tertiary: {
             Default: '$green500',
         },
-        Accent: {
-            Grey: '$grey500',
-            Lilac: '$lilac500',
-            Turquoise: '$turquoise500',
-        },
         White: '$white',
-        Alert: '$cherry500',
     },
 
     // ---------- BUTTON ----------
@@ -75,7 +75,6 @@ export const theme = {
         },
         BoxShadow: '$regular',
         Font: {
-            Weight: '$regular',
             Size: '$s',
             Color: {
                 Primary: {
@@ -127,10 +126,9 @@ export const theme = {
         },
         Border: {
             Color: {
-                Default: '$blue500',
                 Alert: '$cherry500',
+                Default: '$green500',
             },
-            Width: '$medium',
             Radius: '$rounded',
         },
         Label: {
@@ -142,6 +140,8 @@ export const theme = {
             LineHeight: '$s',
             LetterSpacing: '$wide',
         },
+            Width: '$medium',
+        }
     },
 
     // ---------- FOOTER ----------
@@ -150,24 +150,28 @@ export const theme = {
             Color: '$blue500',
         },
         TextArea: { 
-            LineHeight: '$s',
             Font: {
                 Weight: '$regular',
                 Size: '$s',
                 Color: '$green500',
             },
+            LineHeight: '$s',
+            TextDecoration: {
+                Default: 'none',
+                Hover: 'underline',
+            },
+            TextDecorationThickness: '0.063rem',
+            TextUnderlineOffset: '0.25rem', 
         },
     },
 
     // ---------- NAVBAR ----------
     Navbar: {
         Items: {
-            LineHeight: '$m',
             Font: {
                 Weight: '$medium',
                 Size: '$m',
                 Color: '$blue500',
-
             }
         }
     }
@@ -175,7 +179,5 @@ export const theme = {
     // ---------- ----------
     // ---------- ----------
     // ---------- ----------
-
-    
 
 }
