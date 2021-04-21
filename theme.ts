@@ -127,14 +127,35 @@ export const theme = {
         Background: {
             Color: '$blue500',
         },
-        TextArea: { 
+        // TextArea: { 
+        //     LineHeight: '$s',
+        //     Font: {
+        //         Weight: '$regular',
+        //         Size: '$s',
+        //         Color: '$green500',
+        //     },
+        // },
+        Entry: {
             LineHeight: '$s',
-            Font: {
-                Weight: '$regular',
-                Size: '$s',
-                Color: '$green500',
+            Header: {
+                Font: {
+                    Color: '$white',
+                    Family: '$default',
+                    Weight: '$semibold',
+                    Size: '$xs',
+                },
+                LetterSpacing: '$wide',
             },
-        },
+            Links: {
+                Font: {
+                    Color: '$white',
+                    Family: '$default',
+                    Weight: '$light',
+                    Size: '$xs',
+                },
+                LetterSpacing: '$wide',
+            }
+        }
     },
 
     // ---------- NAVBAR ----------

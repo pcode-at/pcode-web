@@ -2,120 +2,131 @@ import React from 'react';
 import { theme } from '../theme';
 import { styled } from '../stitches.config';
 import { CONSTANTS } from '../shared/constants';
+import { Link } from 'rebass';
+import { marginRight } from 'styled-system';
 
-type Props = { className?: string; }
+type Props = { 
+    className?: string; 
+    width?: string; 
+}
 
-export const Footer: React.FC<Props> = ({ className }) => { 
+export const Footer: React.FC<Props> = ({ 
+    className,
+    width = '100%',
+}) => { 
 
     // area containing the whole footer content
     let FooterLayout = styled('nav', {
-        alignItems: 'center',
-        backgroundImage: `url(${'../static/rectangle.svg'})`, // TO DO: rename rectangle
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: '100%',
+        backgroundColor: theme.Footer.Background.Color,
+        maskImage: `url(${'../static/wave/wave-s.svg?sprite'})`,
+        maskPosition: 'top',
+        maskRepeat: 'no-repeat',
+        maskSize: 'cover', 
+        width: width,
+        // height: `calc((432/1440) * ${width})`,
+        height: '432px',
+        // height 432px
+        // width 1440px 
+    })
+
+    let TextLayout = styled('div', {
+        width: `calc((1224/1440) * ${width})`,
+        paddingTop: `calc(128/1440 * ${width})`,
+        paddingLeft: `calc(108/1440 * ${width})`,
+        // height 216
+        // width 1224
+        // top 128 // 47.95%
+        // bottom 88 // 15.07% 
+        // left right 108 // 7.5%
+
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+
+    })
+
+    let EntryLayout = styled('ul', {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-end',
-        maxWidth: '100%',
-    })
-    // area containing contact, pages and address
-    let TextLayout = styled('div', {
         alignItems: 'flex-start',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        margin: '$l 0px',
+        width: `calc((288/1440) * ${width})`,
+        // marginRight: `calc((24/1440) * ${width})`,
     })
-    let TextEntryLayout = styled('ul', {
-        marginRight: '$xxl',
-        textAlign: 'center',
-        textTransform: 'lowercase',
 
-        '&~div': {
-            marginLeft: '$xxl',
-        }
-    })
-    let ReferencesLayout = styled('ul', {
-        alignItems: 'flex-start',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        margin: '$s 0px',
-        listStyleType: 'none', 
-    })
-    let ListItem = styled('li', {
-        color: theme.Footer.TextArea.Font.Color,
-        fontFamily: theme.Font.Default,
-        fontSize: theme.Footer.TextArea.Font.Size,
-        fontWeight: '$regular',
-        lineHeight: theme.Footer.TextArea.LineHeight,
-        listStyleType: 'none', 
-    })
-    let PageReference = styled('a', {
-        color: theme.Footer.TextArea.Font.Color,
-        fontFamily: theme.Font.Default,
-        fontSize: theme.Footer.TextArea.Font.Size,
-        fontWeight: '$regular',
-        lineHeight: theme.Footer.TextArea.LineHeight,
-        textDecoration: 'none',
-
-        '&:hover': {
-            textDecoration: 'underline',      
-        }
+    let EntryHeader = styled('li', {
+        color: theme.Footer.Entry.Header.Font.Color,
+        fontSize: theme.Footer.Entry.Header.Font.Size,
+        fontFamily: theme.Footer.Entry.Header.Font.Family,
+        fontWeight: '$semibold',
+        letterSpacing: theme.Footer.Entry.Header.LetterSpacing,
+        lineHeight: theme.Footer.Entry.LineHeight,
+        listStyle: 'none',
 
     })
-    let ImpressumEntry = styled(PageReference, {
-        '&~a': {
-            marginLeft: '1rem',
-        },
+
+    let EntryLinksLayout = styled('div', {
+
     })
-    let Icon = styled('img', {
-        height: '$s',
-        margin: '0px $l',
-        width: '$s',
+
+    let TextEntry = styled('li', {
+        color: theme.Footer.Entry.Links.Font.Color,
+        fontFamily: theme.Footer.Entry.Links.Font.Family,
+        fontSize: theme.Footer.Entry.Links.Font.Size,
+        fontWeight: '$light',
+        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
+        lineHeight: theme.Footer.Entry.LineHeight,
+        listStyle: 'none',
+    })
+
+    let LinkEntry = styled('a', {
+        color: theme.Footer.Entry.Links.Font.Color,
+        fontFamily: theme.Footer.Entry.Links.Font.Family,
+        fontSize: theme.Footer.Entry.Links.Font.Size,
+        fontWeight: '$light',
+        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
+        lineHeight: theme.Footer.Entry.LineHeight,
+        listStyle: 'none',
     })
 
     return (
         <FooterLayout className={className}>
             <TextLayout>
-                <TextEntryLayout>
-                    <ListItem>pcode – software engineering</ListItem>
-                    <ListItem>+43 664 1652141</ListItem>
-                    <ListItem>jobs@pcode.at</ListItem>
-                </TextEntryLayout>
-                <TextEntryLayout>
-                    <PageReference href="">home</PageReference><br/>
-                    <PageReference href="./who-we-are">who we are</PageReference><br/>
-                    <PageReference href="./what-we-do">what we do</PageReference><br/>
-                    <PageReference href="">our clients</PageReference><br/>
-                    <PageReference href="./join-us">join us</PageReference><br/>
-                    <PageReference href="">contact us</PageReference><br/>
-                </TextEntryLayout>
-                <TextEntryLayout>
-                    <ListItem>peter-behrens-platz 9</ListItem>
-                    <ListItem>stiege d / 3. stock</ListItem>
-                    <ListItem>4020 linz – austria</ListItem>
-                </TextEntryLayout>
+                <EntryLayout>
+                    <EntryHeader>Kontakt</EntryHeader>
+                    <EntryLinksLayout>
+                        <TextEntry>pcode - Software Engineering</TextEntry>
+                        <TextEntry>Peter-Behrens-Platz 9</TextEntry>
+                        <TextEntry>Steige D / 3. Stock</TextEntry>
+                        <TextEntry>4020 Linz - Austria</TextEntry>
+                    </EntryLinksLayout>
+                </EntryLayout>
+                <EntryLayout>
+                    <EntryHeader>Postfach</EntryHeader>
+                    <EntryLinksLayout>
+                        <TextEntry>pcode software engineering</TextEntry>
+                        <TextEntry>MMag. Christoph Pernsteiner</TextEntry>
+                        <TextEntry>C/O Pernsteiner Christoph</TextEntry>
+                        <TextEntry>Peter-Behrens-Platz 9</TextEntry>
+                        <TextEntry>4020 Linz - Austria</TextEntry>
+                    </EntryLinksLayout>
+                </EntryLayout>
+                <EntryLayout>
+                    <EntryHeader>Service</EntryHeader>
+                    <EntryLinksLayout>
+                        <TextEntry>+43 664 1652141</TextEntry>
+                        <TextEntry>office@pcode.at</TextEntry>
+                    </EntryLinksLayout>
+                </EntryLayout>
+                <EntryLayout>
+                    <EntryHeader>Kategorien</EntryHeader>
+                    <LinkEntry>Home</LinkEntry>
+                    <LinkEntry>Who we are</LinkEntry>
+                    <LinkEntry>What we do</LinkEntry>
+                    <LinkEntry>Out clients</LinkEntry>
+                    <LinkEntry>Join us</LinkEntry>
+                    <LinkEntry>Blog</LinkEntry>
+                </EntryLayout>
             </TextLayout>
-            <ReferencesLayout>
-                <PageReference href="https://www.instagram.com/pcode.at/">
-                    <Icon src={'../static/instagram.svg'}></Icon>
-                </PageReference>
-                <PageReference href="https://www.facebook.com/pcode.at/">
-                    <Icon src={'../static/facebook.svg'}></Icon>
-                </PageReference>
-                <PageReference href="https://twitter.com/pcode_at">
-                    <Icon src={'../static/twitter.svg'}></Icon>
-                </PageReference>
-                <PageReference href="https://www.linkedin.com/company/pcode">
-                    <Icon src={'../static/linkedin.svg'}></Icon>
-                </PageReference>
-            </ReferencesLayout>
-            <ReferencesLayout>
-                <ImpressumEntry href={CONSTANTS.DATA_PRIVACY_LINK}>datenschutz</ImpressumEntry>
-                <ImpressumEntry href={CONSTANTS.AGB_LINK}>agb</ImpressumEntry>
-                <ImpressumEntry href={CONSTANTS.IMPRESSUM_LINK}>impressum</ImpressumEntry>
-            </ReferencesLayout>
         </FooterLayout>
     );
 }
