@@ -20,7 +20,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
-import { Wave } from '../components/Wave';
+import { WaveDeprecated } from '../components/WaveDeprecated';
 import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
@@ -36,6 +36,9 @@ import { PersonBubble } from '../components/PersonBubble';
 import { Button } from '../components/Button';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
+import { Wave } from '../components/Wave';
+import { WaveQuote } from '../components/WaveQuote';
+import { WaveCTA } from '../components/WaveCTA';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -49,6 +52,62 @@ const MainPage = () => (
         /> */}
 
         <Navbar/>
+
+        <StyledHeading>wave-s-quote</StyledHeading>
+        <WaveQuote/>
+        <WaveQuote 
+            color={'blue'}
+            contentText={'Ich bin eine WaveQuote-Small Komponente mit default width=100%'}    
+        />
+        <WaveQuote 
+            color={'green'}
+            contentText={'Ich bin eine WaveQuote-Small Komponente mit width=1440px'}
+            width={'1440px'}
+        />
+        <WaveQuote 
+            color={'blue'} 
+            contentText={'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. '}
+            width={'1440px'}
+        />
+
+        <StyledHeading>wave-l-quote</StyledHeading>
+        <WaveQuote 
+            size={'large'}
+        />
+        <WaveQuote 
+            size={'large'}
+            color={'blue'}
+            // boldText={'Unsere besondere Fähigkeit liegt darin, '}
+            contentText={'Ich bin eine WaveQuote-Large Komponente mit width=1440px'}
+            width={'1440px'}
+        />
+
+        <StyledHeading>wave-l-cta</StyledHeading>
+        <WaveCTA
+            color={'red'}
+        />
+        <WaveCTA 
+            color={'blue'}
+            bodyText={'At vero eos et accusam et justo duo dolores et ea rebum.'}
+            headerText={'Lorem ipsum dolor sit amet'}
+            buttonText={'Lorem Ipsum!'}
+        />
+        <WaveCTA color={'green'}/>
+
+        <StyledHeading>wave-m-cta</StyledHeading>
+        <WaveCTA 
+            headerText={'Seit Anbeginn empowern wir unsere Member:innen und bereiten uns so auf die Herausforderungen von morgen vor.'}
+            size={'medium'}
+        />
+
+        <StyledHeading>wave-s</StyledHeading>
+        <Wave size={'small'} color={'red'}/>
+        
+        <StyledHeading>wave-m</StyledHeading>
+        <Wave size={'medium'} color={'blue'}/>
+
+        <StyledHeading>wave-l</StyledHeading>
+        <Wave size={'large'} color={'green'}/>
 
         <StyledHeading>Button</StyledHeading>
         <Button variant={'primaryRed'}>Primary Red</Button>
@@ -180,7 +239,7 @@ const MainPage = () => (
         <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>Wave</StyledHeading>
-        <Wave variant={'Top'} color={DeprecatedColor.Primary} shape={1}></Wave>
+        <WaveDeprecated variant={'Top'} color={DeprecatedColor.Primary} shape={1}></WaveDeprecated>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline

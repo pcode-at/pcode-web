@@ -1,101 +1,44 @@
 import React from 'react';
-
-import { DeprecatedColor } from '../DeprecatedColor.enum';
-import { themeDeprecated } from '../themeDeprecated';
-import styled from 'styled-components';
-import { Box } from 'rebass';
+import { styled } from '../stitches.config';
+import { WaveS } from './WaveS';
+import { WaveM } from './WaveM';
+import { WaveL } from './WaveL';
 
 type Props = {
-    variant: 'Top' | 'Bottom';
-    color: DeprecatedColor;
-    shape: 1 | 2 | 3 | 4;
     className?: string;
+    width?: string;
+    color?: string;
+    size?: "small" | "medium" | "large";
 };
 
-export const Wave: React.FC<Props> = ({ variant, color, shape, className }) => {
-    let waveLayoutHeight = '4vw';
-    let WavePosition = styled(Box)`
-        width: 100%;
-        height: 4vw;
-    `;
+export const Wave: React.FC<Props> = ({ 
+    className,
+    color = 'red',
+    size = 'small',
+    width = '100%',
+}) => {
 
-    let WaveStyle = styled(Box)`
-        width: 100%;
-        height: 100%;
-        background-color: ${themeDeprecated.colors[color]};
-        mask: url(../static/wave1.svg);
-        mask-position: top;
-        ${variant == 'Top' ? 'transform: scaleY(-1);' : ''}
-        mask-repeat: no-repeat;
-        mask-size: 100%;
-    `;
+    let BaseLayout = styled('div', {
+        width: width,
+        position: 'relative',
+    })
 
-    switch (shape) {
-        case 2:
-            WaveStyle = styled(Box)`
-                width: 100%;
-                height: 100%;
-                background-color: ${themeDeprecated.colors[color]};
-                mask: url(../static/wave2.svg);
-                mask-position: top;
-                ${variant == 'Top' ? 'transform: scaleY(-1);' : ''}
-                mask-repeat: no-repeat;
-                mask-size: 100%;
-            `;
-            break;
-        case 3:
-            WavePosition = styled(Box)`
-                width: 100%;
-                height: 13vw;
-            `;
-
-            WaveStyle = styled(Box)`
-                width: 100%;
-                height: 100%;
-                background-color: ${themeDeprecated.colors[color]};
-                mask: url(../static/wave3.svg);
-                mask-position: bottom;
-                ${variant == 'Bottom' ? 'transform: scaleY(-1);' : ''}
-                mask-repeat: no-repeat;
-                mask-size: 100%;
-            `;
-            waveLayoutHeight = '13vw';
-            break;
-        case 4:
-            WavePosition = styled(Box)`
-                width: 100%;
-                height: 45vw;
-            `;
-
-            WaveStyle = styled(Box)`
-                width: 100%;
-                height: 100%;
-                background-color: ${themeDeprecated.colors[color]};
-                mask: url(../static/wave4.svg);
-                mask-position: top;
-                ${variant == 'Top'
-                    ? 'transform: scaleY(-1);'
-                    : 'transform: translateY(-26.8vw);'}
-                mask-repeat: no-repeat;
-                mask-size: 100%;
-            `;
-            waveLayoutHeight = '18.2vw';
-            break;
+    // returns the correct 'background' wave component based on given size
+    function getBaseWaveComponent(size) {
+        switch(size){
+            case 'small':
+                return <WaveS color={color}/>;
+            case 'medium':
+                return <WaveM color={color}/>;
+            case 'large':
+                return <WaveL color={color}/>;
+        }
     }
 
-    const WaveLayout = styled(Box)`
-        width: 100%;
-        height: ${waveLayoutHeight};
-        overflow: hidden;
-    `;
-
-    return (
-        <div className={className}>
-            <WaveLayout>
-                <WavePosition>
-                    <WaveStyle />
-                </WavePosition>
-            </WaveLayout>
-        </div>
+    return(
+        <BaseLayout className={className}>
+            {getBaseWaveComponent(size)}
+        </BaseLayout>
     );
-};
+
+}
