@@ -98,14 +98,13 @@ export const theme = {
                 TextDecoration: 'underline',
                 TextDecorationThickness: '0.063rem', // Figma: 1px
                 TextUnderlineOffset: '0.25rem', // Figma: 4px
-
             },
         },
     },
 
     // ---------- CONTACT FORM ----------
     ContactForm: {
-        Width: '85%',
+        // Width: '85%',
         H1: {
             Font: {
                 Family: '$default',
@@ -118,18 +117,13 @@ export const theme = {
             
         },
         Input: {
-            Width: '580px',
-            Height: {
-                Small: '40px',
-                Large: '201px'
-            },
             Font: {
                 Family: '$default',
                 Color: '$blue500',
                 Size: '$m',
                 Weight: '$medium',
             },
-            LineHeight: '24px',
+            LineHeight: '$m',
         },
         Border: {
             Color: {
@@ -147,20 +141,6 @@ export const theme = {
             },
             LineHeight: '$s',
             LetterSpacing: '$wide',
-
-            /**
-             * 
-             * //styleName: label 1 12 600;
-                font-family: Raleway;
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 16px;
-                letter-spacing: 0.006em;
-                text-align: left;
-
-             */
-
         },
     },
 
