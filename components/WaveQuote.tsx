@@ -41,15 +41,15 @@ export const WaveQuote: React.FC<Props> = ({
             size: {
                 small: {
                     maskImage: `url(${'../static/wave/wave-s-flipped.svg?sprite'})`,
+                    maskPosition: 'bottom',
                     maskRepeat: 'no-repeat',
                     maskSize: 'cover', 
-                    maskPosition: 'bottom',
                 },
                 large: {
                     maskImage: `url(${'../static/wave/wave-l.svg?sprite'})`,
+                    maskPosition: 'bottom',
                     maskRepeat: 'no-repeat',
                     maskSize: 'cover', 
-                    maskPosition: 'bottom',
                 }
             }
         }
@@ -59,6 +59,9 @@ export const WaveQuote: React.FC<Props> = ({
         alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'row',
+        // calculations are based on the relations in the design, e.g.
+        // the width of QuoteLayout in the design is 808px
+        // the width of the whole design page is 1440px
         marginLeft: `calc( (108/1440) * ${width} )`,
         paddingTop: `calc(80/1440 * ${width})`,
         paddingBottom: `calc(176/1440 * ${width})`,
@@ -88,11 +91,11 @@ export const WaveQuote: React.FC<Props> = ({
                     lineHeight: theme.Wave.Quote.Small.LineHeight,
                 },
                 large: {
+                    color: theme.Wave.Quote.Large.Font.Color.Red,
                     fontSize: theme.Wave.Quote.Large.Font.Size,
                     fontFamily: theme.Wave.Quote.Large.Font.Family,
                     fontWeight: '$light', // TODO: 2 different weights used
                     lineHeight: theme.Wave.Quote.Large.LineHeight,
-                    color: theme.Wave.Quote.Large.Font.Color.Red,
                 },
             },
         }

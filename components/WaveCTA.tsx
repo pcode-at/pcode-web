@@ -16,17 +16,16 @@ type Props = {
 export const WaveCTA: React.FC<Props> = ({
     className,
     color = 'blue',
-    size = 'large',
-    width = '100%',
-    headerText = "wir verwandeln komplexe probleme in einfache lösungen",
     bodyText = "Unsere besondere Fähigkeit leigt darin, dass wir den Dingen auf den Grund gehen und mutige Entscheidungen treffen.",
     buttonText = "Jetzt Lösungen anzeigen",
+    headerText = "wir verwandeln komplexe probleme in einfache lösungen",
+    size = 'large',
+    width = '100%',
 }) => {
 
     let WaveCTALayout = styled('div', {
         position: 'relative',
         width: width,
-        height: `calc( (576/1440) * ${width} )`,
         variants: {
             color: {
                 blue: {
@@ -42,15 +41,15 @@ export const WaveCTA: React.FC<Props> = ({
             size: {
                 medium: {
                     maskImage: `url(${'../static/wave/wave-m.svg?sprite'})`,
+                    maskPosition: 'top',
                     maskRepeat: 'no-repeat',
                     maskSize: 'cover', 
-                    maskPosition: 'top',
                 },
                 large: {
                     maskImage: `url(${'../static/wave/wave-l.svg?sprite'})`,
+                    maskPosition: 'bottom',
                     maskRepeat: 'no-repeat',
                     maskSize: 'cover', 
-                    maskPosition: 'bottom',
                 }
             }
         }
@@ -60,6 +59,9 @@ export const WaveCTA: React.FC<Props> = ({
         alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'column',
+        // calculations are based on the relations in the design, e.g.
+        // the width of ContentLayout in the design is 600px
+        // the width of the whole design page is 1440
         left: `calc( (108/1440) * ${width})`,
         paddingTop: `calc(80/1440 * ${width})`,
         paddingBottom: `calc(104/1440 * ${width})`,
@@ -88,18 +90,18 @@ export const WaveCTA: React.FC<Props> = ({
             },
             size: {
                 medium: {
+                    // 'medium'-cta has different font color 
+                    color: theme.Wave.CallToAction.Medium.Font.Color.Blue,
                     fontSize: theme.Wave.CallToAction.Medium.Font.Size,
                     fontWeight: '$regular',
                     lineHeight: theme.Wave.CallToAction.Medium.LineHeight,
-                    // 'medium'-cta has different font color 
-                    color: theme.Wave.CallToAction.Medium.Font.Color.Blue,
                 },
                 large: {
                     fontSize: theme.Wave.CallToAction.Large.Header.Font.Size,
                     // fontWeight: '$light',
                     fontWeight: '$medium',
-                    lineHeight: theme.Wave.CallToAction.Large.Header.LineHeight,
                     letterSpacing: theme.Wave.CallToAction.Large.Header.LetterSpacing,
+                    lineHeight: theme.Wave.CallToAction.Large.Header.LineHeight,
                 },
             },
         }

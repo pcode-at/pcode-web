@@ -13,9 +13,9 @@ type Props = {
 
 export const Wave: React.FC<Props> = ({ 
     className,
-    width = '100%',
     color = 'red',
     size = 'small',
+    width = '100%',
 }) => {
 
     let BaseLayout = styled('div', {
