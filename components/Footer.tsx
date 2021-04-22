@@ -2,8 +2,6 @@ import React from 'react';
 import { theme } from '../theme';
 import { styled } from '../stitches.config';
 import { CONSTANTS } from '../shared/constants';
-import { Link } from 'rebass';
-import { marginRight } from 'styled-system';
 
 type Props = { 
     className?: string; 
