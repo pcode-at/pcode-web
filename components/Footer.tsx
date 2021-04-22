@@ -114,9 +114,26 @@ export const Footer: React.FC<Props> = ({
         flexDirection: 'row',
     })
 
-    let LegalLink = styled(LinkEntry, {
+    let LegalLink = styled('a', {
+        color: theme.Footer.Entry.Links.Font.Color,
+        fontFamily: theme.Footer.Entry.Links.Font.Family,
+        fontSize: theme.Footer.Entry.Links.Font.Size,
+        fontWeight: '$light',
+        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
+        lineHeight: theme.Footer.Entry.LineHeight,
+        listStyle: 'none',
+        margin: '$xs 0px',
+        textDecoration:'none',
+
         paddingRight: '$xs',
         paddingTop: '$xxs',
+
+        '&:hover': {
+            textDecorationColor: theme.Color.White,
+            textDecorationLine: 'underline',
+            // textDecorationThickness: '0.5px',
+            textUnderlineOffset: '4px',
+        }
     })
 
     let Copyright = styled('p', {
