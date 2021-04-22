@@ -1,6 +1,5 @@
 import React from 'react';
 import { styled } from '../stitches.config';
-import { theme } from '../theme';
 
 type Props = {
     className?: string;
@@ -29,13 +28,13 @@ export const WaveQuote: React.FC<Props> = ({
         variants: {
             color: {
                 blue: {
-                    backgroundColor: theme.Wave.Color.Blue,
+                    backgroundColor: '$blue500',
                 },
                 green: {
-                    backgroundColor: theme.Wave.Color.Green,
+                    backgroundColor: '$green500',
                 },
                 red: {
-                    backgroundColor: theme.Wave.Color.Red,
+                    backgroundColor: '$red500',
                 },
             },
             size: {
@@ -74,28 +73,28 @@ export const WaveQuote: React.FC<Props> = ({
         variants: {
             color: {
                 blue: {
-                    color: theme.Wave.Quote.Small.Font.Color.Blue,
+                    color: '$white',
                 },
                 green: {
-                    color: theme.Wave.Quote.Small.Font.Color.Green,
+                    color: '$blue500',
                 },
                 red: {
-                    color: theme.Wave.Quote.Small.Font.Color.Red,
+                    color: '$blue500',
                 },
             },
             size: {
                 small: {
-                    fontSize: theme.Wave.Quote.Small.Font.Size,
-                    fontFamily: theme.Wave.Quote.Small.Font.Family,
+                    fontSize: '$xl',
+                    fontFamily: '$default',
                     fontWeight: '$light', // TODO: 2 different weights used
-                    lineHeight: theme.Wave.Quote.Small.LineHeight,
+                    lineHeight: '$xl',
                 },
                 large: {
-                    color: theme.Wave.Quote.Large.Font.Color.Red,
-                    fontSize: theme.Wave.Quote.Large.Font.Size,
-                    fontFamily: theme.Wave.Quote.Large.Font.Family,
+                    color: '$white',
+                    fontSize: '$xxl',
+                    fontFamily: '$default',
                     fontWeight: '$light', // TODO: 2 different weights used
-                    lineHeight: theme.Wave.Quote.Large.LineHeight,
+                    lineHeight: '$xxl',
                 },
             },
         }

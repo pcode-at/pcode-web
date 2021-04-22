@@ -1,6 +1,5 @@
 import React from 'react';
 import { styled } from '../stitches.config';
-import { theme } from '../theme';
 import WaveMedium from '../static/wave/wave-m.svg?sprite';
 
 export const WaveM = styled(WaveMedium, {
@@ -8,17 +7,17 @@ export const WaveM = styled(WaveMedium, {
     variants: {
         color: {
             blue: {
-                color: theme.Wave.Color.Blue,
+                color: '$blue500',
             },
             green: {
-                color: theme.Wave.Color.Green,
+                color: '$green500',
             },
             red: {
-                color: theme.Wave.Color.Red,
+                color: '$red500',
             },
             white: {
-                color: theme.Wave.Color.White,
+                color: '$white',
             },
-        }
+        },
     },
 })

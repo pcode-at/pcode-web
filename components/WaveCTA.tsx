@@ -1,6 +1,5 @@
 import React from 'react';
 import { styled } from '../stitches.config';
-import { theme } from '../theme';
 import { Button } from './Button';
 
 type Props = {
@@ -29,13 +28,13 @@ export const WaveCTA: React.FC<Props> = ({
         variants: {
             color: {
                 blue: {
-                    backgroundColor: theme.Wave.Color.Blue,
+                    backgroundColor: '$blue500',
                 },
                 green: {
-                    backgroundColor: theme.Wave.Color.Green,
+                    backgroundColor: '$green500',
                 },
                 red: {
-                    backgroundColor: theme.Wave.Color.Red,
+                    backgroundColor: '$red500',
                 },
             },
             size: {
@@ -74,34 +73,34 @@ export const WaveCTA: React.FC<Props> = ({
     })
 
     let Header = styled('h1', {
-        fontFamily: theme.Wave.CallToAction.Large.Header.Font.Family,
+        fontFamily: '$default',
         textTransform: 'lowercase',
         variants: {
             color: {
                 blue: {
-                    color: theme.Wave.CallToAction.Large.Header.Font.Color.Blue,
+                    color: '$white',
                 },
                 green: {
-                    color: theme.Wave.CallToAction.Large.Header.Font.Color.Green,
+                    color: '$blue500',
                 },
                 red: {
-                    color: theme.Wave.CallToAction.Large.Header.Font.Color.Red,
+                    color: '$blue500',
                 },
             },
             size: {
                 medium: {
                     // 'medium'-cta has different font color 
-                    color: theme.Wave.CallToAction.Medium.Font.Color.Blue,
-                    fontSize: theme.Wave.CallToAction.Medium.Font.Size,
-                    fontWeight: '$regular',
-                    lineHeight: theme.Wave.CallToAction.Medium.LineHeight,
+                    color: '$green500',
+                    fontSize: '$xl',
+                    fontWeight: '$light',
+                    lineHeight: '$xl',
                 },
                 large: {
-                    fontSize: theme.Wave.CallToAction.Large.Header.Font.Size,
+                    fontSize: '$xxl',
                     // fontWeight: '$light',
                     fontWeight: '$medium',
-                    letterSpacing: theme.Wave.CallToAction.Large.Header.LetterSpacing,
-                    lineHeight: theme.Wave.CallToAction.Large.Header.LineHeight,
+                    letterSpacing: '$tight',
+                    lineHeight: '$xxl',
                 },
             },
         }
@@ -109,24 +108,24 @@ export const WaveCTA: React.FC<Props> = ({
     })
     
     let Body = styled('p', {
-        fontFamily: theme.Wave.CallToAction.Large.Header.Font.Family,
+        fontFamily: '$default',
         variants: {
             color: {
                 blue: {
-                    color: theme.Wave.CallToAction.Large.Body.Font.Color.Blue,
+                    color: '$white',
                 },
                 green: {
-                    color: theme.Wave.CallToAction.Large.Body.Font.Color.Green,
+                    color: '$blue500',
                 },
                 red: {
-                    color: theme.Wave.CallToAction.Large.Body.Font.Color.Red,
+                    color: '$blue500',
                 },
             },
             size: {
                 large: {
-                    fontSize: theme.Wave.CallToAction.Large.Body.Font.Size,
+                    fontSize: '$m',
                     fontWeight: '$regular',
-                    lineHeight: theme.Wave.CallToAction.Large.Body.LineHeight,
+                    lineHeight: '$m',
                 },
             }
         }

@@ -1,66 +1,62 @@
 import React from 'react';
 import { styled } from '../stitches.config';
-import { theme } from '../theme';
 
 export const Button = styled('button', {
 
     alignItems:     'flex-end',
-    borderRadius:   theme.Button.Border.Radius,
-    boxShadow:      theme.Button.BoxShadow,
+    borderRadius:   '$circle',
+    boxShadow:      '$regular',
     display:        'flex',
     flexDirection:  'row',
-    fontFamily:     theme.Font.Default,   
-    fontSize:       theme.Button.Font.Size,
+    fontFamily:     '$default',
+    fontSize:       '$s',
     fontWeight:     '$regular',
     justifyContent: 'center',
-    lineHeight:     theme.Button.LineHeight,
-    padding:        theme.Button.Padding,
+    lineHeight:     '$s',
+    padding:        '$s $m',
 
     variants: {
         variant: {
             // TODO: check out why boxShadow: 'inset $regular' doesn't work
             primaryRed: {
-                color: theme.Button.Font.Color.Primary.Default,
-                backgroundColor: theme.Button.Background.Color.Primary.Red.Default,
-                border: theme.Button.Border.Width.Primary,
-                boxShadow: theme.Button.BoxShadow,
-    
+                backgroundColor:'$red500',
+                border: 'none',
+                color: '$white',
+
                 '&:hover': {
-                    backgroundColor: theme.Button.Background.Color.Primary.Red.Hover,
+                    backgroundColor: '$red300',
                 },
                 '&:disabled': {
-                    backgroundColor: theme.Button.Background.Color.Primary.Red.Disabled,
+                    backgroundColor: '$red100',
                 },
                 '&:active': {
-                    backgroundColor: theme.Button.Background.Color.Primary.Red.Default,
+                    backgroundColor: '$red500',
                     boxShadow: 'inset 0px 4px 16px rgba(0, 0, 0, 0.15)',
                     // boxShadow: 'inset $regular',
                 },
             },
             primaryBlue: {
-                color: theme.Button.Font.Color.Primary.Default,
-                backgroundColor: theme.Button.Background.Color.Primary.Blue.Default,
-                border: theme.Button.Border.Width.Primary,
-                boxShadow: theme.Button.BoxShadow,
+                backgroundColor: '$blue500',
+                border: 'none',
+                color: '$white',
 
                 '&:hover': {
-                    backgroundColor: theme.Button.Background.Color.Primary.Blue.Hover,
+                    backgroundColor:'$blue300',
                 },
                 '&:disabled': {
-                    backgroundColor: theme.Button.Background.Color.Primary.Blue.Disabled,
+                    backgroundColor: '$blue100',
                 },
                 '&:active': {
-                    backgroundColor: theme.Button.Background.Color.Primary.Blue.Default,
+                    backgroundColor: '$blue500',
                     boxShadow: 'inset 0px 4px 16px rgba(0, 0, 0, 0.15)',
                     // boxShadow: 'inset $regular',
                 },
 
             },
             primaryWhite: {
-                backgroundColor: theme.Button.Background.Color.Primary.White,
-                border: theme.Button.Border.Width.Primary,
-                boxShadow: theme.Button.BoxShadow,
-                color: theme.Button.Font.Color.Primary.White,
+                backgroundColor: '$white',
+                border: 'none',
+                color: '$blue500',
 
                 '&:hover': {
                     opacity: '0.8',
@@ -76,50 +72,45 @@ export const Button = styled('button', {
 
             },
             secondary: {
-                // transparent background, no border
-                backgroundColor: theme.Button.Background.Color.Secondary,
-                border: theme.Button.Border.Width.Secondary,
-                borderWidth: theme.Button.Border.Width.Secondary,
+                backgroundColor: 'transparent',
+                border: 'none',
                 boxShadow: 'none',
-                color: theme.Button.Font.Color.Secondary,
+                color: '$red500',
 
                 '&:hover': {
-                    textDecoration: theme.Button.TextDecoration.Secondary.TextDecoration,
-                    textDecorationColor: theme.Button.Font.Color.Secondary,
-                    textDecorationThickness: theme.Button.TextDecoration.Secondary.TextDecorationThickness,
-                    textUnderlineOffset: theme.Button.TextDecoration.Secondary.TextUnderlineOffset,
+                    textDecoration: 'underline',
+                    textDecorationColor: '$red500',
+                    textDecorationThickness: '0.063rem',
+                    textUnderlineOffset: '0.25rem',
                 }
 
             },
             tertiary: {
-                backgroundColor: theme.Button.Background.Color.Tertiary.Default,
-                border: theme.Button.Border.Width.Tertiary,
-                borderColor: theme.Button.Border.Color.Tertiary.Default,
-                borderRadius: theme.Button.Border.Radius,
+                backgroundColor: 'transparent',
+                border: '$regular',
+                borderColor: '$red500',
+                borderRadius: '$circle',
                 borderStyle: 'solid',
                 boxShadow: 'none',
-                color: theme.Button.Font.Color.Tertiary.Default,
+                color: '$red500',
 
                 '&:hover': {
-                    backgroundColor: theme.Button.Background.Color.Tertiary.Hover,
+                    backgroundColor: '$red100',
                     border: 'none',
-                    color: theme.Button.Font.Color.Tertiary.Hover,
-
+                    color: '$white',
                 },
                 '&:disabled': {
-                    backgroundColor: theme.Button.Background.Color.Tertiary.Disabled,
-                    border: theme.Button.Border.Width.Tertiary,
-                    borderColor: theme.Button.Border.Color.Tertiary.Disabled,
+                    backgroundColor: 'transparent',
+                    border: '$regular',
+                    borderColor: '$red100',
                     borderStyle: 'solid',
-                    color: theme.Button.Font.Color.Tertiary.Disabled,
-
+                    color: '$red100',
                 },
                 '&:active': {
-                    backgroundColor: theme.Button.Background.Color.Tertiary.Active,
+                    backgroundColor: '$red500',
                     border: 'none',
                     boxShadow: 'inset 0px 4px 16px rgba(0, 0, 0, 0.15)',
-                    color: theme.Button.Font.Color.Tertiary.Active,
-
+                    color: '$white',
                 },
             },
         },
