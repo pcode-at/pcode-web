@@ -17,7 +17,7 @@ export const Footer: React.FC<Props> = ({
 
     // whole footer area 
     let FooterLayout = styled('nav', {
-        backgroundColor: theme.Footer.Background.Color,
+        backgroundColor: '$blue500',
         maskImage: `url(${'../static/wave/wave-s.svg?sprite'})`,
         maskPosition: 'top',
         maskRepeat: 'no-repeat',
@@ -46,39 +46,39 @@ export const Footer: React.FC<Props> = ({
 
     // header of directory entry 
     let DirectoryEntryHeader = styled('li', {
-        color: theme.Footer.Entry.Header.Font.Color,
-        fontSize: theme.Footer.Entry.Header.Font.Size,
-        fontFamily: theme.Footer.Entry.Header.Font.Family,
+        color: '$white',
+        fontSize: '$xs',
+        fontFamily: '$default',
         fontWeight: '$semibold',
-        letterSpacing: theme.Footer.Entry.Header.LetterSpacing,
-        lineHeight: theme.Footer.Entry.LineHeight,
+        letterSpacing: '$wide',
+        lineHeight: '$s',
         listStyle: 'none',
         paddingBottom: `$s`,
     })
 
     let TextEntry = styled('li', {
-        color: theme.Footer.Entry.Links.Font.Color,
-        fontFamily: theme.Footer.Entry.Links.Font.Family,
-        fontSize: theme.Footer.Entry.Links.Font.Size,
+        color: '$white',
+        fontFamily: '$default',
+        fontSize: '$xs',
         fontWeight: '$light',
-        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
-        lineHeight: theme.Footer.Entry.LineHeight,
+        letterSpacing: '$wide',
+        lineHeight: '$s',
         listStyle: 'none',
     })
 
     let LinkEntry = styled('a', {
-        color: theme.Footer.Entry.Links.Font.Color,
-        fontFamily: theme.Footer.Entry.Links.Font.Family,
-        fontSize: theme.Footer.Entry.Links.Font.Size,
+        color: '$white',
+        fontFamily: '$default',
+        fontSize: '$xs',
         fontWeight: '$light',
-        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
-        lineHeight: theme.Footer.Entry.LineHeight,
+        letterSpacing: '$wide',
+        lineHeight: '$s',
         listStyle: 'none',
         margin: '$xs 0px',
         textDecoration:'none',
 
         '&:hover': {
-            textDecorationColor: theme.Color.White,
+            textDecorationColor: '$white',
             textDecorationLine: 'underline',
             // textDecorationThickness: '0.5px',
             textUnderlineOffset: '4px',
@@ -115,12 +115,12 @@ export const Footer: React.FC<Props> = ({
     })
 
     let LegalLink = styled('a', {
-        color: theme.Footer.Entry.Links.Font.Color,
-        fontFamily: theme.Footer.Entry.Links.Font.Family,
-        fontSize: theme.Footer.Entry.Links.Font.Size,
+        color: '$white',
+        fontFamily: '$default',
+        fontSize: '$xs',
         fontWeight: '$light',
-        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
-        lineHeight: theme.Footer.Entry.LineHeight,
+        letterSpacing: '$wide',
+        lineHeight: '$s',
         listStyle: 'none',
         margin: '$xs 0px',
         textDecoration:'none',
@@ -129,7 +129,7 @@ export const Footer: React.FC<Props> = ({
         paddingTop: '$xxs',
 
         '&:hover': {
-            textDecorationColor: theme.Color.White,
+            textDecorationColor: '$white',
             textDecorationLine: 'underline',
             // textDecorationThickness: '0.5px',
             textUnderlineOffset: '4px',
@@ -137,12 +137,12 @@ export const Footer: React.FC<Props> = ({
     })
 
     let Copyright = styled('p', {
-        color: theme.Footer.Entry.Links.Font.Color,
-        fontFamily: theme.Footer.Entry.Links.Font.Family,
-        fontSize: theme.Footer.Entry.Links.Font.Size,
+        color: '$white',
+        fontFamily: '$default',
+        fontSize: '$xs',
         fontWeight: '$light',
-        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
-        lineHeight: theme.Footer.Entry.LineHeight,
+        letterSpacing: '$wide',
+        lineHeight: '$s',
         paddingRight: '$xs',
     })
 
