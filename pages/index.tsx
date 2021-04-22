@@ -29,7 +29,7 @@ import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
-import { Character } from '../components/Character';
+import { CharacterDeprecated } from '../components/CharacterDeprecated';
 import { SkillDetail } from '../components/SkillDetail';
 import { ImageBubble } from '../components/ImageBubble';
 import { PersonBubble } from '../components/PersonBubble';
@@ -52,6 +52,10 @@ const MainPage = () => (
         /> */}
 
         <Navbar/>
+
+        <StyledHeading>Characters: GameChanger</StyledHeading>
+
+
 
         <StyledHeading>wave-s-quote</StyledHeading>
         <WaveQuote/>
@@ -417,7 +421,7 @@ const StyledFreeChair = styled(FreeChair)`
     margin-left: 1em;
 `;
 
-const StyledCharacter = styled(Character)`
+const StyledCharacter = styled(CharacterDeprecated)`
     margin-left: 1em;
 `;
 
