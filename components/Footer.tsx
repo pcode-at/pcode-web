@@ -15,7 +15,7 @@ export const Footer: React.FC<Props> = ({
     width = '100%',
 }) => { 
 
-    // area containing the whole footer content
+    // whole footer area 
     let FooterLayout = styled('nav', {
         backgroundColor: theme.Footer.Background.Color,
         maskImage: `url(${'../static/wave/wave-s.svg?sprite'})`,
@@ -23,30 +23,20 @@ export const Footer: React.FC<Props> = ({
         maskRepeat: 'no-repeat',
         maskSize: 'cover', 
         width: width,
-        // height: `calc((432/1440) * ${width})`,
-        // height: '432px',
-        // height 432px
-        // width 1440px 
     })
 
+    // area containing 'Kontakt', 'Postfach', 'Services', 'Kategorien'
     let DirectoryLayout = styled('div', {
-        width: `calc((1224/1440) * ${width})`,
-        paddingTop: `calc(128/1440 * ${width})`,
-        paddingLeft: `calc(108/1440 * ${width})`,
-        // marginBottom: `calc((88/1440) * ${width})`,
-        // height 216
-        // width 1224
-        // top 128 // 47.95%
-        // bottom 88 // 15.07% 
-        // left right 108 // 7.5%
-
+        alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'flex-start',
-
+        paddingLeft: `calc(108/1440 * ${width})`,
+        paddingTop: `calc(128/1440 * ${width})`,
+        width: `calc((1224/1440) * ${width})`,
     })
 
-    let EntryLayout = styled('ul', {
+    // area for a directory section (e.g. 'Kontakt')
+    let DirectoryEntryLayout = styled('ul', {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
@@ -54,7 +44,8 @@ export const Footer: React.FC<Props> = ({
         marginRight: `calc((24/1440) * ${width})`,
     })
 
-    let EntryHeader = styled('li', {
+    // header of directory entry 
+    let DirectoryEntryHeader = styled('li', {
         color: theme.Footer.Entry.Header.Font.Color,
         fontSize: theme.Footer.Entry.Header.Font.Size,
         fontFamily: theme.Footer.Entry.Header.Font.Family,
@@ -63,7 +54,6 @@ export const Footer: React.FC<Props> = ({
         lineHeight: theme.Footer.Entry.LineHeight,
         listStyle: 'none',
         paddingBottom: `$s`,
-        // paddingBottom: `calc((16/1440) * ${width})`,
     })
 
     let TextEntry = styled('li', {
@@ -95,60 +85,38 @@ export const Footer: React.FC<Props> = ({
         }
     })
 
+    // area containing social media icons and legal information
     let SubFooterLayout = styled('div', {
+        alignItems: 'center',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        paddingBottom: '47px',
     })
 
+    // area containing social media icons 
     let IconLayout = styled('div', {
+        alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'flex-start',
+        paddingBottom: '49px',
     })
 
     let Icon = styled('img', {
         height: '$s',
-        margin: '0px $l',
+        margin: '0px $xl',
         width: '$s',
     })
 
+    // area containing legal information
     let LegalLayout = styled('div', {
+        alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'flex-start',
-        // width: `calc((283/1440) * ${width})`,
-        // width: '283px',
-        // left: calc(50% - 283px/2 + 0.5px);
-        // top: 521px;
-
-        left: `calc(50% - 283px/2 + 0.5px)`,
-
     })
 
-    let LegalLink = styled('a', {
-        color: theme.Footer.Entry.Links.Font.Color,
-        fontFamily: theme.Footer.Entry.Links.Font.Family,
-        fontSize: theme.Footer.Entry.Links.Font.Size,
-        fontWeight: '$light',
-        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
-        lineHeight: theme.Footer.Entry.LineHeight,
-        listStyle: 'none',
-        margin: '$xs 0px',
-        textDecoration:'none',
-
-        // paddingRight: '8px',
-        // paddingTop: '4px',
+    let LegalLink = styled(LinkEntry, {
         paddingRight: '$xs',
         paddingTop: '$xxs',
-
-        '&:hover': {
-            textDecorationColor: theme.Color.White,
-            textDecorationLine: 'underline',
-            // textDecorationThickness: '0.5px',
-            textUnderlineOffset: '4px',
-            // textUnderlineOffset: '$xxs',
-        }
     })
 
     let Copyright = styled('p', {
@@ -158,44 +126,41 @@ export const Footer: React.FC<Props> = ({
         fontWeight: '$light',
         letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
         lineHeight: theme.Footer.Entry.LineHeight,
-        // listStyle: 'none',
-
-        // paddingRight: '8px',
         paddingRight: '$xs',
     })
 
     return (
         <FooterLayout className={className}>
             <DirectoryLayout>
-                <EntryLayout>
-                    <EntryHeader>Kontakt</EntryHeader>
+                <DirectoryEntryLayout>
+                    <DirectoryEntryHeader>Kontakt</DirectoryEntryHeader>
                     <TextEntry>pcode - Software Engineering</TextEntry>
                     <TextEntry>Peter-Behrens-Platz 9</TextEntry>
-                    <TextEntry>Steige D / 3. Stock</TextEntry>
+                    <TextEntry>Stiege D / 3. Stock</TextEntry>
                     <TextEntry>4020 Linz - Austria</TextEntry>
-                </EntryLayout>
-                <EntryLayout>
-                    <EntryHeader>Postfach</EntryHeader>
+                </DirectoryEntryLayout>
+                <DirectoryEntryLayout>
+                    <DirectoryEntryHeader>Postfach</DirectoryEntryHeader>
                     <TextEntry>pcode software engineering</TextEntry>
                     <TextEntry>MMag. Christoph Pernsteiner</TextEntry>
                     <TextEntry>C/O Pernsteiner Christoph</TextEntry>
                     <TextEntry>Peter-Behrens-Platz 9</TextEntry>
                     <TextEntry>4020 Linz - Austria</TextEntry>
-                </EntryLayout>
-                <EntryLayout>
-                    <EntryHeader>Service</EntryHeader>
+                </DirectoryEntryLayout>
+                <DirectoryEntryLayout>
+                    <DirectoryEntryHeader>Service</DirectoryEntryHeader>
                     <TextEntry>+43 664 1652141</TextEntry>
                     <TextEntry>office@pcode.at</TextEntry>
-                </EntryLayout>
-                <EntryLayout>
-                    <EntryHeader>Kategorien</EntryHeader>
+                </DirectoryEntryLayout>
+                <DirectoryEntryLayout>
+                    <DirectoryEntryHeader>Kategorien</DirectoryEntryHeader>
                     <LinkEntry href="">Home</LinkEntry>
                     <LinkEntry href="./who-we-are">Who we are</LinkEntry>
                     <LinkEntry href="./what-we-dp">What we do</LinkEntry>
-                    <LinkEntry href="">Out clients</LinkEntry>
+                    <LinkEntry href="">Our clients</LinkEntry>
                     <LinkEntry href="./join-us">Join us</LinkEntry>
                     <LinkEntry href="">Blog</LinkEntry>
-                </EntryLayout>
+                </DirectoryEntryLayout>
             </DirectoryLayout>
             <SubFooterLayout>
                 <IconLayout>
