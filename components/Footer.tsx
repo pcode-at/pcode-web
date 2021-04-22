@@ -24,15 +24,16 @@ export const Footer: React.FC<Props> = ({
         maskSize: 'cover', 
         width: width,
         // height: `calc((432/1440) * ${width})`,
-        height: '432px',
+        // height: '432px',
         // height 432px
         // width 1440px 
     })
 
-    let TextLayout = styled('div', {
+    let DirectoryLayout = styled('div', {
         width: `calc((1224/1440) * ${width})`,
         paddingTop: `calc(128/1440 * ${width})`,
         paddingLeft: `calc(108/1440 * ${width})`,
+        // marginBottom: `calc((88/1440) * ${width})`,
         // height 216
         // width 1224
         // top 128 // 47.95%
@@ -50,7 +51,7 @@ export const Footer: React.FC<Props> = ({
         flexDirection: 'column',
         alignItems: 'flex-start',
         width: `calc((288/1440) * ${width})`,
-        // marginRight: `calc((24/1440) * ${width})`,
+        marginRight: `calc((24/1440) * ${width})`,
     })
 
     let EntryHeader = styled('li', {
@@ -61,11 +62,8 @@ export const Footer: React.FC<Props> = ({
         letterSpacing: theme.Footer.Entry.Header.LetterSpacing,
         lineHeight: theme.Footer.Entry.LineHeight,
         listStyle: 'none',
-
-    })
-
-    let EntryLinksLayout = styled('div', {
-
+        paddingBottom: `$s`,
+        // paddingBottom: `calc((16/1440) * ${width})`,
     })
 
     let TextEntry = styled('li', {
@@ -86,47 +84,141 @@ export const Footer: React.FC<Props> = ({
         letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
         lineHeight: theme.Footer.Entry.LineHeight,
         listStyle: 'none',
+        margin: '$xs 0px',
+        textDecoration:'none',
+
+        '&:hover': {
+            textDecorationColor: theme.Color.White,
+            textDecorationLine: 'underline',
+            // textDecorationThickness: '0.5px',
+            textUnderlineOffset: '4px',
+        }
+    })
+
+    let SubFooterLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    })
+
+    let IconLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+    })
+
+    let Icon = styled('img', {
+        height: '$s',
+        margin: '0px $l',
+        width: '$s',
+    })
+
+    let LegalLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        // width: `calc((283/1440) * ${width})`,
+        // width: '283px',
+        // left: calc(50% - 283px/2 + 0.5px);
+        // top: 521px;
+
+        left: `calc(50% - 283px/2 + 0.5px)`,
+
+    })
+
+    let LegalLink = styled('a', {
+        color: theme.Footer.Entry.Links.Font.Color,
+        fontFamily: theme.Footer.Entry.Links.Font.Family,
+        fontSize: theme.Footer.Entry.Links.Font.Size,
+        fontWeight: '$light',
+        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
+        lineHeight: theme.Footer.Entry.LineHeight,
+        listStyle: 'none',
+        margin: '$xs 0px',
+        textDecoration:'none',
+
+        // paddingRight: '8px',
+        // paddingTop: '4px',
+        paddingRight: '$xs',
+        paddingTop: '$xxs',
+
+        '&:hover': {
+            textDecorationColor: theme.Color.White,
+            textDecorationLine: 'underline',
+            // textDecorationThickness: '0.5px',
+            textUnderlineOffset: '4px',
+            // textUnderlineOffset: '$xxs',
+        }
+    })
+
+    let Copyright = styled('p', {
+        color: theme.Footer.Entry.Links.Font.Color,
+        fontFamily: theme.Footer.Entry.Links.Font.Family,
+        fontSize: theme.Footer.Entry.Links.Font.Size,
+        fontWeight: '$light',
+        letterSpacing: theme.Footer.Entry.Links.LetterSpacing,
+        lineHeight: theme.Footer.Entry.LineHeight,
+        // listStyle: 'none',
+
+        // paddingRight: '8px',
+        paddingRight: '$xs',
     })
 
     return (
         <FooterLayout className={className}>
-            <TextLayout>
+            <DirectoryLayout>
                 <EntryLayout>
                     <EntryHeader>Kontakt</EntryHeader>
-                    <EntryLinksLayout>
-                        <TextEntry>pcode - Software Engineering</TextEntry>
-                        <TextEntry>Peter-Behrens-Platz 9</TextEntry>
-                        <TextEntry>Steige D / 3. Stock</TextEntry>
-                        <TextEntry>4020 Linz - Austria</TextEntry>
-                    </EntryLinksLayout>
+                    <TextEntry>pcode - Software Engineering</TextEntry>
+                    <TextEntry>Peter-Behrens-Platz 9</TextEntry>
+                    <TextEntry>Steige D / 3. Stock</TextEntry>
+                    <TextEntry>4020 Linz - Austria</TextEntry>
                 </EntryLayout>
                 <EntryLayout>
                     <EntryHeader>Postfach</EntryHeader>
-                    <EntryLinksLayout>
-                        <TextEntry>pcode software engineering</TextEntry>
-                        <TextEntry>MMag. Christoph Pernsteiner</TextEntry>
-                        <TextEntry>C/O Pernsteiner Christoph</TextEntry>
-                        <TextEntry>Peter-Behrens-Platz 9</TextEntry>
-                        <TextEntry>4020 Linz - Austria</TextEntry>
-                    </EntryLinksLayout>
+                    <TextEntry>pcode software engineering</TextEntry>
+                    <TextEntry>MMag. Christoph Pernsteiner</TextEntry>
+                    <TextEntry>C/O Pernsteiner Christoph</TextEntry>
+                    <TextEntry>Peter-Behrens-Platz 9</TextEntry>
+                    <TextEntry>4020 Linz - Austria</TextEntry>
                 </EntryLayout>
                 <EntryLayout>
                     <EntryHeader>Service</EntryHeader>
-                    <EntryLinksLayout>
-                        <TextEntry>+43 664 1652141</TextEntry>
-                        <TextEntry>office@pcode.at</TextEntry>
-                    </EntryLinksLayout>
+                    <TextEntry>+43 664 1652141</TextEntry>
+                    <TextEntry>office@pcode.at</TextEntry>
                 </EntryLayout>
                 <EntryLayout>
                     <EntryHeader>Kategorien</EntryHeader>
-                    <LinkEntry>Home</LinkEntry>
-                    <LinkEntry>Who we are</LinkEntry>
-                    <LinkEntry>What we do</LinkEntry>
-                    <LinkEntry>Out clients</LinkEntry>
-                    <LinkEntry>Join us</LinkEntry>
-                    <LinkEntry>Blog</LinkEntry>
+                    <LinkEntry href="">Home</LinkEntry>
+                    <LinkEntry href="./who-we-are">Who we are</LinkEntry>
+                    <LinkEntry href="./what-we-dp">What we do</LinkEntry>
+                    <LinkEntry href="">Out clients</LinkEntry>
+                    <LinkEntry href="./join-us">Join us</LinkEntry>
+                    <LinkEntry href="">Blog</LinkEntry>
                 </EntryLayout>
-            </TextLayout>
+            </DirectoryLayout>
+            <SubFooterLayout>
+                <IconLayout>
+                    <LinkEntry href="https://www.instagram.com/pcode.at/">
+                        <Icon src={'../static/instagram.svg'}></Icon>
+                    </LinkEntry>
+                    <LinkEntry href="https://www.facebook.com/pcode.at/">
+                        <Icon src={'../static/facebook.svg'}></Icon>
+                    </LinkEntry>
+                    <LinkEntry href="https://twitter.com/pcode_at">
+                        <Icon src={'../static/twitter.svg'}></Icon>
+                    </LinkEntry>
+                    <LinkEntry href="https://www.linkedin.com/company/pcode">
+                        <Icon src={'../static/linkedin.svg'}></Icon>
+                    </LinkEntry>
+                </IconLayout>
+                <LegalLayout>
+                    <Copyright>© 2021 pcode</Copyright>
+                    <LegalLink href={CONSTANTS.DATA_PRIVACY_LINK}>Datenschutz</LegalLink>
+                    <LegalLink href={CONSTANTS.AGB_LINK}>AGB</LegalLink>
+                    <LegalLink href={CONSTANTS.IMPRESSUM_LINK}>Impressum</LegalLink>
+                </LegalLayout>
+            </SubFooterLayout>
         </FooterLayout>
     );
 }
