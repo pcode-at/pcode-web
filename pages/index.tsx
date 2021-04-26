@@ -40,6 +40,7 @@ import { Wave } from '../components/Wave';
 import { WaveQuote } from '../components/WaveQuote';
 import { WaveCTA } from '../components/WaveCTA';
 import { Character } from '../components/Character';
+import { CharacterAndParagraph } from '../components/CharacterAndParagraph';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -53,6 +54,30 @@ const MainPage = () => (
         /> */}
 
         <Navbar/>
+
+        <StyledHeading>CharacterAndParagraph</StyledHeading>
+        <CharactersGroupLayout>
+            <CharacterAndParagraph/>
+            <CharacterAndParagraph
+                character={'SupportiveChallenger'}
+                color={'blue'}
+                title={'social media manager:in'}
+                subtitle={'motivated'}
+                paragraph={'Social Media Kanäle betreuen und spannenden Content produzieren ist genau deins? Dann bewirb dich jetzt!'}
+            />
+            <CharacterAndParagraph
+                character={'GameChanger'}
+                color={'red'}
+                title={'senior developer:in'}
+                subtitle={'experienced'}
+            />
+            <CharacterAndParagraph
+                character={'StrategicWizard'}
+                color={'green'}
+                title={'interesse an pcode?'}
+                subtitle={'curious'}
+            />
+        </CharactersGroupLayout>
 
         <StyledHeading>Characters: GameChanger</StyledHeading>
         <CharactersGroupLayout>
@@ -417,7 +442,7 @@ const MainPage = () => (
 );
 
 const CharactersGroupLayout = styled('div')`
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: row;
 `;
