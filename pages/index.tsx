@@ -64,7 +64,7 @@ const MainPage = () => (
         <BubblePortrait
             color={'red'}
             width={'175px'}
-            imageSource={'../static/memberPortraits/kotek_michael.jpg'}
+            imageSource={'../static/memberPortraits/kotek_michael.jpg'}/>
 
         <StyledHeading>Button</StyledHeading>
         <Button variant={'primaryRed'}>Primary Red</Button>
