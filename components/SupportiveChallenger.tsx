@@ -30,7 +30,6 @@ export const SupportiveChallenger: React.FC<Props> = ({
     
     return (
         <Character 
-            color={color} 
             src={getSupportiveChallenger()}
         />        
     );

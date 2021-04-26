@@ -30,7 +30,6 @@ export const StrategicWizard: React.FC<Props> = ({
     
     return (
         <Character 
-            color={color} 
             src={getStrategicWizard()}
         />        
     );

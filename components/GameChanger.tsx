@@ -30,7 +30,6 @@ export const GameChanger: React.FC<Props> = ({
     
     return (
         <Character 
-            color={color} 
             src={getGameChanger()}
         />        
     );

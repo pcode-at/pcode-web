@@ -30,7 +30,6 @@ export const LifelongLearner: React.FC<Props> = ({
     
     return (
         <Character 
-            color={color} 
             src={getLifelongLearner()}
         />        
     );

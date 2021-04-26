@@ -30,7 +30,6 @@ export const FluffyMember: React.FC<Props> = ({
     
     return (
         <Character 
-            color={color} 
             src={getFluffyMember()}
         />        
     );
