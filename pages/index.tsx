@@ -58,6 +58,37 @@ const MainPage = () => (
 
         <StyledHeading>Bubble Portrait and Quote</StyledHeading>
         <BubblePortraitAndQuote/>
+        <BubblePortraitAndQuote 
+            color={'green'}
+            imageSource={'../static/weber_elisabeth.png'}
+            name={'Elisabeth Weber'}
+            position={'Product Ownerin/Digital Facilitator'}    
+        />
+        <BubblePortraitAndQuote 
+            color={'red'}
+            imageSource={'../static/memberPortraits/spyra_melissa.png'}
+            name={'Melissa Spyra'}
+            position={'Content Creatorin'}
+            quote={'Wir sind mächtig stolz auf unsere bisherigen Meilensteine, aber das war natürlich längst nicht alles! Seid gespannt was noch kommt'}    
+        />
+
+        <BubblePortraitAndQuote
+            alignment={'right'}
+        />
+        <BubblePortraitAndQuote
+            alignment={'right'}
+            color={'green'}
+            name={'Michael Kotek'}
+            position={'web developer'}   
+            imageSource={'../static/memberPortraits/kotek_michael.jpg'}
+        />
+        <BubblePortraitAndQuote
+            alignment={'right'}
+            color={'red'}
+            name={'Christoph Pernsteiner'}
+            position={'CEO . founder'}   
+            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
+        />
 
         <StyledHeading>Bubble Portrait</StyledHeading>
         <BubblePortrait/>
@@ -65,21 +96,6 @@ const MainPage = () => (
             color={'red'}
             width={'175px'}
             imageSource={'../static/memberPortraits/kotek_michael.jpg'}/>
-
-        <StyledHeading>Button</StyledHeading>
-        <Button variant={'primaryRed'}>Primary Red</Button>
-        <Button variant={'primaryRed'} disabled={true}>Primary Red - Disabled</Button>
-        <br/>
-        <Button variant={'primaryBlue'}>Primary Blue</Button>
-        <Button variant={'primaryBlue'} disabled={true}>Primary Blue - Disabled</Button>
-        <br/>
-        <Button variant={'primaryWhite'}>Primary White</Button>
-        <Button variant={'primaryWhite'} disabled={true}>Primary White - Disabled</Button>
-        <br/>
-        <Button variant={'secondary'}>Secondary</Button>
-        <br/>
-        <Button variant={'tertiary'}>Tertiary</Button>
-        <Button variant={'tertiary'} disabled={true}>Tertiary - Disabled</Button>
 
         <BubblePortrait
             color={'blue'} 
@@ -122,6 +138,21 @@ const MainPage = () => (
         <BubbleBlank width={'250px'} color={'red'}/>
         <BubbleBlank width={'200px'} color={'blue'}/>
         <BubbleBlank width={'150px'} color={'green'}/>
+
+        <StyledHeading>Button</StyledHeading>
+        <Button variant={'primaryRed'}>Primary Red</Button>
+        <Button variant={'primaryRed'} disabled={true}>Primary Red - Disabled</Button>
+        <br/>
+        <Button variant={'primaryBlue'}>Primary Blue</Button>
+        <Button variant={'primaryBlue'} disabled={true}>Primary Blue - Disabled</Button>
+        <br/>
+        <Button variant={'primaryWhite'}>Primary White</Button>
+        <Button variant={'primaryWhite'} disabled={true}>Primary White - Disabled</Button>
+        <br/>
+        <Button variant={'secondary'}>Secondary</Button>
+        <br/>
+        <Button variant={'tertiary'}>Tertiary</Button>
+        <Button variant={'tertiary'} disabled={true}>Tertiary - Disabled</Button>
 
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
