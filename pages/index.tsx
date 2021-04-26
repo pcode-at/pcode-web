@@ -39,6 +39,7 @@ import { Navbar } from '../components/Navbar';
 import { Wave } from '../components/Wave';
 import { WaveQuote } from '../components/WaveQuote';
 import { WaveCTA } from '../components/WaveCTA';
+import { Character } from '../components/Character';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -54,8 +55,44 @@ const MainPage = () => (
         <Navbar/>
 
         <StyledHeading>Characters: GameChanger</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'GameChanger'} color={'blue'} />
+            <Character character={'GameChanger'} color={'red'} />
+            <Character character={'GameChanger'} color={'green'} />
+            <Character character={'GameChanger'} color={'white'} />
+        </CharactersGroupLayout>
 
+        <StyledHeading>Characters: FluffyMember</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'FluffyMember'} color={'blue'}/>
+            <Character character={'FluffyMember'} color={'red'}/>
+            <Character character={'FluffyMember'} color={'green'}/>
+            <Character character={'FluffyMember'} color={'white'}/>
+        </CharactersGroupLayout>
 
+        <StyledHeading>Characters: LifelongLearner</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'LifelongLearner'} color={'blue'}/>
+            <Character character={'LifelongLearner'} color={'red'}/>
+            <Character character={'LifelongLearner'} color={'green'}/>
+            <Character character={'LifelongLearner'} color={'white'}/>
+        </CharactersGroupLayout>
+
+        <StyledHeading>Characters: StrategicWizard</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'StrategicWizard'} color={'blue'}/>
+            <Character character={'StrategicWizard'} color={'red'}/>
+            <Character character={'StrategicWizard'} color={'green'}/>
+            <Character character={'StrategicWizard'} color={'white'}/>
+        </CharactersGroupLayout>
+
+        <StyledHeading>Characters: SupportiveChallenger</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'SupportiveChallenger'} color={'blue'}/>
+            <Character character={'SupportiveChallenger'} color={'red'}/>
+            <Character character={'SupportiveChallenger'} color={'green'}/>
+            <Character character={'SupportiveChallenger'} color={'white'}/>
+        </CharactersGroupLayout>
 
         <StyledHeading>wave-s-quote</StyledHeading>
         <WaveQuote/>
@@ -378,6 +415,12 @@ const MainPage = () => (
         <Footer/>
     </ThemeProvider>
 );
+
+const CharactersGroupLayout = styled('div')`
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+`;
 
 const StyledImageBubbleLayout = styled(ImageBubble)`
     width: 700px;
