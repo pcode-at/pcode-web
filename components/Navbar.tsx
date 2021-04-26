@@ -1,21 +1,20 @@
 import React from 'react';
 import { theme } from '../theme';
 import { styled } from '../stitches.config';
-import { Box, Flex, Text } from 'rebass';
-import { CONSTANTS } from '../shared/constants';
 
 type Props = { className?: string; }
 
 export const Navbar: React.FC<Props> = ({ className }) => {
  
-    let NavbarLayout = styled(Flex, {
+    let NavbarLayout = styled('div', {
+        display: 'flex',
         maxWidth: '100%',
     })
 
     let LogoLayout = styled('a', {
-        margin: '17px auto',
-        justifyContent: 'center',
         display: 'flex',
+        justifyContent: 'center',
+        margin: '17px auto',
         maxWidth: '45%',
     })
 
@@ -24,39 +23,43 @@ export const Navbar: React.FC<Props> = ({ className }) => {
     })
 
     let NavbarItemsLayout = styled('nav', {
-        width: '55%',
+        alignItems: 'center',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        padding: '$none $l',
+        justifyContent: 'space-between',
         marginLeft: 'auto',
         marginRight: 'auto',
-
+        padding: '0px $l',
+        width: '55%',
     })
 
     let NavbarItem = styled('a', {
+        color: theme.Navbar.Items.Font.Color.Default,
         fontFamily: theme.Font.Default,
         fontSize: theme.Navbar.Items.Font.Size,
-        lineHeight: theme.Navbar.Items.LineHeight,
-        color: theme.Navbar.Items.Font.Color,
+        fontWeight: '$medium',
         // fontWeight: theme.Navbar.Items.Font.Weight,
+        lineHeight: theme.Navbar.Items.LineHeight,
         marginRight: 'auto',
         textDecoration: 'none',
 
         variants: {
             color: {
                 default: {
-                    color: theme.Navbar.Items.Font.Color,
+                    color: theme.Navbar.Items.Font.Color.Default,
                     '&:hover': {
-                        color: theme.Color.Primary.Default,
-                        textDecorationColor: theme.Color.Primary.Default,
-                        textDecorationLine: 'underline',
+                        color: theme.Navbar.Items.Font.Color.Hover,
+                        textDecoration: theme.Navbar.Items.TextDecoration,
+                        textDecorationColor: theme.Navbar.Items.TextDecorationColor,
+                        textDecorationThickness: theme.Navbar.Items.TextDecorationThickness,
+                        textUnderlineOffset: theme.Navbar.Items.TextUnderlineOffset,
                     },
                     '&::selection': {
-                        color: theme.Color.Primary.Default,
-                        textDecorationColor: theme.Color.Primary.Default,
-                        textDecorationLine: 'underline',
+                        color: theme.Navbar.Items.Font.Color.Hover,
+                        textDecoration: theme.Navbar.Items.TextDecoration,
+                        textDecorationColor: theme.Navbar.Items.TextDecorationColor,
+                        textDecorationThickness: theme.Navbar.Items.TextDecorationThickness,
+                        textUnderlineOffset: theme.Navbar.Items.TextUnderlineOffset,
                     },
                     '&~a': {
                         marginLeft: 'auto',
@@ -73,10 +76,10 @@ export const Navbar: React.FC<Props> = ({ className }) => {
             </LogoLayout>
             <NavbarItemsLayout>
                 <NavbarItem color={'default'} href="">home</NavbarItem>
-                <NavbarItem color={'default'} href="">who we are</NavbarItem>
-                <NavbarItem color={'default'} href="">what we do</NavbarItem>
+                <NavbarItem color={'default'} href="./who-we-are">who we are</NavbarItem>
+                <NavbarItem color={'default'} href="./what-we-do">what we do</NavbarItem>
                 <NavbarItem color={'default'} href="">our clients</NavbarItem>
-                <NavbarItem color={'default'} href="">join us</NavbarItem>
+                <NavbarItem color={'default'} href="./join-us">join us</NavbarItem>
                 <NavbarItem color={'default'} href="">blog</NavbarItem>
             </NavbarItemsLayout>
         </NavbarLayout>

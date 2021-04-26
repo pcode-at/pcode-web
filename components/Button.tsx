@@ -4,65 +4,125 @@ import { theme } from '../theme';
 
 export const Button = styled('button', {
 
+    alignItems:     'flex-end',
     borderRadius:   theme.Button.Border.Radius,
+    boxShadow:      theme.Button.BoxShadow,
+    display:        'flex',
+    flexDirection:  'row',
     fontFamily:     theme.Font.Default,   
     fontSize:       theme.Button.Font.Size,
     fontWeight:     '$regular',
-    // fontWeight:  theme.Button.Font.Weight, 
-    lineHeight:     theme.Button.LineHeight,
-    boxShadow:      theme.Button.BoxShadow,
-    padding:        theme.Button.Padding,
-    display:        'flex',
-    flexDirection:  'row',
     justifyContent: 'center',
-    alignItems:     'flex-end',
+    lineHeight:     theme.Button.LineHeight,
+    padding:        theme.Button.Padding,
 
-    // TODO: Change structure of variants (filled/outlined)
-    // reference: https://codesandbox.io/s/ecstatic-meninsky-o6l2d?file=/src/App.js 
-    
     variants: {
-        color: {
-            primaryFilled: {
-                backgroundColor: theme.Color.Primary.Default,
-                color: theme.Color.White,
-                border: theme.Button.Border.Width.None,
+        variant: {
+            // TODO: check out why boxShadow: 'inset $regular' doesn't work
+            primaryRed: {
+                color: theme.Button.Font.Color.Primary.Default,
+                backgroundColor: theme.Button.Background.Color.Primary.Red.Default,
+                border: theme.Button.Border.Width.Primary,
+                boxShadow: theme.Button.BoxShadow,
+    
                 '&:hover': {
-                    backgroundColor: theme.Color.Primary.Hover,                 
+                    backgroundColor: theme.Button.Background.Color.Primary.Red.Hover,
                 },
                 '&:disabled': {
-                    backgroundColor: theme.Color.Primary.Inactive
-                }
+                    backgroundColor: theme.Button.Background.Color.Primary.Red.Disabled,
+                },
+                '&:active': {
+                    backgroundColor: theme.Button.Background.Color.Primary.Red.Default,
+                    boxShadow: 'inset 0px 4px 16px rgba(0, 0, 0, 0.15)',
+                    // boxShadow: 'inset $regular',
+                },
             },
-            primaryOutlined: {
-                backgroundColor: theme.Color.White,
-                borderColor: theme.Color.Primary.Default,
-                color: theme.Color.Primary.Default,
-                borderWidth: theme.Button.Border.Width.Regular,
-            },
-            secondaryFilled: {
-                backgroundColor: theme.Color.Secondary.Default,
-                color: theme.Color.White,
-                border: theme.Button.Border.Width.None,
+            primaryBlue: {
+                color: theme.Button.Font.Color.Primary.Default,
+                backgroundColor: theme.Button.Background.Color.Primary.Blue.Default,
+                border: theme.Button.Border.Width.Primary,
+                boxShadow: theme.Button.BoxShadow,
+
                 '&:hover': {
-                    backgroundColor: theme.Color.Secondary.Hover,
+                    backgroundColor: theme.Button.Background.Color.Primary.Blue.Hover,
                 },
                 '&:disabled': {
-                    backgroundColor: theme.Color.Secondary.Default,
-                }
+                    backgroundColor: theme.Button.Background.Color.Primary.Blue.Disabled,
+                },
+                '&:active': {
+                    backgroundColor: theme.Button.Background.Color.Primary.Blue.Default,
+                    boxShadow: 'inset 0px 4px 16px rgba(0, 0, 0, 0.15)',
+                    // boxShadow: 'inset $regular',
+                },
+
             },
-            secondaryOutlined: {
-                backgroundColor: theme.Color.White,
-                borderColor: theme.Color.Secondary.Default,
-                color: theme.Color.Secondary.Default,
-                borderWidth: theme.Button.Border.Width.Regular,
+            primaryWhite: {
+                backgroundColor: theme.Button.Background.Color.Primary.White,
+                border: theme.Button.Border.Width.Primary,
+                boxShadow: theme.Button.BoxShadow,
+                color: theme.Button.Font.Color.Primary.White,
+
+                '&:hover': {
+                    opacity: '0.8',
+                },
+                '&:disabled': {
+                    opacity: '0.5',
+                },
+                '&:active': {
+                    boxShadow: 'inset 0px 4px 16px rgba(0, 0, 0, 0.15)',
+                    // boxShadow: 'inset $regular',
+                    opacity: '1',
+                },
+
+            },
+            secondary: {
+                // transparent background, no border
+                backgroundColor: theme.Button.Background.Color.Secondary,
+                border: theme.Button.Border.Width.Secondary,
+                borderWidth: theme.Button.Border.Width.Secondary,
+                boxShadow: 'none',
+                color: theme.Button.Font.Color.Secondary,
+
+                '&:hover': {
+                    textDecoration: theme.Button.TextDecoration.Secondary.TextDecoration,
+                    textDecorationColor: theme.Button.Font.Color.Secondary,
+                    textDecorationThickness: theme.Button.TextDecoration.Secondary.TextDecorationThickness,
+                    textUnderlineOffset: theme.Button.TextDecoration.Secondary.TextUnderlineOffset,
+                }
+
             },
             tertiary: {
-                backgroundColor: theme.Color.Tertiary.Default,
-                color: theme.Color.Accent.Grey,
-                border: theme.Button.Border.Width.None,
-            }
-        }
+                backgroundColor: theme.Button.Background.Color.Tertiary.Default,
+                border: theme.Button.Border.Width.Tertiary,
+                borderColor: theme.Button.Border.Color.Tertiary.Default,
+                borderRadius: theme.Button.Border.Radius,
+                borderStyle: 'solid',
+                boxShadow: 'none',
+                color: theme.Button.Font.Color.Tertiary.Default,
 
-    }
+                '&:hover': {
+                    backgroundColor: theme.Button.Background.Color.Tertiary.Hover,
+                    border: 'none',
+                    color: theme.Button.Font.Color.Tertiary.Hover,
+
+                },
+                '&:disabled': {
+                    backgroundColor: theme.Button.Background.Color.Tertiary.Disabled,
+                    border: theme.Button.Border.Width.Tertiary,
+                    borderColor: theme.Button.Border.Color.Tertiary.Disabled,
+                    borderStyle: 'solid',
+                    color: theme.Button.Font.Color.Tertiary.Disabled,
+
+                },
+                '&:active': {
+                    backgroundColor: theme.Button.Background.Color.Tertiary.Active,
+                    border: 'none',
+                    boxShadow: 'inset 0px 4px 16px rgba(0, 0, 0, 0.15)',
+                    color: theme.Button.Font.Color.Tertiary.Active,
+
+                },
+            },
+        },
+    },
 
 });
