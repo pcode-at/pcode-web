@@ -56,7 +56,7 @@ const MainPage = () => (
         <Navbar/>
 
         <StyledHeading>CharacterAndParagraph</StyledHeading>
-        <CharactersGroupLayout>
+        <CharactersWithParagraphsGroupLayout>
             <CharacterAndParagraph/>
             <CharacterAndParagraph
                 character={'SupportiveChallenger'}
@@ -77,7 +77,7 @@ const MainPage = () => (
                 title={'interesse an pcode?'}
                 subtitle={'curious'}
             />
-        </CharactersGroupLayout>
+        </CharactersWithParagraphsGroupLayout>
 
         <StyledHeading>Characters: GameChanger</StyledHeading>
         <CharactersGroupLayout>
@@ -442,7 +442,11 @@ const MainPage = () => (
 );
 
 const CharactersGroupLayout = styled('div')`
-    width: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+`;
+const CharactersWithParagraphsGroupLayout = styled('div')`
     display: flex;
     flex-direction: row;
 `;
