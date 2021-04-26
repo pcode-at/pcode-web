@@ -41,6 +41,7 @@ import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
 import { BubblePortrait } from '../components/BubblePortrait';
 import { BubblePortraitAndName } from '../components/BubblePortraitAndName';
+import { BubblePortraitAndQuote } from '../components/BubblePortraitAndQuote';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -55,35 +56,23 @@ const MainPage = () => (
 
         <Navbar/>
 
-        <StyledHeading>Bubble Blank</StyledHeading>
-        <BubbleBlank/>
-        <BubbleBlank width={'250px'} color={'primary'}/>
-        <BubbleBlank width={'200px'} color={'secondary'}/>
-        <BubbleBlank width={'150px'} color={'tertiary'}/>
+        <StyledHeading>Bubble Portrait and Quote</StyledHeading>
+        <BubblePortraitAndQuote/>
 
-        <StyledHeading>Bubble Wordlist</StyledHeading>
-        <BubbleWordlist color={theme.Bubble.Background.Color.Red}/>
-
-        <StyledHeading>Bubble Image</StyledHeading>
-        <BubbleImage position={'left'}/>
-        <BubbleImage width={'230px'}/>
-        <BubbleImage color={'primary'} width={'100px'}/> 
-
-         
         <StyledHeading>Bubble Portrait</StyledHeading>
         <BubblePortrait/>
         <BubblePortrait
-            color={'primary'}
+            color={'red'}
             width={'175px'}
             imageSource={'../static/memberPortraits/kotek_michael.jpg'}
         />
         <BubblePortrait
-            color={'secondary'} 
+            color={'blue'} 
             width={'99px'}
             imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
         />
         <BubblePortrait
-            color={'secondary'} 
+            color={'blue'} 
             width={'265px'}
             imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
         />
@@ -93,17 +82,31 @@ const MainPage = () => (
             imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
         />
         <BubblePortraitAndName
-            color={'tertiary'}
+            color={'green'}
             width={'235.33px'}
             name={'Jeanette Doe'}
             position={'amazing web developer'}
         />
         <BubblePortraitAndName
-            color={'primary'}
+            color={'red'}
             width={'200px'}
             name={'John Doe'}
             position={'great web developer'}
         />
+
+        <StyledHeading>Bubble Image</StyledHeading>
+        <BubbleImage position={'left'}/>
+        <BubbleImage width={'230px'}/>
+        <BubbleImage color={'red'} width={'100px'}/> 
+
+        <StyledHeading>Bubble Wordlist</StyledHeading>
+        <BubbleWordlist color={theme.Bubble.Background.Color.Red}/>
+
+        <StyledHeading>Bubble Blank</StyledHeading>
+        <BubbleBlank/>
+        <BubbleBlank width={'250px'} color={'red'}/>
+        <BubbleBlank width={'200px'} color={'blue'}/>
+        <BubbleBlank width={'150px'} color={'green'}/>
 
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
@@ -168,13 +171,13 @@ const MainPage = () => (
             positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
         ></StyledFreeChair>
 
-        <StyledHeading>Character</StyledHeading>
+        {/* <StyledHeading>Character</StyledHeading>
         <StyledCharacter
             characterTitle="strategic wizard"
             characterDescription="Phasellus eget turpis dignissim. vestibulum libero non, fringilla nulla. Proin blandit cursus euismod. Proin viverra et diam vitae semper."
             textColor={DeprecatedColor.SecondaryDark}
             monsterType={MonsterType.StrategicWizard}
-        ></StyledCharacter>
+        ></StyledCharacter> */}
 
         <StyledHeading>ProjectSlider</StyledHeading>
         <ProjectSliderLayout>

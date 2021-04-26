@@ -12,7 +12,7 @@ type Props = {
 };
 
 export const BubblePortraitAndName: React.FC<Props> = ({
-    color = 'secondary',
+    color = 'blue',
     imageSource = '../static/default-member.png',
     name = 'Joe Doe',
     position = 'Chief Anonymous Officer',
@@ -48,20 +48,20 @@ export const BubblePortraitAndName: React.FC<Props> = ({
     })
 
     let Name = styled('p', {
-        color: theme.Bubble.Portrait.Name.FullName.Font.Color,
-        fontFamily: theme.Bubble.Portrait.Name.FontFamily,
-        fontSize: '24px',
+        color: '$blue500',
+        fontFamily: '$default',
+        fontSize: '$l',
         fontWeight: '$medium',
-        lineHeight: theme.Bubble.Portrait.Name.LineHeight,
+        lineHeight: '$xl',
         marginBottom: '$xs',
     })
 
     let Position = styled('p', {
-        color: theme.Bubble.Portrait.Name.Position.Font.Color,
-        fontFamily: theme.Bubble.Portrait.Name.FontFamily,
-        fontSize: '24px',
+        color: '$blue500',
+        fontFamily: '$default',
+        fontSize: '$l',
         fontWeight: '$light',
-        lineHeight: theme.Bubble.Portrait.Name.LineHeight,
+        lineHeight: '$xl',
     })
 
     return (

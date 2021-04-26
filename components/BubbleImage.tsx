@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const BubbleImage: React.FC<Props> = ({
-    color = 'secondary',
+    color = 'blue',
     imageSource = '../static/stock/stock01.jpg',
     width = '570px',
     position = 'left',

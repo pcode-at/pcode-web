@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const BubblePortrait: React.FC<Props> = ({
-    color = 'tertiary',
+    color = 'green',
     imageSource = '../static/default-member.png',
     width = '228px',
     position = 'right',

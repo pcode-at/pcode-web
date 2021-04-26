@@ -13,28 +13,28 @@ const Bubble = styled(BubbleSvg, {
     width: '100%',
     variants: {
         color: {
-            primary: {
-                color: theme.Bubble.Background.Color.Red,
+            red: {
+                color: '$red500',
             },
-            secondary: {
-                color: theme.Bubble.Background.Color.Blue,
+            blue: {
+                color: '$blue500',
             },
-            tertiary: {
-                color: theme.Bubble.Background.Color.Green,
+            green: {
+                color: '$green500',
             },
             white: {
-                color: theme.Bubble.Background.Color.White,
+                color: '$white',
             }
         }
     },
     defaultVariant: {
-        color: theme.Bubble.Background.Color.Blue,
+        color: '$blue500',
     }
 })
 
 export const BubbleBlank: React.FC<Props> = ({
     width = '570px',
-    color = 'secondary',
+    color = 'blue',
 }) => {
 
     let BubbleLayout = styled('div', {
