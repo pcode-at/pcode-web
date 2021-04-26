@@ -21,7 +21,6 @@ export const BubblePortraitAndQuote: React.FC<Props> = ({
     name = 'John Doe',
     position = 'Chief Anonymous Officer',
     width = '1224px',
-    // width = '100%',
     quote = 'working at pcode means one simple thing: working for the future!',
 }) => { 
 
@@ -33,18 +32,29 @@ export const BubblePortraitAndQuote: React.FC<Props> = ({
     })
 
     let TextLayout = styled('div', {
-        alignItems: 'flex-start',
         display: 'flex',
         flexDirection: 'column',
         margin: '0 $l',
         width: `calc((964/1224) * ${width})`,
+
+        variants: {
+            alignment: {
+                left: {
+                    alignItems: 'flex-start',
+                },
+                right: {
+                    alignItems: 'flex-end',
+                },
+            },
+        },
     }) 
 
     let NameLayout = styled('div', {
+        alignItems: 'baseline',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'flex-start',
         margin: '$xs 0',
+        textAlign: 'left',
     })
 
     let Quote = styled('h2', {
@@ -52,7 +62,7 @@ export const BubblePortraitAndQuote: React.FC<Props> = ({
         fontWeight: '$medium',
         fontSize: '$xl',
         lineHeight: '$xl',
-        textAlign: 'left',
+        margin: '0',
     
         variants: {
             color: {
@@ -77,6 +87,7 @@ export const BubblePortraitAndQuote: React.FC<Props> = ({
         fontWeight: '$bold',
         fontSize: '$l',
         lineHeight: '$m',
+        marginRight: '$xs',
 
         variants: {
             color: {
@@ -128,7 +139,7 @@ export const BubblePortraitAndQuote: React.FC<Props> = ({
                                 color={color} 
                                 imageSource={imageSource}
                             />
-                            <TextLayout>
+                            <TextLayout alignment={alignment}>
                                 <Quote color={color}>"{quote}"</Quote>
                                 <NameLayout>
                                     <Name color={color}>{name}</Name>
@@ -138,7 +149,7 @@ export const BubblePortraitAndQuote: React.FC<Props> = ({
                         </BubblePortraitAndQuoteLayout>
             case 'right':
                 return  <BubblePortraitAndQuoteLayout>
-                            <TextLayout>
+                            <TextLayout alignment={alignment}>
                                 <Quote color={color}>"{quote}"</Quote>
                                 <NameLayout>
                                     <Name color={color}>{name}</Name>
