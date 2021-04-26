@@ -19,7 +19,7 @@ export const CharacterAndParagraph: React.FC<Props> = ({
     color       = 'blue',
     link,
     paragraph   = 'Das ist ein kleiner Blindtext. Hiermit wird ein Absatz markiert, in dem mittelmäßig viele Wörter stehen. Noch eine kleine Beschreibung und fertig',
-    subtitle    = 'experienced',
+    subtitle,
     title       = 'copywriter',
     width       = '288px', 
 }) => { 
@@ -37,7 +37,7 @@ export const CharacterAndParagraph: React.FC<Props> = ({
         flexDirection:  'column',
         justifyContent: 'center',
         marginTop:      '63px',
-        // 295px / 288px | height/width of design
+        // 295px / 288px | height/width in design
         height:         `calc( 295 / 288 * ${width})`,
     })
 

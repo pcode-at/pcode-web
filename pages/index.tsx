@@ -78,6 +78,29 @@ const MainPage = () => (
                 subtitle={'curious'}
             />
         </CharactersWithParagraphsGroupLayout>
+        <CharactersWithParagraphsGroupLayout>
+            <CharacterAndParagraph
+                color={'red'}
+                character={'SupportiveChallenger'}
+                title={'Supportive Challenger'}
+                paragraph={'Neue Entwicklungen und Umbrüche sind unser liebstes Hobby, wir lieben Herausforderungen und besitzen ein gutes Maß an Ehrgeiz. Doch wissen wir, dass wir alle nicht unfehlbar sind. Für die beste Lösung verzeihen wir Fehler von uns selbst und anderen, sind füreinander da und lernen aus unseren Rückschlägen. Damit wir gemeinsam noch besser werden!'}
+                width={'392px'}
+            />
+            <CharacterAndParagraph
+                color={'green'}
+                character={'GameChanger'}
+                title={'Game Changer'}
+                paragraph={'Mit Ausdauer, Leidenschaft, fundiertem Know-how und Selbstvertrauen navigieren wir durch sich ständig verändernde digitale Welten. Unser Ziel ist es, mit unseren Lösungen Grenzen zu überwinden und neue Regeln zu definieren.'}
+                width={'392px'}
+            />
+            <CharacterAndParagraph
+                color={'blue'}
+                character={'StrategicWizard'}
+                title={'Strategic Wizard'}
+                paragraph={'In einer komplexen Welt sind wir immer offen für neue Zugänge und bereit für noch bessere Ansätze. Als strategische Vorwärtsdenker wollen wir mit herausragenden Lösungen die Zukunft mitgestalten. Wir sind überzeugt: Qualität geht vor Quantität.'}
+                width={'392px'}
+            />
+        </CharactersWithParagraphsGroupLayout>
 
         <StyledHeading>Characters: GameChanger</StyledHeading>
         <CharactersGroupLayout>
@@ -449,6 +472,7 @@ const CharactersGroupLayout = styled('div')`
 const CharactersWithParagraphsGroupLayout = styled('div')`
     display: flex;
     flex-direction: row;
+    justify-content: center;
 `;
 
 const StyledImageBubbleLayout = styled(ImageBubble)`
