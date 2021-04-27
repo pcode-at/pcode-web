@@ -1,5 +1,4 @@
 import React from 'react';
-import { theme } from '../theme';
 import { styled } from '../stitches.config';
 
 type Props = { className?: string; }
@@ -34,39 +33,32 @@ export const Navbar: React.FC<Props> = ({ className }) => {
     })
 
     let NavbarItem = styled('a', {
-        color: theme.Navbar.Items.Font.Color.Default,
-        fontFamily: theme.Font.Default,
-        fontSize: theme.Navbar.Items.Font.Size,
+        color: '$blue500',
+        fontFamily: '$default',
+        fontSize: '$m',
         fontWeight: '$medium',
-        // fontWeight: theme.Navbar.Items.Font.Weight,
-        lineHeight: theme.Navbar.Items.LineHeight,
+        lineHeight: '$m',
         marginRight: 'auto',
         textDecoration: 'none',
 
-        variants: {
-            color: {
-                default: {
-                    color: theme.Navbar.Items.Font.Color.Default,
-                    '&:hover': {
-                        color: theme.Navbar.Items.Font.Color.Hover,
-                        textDecoration: theme.Navbar.Items.TextDecoration,
-                        textDecorationColor: theme.Navbar.Items.TextDecorationColor,
-                        textDecorationThickness: theme.Navbar.Items.TextDecorationThickness,
-                        textUnderlineOffset: theme.Navbar.Items.TextUnderlineOffset,
-                    },
-                    '&::selection': {
-                        color: theme.Navbar.Items.Font.Color.Hover,
-                        textDecoration: theme.Navbar.Items.TextDecoration,
-                        textDecorationColor: theme.Navbar.Items.TextDecorationColor,
-                        textDecorationThickness: theme.Navbar.Items.TextDecorationThickness,
-                        textUnderlineOffset: theme.Navbar.Items.TextUnderlineOffset,
-                    },
-                    '&~a': {
-                        marginLeft: 'auto',
-                    },
-                },
-            }
-        }
+        '&:hover': {
+            color: '$red500',
+            textDecoration: 'underline',
+            textDecorationColor: '$red500',
+            textDecorationThickness: '0.5px',
+            textUnderlineOffset: '4px',
+        },
+        '&::selection': {
+            color: '$red500',
+            textDecoration: 'underline',
+            textDecorationColor: '$red500',
+            textDecorationThickness: '0.5px',
+            textUnderlineOffset: '4px',
+        },
+        '&~a': {
+            marginLeft: 'auto',
+        },
+
     })
 
     return (
