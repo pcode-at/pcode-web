@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Box, Button as Button2, Flex } from 'rebass';
 import { themeDeprecated } from '../themeDeprecated';
 import { ThemeProvider } from 'emotion-theming';
-import { Bubble } from '../components/Bubble';
+import { BubbleBlank, BubbleDeprecated } from '../components/Bubble';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { CopyText, FontStyle } from '../components/CopyText';
 import { SectionHeadline } from '../components/SectionHeadline';
@@ -26,16 +26,22 @@ import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import { MultiColorHeadline } from '../components/MultiColorHeadline';
-import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
+import { PcodeShapeWithImageDeprecated } from '../components/PcodeShapeWithImageDeprecated';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
 import { Character } from '../components/Character';
 import { SkillDetail } from '../components/SkillDetail';
-import { ImageBubble } from '../components/ImageBubble';
-import { PersonBubble } from '../components/PersonBubble';
+import { ImageBubbleDeprecated } from '../components/ImageBubbleDeprecated';
+import { PersonBubbleDeprecated } from '../components/PersonBubbleDeprecated';
 import { Button } from '../components/Button';
+import { theme } from '../theme';
+import { BubbleWordlist } from '../components/BubbleWordlist';
+import { BubbleImage } from '../components/BubbleImage';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
+import { BubblePortrait } from '../components/BubblePortrait';
+import { BubblePortraitAndName } from '../components/BubblePortraitAndName';
+import { BubblePortraitAndQuote } from '../components/BubblePortraitAndQuote';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -49,6 +55,89 @@ const MainPage = () => (
         /> */}
 
         <Navbar/>
+
+        <StyledHeading>Bubble Portrait and Quote</StyledHeading>
+        <BubblePortraitAndQuote/>
+        <BubblePortraitAndQuote 
+            color={'green'}
+            imageSource={'../static/weber_elisabeth.png'}
+            name={'Elisabeth Weber'}
+            position={'Product Ownerin/Digital Facilitator'}    
+        />
+        <BubblePortraitAndQuote 
+            color={'red'}
+            imageSource={'../static/memberPortraits/spyra_melissa.png'}
+            name={'Melissa Spyra'}
+            position={'Content Creatorin'}
+            quote={'Wir sind mächtig stolz auf unsere bisherigen Meilensteine, aber das war natürlich längst nicht alles! Seid gespannt was noch kommt'}    
+        />
+
+        <BubblePortraitAndQuote
+            alignment={'right'}
+        />
+        <BubblePortraitAndQuote
+            alignment={'right'}
+            color={'green'}
+            name={'Michael Kotek'}
+            position={'web developer'}   
+            imageSource={'../static/memberPortraits/kotek_michael.jpg'}
+        />
+        <BubblePortraitAndQuote
+            alignment={'right'}
+            color={'red'}
+            name={'Christoph Pernsteiner'}
+            position={'CEO . founder'}   
+            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
+        />
+
+        <StyledHeading>Bubble Portrait</StyledHeading>
+        <BubblePortrait/>
+        <BubblePortrait
+            color={'red'}
+            width={'175px'}
+            imageSource={'../static/memberPortraits/kotek_michael.jpg'}/>
+
+        <BubblePortrait
+            color={'blue'} 
+            width={'99px'}
+            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
+        />
+        <BubblePortrait
+            color={'blue'} 
+            width={'265px'}
+            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
+        />
+
+        <StyledHeading>Bubble Portrait and Name</StyledHeading>
+        <BubblePortraitAndName
+            imageSource={'../static/memberPortraits/pernsteiner_christoph.png'}
+        />
+        <BubblePortraitAndName
+            color={'green'}
+            width={'235.33px'}
+            name={'Jeanette Doe'}
+            position={'amazing web developer'}
+        />
+        <BubblePortraitAndName
+            color={'red'}
+            width={'200px'}
+            name={'John Doe'}
+            position={'great web developer'}
+        />
+
+        <StyledHeading>Bubble Image</StyledHeading>
+        <BubbleImage position={'left'}/>
+        <BubbleImage width={'230px'}/>
+        <BubbleImage color={'red'} width={'100px'}/> 
+
+        <StyledHeading>Bubble Wordlist</StyledHeading>
+        <BubbleWordlist color={theme.Bubble.Background.Color.Red}/>
+
+        <StyledHeading>Bubble Blank</StyledHeading>
+        <BubbleBlank/>
+        <BubbleBlank width={'250px'} color={'red'}/>
+        <BubbleBlank width={'200px'} color={'blue'}/>
+        <BubbleBlank width={'150px'} color={'green'}/>
 
         <StyledHeading>Button</StyledHeading>
         <Button variant={'primaryRed'}>Primary Red</Button>
@@ -65,77 +154,6 @@ const MainPage = () => (
         <Button variant={'tertiary'}>Tertiary</Button>
         <Button variant={'tertiary'} disabled={true}>Tertiary - Disabled</Button>
 
-        <StyledHeading>ImageBubble : Overlay</StyledHeading>
-        <StyledImageBubbleLayout
-            imageSource="../static/pernsteiner_christoph.png"
-            color={DeprecatedColor.SecondaryDark}
-            variant={"overlay"}
-        />
-
-        <StyledHeading>ImageBubble : Shifted</StyledHeading>
-        <StyledImageBubbleLayout
-            imageSource="../static/pernsteiner_christoph.png"
-            color={DeprecatedColor.SecondaryLight}
-            variant={"shifted"}
-        />
-
-        <StyledHeading>Bubble</StyledHeading>
-        <StyledBubbleBox display="flex">
-            <Bubble />
-            <Bubble color={DeprecatedColor.SecondaryLight} layout={"centered"}/>
-            <Bubble width="80%" />
-            <Bubble color={DeprecatedColor.SecondaryDark} layout={"centered"}/>
-        </StyledBubbleBox>
-
-        <StyledHeading>PersonBubble : Overlay</StyledHeading>
-        <PersonBubble
-            color = {DeprecatedColor.Primary}
-            imageSource = "../static/pernsteiner_christoph.png"
-            personName = "Christoph Pernsteiner"
-            personPosition = "CEO . founder"
-            variant = "overlay"
-        />
-
-        <StyledHeading>PersonBubble: Shifted</StyledHeading>
-        <PersonBubble
-            color = {DeprecatedColor.SecondaryLight}
-            imageSource = "../static/kotek_michael.png"
-            personName = "Michael Kotek"
-            personPosition = "frontend developer"
-            variant = "shifted"
-        />
-
-        <StyledHeading>WorkingAtPcode</StyledHeading>
-        <WorkingAtPcodeSection />
-        <StyledHeading>PersonBubble</StyledHeading>
-        <PersonBubble
-            imageSource="../static/pernsteiner_christoph.png"
-            color={DeprecatedColor.SecondaryLight}
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-        />
-
-        <StyledHeading>Statement</StyledHeading>
-        <Statement
-            personName={'Christoph Pernsteiner'}
-            personPosition={'CEO .founder'}
-            imagePath={'../static/pernsteiner_christoph.png'}
-        >
-            'this project was a great challenge, we learned a lot and it was a
-            journey with such an amazing customer!'
-        </Statement>
-
-        <StyledHeading>Statement2</StyledHeading>
-        <Statement2
-            personName={'Nico Peham'}
-            personPosition={'tech lead'}
-            color={DeprecatedColor.SecondaryLight}
-            imagePath={'../static/pernsteiner_christoph.png'}
-        >
-            'we are adapting to new challenges by developing and investing in
-            our people'
-        </Statement2>
-
         <StyledHeading>Multi Color Headline</StyledHeading>
         <MultiColorHeadline
             leftAndRightTextColor={DeprecatedColor.SecondaryLight}
@@ -145,12 +163,6 @@ const MainPage = () => (
             rightText="stands for"
             variant="Big"
         />
-
-        <StyledHeading>Bubble</StyledHeading>
-        <Bubble />
-        <Bubble color={DeprecatedColor.SecondaryLight} />
-        <Bubble width="80%" />
-        <Bubble width="50%" color={DeprecatedColor.SecondaryDark} />
 
         <StyledHeading>CopyText</StyledHeading>
         <StyledCopyText color={DeprecatedColor.SecondaryLight} fontStyle={FontStyle.Light}>
@@ -205,13 +217,13 @@ const MainPage = () => (
             positionDescription="Frontend Developer mit den Skills, TypeScript, React, ES6."
         ></StyledFreeChair>
 
-        <StyledHeading>Character</StyledHeading>
+        {/* <StyledHeading>Character</StyledHeading>
         <StyledCharacter
             characterTitle="strategic wizard"
             characterDescription="Phasellus eget turpis dignissim. vestibulum libero non, fringilla nulla. Proin blandit cursus euismod. Proin viverra et diam vitae semper."
             textColor={DeprecatedColor.SecondaryDark}
             monsterType={MonsterType.StrategicWizard}
-        ></StyledCharacter>
+        ></StyledCharacter> */}
 
         <StyledHeading>ProjectSlider</StyledHeading>
         <ProjectSliderLayout>
@@ -316,7 +328,7 @@ const MainPage = () => (
     </ThemeProvider>
 );
 
-const StyledImageBubbleLayout = styled(ImageBubble)`
+const StyledImageBubbleLayout = styled(ImageBubbleDeprecated)`
     width: 700px;
 `;
 

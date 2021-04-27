@@ -142,6 +142,58 @@ export const theme = {
         },
     },
 
+    // ---------- BUBBLE ----------
+    Bubble: {
+        Background: {
+            Color: {
+                Red: '$red500',
+                Blue: '$blue500',
+                Green: '$green500',
+                White: '$white'
+            }
+        },
+        Image: {
+            Mask: {
+                Size: '90%', // MaskWidth / ImageWidth 
+            },
+            Width: '93%',
+        },
+        Portrait: {
+            Background: {
+                Width: '87%',
+            },
+            Mask: {
+                Size: '90%',
+            },
+            Name: {
+                FontFamily: '$default',
+                LineHeight: '$l',
+                FullName: {
+                    Font: {
+                        Size: '$l',
+                        Weight: '$medium',
+                        Color: '$blue500',
+                    },
+                },
+                Position: {
+                    Font: {
+                        Size: '$l',
+                        Weight: '$light',
+                        Color: '$blue500',
+                    },
+                },
+            },
+            Quotation: { 
+                Font: {
+                    Family: '$default',
+                    Size: '$xl',
+                    Weight: '$medium',
+                },
+                LineHeight: '$xl',
+            },
+        },
+    },
+
     // ---------- NAVBAR ----------
     Navbar: {
         Items: {

@@ -5,7 +5,7 @@ import { themeDeprecated } from '../themeDeprecated';
 import { Platform } from './Platform';
 import { PlatformType } from '../shared/PlatformType.enum';
 import styled from 'styled-components';
-import { ActionButton } from './ActionButton';
+import { ActionButtonDeprecated } from './ActionButtonDeprecated';
 
 type Props = {
     name: string;
@@ -129,7 +129,7 @@ export const TechnologyPlatform: React.FC<Props> = ({
                         </HeadingAndListContainer>
                     </HeadingAndListContainerLayout>
 
-                    <ActionButton
+                    <ActionButtonDeprecated
                         label="interested?"
                         color={DeprecatedColor.SecondaryLight}
                     />

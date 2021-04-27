@@ -9,8 +9,8 @@ import { Box, Flex } from 'rebass';
 import { FreeChair } from '../../components/FreeChair';
 import { PositionLevel } from '../../shared/PositionLevel.enum';
 import { CopyText, FontStyle } from '../../components/CopyText';
-import { Bubble } from '../../components/Bubble';
-import { ActionButton } from '../../components/ActionButton';
+import { BubbleDeprecated } from '../../components/Bubble';
+import { ActionButtonDeprecated } from '../../components/ActionButtonDeprecated';
 import WorkingAtPcodeSection from './sections/WorkingAtPcode.section';
 import { MonsterType } from '../../shared/MonsterType.enum';
 import styled from 'styled-components';
@@ -90,10 +90,10 @@ const JoinUsPage = () => (
                 </CopyTextLayout>
 
                 <LearnMoreButtonLayout>
-                    <ActionButton color={DeprecatedColor.Primary} label="learn more" />
+                    <ActionButtonDeprecated color={DeprecatedColor.Primary} label="learn more" />
                 </LearnMoreButtonLayout>
                 <PcodeShapeLayout>
-                    <Bubble color={DeprecatedColor.SecondaryDark} />
+                    <BubbleDeprecated color={DeprecatedColor.SecondaryDark} />
                 </PcodeShapeLayout>
             </AboutPcodeLayout>
 
@@ -138,7 +138,7 @@ const JoinUsPage = () => (
                 <Statement2
                     personName={'Michael Kotek'}
                     personPosition={'Frontend Developer'}
-                    imagePath={'../static/kotek_michael.png'}
+                    imagePath={'../static/memberPortraits/kotek_michael.jpg'}
                     color={DeprecatedColor.SecondaryDark}
                 >
                     ‘ working at pcode means one simple thing: working for the

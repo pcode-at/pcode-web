@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text } from 'rebass';
-import { Bubble } from './Bubble';
+import { BubbleDeprecated } from './Bubble';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import styled from 'styled-components';
 
@@ -95,7 +95,7 @@ export const WordList: React.FC<Props> = ({
                     </ItemsLayout>
                 </CentralLayout>
                 <PcodeShapeLayout>
-                    <Bubble width="300px" color={color} />
+                    <BubbleDeprecated width="300px" color={color} />
                 </PcodeShapeLayout>
             </WordListLayout>
         </div>

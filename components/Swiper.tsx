@@ -1,6 +1,6 @@
 import React from 'react';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
-import { ActionButton } from './ActionButton';
+import { ActionButtonDeprecated } from './ActionButtonDeprecated';
 import { SectionHeadline } from './SectionHeadline';
 import styled from 'styled-components';
 
@@ -31,7 +31,7 @@ export const Swiper: React.FC<Props> = ({
                 headlinePartTwo={textPartTwo}
                 separateWithBreak={true}
             />
-            <ActionButton
+            <ActionButtonDeprecated
                 color={DeprecatedColor.SecondaryLight}
                 padding="0.2rem 1.7rem"
                 label="learn more"

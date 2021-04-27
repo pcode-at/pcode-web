@@ -1,8 +1,8 @@
 import React from 'react';
-import { Bubble } from './Bubble';
+import { BubbleDeprecated } from './Bubble';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 import { Box, Flex } from 'rebass';
-import { ActionButton } from './ActionButton';
+import { ActionButtonDeprecated } from './ActionButtonDeprecated';
 import { CopyText, FontStyle } from './CopyText';
 import styled from 'styled-components';
 
@@ -61,10 +61,13 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
         <div className={className}>
             <Flex alignItems="center" justifyContent="space-between">
                 <Box width={2 / 6}>
+                    {/* 
                     <GraphicLayout>
                         <Bubble color={DeprecatedColor.Primary} />
+
                         <StyledImageLayout src={imageSrc} />
-                    </GraphicLayout>
+                    </GraphicLayout> 
+                    */}
                 </Box>
                 <TextLayout>
                     <CenteredText>
@@ -80,7 +83,7 @@ export const ProjectDetailTeaser: React.FC<Props> = ({
                         >
                             {description}
                         </StyledCopyText>
-                        <ActionButton
+                        <ActionButtonDeprecated
                             label="learn more"
                             color={DeprecatedColor.SecondaryLight}
                             onClick={onClick}
