@@ -126,20 +126,27 @@ export const theme = {
         Background: {
             Color: '$blue500',
         },
-        TextArea: { 
-            Font: {
-                Weight: '$regular',
-                Size: '$s',
-                Color: '$green500',
-            },
+        Entry: {
             LineHeight: '$s',
-            TextDecoration: {
-                Default: 'none',
-                Hover: 'underline',
+            Header: {
+                Font: {
+                    Color: '$white',
+                    Family: '$default',
+                    Weight: '$semibold',
+                    Size: '$xs',
+                },
+                LetterSpacing: '$wide',
             },
-            TextDecorationThickness: '0.063rem',
-            TextUnderlineOffset: '0.25rem', 
-        },
+            Links: {
+                Font: {
+                    Color: '$white',
+                    Family: '$default',
+                    Weight: '$light',
+                    Size: '$xs',
+                },
+                LetterSpacing: '$wide',
+            }
+        }
     },
 
     // ---------- NAVBAR ----------
@@ -148,16 +155,136 @@ export const theme = {
             Font: {
                 Weight: '$medium',
                 Size: '$m',
-                Color: {
-                    Default: '$blue500',
-                    Hover: '$red500',
-                }
-            },
-            LineHeight: '$m',
-            TextDecoration: 'underline',
-            TextDecorationColor: '$red500',
-            TextDecorationThickness: '0.063rem', 
-            TextUnderlineOffset: '0.25rem', 
-        },
+                Color: '$blue500',
+
+            }
+        }
+
     },
+
+    // ----------  WAVE ----------
+    Wave: {
+        Color: {
+            Red: '$red500',
+            Blue: '$blue500',
+            Green: '$green500',
+            White: '$white',
+        },
+        // Font.Color does NOT describe the actual color, but the background color. 
+        // > Why? The font color depends on the background color
+        //          -> no arbitrary choices/combinations allowed
+        // same with button variants
+        Quote: {
+            Small: {
+                Color: {
+                    Blue: '$blue500',
+                    Green: '$green500',
+                    Red: '$red500',
+                },
+                Font: {
+                    Color: {
+                        Blue: '$white',
+                        Green: '$blue500',
+                        Red: '$blue500',
+                    },
+                    Family: '$default',
+                    Size: '$xl',
+                    Weight: {
+                        Light: '$light',
+                        Medium: '$medium'
+                    },
+                },
+                LineHeight: '$xl',
+            },
+            Large: {
+                Color: {
+                    Blue: '$blue500',
+                    Green: '$green500',
+                    Red: '$red500',
+                },
+                Font: {
+                    Color: {
+                        Blue: '$white',
+                        Green: '$blue500',
+                        Red: '$white',
+                    },
+                    Family: '$default',
+                    Size: '$xxl',
+                    Weight: {
+                        Light: '$light',
+                        Medium: '$medium'
+                    },
+                },
+                LineHeight: '$xxl',
+            },
+        },
+
+        CallToAction: {
+            Medium: {
+                Button: 'primaryWhite',
+                Bubble: {
+                    Color: '$green500',
+                },
+                Color: '$blue500',
+                Font: {
+                    Color: {
+                        Blue: '$green500',
+                    },
+                    Family: '$default',
+                    Size: '$xl',
+                    Weight: {
+                        Light: '$light',
+                        Medium: '$medium',
+                    },
+                },
+                LineHeight: '$xl',
+            },
+            Large: {
+                Button: {
+                    Blue: 'primaryRed',
+                    Green: 'primaryBlue',
+                    Red: 'primaryWhite',
+                },
+                Color: {
+                    Red: '$red500',
+                    Blue: '$blue500',
+                    Green: '$green500',
+                },
+                Header: {
+                    Font: {
+                        Color: {
+                            Blue: '$white',
+                            Green: '$blue500',
+                            Red: '$blue500',
+                        },
+                        Family: '$default',
+                        Size: '$xxl',
+                        Weight: {
+                            Light: '$light',
+                            Medium: '$medium',
+                        },
+                    },
+                    LetterSpacing: '$tight',
+                    LineHeight: '$xxl',
+                },
+                Body: {
+                    Font: {
+                        Color: {
+                            Blue: '$white',
+                            Green: '$blue500',
+                            Red: '$blue500',
+                        },
+                        Family: '$default',
+                        Size: '$m',
+                        Weight: '$regular',
+                    },
+                    LineHeight: '$m',
+                },
+            }
+        },      
+    }
+
+    // ---------- ----------
+    // ---------- ----------
+  
 }

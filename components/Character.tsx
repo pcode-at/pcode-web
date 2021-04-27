@@ -1,76 +1,47 @@
 import React from 'react';
-
-import { DeprecatedColor } from '../DeprecatedColor.enum';
-import { CopyText, FontStyle } from './CopyText';
-import { SubHeadline } from './SubHeadline';
-import { MonsterType } from '../shared/MonsterType.enum';
-import { CONSTANTS } from '../shared/constants';
-import styled from 'styled-components';
-import { Monster } from './Monster';
+import { styled } from '../stitches.config';
+import { GameChanger} from './GameChanger';
+import { FluffyMember } from './FluffyMember';
+import { LifelongLearner } from './LifelongLearner';
+import { SupportiveChallenger } from './SupportiveChallenger';
+import { StrategicWizard } from './StrategicWizard';
 
 type Props = {
-    characterTitle: string;
-    characterDescription: string;
-    monsterType: MonsterType;
-    textColor: DeprecatedColor;
     className?: string;
-};
-
-const { openPositionDestinationEmail } = CONSTANTS;
+    character?: string;
+    color?: "blue" | "green" | "red" | "white";
+    width?: string;
+}
 
 export const Character: React.FC<Props> = ({
-    characterTitle,
-    characterDescription,
-    monsterType,
-    textColor,
     className,
-}) => {
-    const CharacterLayout = styled.div`
-        width: 200px;
-        height: 400px;
-    `;
+    character = 'GameChanger',
+    color = 'blue',
+    width = '100%',
+}) => { 
 
-    const SvgLayout = styled.div`
-        width: 50%;
-        height: 170px;
-    `;
+    function getCharacter() {
+        switch(character){
+            case 'GameChanger':
+                return <GameChanger color={color}/>
+            case 'FluffyMember':
+                return <FluffyMember color={color}/>
+            case 'LifelongLearner':
+                return <LifelongLearner color={color}/>
+            case 'SupportiveChallenger':
+                return <SupportiveChallenger color={color}/>
+            case 'StrategicWizard':
+                return <StrategicWizard color={color}/>
+        }
+    }
 
-    const PositionLayout = styled.div`
-        margin-bottom: 0.8rem;
-    `;
-
-    const DescriptionLayout = styled.div`
-        display: block;
-        margin-bottom: 0.8rem;
-    `;
-
-    const MonsterLayout = styled.div`
-        position: relative;
-        top: 50%;
-        transform: translate(0%, -75%);
-    `;
+    let CharacterLayout = styled('div', {
+        width: width,
+    })
 
     return (
-        <div className={className}>
-            <CharacterLayout>
-                <SvgLayout>
-                    <MonsterLayout>
-                        <Monster type={monsterType} />
-                    </MonsterLayout>
-                </SvgLayout>
-
-                <PositionLayout>
-                    <SubHeadline color={textColor} fontStyle={FontStyle.Normal}>
-                        {characterTitle}
-                    </SubHeadline>
-                </PositionLayout>
-
-                <DescriptionLayout>
-                    <CopyText color={textColor} fontStyle={FontStyle.Light}>
-                        {characterDescription}
-                    </CopyText>
-                </DescriptionLayout>
-            </CharacterLayout>
-        </div>
+        <CharacterLayout className={className}>
+            {getCharacter()}
+        </CharacterLayout>
     );
-};
+}

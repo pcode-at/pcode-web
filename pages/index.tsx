@@ -20,7 +20,7 @@ import styled from 'styled-components';
 import { SiteHeader } from '../components/SiteHeader';
 import { Statement } from '../components/Statement';
 import { Statement2 } from '../components/Statement2';
-import { Wave } from '../components/Wave';
+import { WaveDeprecated } from '../components/WaveDeprecated';
 import { KeywordsWithImagesSlider } from '../components/KeywordsWithImagesSlider';
 import { SubHeadline } from '../components/SubHeadline';
 import { TechnologyPlatform } from '../components/TechnologyPlatform';
@@ -29,13 +29,18 @@ import { MultiColorHeadline } from '../components/MultiColorHeadline';
 import { PcodeShapeWithImage } from '../components/PcodeShapeWithImage';
 import { WorkingAtPcodeSection } from './join-us/sections/WorkingAtPcode.section';
 import { MonsterType } from '../shared/MonsterType.enum';
-import { Character } from '../components/Character';
+import { CharacterDeprecated } from '../components/CharacterDeprecated';
 import { SkillDetail } from '../components/SkillDetail';
 import { ImageBubble } from '../components/ImageBubble';
 import { PersonBubble } from '../components/PersonBubble';
 import { Button } from '../components/Button';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
+import { Wave } from '../components/Wave';
+import { WaveQuote } from '../components/WaveQuote';
+import { WaveCTA } from '../components/WaveCTA';
+import { Character } from '../components/Character';
+import { CharacterAndParagraph } from '../components/CharacterAndParagraph';
 
 const { light, normal } = themeDeprecated.font;
 
@@ -49,6 +54,149 @@ const MainPage = () => (
         /> */}
 
         <Navbar/>
+
+        <StyledHeading>CharacterAndParagraph</StyledHeading>
+        <CharactersWithParagraphsGroupLayout>
+            <CharacterAndParagraph/>
+            <CharacterAndParagraph
+                character={'SupportiveChallenger'}
+                color={'blue'}
+                title={'social media manager:in'}
+                subtitle={'motivated'}
+                paragraph={'Social Media Kanäle betreuen und spannenden Content produzieren ist genau deins? Dann bewirb dich jetzt!'}
+            />
+            <CharacterAndParagraph
+                character={'GameChanger'}
+                color={'red'}
+                title={'senior developer:in'}
+                subtitle={'experienced'}
+            />
+            <CharacterAndParagraph
+                character={'StrategicWizard'}
+                color={'green'}
+                title={'interesse an pcode?'}
+                subtitle={'curious'}
+            />
+        </CharactersWithParagraphsGroupLayout>
+        <CharactersWithParagraphsGroupLayout>
+            <CharacterAndParagraph
+                color={'red'}
+                character={'SupportiveChallenger'}
+                title={'Supportive Challenger'}
+                paragraph={'Neue Entwicklungen und Umbrüche sind unser liebstes Hobby, wir lieben Herausforderungen und besitzen ein gutes Maß an Ehrgeiz. Doch wissen wir, dass wir alle nicht unfehlbar sind. Für die beste Lösung verzeihen wir Fehler von uns selbst und anderen, sind füreinander da und lernen aus unseren Rückschlägen. Damit wir gemeinsam noch besser werden!'}
+                width={'392px'}
+            />
+            <CharacterAndParagraph
+                color={'green'}
+                character={'GameChanger'}
+                title={'Game Changer'}
+                paragraph={'Mit Ausdauer, Leidenschaft, fundiertem Know-how und Selbstvertrauen navigieren wir durch sich ständig verändernde digitale Welten. Unser Ziel ist es, mit unseren Lösungen Grenzen zu überwinden und neue Regeln zu definieren.'}
+                width={'392px'}
+            />
+            <CharacterAndParagraph
+                color={'blue'}
+                character={'StrategicWizard'}
+                title={'Strategic Wizard'}
+                paragraph={'In einer komplexen Welt sind wir immer offen für neue Zugänge und bereit für noch bessere Ansätze. Als strategische Vorwärtsdenker wollen wir mit herausragenden Lösungen die Zukunft mitgestalten. Wir sind überzeugt: Qualität geht vor Quantität.'}
+                width={'392px'}
+            />
+        </CharactersWithParagraphsGroupLayout>
+
+        <StyledHeading>Characters: GameChanger</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'GameChanger'} color={'blue'} />
+            <Character character={'GameChanger'} color={'red'} />
+            <Character character={'GameChanger'} color={'green'} />
+            <Character character={'GameChanger'} color={'white'} />
+        </CharactersGroupLayout>
+
+        <StyledHeading>Characters: FluffyMember</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'FluffyMember'} color={'blue'}/>
+            <Character character={'FluffyMember'} color={'red'}/>
+            <Character character={'FluffyMember'} color={'green'}/>
+            <Character character={'FluffyMember'} color={'white'}/>
+        </CharactersGroupLayout>
+
+        <StyledHeading>Characters: LifelongLearner</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'LifelongLearner'} color={'blue'}/>
+            <Character character={'LifelongLearner'} color={'red'}/>
+            <Character character={'LifelongLearner'} color={'green'}/>
+            <Character character={'LifelongLearner'} color={'white'}/>
+        </CharactersGroupLayout>
+
+        <StyledHeading>Characters: StrategicWizard</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'StrategicWizard'} color={'blue'}/>
+            <Character character={'StrategicWizard'} color={'red'}/>
+            <Character character={'StrategicWizard'} color={'green'}/>
+            <Character character={'StrategicWizard'} color={'white'}/>
+        </CharactersGroupLayout>
+
+        <StyledHeading>Characters: SupportiveChallenger</StyledHeading>
+        <CharactersGroupLayout>
+            <Character character={'SupportiveChallenger'} color={'blue'}/>
+            <Character character={'SupportiveChallenger'} color={'red'}/>
+            <Character character={'SupportiveChallenger'} color={'green'}/>
+            <Character character={'SupportiveChallenger'} color={'white'}/>
+        </CharactersGroupLayout>
+
+        <StyledHeading>wave-s-quote</StyledHeading>
+        <WaveQuote/>
+        <WaveQuote 
+            color={'blue'}
+            contentText={'Ich bin eine WaveQuote-Small Komponente mit default width=100%'}    
+        />
+        <WaveQuote 
+            color={'green'}
+            contentText={'Ich bin eine WaveQuote-Small Komponente mit width=1440px'}
+            width={'1440px'}
+        />
+        <WaveQuote 
+            color={'blue'} 
+            contentText={'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. '}
+            width={'1440px'}
+        />
+
+        <StyledHeading>wave-l-quote</StyledHeading>
+        <WaveQuote 
+            size={'large'}
+        />
+        <WaveQuote 
+            size={'large'}
+            color={'blue'}
+            // boldText={'Unsere besondere Fähigkeit liegt darin, '}
+            contentText={'Ich bin eine WaveQuote-Large Komponente mit width=1440px'}
+            width={'1440px'}
+        />
+
+        <StyledHeading>wave-l-cta</StyledHeading>
+        <WaveCTA
+            color={'red'}
+        />
+        <WaveCTA 
+            color={'blue'}
+            bodyText={'At vero eos et accusam et justo duo dolores et ea rebum.'}
+            headerText={'Lorem ipsum dolor sit amet'}
+            buttonText={'Lorem Ipsum!'}
+        />
+        <WaveCTA color={'green'}/>
+
+        <StyledHeading>wave-m-cta</StyledHeading>
+        <WaveCTA 
+            headerText={'Seit Anbeginn empowern wir unsere Member:innen und bereiten uns so auf die Herausforderungen von morgen vor.'}
+            size={'medium'}
+        />
+
+        <StyledHeading>wave-s</StyledHeading>
+        <Wave size={'small'} color={'red'}/>
+        
+        <StyledHeading>wave-m</StyledHeading>
+        <Wave size={'medium'} color={'blue'}/>
+
+        <StyledHeading>wave-l</StyledHeading>
+        <Wave size={'large'} color={'green'}/>
 
         <StyledHeading>Button</StyledHeading>
         <Button variant={'primaryRed'}>Primary Red</Button>
@@ -180,7 +328,7 @@ const MainPage = () => (
         <StyledContactForm>ContactForm Component</StyledContactForm>
 
         <StyledHeading>Wave</StyledHeading>
-        <Wave variant={'Top'} color={DeprecatedColor.Primary} shape={1}></Wave>
+        <WaveDeprecated variant={'Top'} color={DeprecatedColor.Primary} shape={1}></WaveDeprecated>
 
         <StyledHeading>SectionHeadline</StyledHeading>
         <StyledSectionHeadline
@@ -316,6 +464,17 @@ const MainPage = () => (
     </ThemeProvider>
 );
 
+const CharactersGroupLayout = styled('div')`
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+`;
+const CharactersWithParagraphsGroupLayout = styled('div')`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+`;
+
 const StyledImageBubbleLayout = styled(ImageBubble)`
     width: 700px;
 `;
@@ -358,7 +517,7 @@ const StyledFreeChair = styled(FreeChair)`
     margin-left: 1em;
 `;
 
-const StyledCharacter = styled(Character)`
+const StyledCharacter = styled(CharacterDeprecated)`
     margin-left: 1em;
 `;
 
