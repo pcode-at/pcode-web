@@ -4,27 +4,25 @@ import { theme } from '../theme';
 import { Button } from './Button';
 
 const FormInput = styled('input', {
-    borderColor: theme.ContactForm.Border.Color.Default,
+    alignSelf: 'center',
+    borderColor: '$blue500',
     borderStyle: 'solid',
-    borderRadius: theme.ContactForm.Border.Radius,
-
-    fontFamily: theme.ContactForm.Input.Font.Family,
-    fontSize: theme.ContactForm.Input.Font.Size,
-    color: theme.ContactForm.Input.Font.Color,
+    borderRadius: '$rounded',
+    fontFamily: '$default',
+    fontSize: '$m',
+    color: '$blue500',
     fontWeight: '$medium',
-    lineHeight: theme.ContactForm.Input.LineHeight,
-
+    lineHeight: '$m',
     margin: '$xs 0px',
     width: '49%',
-    alignSelf: 'center',
 })
 
 const ContactFormLabel = styled('label', {
-    fontFamily: theme.ContactForm.Label.Font.Family,
-    fontSize: theme.ContactForm.Label.Font.Size,
+    fontFamily: '$default',
+    fontSize: '$xs',
     fontWeight: '$semibold',
-    lineHeight: theme.ContactForm.Label.LineHeight,
-    letterSpacing: theme.ContactForm.Label.LetterSpacing,
+    lineHeight: '$s',
+    letterSpacing: '$wide',
 })
 
 const HeadingLight = styled('h1', {
@@ -42,20 +40,20 @@ const HeadingLayout = styled('div', {
     flexDirection: 'row',
 
     '>h1':{
-        fontFamily: theme.ContactForm.H1.Font.Family,
-        color: theme.ContactForm.H1.Font.Color,
-        fontSize: theme.ContactForm.H1.Font.Size,
-        lineHeight: theme.ContactForm.H1.LineHeight,
-        letterSpacing: theme.ContactForm.H1.LetterSpacing,
+        fontFamily: '$default',
+        color: '$blue500',
+        fontSize: '$xxl',
+        lineHeight: '$xxl',
+        letterSpacing: '$tight',
     }
 })
 
 const Heading = styled('h1', {
-    fontFamily: theme.ContactForm.H1.Font.Family,
-    color: theme.ContactForm.H1.Font.Color,
-    fontSize: theme.ContactForm.H1.Font.Size,
-    lineHeight: theme.ContactForm.H1.LineHeight,
-    letterSpacing: theme.ContactForm.H1.LetterSpacing,
+    fontFamily: '$default',
+    color: '$blue500',
+    fontSize: '$xxl',
+    lineHeight: '$xxl',
+    letterSpacing: '$tight',
     fontWeight: '$light',
 
     display: 'flex',
