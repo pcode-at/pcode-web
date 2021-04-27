@@ -7,6 +7,7 @@ type Props = {
     character?: string;
     color?: "blue" | "green" | "red" | "white";
     link?: string;
+    linkText?: string;
     paragraph?: string;
     subtitle?: string;
     title?: string;
@@ -18,6 +19,7 @@ export const CharacterAndParagraph: React.FC<Props> = ({
     character   = 'GameChanger',
     color       = 'blue',
     link,
+    linkText,
     paragraph   = 'Das ist ein kleiner Blindtext. Hiermit wird ein Absatz markiert, in dem mittelmäßig viele Wörter stehen. Noch eine kleine Beschreibung und fertig',
     subtitle,
     title       = 'copywriter',
