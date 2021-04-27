@@ -97,19 +97,32 @@ export const theme = {
                 TextDecoration: 'underline',
                 TextDecorationThickness: '0.063rem', // Figma: 1px
                 TextUnderlineOffset: '0.25rem', // Figma: 4px
-
             },
         },
     },
 
     // ---------- CONTACT FORM ----------
     ContactForm: {
+        // Width: '85%',
+        H1: {
+            Font: {
+                Family: '$default',
+                Size: '$xxl',
+                Weight: '$medium',
+                Color: '$blue500',
+            },
+            LineHeight: '$xxl',
+            LetterSpacing: '$tight',
+            
+        },
         Input: {
-            Width: '580px',
-            Height: {
-                Small: '40px',
-                Large: '201px'
-            }
+            Font: {
+                Family: '$default',
+                Color: '$blue500',
+                Size: '$m',
+                Weight: '$medium',
+            },
+            LineHeight: '$m',
         },
         Border: {
             Color: {
@@ -117,6 +130,16 @@ export const theme = {
                 Default: '$green500',
             },
             Radius: '$rounded',
+        },
+        Label: {
+            Font: {
+                Family: '$default',
+                Size: '$xs',
+                Weight: '$semibold',
+            },
+            LineHeight: '$s',
+            LetterSpacing: '$wide',
+        },
             Width: '$medium',
         }
     },
@@ -148,16 +171,13 @@ export const theme = {
             Font: {
                 Weight: '$medium',
                 Size: '$m',
-                Color: {
-                    Default: '$blue500',
-                    Hover: '$red500',
-                }
-            },
-            LineHeight: '$m',
-            TextDecoration: 'underline',
-            TextDecorationColor: '$red500',
-            TextDecorationThickness: '0.063rem', 
-            TextUnderlineOffset: '0.25rem', 
-        },
-    },
+                Color: '$blue500',
+            }
+        }
+    }
+
+    // ---------- ----------
+    // ---------- ----------
+    // ---------- ----------
+
 }

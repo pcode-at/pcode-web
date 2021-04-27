@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { themeDeprecated } from '../themeDeprecated';
-import { ContactForm } from '../components/ContactForm';
+import { ContactFormDeprecated } from '../components/ContactFormDeprecated';
 import { DeprecatedColor } from '../DeprecatedColor.enum';
 
 const { light, normal } = themeDeprecated.font;
@@ -21,7 +21,7 @@ const Container = styled.div`
     background: #f2f2f2;
 `;
 
-const StyledContactForm = styled(ContactForm)`
+const StyledContactForm = styled(ContactFormDeprecated)`
     width: 100px;
 `;
 

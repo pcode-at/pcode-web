@@ -1,112 +1,151 @@
 import React from 'react';
-import { DeprecatedColor } from '../DeprecatedColor.enum';
-import { Box, Text, Button } from 'rebass';
-import { Input, Textarea } from '@rebass/forms';
-import { themeDeprecated } from '../themeDeprecated';
-import { CONSTANTS } from '../shared/constants';
-import styled from 'styled-components';
+import { styled } from '../stitches.config';
+import { theme } from '../theme';
+import { Button } from './Button';
+
+const FormInput = styled('input', {
+    alignSelf: 'center',
+    borderColor: '$blue500',
+    borderStyle: 'solid',
+    borderRadius: '$rounded',
+    fontFamily: '$default',
+    fontSize: '$m',
+    color: '$blue500',
+    fontWeight: '$medium',
+    lineHeight: '$m',
+    margin: '$xs 0px',
+    width: '49%',
+})
+
+const ContactFormLabel = styled('label', {
+    fontFamily: '$default',
+    fontSize: '$xs',
+    fontWeight: '$semibold',
+    lineHeight: '$s',
+    letterSpacing: '$wide',
+})
+
+const HeadingLight = styled('h1', {
+    // marginRight: '15px',
+})
+const HeadingStrong = styled('h1', {
+    fontWeight: '$semibold',
+})
+const HeadingLayout = styled('div', {
+
+    display: 'flex',
+    justifyContent: 'center',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    flexDirection: 'row',
+
+    '>h1':{
+        fontFamily: '$default',
+        color: '$blue500',
+        fontSize: '$xxl',
+        lineHeight: '$xxl',
+        letterSpacing: '$tight',
+    }
+})
+
+const Heading = styled('h1', {
+    fontFamily: '$default',
+    color: '$blue500',
+    fontSize: '$xxl',
+    lineHeight: '$xxl',
+    letterSpacing: '$tight',
+    fontWeight: '$light',
+
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    padding: '$m 0px $s',
+    // width: '100%',
+    width: '85%',
+})
 
 type Props = {
     className?: string;
 };
 
+// TODO: align buttons correctly ; currently they're centered
+// TODO: correct width of input fields ; currently they're too broad
 export const ContactForm: React.FC<Props> = ({ className }) => {
-    const [textAreaContent, setTextAreaContent] = React.useState('');
-    const { light, normal } = themeDeprecated.font;
-    const { openPositionDestinationEmail } = CONSTANTS;
 
-    const StyledH2 = styled.h2`
-        font-family: ${normal.fontFamily};
-        font-weight: ${normal.fontWeight};
-    `;
+    const ContactFormLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
 
-    const ShortInputLayout = styled(Box)`
-        margin-top: 10px;
-        width: 50%;
-    `;
+    })
 
-    const ShortInputStyle = styled(Box)`
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
-    `;
+    const InputFieldsLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '85%',
+    })
 
-    const TextAreaLayout = styled(Box)`
-        height: 100px;
-        margin-top: 10px;
-    `;
+    const InputFieldLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        margin: '$m 0px',
+        width: '100%',
+    })
 
-    const TextAreaStyle = styled(Box)`
-        font-family: ${light.fontFamily};
-        font-weight: ${light.fontWeight};
-    `;
+    const LabelLayout = styled('div', {
+        width: '49%',
+    })
+
+    const ButtonsLayout = styled('div', {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'flex-start',
+        margin: '$m 0px',
+
+        '> button': {
+            marginRight: '10px',
+        },
+
+    })
 
     return (
-        <div className={className}>
-            <StyledH2>let's work together!</StyledH2>
+        <ContactFormLayout className={className}>
+            <Heading>lass uns zusammen arbeiten!</Heading>
+            <InputFieldsLayout>
+                <InputFieldLayout>
+                    <LabelLayout>
+                        <ContactFormLabel>Name</ContactFormLabel>
+                    </LabelLayout>
+                    <FormInput/>
+                </InputFieldLayout>
 
-            <ShortInputLayout>
-                <ShortInputStyle>
-                    <Input
-                        placeholder="name"
-                        sx={{
-                            borderWidth: '3px',
-                            borderColor: DeprecatedColor.SecondaryLight,
-                            borderRadius: 13,
-                        }}
-                    />
-                </ShortInputStyle>
-            </ShortInputLayout>
+                <InputFieldLayout>
+                    <LabelLayout>
+                        <ContactFormLabel>EMail</ContactFormLabel>
+                    </LabelLayout>
+                    <FormInput/>
+                </InputFieldLayout>
 
-            <ShortInputLayout>
-                <ShortInputStyle>
-                    <Input
-                        placeholder="email"
-                        sx={{
-                            borderWidth: '3px',
-                            borderColor: DeprecatedColor.SecondaryLight,
-                            borderRadius: 13,
-                        }}
-                    />
-                </ShortInputStyle>
-            </ShortInputLayout>
+                <InputFieldLayout>
+                    <LabelLayout>
+                        <ContactFormLabel>Nachricht</ContactFormLabel>
+                    </LabelLayout>
+                    <FormInput/>
+                </InputFieldLayout>
 
-            {/*TODO: Fix TextArea bug (you can't write anything)*/}
-            <TextAreaLayout>
-                <TextAreaStyle>
-                    <Textarea
-                        placeholder="you are so cool people, let`s …"
-                        onChange={args => setTextAreaContent(args.target.value)}
-                        sx={{
-                            borderWidth: '3px',
-                            borderColor: DeprecatedColor.SecondaryLight,
-                            borderRadius: 13,
-                            height: '100%',
-                        }}
-                    />
-                </TextAreaStyle>
-            </TextAreaLayout>
-            <a
-                href={`mailto:${openPositionDestinationEmail}?subject=Let's work together!
-                        &body=${replaceNewLineCharacters(textAreaContent)}`}
-            >
-                <Button
-                    variant="primary"
-                    sx={{
-                        float: 'right',
-                        marginTop: 1,
-                        borderRadius: 20,
-                        fontFamily: light.fontFamily,
-                        fontWeight: light.fontWeight,
-                        fontSize: 11,
-                    }}
-                >
-                    send message
-                </Button>
-            </a>
-        </div>
+                <ButtonsLayout>
+                    <Button variant={'tertiary'}>Abbrechen</Button>
+                    <Button variant={'primaryRed'}>Senden</Button>
+                </ButtonsLayout>
+            </InputFieldsLayout>
+        </ContactFormLayout>
+
+
     );
 
-    function replaceNewLineCharacters(inputText: string) {
-        return inputText.replace('\n', '%0A');
-    }
-};
+}
